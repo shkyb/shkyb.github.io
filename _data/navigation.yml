@@ -10,3 +10,10 @@ main:
   #   url: /collection-archive/
   # - title: "Sitemap"
   #   url: /sitemap/
+  - title: "Projects"
+  #   url: 
+  - title: "CV"
+  # url:
+  - label: "LinkedIn"
+    icon: "fab fa-fw fa-linkedin-in"
+    url: "https://linkedin.com/in/shakib-alipour"
