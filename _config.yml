@@ -294,9 +294,10 @@ defaults:
       author_profile: # true
       read_time: # true
       comments: # true
-      share: true
-      related: true
+      share: # true
+      related: # true
       show_date: # true
+      meta: false
  # _pages
   - scope:
       path: ""
