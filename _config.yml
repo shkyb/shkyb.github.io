@@ -58,7 +58,7 @@ reCaptcha:
   secret                 :
 atom_feed:
   path                   : # blank (default) uses feed.xml
-  hide                   : # true, false (default)
+  hide                   : true # true, false (default)
 search                   : # true, false (default)
 search_full_content      : # true, false (default)
 search_provider          : # lunr (default), algolia, google
@@ -79,7 +79,7 @@ baidu_site_verification  :
 
 # Social Sharing
 twitter:
-  username               :
+  username               : "shakib_alipour"
 facebook:
   username               :
   app_id                 :
@@ -93,7 +93,7 @@ social:
   links: # An array of links to social media profiles
     - "https://linkedin.com/in/shakib-alipour"
     - "https://instagram.com/shakib.design"
-    - "https://twitter.com/shakib-alipour"
+    - "https://twitter.com/shakib_alipour"
     - "https://"
 
 # Analytics
@@ -119,7 +119,7 @@ author:
       icon: "fab fa-fw fa-linkedin-in"
       url: "https://linkedin.com/in/shakib-alipour"
     - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
+      icon: "fa-brands fa-twitter" # "fab fa-fw fa-twitter-square"
       url: "https://twitter.com/shakib_alipour"
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
@@ -155,7 +155,8 @@ footer:
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin-in"
       url: "https://linkedin.com/in/shakib-alipour"
-
+      # does not show up in footer
+      
 
 # Reading Files
 include:
