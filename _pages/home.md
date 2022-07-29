@@ -1,5 +1,6 @@
 ---
 title: The Name's SHAKIB
+masthead_title: 
 layout: splash
 permalink: /
 header:
