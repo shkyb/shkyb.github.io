@@ -297,7 +297,7 @@ defaults:
       share: # true
       related: # true
       show_date: # true
-      meta: false
+      
  # _pages
   - scope:
       path: ""
