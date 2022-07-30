@@ -4,15 +4,5 @@
 
 @charset "utf-8";
 
-::-moz-selection {
-    color: #fff;
-    background: red;
-  }
-
-::selection {
-    color: #fff;
-    background: red;
-  }
-
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
