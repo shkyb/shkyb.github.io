@@ -35,6 +35,7 @@
 
     &:hover {
       text-decoration: underline;
+      color: red;
     }
   }
 
@@ -49,9 +50,12 @@
 .page__footer-copyright {
   font-family: $global-font-family;
   font-size: $type-size-7;
+  text-align: center;
 }
 
 .page__footer-follow {
+  text-align: center;
+  
   ul {
     margin: 0;
     padding: 0;
