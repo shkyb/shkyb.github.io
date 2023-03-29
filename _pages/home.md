@@ -8,10 +8,11 @@ header:
     overlay_filter: "0.9"
     overlay_image: /assets/images/home-cover.png
     actions:
-    - label: "Check my Portfolio"
+    - label: "<i class="fab fa-fw fa-behance"></i> View my Portfolio"
       url: "https://behance.net/shakib-alipour"
-excerpt: "Multidisciplinary Designer with a Passion for Innovation and Human-Centered Design. <br/><br/><small> Discover my portfolio on Behance and delve into my creative world.</small>"
+excerpt: "Multidisciplinary Designer with a Passion for Innovation and Human-Centered Design. <br/><small> Discover my portfolio on Behance and delve into my creative world.</small>"
 
 ---
 
 🧭 Site's out exploring new design horizons. Stay tuned for its return! 🪃
+{: style="text-align: center;"}
