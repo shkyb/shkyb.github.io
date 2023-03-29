@@ -108,7 +108,7 @@ analytics:
 author:
   name             : "Shakib Alipour"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Im a multidisciplinary designer."
+  bio              : "Multidisciplinary designer."
   location         : "Tehran, IRAN"
   email            : 
   links:
@@ -156,6 +156,9 @@ footer:
       icon: "fab fa-fw fa-linkedin-in"
       url: "https://linkedin.com/in/shakib-alipour"
       # does not show up in footer
+    - label: "Behance"
+      icon: "fab fa-fw fa-behance"
+      url: "https://behance.net/shakib-alipour"
       
 
 # Reading Files
