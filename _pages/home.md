@@ -11,7 +11,7 @@ header:
     - label: "Check my Portfolio"
       url: "https://behance.net/shakib-alipour"
 excerpt: "Multidisciplinary Designer with a Passion for Innovation and Human-Centered Design. <br/> Discover my portfolio on Behance and delve into my creative world."
-intro: 
+intro:
   - excerpt: '🧭 Site's out exploring new design horizons. Stay tuned for its return! 🪃'
 
 ---
