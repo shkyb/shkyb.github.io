@@ -11,9 +11,9 @@ main:
   # - title: "Sitemap"
   #   url: /sitemap/
   - title: "Projects"
-     url: "https://behance.net/shakib-alipour"
+     url: https://behance.net/shakib-alipour/
   # - title: "CV"
   # url:
   - title: "LinkedIn"
     icon: "fab fa-fw fa-linkedin-in"
-    url: "https://linkedin.com/in/shakib-alipour"
+    url: https://linkedin.com/in/shakib-alipour/
