@@ -10,8 +10,10 @@ header:
     actions:
     - label: "Check my Portfolio"
       url: "https://behance.net/shakib-alipour"
-excerpt: "Multidisciplinary Designer with a Passion for Innovation and Human-Centered Design. <br /> <small>Discover my portfolio on Behance and delve into my creative world.</small>"
+excerpt: "**Multidisciplinary Designer** with a Passion for Innovation and Human-Centered Design. <br/><small> Discover my portfolio on Behance and delve into my creative world.</small>"
 intro:
-  - excerpt: "Site's out exploring new design horizons. Stay tuned for its return!"
+  - excerpt: "🧭 Site's out exploring new design horizons. Stay tuned for its return! 🪃"
 
 ---
+
+{% include feature_row id="intro" type="center" %}
