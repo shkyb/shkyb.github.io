@@ -12,7 +12,7 @@ main:
   #   url: /sitemap/
   - title: "Projects"
      url: "https://behance.net/shakib-alipour"
-  - title: "CV"
+  # - title: "CV"
   # url:
   - title: "LinkedIn"
     icon: "fab fa-fw fa-linkedin-in"
