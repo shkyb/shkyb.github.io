@@ -12,6 +12,6 @@ header:
       url: "https://behance.net/shakib-alipour"
 excerpt: "Multidisciplinary Designer with a Passion for Innovation and Human-Centered Design. <br/> Discover my portfolio on Behance and delve into my creative world."
 intro:
-  - excerpt: '🧭 Site's out exploring new design horizons. Stay tuned for its return! 🪃'
+  - excerpt: "🧭 Site's out exploring new design horizons. Stay tuned for its return! 🪃"
 
 ---
