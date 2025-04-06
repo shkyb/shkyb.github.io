@@ -1,11 +1,13 @@
+import Hero from "./components/hero";
 import Navbar from "./components/navbar";
 
 function App() {
   return (
-    <div className="pt-20">
+    <div className="bg-stone-50">
       <Navbar />
-      <main className="p-6">
-        <h1 className="text-3xl font-bold text-gray-800">Welcome to my portfolio</h1>
+      <main>
+        <Hero />
+        <Hero />
       </main>
     </div>
   );
