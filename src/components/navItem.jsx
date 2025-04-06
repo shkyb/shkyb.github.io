@@ -8,7 +8,7 @@ export default function NavItem({ text = null, count = null, icon = null, href =
         >      
           <span>{text}</span>
           {count !== null && (
-            <sup className="text-normal uppercase text-stone-900">{count}</sup>
+            <sup className="text-normal">{count}</sup>
           )}
           {icon && <span>{icon}</span>}
         </a>
