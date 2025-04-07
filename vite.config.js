@@ -9,5 +9,5 @@ export default defineConfig({
     react(),
     tailwindcss()
   ],
-  base: "/shkyb.github.io/",
+  base: '/shkyb.github.io/',
 })
