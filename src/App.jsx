@@ -1,5 +1,6 @@
 import Hero from "./components/hero";
 import Navbar from "./components/navbar";
+import ProjectShowcase from "./components/projectShowcase";
 
 function App() {
   return (
@@ -7,6 +8,7 @@ function App() {
       <Navbar />
       <main>
         <Hero />
+        {/* <ProjectShowcase id="project-1" /> */}
       </main>
     </div>
   );
