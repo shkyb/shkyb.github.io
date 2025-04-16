@@ -1,6 +1,3 @@
-import { HiOutlineUsers } from "react-icons/hi2";
-
-
 export const projects = {
     "project-1": {
         title: "Smart Mirror Interface",
