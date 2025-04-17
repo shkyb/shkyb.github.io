@@ -8,7 +8,8 @@ function App() {
       <Navbar />
       <main>
         <Hero />
-        <ProjectShowcase id="project-1" />
+        {/* <ProjectShowcase id="project-1" order="01." /> */}
+        {/* <ProjectShowcase id="project-1" order="02." /> */}
       </main>
     </div>
   );
