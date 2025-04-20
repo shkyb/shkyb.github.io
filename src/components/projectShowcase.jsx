@@ -27,29 +27,29 @@ export default function ProjectShowcase({ id, order = null }) {
                   {order}
                 </div>
               </div>
-              <h2 className="text-3xl md:text-5xl font-bold text-stone-900">{project.title}</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-stone-900">{project.title}</h2>
             </div>
-            <h3 className="text-lg md:text-xl font-medium text-stone-600">{project.subtitle}</h3>
+            <h3 className="text-lg md:text-xl font-medium text-stone-500">{project.subtitle}</h3>
             
             {/* Info Row */}
-            <div className="flex flex-wrap pt-4 gap-2 md:gap-6 items-center text-sm text-stone-700 font-medium leading-tight">
+            <div className="flex flex-wrap pt-4 gap-2 md:gap-6 items-center text-sm text-stone-500 font-medium leading-tight">
               {project.role && (
                 <div className="flex items-center gap-1">
-                  <HiOutlineBriefcase className="w-5 h-5" />
+                  <HiOutlineBriefcase className="min-w-5 min-h-5" />
                   <span>{project.role}</span>
                 </div>
               )}
               {project.duration && (
                 <div className="flex items-center gap-1">
-                  <HiOutlineCalendarDateRange className="w-5 h-5" />
+                  <HiOutlineCalendarDateRange className="min-w-5 min-h-5" />
                   <span>{project.duration.from}</span>
-                  <HiOutlineArrowLongRight className="w-5 h-5" />
+                  <HiOutlineArrowLongRight className="min-w-5 min-h-5" />
                   <span>{project.duration.to}</span>
                 </div>
               )}
               {project.extra && (
                 <div className="flex items-center gap-1 flex-1">
-                  <HiOutlineUsers className="w-5 h-5" />
+                  <HiOutlineUsers className="min-w-5 min-h-5" />
                   <span>{project.extra}</span>
                 </div>
               )}

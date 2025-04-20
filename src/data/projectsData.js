@@ -1,21 +1,26 @@
 export const projects = {
-    "project-1": {
-        title: "Smart Mirror Interface",
+    "Mazhan": {
+        title: "Mazhan LTE Modem/Router",
         subtitle: "UX/UI for a connected home product",
-        role: "Lead Designer",
-        duration: {
-            from: "Jan 2022",
-            to: "Dec 2024"
+        client: {
+            text: "Farassoo Tech",
+            logo: "",
+            link: ""
         },
-        extra: "Freelancer",
+        role: "Product Designer",
+        duration: {
+            from: "Sep 2020",
+            to: "Dec 2022"
+        },
+        extra: "6-person cross-functional R&D team",
         overview:
-            "This project involved designing an intuitive interface for a smart mirror used in modern homes, with a focus on gesture and voice interaction.",
+            "Led the design of an award-winning modem/router aimed ",
         outcomes: [
             "Reduced user onboarding time by 40%",
             "Delivered responsive UI across three screen sizes",
             "Achieved a 25% boost in usability test scores"
         ],
-        tags: ["UX Design", "UI Design", "Voice UI", "IoT"],
+        tags: ["Industrial Design", "UX/UI Design", "Packaging Design", "SolidWorks", "KeyShot", "Sketching"],
         image: "/images/project1.jpg",
         cta: {
             text: "View Case Study",
