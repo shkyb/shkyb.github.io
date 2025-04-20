@@ -14,7 +14,7 @@ export default function Hero() {
         <p className="pt-6 text-lg md:text-xl text-stone-600 max-w-2xl mb-10">
         From smart hardware to mobile apps, I design seamless experiences where humans meet machines. My work lives at the intersection of thoughtful form, clear function, and real-world use.
         </p>
-        <CTA text="Scroll to Explore" icon={<HiArrowLongDown />} link={"#showcase"}/>
+        <CTA text="Scroll to Explore" icon={<HiArrowLongDown />} link={"#showcase"} target=""/>
       </section>
     );
   }

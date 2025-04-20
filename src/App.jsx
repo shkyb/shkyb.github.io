@@ -8,7 +8,9 @@ function App() {
       <Navbar />
       <main>
         <Hero />
-        <ProjectShowcase id="Mazhan" order="01." />
+        <div id="showcase">
+          <ProjectShowcase id="Mazhan" order="01." />
+        </div>
       </main>
     </div>
   );
