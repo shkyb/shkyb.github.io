@@ -1,4 +1,7 @@
 import { projects } from "../data/projectsData";
+import MarkdownText from "./markdownText";
+import MarkdownBlock from "./markdownBlock";
+
 import Tag from "./tag";
 import Cta from "./cta";
 
@@ -17,7 +20,7 @@ export default function ProjectShowcase({ id, order = null }) {
   return (
     <div className="w-full px-6 md:px-12 py-16 flex flex-col-reverse md:flex-row justify-center items-start gap-6 max-w-screen-2xl mx-auto">
       {/* Left Column */}
-      <div className="md:w-1/2 flex flex-col justify-start items-start gap-9">
+      <div className="md:w-1/2 flex flex-col justify-start items-start gap-6">
         <div className="w-full flex flex-col gap-6">
           {/* Title & Subtitle */}
           <div className="flex flex-col">
@@ -27,10 +30,10 @@ export default function ProjectShowcase({ id, order = null }) {
                   {order}
                 </div>
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-stone-900">{project.title}</h2>
+              <h2 className="text-3xl md:text-5xl font-bold text-stone-900">{project.title}</h2>
             </div>
-            <h3 className="text-lg md:text-xl font-medium text-stone-500">{project.subtitle}</h3>
-            
+            <h3 className="text-lg md:text-lg font-medium text-stone-500">{project.subtitle}</h3>
+
             {/* Info Row */}
             <div className="flex flex-wrap pt-4 gap-2 md:gap-6 items-center text-sm text-stone-500 font-medium leading-tight">
               {project.role && (
@@ -59,15 +62,17 @@ export default function ProjectShowcase({ id, order = null }) {
           {/* Overview */}
           <div className="flex flex-col gap-2">
             <h4 className="text-lg font-bold text-stone-900 leading-7">Overview</h4>
-            <p className="text-base text-stone-700 leading-normal">{project.overview}</p>
+            <MarkdownText>{project.overview}</MarkdownText>
           </div>
 
           {/* Key Outcomes */}
           <div className="flex flex-col gap-2">
             <h4 className="text-lg font-bold text-stone-900 leading-7">Key Outcomes</h4>
-            <ul className="list-disc list-inside space-y-1 text-base text-stone-700 leading-normal">
+            <ul className="list-disc list-inside space-y-1">
               {project.outcomes.map((item, i) => (
-                <li key={i}>{item}</li>
+                <li key={i}>
+                  <MarkdownBlock>{item}</MarkdownBlock>
+                </li>
               ))}
             </ul>
           </div>
@@ -93,7 +98,7 @@ export default function ProjectShowcase({ id, order = null }) {
       </div>
 
       {/* Right Column: Image */}
-      <div className="md:w-1/2 relative overflow-hidden rounded outline-1 outline-violet-500">
+      <div className="md:w-1/2 relative overflow-hidden rounded-2xl">
         <img
           src={project.image}
           alt={project.title}
