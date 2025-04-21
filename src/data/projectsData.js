@@ -1,24 +1,26 @@
 export const projects = {
     "Mazhan": {
         title: "Mazhan LTE Modem/Router",
-        subtitle: "UX/UI for a connected home product",
+        subtitle: "A premium LTE router designed to be bold, not blend in",
         client: {
             text: "Farassoo Tech",
             logo: "",
             link: ""
         },
-        role: "Product Designer",
+        role: "Lead Designer",
         duration: {
             from: "Sep 2020",
             to: "Dec 2022"
         },
         extra: "6-person cross-functional R&D team",
         overview:
-            "Led the design of an award-winning modem/router aimed ",
+            "Mazhan is a premium LTE router designed to be seen, not hidden. I created a cohesive product experience that spans physical form, packaging, and digital interfaces — while laying the foundation for Farassoo Tech’s future design language.",
         outcomes: [
-            "Reduced user onboarding time by 40%",
-            "Delivered responsive UI across three screen sizes",
-            "Achieved a 25% boost in usability test scores"
+            "Designed for mass production in close collaboration with engineers and mold makers",
+            "Created a premium unboxing experience, inspired by 2001: A Space Odyssey",
+            "Designed the firmware interface, mobile control app, and product landing page",
+            "Awarded Bronze in Packaging and Honorable Mention in Product Design at the International Design Awards 2023",
+            "Commercial success led to new SKUs, including a portable battery-powered version"
         ],
         tags: ["Industrial Design", "UX/UI Design", "Packaging Design", "SolidWorks", "KeyShot", "Sketching"],
         image: "/images/project1.jpg",
