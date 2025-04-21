@@ -5,7 +5,7 @@ import remarkGfm from "remark-gfm";
 const inlineComponents = {
   p: ({ children }) => <>{children}</>,
   strong: ({ node, ...props }) => (
-    <strong className="font-semibold text-stone-900" {...props} />
+    <strong className="font-semibold text-stone-700" {...props} />
   ),
   em: ({ node, ...props }) => (
     <em className="italic text-stone-600" {...props} />

@@ -68,7 +68,7 @@ export default function ProjectShowcase({ id, order = null }) {
           {/* Key Outcomes */}
           <div className="flex flex-col gap-2">
             <h4 className="text-lg font-bold text-stone-900 leading-7">Key Outcomes</h4>
-            <ul className="list-disc list-inside space-y-1">
+            <ul className="list-disc list-inside space-y-1 text-stone-700">
               {project.outcomes.map((item, i) => (
                 <li key={i}>
                   <MarkdownBlock>{item}</MarkdownBlock>
