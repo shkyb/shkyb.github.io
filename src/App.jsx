@@ -14,6 +14,9 @@ function App() {
           <ProjectShowcaseMid id="Nathan" order="02." />
           <ProjectShowcaseMid id="ITA" order="03." />
           <ProjectShowcaseMid id="Mazhan" order="04." />
+          <ProjectShowcaseMid id="Asemoun" order="05." />
+          <ProjectShowcaseMid id="Raven" order="06." />
+          <ProjectShowcaseMid id="Surena" order="07." />
         </div>
       </main>
     </div>
