@@ -35,7 +35,7 @@ export default function ProjectShowcase({ id, order = null }) {
             <h3 className="text-lg md:text-lg font-medium text-stone-500">{project.subtitle}</h3>
 
             {/* Info Row */}
-            <div className="flex flex-wrap pt-4 gap-2 md:gap-6 items-center text-sm text-stone-500 font-medium leading-tight">
+            <div className="flex flex-col md:flex-row flex-wrap pt-4 gap-2 md:gap-6 items-center text-sm text-stone-500 font-medium leading-tight">
               {project.role && (
                 <div className="flex items-center gap-1">
                   <HiOutlineBriefcase className="min-w-5 min-h-5" />
@@ -51,7 +51,7 @@ export default function ProjectShowcase({ id, order = null }) {
                 </div>
               )}
               {project.extra && (
-                <div className="flex items-center gap-1 flex-1">
+                <div className="flex items-center gap-1 flex-1 min-w-max">
                   <HiOutlineUsers className="min-w-5 min-h-5" />
                   <span>{project.extra}</span>
                 </div>
