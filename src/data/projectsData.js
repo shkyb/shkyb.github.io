@@ -10,7 +10,7 @@ export const projects = {
         },
         role: "Product Designer",
         duration: {
-            from: "Sep 2020",
+            from: "Aug 2020",
             to: "Jan 2023"
         },
         extra: "6-person cross-functional R&D team",
@@ -24,7 +24,7 @@ export const projects = {
             "Commercial success led to new SKUs, including a **portable battery-powered version**"
         ],
         tags: ["Industrial Design", "UX/UI Design", "Packaging Design", "SolidWorks", "KeyShot", "Sketching"],
-        image: "/images/mazhan-showcase1.webp",
+        image: "/images/mazhan-showcase.webp",
         // cta: {
         //     text: "View Case Study",
         //     link: "/projects/mazhan"
@@ -159,37 +159,6 @@ export const projects = {
         //     link: "/projects/asemoun"
         // }
     },
-    //Surena Humanoid
-    "Surena": {
-        title: "Surena Humanoid",
-        subtitle: "Building a scalable design system to enhance usability, coherence, and cross-team collaboration.",
-        client: {
-            text: "Center of Advanced Systems & Technologies (CAST)",
-            logo: "",
-            link: ""
-        },
-        role: "Ind. Designer • Research Assist.",
-        duration: {
-            from: "Nov 2015",
-            to: "May 2018"
-        },
-        extra: "Research project • 50+ members",
-        overview:
-            "As a member of the design team at **[CAST](https://cast-tech.ir)**, I contributed to the design of **[Surena Mini](https://spectrum.ieee.org/iran-surena-mini)** and **[Surena IV](https://spectrum.ieee.org/iran-surena-iv-humanoid-robot)** humanoid robots. I was responsible for 3D modeling, prototyping, and DFM, and played a key role in coordinating between design, mechanical, electronics, and AI teams. I also organized weekly design sessions, assigned tasks, and ensured progress across disciplines—balancing aesthetics and engineering for functional and manufacturable robots.",
-        outcomes: [
-            "Designed **Surena Mini’s 3D-printed body**, optimizing surface coverage and joint clearance",
-            "Built **four prototype versions** of Surena Mini using FDM 3D printing",
-            "Developed **manufacturing-ready chassis** for Surena IV using topology optimization and SLA printing",
-            "Coordinated across teams to ensure **design and engineering alignment** for Surena IV",
-            "Enabled Surena IV to achieve **higher dexterity, lighter weight**, and smoother motion",
-            ],
-        tags: ["Humanoid Robot", "Research", "3D Modeling", "DFM", "Interdisciplinary Collaboration", "Robotics"],
-        image: "/images/surena-showcase.webp",
-        // cta: {
-        //     text: "View Case Study",
-        //     link: "/projects/surena-humanoid"
-        // }
-    },
     //Raven Calculator
     "Raven": {
         title: "Raven",
@@ -220,5 +189,37 @@ export const projects = {
         //     link: "/projects/asemoun"
         // }
     },
+    //Surena Humanoid
+    "Surena": {
+        title: "Surena Humanoid",
+        subtitle: "Building a scalable design system to enhance usability, coherence, and cross-team collaboration.",
+        client: {
+            text: "Center of Advanced Systems & Technologies (CAST)",
+            logo: "",
+            link: ""
+        },
+        role: "Industrial Designer • Research Assistant",
+        duration: {
+            from: "Nov 2015",
+            to: "May 2018"
+        },
+        extra: "Research project • 50+ members",
+        overview:
+            "As a member of the design team at **[CAST](https://cast-tech.ir)**, I contributed to the design of **[Surena Mini](https://spectrum.ieee.org/iran-surena-mini)** and **[Surena IV](https://spectrum.ieee.org/iran-surena-iv-humanoid-robot)** humanoid robots. I was responsible for 3D modeling, prototyping, and DFM, and played a key role in coordinating between design, mechanical, electronics, and AI teams. I also organized weekly design sessions, assigned tasks, and ensured progress across disciplines—balancing aesthetics and engineering for functional and manufacturable robots.",
+        outcomes: [
+            "Designed **Surena Mini’s 3D-printed body**, optimizing surface coverage and joint clearance",
+            "Built **four prototype versions** of Surena Mini using FDM 3D printing",
+            "Developed **manufacturing-ready chassis** for Surena IV using topology optimization and SLA printing",
+            "Coordinated across teams to ensure **design and engineering alignment** for Surena IV",
+            "Enabled Surena IV to achieve **higher dexterity, lighter weight**, and smoother motion",
+            ],
+        tags: ["Humanoid Robot", "Research", "3D Modeling", "DFM", "Interdisciplinary Collaboration", "Robotics"],
+        image: "/images/surena-showcase.webp",
+        // cta: {
+        //     text: "View Case Study",
+        //     link: "/projects/surena-humanoid"
+        // }
+    },
+
     // Add more projects here...
 };

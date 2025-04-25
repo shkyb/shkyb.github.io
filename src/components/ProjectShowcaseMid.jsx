@@ -20,16 +20,16 @@ export default function ProjectShowcaseMid({ id, order = null }) {
   return (
     <div className="w-full max-w-screen-2xl px-6 md:px-12 py-16 mx-auto flex flex-col items-center gap-6">
       {/* Image on top */}
-      <div className="w-full rounded-2xl overflow-hidden">
+      <div className="w-full overflow-hidden">
         <img
           src={project.image}
           alt={project.title}
-          className="w-full max-h-[500px] object-cover"
+          className="w-full h-full max-h-[600px] object-cover"
         />
       </div>
 
       {/* Content in center */}
-      <div className="w-full md:w-[660px] flex flex-col justify-start items-start gap-6">
+      <div className="w-full md:w-[700px] flex flex-col justify-start items-start gap-6">
         <div className="w-full flex flex-col gap-6">
           {/* Title & Subtitle */}
           <div className="flex flex-col">
@@ -44,7 +44,7 @@ export default function ProjectShowcaseMid({ id, order = null }) {
             <h3 className="text-lg md:text-lg font-medium text-stone-500">{project.subtitle}</h3>
 
             {/* Info Row */}
-            <div className="flex flex-col md:flex-row flex-wrap pt-4 gap-2 md:gap-6 md:items-center text-sm text-stone-500 font-medium leading-tight">
+            <div className="flex flex-col md:flex-row flex-wrap pt-4 gap-2 md:gap-x-6 md:items-center text-sm text-stone-500 font-medium leading-tight">
               {project.role && (
                 <div className="flex items-center gap-1">
                   <HiOutlineBriefcase className="min-w-5 min-h-5" />
