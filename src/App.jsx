@@ -5,7 +5,7 @@ import ProjectShowcaseMid from "./components/ProjectShowcaseMid";
 
 function App() {
   return (
-    <div className="bg-stone-50">
+    <body className="bg-stone-50">
       <Navbar />
       <main>
         <Hero />
@@ -19,7 +19,7 @@ function App() {
           <ProjectShowcaseMid id="Surena" order="07." />
         </div>
       </main>
-    </div>
+    </body>
   );
 }
 
