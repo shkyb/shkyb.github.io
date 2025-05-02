@@ -55,7 +55,7 @@ export const projects = {
             "Created a concept for a **connected ecosystem** with patient database integration"
         ],
         tags: ["Usability", "User Experience", "UX Research", "Healthcare Design"],
-        image: "/images/dheart-showcase.webp",
+        image: "/images/d-heart-showcase.webp",
         // cta: {
         //     text: "View Case Study",
         //     link: "/projects/d-heart"
@@ -120,7 +120,7 @@ export const projects = {
             "Delivered a responsive prototype focused on clarity, accessibility, and ease of use"
         ],
         tags: ["UX Research", "Usability Testing", "UI Design", "Information Architecture", "Competitive Analysis"],
-        image: "/images/itaairways-showcase.webp",
+        image: "/images/ita-airways-showcase.webp",
         // cta: {
         //     text: "View Case Study",
         //     link: "/projects/ita-airways"
@@ -153,7 +153,7 @@ export const projects = {
             "Built a scalable, evolving system shaped by continuous feedback"
             ],
         tags: ["Design Systems", "UI Architecture", "Component Libraries", "Product Design", "Developer Handoff", "DesignOps"],
-        image: "/images/itaairways-showcase.webp",
+        image: "/images/asemoun-showcase.webp",
         // cta: {
         //     text: "View Case Study",
         //     link: "/projects/asemoun"
@@ -183,7 +183,7 @@ export const projects = {
             "Ensured **component fit and manufacturability** through detailed modeling"
         ],
         tags: ["Industrial Design", "Contactless Payment", "Product Development", "3D Printing", "Design for Manufacturing", "Prototyping"],
-        image: "/images/itaairways-showcase.webp",
+        image: "/images/raven-showcase.webp",
         // cta: {
         //     text: "View Case Study",
         //     link: "/projects/asemoun"
