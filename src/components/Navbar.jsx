@@ -21,7 +21,7 @@ export default function Navbar() {
         <ul className="hidden md:flex w-4/12 justify-between ">
           <NavItem text="Projects" count={6} href="#projects" />
           <NavItem text="About" href="#about" />
-          <NavItem text="Résumé" icon={<HiMiniArrowUpRight />} href="#resume" />
+          <NavItem text="Résumé" icon={<HiMiniArrowUpRight />} href="https://docs.google.com/document/d/1o0fNXL66ROGPvPpEJDpwa3XDLUZQflqOfrZEOSSTsmI/edit?usp=sharing" />
         </ul>
 
         {/* Socials */}
@@ -48,7 +48,7 @@ export default function Navbar() {
             <ul className="space-y-8 text-2xl px-6">
               <NavItem text="Projects" count={6} href="./projects" />
               <NavItem text="About" href="./about" />
-              <NavItem text="Résumé" icon={<HiMiniArrowUpRight />} href="#resume" />
+              <NavItem text="Résumé" icon={<HiMiniArrowUpRight />} href="https://docs.google.com/document/d/1o0fNXL66ROGPvPpEJDpwa3XDLUZQflqOfrZEOSSTsmI/edit?usp=sharing" />
             </ul>
           </div>
           <div className="w-full px-6 border-t align-middle border-stone-200">
