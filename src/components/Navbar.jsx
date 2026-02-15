@@ -18,7 +18,7 @@ export default function Navbar() {
         </div>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex w-4/12 justify-between ">
+        <ul className="hidden md:flex w-4/12 justify-center ">
           {/* <NavItem text="Projects" count={6} href="#projects" /> */}
           {/* <NavItem text="About" href="#about" /> */}
           <NavItem text="Résumé" icon={<HiMiniArrowUpRight />} href="https://docs.google.com/document/d/1o0fNXL66ROGPvPpEJDpwa3XDLUZQflqOfrZEOSSTsmI/edit?usp=sharing" />
