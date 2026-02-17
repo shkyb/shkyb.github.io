@@ -14,7 +14,7 @@ export default function Navbar() {
     <nav className="w-full py-3 bg-stone-50 border-b border-stone-200 fixed top-0 left-0 z-999">
       <div className="max-w-screen-2xl px-6 md:px-12 mx-auto flex items-center justify-between">
         {/* Logo */}
-        <div className="md:w-4/12"> <NavLogo text="Shakib Alipour" icon={<RiCompasses2Line size={20} />} />
+        <div className="md:w-4/12"> <NavLogo text="Shakib Alipour"/>
         </div>
 
         {/* Desktop Menu */}
