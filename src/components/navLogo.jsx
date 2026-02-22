@@ -1,15 +1,14 @@
-export default function NavLogo({ text = null, icon = null }) {
-    return (
-      <span>
-        <a
-          href="./"
-          className="flex items-center uppercase gap-2 text-stone-900 hover:text-red-500 font-normal transition-color delay-150"
-        > 
-          <img src="/favicon.svg" alt="" width="24px" />     
-          {/* {icon && <span>{icon}</span>} */}
-          <span>{text}</span>
-        </a>
-      </span>
-    );
-  }
-  
+import { Link } from "react-router-dom"
+
+export default function NavLogo() {
+  return (
+    <Link to="/" className="inline-flex items-center gap-2 uppercase text-slate-700 hover:text-slate-950 transition-colors">
+      <img
+        src="/favicon/favicon.svg"
+        alt="Shakib logo"
+        className="w-6 h-6"
+      />
+      <span>Shakib Alipour</span>
+    </Link>
+  )
+}

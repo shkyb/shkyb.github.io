@@ -1,66 +1,75 @@
-import { useState } from "react";
-import NavItem from "./navItem";
-import NavLogo from "./navLogo";
-import { HiBars3, HiXMark, HiMiniArrowUpRight } from "react-icons/hi2";
-import { RiBehanceFill, RiLinkedinFill, RiGithubFill, RiCompasses2Line } from "react-icons/ri";
+import { useState } from "react"
+import NavItem from "./navItem"
+import NavLogo from "./navLogo"
 
-
-
+import { HiBars3, HiXMark, HiMiniArrowUpRight } from "react-icons/hi2"
+import { RiBehanceFill, RiLinkedinFill, RiGithubFill } from "react-icons/ri"
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
+
+  const closeMenu = () => setIsOpen(false)
 
   return (
-    <nav className="w-full py-3 bg-stone-50 border-b border-stone-200 fixed top-0 left-0 z-999">
-      <div className="max-w-screen-2xl px-6 md:px-12 mx-auto flex items-center justify-between">
+    <header className="sticky top-0 z-50 bg-slate-50 backdrop-blur border-b border-slate-200">
+      <nav className="mx-auto w-full max-w-screen-2xl px-6 md:px-12 h-12 flex items-center justify-between">
         {/* Logo */}
-        <div className="md:w-4/12"> <NavLogo text="Shakib Alipour"/>
+        <div className="flex items-center">
+          <NavLogo text="Shakib Alipour" />
         </div>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex w-4/12 justify-center ">
-          {/* <NavItem text="Projects" count={6} href="#projects" /> */}
-          {/* <NavItem text="About" href="#about" /> */}
-          <NavItem text="Résumé" icon={<HiMiniArrowUpRight />} href="https://docs.google.com/document/d/1o0fNXL66ROGPvPpEJDpwa3XDLUZQflqOfrZEOSSTsmI/edit?usp=sharing" />
-        </ul>
-
+        <div className="hidden md:flex items-center gap-6">
+          <NavItem text="Home" to="/" />
+          <NavItem text="About" to="/about" />
+          <NavItem text="Projects" to="/projects" count={7} />
+          <NavItem
+            text="Résumé"
+            href="https://docs.google.com/document/d/1o0fNXL66ROGPvPpEJDpwa3XDLUZQflqOfrZEOSSTsmI/edit?usp=sharing"
+            icon={<HiMiniArrowUpRight />}
+          />
+        </div>
         {/* Socials */}
-        <ul className="hidden md:flex w-4/12 justify-end space-x-3">
-          <NavItem icon={<RiGithubFill size={20} />} href="https://github.com/shkyb" />
-          <NavItem icon={<RiBehanceFill size={20} />} href="https://behance.net/shakib-alipour" />
-          <NavItem icon={<RiLinkedinFill size={20} />} href="https://linkedin.com/in/shakib-alipour" />
-        </ul>
+        <div className="hidden md:flex items-center gap-3 pl-2 border-l border-slate-200">
+          <NavItem href="https://github.com/shkyb" icon={<RiGithubFill size={20} />} />
+          <NavItem href="https://behance.net/shakib-alipour" icon={<RiBehanceFill size={20} />} />
+          <NavItem href="https://linkedin.com/in/shakib-alipour" icon={<RiLinkedinFill size={20} />} />
+        </div>
 
         {/* Mobile Hamburger */}
         <button
-          className="md:hidden"
-          onClick={() => setIsOpen(!isOpen)}
+          className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg hover:bg-slate-100 transition"
+          onClick={() => setIsOpen((v) => !v)}
           aria-label="Toggle Menu"
+          aria-expanded={isOpen}
         >
-          {isOpen ? <HiXMark size={24} /> : <HiBars3 size={24} />}
+          {isOpen ? <HiXMark className="text-xl" /> : <HiBars3 className="text-xl" />}
         </button>
-      </div>
+      </nav>
 
       {/* Mobile Dropdown */}
       {isOpen && (
-        <div className="md:hidden bg-stone-50 flex flex-col w-full justify-between pt-24 pb-14 h-screen">
-          <div>
-            <ul className="space-y-8 text-2xl px-6">
-              {/* <NavItem text="Projects" count={6} href="./projects" /> */}
-              {/* <NavItem text="About" href="./about" /> */}
-              <NavItem text="Résumé" icon={<HiMiniArrowUpRight />} href="https://docs.google.com/document/d/1o0fNXL66ROGPvPpEJDpwa3XDLUZQflqOfrZEOSSTsmI/edit?usp=sharing" />
-            </ul>
-          </div>
-          <div className="w-full px-6 border-t align-middle border-stone-200">
-            <ul className="align-middle mt-4 flex gap-8">
-              <NavItem icon={<RiGithubFill size={24} />} href="https://github.com/shkyb" />
-              <NavItem icon={<RiBehanceFill size={24} />} href="https://behance.net/shakib-alipour" />
-              <NavItem icon={<RiLinkedinFill size={24} />} href="https://linkedin.com/in/shakib-alipour" />
-            </ul>
+        <div className="md:hidden border-t border-slate-100 bg-white">
+          <div className="mx-auto w-full max-w-screen-2xl px-6 py-4 flex flex-col gap-4">
+            <NavItem text="Home" to="/" onClick={closeMenu} />
+            <NavItem text="About" to="/about" onClick={closeMenu} />
+            <NavItem text="Projects" to="/projects" onClick={closeMenu} />
+
+            <NavItem
+              text="CV"
+              href="https://docs.google.com/document/d/1o0fNXL66ROGPvPpEJDpwa3XDLUZQflqOfrZEOSSTsmI/edit?usp=sharing"
+              icon={<HiMiniArrowUpRight />}
+              onClick={closeMenu}
+            />
+
+            <div className="pt-3 border-t border-slate-100 flex flex-col gap-3">
+              <NavItem href="https://github.com/shkyb" text="GitHub" icon={<RiGithubFill />} />
+              <NavItem href="https://behance.net/shakib-alipour" text="Behance" icon={<RiBehanceFill />} />
+              <NavItem href="https://linkedin.com/in/shakib-alipour" text="LinkedIn" icon={<RiLinkedinFill />} />
+            </div>
           </div>
         </div>
-
       )}
-    </nav>
-  );
+    </header>
+  )
 }
