@@ -30,9 +30,26 @@ export default function CaseStudyPage() {
             {sections.map((s) => (
               <CaseSection key={s.id} id={s.id}>
                 <h2 className="text-xl font-semibold">{s.label}</h2>
-                <p className="mt-3 text-slate-600">
-                  Placeholder content for {s.id}.
+                <p className="mt-3 text-slate-600 max-w-2xl">
+                  Placeholder content for {s.id}. This section is intentionally longer to test
+                  the sticky sidenav and active highlighting behavior with IntersectionObserver.
                 </p>
+
+                <div className="mt-8 grid gap-4">
+                  {Array.from({ length: 10 }).map((_, i) => (
+                    <div
+                      key={i}
+                      className="rounded-2xl border border-slate-200 bg-white p-5"
+                    >
+                      <p className="text-sm text-slate-500">Block {i + 1}</p>
+                      <p className="mt-2 text-slate-700">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                        veniam.
+                      </p>
+                    </div>
+                  ))}
+                </div>
               </CaseSection>
             ))}
           </div>
