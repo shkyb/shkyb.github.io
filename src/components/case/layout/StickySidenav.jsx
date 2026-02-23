@@ -124,7 +124,7 @@ export function StickySidenav({ sections, className }) {
   }
 
   return (
-    <aside className={cn("hidden lg:block sticky top-24 h-fit", className)}>
+    <aside className={cn("hidden lg:block sticky top-1/3 h-fit", className)}>
       <nav className="flex flex-col gap-1">
         {sections.map((s) => {
           const isActive = s.id === activeId
