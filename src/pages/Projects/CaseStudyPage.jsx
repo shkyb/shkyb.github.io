@@ -3,7 +3,7 @@ import { cases } from "@/case-studies/registry"
 import { CaseContainer } from "@/components/case/layout/Container"
 import { CaseSection } from "@/components/case/layout/Section"
 import { StickySidenav } from "@/components/case/layout/StickySidenav"
-import { CaseHero } from "@/components/case/blocks/CaseHero"
+import { CaseHeroOverview } from "@/components/case/blocks/CaseHeroOverview"
 
 
 export default function CaseStudyPage() {
@@ -17,14 +17,16 @@ export default function CaseStudyPage() {
   return (
     <main className="w-full">
       <CaseContainer className="py-16">
-        <CaseHero
-          eyebrow={caseMeta.year}
-          title={caseMeta.title}
-          subtitle={caseMeta.subtitle}
+        <CaseHeroOverview
+          logo={caseMeta.logo}
+          projectName={caseMeta.title}
+          headline={caseMeta.headline}
           tags={caseMeta.tags}
-          meta={caseMeta.meta}
-          links={caseMeta.links}
           cover={caseMeta.cover}
+          overviewTitle="Overview"
+          overview={caseMeta.overview}
+          links={caseMeta.links}
+          meta={caseMeta.meta}
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-[240px_1fr] gap-10">

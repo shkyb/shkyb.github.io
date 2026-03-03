@@ -1,23 +1,27 @@
+import logo from "./assets/logo.png"
+import cover from "./assets/cover.webp"
+
 export const caseMeta = {
-  year: "2024",
   title: "D-Heart",
-  subtitle: "A brief one-liner about what the project is and why it mattered.",
-  tags: ["UX Design", "Healthcare", "Mobile"],
+  logo: { src: logo, alt: "D-Heart logo" },
+  headline:
+    "Designing a faster, safer way for clinicians to review cardiac events.",
+  tags: ["UX", "Healthcare", "Mobile"],
+  cover: { src: cover, alt: "D-Heart screens" },
+
+  overview:
+    "Short recruiter-focused summary explaining what it is, who it serves, and measurable impact.",
+
+  links: [
+    { label: "Prototype", href: "https://..." },
+  ],
+
   meta: [
     { label: "Role", value: "UX Designer" },
-    { label: "Timeline", value: "8 weeks" },
-    { label: "Team", value: "3 designers, 1 PM" },
+    { label: "Team", value: "3 Designers" },
+    { label: "Year", value: "2024" },
     { label: "Tools", value: "Figma, Miro" },
   ],
-  links: [
-    // optional
-    // { label: "Figma", href: "https://..." },
-  ],
-  cover: {
-    src: "/case-studies/d-heart/cover.jpg",
-    alt: "D-Heart preview",
-    aspect: "aspect-[16/9]", // optional
-  },
 }
 
 export const sections = [
