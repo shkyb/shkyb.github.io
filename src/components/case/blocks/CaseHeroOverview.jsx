@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
+import { FullBleedSection } from "@/components/case/layout/FullBleedSection"
 
 export function CaseHeroOverview({
   className,
@@ -15,58 +16,54 @@ export function CaseHeroOverview({
   links = [],
   meta = [],
 }) {
-  const LOGO = 64
-  const GAP = 12 // gap-3
-
+  // logo (64px) + gap-4 (16px) => 80px => pl-20
   return (
     <section className={cn("w-full", className)}>
-      <div className="mx-auto w-full max-w-5xl px-4 sm:px-6">
-        {/* Top block — LEFT ALIGNED */}
-        <div className="flex flex-col items-start text-left">
-          {/* Logo + Project Name (one row) */}
-          <div className="flex items-center gap-3">
-            {logo?.src ? (
-              <img
-                src={logo.src}
-                alt={logo.alt ?? ""}
-                className="h-16 w-16 object-contain"
-                loading="eager"
-              />
-            ) : (
-              // keeps alignment if logo missing
-              <div className="h-16 w-16" />
-            )}
+      {/* Top text area (5xl) */}
+      <FullBleedSection size="text" className="pt-16 pb-8">
+        <div className="flex items-center gap-4">
+          {logo?.src ? (
+            <img
+              src={logo.src}
+              alt={logo.alt ?? ""}
+              className="h-16 w-16 shrink-0 rounded-md object-contain"
+              loading="eager"
+            />
+          ) : (
+            <div className="h-16 w-16 shrink-0" />
+          )}
 
-            {projectName ? (
-              <span className="text-sm font-medium text-muted-foreground">
-                {projectName}
-              </span>
-            ) : null}
-          </div>
-
-          {/* Headline + tags aligned to the LOGO (not the name) */}
-          <div className="mt-4" >
-            {headline ? (
-              <h1 className="max-w-2xl text-2xl font-semibold tracking-tight sm:text-3xl">
-                {headline}
-              </h1>
-            ) : null}
-
-            {tags?.length ? (
-              <div className="mt-3 flex flex-wrap justify-start gap-2">
-                {tags.map((t) => (
-                  <Badge key={t} variant="secondary">
-                    {t}
-                  </Badge>
-                ))}
-              </div>
-            ) : null}
-          </div>
+          {projectName ? (
+            <h1 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+              {projectName}
+            </h1>
+          ) : null}
         </div>
 
-        {/* Cover image */}
-        {cover?.src ? (
-          <Card className="mt-8 overflow-hidden rounded-2xl">
+        {/* headline + tags aligned with logo's left edge */}
+        <div className="mt-4 pl-20">
+          {headline ? (
+            <p className="text-balance text-lg text-muted-foreground sm:text-xl">
+              {headline}
+            </p>
+          ) : null}
+
+          {tags?.length ? (
+            <div className="mt-3 flex flex-wrap gap-2">
+              {tags.map((t) => (
+                <Badge key={t} variant="secondary">
+                  {t}
+                </Badge>
+              ))}
+            </div>
+          ) : null}
+        </div>
+      </FullBleedSection>
+
+      {/* Cover image (8xl) */}
+      {cover?.src ? (
+        <FullBleedSection size="media" className="pb-10">
+          <Card className="overflow-hidden rounded-2xl">
             <div className={cn("w-full", cover.aspect ?? "aspect-[16/9]")}>
               <img
                 src={cover.src}
@@ -76,17 +73,19 @@ export function CaseHeroOverview({
               />
             </div>
           </Card>
-        ) : null}
+        </FullBleedSection>
+      ) : null}
 
-        {/* Below image — two columns */}
-        <div className="mt-10 grid grid-cols-1 gap-8 md:grid-cols-8">
-          {/* Left (larger) — Overview */}
+      {/* Overview + meta (5xl) */}
+      <FullBleedSection size="text" className="pb-16">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-8">
+          {/* Left (~5/8) */}
           <div className="md:col-span-5">
             <h2 className="text-base font-semibold tracking-tight">
               {overviewTitle}
             </h2>
 
-            <div className="mt-3 text-muted-foreground leading-relaxed">
+            <div className="mt-3 leading-relaxed text-muted-foreground">
               {typeof overview === "string" ? <p>{overview}</p> : overview}
             </div>
 
@@ -108,7 +107,7 @@ export function CaseHeroOverview({
             ) : null}
           </div>
 
-          {/* Right (smaller) — Meta */}
+          {/* Right (~3/8) */}
           <Card className="rounded-2xl md:col-span-3">
             <div className="p-5">
               <dl className="space-y-4">
@@ -122,7 +121,7 @@ export function CaseHeroOverview({
             </div>
           </Card>
         </div>
-      </div>
+      </FullBleedSection>
     </section>
   )
 }

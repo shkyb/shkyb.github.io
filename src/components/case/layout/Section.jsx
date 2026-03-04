@@ -1,16 +1,33 @@
 import { cn } from "@/lib/utils"
+import { FullBleedSection } from "@/components/case/layout/FullBleedSection"
 
-export function CaseSection({ id, children, className, tight = false }) {
+export function CaseSection({
+  id,
+  children,
+  className,
+  innerClassName,
+  tight = false,
+  bgClass,
+  size = "text",
+  navSafe, // NEW: optional override
+}) {
+  const computedNavSafe =
+    navSafe ?? (size === "text") // default: only text sections avoid nav
+
   return (
-    <section
+    <FullBleedSection
       id={id}
+      bgClass={bgClass}
+      size={size}
+      navSafe={computedNavSafe}
       className={cn(
         "scroll-mt-24 py-14 md:py-20",
         tight && "py-10 md:py-14",
         className
       )}
+      innerClassName={innerClassName}
     >
       {children}
-    </section>
+    </FullBleedSection>
   )
 }
