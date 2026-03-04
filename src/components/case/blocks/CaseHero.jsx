@@ -15,7 +15,7 @@ export function CaseHero({
   return (
     <section className={cn("w-full", bgClass, className)}>
       {/* Top area (text width = 5xl) */}
-      <FullBleedSection bgClass={bgClass} size="text" className="pt-14 pb-8">
+      <FullBleedSection bgClass={bgClass} size="fill" className="pt-14 pb-8">
         <div className="flex items-center gap-4">
           {logo?.src ? (
             <img

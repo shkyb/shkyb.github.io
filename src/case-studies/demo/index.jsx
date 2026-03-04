@@ -148,7 +148,7 @@ export const demoCase = {
       id: "context",
       label: "Context",
       bgClass: "bg-background",
-      size: "text",
+      size: "fill",
       render: () => (
         <Prose>
           <h2>Context</h2>
@@ -170,7 +170,7 @@ export const demoCase = {
       id: "problem",
       label: "Problem",
       bgClass: "bg-muted/30",
-      size: "text",
+      size: "fill",
       render: () => (
         <Prose>
           <h2>Problem</h2>
@@ -192,7 +192,7 @@ export const demoCase = {
       id: "goals",
       label: "Goals",
       bgClass: "bg-background",
-      size: "text",
+      size: "fill",
       render: () => (
         <Prose>
           <h2>Goals</h2>
@@ -220,7 +220,7 @@ export const demoCase = {
       id: "research",
       label: "Research",
       bgClass: "bg-muted/30",
-      size: "text",
+      size: "fill",
       render: () => (
         <Prose>
           <h2>Research</h2>
@@ -263,7 +263,7 @@ export const demoCase = {
       id: "design",
       label: "Design",
       bgClass: "bg-muted/30",
-      size: "text",
+      size: "fill",
       render: () => (
         <Prose>
           <h2>Design decisions</h2>
@@ -302,7 +302,7 @@ export const demoCase = {
       id: "outcome",
       label: "Outcome",
       bgClass: "bg-muted/30",
-      size: "text",
+      size: "fill",
       render: () => (
         <Prose>
           <h2>Outcome</h2>
