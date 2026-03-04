@@ -1,6 +1,7 @@
 import React from "react"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { HiMiniArrowUpRight } from "react-icons/hi2"
 
 // assets (adjust filenames to match your folder)
 import logo from "./assets/logo.png"
@@ -109,13 +110,32 @@ export const dHeartCase = {
       "D-Heart is a concept case study focused on simplifying a high-stakes measurement workflow. The goal was to reduce anxiety, improve comprehension, and support repeat use with clear feedback and safe defaults. This page uses placeholder content to validate your layout system (hero merge, full-bleed bands, 5xl text, 8xl media, and sticky sidenav).",
 
     links: [
-      { label: "Prototype", href: "https://example.com", variant: "secondary" },
-      { label: "Figma", href: "https://example.com", variant: "outline" },
+      {
+        label: "Prototype",
+        href: "https://example.com",
+        variant: "secondary",
+        icon: HiMiniArrowUpRight, // optional; fallback exists anyway
+        external: true,           // optional; auto-detects via http(s)
+      },
+      {
+        label: "Figma",
+        href: "https://example.com",
+        variant: "outline",
+        icon: HiMiniArrowUpRight,
+        external: true,
+      },
     ],
 
     meta: [
       { label: "Role", value: "Product Designer (concept)" },
       { label: "Team", value: "Solo" },
+      {
+        label: "Team",
+        value: [
+          { name: "@Jane Doe", href: "https://janedoe.com" },
+          { name: "John Smith", href: "https://johnsmith.com" },
+        ],
+      },
       { label: "Year", value: "2026" },
       { label: "Tools", value: "Figma, FigJam, shadcn/ui, Tailwind" },
     ],

@@ -34,7 +34,7 @@ export default function CaseStudyPage() {
       <div className="relative w-full [--case-nav-w:16rem] [--case-top-offset:120px]">
         {/* Overlay sidenav - starts after hero because it's inside this wrapper */}
         <aside className="pointer-events-none hidden xl:block">
-          <div className="absolute inset-y-0 left-0 w-[var(--case-nav-w)]">
+          <div className="absolute inset-y-0 left-0 w-(--case-nav-w)">
             <div className="pointer-events-auto sticky top-1/3 pl-6 pr-4">
               <StickySidenav sections={navSections} />
             </div>
