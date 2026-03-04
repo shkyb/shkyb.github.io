@@ -19,7 +19,9 @@ export function StickySidenav({ sections, className }) {
     const elements = getEls()
     if (!elements.length) return
 
+    // Align with sticky header + spacing
     const topOffset = 120
+    const lastId = ids[ids.length - 1]
 
     const pickClosestToTop = () => {
       if (clickLockRef.current) return
@@ -29,8 +31,8 @@ export function StickySidenav({ sections, className }) {
         .filter((v) => v.isIntersecting)
 
       if (entries.length) {
-        // rootMargin already positions the “activation band” near the top.
-        // Pick the intersecting section whose top is closest to the topOffset line.
+        // rootMargin already defines the activation band near the top.
+        // Pick the intersecting section whose top is closest to the header line.
         entries.sort((a, b) => {
           const da = Math.abs(a.top - topOffset)
           const db = Math.abs(b.top - topOffset)
@@ -42,12 +44,15 @@ export function StickySidenav({ sections, className }) {
         return
       }
 
+      // Fallback: nothing intersecting (near extremes)
       let bestId = elements[0]?.id ?? null
       let bestDist = Infinity
 
       for (const el of elements) {
         const rect = el.getBoundingClientRect()
+        // only consider sections that extend below the activation line
         if (rect.bottom <= topOffset) continue
+
         const dist = Math.abs(rect.top - topOffset)
         if (dist < bestDist) {
           bestDist = dist
@@ -71,20 +76,42 @@ export function StickySidenav({ sections, className }) {
       },
       {
         root: null,
+        // Activate near the top (close to header line)
         rootMargin: `-${topOffset}px 0px -90% 0px`,
         threshold: [0, 0.01, 0.1],
       }
     )
 
     elements.forEach((el) => observer.observe(el))
+
+    // Bottom sentinel: ensures last section can become active even without footer space
+    const sentinel = document.getElementById("case-end-sentinel")
+    let endObserver = null
+
+    if (sentinel && lastId) {
+      endObserver = new IntersectionObserver(
+        (entries) => {
+          if (clickLockRef.current) return
+          if (entries.some((e) => e.isIntersecting)) {
+            setActiveId((prev) => (prev === lastId ? prev : lastId))
+          }
+        },
+        { root: null, threshold: 0 }
+      )
+      endObserver.observe(sentinel)
+    }
+
+    // Set once on mount / direct loads / hash
     pickClosestToTop()
 
+    // Re-evaluate after assets load (images can shift layout)
     const onLoad = () => pickClosestToTop()
     window.addEventListener("load", onLoad)
 
     return () => {
       window.removeEventListener("load", onLoad)
       observer.disconnect()
+      if (endObserver) endObserver.disconnect()
       stateRef.current.clear()
       if (clickTimerRef.current) window.clearTimeout(clickTimerRef.current)
     }
@@ -92,8 +119,10 @@ export function StickySidenav({ sections, className }) {
 
   const handleClick = (id) => (e) => {
     e.preventDefault()
+
     setActiveId(id)
 
+    // Lock observer updates briefly to prevent flicker mid-smooth-scroll
     clickLockRef.current = true
     if (clickTimerRef.current) window.clearTimeout(clickTimerRef.current)
 
@@ -106,14 +135,14 @@ export function StickySidenav({ sections, className }) {
   }
 
   return (
-    // Sticky viewport column
+    // NOTE: You said you handle the vertical positioning (1/3) in CaseStudyPage.jsx,
+    // so this component stays neutral and just renders the nav content.
     <aside className={cn("h-screen top-0", className)}>
-      {/* Position nav content around 1/3 down the screen */}
       <div className="h-full pr-2">
         <nav className="flex flex-col gap-1">
           {sections.map((s) => {
             const isActive = s.id === activeId
-            const label = s.label ?? s.title ?? s.id // supports label/title defensively
+            const label = s.label ?? s.title ?? s.id
 
             return (
               <a
