@@ -29,7 +29,7 @@ export default function CaseStudyPage() {
       {/* Everything BELOW hero */}
       <div className="relative w-full [--case-nav-w:16rem]">
         {/* Overlay sidenav (does not affect layout) */}
-        <aside className="pointer-events-none hidden lg:block">
+        <aside className="pointer-events-none hidden xl:block">
           <div className="absolute inset-y-0 left-0 w-[var(--case-nav-w)]">
             <div className="pointer-events-auto sticky top-24 pl-6 pr-4">
               <StickySidenav sections={sections} />
