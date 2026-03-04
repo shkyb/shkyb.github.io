@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge"
 
 // assets (adjust filenames to match your folder)
 import logo from "./assets/logo.png"
-import cover from "./assets/cover.jpg"
+import cover from "./assets/cover.webp"
 import screen1 from "./assets/screen-1.jpg"
 import screen2 from "./assets/screen-2.jpg"
 import screen3 from "./assets/screen-3.jpg"

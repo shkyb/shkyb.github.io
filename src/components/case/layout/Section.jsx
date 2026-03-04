@@ -9,10 +9,9 @@ export function CaseSection({
   tight = false,
   bgClass,
   size = "text",
-  navSafe, // NEW: optional override
+  navSafe,
 }) {
-  const computedNavSafe =
-    navSafe ?? (size === "text") // default: only text sections avoid nav
+  const computedNavSafe = navSafe ?? (size === "text")
 
   return (
     <FullBleedSection

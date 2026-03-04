@@ -8,7 +8,7 @@ export function FullBleedSection({
   className,
   innerClassName,
   size = "text",
-  navSafe = false, // NEW
+  navSafe = false,
   children,
 }) {
   return (

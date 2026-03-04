@@ -39,6 +39,7 @@ export default function CaseStudyPage() {
 
         {/* Content flow (full width); each section self-constrains */}
         <div className="min-w-0">
+          
           {sections.map((s) => (
             <CaseSection
               key={s.id}

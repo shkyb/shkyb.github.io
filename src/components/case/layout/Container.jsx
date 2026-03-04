@@ -10,7 +10,7 @@ export function CaseContainer({
   children,
   className,
   size = "text",
-  navSafe = false, // NEW: pad-left to avoid overlay nav on lg+
+  navSafe = false,
 }) {
   return (
     <div

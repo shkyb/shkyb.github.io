@@ -1,6 +1,5 @@
-// Add more cases later
-import * as dHeart from "./d-heart"
+import { dHeartCase } from "./d-heart"
 
 export const cases = {
-    "d-heart": dHeartCase,
+  "d-heart": dHeartCase,
 }
