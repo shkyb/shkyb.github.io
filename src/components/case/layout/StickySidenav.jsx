@@ -20,7 +20,13 @@ export function StickySidenav({ sections, className }) {
     if (!elements.length) return
 
     // Align with sticky header + spacing
-    const topOffset = 120
+    const cssTopOffset = getComputedStyle(document.documentElement)
+      .getPropertyValue("--case-top-offset")
+      .trim()
+    const topOffset = Number.parseInt(cssTopOffset || "120", 10)
+
+
+
     const lastId = ids[ids.length - 1]
 
     const pickClosestToTop = () => {
@@ -127,7 +133,11 @@ export function StickySidenav({ sections, className }) {
     if (clickTimerRef.current) window.clearTimeout(clickTimerRef.current)
 
     const el = document.getElementById(id)
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" })
+
+    const prefersReduced =
+      typeof window !== "undefined" &&
+      window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches
+    if (el) el.scrollIntoView({ behavior: prefersReduced ? "auto" : "smooth", block: "start" })
 
     clickTimerRef.current = window.setTimeout(() => {
       clickLockRef.current = false
@@ -138,7 +148,7 @@ export function StickySidenav({ sections, className }) {
     // NOTE: You said you handle the vertical positioning (1/3) in CaseStudyPage.jsx,
     // so this component stays neutral and just renders the nav content.
     <aside className={cn("h-screen top-0", className)}>
-      <div className="h-full pr-2">
+      <div className="h-full pr-2 overflow-auto overscroll-contain [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         <nav className="flex flex-col gap-1">
           {sections.map((s) => {
             const isActive = s.id === activeId
@@ -150,10 +160,10 @@ export function StickySidenav({ sections, className }) {
                 href={`#${s.id}`}
                 onClick={handleClick(s.id)}
                 className={cn(
-                  "text-sm transition-colors rounded-md px-2 py-1",
+                  "group relative rounded-md px-3 py-1.5 text-sm transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400/60",
                   isActive
-                    ? "text-slate-950 bg-slate-100"
-                    : "text-slate-600 hover:text-slate-950 hover:bg-slate-50"
+                    ? "bg-slate-100 text-slate-950"
+                    : "text-slate-600 hover:bg-slate-50 hover:text-slate-950"
                 )}
                 aria-current={isActive ? "location" : undefined}
               >

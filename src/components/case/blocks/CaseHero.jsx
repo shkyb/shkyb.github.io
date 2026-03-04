@@ -15,7 +15,7 @@ export function CaseHero({
   return (
     <section className={cn("w-full", bgClass, className)}>
       {/* Top area (text width = 5xl) */}
-      <FullBleedSection bgClass={bgClass} size="text" className="pt-16 pb-8">
+      <FullBleedSection bgClass={bgClass} size="text" className="pt-14 pb-8">
         <div className="flex items-center gap-4">
           {logo?.src ? (
             <img
@@ -57,7 +57,7 @@ export function CaseHero({
 
       {/* Cover (media width = 8xl) */}
       {cover?.src ? (
-        <FullBleedSection bgClass={bgClass} size="media" className="pb-10">
+        <FullBleedSection bgClass={bgClass} size="media" className="pb-8">
           <Card className="overflow-hidden rounded-2xl">
             <div className={cn("w-full", cover.aspect ?? "aspect-[16/9]")}>
               <img

@@ -16,7 +16,7 @@ export function CaseOverview({
       id={id}
       bgClass={bgClass}
       size="text"
-      className="scroll-mt-24 pb-16"
+      className="scroll-mt-(--case-top-offset) pb-16"
     >
       <div className="grid grid-cols-1 gap-8 md:grid-cols-8">
         {/* Left (~5/8) */}

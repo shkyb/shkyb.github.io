@@ -20,7 +20,7 @@ export function CaseSection({
       size={size}
       navSafe={computedNavSafe}
       className={cn(
-        "scroll-mt-24 py-14 md:py-20",
+        "scroll-mt-(--case-top-offset) py-14 md:py-20",
         tight && "py-10 md:py-14",
         className
       )}
