@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils"
 
 const SIZE_TO_MAX_W = {
   text: "max-w-5xl",
-  media: "max-w-8xl",
+  media: "max-w-7xl",
   page: "max-w-screen-2xl",
 }
 
