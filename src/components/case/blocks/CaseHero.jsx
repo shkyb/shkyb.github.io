@@ -1,76 +1,64 @@
 import { cn } from "@/lib/utils"
 import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
+import { Card } from "@/components/ui/card"
+import { FullBleedSection } from "@/components/case/layout/FullBleedSection"
 
 export function CaseHero({
-  eyebrow, // e.g. "2024 • UX Case Study"
-  title,
-  subtitle,
-  tags = [],
-  meta = [], // [{ label: "Role", value: "UX Designer" }, ...]
-  links = [], // [{ label: "Figma", href: "..." }]
-  cover, // { src, alt, aspect? } OR { node: <Component/> }
   className,
+  logo,
+  projectName,
+  headline,
+  tags = [],
+  cover, // { src, alt, aspect? }
+  bgClass,
 }) {
   return (
-    <header className={cn("space-y-8", className)}>
-      <div className="space-y-4">
-        {eyebrow ? (
-          <p className="text-sm text-muted-foreground">{eyebrow}</p>
-        ) : null}
+    <section className={cn("w-full", bgClass, className)}>
+      {/* Top area (text width = 5xl) */}
+      <FullBleedSection bgClass={bgClass} size="text" className="pt-16 pb-8">
+        <div className="flex items-center gap-4">
+          {logo?.src ? (
+            <img
+              src={logo.src}
+              alt={logo.alt ?? ""}
+              className="h-16 w-16 shrink-0 rounded-md object-contain"
+              loading="eager"
+            />
+          ) : (
+            <div className="h-16 w-16 shrink-0 rounded-md bg-muted" />
+          )}
 
-        <div className="space-y-3">
-          <h1 className="text-3xl md:text-4xl font-semibold tracking-tight">
-            {title}
-          </h1>
-
-          {subtitle ? (
-            <p className="max-w-2xl text-base md:text-lg text-muted-foreground">
-              {subtitle}
-            </p>
+          {projectName ? (
+            <h1 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+              {projectName}
+            </h1>
           ) : null}
         </div>
 
-        {(tags.length > 0 || links.length > 0) && (
-          <div className="flex flex-wrap items-center gap-2 pt-1">
-            {tags.map((tag) => (
-              <Badge key={tag} variant="secondary">
-                {tag}
-              </Badge>
-            ))}
+        {/* Headline + tags aligned to the logo's left edge */}
+        <div className="mt-4 pl-20">
+          {headline ? (
+            <p className="text-balance text-lg text-muted-foreground sm:text-xl">
+              {headline}
+            </p>
+          ) : null}
 
-            {links.map((l) => (
-              <Button key={l.href} variant="outline" size="sm" asChild>
-                <a href={l.href} target="_blank" rel="noreferrer">
-                  {l.label}
-                </a>
-              </Button>
-            ))}
-          </div>
-        )}
-      </div>
-
-      {meta.length > 0 && (
-        <Card className="rounded-2xl">
-          <CardContent className="p-5">
-            <dl className="grid grid-cols-2 gap-4 md:grid-cols-4">
-              {meta.map((m) => (
-                <div key={m.label} className="space-y-1">
-                  <dt className="text-xs text-muted-foreground">{m.label}</dt>
-                  <dd className="text-sm font-medium">{m.value}</dd>
-                </div>
+          {tags?.length ? (
+            <div className="mt-3 flex flex-wrap gap-2">
+              {tags.map((t) => (
+                <Badge key={t} variant="secondary">
+                  {t}
+                </Badge>
               ))}
-            </dl>
-          </CardContent>
-        </Card>
-      )}
+            </div>
+          ) : null}
+        </div>
+      </FullBleedSection>
 
-      {cover ? (
-        <Card className="overflow-hidden rounded-2xl">
-          {"node" in cover && cover.node ? (
-            <div className="w-full">{cover.node}</div>
-          ) : (
+      {/* Cover (media width = 8xl) */}
+      {cover?.src ? (
+        <FullBleedSection bgClass={bgClass} size="media" className="pb-10">
+          <Card className="overflow-hidden rounded-2xl">
             <div className={cn("w-full", cover.aspect ?? "aspect-[16/9]")}>
               <img
                 src={cover.src}
@@ -79,9 +67,9 @@ export function CaseHero({
                 loading="eager"
               />
             </div>
-          )}
-        </Card>
+          </Card>
+        </FullBleedSection>
       ) : null}
-    </header>
+    </section>
   )
 }
