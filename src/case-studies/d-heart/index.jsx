@@ -308,15 +308,37 @@ export const dHeartCase = {
       render: () => (
         <Prose>
           <h2>Learnings</h2>
+
           <p>
-            Small copy and feedback decisions matter more in high-stakes contexts. The biggest gains came from clarifying
-            “what to do next” and “what this means” rather than adding more features.
+            Small copy and feedback decisions matter more in high-stakes contexts.
+            The biggest gains came from clarifying “what to do next” and “what this means”
+            rather than adding more features.
           </p>
+
+          <h3>What worked</h3>
+          <ul>
+            <li>Explicit success states reduced uncertainty</li>
+            <li>Step-based guidance improved completion confidence</li>
+            <li>Replacing jargon with plain language reduced misinterpretation</li>
+          </ul>
+
+          <h3>What I’d improve next</h3>
           <p>
-            Future exploration: offline support, accessibility testing, and clinician-facing configuration for thresholds.
+            If this were a shipped product, the next iteration would focus on accessibility,
+            offline support, and clinician-configurable thresholds. The goal would be to
+            keep the experience calm while increasing trust in the results.
           </p>
+
+          <p>
+            This extra space is intentionally here to ensure the last section reliably
+            becomes active in the sidenav even without a real footer.
+          </p>
+
+          <PlaceholderCallouts />
+          <LongFillerList />
+          <LongFillerList />
         </Prose>
       ),
-    },
+    }
   ],
 }

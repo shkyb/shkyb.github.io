@@ -63,6 +63,7 @@ export default function CaseStudyPage() {
               {typeof s.render === "function" ? s.render() : s.content}
             </CaseSection>
           ))}
+          <div id="case-end-sentinel" className="h-[40vh]" />
         </div>
       </div>
     </main>

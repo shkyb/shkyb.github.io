@@ -29,12 +29,12 @@ export function StickySidenav({ sections, className }) {
         .filter((v) => v.isIntersecting)
 
       if (entries.length) {
+        // rootMargin already positions the “activation band” near the top.
+        // Pick the intersecting section whose top is closest to the topOffset line.
         entries.sort((a, b) => {
-          const da = a.top - topOffset
-          const db = b.top - topOffset
-          const sa = da >= 0 ? da : Math.abs(da) * 2
-          const sb = db >= 0 ? db : Math.abs(db) * 2
-          return sa - sb
+          const da = Math.abs(a.top - topOffset)
+          const db = Math.abs(b.top - topOffset)
+          return da - db
         })
 
         const next = entries[0].id
@@ -71,7 +71,7 @@ export function StickySidenav({ sections, className }) {
       },
       {
         root: null,
-        rootMargin: `-${topOffset}px 0px -70% 0px`,
+        rootMargin: `-${topOffset}px 0px -90% 0px`,
         threshold: [0, 0.01, 0.1],
       }
     )
