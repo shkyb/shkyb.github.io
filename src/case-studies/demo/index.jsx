@@ -2,6 +2,8 @@ import React from "react"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { HiMiniArrowUpRight } from "react-icons/hi2"
+import { Metrics } from "@/components/case/blocks/Metrics"
+import { SectionHeading } from "@/components/case/blocks/SectionHeading"
 
 // assets (adjust filenames to match your folder)
 import logo from "./assets/logo.png"
@@ -298,27 +300,68 @@ export const demoCase = {
       ),
     },
 
-    {
-      id: "outcome",
-      label: "Outcome",
-      bgClass: "bg-muted/30",
-      size: "fill",
-      render: () => (
-        <Prose>
-          <h2>Outcome</h2>
-          <p>
-            This is a concept case study used to validate your layout system. In a real project, you’d summarize measurable
-            impact and what shipped. For now, this section helps test the bottom of the page and the final active state in
-            the sidenav.
-          </p>
-          <ul>
-            <li>Cleaner measurement flow with explicit “success” states</li>
-            <li>Reduced jargon and improved clarity</li>
-            <li>Sharable summaries for clinician conversations</li>
-          </ul>
-        </Prose>
-      ),
-    },
+{
+  id: "outcome",
+  label: "Outcome",
+  bgClass: "bg-muted/30",
+  size: "text",
+  render: () => (
+    <>
+      <SectionHeading
+        title="Outcome"
+        subtitle="A quick snapshot of impact (placeholder metrics for layout testing)."
+      />
+
+      <Metrics
+        items={[
+          {
+            label: "Onboarding drop-off",
+            value: "–32%",
+            note: "after simplifying the first-time flow",
+            delta: "↓",
+            deltaTone: "good",
+            icon:"facebook",
+          },
+          {
+            label: "Task completion",
+            value: "+18%",
+            note: "first-time users",
+            delta: "ok",
+            deltaTone: "good",
+          },
+          {
+            label: "Time to first result",
+            value: "–24s",
+            note: "median time",
+            delta: "↓",
+            deltaTone: "good",
+          },
+          {
+            label: "Satisfaction",
+            value: "4.6/5",
+            note: "post-task survey",
+            deltaTone: "neutral",
+          },
+        ]}
+        columns={4}
+        variant="card"
+      />
+
+      {/* Keep your existing narrative under it (Prose, bullets, etc.) */}
+      <Prose>
+        <p>
+          This is a concept case study used to validate your layout system. In a real project, you’d summarize measurable
+          impact and what shipped.
+        </p>
+        <ul>
+          <li>Cleaner measurement flow with explicit “success” states</li>
+          <li>Reduced jargon and improved clarity</li>
+          <li>Sharable summaries for clinician conversations</li>
+        </ul>
+      </Prose>
+    </>
+  ),
+},
 
     {
       id: "learnings",

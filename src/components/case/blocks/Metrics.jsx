@@ -79,7 +79,7 @@ export function Metrics({
                   <Prose>
                     <p
                       className={cn(
-                        "m-0 text-xs font-medium tracking-tight text-muted-foreground",
+                        "m-0 text-xs font-semibold tracking-normal text-muted-foreground",
                         size === "sm" ? "leading-5" : "leading-6"
                       )}
                     >
