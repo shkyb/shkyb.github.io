@@ -46,7 +46,7 @@ export function Figure({
           src={src}
           alt={alt}
           loading={loading}
-          className={cn("h-auto w-full", aspect ? "h-full" : null, imgFit, imgClassName)}
+          className={cn("h-auto w-full mt-0", aspect ? "h-full" : null, imgFit, imgClassName)}
         />
       </div>
 
