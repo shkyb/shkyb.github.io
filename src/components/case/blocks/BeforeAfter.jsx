@@ -4,21 +4,28 @@ import { Figure } from "@/components/case/blocks/Figure"
 /**
  * BeforeAfter
  *
- * Props:
- * - before: {
- *     src: string
- *     alt: string
- *     caption?: ReactNode
- *     label?: ReactNode      // optional override; default "Before"
- *     aspect?: string
- *     fit?: "cover" | "contain"
- *     frame?: "none" | "soft" | "card"
- *   }
- * - after: same shape, default label "After"
- * - layout?: "stack" | "split"          // default "split" (stack on mobile anyway)
- * - gap?: "sm" | "md" | "lg"            // default "md"
- * - note?: ReactNode                    // optional note below comparison
- * - className?: string
+ * before/after support both image and video via Figure.
+ *
+ * before: {
+ *   src: string
+ *   alt?: string
+ *   type?: "auto" | "image" | "video"
+ *   caption?: ReactNode
+ *   label?: ReactNode
+ *   credit?: ReactNode
+ *   aspect?: string
+ *   fit?: "cover" | "contain"
+ *   frame?: "none" | "soft" | "card"
+ *   loading?: "lazy" | "eager"
+ *
+ *   // video passthrough
+ *   controls?: boolean
+ *   autoPlay?: boolean
+ *   loop?: boolean
+ *   muted?: boolean
+ *   playsInline?: boolean
+ *   poster?: string
+ * }
  */
 export function BeforeAfter({
   before,
@@ -31,7 +38,6 @@ export function BeforeAfter({
   if (!before?.src || !after?.src) return null
 
   const gridGap = gap === "sm" ? "gap-3" : gap === "lg" ? "gap-6" : "gap-4"
-
   const isStack = layout === "stack"
 
   return (
@@ -45,28 +51,46 @@ export function BeforeAfter({
       >
         <Figure
           src={before.src}
-          alt={before.alt}
+          alt={before.alt ?? ""}
+          type={before.type ?? "auto"}
           label={before.label ?? "Before"}
           caption={before.caption}
+          credit={before.credit}
           aspect={before.aspect}
           fit={before.fit}
           frame={before.frame ?? "soft"}
+          loading={before.loading}
+          // video passthrough
+          controls={before.controls}
+          autoPlay={before.autoPlay}
+          loop={before.loop}
+          muted={before.muted}
+          playsInline={before.playsInline}
+          poster={before.poster}
         />
 
         <Figure
           src={after.src}
-          alt={after.alt}
+          alt={after.alt ?? ""}
+          type={after.type ?? "auto"}
           label={after.label ?? "After"}
           caption={after.caption}
+          credit={after.credit}
           aspect={after.aspect}
           fit={after.fit}
           frame={after.frame ?? "soft"}
+          loading={after.loading}
+          // video passthrough
+          controls={after.controls}
+          autoPlay={after.autoPlay}
+          loop={after.loop}
+          muted={after.muted}
+          playsInline={after.playsInline}
+          poster={after.poster}
         />
       </div>
 
-      {note ? (
-        <p className="text-sm text-muted-foreground">{note}</p>
-      ) : null}
+      {note ? <p className="text-sm text-muted-foreground">{note}</p> : null}
     </div>
   )
 }

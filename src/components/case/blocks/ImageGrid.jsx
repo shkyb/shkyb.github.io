@@ -6,28 +6,31 @@ import { Figure } from "@/components/case/blocks/Figure"
  *
  * items: Array<{
  *   src: string
- *   alt: string
+ *   alt?: string
+ *   type?: "auto" | "image" | "video"
  *   caption?: ReactNode
  *   label?: ReactNode
  *   credit?: ReactNode
- *   aspect?: string              // e.g. "aspect-[4/3]" | "aspect-[16/9]" | "aspect-square"
+ *   aspect?: string
  *   fit?: "cover" | "contain"
  *   frame?: "none" | "soft" | "card"
  *   loading?: "lazy" | "eager"
+ *
+ *   // video passthrough
+ *   controls?: boolean
+ *   autoPlay?: boolean
+ *   loop?: boolean
+ *   muted?: boolean
+ *   playsInline?: boolean
+ *   poster?: string
  * }>
  *
  * Props:
- * - cols?: 1 | 2 | 3 | 4          // default auto based on item count (max 3)
- * - gap?: "sm" | "md" | "lg"      // default "md"
- * - alignCaptions?: boolean       // default false (caption under each figure as normal)
+ * - cols?: 1 | 2 | 3 | 4
+ * - gap?: "sm" | "md" | "lg"
  * - className?: string
  */
-export function ImageGrid({
-  items = [],
-  cols,
-  gap = "md",
-  className,
-}) {
+export function ImageGrid({ items = [], cols, gap = "md", className }) {
   if (!items?.length) return null
 
   const colCount = cols ?? Math.min(3, Math.max(1, items.length))
@@ -49,7 +52,8 @@ export function ImageGrid({
         <Figure
           key={it.src ?? idx}
           src={it.src}
-          alt={it.alt}
+          alt={it.alt ?? ""}
+          type={it.type ?? "auto"}
           caption={it.caption}
           label={it.label}
           credit={it.credit}
@@ -57,6 +61,13 @@ export function ImageGrid({
           fit={it.fit}
           frame={it.frame}
           loading={it.loading}
+          // video passthrough
+          controls={it.controls}
+          autoPlay={it.autoPlay}
+          loop={it.loop}
+          muted={it.muted}
+          playsInline={it.playsInline}
+          poster={it.poster}
         />
       ))}
     </div>
