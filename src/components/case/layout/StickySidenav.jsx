@@ -147,7 +147,7 @@ export function StickySidenav({ sections, className }) {
   return (
     // NOTE: You said you handle the vertical positioning (1/3) in CaseStudyPage.jsx,
     // so this component stays neutral and just renders the nav content.
-    <aside className={cn("h-screen top-0", className)}>
+    <aside className={cn("h-fit top-0", className)}>
       <div className="h-full pr-2 overflow-auto overscroll-contain [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         <nav className="flex flex-col gap-1">
           {sections.map((s) => {
