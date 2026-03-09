@@ -4,6 +4,19 @@ import { Badge } from "@/components/ui/badge"
 import { HiMiniArrowUpRight } from "react-icons/hi2"
 import { Metrics } from "@/components/case/blocks/Metrics"
 import { SectionHeading } from "@/components/case/blocks/SectionHeading"
+import { Figure } from "@/components/case/blocks/Figure"
+import { ImageGrid } from "@/components/case/blocks/ImageGrid"
+import { BeforeAfter } from "@/components/case/blocks/BeforeAfter"
+import { Timeline } from "@/components/case/blocks/Timeline"
+import { NextProject } from "@/components/case/blocks/NextProject"
+import { InsightList } from "@/components/case/blocks/InsightList"
+import { PullQuote } from "@/components/case/blocks/PullQuote"
+import { ComparisonTable } from "@/components/case/blocks/ComparisonTable"
+import { ProcessStep } from "@/components/case/blocks/ProcessStep"
+import { ProblemStatement } from "@/components/case/blocks/ProblemStatement"
+
+
+
 
 // assets (adjust filenames to match your folder)
 import logo from "./assets/logo.png"
@@ -45,24 +58,8 @@ function ImageCard({ src, alt }) {
   )
 }
 
-function MediaGrid() {
-  return (
-    <div className="grid gap-4 md:grid-cols-3">
-      <ImageCard src={screen1} alt="D-Heart screen 1" />
-      <ImageCard src={screen2} alt="D-Heart screen 2" />
-      <ImageCard src={screen3} alt="D-Heart screen 3" />
-    </div>
-  )
-}
 
-function ProcessStrip() {
-  return (
-    <div className="grid gap-4 md:grid-cols-2">
-      <ImageCard src={process1} alt="Process artifact 1" />
-      <ImageCard src={process2} alt="Process artifact 2" />
-    </div>
-  )
-}
+
 
 function KPIBadges() {
   const kpis = ["12 interviews", "2 usability rounds", "3 core flows", "8 weeks"]
@@ -164,9 +161,112 @@ export const demoCase = {
           </p>
           <KPIBadges />
           <PlaceholderCallouts />
+          <Figure
+  src={cover}
+  alt="D-Heart hero cover"
+  frame="soft"
+  aspect="aspect-video"
+  caption="Concept cover used to validate the wide media container."
+/>
         </Prose>
+        
       ),
     },
+    {
+  id: "framing",
+  label: "Framing",
+  bgClass: "bg-background",
+  size: "fill",
+  render: () => (
+    <>
+      <SectionHeading
+        title="Problem framing"
+        subtitle="A concise summary of the challenge, intended outcome, and project constraints."
+      />
+
+      <ProblemStatement
+        variant="grid"
+        items={[
+          {
+            label: "Problem",
+            value:
+              "Users often felt uncertain during the measurement flow and were unsure whether the result was valid.",
+          },
+          {
+            label: "Goal",
+            value:
+              "Reduce anxiety, improve clarity, and help users complete the flow with more confidence.",
+          },
+          {
+            label: "Constraints",
+            value:
+              "Clinical accuracy, regulated wording, and limited tolerance for ambiguity in a high-stakes context.",
+          },
+          {
+            label: "Success criteria",
+            value:
+              "Higher completion confidence, clearer result interpretation, and smoother repeat usage over time.",
+          },
+        ]}
+      />
+    </>
+  ),
+},
+
+{
+  id: "timeline",
+  label: "Timeline",
+  bgClass: "bg-background",
+  size: "small",
+  render: () => (
+    <>
+      <SectionHeading
+        title="Timeline"
+        subtitle="A lightweight view of phases, deliverables, and what we shipped."
+      />
+
+      <Timeline
+        items={[
+          {
+            title: "Discovery",
+            range: "Week 1",
+            body: "Interviewed target users and mapped the current measurement journey.",
+            bullets: ["12 interviews", "Journey map", "Terminology audit"],
+            tone: "info",
+          },
+          {
+            title: "Define",
+            range: "Week 2",
+            body: "Translated findings into a simpler task model and success criteria.",
+            bullets: ["Problem framing", "MVP scope", "Success metrics"],
+          },
+          {
+            title: "Design",
+            range: "Weeks 3–5",
+            body: "Created flows and UI states focused on feedback and reassurance.",
+            bullets: ["Core flow wireframes", "Hi-fi prototype", "Content guidelines"],
+            tone: "success",
+          },
+          {
+            title: "Test & iterate",
+            range: "Weeks 6–7",
+            body: "Validated clarity and reduced uncertainty with usability sessions.",
+            bullets: ["2 usability rounds", "Copy refinements", "Edge-case handling"],
+            tone: "warning",
+          },
+          {
+            title: "Outcome",
+            range: "Week 8",
+            body: "Prepared a shareable summary experience for clinician conversations.",
+            bullets: ["Summary screen", "Share flow", "Design QA checklist"],
+            tone: "neutral",
+          },
+        ]}
+      />
+    </>
+  ),
+},
+
 
     {
       id: "problem",
@@ -189,6 +289,58 @@ export const demoCase = {
         </Prose>
       ),
     },
+
+{
+  id: "process",
+  label: "Process",
+  bgClass: "bg-background",
+  size: "fill",
+  render: () => (
+    <>
+      <SectionHeading
+        title="Process"
+        subtitle="A simplified overview of how the concept evolved."
+      />
+
+      <div className="space-y-12">
+        <ProcessStep
+          step="Step 01"
+          title="Understanding the measurement journey"
+          description="We interviewed users to identify the moments where uncertainty interrupted confidence."
+          bullets={[
+            "12 discovery interviews",
+            "Journey mapping",
+            "Terminology analysis",
+          ]}
+          figure={{
+            src: process1,
+            alt: "Journey map artifact",
+            caption: "Early journey map capturing uncertainty points.",
+            aspect: "aspect-[16/9]",
+          }}
+        />
+
+        <ProcessStep
+          step="Step 02"
+          title="Simplifying the task structure"
+          description="We reorganized the experience around user intent rather than system features."
+          bullets={[
+            "Goal-based IA",
+            "Measurement flow redesign",
+            "Clear feedback states",
+          ]}
+          figure={{
+            src: process2,
+            alt: "Flow redesign",
+            caption: "Goal-led task grouping simplified the flow.",
+            aspect: "aspect-[16/9]",
+          }}
+          reverse
+        />
+      </div>
+    </>
+  ),
+},
 
     {
       id: "goals",
@@ -218,36 +370,64 @@ export const demoCase = {
       ),
     },
 
-    {
-      id: "research",
-      label: "Research",
-      bgClass: "bg-muted/30",
-      size: "fill",
-      render: () => (
-        <Prose>
-          <h2>Research</h2>
-          <p>
-            We ran lightweight discovery interviews and a quick terminology test using paper and clickable prototypes.
-            Participants repeatedly asked for:
-          </p>
-          <ul>
-            <li>Clear “success” confirmation</li>
-            <li>A simple explanation of the number</li>
-            <li>Ability to compare results over time</li>
-          </ul>
-          <p>
-            This section is intentionally long to test IntersectionObserver accuracy over multiple paragraphs and cards.
-          </p>
-          <LongFillerList />
-        </Prose>
-      ),
-    },
+  {
+  id: "research",
+  label: "Research",
+  bgClass: "bg-muted/30",
+  size: "fill",
+  render: () => (
+    <>
+      <SectionHeading
+        title="Research"
+        subtitle="We ran lightweight discovery interviews and terminology testing to identify where confidence broke down."
+      />
+      <PullQuote
+        quote="I’m not sure if I did it correctly, and I don’t know whether I should trust this result."
+        author="Participant"
+        role="Usability session"
+        size="lg"
+      />
+      <PullQuote
+  quote="We redesigned around reassurance and clarity, not around feature exposure."
+  role="Core design principle"
+  align="center"
+  size="lg"
+  showMark={false}
+/>
+<PullQuote
+  quote="Small changes in feedback and language created the biggest increase in confidence."
+  tone="muted"
+  size="md"
+/>
+      <InsightList
+        items={[
+          {
+            eyebrow: "Insight 01",
+            title: "Users needed explicit confirmation that the measurement was successful.",
+            description: "Participants often repeated actions because they were unsure whether the result was valid.",
+          },
+          {
+            eyebrow: "Insight 02",
+            title: "Medical terminology reduced comprehension and increased hesitation.",
+            description: "Users understood the goal, but many struggled to interpret labels and result states.",
+          },
+          {
+            eyebrow: "Insight 03",
+            title: "History and measurement views felt disconnected.",
+            description: "Participants wanted a clearer sense of how one result related to their broader progress over time.",
+          },
+        ]}
+      />
+    </>
+  ),
+},
+
 
     {
       id: "flows",
       label: "Core flows",
       bgClass: "bg-background",
-      size: "media", // allows max-w-8xl
+      size: "page", // allows max-w-8xl
       render: () => (
         <div className="space-y-6">
           <div>
@@ -256,49 +436,145 @@ export const demoCase = {
               Wide section (8xl). This should feel noticeably wider than text sections and can sit under the overlay nav.
             </p>
           </div>
-          <ProcessStrip />
+          <ImageGrid
+  cols={2}
+  items={[
+    {
+      src: process1,
+      alt: "Process artifact 1",
+      frame: "soft",
+      label: "Artifact",
+      caption: "Early flow sketch used to validate step clarity.",
+    },
+    {
+      src: process2,
+      alt: "Process artifact 2",
+      frame: "soft",
+      label: "Artifact",
+      caption: "IA draft showing goal-led grouping.",
+    },
+  ]}
+/>
         </div>
       ),
     },
 
-    {
-      id: "design",
-      label: "Design",
-      bgClass: "bg-muted/30",
-      size: "fill",
-      render: () => (
-        <Prose>
-          <h2>Design decisions</h2>
-          <p>
-            The UI prioritizes legibility and feedback. The measurement flow uses a step-based pattern with high-contrast
-            states and explicit confirmation. We avoided icon-only actions in critical steps.
-          </p>
-          <h3>Information hierarchy</h3>
-          <p>
-            We grouped content into “Measure”, “Understand”, and “History” to match user intent rather than system features.
-          </p>
-          <PlaceholderCallouts />
-        </Prose>
-      ),
-    },
+   {
+  id: "design",
+  label: "Design",
+  bgClass: "bg-muted/30",
+  size: "fill",
+  render: () => (
+    <>
+      <SectionHeading
+        title="Design decisions"
+        subtitle="We moved from a feature-led structure to a clearer, confidence-building experience."
+      />
 
+      <ComparisonTable
+        columns={[
+          { key: "before", label: "Before" },
+          { key: "after", label: "After", emphasis: true },
+        ]}
+        rows={[
+          {
+            before: "Dense terminology and unclear result states created hesitation.",
+            after: "Plain language and explicit confirmation improved confidence.",
+          },
+          {
+            before: "History and measurement lived as separate mental models.",
+            after: "Result context and progress over time were connected more clearly.",
+          },
+          {
+            before: "Users had to infer whether they completed the step correctly.",
+            after: "Each step included direct feedback and a clear next action.",
+          },
+        ]}
+      />
+      <ComparisonTable
+  columns={[
+    { key: "finding", label: "Research finding" },
+    { key: "response", label: "Design response", emphasis: true },
+  ]}
+  rows={[
     {
-      id: "screens",
-      label: "Screens",
-      bgClass: "bg-background",
-      size: "media",
-      render: () => (
-        <div className="space-y-6">
-          <div>
-            <h2 className="text-xl font-semibold tracking-tight">Screens</h2>
-            <p className="mt-2 max-w-2xl text-muted-foreground">
-              Another 8xl section to validate repeated wide blocks mid-page.
-            </p>
-          </div>
-          <MediaGrid />
-        </div>
-      ),
+      finding: "Users repeated actions because they were unsure whether the measurement was successful.",
+      response: "Added explicit success confirmation and clear completion states.",
     },
+    {
+      finding: "Medical labels reduced comprehension.",
+      response: "Replaced jargon with plain language and lightweight explanations.",
+    },
+    {
+      finding: "Progress over time felt disconnected from single-session results.",
+      response: "Introduced a more coherent summary and history relationship.",
+    },
+  ]}
+/>
+    </>
+  ),
+},
+
+{
+  id: "before-after",
+  label: "Before/After",
+  bgClass: "bg-background",
+  size: "media",
+  render: () => (
+    <div className="space-y-6">
+      <div>
+        <h2 className="text-xl font-semibold tracking-tight">Before / After</h2>
+        <p className="mt-2 max-w-2xl text-muted-foreground">
+          A side-by-side comparison to highlight what changed and why.
+        </p>
+      </div>
+
+      <BeforeAfter
+        before={{
+          src: screen1,
+          alt: "Before: old measurement screen",
+          caption: "Unclear success criteria and dense terminology increased uncertainty.",
+          aspect: "aspect-[16/9]",
+          frame: "soft",
+        }}
+        after={{
+          src: screen2,
+          alt: "After: redesigned measurement screen",
+          caption: "Step-based guidance with explicit confirmation improved confidence.",
+          aspect: "aspect-[16/9]",
+          frame: "soft",
+        }}
+        note="Tip: keep captions short and focus on the design principle, not UI trivia."
+      />
+    </div>
+  ),
+}    ,
+
+{
+  id: "screens",
+  label: "Screens",
+  bgClass: "bg-background",
+  size: "fill",
+  render: () => (
+    <div className="space-y-6">
+      <div>
+        <h2 className="text-xl font-semibold tracking-tight">Screens</h2>
+        <p className="mt-2 max-w-2xl text-muted-foreground">
+          Another 7xl section to validate repeated wide blocks mid-page.
+        </p>
+      </div>
+
+      <ImageGrid
+        // cols={3}
+        items={[
+          { src: screen1, alt: "D-Heart screen 1", frame: "soft" },
+          { src: screen2, alt: "D-Heart screen 2", frame: "soft" },
+          { src: screen3, alt: "D-Heart screen 3", frame: "soft" },
+        ]}
+      />
+    </div>
+  ),
+},
 
 {
   id: "outcome",
@@ -363,45 +639,54 @@ export const demoCase = {
   ),
 },
 
+{
+  id: "learnings",
+  label: "Learnings",
+  bgClass: "bg-background",
+  size: "fill",
+  render: () => (
+    <>
+      <SectionHeading
+        title="Learnings"
+        subtitle="The most valuable improvements came from clarity, not complexity."
+      />
+
+      <InsightList
+        variant="divided"
+        items={[
+          {
+            title: "Success feedback matters more than extra features in high-stakes flows.",
+            description: "Reducing ambiguity improved confidence faster than adding more information.",
+          },
+          {
+            title: "Plain language is a UX tool, not just a content decision.",
+            description: "Replacing jargon reduced hesitation and made the flow feel safer.",
+          },
+          {
+            title: "Task structure should reflect user intent, not system architecture.",
+            description: "Grouping content by goals helped users understand what to do next.",
+          },
+        ]}
+      />
+    </>
+  ),
+},
     {
-      id: "learnings",
-      label: "Learnings",
-      bgClass: "bg-background",
-      size: "text",
-      render: () => (
-        <Prose>
-          <h2>Learnings</h2>
-
-          <p>
-            Small copy and feedback decisions matter more in high-stakes contexts.
-            The biggest gains came from clarifying “what to do next” and “what this means”
-            rather than adding more features.
-          </p>
-
-          <h3>What worked</h3>
-          <ul>
-            <li>Explicit success states reduced uncertainty</li>
-            <li>Step-based guidance improved completion confidence</li>
-            <li>Replacing jargon with plain language reduced misinterpretation</li>
-          </ul>
-
-          <h3>What I’d improve next</h3>
-          <p>
-            If this were a shipped product, the next iteration would focus on accessibility,
-            offline support, and clinician-configurable thresholds. The goal would be to
-            keep the experience calm while increasing trust in the results.
-          </p>
-
-          <p>
-            This extra space is intentionally here to ensure the last section reliably
-            becomes active in the sidenav even without a real footer.
-          </p>
-
-          <PlaceholderCallouts />
-          <LongFillerList />
-          <LongFillerList />
-        </Prose>
-      ),
-    }
+  id: "next-project",
+  label: "Next project",
+  bgClass: "bg-muted/30",
+  size: "fill",
+  render: () => (
+    <NextProject
+      href="/projects/man-truck-bus"
+      kicker="Next case study"
+      title="MAN Truck & Bus"
+      description="A UX case study focused on structuring complex information and improving clarity across service touchpoints."
+      image={cover}
+      imageAlt="Preview of the next case study"
+      tags={["UX Design", "Mobility", "Systems"]}
+    />
+  ),
+}
   ],
 }
