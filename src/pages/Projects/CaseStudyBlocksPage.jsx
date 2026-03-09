@@ -1,3 +1,5 @@
+// src/pages/Projects/CaseStudyBlocksPage.jsx
+
 import logo from "@/case-studies/d-heart/assets/logo.png"
 import cover from "@/case-studies/d-heart/assets/cover.webp"
 import screen1 from "@/case-studies/d-heart/assets/screen-1.jpg"
@@ -10,6 +12,7 @@ import { FullBleedSection } from "@/components/case/layout/FullBleedSection"
 import { CaseHero } from "@/components/case/blocks/CaseHero"
 import { CaseOverview } from "@/components/case/blocks/CaseOverview"
 import { SectionHeading } from "@/components/case/blocks/SectionHeading"
+import { ProblemStatement } from "@/components/case/blocks/ProblemStatement"
 import { Metrics } from "@/components/case/blocks/Metrics"
 import { Callout } from "@/components/case/blocks/Callout"
 import { Figure } from "@/components/case/blocks/Figure"
@@ -20,304 +23,415 @@ import { InsightList } from "@/components/case/blocks/InsightList"
 import { PullQuote } from "@/components/case/blocks/PullQuote"
 import { ComparisonTable } from "@/components/case/blocks/ComparisonTable"
 import { ProcessStep } from "@/components/case/blocks/ProcessStep"
-import { ProblemStatement } from "@/components/case/blocks/ProblemStatement"
 import { NextProject } from "@/components/case/blocks/NextProject"
+import { DocSection } from "@/components/case/docs/DocSection"
+import { UsageNote } from "@/components/case/docs/UsageNote"
 
-/**
- * Block usage rules
- *
- * - Use SectionHeading at the start of most sections.
- * - Use Metrics for quantitative proof.
- * - Use InsightList for qualitative findings.
- * - Use PullQuote sparingly: 1–2 times per case.
- * - Use Figure as the default single-media block.
- * - Use ImageGrid for multiple related visuals.
- * - Use BeforeAfter for redesign comparisons.
- * - Use ComparisonTable to explain decisions.
- * - Use ProcessStep for methodology/process storytelling.
- * - Use NextProject outside the main narrative when possible.
- */
-
+const groups = [
+  { id: "framing", label: "Framing" },
+  { id: "evidence", label: "Evidence" },
+  { id: "visuals", label: "Visuals" },
+  { id: "narrative", label: "Narrative" },
+  { id: "navigation", label: "Navigation" },
+]
 
 export default function CaseStudyBlocksPage() {
   return (
     <main className="w-full">
       <CaseHero
         logo={{ src: logo, alt: "D-Heart logo" }}
-        title="Case Study Block Showcase"
-        headline="A live sandbox page to validate all reusable case-study blocks before using them in real projects."
-        tags={["System", "Portfolio", "Demo"]}
-        cover={{ src: cover, alt: "Block showcase cover", aspect: "aspect-[16/9]" }}
+        projectName="Case Study Block Showcase"
+        headline="A live reference page for documenting, testing, and refining reusable case-study blocks before using them in real portfolio projects."
+        tags={["System", "Portfolio", "Documentation"]}
+        cover={{ src: cover, alt: "Case study blocks showcase cover", aspect: "aspect-[16/9]" }}
       />
 
-      <CaseOverview
-        overviewTitle="Overview"
-        overview={[
-          "This page documents the case-study block system and shows recommended usage patterns.",
-          "Use it as a living style guide while building future portfolio cases."
-        ]}
-        links={[
-          { label: "Back to portfolio", href: "/", variant: "outline" },
-        ]}
-        meta={[
-          { label: "Purpose", value: "Block documentation" },
-          { label: "Scope", value: "Reusable case-study components" },
-          { label: "Year", value: "2026" },
-          { label: "Status", value: "Internal demo page" },
-        ]}
-      />
-
-      <FullBleedSection bgClass="bg-background" size="fill" className="py-16">
-        <SectionHeading
-          title="Problem framing"
-          subtitle="Use this block near the beginning of a case study to establish the challenge clearly."
-        />
-        <ProblemStatement
-          variant="grid"
-          items={[
-            {
-              label: "Problem",
-              value: "Users felt uncertain during measurement and did not know whether results were trustworthy.",
-            },
-            {
-              label: "Goal",
-              value: "Increase confidence, reduce friction, and make results easier to understand.",
-            },
-            {
-              label: "Constraints",
-              value: "Regulated wording, high-stakes content, and limited tolerance for ambiguity.",
-            },
-            {
-              label: "Success criteria",
-              value: "Clearer completion, better comprehension, and stronger repeat use.",
-            },
+      <div className="relative w-full [--case-nav-w:16rem] [--case-top-offset:120px]">
+        <CaseOverview
+          overviewTitle="Overview"
+          overview={[
+            "This page is an internal reference for the case-study system. It shows how each reusable block behaves inside the real portfolio layout, with realistic content and spacing.",
+            "The goal is to make future case studies faster to build, easier to maintain, and more visually consistent."
+          ]}
+          links={[
+            { label: "Back to portfolio", href: "/", variant: "outline" },
+            { label: "Open demo case", href: "/projects/d-heart", variant: "secondary" },
+          ]}
+          meta={[
+            { label: "Purpose", value: "Internal documentation page" },
+            { label: "Scope", value: "Reusable case-study blocks" },
+            { label: "Layout", value: "React + Vite + Tailwind + shadcn/ui" },
+            { label: "Status", value: "Living reference" },
           ]}
         />
-      </FullBleedSection>
 
-      <FullBleedSection bgClass="bg-muted/30" size="fill" className="py-16">
-        <SectionHeading
-          title="Metrics"
-          subtitle="Use this block for quantitative outcomes, research counts, or performance improvements."
-        />
-        <Metrics
-          items={[
-            { label: "Onboarding drop-off", value: "–32%", note: "after simplifying the first-time flow", deltaTone: "good" },
-            { label: "Task completion", value: "+18%", note: "first-time users", deltaTone: "good" },
-            { label: "Usability rounds", value: "2", note: "prototype testing" },
-            { label: "Interviews", value: "12", note: "patients + clinicians" },
-          ]}
-          columns={4}
-        />
-      </FullBleedSection>
+        <FullBleedSection bgClass="bg-background" size="fill" className="pb-8">
+          <div className="flex flex-wrap gap-2">
+            {groups.map((group) => (
+              <a
+                key={group.id}
+                href={`#${group.id}`}
+                className="rounded-full border border-slate-200/70 px-3 py-1 text-sm text-muted-foreground transition-colors hover:text-foreground"
+              >
+                {group.label}
+              </a>
+            ))}
+          </div>
+        </FullBleedSection>
 
-      <FullBleedSection bgClass="bg-background" size="fill" className="py-16">
-        <SectionHeading
-          title="Callout and pull quote"
-          subtitle="Use these to create emphasis and editorial rhythm."
-        />
-        <div className="space-y-8">
-          <Callout title="Key insight">
-            Participants repeatedly asked for a clear confirmation that the measurement had succeeded.
-          </Callout>
+        <DocSection
+          id="framing"
+          title="Framing"
+          description="Blocks used to introduce the project, define the challenge, and structure the opening of a case study."
+          bgClass="bg-background"
+          size="fill"
+        >
+          <div className="space-y-12">
+            <div className="space-y-4">
+              <ProblemStatement
+                variant="grid"
+                items={[
+                  {
+                    label: "Problem",
+                    value:
+                      "Users often felt uncertain during the measurement flow and were unsure whether the result was valid.",
+                  },
+                  {
+                    label: "Goal",
+                    value:
+                      "Reduce anxiety, improve clarity, and help users complete the flow with more confidence.",
+                  },
+                  {
+                    label: "Constraints",
+                    value:
+                      "Clinical accuracy, regulated wording, and limited tolerance for ambiguity in a high-stakes context.",
+                  },
+                  {
+                    label: "Success criteria",
+                    value:
+                      "Higher completion confidence, clearer result interpretation, and smoother repeat usage over time.",
+                  },
+                ]}
+              />
+              <UsageNote>
+                Use this near the beginning of a case study when you want the challenge, objective, and constraints to be immediately clear.
+              </UsageNote>
+            </div>
 
-          <PullQuote
-            quote="We redesigned around reassurance and clarity, not around feature exposure."
-            role="Core design principle"
-            align="center"
-            showMark={false}
-          />
-        </div>
-      </FullBleedSection>
+            <div className="space-y-4">
+              <SectionHeading
+                kicker="Heading utility"
+                title="SectionHeading"
+                subtitle="Use this as the default opener for most sections. It creates consistent rhythm and reduces repeated one-off heading styling."
+              />
+              <UsageNote>
+                Best used at the start of sections that introduce a theme, such as research, design decisions, process, or outcomes.
+              </UsageNote>
+            </div>
+          </div>
+        </DocSection>
 
-      <FullBleedSection bgClass="bg-muted/30" size="fill" className="py-16">
-        <SectionHeading
-          title="Insight list"
-          subtitle="Use this instead of plain bullets when you want findings to feel more structured."
-        />
-        <InsightList
-          items={[
-            {
-              eyebrow: "Insight 01",
-              title: "Users needed explicit confirmation that the measurement was successful.",
-              description: "Participants often repeated actions because they were unsure whether the result was valid.",
-            },
-            {
-              eyebrow: "Insight 02",
-              title: "Medical terminology reduced comprehension and increased hesitation.",
-              description: "Users understood the goal, but many struggled to interpret labels and result states.",
-            },
-            {
-              eyebrow: "Insight 03",
-              title: "History and measurement views felt disconnected.",
-              description: "Participants wanted a clearer sense of progress over time.",
-            },
-          ]}
-        />
-      </FullBleedSection>
+        <DocSection
+          id="evidence"
+          title="Evidence"
+          description="Blocks used to support decisions with metrics, research findings, and structured comparison."
+          bgClass="bg-muted/30"
+          size="fill"
+        >
+          <div className="space-y-12">
+            <div className="space-y-4">
+              <Metrics
+                items={[
+                  {
+                    label: "Onboarding drop-off",
+                    value: "–32%",
+                    note: "after simplifying the first-time flow",
+                    deltaTone: "good",
+                  },
+                  {
+                    label: "Task completion",
+                    value: "+18%",
+                    note: "first-time users",
+                    deltaTone: "good",
+                  },
+                  {
+                    label: "Interviews",
+                    value: "12",
+                    note: "patients + clinicians",
+                  },
+                  {
+                    label: "Usability rounds",
+                    value: "2",
+                    note: "prototype validation",
+                  },
+                ]}
+                columns={4}
+              />
+              <UsageNote>
+                Best for measurable outcomes, research sample sizes, KPI snapshots, and concise impact summaries.
+              </UsageNote>
+            </div>
 
-      <FullBleedSection bgClass="bg-background" size="fill" className="py-16">
-        <SectionHeading
-          title="Timeline"
-          subtitle="Use this for process phases, project cadence, or key milestones."
-        />
-        <Timeline
-          items={[
-            {
-              title: "Discovery",
-              range: "Week 1",
-              body: "Interviewed users and mapped the current journey.",
-              bullets: ["12 interviews", "Journey map", "Terminology audit"],
-              tone: "info",
-            },
-            {
-              title: "Define",
-              range: "Week 2",
-              body: "Turned findings into a clearer task model and success criteria.",
-            },
-            {
-              title: "Design",
-              range: "Weeks 3–5",
-              body: "Created and iterated on a calmer, feedback-rich flow.",
-              tone: "success",
-            },
-            {
-              title: "Test",
-              range: "Weeks 6–7",
-              body: "Validated clarity and comprehension with prototype sessions.",
-              tone: "warning",
-            },
-          ]}
-        />
-      </FullBleedSection>
+            <div className="space-y-4">
+              <InsightList
+                items={[
+                  {
+                    eyebrow: "Insight 01",
+                    title: "Users needed explicit confirmation that the measurement was successful.",
+                    description:
+                      "Participants often repeated actions because they were unsure whether the result was valid.",
+                  },
+                  {
+                    eyebrow: "Insight 02",
+                    title: "Medical terminology reduced comprehension and increased hesitation.",
+                    description:
+                      "Users understood the goal, but many struggled to interpret labels and result states.",
+                  },
+                  {
+                    eyebrow: "Insight 03",
+                    title: "History and measurement views felt disconnected.",
+                    description:
+                      "Participants wanted a clearer sense of how one result related to their broader progress over time.",
+                  },
+                ]}
+              />
+              <UsageNote>
+                Use this instead of plain bullet lists when findings deserve a little more hierarchy and structure.
+              </UsageNote>
+            </div>
 
-      <FullBleedSection bgClass="bg-muted/30" size="media" className="py-16">
-        <SectionHeading
-          title="Figure"
-          subtitle="Use one standard figure block for images and videos."
-        />
-        <Figure
-          src={cover}
-          alt="Cover figure example"
-          frame="card"
-          aspect="aspect-[16/9]"
-          caption="Single figure with caption inside a media-width section."
-        />
-      </FullBleedSection>
+            <div className="space-y-4">
+              <ComparisonTable
+                columns={[
+                  { key: "before", label: "Before" },
+                  { key: "after", label: "After", emphasis: true },
+                ]}
+                rows={[
+                  {
+                    before: "Dense terminology and unclear result states created hesitation.",
+                    after: "Plain language and explicit confirmation improved confidence.",
+                  },
+                  {
+                    before: "Users had to infer whether they completed the step correctly.",
+                    after: "Each step included direct feedback and a clear next action.",
+                  },
+                  {
+                    before: "History and measurement felt disconnected.",
+                    after: "Results and progress over time were tied together more clearly.",
+                  },
+                ]}
+              />
+              <UsageNote>
+                Ideal for explaining redesign rationale, research finding to design response, or old versus new decision logic.
+              </UsageNote>
+            </div>
+          </div>
+        </DocSection>
 
-      <FullBleedSection bgClass="bg-background" size="media" className="py-16">
-        <SectionHeading
-          title="Image grid"
-          subtitle="Use this for multiple screens, artifacts, or mixed media."
-        />
-        <ImageGrid
-          cols={3}
-          items={[
-            { src: screen1, alt: "Screen 1", frame: "soft" },
-            { src: screen2, alt: "Screen 2", frame: "soft" },
-            { src: screen3, alt: "Screen 3", frame: "soft" },
-          ]}
-        />
-      </FullBleedSection>
+        <DocSection
+          id="visuals"
+          title="Visuals"
+          description="Blocks used for screenshots, artifacts, galleries, mixed media, and visual comparison."
+          bgClass="bg-background"
+          size="media"
+        >
+          <div className="space-y-12">
+            <div className="space-y-4">
+              <Figure
+                src={cover}
+                alt="Cover figure example"
+                frame="card"
+                aspect="aspect-[16/9]"
+                caption="Single figure with caption inside a media-width section."
+              />
+              <UsageNote>
+                Use Figure as the default single-media block for screenshots, boards, diagrams, hero-like images, or videos.
+              </UsageNote>
+            </div>
 
-      <FullBleedSection bgClass="bg-muted/30" size="media" className="py-16">
-        <SectionHeading
-          title="Before / After"
-          subtitle="Use this for redesign comparisons or flow improvements."
-        />
-        <BeforeAfter
-          before={{
-            src: screen1,
-            alt: "Before screen",
-            caption: "Dense terminology and unclear state changes increased hesitation.",
-            aspect: "aspect-[16/9]",
-          }}
-          after={{
-            src: screen2,
-            alt: "After screen",
-            caption: "Plain language and explicit confirmation improved confidence.",
-            aspect: "aspect-[16/9]",
-          }}
-        />
-      </FullBleedSection>
+            <div className="space-y-4">
+              <ImageGrid
+                cols={3}
+                items={[
+                  {
+                    src: screen1,
+                    alt: "D-Heart screen 1",
+                    frame: "soft",
+                    caption: "Measurement screen",
+                  },
+                  {
+                    src: screen2,
+                    alt: "D-Heart screen 2",
+                    frame: "soft",
+                    caption: "Feedback state",
+                  },
+                  {
+                    src: screen3,
+                    alt: "D-Heart screen 3",
+                    frame: "soft",
+                    caption: "History view",
+                  },
+                ]}
+              />
+              <UsageNote>
+                Best for showing multiple related screens or artifacts together. Use it when the items belong to the same story beat.
+              </UsageNote>
+            </div>
 
-      <FullBleedSection bgClass="bg-background" size="fill" className="py-16">
-        <SectionHeading
-          title="Comparison table"
-          subtitle="Use this to explain what changed and why."
-        />
-        <ComparisonTable
-          columns={[
-            { key: "before", label: "Before" },
-            { key: "after", label: "After", emphasis: true },
-          ]}
-          rows={[
-            {
-              before: "Dense terminology and unclear result states created hesitation.",
-              after: "Plain language and explicit confirmation improved confidence.",
-            },
-            {
-              before: "Users had to infer whether they completed the step correctly.",
-              after: "Each step included direct feedback and a clear next action.",
-            },
-            {
-              before: "History and measurement felt disconnected.",
-              after: "Results and progress over time were tied together more clearly.",
-            },
-          ]}
-        />
-      </FullBleedSection>
+            <div className="space-y-4">
+              <BeforeAfter
+                before={{
+                  src: screen1,
+                  alt: "Before screen",
+                  caption: "Dense terminology and unclear state changes increased hesitation.",
+                  aspect: "aspect-[16/9]",
+                }}
+                after={{
+                  src: screen2,
+                  alt: "After screen",
+                  caption: "Plain language and explicit confirmation improved confidence.",
+                  aspect: "aspect-[16/9]",
+                }}
+              />
+              <UsageNote>
+                Use this for redesign comparisons, flow improvements, or showing how a specific problem was resolved visually.
+              </UsageNote>
+            </div>
+          </div>
+        </DocSection>
 
-      <FullBleedSection bgClass="bg-muted/30" size="media" className="py-16">
-        <SectionHeading
-          title="Process steps"
-          subtitle="Use these to tell a method story more clearly than plain paragraphs."
-        />
-        <div className="space-y-12">
-          <ProcessStep
-            step="Step 01"
-            title="Understanding the measurement journey"
-            description="We interviewed users to identify the moments where uncertainty interrupted confidence."
-            bullets={["12 discovery interviews", "Journey mapping", "Terminology analysis"]}
-            figure={{
-              src: process1,
-              alt: "Journey map artifact",
-              caption: "Early journey map capturing uncertainty points.",
-              aspect: "aspect-[16/9]",
-            }}
-          />
+        <DocSection
+          id="narrative"
+          title="Narrative"
+          description="Blocks used to improve storytelling rhythm, highlight important points, and explain process."
+          bgClass="bg-muted/30"
+          size="fill"
+        >
+          <div className="space-y-12">
+            <div className="space-y-4">
+              <Callout title="Key insight">
+                Participants repeatedly asked for a clear confirmation that the measurement had succeeded.
+              </Callout>
+              <UsageNote>
+                Use Callout when one point deserves emphasis but does not need the visual weight of a full section.
+              </UsageNote>
+            </div>
 
-          <ProcessStep
-            step="Step 02"
-            title="Simplifying the task structure"
-            description="We reorganized the experience around user intent rather than system features."
-            bullets={["Goal-based IA", "Measurement flow redesign", "Clear feedback states"]}
-            figure={{
-              src: process2,
-              alt: "Flow redesign artifact",
-              caption: "Goal-led grouping simplified the flow.",
-              aspect: "aspect-[16/9]",
-            }}
-            reverse
-          />
-        </div>
-      </FullBleedSection>
+            <div className="space-y-4">
+              <PullQuote
+                quote="We redesigned around reassurance and clarity, not around feature exposure."
+                role="Core design principle"
+                align="center"
+                showMark={false}
+              />
+              <UsageNote>
+                PullQuote works best as an editorial pause. Use it sparingly, usually once or twice per case study.
+              </UsageNote>
+            </div>
 
-      <FullBleedSection bgClass="bg-background" size="fill" className="py-16">
-        <SectionHeading
-          title="Next project"
-          subtitle="Use this outside the main case narrative as the page handoff."
-        />
-        <NextProject
-          href="/projects/d-heart"
-          kicker="Example handoff"
-          title="D-Heart"
-          description="Reusable bottom-of-page navigation block for the next case study."
-          image={cover}
-          imageAlt="Next project preview"
-          tags={["UX Design", "Healthcare", "Mobile"]}
-        />
-      </FullBleedSection>
+            <div className="space-y-4">
+              <Timeline
+                items={[
+                  {
+                    title: "Discovery",
+                    range: "Week 1",
+                    body: "Interviewed users and mapped the current journey.",
+                    bullets: ["12 interviews", "Journey map", "Terminology audit"],
+                    tone: "info",
+                  },
+                  {
+                    title: "Define",
+                    range: "Week 2",
+                    body: "Turned findings into a clearer task model and success criteria.",
+                  },
+                  {
+                    title: "Design",
+                    range: "Weeks 3–5",
+                    body: "Created and iterated on a calmer, feedback-rich flow.",
+                    tone: "success",
+                  },
+                  {
+                    title: "Test",
+                    range: "Weeks 6–7",
+                    body: "Validated clarity and comprehension with prototype sessions.",
+                    tone: "warning",
+                  },
+                ]}
+              />
+              <UsageNote>
+                Best for project phases, milestones, weekly cadence, or a lightweight end-to-end view of the process.
+              </UsageNote>
+            </div>
+
+            <div className="space-y-4">
+              <div className="space-y-12">
+                <ProcessStep
+                  step="Step 01"
+                  title="Understanding the measurement journey"
+                  description="We interviewed users to identify the moments where uncertainty interrupted confidence."
+                  bullets={[
+                    "12 discovery interviews",
+                    "Journey mapping",
+                    "Terminology analysis",
+                  ]}
+                  figure={{
+                    src: process1,
+                    alt: "Journey map artifact",
+                    caption: "Early journey map capturing uncertainty points.",
+                    aspect: "aspect-[16/9]",
+                  }}
+                />
+
+                <ProcessStep
+                  step="Step 02"
+                  title="Simplifying the task structure"
+                  description="We reorganized the experience around user intent rather than system features."
+                  bullets={[
+                    "Goal-based IA",
+                    "Measurement flow redesign",
+                    "Clear feedback states",
+                  ]}
+                  figure={{
+                    src: process2,
+                    alt: "Flow redesign artifact",
+                    caption: "Goal-led grouping simplified the flow.",
+                    aspect: "aspect-[16/9]",
+                  }}
+                  reverse
+                />
+              </div>
+              <UsageNote>
+                Use ProcessStep when you want to explain method, artifacts, and outputs in a clearer way than plain paragraphs.
+              </UsageNote>
+            </div>
+          </div>
+        </DocSection>
+
+        <DocSection
+          id="navigation"
+          title="Navigation"
+          description="Blocks used to guide the reader forward once the case study story is complete."
+          bgClass="bg-background"
+          size="fill"
+        >
+          <div className="space-y-12">
+            <div className="space-y-4">
+              <NextProject
+                href="/projects/d-heart"
+                kicker="Example handoff"
+                title="D-Heart"
+                description="Reusable bottom-of-page navigation block for leading the reader into the next project."
+                image={cover}
+                imageAlt="Next project preview"
+                tags={["UX Design", "Healthcare", "Mobile"]}
+              />
+              <UsageNote>
+                Best placed after the main narrative rather than inside the sticky section flow, so it feels like a portfolio handoff instead of content.
+              </UsageNote>
+            </div>
+          </div>
+        </DocSection>
+      </div>
     </main>
   )
 }
