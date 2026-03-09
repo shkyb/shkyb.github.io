@@ -26,6 +26,8 @@ import { ProcessStep } from "@/components/case/blocks/ProcessStep"
 import { NextProject } from "@/components/case/blocks/NextProject"
 import { DocSection } from "@/components/case/docs/DocSection"
 import { UsageNote } from "@/components/case/docs/UsageNote"
+import { CaseSeparator } from "@/components/case/blocks/CaseSeparator"
+
 
 const groups = [
   { id: "framing", label: "Framing" },
@@ -403,6 +405,22 @@ export default function CaseStudyBlocksPage() {
               <UsageNote>
                 Use ProcessStep when you want to explain method, artifacts, and outputs in a clearer way than plain paragraphs.
               </UsageNote>
+
+
+              <div className="space-y-12">
+                <Callout title="Key insight">
+                  Participants repeatedly asked for clear confirmation that the measurement succeeded.
+                </Callout>
+
+                <CaseSeparator/>
+
+                <PullQuote
+                  quote="We redesigned around reassurance and clarity, not around feature exposure."
+                  role="Core design principle"
+                  align="center"
+                />
+              </div>
+
             </div>
           </div>
         </DocSection>
