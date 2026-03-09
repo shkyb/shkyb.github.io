@@ -140,6 +140,17 @@ export const demoCase = {
     ],
   },
 
+    nextProject: {
+    href: "/projects/man-truck-bus",
+    kicker: "Next case study",
+    title: "MAN Truck & Bus",
+    description:
+      "A UX case study focused on structuring complex information and improving clarity across service touchpoints.",
+    image: cover,
+    imageAlt: "Preview of the next case study",
+    tags: ["UX Design", "Mobility", "Systems"],
+  },
+
   // StickySidenav expects [{ id, label, ... }]
   // CaseSection can also use bgClass + size + navSafe (optional)
   sections: [
@@ -671,22 +682,6 @@ export const demoCase = {
     </>
   ),
 },
-    {
-  id: "next-project",
-  label: "Next project",
-  bgClass: "bg-muted/30",
-  size: "fill",
-  render: () => (
-    <NextProject
-      href="/projects/man-truck-bus"
-      kicker="Next case study"
-      title="MAN Truck & Bus"
-      description="A UX case study focused on structuring complex information and improving clarity across service touchpoints."
-      image={cover}
-      imageAlt="Preview of the next case study"
-      tags={["UX Design", "Mobility", "Systems"]}
-    />
-  ),
-}
+
   ],
 }
