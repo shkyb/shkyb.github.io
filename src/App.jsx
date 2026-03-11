@@ -6,7 +6,7 @@ import AboutPage from "./pages/AboutPage"
 import ProjectsPage from "./pages/ProjectsPage"
 import CaseStudyPage from "./pages/Projects/CaseStudyPage"
 import CaseStudyBlocksPage from "@/pages/Projects/CaseStudyBlocksPage"
-
+import CaseStudyBlocksDescribedPage from "./pages/Projects/CaseStudyBlocksDescribedPage"
 
 
 export default function App() {
@@ -20,6 +20,7 @@ export default function App() {
         <Route path="/projects/:slug" element={<CaseStudyPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
         <Route path="/projects/blocks" element={<CaseStudyBlocksPage />} />
+        <Route path="/projects/blocks-described" element={<CaseStudyBlocksDescribedPage />} />
       </Routes>
     </>
   )
