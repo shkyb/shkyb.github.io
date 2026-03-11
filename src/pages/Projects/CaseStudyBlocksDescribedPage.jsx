@@ -428,7 +428,7 @@ export default function CaseStudyBlocksDescribedPage() {
           id="framing"
           bgClass="bg-background"
           size="fill"
-          className="scroll-mt-[var(--case-top-offset)] py-16 md:py-20"
+          className="scroll-mt-(--case-top-offset) py-16 md:py-20"
         >
           <div className="space-y-12">
             <SectionHeading
@@ -502,7 +502,7 @@ export default function CaseStudyBlocksDescribedPage() {
           id="evidence"
           bgClass="bg-muted/30"
           size="fill"
-          className="scroll-mt-[var(--case-top-offset)] py-16 md:py-20"
+          className="scroll-mt-(--case-top-offset) py-16 md:py-20"
         >
           <div className="space-y-12">
             <SectionHeading
@@ -614,7 +614,7 @@ export default function CaseStudyBlocksDescribedPage() {
           id="visuals"
           bgClass="bg-background"
           size="media"
-          className="scroll-mt-[var(--case-top-offset)] py-16 md:py-20"
+          className="scroll-mt-(--case-top-offset) py-16 md:py-20"
         >
           <div className="space-y-12">
             <SectionHeading
@@ -707,7 +707,7 @@ export default function CaseStudyBlocksDescribedPage() {
           id="narrative"
           bgClass="bg-muted/30"
           size="fill"
-          className="scroll-mt-[var(--case-top-offset)] py-16 md:py-20"
+          className="scroll-mt-(--case-top-offset) py-16 md:py-20"
         >
           <div className="space-y-12">
             <SectionHeading
@@ -871,7 +871,7 @@ export default function CaseStudyBlocksDescribedPage() {
           id="navigation"
           bgClass="bg-background"
           size="fill"
-          className="scroll-mt-[var(--case-top-offset)] py-16 md:py-20"
+          className="scroll-mt-(--case-top-offset) py-16 md:py-20"
         >
           <div className="space-y-12">
             <SectionHeading
