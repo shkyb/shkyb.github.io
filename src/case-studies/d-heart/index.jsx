@@ -19,25 +19,9 @@ import { PullQuote } from "@/components/case/blocks/PullQuote"
 import { Timeline } from "@/components/case/blocks/Timeline"
 import { ProcessStep } from "@/components/case/blocks/ProcessStep"
 import { CaseSeparator } from "@/components/case/blocks/CaseSeparator"
-import { Icon } from "lucide-react"
+import { Icon, Square } from "lucide-react"
+import { href } from "react-router-dom"
 
-const problemItems = [
-  {
-    label: "Unclear ECG workflow",
-    value:
-      "Nurses struggled with Bluetooth pairing, step progression, and instructions that did not match how they normally perform an ECG.",
-  },
-  {
-    label: "Navigation mismatch",
-    value:
-      "The app structure did not reflect nurses’ mental models, making patients, results, and operational tasks harder to find.",
-  },
-  {
-    label: "Weak hardware feedback",
-    value:
-      "Rear electrodes were often missed, LED patterns were hard to interpret, and cable handling introduced unnecessary friction.",
-  },
-]
 
 const solutionHighlights = [
   {
@@ -132,7 +116,7 @@ export const dHeartCase = {
 
   caseMeta: {
     logo: { src: logo, alt: "D-Heart logo" },
-    title: "D-Heart",
+    title: "D-Heart Pro",
     projectName: "D-Heart",
     headline: "Redesigning a portable ECG ecosystem to make cardiac exams clearer, faster, and easier to trust for nurses working under pressure.",
     tags: ["UX Research", "UX/UI Design", "Healthcare", "Tablet", "Physical + Digital"],
@@ -143,7 +127,7 @@ export const dHeartCase = {
     },
     overview: [
       <Prose>
-        <p><a href="https://www.d-heartcare.com/en" target="_blank" rel="noopener noreferrer">D-Heart</a> is an award-winning portable ECG device paired with a companion app, which is built to improve diagnostic accessibility. Our team <a href="https://www.polimi.it/en/" target="_blank" rel="noopener noreferrer">@PoliMI</a> redesigned both the digital workflow and key physical touch-points to make the product more usable for nurses working in nursing homes.</p>
+        <p><a href="https://www.d-heartcare.com/en" target="_blank" rel="noopener noreferrer">D-Heart</a> is an award-winning portable ECG device paired with a companion app, which is built to improve diagnostic accessibility. In the Digital Design Studio course <a href="https://www.polimi.it/en/" target="_blank" rel="noopener noreferrer">@PoliMI</a>, our team redesigned both the digital workflow and key physical touch-points to make the product more usable for nurses working in nursing homes.</p>
         <p>The project moved from expert evaluation and field testing into information architecture redesign, tablet-first UI work, physical product improvements, and iterative validation with healthcare professionals.</p>
         {/* <p>My contribution focused on turning research into clearer flows, more understandable instructions, and a more coherent relationship between the app and the device.</p> */}
       </Prose>
@@ -154,7 +138,7 @@ export const dHeartCase = {
     ],
 
     meta: [
-      { label: "Role", value: "UX/UI Designer" },
+      { label: "Role", value: "Conducting user research & testing, developing the design system & high-fidelity prototypes." },
       {
         label: "Team", value:
           [
@@ -165,7 +149,7 @@ export const dHeartCase = {
           ]
       },
       { label: "Timeline", value: "Academic project · 4 Months · 2024" },
-      { label: "Focus", value: "Research, IA, interaction design, testing" },
+      { label: "Focus", value: "Research, UX, Usability, User Testing" },
     ],
   },
 
@@ -177,28 +161,56 @@ export const dHeartCase = {
       size: "fill",
       render: () => (
         <>
-          <SectionHeading
-            title="The original experience created too much friction for a high-stakes task"
-            subtitle="D-Heart had strong potential in professional care settings, but the existing app and device introduced too much confusion for nurses working under time pressure."
+          {/* <CaseSeparator
+            className="mb-4"
+            label="The Context"
+            align="center"
           />
 
-          <ProblemStatement
-            variant="grid"
-            intro={
-              <Prose>
-                <p>
-                  Performing an ECG is a time-sensitive task. During testing we found
-                  that the D-Heart ecosystem introduced unnecessary friction in both
-                  the app and the device, slowing nurses down at critical moments.
-                </p>
-              </Prose>
-            }
-            items={problemItems}
+          <prose> 
+            <p>D-Heart was originally designed as a portable ECG solution for both <strong>standard users</strong> and <strong>healthcare professionals</strong>. However, in a <strong>professional clinical setting</strong> —where every second counts—the device and its accompanying application suffered from <strong>significant usability friction</strong> that hindered medical workflows</p>
+          </prose> */}
+
+          <CaseSeparator
+            className="mb-4"
+            label="Main Problem"
+            align="center"
+          />
+          <SectionHeading
+            // className="px-16"
+            // kicker="Main Problem"
+            align="center"
+            title="Performing an ECG is a time-sensitive task. During testing, we found that the D-Heart ecosystem introduced unnecessary friction in both the app and the device, slowing nurses down at critical moments."
+          // subtitle=""
+          />
+
+          <ImageGrid
+            className="mt-16"
+            cols={3}
+            items={[
+              { src: cover, 
+                aspect: "aspect-square",
+                alt: "Screen 1", 
+                label: "01. Unclear ECG workflow", 
+                caption: "Nurses struggled to follow the exam flow, understand instructions, and confirm when the device was correctly connected." },
+             
+              { src: cover, 
+                aspect: "aspect-square",
+                alt: "Screen 1", 
+                label: "02. Navigation mismatch", 
+                caption: "The app structure did not reflect nurses' mental models, making patients, results, and operational tasks harder to find." },
+             
+              { src: cover, 
+                aspect: "aspect-square",
+                alt: "Screen 1", 
+                label: "03. Weak hardware feedback", 
+                caption: "LED signals, hidden electrodes, and cable handling were unclear, reducing confidence during use." },
+            ]}
           />
 
           <PullQuote
             className="mt-10"
-            quote="It doesn’t look like a normal ECG."
+            quote="It doesn't look like a normal ECG."
             author="Nurse participant"
             role="Usability testing"
           />
@@ -213,6 +225,12 @@ export const dHeartCase = {
       size: "fill",
       render: () => (
         <>
+          <CaseSeparator
+            className="mb-4"
+            label="The Solution"
+            align="center"
+          />
+
           <SectionHeading
             title="We redesigned D-Heart as a clearer, more professional ecosystem"
             subtitle="Instead of polishing isolated screens, we simplified the structure, clarified the ECG flow, and reduced ambiguity across both the app and the device."
