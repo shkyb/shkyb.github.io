@@ -2,7 +2,14 @@ import { useEffect, useMemo, useRef, useState } from "react"
 import { cn } from "@/lib/utils"
 
 export function StickySidenav({ sections, className }) {
-  const ids = useMemo(() => sections.map((s) => s.id), [sections])
+  // Only keep sections that are actually navigable.
+  // This prevents empty/invalid rows when a section has no id or no label.
+  const navSections = useMemo(
+    () => sections.filter((s) => s?.id && s?.label),
+    [sections]
+  )
+
+  const ids = useMemo(() => navSections.map((s) => s.id), [navSections])
   const [activeId, setActiveId] = useState(ids[0] || null)
 
   // Keep latest intersection states across callbacks
@@ -24,8 +31,6 @@ export function StickySidenav({ sections, className }) {
       .getPropertyValue("--case-top-offset")
       .trim()
     const topOffset = Number.parseInt(cssTopOffset || "120", 10)
-
-
 
     const lastId = ids[ids.length - 1]
 
@@ -150,9 +155,8 @@ export function StickySidenav({ sections, className }) {
     <aside className={cn("h-fit top-0", className)}>
       <div className="h-full pr-2 overflow-auto overscroll-contain [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         <nav className="flex flex-col gap-1">
-          {sections.map((s) => {
+          {navSections.map((s) => {
             const isActive = s.id === activeId
-            const label = s.label ?? s.title ?? s.id
 
             return (
               <a
@@ -167,7 +171,7 @@ export function StickySidenav({ sections, className }) {
                 )}
                 aria-current={isActive ? "location" : undefined}
               >
-                {label}
+                {s.label}
               </a>
             )
           })}
