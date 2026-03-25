@@ -309,32 +309,51 @@ export const dHeartCase = {
             ]}
           />
 
-          <ImageGrid
+          <FigureCarousel
             className="mt-16"
-            cols={3}
+            options={{ align: "start", loop: true }}
+            autoplay={{ delay: 4500, stopOnInteraction: false }}
+            itemClassName="md:basis-1/2 lg:basis-1/3"
+            dotsProgressDuration={4500}
             items={[
               {
                 src: cover,
                 aspect: "aspect-[2/3]",
                 alt: "Screen 1",
-                label: "01. Wrong ECG workflow",
-                caption: "A smartphone app with a consumer mental model — the flow conflicted with real clinical routines."
+                label: "01. Tablet-First Application",
+                caption: "Moved from smartphone to tablet as the primary digital touchpoint. Redesigned the IA using a Dashboard pattern for the home screen and Nested Dolls for the ECG flow — matching how nurses actually think."
               },
 
               {
                 src: cover,
                 aspect: "aspect-[2/3]",
                 alt: "Screen 1",
-                label: "02. Friction in the physical experience",
-                caption: "Cables tangled. Clips hurt patients. Key electrodes went unnoticed by every single test participant."
+                label: "02. Redesigned Physical Clips",
+                caption: "New spring-loaded ECG clips with a more ergonomic grip mechanism, reducing patient discomfort. Red signifier markers added to cables to prevent over-extension and hardware damage."
               },
 
               {
                 src: cover,
                 aspect: "aspect-[2/3]",
                 alt: "Screen 1",
-                label: "03. Unclear feedback",
-                caption: "One LED for everything — nurses couldn't tell if the device was working, connecting, or failing."
+                label: "03. Intelligent LED System",
+                caption: "Split the single LED into a primary (ECG status) and a secondary status LED (battery, Bluetooth). Distinct color language: orange for on, blue for Bluetooth, green for charged, yellow for low battery."
+              },
+
+              {
+                src: cover,
+                aspect: "aspect-[2/3]",
+                alt: "Screen 1",
+                label: "04. Nurse-Integrated Ecosystem",
+                caption: "Proposed an integration with nursing home patient databases, eliminating manual data entry. Added nurse login via ID card number — confirmed through interviews across Italy, Turkey, and Iran."
+              },
+
+              {
+                src: cover,
+                aspect: "aspect-[2/3]",
+                alt: "Screen 1",
+                label: "05. 3D Instructional Renders",
+                caption: "Replaced flat diagrams with 3D animated renders of the device and electrode placement — including the often-missed electrodes on the back. Carousel format lets nurses self-pace through instructions."
               },
             ]}
           />

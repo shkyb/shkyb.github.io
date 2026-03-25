@@ -183,7 +183,12 @@ function CarouselNext({ className, variant = "outline", size = "icon", ...props 
   )
 }
 
-function CarouselDots({ className, dotClassName, ...props }) {
+function CarouselDots({
+  className,
+  dotClassName,
+  progressDuration,
+  ...props
+}) {
   const { scrollSnaps, selectedIndex, scrollTo } = useCarousel()
 
   if (!scrollSnaps.length) return null
@@ -201,11 +206,25 @@ function CarouselDots({ className, dotClassName, ...props }) {
             aria-current={isActive ? "true" : undefined}
             onClick={() => scrollTo(index)}
             className={cn(
-              "h-2.5 w-2.5 rounded-full bg-foreground/20 transition-all hover:bg-foreground/40",
-              isActive ? "w-8 bg-foreground/70" : null,
+              "relative h-2.5 w-2.5 overflow-hidden rounded-full bg-foreground/20 transition-all hover:bg-foreground/40",
+              isActive ? "w-8" : null,
               dotClassName
             )}
-          />
+          >
+            {isActive ? (
+              progressDuration ? (
+                <span
+                  key={`${selectedIndex}-${index}`}
+                  className="absolute inset-0 origin-left animate-[carousel-progress_var(--carousel-progress-duration)_linear_forwards] rounded-full bg-foreground/70"
+                  style={{
+                    "--carousel-progress-duration": `${progressDuration}ms`,
+                  }}
+                />
+              ) : (
+                <span className="absolute inset-0 rounded-full bg-foreground/70" />
+              )
+            ) : null}
+          </button>
         )
       })}
     </div>

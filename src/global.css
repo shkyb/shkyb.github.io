@@ -127,3 +127,13 @@
 html {
   scroll-behavior: smooth;
 }
+
+@keyframes carousel-progress {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}

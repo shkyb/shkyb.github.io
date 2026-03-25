@@ -28,6 +28,8 @@ import { cn } from "@/lib/utils"
  * - itemClassName?: string
  * - figureClassName?: string
  * - dotsClassName?: string
+ * - dotClassName?: string
+ * - dotsProgressDuration?: number
  * - previousClassName?: string
  * - nextClassName?: string
  * - setApi?: (api) => void
@@ -45,6 +47,8 @@ export function FigureCarousel({
   itemClassName,
   figureClassName,
   dotsClassName,
+  dotClassName,
+  dotsProgressDuration,
   previousClassName,
   nextClassName,
   setApi,
@@ -94,7 +98,13 @@ export function FigureCarousel({
         </>
       ) : null}
 
-      {showDots ? <CarouselDots className={dotsClassName} /> : null}
+      {showDots ? (
+        <CarouselDots
+          className={dotsClassName}
+          dotClassName={dotClassName}
+          progressDuration={dotsProgressDuration}
+        />
+      ) : null}
     </Carousel>
   )
 }
