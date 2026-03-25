@@ -3,6 +3,9 @@ import React from "react"
 import logo from "./assets/logo.png"
 import cover from "./assets/cover.webp"
 import placeholder from "./assets/placeholder.webp"
+import screen1 from "./assets/screen-1.jpg"
+import screen2 from "./assets/screen-2.jpg"
+import screen3 from "./assets/screen-3.jpg"
 
 import { Prose } from "@/components/case/layout/Prose"
 
@@ -12,6 +15,7 @@ import { Metrics } from "@/components/case/blocks/Metrics"
 import { InsightList } from "@/components/case/blocks/InsightList"
 import { ComparisonTable } from "@/components/case/blocks/ComparisonTable"
 import { Figure } from "@/components/case/blocks/Figure"
+import { FigureCarousel } from "@/components/case/blocks/FigureCarousel"
 import { ImageGrid } from "@/components/case/blocks/ImageGrid"
 import { BeforeAfter } from "@/components/case/blocks/BeforeAfter"
 import { Callout } from "@/components/case/blocks/Callout"
@@ -19,10 +23,6 @@ import { PullQuote } from "@/components/case/blocks/PullQuote"
 import { Timeline } from "@/components/case/blocks/Timeline"
 import { ProcessStep } from "@/components/case/blocks/ProcessStep"
 import { CaseSeparator } from "@/components/case/blocks/CaseSeparator"
-import { Icon, Square } from "lucide-react"
-import { href } from "react-router-dom"
-
-
 const solutionHighlights = [
   {
     eyebrow: "Structure",
@@ -216,25 +216,31 @@ export const dHeartCase = {
             className="mt-16"
             cols={3}
             items={[
-              { src: cover, 
+              {
+                src: cover,
                 aspect: "aspect-square",
-                alt: "Screen 1", 
-                label: "01. Wrong ECG workflow", 
-                caption: "A smartphone app with a consumer mental model — the flow conflicted with real clinical routines." },
-             
-              { src: cover, 
+                alt: "Screen 1",
+                label: "01. Wrong ECG workflow",
+                caption: "A smartphone app with a consumer mental model — the flow conflicted with real clinical routines."
+              },
+
+              {
+                src: cover,
                 aspect: "aspect-square",
-                alt: "Screen 1", 
-                label: "02. Friction in the physical experience", 
-                caption: "Cables tangled. Clips hurt patients. Key electrodes went unnoticed by every single test participant." },
-             
-              { src: cover, 
+                alt: "Screen 1",
+                label: "02. Friction in the physical experience",
+                caption: "Cables tangled. Clips hurt patients. Key electrodes went unnoticed by every single test participant."
+              },
+
+              {
+                src: cover,
                 aspect: "aspect-square",
-                alt: "Screen 1", 
-                label: "03. Unclear feedback", 
-                caption: "One LED for everything — nurses couldn't tell if the device was working, connecting, or failing." },
+                alt: "Screen 1",
+                label: "03. Unclear feedback",
+                caption: "One LED for everything — nurses couldn't tell if the device was working, connecting, or failing."
+              },
             ]}
-          />      
+          />
 
           <PullQuote
             className="mt-10"
@@ -242,7 +248,7 @@ export const dHeartCase = {
             quote="It doesn't look like a normal ECG."
             author="— Nurse,"
             role="Initial user test at Villa le Magnolie nursing home"
-          />       
+          />
 
         </>
       ),
@@ -262,11 +268,11 @@ export const dHeartCase = {
           />
 
           <SectionHeading
-            title="We redesigned D-Heart as a clearer, more professional ecosystem"
-            subtitle="Instead of polishing isolated screens, we simplified the structure, clarified the ECG flow, and reduced ambiguity across both the app and the device."
+            title="A clearer ecosystem built around how nurses actually work."
+          // subtitle="Instead of polishing isolated screens, we simplified the structure, clarified the ECG flow, and reduced ambiguity across both the app and the device."
           />
 
-          <Prose className="mb-10">
+          <Prose className="mb-10 mt-4">
             <p>
               We redesigned the experience around three principles: direct access
               to key actions, a clearer step-by-step ECG flow, and stronger feedback
@@ -274,12 +280,232 @@ export const dHeartCase = {
             </p>
           </Prose>
 
-          <Figure
-            src={placeholder}
-            alt="D-Heart redesigned experience"
-            caption="Overview of the redesigned D-Heart ecosystem."
-            aspect="aspect-[16/9]"
+          <FigureCarousel
+            className="mt-2"
+            options={{ align: "start", loop: true }}
+            autoplay={{ delay: 4500, stopOnInteraction: false }}
+            items={[
+              {
+                src: screen1,
+                alt: "Tablet dashboard for the redesigned D-Heart experience",
+                caption: "Tablet-first dashboard organized around the actions nurses needed most.",
+                label: "01. Dashboard",
+                aspect: "aspect-[16/9]",
+              },
+              {
+                src: screen2,
+                alt: "Redesigned D-Heart ECG flow",
+                caption: "A more explicit, step-by-step ECG flow with clearer instructions and progression.",
+                label: "02. ECG flow",
+                aspect: "aspect-[16/9]",
+              },
+              {
+                src: screen3,
+                alt: "Redesigned D-Heart result review screen",
+                caption: "Result review and follow-up actions grouped into a calmer, more readable layout.",
+                label: "03. Results",
+                aspect: "aspect-[16/9]",
+              },
+            ]}
           />
+
+          <ImageGrid
+            className="mt-16"
+            cols={3}
+            items={[
+              {
+                src: cover,
+                aspect: "aspect-[2/3]",
+                alt: "Screen 1",
+                label: "01. Wrong ECG workflow",
+                caption: "A smartphone app with a consumer mental model — the flow conflicted with real clinical routines."
+              },
+
+              {
+                src: cover,
+                aspect: "aspect-[2/3]",
+                alt: "Screen 1",
+                label: "02. Friction in the physical experience",
+                caption: "Cables tangled. Clips hurt patients. Key electrodes went unnoticed by every single test participant."
+              },
+
+              {
+                src: cover,
+                aspect: "aspect-[2/3]",
+                alt: "Screen 1",
+                label: "03. Unclear feedback",
+                caption: "One LED for everything — nurses couldn't tell if the device was working, connecting, or failing."
+              },
+            ]}
+          />
+
+          <div className="mt-10 ">
+            <ProcessStep
+              step="01"
+              title="Tablet-First Application"
+              description={
+                <Prose>
+                  <p>
+                    Moved from smartphone to tablet as the primary digital touchpoint. Redesigned the IA using a Dashboard pattern for the home screen and Nested Dolls for the ECG flow — matching how nurses actually think.
+                  </p>
+                </Prose>
+              }
+ 
+              figure={{
+                src: placeholder,
+                alt: "Placeholder for redesigned instruction flow",
+                caption: "Placeholder for instruction redesign.",
+                aspect: "aspect-[3/2]",
+              }}
+            />
+
+            <ProcessStep
+              reverse
+              className="pt-10"
+              step="02"
+              title="Redesigned Physical Clips"
+              description={
+                <Prose>
+                  <p>
+                    New spring-loaded ECG clips with a more ergonomic grip mechanism, reducing patient discomfort. Red signifier markers added to cables to prevent over-extension and hardware damage.
+                  </p>
+                </Prose>
+              }
+
+              figure={{
+                src: placeholder,
+                alt: "Placeholder for redesigned instruction flow",
+                caption: "Placeholder for instruction redesign.",
+                aspect: "aspect-[16/10]",
+              }}
+            />
+
+            <ProcessStep
+              step="01"
+              title="Make setup and progression easier to understand"
+              description={
+                <Prose>
+                  <p>
+                    The first instruction screens were revised to make setup clearer,
+                    including details users had repeatedly missed, such as the rear
+                    electrodes and movement during the 12-lead process.
+                  </p>
+                </Prose>
+              }
+              bullets={[
+                "Critical setup details were brought earlier in the flow.",
+                "Wording became more explicit and easier to scan.",
+                "Users could re-access guidance during the exam.",
+              ]}
+              figure={{
+                src: placeholder,
+                alt: "Placeholder for redesigned instruction flow",
+                caption: "Placeholder for instruction redesign.",
+                aspect: "aspect-[16/10]",
+              }}
+            />
+
+            <ProcessStep
+              step="01"
+              title="Make setup and progression easier to understand"
+              description={
+                <Prose>
+                  <p>
+                    The first instruction screens were revised to make setup clearer,
+                    including details users had repeatedly missed, such as the rear
+                    electrodes and movement during the 12-lead process.
+                  </p>
+                </Prose>
+              }
+              bullets={[
+                "Critical setup details were brought earlier in the flow.",
+                "Wording became more explicit and easier to scan.",
+                "Users could re-access guidance during the exam.",
+              ]}
+              figure={{
+                src: placeholder,
+                alt: "Placeholder for redesigned instruction flow",
+                caption: "Placeholder for instruction redesign.",
+                aspect: "aspect-[16/10]",
+              }}
+            />
+
+            <ProcessStep
+              step="01"
+              title="Make setup and progression easier to understand"
+              description={
+                <Prose>
+                  <p>
+                    The first instruction screens were revised to make setup clearer,
+                    including details users had repeatedly missed, such as the rear
+                    electrodes and movement during the 12-lead process.
+                  </p>
+                </Prose>
+              }
+              bullets={[
+                "Critical setup details were brought earlier in the flow.",
+                "Wording became more explicit and easier to scan.",
+                "Users could re-access guidance during the exam.",
+              ]}
+              figure={{
+                src: placeholder,
+                alt: "Placeholder for redesigned instruction flow",
+                caption: "Placeholder for instruction redesign.",
+                aspect: "aspect-[16/10]",
+              }}
+            />
+
+            <ProcessStep
+              step="01"
+              title="Make setup and progression easier to understand"
+              description={
+                <Prose>
+                  <p>
+                    The first instruction screens were revised to make setup clearer,
+                    including details users had repeatedly missed, such as the rear
+                    electrodes and movement during the 12-lead process.
+                  </p>
+                </Prose>
+              }
+              bullets={[
+                "Critical setup details were brought earlier in the flow.",
+                "Wording became more explicit and easier to scan.",
+                "Users could re-access guidance during the exam.",
+              ]}
+              figure={{
+                src: placeholder,
+                alt: "Placeholder for redesigned instruction flow",
+                caption: "Placeholder for instruction redesign.",
+                aspect: "aspect-[16/10]",
+              }}
+            />
+
+            <ProcessStep
+              step="01"
+              title="Make setup and progression easier to understand"
+              description={
+                <Prose>
+                  <p>
+                    The first instruction screens were revised to make setup clearer,
+                    including details users had repeatedly missed, such as the rear
+                    electrodes and movement during the 12-lead process.
+                  </p>
+                </Prose>
+              }
+              bullets={[
+                "Critical setup details were brought earlier in the flow.",
+                "Wording became more explicit and easier to scan.",
+                "Users could re-access guidance during the exam.",
+              ]}
+              figure={{
+                src: placeholder,
+                alt: "Placeholder for redesigned instruction flow",
+                caption: "Placeholder for instruction redesign.",
+                aspect: "aspect-[16/10]",
+              }}
+            />                                                                        
+          </div>
+
 
           <InsightList items={solutionHighlights} />
 
