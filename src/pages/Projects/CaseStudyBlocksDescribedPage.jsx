@@ -13,6 +13,7 @@ import { ProblemStatement } from "@/components/case/blocks/ProblemStatement"
 import { Metrics } from "@/components/case/blocks/Metrics"
 import { Callout } from "@/components/case/blocks/Callout"
 import { Figure } from "@/components/case/blocks/Figure"
+import { FigureCarousel } from "@/components/case/blocks/FigureCarousel"
 import { ImageGrid } from "@/components/case/blocks/ImageGrid"
 import { BeforeAfter } from "@/components/case/blocks/BeforeAfter"
 import { Timeline } from "@/components/case/blocks/Timeline"
@@ -203,6 +204,56 @@ const docs = {
     { src: screen1, alt: "Screen 1", frame: "soft", caption: "Measurement screen" },
     { src: screen2, alt: "Screen 2", frame: "soft", caption: "Feedback state" },
     { src: screen3, alt: "Screen 3", frame: "soft", caption: "History view" },
+  ]}
+/>`,
+  },
+
+  figureCarousel: {
+    title: "FigureCarousel",
+    summary: "Use when multiple related visuals should be explored one frame at a time instead of shown all at once.",
+    props: [
+      ["items", "Required array of Figure-like objects. Each slide can use src, alt, caption, label, aspect, frame, and className."],
+      ["options", 'Optional Embla carousel options. Common example: `{ align: "start", loop: true }`.' ],
+      ["plugins", "Optional array of extra Embla plugin instances."],
+      ["autoplay", "Set to `true` for defaults or pass an options object like `{ delay: 4500, stopOnInteraction: false }`."],
+      ["autoScroll", "Set to `true` for defaults or pass an options object for continuous motion."],
+      ["showArrows / showDots", "Toggle the built-in navigation controls."],
+      ["className / contentClassName / itemClassName", "Layout overrides for the wrapper, track, and each slide."],
+      ["figureClassName", "Shared className applied to every nested Figure."],
+      ["dotsClassName / previousClassName / nextClassName", "Style overrides for controls."],
+      ["setApi", "Receives the Embla API for custom external controls or state syncing."],
+    ],
+    code: `<FigureCarousel
+  className="mt-2"
+  options={{ align: "start", loop: true }}
+  autoplay={{ delay: 4500, stopOnInteraction: false }}
+  showArrows
+  showDots
+  items={[
+    {
+      src: screen1,
+      alt: "Dashboard screen",
+      label: "01. Dashboard",
+      caption: "Lead with the most important action.",
+      aspect: "aspect-[16/9]",
+      frame: "card",
+    },
+    {
+      src: screen2,
+      alt: "Flow screen",
+      label: "02. Flow",
+      caption: "Use a second slide to explain progression.",
+      aspect: "aspect-[16/9]",
+      frame: "card",
+    },
+    {
+      src: screen3,
+      alt: "Results screen",
+      label: "03. Results",
+      caption: "Close with the outcome or review state.",
+      aspect: "aspect-[16/9]",
+      frame: "card",
+    },
   ]}
 />`,
   },
@@ -837,6 +888,52 @@ export default function CaseStudyBlocksDescribedPage() {
                 <h3 className="text-sm font-semibold">Available props</h3>
                 <ul className="mt-4 space-y-3 text-sm">
                   {docs.processStep.props.map(([name, desc]) => (
+                    <li key={name}>
+                      <span className="font-medium text-foreground">{name}</span>
+                      <span className="text-muted-foreground"> — {desc}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <div className="space-y-6">
+              <FigureCarousel
+                className="mt-2"
+                options={{ align: "start", loop: true }}
+                autoplay={{ delay: 4500, stopOnInteraction: false }}
+                items={[
+                  {
+                    src: screen1,
+                    alt: "Tablet dashboard for the redesigned D-Heart experience",
+                    caption: "Use labels and captions when each slide needs a bit of narrative context.",
+                    label: "01. Dashboard",
+                    aspect: "aspect-[16/9]",
+                    frame: "card",
+                  },
+                  {
+                    src: screen2,
+                    alt: "Redesigned D-Heart ECG flow",
+                    caption: "Enable autoplay for passive walkthroughs, or turn it off when readers need closer inspection.",
+                    label: "02. ECG flow",
+                    aspect: "aspect-[16/9]",
+                    frame: "card",
+                  },
+                  {
+                    src: screen3,
+                    alt: "Redesigned D-Heart result review screen",
+                    caption: "Use `showArrows` and `showDots` to decide how visible the navigation UI should be.",
+                    label: "03. Results",
+                    aspect: "aspect-[16/9]",
+                    frame: "card",
+                  },
+                ]}
+              />
+              <CodeBlock code={docs.figureCarousel.code} />
+              <div className="rounded-2xl border border-slate-200/70 bg-background p-5">
+                <h3 className="text-sm font-semibold">Available props</h3>
+                <ul className="mt-4 space-y-3 text-sm">
+                  {docs.figureCarousel.props.map(([name, desc]) => (
                     <li key={name}>
                       <span className="font-medium text-foreground">{name}</span>
                       <span className="text-muted-foreground"> — {desc}</span>
