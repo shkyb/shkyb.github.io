@@ -173,18 +173,21 @@ export const dHeartCase = {
 
           <CaseSeparator
             className="mb-4"
-            label="Main Problem"
+            label="The Problem"
             align="center"
           />
+
           <SectionHeading
             // className="px-16"
             // kicker="Main Problem"
-            align="center"
+            align="left"
             title="Performing an ECG is a time-sensitive task. During testing, we found that the D-Heart ecosystem introduced unnecessary friction in both the app and the device, slowing nurses down at critical moments."
           // subtitle=""
           />
 
-          <ImageGrid
+
+          {/* first image gird */}
+          {/* <ImageGrid
             className="mt-16"
             cols={3}
             items={[
@@ -206,14 +209,41 @@ export const dHeartCase = {
                 label: "03. Weak hardware feedback", 
                 caption: "LED signals, hidden electrodes, and cable handling were unclear, reducing confidence during use." },
             ]}
-          />
+          /> */}
+
+
+          <ImageGrid
+            className="mt-16"
+            cols={3}
+            items={[
+              { src: cover, 
+                aspect: "aspect-square",
+                alt: "Screen 1", 
+                label: "01. Wrong ECG workflow", 
+                caption: "A smartphone app with a consumer mental model — the flow conflicted with real clinical routines." },
+             
+              { src: cover, 
+                aspect: "aspect-square",
+                alt: "Screen 1", 
+                label: "02. Friction in the physical experience", 
+                caption: "Cables tangled. Clips hurt patients. Key electrodes went unnoticed by every single test participant." },
+             
+              { src: cover, 
+                aspect: "aspect-square",
+                alt: "Screen 1", 
+                label: "03. Unclear feedback", 
+                caption: "One LED for everything — nurses couldn't tell if the device was working, connecting, or failing." },
+            ]}
+          />      
 
           <PullQuote
             className="mt-10"
+            align="center"
             quote="It doesn't look like a normal ECG."
-            author="Nurse participant"
-            role="Usability testing"
-          />
+            author="— Nurse,"
+            role="Initial user test at Villa le Magnolie nursing home"
+          />       
+
         </>
       ),
     },
