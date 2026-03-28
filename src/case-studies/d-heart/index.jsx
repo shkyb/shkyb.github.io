@@ -93,6 +93,7 @@ const solutions = [
       src: cover,
       alt: "Screen 1",
       aspect: "aspect-square",
+      loading: "eager",
     },
   },
   {
@@ -104,6 +105,7 @@ const solutions = [
       src: cover,
       alt: "Screen 1",
       aspect: "aspect-square",
+      loading: "eager",
     },
   },
   {
@@ -115,6 +117,7 @@ const solutions = [
       src: cover,
       alt: "Screen 1",
       aspect: "aspect-square",
+      loading: "eager",
     },
   },
   {
@@ -126,6 +129,7 @@ const solutions = [
       src: cover,
       alt: "Screen 1",
       aspect: "aspect-square",
+      loading: "eager",
     },
   },
   {
@@ -137,9 +141,85 @@ const solutions = [
       src: cover,
       alt: "Screen 1",
       aspect: "aspect-square",
+      loading: "eager",
     },
   },
 ]
+
+function SolutionsShowcase() {
+  const [isMobile, setIsMobile] = React.useState(false)
+
+  React.useEffect(() => {
+    if (typeof window === "undefined") return
+
+    const mediaQuery = window.matchMedia("(max-width: 767px)")
+    const sync = () => setIsMobile(mediaQuery.matches)
+
+    sync()
+
+    if (mediaQuery.addEventListener) {
+      mediaQuery.addEventListener("change", sync)
+      return () => mediaQuery.removeEventListener("change", sync)
+    }
+
+    mediaQuery.addListener(sync)
+    return () => mediaQuery.removeListener(sync)
+  }, [])
+
+  if (isMobile) {
+    return (
+      <div className="mt-12 space-y-6">
+        {solutions.map((solution) => (
+          <ProcessStep
+            key={solution.step}
+            className="mx-auto max-w-3xl [&>div:first-child]:flex [&>div:first-child]:h-full [&>div:first-child]:flex-col [&>div:first-child]:justify-end"
+            step={solution.step}
+            title={solution.title}
+            description={solution.description}
+            figure={solution.figure}
+          />
+        ))}
+      </div>
+    )
+  }
+
+  return (
+    <Carousel
+      className="mx-auto mt-12 max-w-3xl"
+      options={{ align: "start", loop: true }}
+      plugins={[
+        Autoplay({ delay: 4500, stopOnInteraction: false })
+      ]}
+    >
+      <CarouselContent>
+        {solutions.map((solution) => (
+          <CarouselItem key={solution.step}>
+            <Card className="shadow-none">
+              <CardContent>
+                <ProcessStep
+                  className="mx-auto max-w-3xl [&>div:first-child]:flex [&>div:first-child]:h-full [&>div:first-child]:flex-col [&>div:first-child]:justify-end"
+                  step={solution.step}
+                  title={solution.title}
+                  description={solution.description}
+                  figure={solution.figure}
+                />
+              </CardContent>
+            </Card>
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+
+      <div className="mt-6 flex items-center justify-between gap-4">
+        <div className="flex items-center gap-2">
+          <CarouselPrevious className="static left-auto top-auto translate-y-0" />
+          <CarouselNext className="static right-auto top-auto translate-y-0" />
+        </div>
+
+        <CarouselDots className="mt-0 justify-end" progressDuration={4500} />
+      </div>
+    </Carousel>
+  )
+}
 
 export const dHeartCase = {
   slug: "d-heart",
@@ -311,54 +391,7 @@ export const dHeartCase = {
             </p>
           </Prose>
 
-          <Carousel
-            className="mx-auto mt-12 hidden max-w-3xl md:block"
-            options={{ align: "start", loop: true }}
-            plugins={[
-              Autoplay({ delay: 4500, stopOnInteraction: false })
-            ]}
-          >
-            <CarouselContent>
-              {solutions.map((solution) => (
-                <CarouselItem key={solution.step}>
-                  <Card className="shadow-none">
-                    <CardContent>
-                      <ProcessStep
-                        className="mx-auto max-w-3xl [&>div:first-child]:flex [&>div:first-child]:h-full [&>div:first-child]:flex-col [&>div:first-child]:justify-end"
-                        step={solution.step}
-                        // reverse
-                        title={solution.title}
-                        description={solution.description}
-                        figure={solution.figure}
-                      />
-                    </CardContent>
-                  </Card>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-
-            <div className="mt-6 flex items-center justify-between gap-4">
-              <div className="flex items-center gap-2">
-                <CarouselPrevious className="static left-auto top-auto translate-y-0" />
-                <CarouselNext className="static right-auto top-auto translate-y-0" />
-              </div>
-
-              <CarouselDots className="mt-0 justify-end" progressDuration={4500} />
-            </div>
-          </Carousel>
-
-          <div className="mt-12 space-y-6 md:hidden">
-            {solutions.map((solution) => (
-              <ProcessStep
-                key={solution.step}
-                className="mx-auto max-w-3xl [&>div:first-child]:flex [&>div:first-child]:h-full [&>div:first-child]:flex-col [&>div:first-child]:justify-end"
-                step={solution.step}
-                title={solution.title}
-                description={solution.description}
-                figure={solution.figure}
-              />
-            ))}
-          </div>
+          <SolutionsShowcase />
 
 
           <Metrics items={topMetrics} columns={3} className="mt-20 mx-auto max-w-3xl" />

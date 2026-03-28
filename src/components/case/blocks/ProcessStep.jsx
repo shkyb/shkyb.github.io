@@ -16,6 +16,7 @@ import { Figure } from "./Figure"
  *     caption?: ReactNode
  *     aspect?: string
  *     frame?: "none" | "soft" | "card"
+ *     loading?: "lazy" | "eager"
  *   }
  * - reverse?: boolean
  * - className?: string
@@ -87,6 +88,7 @@ export function ProcessStep({
             caption={figure.caption}
             aspect={figure.aspect}
             frame={figure.frame ?? "soft"}
+            loading={figure.loading}
           />
         </div>
       ) : null}
