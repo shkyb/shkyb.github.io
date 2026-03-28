@@ -37,25 +37,22 @@ import {
 
 const topMetrics = [
   {
-    icon: "asd",
-    value: "108",
-    note: "Research participants across all phases",
-  },
-  {
     label: "Final average SEQ",
     value: "6.25 / 7",
+    delta:"⬆️",
     note: "Across connect, perform ECG, and share-result tasks.",
   },
   {
-    label: "Connect device",
-    value: "6.67 / 7",
-    note: "Pairing became easier to understand in final validation.",
+    label: "Participants",
+    value: "5 x🧑‍⚕️",
+    // delta:"🧑‍⚕️",
+    note: "Nurses tested in real nursing home setting.",
   },
-  {
-    label: "Share results",
-    value: "6.3 / 7",
-    note: "Saving and progressing after the exam became clearer.",
-  },
+  // {
+  //   label: "Share results",
+  //   value: "6.3 / 7",
+  //   note: "Saving and progressing after the exam became clearer.",
+  // },
   {
     label: "Tree testing",
     value: "71%",
@@ -85,6 +82,65 @@ const researchInsights = [
       "Power, Bluetooth, charging, battery, and ECG states were all routed through a single feedback channel.",
   },
 ]
+
+const solutions = [
+  {
+    step: "01",
+    title: "Tablet-First Application",
+    description:
+      "Shifted from smartphone to tablet. Redesigned IA with a dashboard home and nested ECG flow — aligned with how nurses think.",
+    figure: {
+      src: cover,
+      alt: "Screen 1",
+      aspect: "aspect-square",
+    },
+  },
+  {
+    step: "02",
+    title: "Redesigned Physical Clips",
+    description:
+      "Spring-loaded ECG clips with ergonomic grip, reducing patient discomfort. Added red markers to prevent cable over-extension.",
+    figure: {
+      src: cover,
+      alt: "Screen 1",
+      aspect: "aspect-square",
+    },
+  },
+  {
+    step: "03",
+    title: "Intelligent LED System",
+    description:
+      "Separated LED into primary (ECG) and secondary (battery, Bluetooth). Clear color system: orange, blue, green, yellow.",
+    figure: {
+      src: cover,
+      alt: "Screen 1",
+      aspect: "aspect-square",
+    },
+  },
+  {
+    step: "04",
+    title: "Nurse-Integrated Ecosystem",
+    description:
+      "Integrated with patient databases to remove manual entry. Added nurse login via ID card, validated across multiple countries.",
+    figure: {
+      src: cover,
+      alt: "Screen 1",
+      aspect: "aspect-square",
+    },
+  },
+  {
+    step: "05",
+    title: "3D Instructional Renders",
+    description:
+      "Replaced flat diagrams with 3D visuals of device and electrode placement. Carousel allows self-paced guidance.",
+    figure: {
+      src: cover,
+      alt: "Screen 1",
+      aspect: "aspect-square",
+    },
+  },
+]
+
 export const dHeartCase = {
   slug: "d-heart",
 
@@ -256,102 +312,29 @@ export const dHeartCase = {
           </Prose>
 
           <Carousel
-            className="mx-auto mt-12 max-w-3xl"
+            className="mx-auto mt-12 hidden max-w-3xl md:block"
             options={{ align: "start", loop: true }}
             plugins={[
               Autoplay({ delay: 4500, stopOnInteraction: false })
             ]}
           >
             <CarouselContent>
-              <CarouselItem>
-                <Card className="shadow-none">
-                  <CardContent>
-                    <ProcessStep
-                      className="mx-auto max-w-3xl [&>div:first-child]:flex [&>div:first-child]:h-full [&>div:first-child]:flex-col [&>div:first-child]:justify-end"
-                      step="01"
-                      title="Tablet-First Application"
-                      description="Shifted from smartphone to tablet. Redesigned IA with a dashboard home and nested ECG flow — aligned with how nurses think."
-                      figure={{
-                        src: cover,
-                        alt: "Screen 1",
-                        aspect: "aspect-square",
-                      }}
-                    />
-                  </CardContent>
-                </Card>
-              </CarouselItem>
-
-              <CarouselItem>
-                <Card className="shadow-none">
-                  <CardContent>
-                    <ProcessStep
-                      className="mx-auto max-w-3xl [&>div:first-child]:flex [&>div:first-child]:h-full [&>div:first-child]:flex-col [&>div:first-child]:justify-end"
-                      step="02"
-                      title="Redesigned Physical Clips"
-                      description="Spring-loaded ECG clips with ergonomic grip, reducing patient discomfort. Added red markers to prevent cable over-extension."
-                      figure={{
-                        src: cover,
-                        alt: "Screen 1",
-                        aspect: "aspect-square",
-                      }}
-                    />
-                  </CardContent>
-                </Card>
-              </CarouselItem>
-
-              <CarouselItem>
-                <Card className="shadow-none">
-                  <CardContent>
-                    <ProcessStep
-                      className="mx-auto max-w-3xl [&>div:first-child]:flex [&>div:first-child]:h-full [&>div:first-child]:flex-col [&>div:first-child]:justify-end"
-                      step="03"
-                      title="Intelligent LED System"
-                      description="Separated LED into primary (ECG) and secondary (battery, Bluetooth). Clear color system: orange, blue, green, yellow."
-                      figure={{
-                        src: cover,
-                        alt: "Screen 1",
-                        aspect: "aspect-square",
-                      }}
-                    />
-                  </CardContent>
-                </Card>
-              </CarouselItem>
-
-              <CarouselItem>
-                <Card className="shadow-none">
-                  <CardContent>
-                    <ProcessStep
-                      className="mx-auto max-w-3xl [&>div:first-child]:flex [&>div:first-child]:h-full [&>div:first-child]:flex-col [&>div:first-child]:justify-end"
-                      step="04"
-                      title="Nurse-Integrated Ecosystem"
-                      description="Integrated with patient databases to remove manual entry. Added nurse login via ID card, validated across multiple countries."
-                      figure={{
-                        src: cover,
-                        alt: "Screen 1",
-                        aspect: "aspect-square",
-                      }}
-                    />
-                  </CardContent>
-                </Card>
-              </CarouselItem>
-
-              <CarouselItem>
-                <Card className="shadow-none">
-                  <CardContent>
-                    <ProcessStep
-                      className="mx-auto max-w-3xl [&>div:first-child]:flex [&>div:first-child]:h-full [&>div:first-child]:flex-col [&>div:first-child]:justify-end"
-                      step="05"
-                      title="3D Instructional Renders"
-                      description="Replaced flat diagrams with 3D visuals of device and electrode placement. Carousel allows self-paced guidance."
-                      figure={{
-                        src: cover,
-                        alt: "Screen 1",
-                        aspect: "aspect-square",
-                      }}
-                    />
-                  </CardContent>
-                </Card>
-              </CarouselItem>
+              {solutions.map((solution) => (
+                <CarouselItem key={solution.step}>
+                  <Card className="shadow-none">
+                    <CardContent>
+                      <ProcessStep
+                        className="mx-auto max-w-3xl [&>div:first-child]:flex [&>div:first-child]:h-full [&>div:first-child]:flex-col [&>div:first-child]:justify-end"
+                        step={solution.step}
+                        // reverse
+                        title={solution.title}
+                        description={solution.description}
+                        figure={solution.figure}
+                      />
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+              ))}
             </CarouselContent>
 
             <div className="mt-6 flex items-center justify-between gap-4">
@@ -364,8 +347,21 @@ export const dHeartCase = {
             </div>
           </Carousel>
 
+          <div className="mt-12 space-y-6 md:hidden">
+            {solutions.map((solution) => (
+              <ProcessStep
+                key={solution.step}
+                className="mx-auto max-w-3xl [&>div:first-child]:flex [&>div:first-child]:h-full [&>div:first-child]:flex-col [&>div:first-child]:justify-end"
+                step={solution.step}
+                title={solution.title}
+                description={solution.description}
+                figure={solution.figure}
+              />
+            ))}
+          </div>
 
-          <Metrics items={topMetrics} columns={4} className="mt-20" />
+
+          <Metrics items={topMetrics} columns={3} className="mt-20 mx-auto max-w-3xl" />
 
 
         </>
