@@ -23,9 +23,24 @@ import { PullQuote } from "@/components/case/blocks/PullQuote"
 import { Timeline } from "@/components/case/blocks/Timeline"
 import { ProcessStep } from "@/components/case/blocks/ProcessStep"
 import { CaseSeparator } from "@/components/case/blocks/CaseSeparator"
+import { Card, CardContent } from "@/components/ui/card"
+import Autoplay from "embla-carousel-autoplay"
+import {
+  Carousel,
+  CarouselContent,
+  CarouselDots,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious
+} from "@/components/ui/carousel"
 
 
 const topMetrics = [
+  {
+    icon: "asd",
+    value: "108",
+    note: "Research participants across all phases",
+  },
   {
     label: "Final average SEQ",
     value: "6.25 / 7",
@@ -227,11 +242,12 @@ export const dHeartCase = {
           />
 
           <SectionHeading
+            className="max-w-3xl mx-auto"
             title="A clearer ecosystem built around how nurses actually work."
           // subtitle="Instead of polishing isolated screens, we simplified the structure, clarified the ECG flow, and reduced ambiguity across both the app and the device."
           />
 
-          <Prose className="mb-10 mt-4">
+          <Prose className="mb-10 mt-4 mx-auto max-w-3xl">
             <p>
               We redesigned the experience around three principles: direct access
               to key actions, a clearer step-by-step ECG flow, and stronger feedback
@@ -239,55 +255,115 @@ export const dHeartCase = {
             </p>
           </Prose>
 
-          <FigureCarousel
-            className="mt-16"
+          <Carousel
+            className="mx-auto mt-12 max-w-3xl"
             options={{ align: "start", loop: true }}
-            autoplay={{ delay: 4500, stopOnInteraction: false }}
-            itemClassName="md:basis-1/2 lg:basis-1/3"
-            dotsProgressDuration={4500}
-            items={[
-              {
-                src: cover,
-                aspect: "aspect-[2/3]",
-                alt: "Screen 1",
-                label: "01. Tablet-First Application",
-                caption: "Shifted from smartphone to tablet. Redesigned IA with a dashboard home and nested ECG flow — aligned with how nurses think."
-              },
-
-              {
-                src: cover,
-                aspect: "aspect-[2/3]",
-                alt: "Screen 1",
-                label: "02. Redesigned Physical Clips",
-                caption: "Spring-loaded ECG clips with ergonomic grip, reducing patient discomfort. Added red markers to prevent cable over-extension."
-              },
-
-              {
-                src: cover,
-                aspect: "aspect-[2/3]",
-                alt: "Screen 1",
-                label: "03. Intelligent LED System",
-                caption: "Separated LED into primary (ECG) and secondary (battery, Bluetooth). Clear color system: orange, blue, green, yellow."
-              },
-
-              {
-                src: cover,
-                aspect: "aspect-[2/3]",
-                alt: "Screen 1",
-                label: "04. Nurse-Integrated Ecosystem",
-                caption: "Integrated with patient databases to remove manual entry. Added nurse login via ID card, validated across multiple countries."
-              },
-
-              {
-                src: cover,
-                aspect: "aspect-[2/3]",
-                alt: "Screen 1",
-                label: "05. 3D Instructional Renders",
-                caption: "Replaced flat diagrams with 3D visuals of device and electrode placement. Carousel allows self-paced guidance."
-              },
+            plugins={[
+              Autoplay({ delay: 4500, stopOnInteraction: false })
             ]}
-          />
- 
+          >
+            <CarouselContent>
+              <CarouselItem>
+                <Card className="shadow-none">
+                  <CardContent>
+                    <ProcessStep
+                      className="mx-auto max-w-3xl [&>div:first-child]:flex [&>div:first-child]:h-full [&>div:first-child]:flex-col [&>div:first-child]:justify-end"
+                      step="01"
+                      title="Tablet-First Application"
+                      description="Shifted from smartphone to tablet. Redesigned IA with a dashboard home and nested ECG flow — aligned with how nurses think."
+                      figure={{
+                        src: cover,
+                        alt: "Screen 1",
+                        aspect: "aspect-square",
+                      }}
+                    />
+                  </CardContent>
+                </Card>
+              </CarouselItem>
+
+              <CarouselItem>
+                <Card className="shadow-none">
+                  <CardContent>
+                    <ProcessStep
+                      className="mx-auto max-w-3xl [&>div:first-child]:flex [&>div:first-child]:h-full [&>div:first-child]:flex-col [&>div:first-child]:justify-end"
+                      step="02"
+                      title="Redesigned Physical Clips"
+                      description="Spring-loaded ECG clips with ergonomic grip, reducing patient discomfort. Added red markers to prevent cable over-extension."
+                      figure={{
+                        src: cover,
+                        alt: "Screen 1",
+                        aspect: "aspect-square",
+                      }}
+                    />
+                  </CardContent>
+                </Card>
+              </CarouselItem>
+
+              <CarouselItem>
+                <Card className="shadow-none">
+                  <CardContent>
+                    <ProcessStep
+                      className="mx-auto max-w-3xl [&>div:first-child]:flex [&>div:first-child]:h-full [&>div:first-child]:flex-col [&>div:first-child]:justify-end"
+                      step="03"
+                      title="Intelligent LED System"
+                      description="Separated LED into primary (ECG) and secondary (battery, Bluetooth). Clear color system: orange, blue, green, yellow."
+                      figure={{
+                        src: cover,
+                        alt: "Screen 1",
+                        aspect: "aspect-square",
+                      }}
+                    />
+                  </CardContent>
+                </Card>
+              </CarouselItem>
+
+              <CarouselItem>
+                <Card className="shadow-none">
+                  <CardContent>
+                    <ProcessStep
+                      className="mx-auto max-w-3xl [&>div:first-child]:flex [&>div:first-child]:h-full [&>div:first-child]:flex-col [&>div:first-child]:justify-end"
+                      step="04"
+                      title="Nurse-Integrated Ecosystem"
+                      description="Integrated with patient databases to remove manual entry. Added nurse login via ID card, validated across multiple countries."
+                      figure={{
+                        src: cover,
+                        alt: "Screen 1",
+                        aspect: "aspect-square",
+                      }}
+                    />
+                  </CardContent>
+                </Card>
+              </CarouselItem>
+
+              <CarouselItem>
+                <Card className="shadow-none">
+                  <CardContent>
+                    <ProcessStep
+                      className="mx-auto max-w-3xl [&>div:first-child]:flex [&>div:first-child]:h-full [&>div:first-child]:flex-col [&>div:first-child]:justify-end"
+                      step="05"
+                      title="3D Instructional Renders"
+                      description="Replaced flat diagrams with 3D visuals of device and electrode placement. Carousel allows self-paced guidance."
+                      figure={{
+                        src: cover,
+                        alt: "Screen 1",
+                        aspect: "aspect-square",
+                      }}
+                    />
+                  </CardContent>
+                </Card>
+              </CarouselItem>
+            </CarouselContent>
+
+            <div className="mt-6 flex items-center justify-between gap-4">
+              <div className="flex items-center gap-2">
+                <CarouselPrevious className="static left-auto top-auto translate-y-0" />
+                <CarouselNext className="static right-auto top-auto translate-y-0" />
+              </div>
+
+              <CarouselDots className="mt-0 justify-end" progressDuration={4500} />
+            </div>
+          </Carousel>
+
 
           <Metrics items={topMetrics} columns={4} className="mt-20" />
 
