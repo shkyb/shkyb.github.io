@@ -43,6 +43,20 @@ export function Timeline({
     }
   }
 
+  const renderBody = (body, className) => {
+    if (!body) return null
+
+    if (typeof body === "string") {
+      return (
+        <Prose>
+          <p className={cn("m-0 text-sm text-muted-foreground", className)}>{body}</p>
+        </Prose>
+      )
+    }
+
+    return <div className={className}>{body}</div>
+  }
+
   if (variant === "cards") {
     return (
       <div className={cn("grid gap-4 sm:grid-cols-2 lg:grid-cols-3", className)}>
@@ -65,13 +79,7 @@ export function Timeline({
                   </Prose>
                 ) : null}
 
-                {it.body ? (
-                  <div className="mt-3">
-                    <Prose>
-                      <p className="m-0 text-sm text-muted-foreground">{it.body}</p>
-                    </Prose>
-                  </div>
-                ) : null}
+                {it.body ? <div className="mt-3">{renderBody(it.body)}</div> : null}
 
                 {it.bullets?.length ? (
                   <ul className="mt-3 list-disc space-y-1 pl-5 text-sm text-muted-foreground">
@@ -141,11 +149,7 @@ export function Timeline({
                 ) : null}
               </div>
 
-              {it.body ? (
-                <Prose>
-                  <p className="m-0 text-sm text-muted-foreground">{it.body}</p>
-                </Prose>
-              ) : null}
+              {it.body ? renderBody(it.body) : null}
 
               {it.bullets?.length ? (
                 <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-muted-foreground">

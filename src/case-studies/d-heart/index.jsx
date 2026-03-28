@@ -420,8 +420,17 @@ export const dHeartCase = {
               {
                 title: "Expert evaluation",
                 meta: "Heuristic evaluation · cognitive walkthrough · task analysis",
-                body:
-                  "Each team member independently evaluated the app against Nielsen's 10 heuristics on both iOS and Android versions. Individual results were merged into a single severity-rated report — uncovering everything from minor cosmetic issues to usability catastrophes.",
+                body: (
+                  <Prose>
+                    <p>
+                      Each team member independently evaluated the app against
+                      Nielsen&apos;s 10 heuristics on both iOS and Android
+                      versions. Individual results were merged into a single
+                      severity-rated report, uncovering everything from minor
+                      cosmetic issues to usability catastrophes.
+                    </p>
+                  </Prose>
+                ),
                 tags: ["Heuristic evaluation", "Cognitive Walkthrough", "Task Analysis"],
                 tone: "info",
                 range: "Checkpoint 1"
@@ -429,8 +438,17 @@ export const dHeartCase = {
               {
                 title: "User testing",
                 meta: "5 nurses in a nursing home + 3 standard users",
-                body:
-                  "Five nurses at Villa le Magnolie nursing home in Reggio Emilia used the real device on a real patient (acted by a team member). Every interaction was video and screen-recorded. Nurses were asked to think aloud — what they said matched what we feared.",
+                body: (
+                  <Prose>
+                    <p>
+                      Five nurses at Villa le Magnolie nursing home in Reggio
+                      Emilia used the real device on a real patient, acted by a
+                      team member. Every interaction was video and
+                      screen-recorded. Nurses were asked to think aloud, and
+                      what they said matched what we feared.
+                    </p>
+                  </Prose>
+                ),
                 tone: "success",
                 tags: ["Usability Testing", "SEQ", "UEQ", "PREMO"],
                 range: "Checkpoint 2"
