@@ -423,17 +423,13 @@ export const dHeartCase = {
                 body: (
                   <Prose>
                     <p>
-                      Each team member independently evaluated the app against
-                      Nielsen&apos;s 10 heuristics on both iOS and Android
-                      versions. Individual results were merged into a single
-                      severity-rated report, uncovering everything from minor
-                      cosmetic issues to usability catastrophes.
+                      We reviewed the app against <b>Nielsen's heuristics</b> to reveal violations across interface consistency, visibility, error prevention, and recognition. Then we <b>simulated the professional workflow</b> from registration to sharing results to expose breakdowns in learnability and feedback.
                     </p>
                   </Prose>
                 ),
                 tags: ["Heuristic evaluation", "Cognitive Walkthrough", "Task Analysis"],
                 tone: "info",
-                range: "Checkpoint 1"
+                // range: "Checkpoint 1"
               },
               {
                 title: "User testing",
@@ -441,17 +437,13 @@ export const dHeartCase = {
                 body: (
                   <Prose>
                     <p>
-                      Five nurses at Villa le Magnolie nursing home in Reggio
-                      Emilia used the real device on a real patient, acted by a
-                      team member. Every interaction was video and
-                      screen-recorded. Nurses were asked to think aloud, and
-                      what they said matched what we feared.
+                      <b>Five nurses</b> at Villa le Magnolie nursing home in Reggio Emilia used the real device on a real patient, acted by a team member. Every interaction was <b>video</b> and <b>screen-recorded</b>. Nurses were asked to think aloud, and what they said matched what we feared.
                     </p>
                   </Prose>
                 ),
                 tone: "success",
                 tags: ["Usability Testing", "SEQ", "UEQ", "PREMO"],
-                range: "Checkpoint 2"
+                // range: "Checkpoint 1"
               },
             
             ]}
@@ -466,6 +458,16 @@ export const dHeartCase = {
           </Callout>
         </>
       ),
+    },
+
+    {
+      // this is for the nursing home user tests images
+      size: "page",
+      render: () => (
+        <>
+        hello
+        </>
+      )
     },
 
     {
