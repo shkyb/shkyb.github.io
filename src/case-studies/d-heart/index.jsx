@@ -328,7 +328,7 @@ export const dHeartCase = {
             items={[
               {
                 src: cover,
-                aspect: "aspect-square",
+                aspect: "aspect-[2/3]",
                 alt: "Screen 1",
                 label: "01. Wrong ECG workflow",
                 caption: "A smartphone app with a consumer mental model — the flow conflicted with real clinical routines."
@@ -336,7 +336,7 @@ export const dHeartCase = {
 
               {
                 src: cover,
-                aspect: "aspect-square",
+                aspect: "aspect-[2/3]",
                 alt: "Screen 1",
                 label: "02. Friction in the physical experience",
                 caption: "Cables tangled. Clips hurt patients. Key electrodes went unnoticed by every single test participant."
@@ -344,7 +344,7 @@ export const dHeartCase = {
 
               {
                 src: cover,
-                aspect: "aspect-square",
+                aspect: "aspect-[2/3]",
                 alt: "Screen 1",
                 label: "03. Unclear feedback",
                 caption: "One LED for everything — nurses couldn't tell if the device was working, connecting, or failing."
@@ -385,9 +385,7 @@ export const dHeartCase = {
 
           <Prose className="mb-10 mt-4 mx-auto max-w-3xl">
             <p>
-              We redesigned the experience around three principles: direct access
-              to key actions, a clearer step-by-step ECG flow, and stronger feedback
-              between the app and the device.
+              We redesigned the experience around three principles: direct access to key actions, a clearer step-by-step ECG flow, and stronger feedback between the app and the device.
             </p>
           </Prose>
 
@@ -406,45 +404,38 @@ export const dHeartCase = {
       id: "research",
       label: "Research",
       bgClass: "bg-background",
-      size: "fill",
+      size: "small",
       render: () => (
         <>
-          <CaseSeparator label="Deep dive" />,
+          <CaseSeparator label="UX Research" />
           <SectionHeading
             title="Research reframed the project around nurses as the primary users"
             subtitle="We combined expert evaluation, in-context testing, questionnaires, card sorting, and tree testing to understand how D-Heart behaved in real care scenarios."
+            className="mb-10"
           />
 
           <Timeline
+            // variant="cards"
             items={[
               {
                 title: "Expert evaluation",
                 meta: "Heuristic evaluation · cognitive walkthrough · task analysis",
                 body:
-                  "We reviewed the current app against usability principles and stepped through the core actions expected from a professional user.",
+                  "Each team member independently evaluated the app against Nielsen's 10 heuristics on both iOS and Android versions. Individual results were merged into a single severity-rated report — uncovering everything from minor cosmetic issues to usability catastrophes.",
+                tags: ["Heuristic evaluation", "Cognitive Walkthrough", "Task Analysis"],
                 tone: "info",
+                range: "Checkpoint 1"
               },
               {
                 title: "User testing",
                 meta: "5 nurses in a nursing home + 3 standard users",
                 body:
-                  "We observed the full workflow from opening the case to sharing the ECG result.",
+                  "Five nurses at Villa le Magnolie nursing home in Reggio Emilia used the real device on a real patient (acted by a team member). Every interaction was video and screen-recorded. Nurses were asked to think aloud — what they said matched what we feared.",
                 tone: "success",
+                tags: ["Usability Testing", "SEQ", "UEQ", "PREMO"],
+                range: "Checkpoint 2"
               },
-              {
-                title: "IA research",
-                meta: "Card sorting + tree testing",
-                body:
-                  "We validated grouping logic, labels, and findability to design a more direct information structure.",
-                tone: "warning",
-              },
-              {
-                title: "Iterative validation",
-                meta: "Lo-fi and hi-fi prototype testing",
-                body:
-                  "Wireframes and prototypes were used to refine labels, layouts, instructions, and feedback.",
-                tone: "info",
-              },
+            
             ]}
           />
 

@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils"
+import { Badge } from "@/components/ui/badge"
 import { Prose } from "../layout/Prose"
 
 /**
@@ -9,6 +10,7 @@ import { Prose } from "../layout/Prose"
  *   range?: ReactNode          // e.g. "Week 1–2" or "Jan–Mar 2026"
  *   body?: ReactNode           // short paragraph
  *   bullets?: ReactNode[]      // deliverables / notes
+ *   tags?: ReactNode[]         // compact badge-like labels
  *   link?: { label: string, href: string, external?: boolean }
  *   tone?: "neutral" | "info" | "success" | "warning"  // subtle dot color intent
  * }>
@@ -79,6 +81,16 @@ export function Timeline({
                   </ul>
                 ) : null}
 
+                {it.tags?.length ? (
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {it.tags.map((tag, i) => (
+                      <Badge key={i} variant="secondary">
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
+                ) : null}
+
                 {it.link ? (
                   <div className="mt-3">
                     <a
@@ -141,6 +153,16 @@ export function Timeline({
                     <li key={i}>{b}</li>
                   ))}
                 </ul>
+              ) : null}
+
+              {it.tags?.length ? (
+                <div className="mt-2 flex flex-wrap gap-2">
+                  {it.tags.map((tag, i) => (
+                    <Badge key={i} variant="secondary">
+                      {tag}
+                    </Badge>
+                  ))}
+                </div>
               ) : null}
 
               {it.link ? (
