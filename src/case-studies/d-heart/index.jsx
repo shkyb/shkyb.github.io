@@ -23,7 +23,8 @@ import { PullQuote } from "@/components/case/blocks/PullQuote"
 import { Timeline } from "@/components/case/blocks/Timeline"
 import { ProcessStep } from "@/components/case/blocks/ProcessStep"
 import { CaseSeparator } from "@/components/case/blocks/CaseSeparator"
-import { Card, CardContent } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Card, CardContent, CardDescription, CardTitle } from "@/components/ui/card"
 import Autoplay from "embla-carousel-autoplay"
 import {
   Carousel,
@@ -524,6 +525,61 @@ export const dHeartCase = {
           
           />
           
+          <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {[
+              {
+                src: placeholder,
+                number: "01",
+                title: "Hidden electrodes",
+                description:
+                  "Users missed the two electrodes on the back, making the ECG process confusing and error-prone.",
+              },
+              {
+                src: placeholder,
+                number: "02",
+                title: "Unclear instructions",
+                description:
+                  "Nurses struggled to understand and follow instructions during the ECG procedure.",
+              },
+              {
+                src: placeholder,
+                number: "03",
+                title: "Painful electrode use",
+                description:
+                  "Attaching and moving electrodes caused discomfort, especially for elderly patients.",
+              },
+              {
+                src: placeholder,
+                number: "04",
+                title: "Confusing LED feedback",
+                description:
+                  "A single LED communicated multiple states, leaving users unsure about device status.",
+              },
+              {
+                src: placeholder,
+                number: "05",
+                title: "Wrong device context",
+                description:
+                  "Nurses couldn't rely on personal phones, and small screens made medical data hard to read.",
+              },
+            ].map((item) => (
+              <Card key={item.title} className="gap-4 overflow-hidden pt-0">
+                  <CardContent className="px-0 pt-0">
+                    <img
+                      src={item.src}
+                      alt={item.title}
+                      className="aspect-4/3 w-full object-cover"
+                      loading="eager"
+                    />
+                </CardContent>
+                <CardContent className="pt-0">
+                  <Badge variant="secondary" className="mb-4">Problem {item.number}.</Badge>
+                  <CardTitle>{item.title}</CardTitle>
+                  <CardDescription className="mt-2">{item.description}</CardDescription>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
           
 
           <Prose className="my-10">
