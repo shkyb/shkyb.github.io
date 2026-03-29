@@ -494,14 +494,15 @@ export const dHeartCase = {
               stopOnMouseEnter: true,
             }}
             contentClassName="-ml-3 md:-ml-4"
-            itemClassName="basis-auto pl-3 md:pl-4"
-            figureClassName="w-[58vw] max-w-[20rem] md:w-[30vw] md:max-w-[24rem] [&>div:first-child]:max-h-[50vh]"
+            itemClassName="basis-auto pl-1 md:pl-2"
+            figureClassName="w-[58vw] max-w-[20rem] md:w-[30vw] md:max-w-[24rem] [&>div:first-child]:max-h-[50vh] [&>div:first-child]:rounded-md "
             showArrows={false}
             showDots={false}
             items={
               NursingHome.length
                 ? [...NursingHome, ...NursingHome, ...NursingHome].map((item) => ({
                     frame: "none",
+                    fit: "cover",
                     loading: "eager",
                     ...item,
                   }))
