@@ -152,16 +152,22 @@ const NursingHome = [
     src: cover,
     alt: "Nurse testing the D-Heart device in a nursing home",
     aspect: "aspect-[4/3]",
+    loading: "eager",
+    frame: "none",
   },
   {
     src: cover,
     alt: "Nurse testing the D-Heart device in a nursing home",
     aspect: "aspect-[4/3]",
+    loading: "eager",
+    frame: "none",
   },
   {
     src: cover,
     alt: "Nurse testing the D-Heart device in a nursing home",
     aspect: "aspect-[4/3]",
+    loading: "eager",
+    frame: "none",
   }
 ]
 
@@ -493,10 +499,12 @@ export const dHeartCase = {
               stopOnInteraction: false,
               stopOnMouseEnter: true,
             }}
-            figureClassName="[&>div:first-child]:max-h-[50vh]"
+            contentClassName="-ml-3 md:-ml-4"
+            itemClassName="basis-auto pl-3 md:pl-4"
+            figureClassName="w-[58vw] max-w-[20rem] md:w-[30vw] md:max-w-[24rem] [&>div:first-child]:max-h-[50vh]"
             showArrows={false}
             showDots={false}
-            items={NursingHome}
+            items={NursingHome.length ? [...NursingHome, ...NursingHome, ...NursingHome] : NursingHome}
           />
         </>
       )
