@@ -562,7 +562,7 @@ export const dHeartCase = {
     
     {
       id: "findings",
-      label: "Findings & Requirments",
+      label: "Findings",
       bgClass: "bg-muted/30",
       size: "fill",
       render: () => (
@@ -617,7 +617,7 @@ export const dHeartCase = {
                   "Nurses couldn't rely on personal phones, and small screens made medical data hard to read.",
               },
             ].map((item) => (
-              <Card key={item.title} className="gap-4 overflow-hidden pt-0">
+              <Card key={item.title} className="gap-4 overflow-hidden pt-0 shadow-none">
                   <CardContent className="px-0 pt-0">
                     <img
                       src={item.src}
