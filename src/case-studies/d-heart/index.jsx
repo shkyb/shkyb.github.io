@@ -456,7 +456,7 @@ export const dHeartCase = {
                 body: (
                   <Prose>
                     <p>
-                      <b>Five nurses</b> at Villa le Magnolie nursing home in Reggio Emilia used the real device on a real patient, acted by a team member. Every interaction was <b>video</b> and <b>screen-recorded</b>. Nurses were asked to think aloud, and what they said matched what we feared.
+                      Two groups of health professionals and standard users were studied in the user testing. <b>Five nurses</b> at Villa le Magnolie nursing home in Reggio Emilia used the real device on a real patient, acted by a team member. Every interaction was <b>video</b> and <b>screen-recorded</b>. Nurses were asked to think aloud, and what they said matched what we feared. 
                     </p>
                   </Prose>
                 ),
@@ -481,7 +481,7 @@ export const dHeartCase = {
 
     {
       // this is for the nursing home user tests images
-      size: "page",
+      size: "screen",
       render: () => (
         <>
           <FigureCarousel
@@ -495,7 +495,7 @@ export const dHeartCase = {
             }}
             contentClassName="-ml-3 md:-ml-4"
             itemClassName="basis-auto pl-1 md:pl-2"
-            figureClassName="w-[58vw] max-w-[20rem] md:w-[30vw] md:max-w-[24rem] [&>div:first-child]:max-h-[50vh] [&>div:first-child]:rounded-md "
+            figureClassName=" [&>div:first-child]:max-h-[50vh] [&>div:first-child]:rounded-md "
             showArrows={false}
             showDots={false}
             items={

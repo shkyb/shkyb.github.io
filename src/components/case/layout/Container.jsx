@@ -5,6 +5,7 @@ const SIZE_TO_MAX_W = {
   fill: "max-w-5xl",
   media: "max-w-7xl",
   page: "max-w-screen-2xl",
+  screen: "max-w-none",
 }
 
 export function CaseContainer({
