@@ -146,6 +146,25 @@ const solutions = [
   },
 ]
 
+const NursingHome = [
+  // Add nursing home images here, for example:
+  {
+    src: cover,
+    alt: "Nurse testing the D-Heart device in a nursing home",
+    aspect: "aspect-[4/3]",
+  },
+  {
+    src: cover,
+    alt: "Nurse testing the D-Heart device in a nursing home",
+    aspect: "aspect-[4/3]",
+  },
+  {
+    src: cover,
+    alt: "Nurse testing the D-Heart device in a nursing home",
+    aspect: "aspect-[4/3]",
+  }
+]
+
 function SolutionsShowcase() {
   const [isMobile, setIsMobile] = React.useState(false)
 
@@ -465,7 +484,20 @@ export const dHeartCase = {
       size: "page",
       render: () => (
         <>
-        // put nursing home images here
+          <FigureCarousel
+            className="w-full"
+            options={{ align: "start", loop: true, dragFree: true }}
+            autoScroll={{
+              speed: 1,
+              startDelay: 0,
+              stopOnInteraction: false,
+              stopOnMouseEnter: true,
+            }}
+            figureClassName="[&>div:first-child]:max-h-[50vh]"
+            showArrows={false}
+            showDots={false}
+            items={NursingHome}
+          />
         </>
       )
     },
