@@ -39,7 +39,7 @@ const topMetrics = [
   {
     label: "Final average SEQ",
     value: "6.25 / 7",
-    delta:"⬆️",
+    delta: "⬆️",
     note: "Across connect, perform ECG, and share-result tasks.",
   },
   {
@@ -185,7 +185,7 @@ function SolutionsShowcase() {
 
   return (
     <Carousel
-      className="mx-auto mt-12 max-w-3xl"
+      className="mx-auto mt-12"
       options={{ align: "start", loop: true }}
       plugins={[
         Autoplay({ delay: 4500, stopOnInteraction: false })
@@ -197,7 +197,7 @@ function SolutionsShowcase() {
             <Card className="shadow-none">
               <CardContent>
                 <ProcessStep
-                  className="mx-auto max-w-3xl [&>div:first-child]:flex [&>div:first-child]:h-full [&>div:first-child]:flex-col [&>div:first-child]:justify-end"
+                  className="mx-auto [&>div:first-child]:flex [&>div:first-child]:h-full [&>div:first-child]:flex-col [&>div:first-child]:justify-end"
                   step={solution.step}
                   title={solution.title}
                   description={solution.description}
@@ -378,16 +378,16 @@ export const dHeartCase = {
           />
 
           <SectionHeading
+            // kicker="A clearer ecosystem built around how nurses actually work."
             className="max-w-3xl mx-auto"
-            title="A clearer ecosystem built around how nurses actually work."
+            title=" We redesigned the experience around three principles: direct access to key actions, a clearer step-by-step ECG flow, and stronger feedback between the app and the device."
           // subtitle="Instead of polishing isolated screens, we simplified the structure, clarified the ECG flow, and reduced ambiguity across both the app and the device."
           />
 
-          <Prose className="mb-10 mt-4 mx-auto max-w-3xl">
+          {/* <Prose className="mb-10 mt-4 mx-auto max-w-3xl">
             <p>
-              We redesigned the experience around three principles: direct access to key actions, a clearer step-by-step ECG flow, and stronger feedback between the app and the device.
-            </p>
-          </Prose>
+              The redesign addressed every layer of the experience — from the app's information architecture to the physical clips nurses touch every day. A complete, coherent healthcare ecosystem.            </p>
+          </Prose> */}
 
           <SolutionsShowcase />
 
@@ -445,7 +445,7 @@ export const dHeartCase = {
                 tags: ["Usability Testing", "SEQ", "UEQ", "PREMO"],
                 // range: "Checkpoint 1"
               },
-            
+
             ]}
           />
 
@@ -465,7 +465,7 @@ export const dHeartCase = {
       size: "page",
       render: () => (
         <>
-        hello
+        // put nursing home images here
         </>
       )
     },
