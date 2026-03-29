@@ -63,24 +63,78 @@ const topMetrics = [
 
 
 
-const researchInsights = [
+const requirments = [
   {
-    eyebrow: "Behavior",
-    title: "Nurses followed their training, not the product’s assumptions",
-    description:
-      "Professional users ignored tutorials and acted from established medical routines, exposing a mismatch between the interface and real clinical behavior.",
+    tone: "info",
+    title: (
+      <Prose>
+        <h3>Clarify ECG flow</h3>
+      </Prose>
+    ),
+    body: (
+      <Prose>
+        <p>
+          Improve visibility of key components and guide users through a clear step-by-step ECG process.
+        </p>
+      </Prose>
+    ),
   },
   {
-    eyebrow: "Clarity",
-    title: "The ECG task created the most uncertainty",
-    description:
-      "Users were often unsure how to progress, what the prompts meant, and whether the system was responding correctly.",
+    tone: "info",
+    title: (
+      <Prose>
+        <h3>Simplify guidance</h3>
+      </Prose>
+    ),
+    body: (
+      <Prose>
+        <p>
+          Provide clear, minimal, and visual instructions for quick
+          understanding.
+        </p>
+      </Prose>
+    ),
   },
   {
-    eyebrow: "Feedback",
-    title: "One LED was trying to explain too much",
-    description:
-      "Power, Bluetooth, charging, battery, and ECG states were all routed through a single feedback channel.",
+    tone: "info",
+    title: (
+      <Prose>
+        <h3>Reduce discomfort</h3>
+      </Prose>
+    ),
+    body: (
+      <Prose>
+        <p>Design a gentler, more ergonomic attachment mechanism.</p>
+      </Prose>
+    ),
+  },
+  {
+    tone: "info",
+    title: (
+      <Prose>
+        <h3>Improve device feedback</h3>
+      </Prose>
+    ),
+    body: (
+      <Prose>
+        <p>Use multiple LEDs with distinct meanings for clarity.</p>
+      </Prose>
+    ),
+  },
+  {
+    tone: "info",
+    title: (
+      <Prose>
+        <h3>Use a better device</h3>
+      </Prose>
+    ),
+    body: (
+      <Prose>
+        <p>
+          Provide a portable, larger interface better suited for clinical use.
+        </p>
+      </Prose>
+    ),
   },
 ]
 
@@ -532,7 +586,7 @@ export const dHeartCase = {
                 number: "01",
                 title: "Hidden electrodes",
                 description:
-                  "Users missed the two electrodes on the back, making the ECG process confusing and error-prone.",
+                  "Users missed the two electrodes on the back, making the ECG process confusing and ehellorror-prone.",
               },
               {
                 src: placeholder,
@@ -568,7 +622,7 @@ export const dHeartCase = {
                     <img
                       src={item.src}
                       alt={item.title}
-                      className="aspect-4/3 w-full object-cover"
+                      className="aspect-square w-full object-cover"
                       loading="eager"
                     />
                 </CardContent>
@@ -582,51 +636,31 @@ export const dHeartCase = {
           </div>
           
 
-          <Prose className="my-10">
-            <p>
-              The IA work showed that users mentally separated patients, results,
-              functions, and help. It also revealed that Bluetooth and ECG actions
-              were closely related. Those findings helped us simplify the structure
-              and make the homepage feel more operational.
-            </p>
-          </Prose>
+        </>
+      ),
+    },
 
-            <Timeline items={researchInsights} className="mt-10" variant="cards" />
+    {
+      id: "requirments",
+      label: "Requirments",
+      bgClass: "bg-muted/30",
+      size: "fill",
+      render: () => (
+        <>
+          <CaseSeparator label="Requirements"/>
+          <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-16">
+            <div>
+              <Prose>
+                <h2>Translating the challenges into clear design directions</h2>
+                <p></p>
+              </Prose>
+            </div>
 
-
-          <ComparisonTable
-            columns={[
-              { key: "before", label: "Before" },
-              { key: "after", label: "After" },
-            ]}
-            rows={[
-              {
-                before:
-                  "Users had to move around the app to reach operational tasks.",
-                after:
-                  "The homepage became a dashboard for quick access to ECG, patients, results, and device status.",
-              },
-              {
-                before: "The ECG flow felt fragmented and unclear.",
-                after:
-                  "The ECG process was restructured as a clearer, step-by-step sequence.",
-              },
-              {
-                before:
-                  "Low-value features added confusion to the overall experience.",
-                after:
-                  "Features that caused friction without strong value were removed from the main flow.",
-              },
-            ]}
-          />
-
-          <Figure
-            className="mt-10"
-            src={placeholder}
-            alt="Placeholder for information architecture artifacts"
-            caption="Placeholder for card sorting, tree testing, or IA diagrams."
-            aspect="aspect-[16/9]"
-          />
+            <div>
+              <Timeline items={requirments} compact />
+            </div>
+          </div>
+          
         </>
       ),
     },
