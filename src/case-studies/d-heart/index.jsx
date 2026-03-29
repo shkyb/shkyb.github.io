@@ -466,15 +466,7 @@ export const dHeartCase = {
               },
 
             ]}
-          />
-
-          <InsightList items={researchInsights} className="mt-10" />
-
-          <Callout title="Key reframing" className="mt-10">
-            Once we treated nurses in nursing homes as the primary audience, the
-            design decisions around IA, instructions, and device feedback became much
-            more coherent.
-          </Callout>
+          />         
         </>
       ),
     },
@@ -512,20 +504,29 @@ export const dHeartCase = {
         </>
       )
     },
-
+    
     {
-      id: "ia",
-      label: "IA",
+      id: "findings",
+      label: "Findings & Requirments",
       bgClass: "bg-muted/30",
       size: "fill",
       render: () => (
         <>
+          <CaseSeparator label="Key Findings"/>
           <SectionHeading
-            title="The information architecture was rebuilt around directness"
-            subtitle="The original structure did not match nurses’ mental models, so we reorganized the app around the actions users expected to reach quickly."
+            title="The product worked — just not the way nurses did, creating a mismatch with clinical workflows and overally low usability score for performing ECG (5.6/7 SEQ)."
           />
+          <Figure
+            src={placeholder}
+            className="py-10"
+            caption="SEQ"
+            alt="SEQ"
+          
+          />
+          
+          
 
-          <Prose className="mb-10">
+          <Prose className="my-10">
             <p>
               The IA work showed that users mentally separated patients, results,
               functions, and help. It also revealed that Bluetooth and ECG actions
@@ -533,6 +534,9 @@ export const dHeartCase = {
               and make the homepage feel more operational.
             </p>
           </Prose>
+
+            <Timeline items={researchInsights} className="mt-10" variant="cards" />
+
 
           <ComparisonTable
             columns={[
