@@ -511,7 +511,7 @@ export const dHeartCase = {
                 body: (
                   <Prose>
                     <p>
-                      Two groups of health professionals and standard users were studied in the user testing. <b>Five nurses</b> at Villa le Magnolie nursing home in Reggio Emilia used the real device on a real patient, acted by a team member. Every interaction was <b>video</b> and <b>screen-recorded</b>. Nurses were asked to think aloud, and what they said matched what we feared. 
+                      Two groups of health professionals and standard users were studied in the user testing. <b>Five nurses</b> at Villa le Magnolie nursing home in Reggio Emilia used the real device on a real patient, acted by a team member. Every interaction was <b>video</b> and <b>screen-recorded</b>. Nurses were asked to think aloud, and what they said matched what we feared.
                     </p>
                   </Prose>
                 ),
@@ -521,7 +521,7 @@ export const dHeartCase = {
               },
 
             ]}
-          />         
+          />
         </>
       ),
     },
@@ -548,18 +548,18 @@ export const dHeartCase = {
             items={
               NursingHome.length
                 ? [...NursingHome, ...NursingHome, ...NursingHome].map((item) => ({
-                    frame: "none",
-                    fit: "cover",
-                    loading: "eager",
-                    ...item,
-                  }))
+                  frame: "none",
+                  fit: "cover",
+                  loading: "eager",
+                  ...item,
+                }))
                 : NursingHome
             }
           />
         </>
       )
     },
-    
+
     {
       id: "findings",
       label: "Findings",
@@ -567,7 +567,7 @@ export const dHeartCase = {
       size: "fill",
       render: () => (
         <>
-          <CaseSeparator label="Key Findings"/>
+          <CaseSeparator label="Key Findings" />
           <SectionHeading
             title="The product worked — just not the way nurses did, creating a mismatch with clinical workflows and overally low usability score for performing ECG (5.6/7 SEQ)."
           />
@@ -576,9 +576,9 @@ export const dHeartCase = {
             className="py-10"
             caption="SEQ"
             alt="SEQ"
-          
+
           />
-          
+
           <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
             {[
               {
@@ -616,15 +616,22 @@ export const dHeartCase = {
                 description:
                   "Nurses couldn't rely on personal phones, and small screens made medical data hard to read.",
               },
+              {
+                src: placeholder,
+                number: "06",
+                title: "Result access issues",
+                description:
+                  "Users struggled to locate reports, interpret some data, and understand where result actions lived.",
+              },
             ].map((item) => (
               <Card key={item.title} className="gap-4 overflow-hidden pt-0 shadow-none">
-                  <CardContent className="px-0 pt-0">
-                    <img
-                      src={item.src}
-                      alt={item.title}
-                      className="aspect-square w-full object-cover"
-                      loading="eager"
-                    />
+                <CardContent className="px-0 pt-0">
+                  <img
+                    src={item.src}
+                    alt={item.title}
+                    className="aspect-square w-full object-cover"
+                    loading="eager"
+                  />
                 </CardContent>
                 <CardContent className="pt-0">
                   <Badge variant="secondary" className="mb-4">Problem {item.number}.</Badge>
@@ -634,7 +641,7 @@ export const dHeartCase = {
               </Card>
             ))}
           </div>
-          
+
 
         </>
       ),
@@ -647,7 +654,7 @@ export const dHeartCase = {
       size: "fill",
       render: () => (
         <>
-          <CaseSeparator label="Requirements"/>
+          <CaseSeparator label="Requirements" />
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-16">
             <div>
               <Prose>
@@ -660,7 +667,7 @@ export const dHeartCase = {
               <Timeline items={requirments} compact />
             </div>
           </div>
-          
+
         </>
       ),
     },
@@ -669,35 +676,84 @@ export const dHeartCase = {
       id: "design",
       label: "Design",
       bgClass: "bg-background",
-      size: "media",
+      size: "fill",
       render: () => (
         <>
+          <CaseSeparator label="Redesign" />
+          <SectionHeading
+            title="Redesigning the D-Heart Ecosystem — a different backend"
+
+            className="mb-10 mx-auto max-w-3xl"
+          />
+
+          <div className="grid grid-cols-1 gap-5 lg:grid-cols-2 lg:gap-10">
+            <div>
+              <Figure
+                src={placeholder}
+                alt="The new propsed experience"
+                caption="//service map"
+                aspect="aspect-2/3" />
+            </div>
+
+            <div>
+
+              <Prose className="mb-10 mx-auto max-w-3xl">
+                <p>
+                  D-Heart was redesigned to align with real clinical workflows—replacing a <b>fragmented, manual ECG process</b> with a <b>streamlined digital ecosystem</b>.
+                </p>
+                <p>
+                  The process began with rethinking the information architecture, followed by iterative wireframing and mid-fidelity prototype testing.
+                </p>
+              </Prose>
+
+
+              <Timeline
+                // variant="cards"
+                // className="mx-auto max-w-3xl"
+                items={[
+                  {
+                    title: "IA re-design",
+                    body: "In-person and online card sorting (Optimal Workshop) was perfomed to organize the new IA, followed by Tree Testing with mostly health professional users to validate it.",
+                    tags: ["Card Sorting (63 Users)", "Tree Testing (44 Participants)"],
+                    tone: "",
+                    // range: "Checkpoint 1"
+                  },
+                  {
+                    title: "Wireframe Testing",
+                    body: "Evaluated the usability, information placement, and readability using low-fidelity wireframes.",
+                    tone: "info",
+                    tags: ["5 Expert Users"],
+                    // range: "Checkpoint 1"
+                  },
+                  {
+                    title: "Mockup Testing",
+                    body: "Assessed first impressions, visual appeal, and clarity of the new UI mockups.",
+                    tone: "success",
+                    tags: ["Crazy 8s Method", "5 Second Test"],
+                  },
+
+                ]}
+              />
+
+
+            </div>
+          </div>
+
+          // figure carousel
+
+
+
+
+
           <SectionHeading
             title="The UI was redesigned for tablet use, clarity, and fast decision-making"
             subtitle="The experience shifted to a tablet-first approach because nurses could not rely on personal smartphones during work, and the larger screen supported better readability."
           />
 
-          <BeforeAfter
-            before={{
-              src: placeholder,
-              alt: "Placeholder for previous homepage",
-              label: "Before",
-              caption: "Placeholder for the previous homepage.",
-              aspect: "aspect-[16/10]",
-            }}
-            after={{
-              src: placeholder,
-              alt: "Placeholder for redesigned homepage",
-              label: "After",
-              caption: "Placeholder for the redesigned dashboard homepage.",
-              aspect: "aspect-[16/10]",
-            }}
-            note="The homepage evolved into a clearer dashboard that surfaced the main ECG action and the most important operational areas."
-          />
 
           <ImageGrid
             className="mt-10"
-            cols={3}
+            cols={2}
             items={[
               {
                 src: placeholder,
