@@ -778,9 +778,58 @@ show
               }}
 
             />
+
+            <Carousel
+              className="mx-auto mt-12 max-w-5xl"
+              options={{ align: "start", loop: true }}
+              plugins={[
+                Autoplay({ delay: 4500, stopOnInteraction: false })
+              ]}
+            >
+              <CarouselContent>
+                {[
+                  {
+                    src: placeholder,
+                    alt: "Placeholder figure 1",
+                    aspect: "aspect-[16/10]",
+                    caption: "Placeholder image 1.",
+                    fetchPriority: "high",
+                  },
+                  {
+                    src: placeholder,
+                    alt: "Placeholder figure 2",
+                    aspect: "aspect-[16/10]",
+                    caption: "Placeholder image 2.",
+                    fetchPriority: "high",
+                  },
+                ].map((item, index) => (
+                  <CarouselItem key={index}>
+                    <Figure
+                      src={item.src}
+                      alt={item.alt}
+                      aspect={item.aspect}
+                      caption={item.caption}
+                      loading="eager"
+                      fetchPriority={item.fetchPriority}
+                      decoding="sync"
+                      frame="smooth"
+                    />
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+
+              <div className="mt-6 flex items-center justify-between gap-4">
+                <div className="flex items-center gap-2">
+                  <CarouselPrevious className="static left-auto top-auto translate-y-0" />
+                  <CarouselNext className="static right-auto top-auto translate-y-0" />
+                </div>
+
+                <CarouselDots className="mt-0 justify-end" progressDuration={4500} />
+              </div>
+            </Carousel>
           </div>
 
-          // figure carousel
+
 
 
 

@@ -29,6 +29,8 @@ function inferType(src) {
  * - aspect?: string                // e.g. "aspect-[16/9]" | "aspect-video"
  * - fit?: "cover" | "contain"      // image fit only (video uses cover-like behavior)
  * - loading?: "lazy" | "eager"     // image only
+ * - fetchPriority?: "high" | "low" | "auto"
+ * - decoding?: "sync" | "async" | "auto"
  * - type?: "auto" | "image" | "video"    // default "auto"
  *
  * Video props:
@@ -53,6 +55,8 @@ export function Figure({
   aspect,
   fit = "cover",
   loading = "lazy",
+  fetchPriority = "auto",
+  decoding = "async",
   type = "auto",
 
   // video
@@ -107,6 +111,8 @@ export function Figure({
             src={src}
             alt={alt}
             loading={loading}
+            fetchPriority={fetchPriority}
+            decoding={decoding}
             className={cn(
               "h-auto w-full",
               aspect ? "h-full" : null,
