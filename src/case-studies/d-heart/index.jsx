@@ -371,7 +371,9 @@ export const dHeartCase = {
 
 
           {/* first image gird */}
-          {/* <ImageGrid
+          {/* <ImageGridinsert a figure carousel, add two items, 
+
+show 
             className="mt-16"
             cols={3}
             items={[
@@ -737,6 +739,45 @@ export const dHeartCase = {
 
 
             </div>
+          </div>
+
+          <div className="mt-12 mx-auto max-w-3xl">
+
+            <SectionHeading
+              className="mb-10"
+              align="center"
+              // divider
+              title="We chose the tablet to better support clinical workflows"
+              subtitle="— providing a larger, shared interface that improves readability, reduces friction, and fits how nurses operate during patient care."
+            />
+
+            <ProcessStep
+              className=""
+              title="The IA Pattern"
+              description={
+                <prose className="">
+                  <h3>
+                    Dashboard for homepage
+                  </h3>
+                  <p>
+                    We structured the homepage as a dashboard to prioritize speed and clarity—bringing all critical actions into one place so nurses can act immediately without navigating away.
+                  </p>
+                  <h3>
+                    Nested dolls for ECG flow
+                  </h3>
+                  <p>
+                    We used a nested dolls pattern to enforce a clear, step-by-step ECG process—guiding users through each stage in a controlled, predictable flow.
+                  </p>
+                </prose>
+              }
+
+              figure={{
+                src: placeholder,
+                aspect: "aspect-[2/3]",
+                caption: "// ia pattern image",
+              }}
+
+            />
           </div>
 
           // figure carousel
