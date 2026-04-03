@@ -246,11 +246,12 @@ function SolutionsShowcase() {
         {solutions.map((solution) => (
           <ProcessStep
             key={solution.step}
-            className="mx-auto max-w-3xl [&>div:first-child]:flex [&>div:first-child]:h-full [&>div:first-child]:flex-col [&>div:first-child]:justify-end"
+            className="mx-auto max-w-3xl"
             step={solution.step}
             title={solution.title}
             description={solution.description}
             figure={solution.figure}
+            justifyEnd
           />
         ))}
       </div>
@@ -271,11 +272,12 @@ function SolutionsShowcase() {
             <Card className="shadow-none">
               <CardContent>
                 <ProcessStep
-                  className="mx-auto [&>div:first-child]:flex [&>div:first-child]:h-full [&>div:first-child]:flex-col [&>div:first-child]:justify-end"
+                  className="mx-auto"
                   step={solution.step}
                   title={solution.title}
                   description={solution.description}
                   figure={solution.figure}
+                  justifyEnd
                 />
               </CardContent>
             </Card>

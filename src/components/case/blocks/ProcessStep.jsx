@@ -19,6 +19,7 @@ import { Figure } from "./Figure"
  *     loading?: "lazy" | "eager"
  *   }
  * - reverse?: boolean
+ * - justifyEnd?: boolean
  * - className?: string
  */
 
@@ -29,6 +30,7 @@ export function ProcessStep({
   bullets,
   figure,
   reverse = false,
+  justifyEnd = false,
   className,
 }) {
   return (
@@ -42,6 +44,7 @@ export function ProcessStep({
       <div
         className={cn(
           "md:col-span-6",
+          justifyEnd && "flex h-full flex-col justify-end",
           reverse ? "md:order-2" : "md:order-1"
         )}
       >

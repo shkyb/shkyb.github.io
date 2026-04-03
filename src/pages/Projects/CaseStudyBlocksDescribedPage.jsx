@@ -359,6 +359,7 @@ const docs = {
       ["bullets", "Array of outputs or activities."],
       ["figure", "Optional figure object with src, alt, caption, aspect, frame."],
       ["reverse", "Swaps media/text order on desktop."],
+      ["justifyEnd", "Vertically aligns the text column content to the end."],
       ["className", "Extra spacing or layout overrides."],
     ],
     code: `<ProcessStep
