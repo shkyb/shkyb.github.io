@@ -675,8 +675,8 @@ show
     },
 
     {
-      id: "design",
-      label: "Design",
+      id: "redesign",
+      label: "Re-Design",
       bgClass: "bg-background",
       size: "fill",
       render: () => (
@@ -744,9 +744,10 @@ show
           <div className="mt-12 mx-auto max-w-3xl">
 
             <SectionHeading
-              className="mb-10"
+              className="my-36"
               align="center"
               // divider
+              kicker="Device Change → Tablet"
               title="We chose the tablet to better support clinical workflows"
               subtitle="— providing a larger, shared interface that improves readability, reduces friction, and fits how nurses operate during patient care."
             />
@@ -790,14 +791,14 @@ show
                 {[
                   {
                     src: placeholder,
-                    alt: "Placeholder figure 1",
+                    alt: "new IA",
                     aspect: "aspect-[16/10]",
                     caption: "Placeholder image 1.",
                     fetchPriority: "high",
                   },
                   {
                     src: placeholder,
-                    alt: "Placeholder figure 2",
+                    alt: "old IA",
                     aspect: "aspect-[16/10]",
                     caption: "Placeholder image 2.",
                     fetchPriority: "high",
@@ -828,6 +829,89 @@ show
               </div>
             </Carousel>
           </div>
+
+          <div>
+            <CaseSeparator label="Wireframe testing" />
+            <SectionHeading
+              title=" We conducted low-fidelity wireframe testing with five users to identify usability issues early and validate core flows before moving into high-fidelity design."
+              subtitle="The main challenges identified were:"
+              // align="center"
+              className="mb-10 mx-auto "
+            />
+            <div className=" grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+              {[
+                {
+                  src: placeholder,
+                  tag: "Task 01 ",
+                  title: "Bluetooth Connection",
+                  description:
+                    "Users lacked clear visual feedback during Bluetooth pairing, making it unclear whether the device was successfully connected.",
+                },
+                {
+                  src: placeholder,
+                  tag: "Task 02 ",
+                  title: "ECG Procedure",
+                  description:
+                    "Navigation, instructions, and layout created friction—breaking the workflow and making the ECG process confusing to follow.",
+                },
+                {
+                  src: placeholder,
+                  tag: "Task 03 ",
+                  title: "Report Access",
+                  description:
+                    "Users struggled to find past results and interpret data due to poor search, low visibility, and unclear presentation.",
+                },
+              ].map((item) => (
+                <Card key={item.title} className="gap-4 overflow-hidden pt-0 shadow-none">
+                  <CardContent className="px-0 pt-0">
+                    <img
+                      src={item.src}
+                      alt={item.title}
+                      className="aspect-2/3 w-full object-cover"
+                      loading="eager"
+                    />
+                  </CardContent>
+                  <CardContent className="pt-0">
+                    <Badge variant="secondary" className="mb-4">{item.tag}</Badge>
+                    <CardTitle>{item.title}</CardTitle>
+                    <CardDescription className="mt-2">{item.description}</CardDescription>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+
+          <CaseSeparator label="Design Decisions" />
+
+          <div className="mx-auto max-w-3xl">
+            {/* design decisions */}
+
+            <div className="grid grid-cols-2 grid-rows-12 gap-4">
+              <div className="row-span-3">
+                <Figure
+                  src={placeholder}
+                  alt="The new propsed experience"
+                  caption="//service map"
+                  aspect="aspect-[1]" />
+              </div>
+              <div className="col-start-2 row-start-2">2</div>
+              <div className="row-span-3 col-start-2 row-start-3">3</div>
+              <div className="row-start-4">4</div>
+              <div className="row-span-3 row-start-5">5</div>
+              <div className="col-start-2 row-start-6">6</div>
+              <div className="row-span-3 col-start-2 row-start-7">7</div>
+              <div className="row-start-8">8</div>
+              <div className="row-span-3 row-start-9">9</div>
+              <div className="col-start-2 row-start-10">10</div>
+              <div className="row-span-2 col-start-2 row-start-11">11</div>
+              <div className="row-start-12">12</div>
+            </div>
+
+
+          </div>
+
+
 
 
 
