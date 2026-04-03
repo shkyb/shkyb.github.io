@@ -588,14 +588,14 @@ show
                 number: "01",
                 title: "Hidden electrodes",
                 description:
-                  "Users missed the two electrodes on the back, making the ECG process confusing and ehellorror-prone.",
+                  "Users missed the two electrodes on the back, making the ECG process confusing and error-prone.",
               },
               {
                 src: placeholder,
                 number: "02",
                 title: "Unclear instructions",
                 description:
-                  "Nurses struggled to understand and follow instructions during the ECG procedure.",
+                  "Nurses struggled to understand and follow instructions to perform a standard 12-lead ECG with the 6-lead device.",
               },
               {
                 src: placeholder,
@@ -830,7 +830,7 @@ show
             </Carousel>
           </div>
 
-          <div>
+          {/* <div>
             <CaseSeparator label="Wireframe testing" />
             <SectionHeading
               title=" We conducted low-fidelity wireframe testing with five users to identify usability issues early and validate core flows before moving into high-fidelity design."
@@ -879,36 +879,91 @@ show
                 </Card>
               ))}
             </div>
-          </div>
+          </div> */}
 
 
           <CaseSeparator label="Design Decisions" />
 
           <div className="mx-auto max-w-3xl">
             {/* design decisions */}
+            <ProcessStep
+              step="01"
+              title="Device Change → Tablet"
+              description={
+                <Prose>
+                  <p>
+                    We chose the tablet to better support clinical workflows — providing a larger, shared interface that improves readability, reduces friction, and fits how nurses operate during patient care.
+                  </p>
+                </Prose>
+              }
 
-            <div className="grid grid-cols-2 grid-rows-12 gap-4">
-              <div className="row-span-3">
-                <Figure
-                  src={placeholder}
-                  alt="The new propsed experience"
-                  caption="//service map"
-                  aspect="aspect-[1]" />
-              </div>
-              <div className="col-start-2 row-start-2">2</div>
-              <div className="row-span-3 col-start-2 row-start-3">3</div>
-              <div className="row-start-4">4</div>
-              <div className="row-span-3 row-start-5">5</div>
-              <div className="col-start-2 row-start-6">6</div>
-              <div className="row-span-3 col-start-2 row-start-7">7</div>
-              <div className="row-start-8">8</div>
-              <div className="row-span-3 row-start-9">9</div>
-              <div className="col-start-2 row-start-10">10</div>
-              <div className="row-span-2 col-start-2 row-start-11">11</div>
-              <div className="row-start-12">12</div>
-            </div>
+              figure={{
+                src: placeholder,
+                alt: "Placeholder for redesigned instruction flow",
+                caption: "Placeholder for instruction redesign.",
+                aspect: "aspect-[3/2]",
+              }}
+            />
 
+            <ProcessStep
+              step="02. IA Pattern"
+              reverse
+              title="Dashboard for homepage"
+              description={
+                <Prose>
+                  <p>
+                    We structured the homepage as a dashboard with a <b>prominent “Big Start Button”</b> to prioritize speed and clarity—bringing all critical actions into one place so nurses can act immediately without navigating away.
+                  </p>
+                </Prose>
+              }
 
+              figure={{
+                src: placeholder,
+                alt: "Placeholder for physical device improvements",
+                caption: "Placeholder for clip, cable, and LED improvements.",
+                aspect: "aspect-[3/2]",
+              }}
+            />
+            <ProcessStep
+              step="03"
+              title="Nested dolls for ECG flow"
+              description={
+                <Prose>
+                  <p>
+                    We used a nested dolls pattern to enforce a clear, step-by-step ECG process—guiding users through each stage in a controlled, predictable flow.
+                  </p>
+                </Prose>
+              }
+
+              figure={{
+                src: placeholder,
+                alt: "Placeholder for redesigned instruction flow",
+                caption: "Placeholder for instruction redesign.",
+                aspect: "aspect-[3/2]",
+              }}
+            />
+
+            <ProcessStep
+              step="04"
+              reverse
+              title="3D Instruction visuals"
+              description={
+                <Prose>
+                  <p>
+                    The original instructions failed to guide the nurse to move the black lead properly to complete a 12-lead ECG. <br/>
+                    New visuals ensure that nurses won't miss the two electrodes on the back and match with their clinical procedure of attaching all electrodes before perfoming the ECG.
+                  </p>
+                </Prose>
+              }
+
+              figure={{
+                src: placeholder,
+                alt: "Placeholder for physical device improvements",
+                caption: "Placeholder for clip, cable, and LED improvements.",
+                aspect: "aspect-[3/2]",
+              }}
+            />
+            
           </div>
 
 
@@ -965,56 +1020,7 @@ show
             subtitle="Because the ECG procedure was the most demanding part of the experience, we focused on making guidance more visual and device feedback easier to interpret."
           />
 
-          <ProcessStep
-            step="01"
-            title="Make setup and progression easier to understand"
-            description={
-              <Prose>
-                <p>
-                  The first instruction screens were revised to make setup clearer,
-                  including details users had repeatedly missed, such as the rear
-                  electrodes and movement during the 12-lead process.
-                </p>
-              </Prose>
-            }
-            bullets={[
-              "Critical setup details were brought earlier in the flow.",
-              "Wording became more explicit and easier to scan.",
-              "Users could re-access guidance during the exam.",
-            ]}
-            figure={{
-              src: placeholder,
-              alt: "Placeholder for redesigned instruction flow",
-              caption: "Placeholder for instruction redesign.",
-              aspect: "aspect-[16/10]",
-            }}
-          />
 
-          <ProcessStep
-            step="02"
-            reverse
-            title="Reduce ambiguity in the physical touchpoint"
-            description={
-              <Prose>
-                <p>
-                  We explored gentler clips, cable signifiers, and clearer device
-                  status logic so the hardware felt easier to understand and more
-                  dependable in use.
-                </p>
-              </Prose>
-            }
-            bullets={[
-              "Clip concepts aimed to reduce discomfort and frustration.",
-              "Cable signifiers clarified safe pull length.",
-              "LED feedback was revised to communicate state more clearly.",
-            ]}
-            figure={{
-              src: placeholder,
-              alt: "Placeholder for physical device improvements",
-              caption: "Placeholder for clip, cable, and LED improvements.",
-              aspect: "aspect-[16/10]",
-            }}
-          />
         </>
       ),
     },
