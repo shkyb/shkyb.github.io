@@ -1055,6 +1055,18 @@ show
         <>
           <CaseSeparator label="Design System"/>
 
+          <SectionHeading
+            title="A unified system for faster, clearer, and more reliable care."
+            subtitle="We developed a design system to ensure consistency, clarity, and scalability across the D-Heart ecosystem—supporting both clinical usability and efficient future development."
+            className="mb-10"
+          />
+
+          <Figure
+            src= {cover}
+            caption= "design system"
+
+          />
+
         </>
       )
 
