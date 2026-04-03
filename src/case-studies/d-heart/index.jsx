@@ -652,8 +652,8 @@ show
     },
 
     {
-      id: "requirments",
-      label: "Requirments",
+      // id: "requirments",
+      // label: "Requirments",
       bgClass: "bg-muted/30",
       size: "fill",
       render: () => (
@@ -744,7 +744,7 @@ show
           </div>
 
           <div className="mt-12 mx-auto max-w-3xl">
-
+            {/* 
             <SectionHeading
               className="my-36"
               align="center"
@@ -752,9 +752,9 @@ show
               kicker="Device Change → Tablet"
               title="We chose the tablet to better support clinical workflows"
               subtitle="— providing a larger, shared interface that improves readability, reduces friction, and fits how nurses operate during patient care."
-            />
+            /> */}
 
-            <ProcessStep
+            {/* <ProcessStep
               className=""
               title="The IA Pattern"
               description={
@@ -780,7 +780,7 @@ show
                 caption: "// ia pattern image",
               }}
 
-            />
+            /> */}
 
             <Carousel
               className="mx-auto mt-12 max-w-5xl"
@@ -889,6 +889,8 @@ show
           <div className="mx-auto max-w-3xl">
             {/* design decisions */}
             <ProcessStep
+              className="mb-10"
+              justifyEnd
               step="01"
               title="Device Change → Tablet"
               description={
@@ -908,6 +910,8 @@ show
             />
 
             <ProcessStep
+              className="mb-10"
+              justifyEnd
               step="02. IA Pattern"
               reverse
               title="Dashboard for homepage"
@@ -927,6 +931,8 @@ show
               }}
             />
             <ProcessStep
+              justifyEnd
+              className="mb-10"
               step="03"
               title="Nested dolls for ECG flow"
               description={
@@ -946,13 +952,15 @@ show
             />
 
             <ProcessStep
+              className="mb-10"
+              justifyEnd
               step="04"
               reverse
               title="3D Instruction visuals"
               description={
                 <Prose>
                   <p>
-                    The original instructions failed to guide the nurse to move the black lead properly to complete a 12-lead ECG. <br/>
+                    The original instructions failed to guide the nurse to move the black lead properly to complete a 12-lead ECG. <br />
                     New visuals ensure that nurses won't miss the two electrodes on the back and match with their clinical procedure of attaching all electrodes before perfoming the ECG.
                   </p>
                 </Prose>
@@ -965,66 +973,91 @@ show
                 aspect: "aspect-[3/2]",
               }}
             />
-            
+
           </div>
 
 
-
-
-
-
-
-
-
-          <SectionHeading
-            title="The UI was redesigned for tablet use, clarity, and fast decision-making"
-            subtitle="The experience shifted to a tablet-first approach because nurses could not rely on personal smartphones during work, and the larger screen supported better readability."
-          />
-
-
-          <ImageGrid
-            className="mt-10"
-            cols={2}
-            items={[
-              {
-                src: placeholder,
-                alt: "Placeholder for homepage redesign",
-                caption: "Dashboard home.",
-                aspect: "aspect-[4/3]",
-              },
-              {
-                src: placeholder,
-                alt: "Placeholder for patient page redesign",
-                caption: "Patients page.",
-                aspect: "aspect-[4/3]",
-              },
-              {
-                src: placeholder,
-                alt: "Placeholder for ECG flow redesign",
-                caption: "ECG execution flow.",
-                aspect: "aspect-[4/3]",
-              },
-            ]}
-          />
         </>
       ),
     },
 
+
+
+
     {
-      id: "device",
-      label: "Device",
+      // id: "device",
+      // label: "Device",
       bgClass: "bg-muted/30",
-      size: "media",
+      size: "fill",
       render: () => (
         <>
+          <CaseSeparator label="The Physical Touchpoint" />
           <SectionHeading
-            title="Instructions and hardware feedback were redesigned together"
-            subtitle="Because the ECG procedure was the most demanding part of the experience, we focused on making guidance more visual and device feedback easier to interpret."
+            title="We extended the redesign into the physical device, "
+            subtitle="using 3D printing, Arduino prototyping, and hands-on testing to explore and validate improvements. We iterated on how the device is handled, attached, and communicates—reducing friction, improving patient comfort, and making feedback clearer during use."
+            align="center"
+            className="mb-10"
           />
+          <div className=" grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {[
+              {
+                src: placeholder,
+                tag: "Mod 01 ",
+                title: "Ergonomic ECG clips",
+                description:
+                  "Redesigned the attachment mechanism to reduce discomfort, especially for elderly patients.",
+              },
+              {
+                src: placeholder,
+                tag: "Mod 02 ",
+                title: "Improved cable usability",
+                description:
+                  "Added visual markers to prevent over-extension and reduce tangling during use.",
+              },
+              {
+                src: placeholder,
+                tag: "Mod 03 ",
+                title: "Clearer LED feedback system",
+                description:
+                  "Reworked device feedback using color-coded signals to communicate connection, battery, and ECG status more clearly.",
+              },
+            ].map((item) => (
+              <Card key={item.title} className="gap-4 overflow-hidden pt-0 shadow-none">
+                <CardContent className="px-0 pt-0">
+                  <img
+                    src={item.src}
+                    alt={item.title}
+                    className="aspect-[1] w-full object-cover"
+                    loading="eager"
+                  />
+                </CardContent>
+                <CardContent className="pt-0">
+                  <Badge variant="secondary" className="mb-4">{item.tag}</Badge>
+                  <CardTitle>{item.title}</CardTitle>
+                  <CardDescription className="mt-2">{item.description}</CardDescription>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
 
 
         </>
       ),
+    },
+
+
+    {
+      // id: "final",
+      // label: "Final Product",
+      bgClass: "bg-background",
+      size: "fill",
+      render: () => (
+        <>
+          <CaseSeparator label="Design System"/>
+
+        </>
+      )
+
     },
 
     {
