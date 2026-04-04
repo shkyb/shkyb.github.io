@@ -3,9 +3,8 @@ import React from "react"
 import logo from "./assets/logo.png"
 import cover from "./assets/cover.webp"
 import placeholder from "./assets/placeholder.webp"
-import screen1 from "./assets/screen-1.jpg"
-import screen2 from "./assets/screen-2.jpg"
-import screen3 from "./assets/screen-3.jpg"
+import imgProblem from "./assets/dheart_problem_01.webp"
+
 
 import { Prose } from "@/components/case/layout/Prose"
 
@@ -364,7 +363,7 @@ export const dHeartCase = {
           />
 
           <SectionHeading
-            // className="px-16"
+            className="mx-auto max-w-3xl"
             // kicker="Main Problem"
             align="left"
             title="Performing an ECG is a time-sensitive task. During testing, we found that the D-Heart ecosystem introduced unnecessary friction in both the app and the device, slowing nurses down at critical moments."
@@ -400,7 +399,7 @@ show
           /> */}
 
 
-          <ImageGrid
+          {/* <ImageGrid
             className="mt-16"
             cols={3}
             items={[
@@ -428,7 +427,31 @@ show
                 caption: "One LED for everything — nurses couldn't tell if the device was working, connecting, or failing."
               },
             ]}
-          />
+          /> */}
+
+          <div className="grid md:grid-cols-2 gap-8 mt-20">
+            <div>
+              <Figure
+                src= {imgProblem}
+                caption="© d-heartcare.com"
+                alt="d-heart device and app"
+                frame="none"
+                // aspect="aspect-[3/2]"
+              />
+            </div>
+            
+            <div>
+              <ProblemStatement
+                variant="stack"
+                items={[
+                  {label: "01. Wrong ECG workflow", value: "A smartphone app with a consumer mental model — the flow conflicted with real clinical routines."},
+                  {label: "02. Friction in the physical experience", value: "Cables tangled. Clips hurt patients. Key electrodes went unnoticed by every single test participant."},
+                  {label: "03. Unclear feedback", value: "One LED for everything — nurses couldn't tell if the device was working, connecting, or failing."},
+                ]}
+              />
+
+            </div>
+          </div>
 
           <PullQuote
             className="mt-10"

@@ -1,12 +1,12 @@
 // src/pages/Projects/CaseStudyBlocksPage.jsx
 
-import logo from "@/case-studies/d-heart/assets/logo.png"
-import cover from "@/case-studies/d-heart/assets/cover.webp"
-import screen1 from "@/case-studies/d-heart/assets/screen-1.jpg"
-import screen2 from "@/case-studies/d-heart/assets/screen-2.jpg"
-import screen3 from "@/case-studies/d-heart/assets/screen-3.jpg"
-import process1 from "@/case-studies/d-heart/assets/process-1.jpg"
-import process2 from "@/case-studies/d-heart/assets/process-2.jpg"
+import logo from "@/case-studies/demo/assets/logo.png"
+import cover from "@/case-studies/demo/assets/cover.webp"
+import screen1 from "@/case-studies/demo/assets/screen-1.jpg"
+import screen2 from "@/case-studies/demo/assets/screen-2.jpg"
+import screen3 from "@/case-studies/demo/assets/screen-3.jpg"
+import process1 from "@/case-studies/demo/assets/process-1.jpg"
+import process2 from "@/case-studies/demo/assets/process-2.jpg"
 
 import { FullBleedSection } from "@/components/case/layout/FullBleedSection"
 import { CaseHero } from "@/components/case/blocks/CaseHero"
