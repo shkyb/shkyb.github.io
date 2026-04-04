@@ -730,10 +730,10 @@ show
                     // range: "Checkpoint 1"
                   },
                   {
-                    title: "Mockup Testing",
-                    body: "Assessed first impressions, visual appeal, and clarity of the new UI mockups.",
+                    title: "High-Fidelity Prototype Testing",
+                    body: "Validated the high-fidelity digital interface and physical Arduino prototype.",
                     tone: "success",
-                    tags: ["Crazy 8s Method", "5 Second Test"],
+                    tags: ["6 Expert Users"],
                   },
 
                 ]}
@@ -832,56 +832,7 @@ show
             </Carousel>
           </div>
 
-          {/* <div>
-            <CaseSeparator label="Wireframe testing" />
-            <SectionHeading
-              title=" We conducted low-fidelity wireframe testing with five users to identify usability issues early and validate core flows before moving into high-fidelity design."
-              subtitle="The main challenges identified were:"
-              // align="center"
-              className="mb-10 mx-auto "
-            />
-            <div className=" grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
-              {[
-                {
-                  src: placeholder,
-                  tag: "Task 01 ",
-                  title: "Bluetooth Connection",
-                  description:
-                    "Users lacked clear visual feedback during Bluetooth pairing, making it unclear whether the device was successfully connected.",
-                },
-                {
-                  src: placeholder,
-                  tag: "Task 02 ",
-                  title: "ECG Procedure",
-                  description:
-                    "Navigation, instructions, and layout created friction—breaking the workflow and making the ECG process confusing to follow.",
-                },
-                {
-                  src: placeholder,
-                  tag: "Task 03 ",
-                  title: "Report Access",
-                  description:
-                    "Users struggled to find past results and interpret data due to poor search, low visibility, and unclear presentation.",
-                },
-              ].map((item) => (
-                <Card key={item.title} className="gap-4 overflow-hidden pt-0 shadow-none">
-                  <CardContent className="px-0 pt-0">
-                    <img
-                      src={item.src}
-                      alt={item.title}
-                      className="aspect-2/3 w-full object-cover"
-                      loading="eager"
-                    />
-                  </CardContent>
-                  <CardContent className="pt-0">
-                    <Badge variant="secondary" className="mb-4">{item.tag}</Badge>
-                    <CardTitle>{item.title}</CardTitle>
-                    <CardDescription className="mt-2">{item.description}</CardDescription>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div> */}
+
 
 
           <CaseSeparator label="Design Decisions" />
@@ -976,6 +927,57 @@ show
 
           </div>
 
+          <div>
+            <CaseSeparator label="Wireframe testing" />
+            <SectionHeading
+              title=" We conducted low-fidelity wireframe testing with five users to identify usability issues early and validate core flows before moving into high-fidelity design."
+              subtitle="The main challenges identified were:"
+              // align="center"
+              className="mb-10 mx-auto "
+            />
+            <div className=" grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+              {[
+                {
+                  src: placeholder,
+                  tag: "Task 01 ",
+                  title: "Bluetooth Connection",
+                  description:
+                    "Users lacked clear visual feedback during Bluetooth pairing, making it unclear whether the device was successfully connected.",
+                },
+                {
+                  src: placeholder,
+                  tag: "Task 02 ",
+                  title: "ECG Procedure",
+                  description:
+                    "Navigation, instructions, and layout created friction—breaking the workflow and making the ECG process confusing to follow.",
+                },
+                {
+                  src: placeholder,
+                  tag: "Task 03 ",
+                  title: "Report Access",
+                  description:
+                    "Users struggled to find past results and interpret data due to poor search, low visibility, and unclear presentation.",
+                },
+              ].map((item) => (
+                <Card key={item.title} className="gap-4 overflow-hidden pt-0 shadow-none">
+                  <CardContent className="px-0 pt-0">
+                    <img
+                      src={item.src}
+                      alt={item.title}
+                      className="aspect-2/3 w-full object-cover"
+                      loading="eager"
+                    />
+                  </CardContent>
+                  <CardContent className="pt-0">
+                    <Badge variant="secondary" className="mb-4">{item.tag}</Badge>
+                    <CardTitle>{item.title}</CardTitle>
+                    <CardDescription className="mt-2">{item.description}</CardDescription>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+
 
         </>
       ),
@@ -1047,13 +1049,13 @@ show
 
 
     {
-      // id: "final",
-      // label: "Final Product",
+      // id: "designsystem",
+      // label: "Design System",
       bgClass: "bg-background",
       size: "fill",
       render: () => (
         <>
-          <CaseSeparator label="Design System"/>
+          <CaseSeparator label="Design System" />
 
           <SectionHeading
             title="A unified system for faster, clearer, and more reliable care."
@@ -1062,8 +1064,34 @@ show
           />
 
           <Figure
-            src= {cover}
-            caption= "design system"
+            src={cover}
+            caption="design system"
+
+          />
+
+        </>
+      )
+
+    },
+
+    {
+      id: "final",
+      label: "Final Product",
+      bgClass: "bg-background",
+      size: "fill",
+      render: () => (
+        <>
+          <CaseSeparator label="Final Product" />
+
+          <SectionHeading
+            title="A unified system for faster, clearer, and more reliable care."
+            subtitle="We developed a design system to ensure consistency, clarity, and scalability across the D-Heart ecosystem—supporting both clinical usability and efficient future development."
+            className="mb-10"
+          />
+
+          <Figure
+            src={cover}
+            caption="design system"
 
           />
 
