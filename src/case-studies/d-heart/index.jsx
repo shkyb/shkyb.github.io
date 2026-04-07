@@ -4,6 +4,14 @@ import logo from "./assets/logo.png"
 import cover from "./assets/cover.webp"
 import placeholder from "./assets/placeholder.webp"
 import imgProblem from "./assets/dheart_problem_01.webp"
+import imgNurse_1 from "./assets/dh_nurse_1.webp"
+import imgNurse_2 from "./assets/dh_nurse_2.webp"
+import imgNurse_3 from "./assets/dh_nurse_3.webp"
+import imgNurse_4 from "./assets/dh_nurse_4.webp"
+import imgNurse_5 from "./assets/dh_nurse_5.webp"
+import imgNurse_6 from "./assets/dh_nurse_6.webp"
+import imgNurse_7 from "./assets/dh_nurse_7.webp"
+import imgNurse_8 from "./assets/dh_nurse_8.webp"
 import vidProblem from "./assets/old d-heart video.webm"
 import vidSolInstruction from "./assets/d-heart_solution_instructions.webm"
 import vidSolInterface from "./assets/d-heart_solution_interface.webm"
@@ -205,21 +213,37 @@ const solutions = [
 ]
 
 const NursingHome = [
-  // Add nursing home images here, for example:
   {
-    src: cover,
+    src: imgNurse_1,
     alt: "Nurse testing the D-Heart device in a nursing home",
-    aspect: "aspect-[4/3]",
   },
   {
-    src: cover,
+    src: imgNurse_2,
     alt: "Nurse testing the D-Heart device in a nursing home",
-    aspect: "aspect-[4/3]",
   },
   {
-    src: cover,
+    src: imgNurse_3,
     alt: "Nurse testing the D-Heart device in a nursing home",
-    aspect: "aspect-[4/3]",
+  },
+  {
+    src: imgNurse_4,
+    alt: "Nurse testing the D-Heart device in a nursing home",
+  },
+  {
+    src: imgNurse_5,
+    alt: "Nurse testing the D-Heart device in a nursing home",
+  },
+  {
+    src: imgNurse_6,
+    alt: "Nurse testing the D-Heart device in a nursing home",
+  },
+  {
+    src: imgNurse_7,
+    alt: "Nurse testing the D-Heart device in a nursing home",
+  },
+  {
+    src: imgNurse_8,
+    alt: "Nurse testing the D-Heart device in a nursing home",
   }
 ]
 
@@ -604,7 +628,7 @@ show
       render: () => (
         <>
           <FigureCarousel
-            className="w-full"
+            className="w-full my-12" 
             options={{ align: "start", loop: true, dragFree: true }}
             autoScroll={{
               speed: 1,
@@ -614,15 +638,16 @@ show
             }}
             contentClassName="-ml-3 md:-ml-4"
             itemClassName="basis-auto pl-1 md:pl-2"
-            figureClassName=" [&>div:first-child]:max-h-[50vh] [&>div:first-child]:rounded-md "
+            figureClassName="[&>div:first-child]:h-[50vh] [&>div:first-child]:rounded-md"
             showArrows={false}
             showDots={false}
             items={
               NursingHome.length
                 ? [...NursingHome, ...NursingHome, ...NursingHome].map((item) => ({
                   frame: "none",
-                  fit: "cover",
+                  fit: "contain",
                   loading: "eager",
+                  mediaClassName: "h-full w-auto max-w-none",
                   ...item,
                 }))
                 : NursingHome
