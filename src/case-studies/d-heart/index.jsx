@@ -4,6 +4,10 @@ import logo from "./assets/logo.png"
 import cover from "./assets/cover.webp"
 import placeholder from "./assets/placeholder.webp"
 import imgProblem from "./assets/dheart_problem_01.webp"
+import vidProblem from "./assets/old d-heart video.webm"
+import vidSolInstruction from "./assets/d-heart_solution_instructions.webm"
+import vidSolInterface from "./assets/d-heart_solution_interface.webm"
+import imgSolElec from "./assets/d-heart_solution_electrode.webp"
 
 
 import { Prose } from "@/components/case/layout/Prose"
@@ -432,21 +436,33 @@ show
           <div className="grid md:grid-cols-2 gap-8 mt-20">
             <div>
               <Figure
-                src= {imgProblem}
-                caption="© d-heartcare.com"
+                src={vidProblem}
+                // caption="© d-heartcare.com"
                 alt="d-heart device and app"
                 frame="none"
-                // aspect="aspect-[3/2]"
+                loop
+                controls={false}
+                autoPlay
+              // aspect="aspect-[3/2]"
               />
             </div>
-            
+
             <div>
               <ProblemStatement
                 variant="stack"
                 items={[
-                  {label: "01. Wrong ECG workflow", value: "A smartphone app with a consumer mental model — the flow conflicted with real clinical routines."},
-                  {label: "02. Friction in the physical experience", value: "Cables tangled. Clips hurt patients. Key electrodes went unnoticed by every single test participant."},
-                  {label: "03. Unclear feedback", value: "One LED for everything — nurses couldn't tell if the device was working, connecting, or failing."},
+                  {
+                    label: "01. Wrong ECG workflow",
+                    value: "A smartphone app with a consumer mental model — the flow conflicted with real clinical routines.mx-auto max-w-3xl"
+                  },
+                  { 
+                    label: "02. Friction in the physical experience", 
+                    value: "Cables tangled. Clips hurt patients. Key electrodes went unnoticed by every single test participant." 
+                  },
+                  { 
+                    label: "03. Unclear feedback", 
+                    value: "One LED for everything — nurses couldn't tell if the device was working, connecting, or failing." 
+                  },
                 ]}
               />
 
@@ -490,10 +506,39 @@ show
               The redesign addressed every layer of the experience — from the app's information architecture to the physical clips nurses touch every day. A complete, coherent healthcare ecosystem.            </p>
           </Prose> */}
 
-          <SolutionsShowcase />
+          {/* <SolutionsShowcase /> */}
+
+          <div className="grid md:grid-cols-2 gap-4 mt-16">
+            <div>
+              <Figure
+                src={vidSolInstruction}
+                loop
+                autoPlay
+                controls={false}
+              />
+            </div>
+            
+            <div>
+              <Figure
+                src={vidSolInterface}
+                loop
+                autoPlay
+                controls={false}
+              />
+            </div>
+            <div>
+              <Figure
+                src={imgSolElec}
+              />
+            </div>
+            <div>
+              <Metrics items={topMetrics} columns={1} className="" />
+            </div>
+
+          </div>
 
 
-          <Metrics items={topMetrics} columns={3} className="mt-20 mx-auto max-w-3xl" />
+          
 
 
         </>
