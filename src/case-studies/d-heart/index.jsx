@@ -532,7 +532,7 @@ show
               />
             </div>
             <div>
-              <Metrics items={topMetrics} columns={1} className="" />
+              <Metrics items={topMetrics} columns={1} className=" my-auto" />
             </div>
 
           </div>
