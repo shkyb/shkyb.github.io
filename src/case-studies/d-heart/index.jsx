@@ -24,6 +24,7 @@ import imgFindPain from "./assets/dh_find_pain.webp"
 import imgFindLed from "./assets/dh_find_led.webp"
 import imgFindCntx from "./assets/dh_find_cntx.webp"
 import imgFindResult from "./assets/dh_find_rslt.webp"
+import imgNewEco from "./assets/dh_new_eco.webp"
 
 
 import { Prose } from "@/components/case/layout/Prose"
@@ -805,9 +806,8 @@ show
           <div className="grid grid-cols-1 gap-5 lg:grid-cols-2 lg:gap-10">
             <div>
               <Figure
-                src={placeholder}
-                alt="The new propsed experience"
-                caption="//service map"
+                src={imgNewEco}
+                alt="The new propsed ecosystem"
                 aspect="aspect-2/3" />
             </div>
 
