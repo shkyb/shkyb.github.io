@@ -14,6 +14,7 @@ import imgNurse_7 from "./assets/dh_nurse_7.webp"
 import imgNurse_8 from "./assets/dh_nurse_8.webp"
 import imgNurse_9 from "./assets/dh_nurse_9.webp"
 
+
 import vidProblem from "./assets/old d-heart video.webm"
 import vidSolInstruction from "./assets/d-heart_solution_instructions.webm"
 import vidSolInterface from "./assets/d-heart_solution_interface.webm"
@@ -26,6 +27,10 @@ import imgFindCntx from "./assets/dh_find_cntx.webp"
 import imgFindResult from "./assets/dh_find_rslt.webp"
 import imgNewEco from "./assets/dh_new_eco.webp"
 import imgNewIA from "./assets/dh_new_ia.webp"
+import imgDecTablet from "./assets/dh_dec_tablet.webp"
+import imgDecDash from "./assets/dh_dec_dash.webp"
+import imgDecNest from "./assets/dh_dec_nest.webp"
+import imgDec3DViz from "./assets/dh_dec_3dviz.webp"
 
 
 import { Prose } from "@/components/case/layout/Prose"
@@ -966,15 +971,14 @@ show
               description={
                 <Prose>
                   <p>
-                    We chose the tablet to better support clinical workflows — providing a larger, shared interface that improves readability, reduces friction, and fits how nurses operate during patient care.
+                    We chose the tablet to better support clinical workflows — <b> owned by the nursing home </b>, it provides a larger, shared interface that improves readability, reduces friction, and fits how nurses operate during patient care.
                   </p>
                 </Prose>
               }
 
               figure={{
-                src: placeholder,
+                src: imgDecTablet,
                 alt: "Placeholder for redesigned instruction flow",
-                caption: "Placeholder for instruction redesign.",
                 aspect: "aspect-[3/2]",
               }}
             />
@@ -984,7 +988,7 @@ show
               justifyEnd
               step="02. IA Pattern"
               reverse
-              title="Dashboard for homepage"
+              title="Dashboard for Homepage"
               description={
                 <Prose>
                   <p>
@@ -994,9 +998,8 @@ show
               }
 
               figure={{
-                src: placeholder,
+                src: imgDecDash,
                 alt: "Placeholder for physical device improvements",
-                caption: "Placeholder for clip, cable, and LED improvements.",
                 aspect: "aspect-[3/2]",
               }}
             />
@@ -1014,9 +1017,8 @@ show
               }
 
               figure={{
-                src: placeholder,
+                src: imgDecNest,
                 alt: "Placeholder for redesigned instruction flow",
-                caption: "Placeholder for instruction redesign.",
                 aspect: "aspect-[3/2]",
               }}
             />
@@ -1026,7 +1028,7 @@ show
               justifyEnd
               step="04"
               reverse
-              title="3D Instruction visuals"
+              title="3D Animated Instruction"
               description={
                 <Prose>
                   <p>
@@ -1037,9 +1039,8 @@ show
               }
 
               figure={{
-                src: placeholder,
+                src: imgDec3DViz,
                 alt: "Placeholder for physical device improvements",
-                caption: "Placeholder for clip, cable, and LED improvements.",
                 aspect: "aspect-[3/2]",
               }}
             />
@@ -1052,7 +1053,7 @@ show
               title=" We conducted low-fidelity wireframe testing with five users to identify usability issues early and validate core flows before moving into high-fidelity design."
               subtitle="The main challenges identified were:"
               // align="center"
-              className="mb-10 mx-auto "
+              className="mb-10 mx-auto max-w-3xl "
             />
             <div className=" grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
               {[
