@@ -18,6 +18,12 @@ import vidProblem from "./assets/old d-heart video.webm"
 import vidSolInstruction from "./assets/d-heart_solution_instructions.webm"
 import vidSolInterface from "./assets/d-heart_solution_interface.webm"
 import imgSolElec from "./assets/d-heart_solution_electrode.webp"
+import vidFindElec from "./assets/dh_find_elec.webm"
+import imgFindInstr from "./assets/dh_find_instruct.webp"
+import imgFindPain from "./assets/dh_find_pain.webp"
+import imgFindLed from "./assets/dh_find_led.webp"
+import imgFindCntx from "./assets/dh_find_cntx.webp"
+import imgFindResult from "./assets/dh_find_rslt.webp"
 
 
 import { Prose } from "@/components/case/layout/Prose"
@@ -686,42 +692,42 @@ show
           <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
             {[
               {
-                src: placeholder,
+                src: vidFindElec,
                 number: "01",
                 title: "Hidden electrodes",
                 description:
                   "Users missed the two electrodes on the back, making the ECG process confusing and error-prone.",
               },
               {
-                src: placeholder,
+                src: imgFindInstr,
                 number: "02",
                 title: "Unclear instructions",
                 description:
                   "Nurses struggled to understand and follow instructions to perform a standard 12-lead ECG with the 6-lead device.",
               },
               {
-                src: placeholder,
+                src: imgFindPain,
                 number: "03",
                 title: "Painful electrode use",
                 description:
                   "Attaching and moving electrodes caused discomfort, especially for elderly patients.",
               },
               {
-                src: placeholder,
+                src: imgFindLed,
                 number: "04",
                 title: "Confusing LED feedback",
                 description:
                   "A single LED communicated multiple states, leaving users unsure about device status.",
               },
               {
-                src: placeholder,
+                src: imgFindCntx,
                 number: "05",
                 title: "Wrong device context",
                 description:
                   "Nurses couldn't rely on personal phones, and small screens made medical data hard to read.",
               },
               {
-                src: placeholder,
+                src: imgFindResult,
                 number: "06",
                 title: "Result access issues",
                 description:
@@ -730,11 +736,17 @@ show
             ].map((item) => (
               <Card key={item.title} className="gap-4 overflow-hidden pt-0 shadow-none">
                 <CardContent className="px-0 pt-0">
-                  <img
+                  <Figure
                     src={item.src}
                     alt={item.title}
-                    className="aspect-square w-full object-cover"
+                    className="w-full object-cover"
                     loading="eager"
+                    aspect="aspect-square"
+                    frame="none"
+                    autoPlay
+                    loop
+                    controls={false}
+
                   />
                 </CardContent>
                 <CardContent className="pt-0">
