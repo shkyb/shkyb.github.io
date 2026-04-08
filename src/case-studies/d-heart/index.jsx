@@ -12,6 +12,8 @@ import imgNurse_5 from "./assets/dh_nurse_5.webp"
 import imgNurse_6 from "./assets/dh_nurse_6.webp"
 import imgNurse_7 from "./assets/dh_nurse_7.webp"
 import imgNurse_8 from "./assets/dh_nurse_8.webp"
+import imgNurse_9 from "./assets/dh_nurse_9.webp"
+
 import vidProblem from "./assets/old d-heart video.webm"
 import vidSolInstruction from "./assets/d-heart_solution_instructions.webm"
 import vidSolInterface from "./assets/d-heart_solution_interface.webm"
@@ -243,6 +245,10 @@ const NursingHome = [
   },
   {
     src: imgNurse_8,
+    alt: "Nurse testing the D-Heart device in a nursing home",
+  },
+  {
+    src: imgNurse_9,
     alt: "Nurse testing the D-Heart device in a nursing home",
   }
 ]
@@ -667,6 +673,7 @@ show
           <CaseSeparator label="Key Findings" />
           <SectionHeading
             title="The product worked — just not the way nurses did, creating a mismatch with clinical workflows and overally low usability score for performing ECG (5.6/7 SEQ)."
+            className="mx-auto max-w-3xl"
           />
           <Figure
             src={placeholder}
