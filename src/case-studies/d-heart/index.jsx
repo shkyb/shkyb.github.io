@@ -25,6 +25,7 @@ import imgFindLed from "./assets/dh_find_led.webp"
 import imgFindCntx from "./assets/dh_find_cntx.webp"
 import imgFindResult from "./assets/dh_find_rslt.webp"
 import imgNewEco from "./assets/dh_new_eco.webp"
+import imgNewIA from "./assets/dh_new_ia.webp"
 
 
 import { Prose } from "@/components/case/layout/Prose"
@@ -492,13 +493,13 @@ show
                     label: "01. Wrong ECG workflow",
                     value: "A smartphone app with a consumer mental model — the flow conflicted with real clinical routines.mx-auto max-w-3xl"
                   },
-                  { 
-                    label: "02. Friction in the physical experience", 
-                    value: "Cables tangled. Clips hurt patients. Key electrodes went unnoticed by every single test participant." 
+                  {
+                    label: "02. Friction in the physical experience",
+                    value: "Cables tangled. Clips hurt patients. Key electrodes went unnoticed by every single test participant."
                   },
-                  { 
-                    label: "03. Unclear feedback", 
-                    value: "One LED for everything — nurses couldn't tell if the device was working, connecting, or failing." 
+                  {
+                    label: "03. Unclear feedback",
+                    value: "One LED for everything — nurses couldn't tell if the device was working, connecting, or failing."
                   },
                 ]}
               />
@@ -554,7 +555,7 @@ show
                 controls={false}
               />
             </div>
-            
+
             <div>
               <Figure
                 src={vidSolInterface}
@@ -575,7 +576,7 @@ show
           </div>
 
 
-          
+
 
 
         </>
@@ -641,7 +642,7 @@ show
       render: () => (
         <>
           <FigureCarousel
-            className="w-full my-12" 
+            className="w-full my-12"
             options={{ align: "start", loop: true, dragFree: true }}
             autoScroll={{
               speed: 1,
@@ -894,7 +895,7 @@ show
 
             /> */}
 
-            <Carousel
+            {/* <Carousel
               className="mx-auto mt-12 max-w-5xl"
               options={{ align: "start", loop: true }}
               plugins={[
@@ -941,9 +942,15 @@ show
 
                 <CarouselDots className="mt-0 justify-end" progressDuration={4500} />
               </div>
-            </Carousel>
-          </div>
+            </Carousel> */}
 
+
+
+
+          </div>
+          <Figure
+            src={imgNewIA}
+          />
 
 
 
