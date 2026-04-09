@@ -697,13 +697,13 @@ show
             title="The product worked — just not the way nurses did, creating a mismatch with clinical workflows and overally low usability score for performing ECG (5.6/7 SEQ)."
             className="mx-auto max-w-3xl"
           />
-          <Figure
+          {/* <Figure
             src={placeholder}
             className="py-10"
             caption="SEQ"
             alt="SEQ"
 
-          />
+          /> */}
 
           <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
             {[
