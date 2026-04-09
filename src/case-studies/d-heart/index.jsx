@@ -31,6 +31,9 @@ import imgDecTablet from "./assets/dh_dec_tablet.webp"
 import imgDecDash from "./assets/dh_dec_dash.webp"
 import imgDecNest from "./assets/dh_dec_nest.webp"
 import imgDec3DViz from "./assets/dh_dec_3dviz.webp"
+import imgPhysClip from "./assets/dh_phys_clip.webp"
+import imgPhysCable from "./assets/dh_phys_cable.webp"
+import imgPhysLed from "./assets/dh_phys_led.webp"
 
 
 import { Prose } from "@/components/case/layout/Prose"
@@ -1124,21 +1127,21 @@ show
           <div className=" grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
             {[
               {
-                src: placeholder,
+                src: imgPhysClip,
                 tag: "Mod 01 ",
                 title: "Ergonomic ECG clips",
                 description:
                   "Redesigned the attachment mechanism to reduce discomfort, especially for elderly patients.",
               },
               {
-                src: placeholder,
+                src: imgPhysCable,
                 tag: "Mod 02 ",
                 title: "Improved cable usability",
                 description:
                   "Added visual markers to prevent over-extension and reduce tangling during use.",
               },
               {
-                src: placeholder,
+                src: imgPhysLed,
                 tag: "Mod 03 ",
                 title: "Clearer LED feedback system",
                 description:
