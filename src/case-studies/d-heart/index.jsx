@@ -1047,7 +1047,8 @@ show
 
           </div>
 
-          <div>
+
+          {/* <div>
             <CaseSeparator label="Wireframe testing" />
             <SectionHeading
               title=" We conducted low-fidelity wireframe testing with five users to identify usability issues early and validate core flows before moving into high-fidelity design."
@@ -1096,7 +1097,7 @@ show
                 </Card>
               ))}
             </div>
-          </div>
+          </div> */}
 
 
         </>
