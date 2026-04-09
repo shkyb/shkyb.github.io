@@ -34,6 +34,12 @@ import imgDec3DViz from "./assets/dh_dec_3dviz.webp"
 import imgPhysClip from "./assets/dh_phys_clip.webp"
 import imgPhysCable from "./assets/dh_phys_cable.webp"
 import imgPhysLed from "./assets/dh_phys_led.webp"
+import imgDes1 from "./assets/dh_des_1.webp"
+import imgDes2 from "./assets/dh_des_2.webp"
+import imgDes3 from "./assets/dh_des_3.webp"
+import imgDes4 from "./assets/dh_des_4.webp"
+import imgDes5 from "./assets/dh_des_5.webp"
+import imgDes6 from "./assets/dh_des_6.webp"
 
 
 import { Prose } from "@/components/case/layout/Prose"
@@ -1184,13 +1190,43 @@ show
           <SectionHeading
             title="A unified system for faster, clearer, and more reliable care."
             subtitle="We developed a design system to ensure consistency, clarity, and scalability across the D-Heart ecosystem—supporting both clinical usability and efficient future development."
-            className="mb-10"
+            className="mb-10 mx-auto max-w-3xl"
           />
 
-          <Figure
-            src={cover}
-            caption="design system"
-
+          <ImageGrid
+            cols={2}
+            items={[
+              {
+                src: imgDes1,
+                alt: "D-Heart design system",
+                frame: "soft",
+              },
+              {
+                src: imgDes2,
+                alt: "D-Heart design system",
+                frame: "soft",
+              },
+              {
+                src: imgDes3,
+                alt: "D-Heart design system",
+                frame: "soft",
+              },
+              {
+                src: imgDes4,
+                alt: "D-Heart design system",
+                frame: "soft",
+              },
+              {
+                src: imgDes5,
+                alt: "D-Heart design system",
+                frame: "soft",
+              },
+              {
+                src: imgDes6,
+                alt: "D-Heart design system",
+                frame: "soft",
+              },
+            ]}
           />
 
         </>
