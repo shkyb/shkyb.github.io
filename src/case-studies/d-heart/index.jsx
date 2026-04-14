@@ -40,6 +40,11 @@ import imgDes3 from "./assets/dh_des_3.webp"
 import imgDes4 from "./assets/dh_des_4.webp"
 import imgDes5 from "./assets/dh_des_5.webp"
 import imgDes6 from "./assets/dh_des_6.webp"
+import imgFinal00 from "./assets/dh-fin-00.webp"
+import imgFinal01 from "./assets/dh-fin-01.webp"
+import imgFinal02 from "./assets/dh-fin-02.webp"
+import imgFinal03 from "./assets/dh-fin-03.webp"
+import imgFinal04 from "./assets/dh-fin-04.webp"
 
 
 import { Prose } from "@/components/case/layout/Prose"
@@ -1236,24 +1241,60 @@ show
 
     {
       id: "final",
-      label: "Final Product",
+      label: "Final Design",
       bgClass: "bg-background",
       size: "fill",
       render: () => (
         <>
-          <CaseSeparator label="Final Product" />
+          <CaseSeparator label="Final Design" />
 
           <SectionHeading
-            title="A unified system for faster, clearer, and more reliable care."
-            subtitle="We developed a design system to ensure consistency, clarity, and scalability across the D-Heart ecosystem—supporting both clinical usability and efficient future development."
-            className="mb-10"
+            title="D-Heart Pro — a Connected ECG Ecosystem"
+            subtitle="We redesigned D-Heart across device, interface, and workflow to help nurses perform clearer, faster, and more reliable ECGs in real clinical settings."
+            className="mb-10 mx-auto max-w-3xl"
           />
 
-          <Figure
-            src={cover}
-            caption="design system"
+          <div className="space-y-12">
+            <Figure
+              src={imgFinal00}
+              alt="D-Heart final design concept 00"
+              label="Final Design 00"
+              caption="Placeholder caption for final design image 00."
+              frame="soft"
+            />
 
-          />
+            <Figure
+              src={imgFinal01}
+              alt="D-Heart final design concept 01"
+              label="Final Design 01"
+              caption="Placeholder caption for final design image 01."
+              frame="soft"
+            />
+
+            <Figure
+              src={imgFinal02}
+              alt="D-Heart final design concept 02"
+              label="Final Design 02"
+              caption="Placeholder caption for final design image 02."
+              frame="soft"
+            />
+
+            <Figure
+              src={imgFinal03}
+              alt="D-Heart final design concept 03"
+              label="Final Design 03"
+              caption="Placeholder caption for final design image 03."
+              frame="soft"
+            />
+
+            <Figure
+              src={imgFinal04}
+              alt="D-Heart final design concept 04"
+              label="Final Design 04"
+              caption="Placeholder caption for final design image 04."
+              frame="soft"
+            />
+          </div>
 
         </>
       )
@@ -1261,8 +1302,8 @@ show
     },
 
     {
-      id: "testing",
-      label: "Testing",
+      // id: "testing",
+      // label: "Testing",
       bgClass: "bg-background",
       size: "fill",
       render: () => (
