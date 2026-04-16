@@ -1258,41 +1258,46 @@ show
             <Figure
               src={imgFinal00}
               alt="D-Heart final design concept 00"
-              label="Final Design 00"
-              caption="Placeholder caption for final design image 00."
-              frame="soft"
+              className="pt-10"
+              // label="Final Design 00"
+              // caption="Placeholder caption for final design image 00."
+              // frame="soft"
             />
 
             <Figure
               src={imgFinal01}
               alt="D-Heart final design concept 01"
-              label="Final Design 01"
-              caption="Placeholder caption for final design image 01."
-              frame="soft"
+              className="pt-10"
+              // label="Final Design 01"
+              // caption="Placeholder caption for final design image 01."
+              // frame="soft"
             />
 
             <Figure
               src={imgFinal02}
               alt="D-Heart final design concept 02"
-              label="Final Design 02"
-              caption="Placeholder caption for final design image 02."
-              frame="soft"
+              className="pt-10"
+              // label="Final Design 02"
+              // caption="Placeholder caption for final design image 02."
+              // frame="soft"
             />
 
             <Figure
               src={imgFinal03}
               alt="D-Heart final design concept 03"
-              label="Final Design 03"
-              caption="Placeholder caption for final design image 03."
-              frame="soft"
+              className="pt-10"
+              // label="Final Design 03"
+              // caption="Placeholder caption for final design image 03."
+              // frame="soft"
             />
 
             <Figure
               src={imgFinal04}
               alt="D-Heart final design concept 04"
-              label="Final Design 04"
-              caption="Placeholder caption for final design image 04."
-              frame="soft"
+              className="pt-10"
+              // label="Final Design 04"
+              // caption="Placeholder caption for final design image 04."
+              // frame="soft"
             />
           </div>
 
@@ -1305,7 +1310,7 @@ show
       // id: "testing",
       // label: "Testing",
       bgClass: "bg-background",
-      size: "fill",
+      size: "small",
       render: () => (
         <>
           <SectionHeading
