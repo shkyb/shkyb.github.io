@@ -1259,45 +1259,45 @@ show
               src={imgFinal00}
               alt="D-Heart final design concept 00"
               className="pt-10"
-              // label="Final Design 00"
-              // caption="Placeholder caption for final design image 00."
-              // frame="soft"
+            // label="Final Design 00"
+            // caption="Placeholder caption for final design image 00."
+            // frame="soft"
             />
 
             <Figure
               src={imgFinal01}
               alt="D-Heart final design concept 01"
               className="pt-10"
-              // label="Final Design 01"
-              // caption="Placeholder caption for final design image 01."
-              // frame="soft"
+            // label="Final Design 01"
+            // caption="Placeholder caption for final design image 01."
+            // frame="soft"
             />
 
             <Figure
               src={imgFinal02}
               alt="D-Heart final design concept 02"
               className="pt-10"
-              // label="Final Design 02"
-              // caption="Placeholder caption for final design image 02."
-              // frame="soft"
+            // label="Final Design 02"
+            // caption="Placeholder caption for final design image 02."
+            // frame="soft"
             />
 
             <Figure
               src={imgFinal03}
               alt="D-Heart final design concept 03"
               className="pt-10"
-              // label="Final Design 03"
-              // caption="Placeholder caption for final design image 03."
-              // frame="soft"
+            // label="Final Design 03"
+            // caption="Placeholder caption for final design image 03."
+            // frame="soft"
             />
 
             <Figure
               src={imgFinal04}
               alt="D-Heart final design concept 04"
               className="pt-10"
-              // label="Final Design 04"
-              // caption="Placeholder caption for final design image 04."
-              // frame="soft"
+            // label="Final Design 04"
+            // caption="Placeholder caption for final design image 04."
+            // frame="soft"
             />
           </div>
 
@@ -1356,12 +1356,48 @@ show
       size: "fill",
       render: () => (
         <>
-          <SectionHeading
-            title="What I learned"
-            subtitle="In healthcare, usability is not just about cleaner screens. It is about trust, pace, and how well digital decisions support real-world routines."
-          />
+          <CaseSeparator label="Takeaways" />
 
-          <InsightList
+          <div className="grid md:grid-cols-2 gap-8">
+            <div>
+              <SectionHeading
+                title="Usability in Healthcare Means Fitting Into a Routine, Not Replacing One"
+                className="mb-10"
+              // subtitle="In healthcare, usability is not just about cleaner screens. It is about trust, pace, and how well digital decisions support real-world routines."
+              />
+
+              <div>
+                <Prose>
+                  <p>
+                    Designing for professionals means designing around <b>expertise, not against it</b>. Watching nurses follow their clinical instincts over the original product was the clearest signal — a good tool has to <b>fit into existing mastery</b>, not demand they abandon it.
+                  </p>
+
+                  <p>
+                    <b>Context of use will always outweigh convention.</b> Moving to tablet was the only honest answer once we understood how nurses actually work. That kind of decision requires <b>confidence in your research</b> over pressure to follow the crowd.
+                  </p>
+
+                  <p>
+                    On complex products, <b>physical and digital can't be designed in isolation.</b> The moment a user has to mentally translate between a blinking LED and an app state, you've introduced doubt. Coherence across touchpoints is the <b>foundation of trust in a medical tool</b>.
+                  </p>
+
+                  <p>
+                     A heartfelt thank you to <a href="https://www.linkedin.com/in/davidespallazzo/" target="_blank">Prof. Davide Spallazzo</a> and <a href="https://www.linkedin.com/in/martina-sciannam%C3%A8-920570157/" target="_blank">Prof. Martina Sciannamè</a> for their guidance throughout this project, to my teammates Filippo, Marjan, and Beyza for the collaboration, and to <b>Villa Le Magnolie</b> for welcoming us and making the research possible.
+                  </p>
+                  
+                </Prose>
+              </div>
+            </div>
+            <div>
+              <Figure
+                src={cover}
+                aspect="aspect-[2/3]"
+              />
+
+            </div>
+          </div>
+
+
+          {/* <InsightList
             items={[
               {
                 eyebrow: "Systems thinking",
@@ -1382,7 +1418,7 @@ show
                   "Labels, instruction access, and clearer feedback states had a big effect on how trustworthy the product felt.",
               },
             ]}
-          />
+          /> */}
         </>
       ),
     },
