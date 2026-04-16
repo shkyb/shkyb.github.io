@@ -24,4 +24,14 @@ export const projectIndex = [
     tags: ["UX Design"],
     isPublished: true,
   },
+  {
+    slug: "nathan",
+    href: "/projects/nathan",
+    title: "Nathan",
+    description: "...",
+    image: null,
+    imageAlt: "Nathan preview",
+    tags: [],
+    isPublished: false,
+  },
 ]
