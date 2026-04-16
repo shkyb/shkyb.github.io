@@ -12,10 +12,9 @@ export function StickySidenav({ sections, className }) {
   const ids = useMemo(() => navSections.map((s) => s.id), [navSections])
   const [activeId, setActiveId] = useState(ids[0] || null)
 
-  // Keep latest intersection states across callbacks
-  const stateRef = useRef(new Map()) // id -> { isIntersecting, top, bottom }
   const clickLockRef = useRef(false)
   const clickTimerRef = useRef(null)
+  const endReachedRef = useRef(false)
 
   useEffect(() => {
     if (!ids.length) return
@@ -34,66 +33,32 @@ export function StickySidenav({ sections, className }) {
 
     const lastId = ids[ids.length - 1]
 
-    const pickClosestToTop = () => {
+    const pickActiveSection = () => {
       if (clickLockRef.current) return
 
-      const entries = Array.from(stateRef.current.entries())
-        .map(([id, v]) => ({ id, ...v }))
-        .filter((v) => v.isIntersecting)
-
-      if (entries.length) {
-        // rootMargin already defines the activation band near the top.
-        // Pick the intersecting section whose top is closest to the header line.
-        entries.sort((a, b) => {
-          const da = Math.abs(a.top - topOffset)
-          const db = Math.abs(b.top - topOffset)
-          return da - db
-        })
-
-        const next = entries[0].id
-        setActiveId((prev) => (prev === next ? prev : next))
+      if (endReachedRef.current && lastId) {
+        setActiveId((prev) => (prev === lastId ? prev : lastId))
         return
       }
 
-      // Fallback: nothing intersecting (near extremes)
       let bestId = elements[0]?.id ?? null
-      let bestDist = Infinity
-
       for (const el of elements) {
         const rect = el.getBoundingClientRect()
-        // only consider sections that extend below the activation line
-        if (rect.bottom <= topOffset) continue
-
-        const dist = Math.abs(rect.top - topOffset)
-        if (dist < bestDist) {
-          bestDist = dist
-          bestId = el.id
-        }
+        if (rect.top <= topOffset) bestId = el.id
+        else break
       }
 
       if (bestId) setActiveId((prev) => (prev === bestId ? prev : bestId))
     }
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const e of entries) {
-          stateRef.current.set(e.target.id, {
-            isIntersecting: e.isIntersecting,
-            top: e.boundingClientRect.top,
-            bottom: e.boundingClientRect.bottom,
-          })
-        }
-        pickClosestToTop()
-      },
-      {
-        root: null,
-        // Activate near the top (close to header line)
-        rootMargin: `-${topOffset}px 0px -90% 0px`,
-        threshold: [0, 0.01, 0.1],
-      }
-    )
-
-    elements.forEach((el) => observer.observe(el))
+    let rafId = null
+    const schedulePickActiveSection = () => {
+      if (rafId) return
+      rafId = window.requestAnimationFrame(() => {
+        rafId = null
+        pickActiveSection()
+      })
+    }
 
     // Bottom sentinel: ensures last section can become active even without footer space
     const sentinel = document.getElementById("case-end-sentinel")
@@ -102,10 +67,8 @@ export function StickySidenav({ sections, className }) {
     if (sentinel && lastId) {
       endObserver = new IntersectionObserver(
         (entries) => {
-          if (clickLockRef.current) return
-          if (entries.some((e) => e.isIntersecting)) {
-            setActiveId((prev) => (prev === lastId ? prev : lastId))
-          }
+          endReachedRef.current = entries.some((e) => e.isIntersecting)
+          schedulePickActiveSection()
         },
         { root: null, threshold: 0 }
       )
@@ -113,17 +76,24 @@ export function StickySidenav({ sections, className }) {
     }
 
     // Set once on mount / direct loads / hash
-    pickClosestToTop()
+    pickActiveSection()
 
     // Re-evaluate after assets load (images can shift layout)
-    const onLoad = () => pickClosestToTop()
+    const onLoad = () => schedulePickActiveSection()
+    const onScroll = () => schedulePickActiveSection()
+    const onResize = () => schedulePickActiveSection()
+
     window.addEventListener("load", onLoad)
+    window.addEventListener("scroll", onScroll, { passive: true })
+    window.addEventListener("resize", onResize)
 
     return () => {
       window.removeEventListener("load", onLoad)
-      observer.disconnect()
+      window.removeEventListener("scroll", onScroll)
+      window.removeEventListener("resize", onResize)
       if (endObserver) endObserver.disconnect()
-      stateRef.current.clear()
+      if (rafId) window.cancelAnimationFrame(rafId)
+      endReachedRef.current = false
       if (clickTimerRef.current) window.clearTimeout(clickTimerRef.current)
     }
   }, [ids])
