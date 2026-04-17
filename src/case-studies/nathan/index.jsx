@@ -4,8 +4,8 @@ import React from "react"
 // import cover from "./assets/cover.webp"
 
 import { Prose } from "@/components/case/layout/Prose"
-import { Section } from "@/components/case/layout/Section"
-import { Container } from "@/components/case/layout/Container"
+import { CaseSection as Section } from "@/components/case/layout/Section"
+import { CaseContainer as Container } from "@/components/case/layout/Container"
 import { FullBleedSection } from "@/components/case/layout/FullBleedSection"
 
 import { SectionHeading } from "@/components/case/blocks/SectionHeading"
