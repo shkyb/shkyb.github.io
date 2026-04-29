@@ -22,6 +22,66 @@ import { PullQuote } from "@/components/case/blocks/PullQuote"
 import { Timeline } from "@/components/case/blocks/Timeline"
 import { ProcessStep } from "@/components/case/blocks/ProcessStep"
 import { CaseSeparator } from "@/components/case/blocks/CaseSeparator"
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
+import { ShoppingCart, Refrigerator, Leaf } from "lucide-react"
+
+const PillarCard = ({ icon: Icon, title, body, bullets }) => (
+  <Card>
+    <CardHeader>
+      {Icon && <Icon className="h-8 w-8 text-muted-foreground" />}
+      <CardTitle>
+        <Prose><h3>{title}</h3></Prose>
+      </CardTitle>
+      {body && (
+        <CardDescription>
+          <Prose>{body}</Prose>
+        </CardDescription>
+      )}
+    </CardHeader>
+    {bullets && (
+      <CardContent>
+        <Prose>
+          <ul>{bullets.map((b, i) => <li key={i} className="font-medium">{b}</li>)}</ul>
+        </Prose>
+      </CardContent>
+    )}
+  </Card>
+)
+
+const ProductPillars = () => (
+  <div className="mx-auto max-w-4xl grid grid-cols-1 gap-6 md:grid-cols-3">
+    <PillarCard
+      icon={ShoppingCart}
+      title="Smart Shopping Lists"
+      body="Automate manual tasks to reduce the margin of error in the whole process."
+      bullets={[
+        "Multiple member management",
+        "Info on product quality standards",
+        "List management",
+      ]}
+    />
+    <PillarCard
+      icon={Refrigerator}
+      title="Inventory & Expiry Tracking"
+      body="Have the management and status of your resources under control and at your fingertips."
+      bullets={[
+        "Receipt scanner",
+        "Automatic inventory",
+        "Food expiry tracking",
+      ]}
+    />
+    <PillarCard
+      icon={Leaf}
+      title="Zero-Waste Journey"
+      body="Clearly track and correct purchasing and consumption habits with a reward system."
+      bullets={[
+        "Data visualization on consumption",
+        "User's trend",
+        "Gamified reward system",
+      ]}
+    />
+  </div>
+)
 
 export const nathanCase = {
   slug: "nathan",
@@ -237,6 +297,33 @@ export const nathanCase = {
               Every app handled one, maybe two. Nobody had connected all four into a single experience — and nobody had made AI the thing that actually drives the list, not just a search bar with a smarter autocomplete. <strong>That gap was the brief.</strong>
             </p>
           </Prose>
+        </>
+      ),
+    },
+    {
+      id: "service",
+      label: "Service Idea",
+      size: "fill",
+      render: () => (
+        <>
+          <SectionHeading
+            kicker="Service Idea"
+            title="Nathan works in the background — learning what your household actually buys, and quietly making your next list more honest than your last one."
+            className="mx-auto max-w-3xl"
+          />
+          <Prose className="mx-auto max-w-3xl">
+            <p>Nathan is a mobile app built around one idea: that most families already know roughly what they waste, they just have no tool that does anything about it. So rather than adding another dashboard to look at, we designed something that acts on that knowledge for you — learning from what you buy, what you finish, and what ends up in the bin, and adjusting your next shopping list accordingly.</p>
+          </Prose>
+          <Figure
+            src={cover}
+            frame="soft"
+            alt="Three Nathan app screens side by side showing the Home, Inventory, and Shopping List views"
+            caption="Home · Inventory · Shopping List — three screens, one loop."
+          />
+          <Prose className="mx-auto max-w-3xl">
+            <p>The app is built around three connected pillars. Each one handles a different moment in the cycle — planning before the shop, tracking after it, and learning from what actually gets used.</p>
+          </Prose>
+          <ProductPillars />
         </>
       ),
     },
