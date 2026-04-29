@@ -63,16 +63,17 @@ export const nathanCase = {
 
   sections: [
     {
-      id: "section-1",
-      label: "Section 1",
+      id: "problem",
+      label: "Problem",
       render: () => (
-        <Section id="section-1">
+        <Section id="problem">
           <Container>
             <SectionHeading
-              kicker=""
-              title=""
+              kicker="The Problem"
+              title="Italian households waste 65 kg of food per person every year — not from carelessness, but because planning groceries is cognitively expensive enough that most families skip it."
               subtitle=""
             />
+            <Figure src={cover} frame="soft" />
           </Container>
         </Section>
       ),
