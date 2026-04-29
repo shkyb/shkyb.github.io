@@ -103,13 +103,13 @@ export const nathanCase = {
       ),
     },
     {
-      id: "research",
-      label: "Research",
+      id: "origin",
+      label: "Origin & Reframing",
       size: "small",
       render: () => (
         <>
           <SectionHeading
-            kicker="Research"
+            kicker="How It Started"
             title="We set out to design an AI solution for Italy's waste crisis — and spent the first weeks systematically killing every idea we were excited about."
           />
           <Prose>
