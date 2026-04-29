@@ -31,8 +31,18 @@ export function ProcessStep({
   figure,
   reverse = false,
   justifyEnd = false,
+  figureCols = 6,
   className,
 }) {
+  const colSpan = {
+    4: "md:col-span-4",
+    5: "md:col-span-5",
+    6: "md:col-span-6",
+    7: "md:col-span-7",
+    8: "md:col-span-8",
+  }
+  const textCols = 12 - figureCols
+
   return (
     <div
       className={cn(
@@ -43,7 +53,7 @@ export function ProcessStep({
       {/* Text */}
       <div
         className={cn(
-          "md:col-span-6",
+          colSpan[textCols],
           justifyEnd && "flex h-full flex-col justify-end",
           reverse ? "md:order-2" : "md:order-1"
         )}
@@ -81,7 +91,7 @@ export function ProcessStep({
       {figure ? (
         <div
           className={cn(
-            "md:col-span-6",
+            colSpan[figureCols],
             reverse ? "md:order-1" : "md:order-2"
           )}
         >

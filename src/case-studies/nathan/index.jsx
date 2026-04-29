@@ -495,5 +495,51 @@ export const nathanCase = {
         </div>
       ),
     },
+    {
+      // id: "IA",
+      // label: "IA",
+      size: "fill",
+      render: () => (
+        <div className="flex flex-col gap-16">
+          <ProcessStep
+            figureCols={8}
+            justifyEnd
+            step="⚖️"
+            title="Impact / Effort Matrix"
+            description={
+              <Prose>
+                <p>We had more ideas than time, so before touching Figma we forced every user story onto a 2×2 — <strong>impact against effort</strong>. What landed in the top-left shipped first. What landed in the bottom-right got killed. It was uncomfortable, and it was <em>the right call</em>.</p>
+              </Prose>
+            }
+            figure={{
+              src: cover,
+              alt: "Impact / Effort Matrix diagram with user stories plotted by impact and effort",
+              // caption: "User stories sorted into Quick Wins, Major Projects, Fill-ins, and Hard Slogs.",
+              frame: "soft",
+              aspect: "aspect-[3/2]",
+            }}
+          />
+          <ProcessStep
+            figureCols={8}
+            justifyEnd
+            reverse
+            step="🗺️"
+            title="Information Architecture"
+            description={
+              <Prose>
+                <p>With scope defined, we needed a skeleton before screens. <strong>Three pillars — Home, Inventory, Household</strong> — everything reachable in two taps. <em>Locking the IA first</em> meant no screen was ever drawn without a clear place to live.</p>
+              </Prose>
+            }
+            figure={{
+              src: cover,
+              alt: "Nathan information architecture diagram showing three-pillar structure",
+              // caption: "Home · Inventory · Household — the three-pillar IA that shaped every screen that followed.",
+              frame: "soft",
+              aspect: "aspect-[3/2]",
+            }}
+          />
+        </div>
+      ),
+    },
   ],
 }
