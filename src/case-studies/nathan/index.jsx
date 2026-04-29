@@ -65,17 +65,41 @@ export const nathanCase = {
     {
       id: "problem",
       label: "Problem",
+      size: "fill",
       render: () => (
-        <Section id="problem">
-          <Container>
-            <SectionHeading
-              kicker="The Problem"
-              title="Italian households waste 65 kg of food per person every year — not from carelessness, but because planning groceries is cognitively expensive enough that most families skip it."
-              subtitle=""
-            />
-            <Figure src={cover} frame="soft" />
-          </Container>
-        </Section>
+        <>
+          <SectionHeading
+            kicker="The Problem"
+            title="Italian households waste 65 kg of food per person every year — not from carelessness, but because planning groceries is cognitively expensive enough that most families skip it."
+            subtitle=""
+            className="mx-auto max-w-3xl"
+          />
+          <Figure src={cover} frame="soft" />
+        </>
+      ),
+    },
+    {
+      id: "solution",
+      label: "Solution",
+      size: "fill",
+      render: () => (
+        <>
+          <SectionHeading
+            kicker="The Solution"
+            title="A mobile app that scans your receipts, learns your household's waste patterns via an LSTM model, and quietly rewrites your next shopping list to match what you actually need."
+            subtitle=""
+            className="mx-auto max-w-3xl"
+          />
+          <Figure src={cover} frame="soft" />
+          <Metrics
+            columns={3}
+            items={[
+              { value: "81", label: "screens designed" },
+              { value: "33", label: "design system components" },
+              { value: "2",  label: "AI models architected" },
+            ]}
+          />
+        </>
       ),
     },
   ],
