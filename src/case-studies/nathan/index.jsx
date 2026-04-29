@@ -327,5 +327,15 @@ export const nathanCase = {
         </>
       ),
     },
+    {
+      size: "media",
+      render: () => (
+        <Figure
+          src={cover}
+          frame="soft"
+          caption="New user journey map"
+        />
+      ),
+    },
   ],
 }
