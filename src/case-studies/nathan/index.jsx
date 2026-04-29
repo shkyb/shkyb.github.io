@@ -440,5 +440,60 @@ export const nathanCase = {
         </>
       ),
     },
+    {
+      id: "app",
+      label: "App Development",
+      size: "fill",
+      render: () => (
+        <div className="mx-auto grid max-w-3xl grid-cols-1 gap-12 md:grid-cols-2">
+          <div className="flex flex-col gap-4">
+            <SectionHeading
+              kicker="App Development"
+              title="From a prioritized backlog to a tested hi-fi prototype in six stages."
+            />
+            <Prose>
+              <p>
+                Once the problem and solution were clear, the design process moved through six structured stages — from deciding what to build first, to validating it with real households. Each stage fed directly into the next.
+              </p>
+            </Prose>
+          </div>
+          <Timeline
+            items={[
+              {
+                title: "⚖️ Impact / Effort Matrix",
+                body: "User stories sorted by impact and effort to define v1 scope. Quick wins shipped first; major projects phased.",
+                // tags: ["Prioritization"],
+              },
+              {
+                title: "🗺️ Information Architecture",
+                body: "Three-pillar IA finalized: Home, Inventory, Household — everything reachable in two taps.",
+                // tags: ["UX"],
+              },
+              {
+                title: "✏️ Sketches",
+                body: "Paper sketches to explore the IA quickly, iterate without cost, and align the team before moving to digital.",
+                // tags: ["Ideation"],
+              },
+              {
+                title: "🔲 Wireframes",
+                body: "Mid-fidelity screens applying Miller's Law, Hick's Law, Fitts's Law, and Selective Attention to every layout decision.",
+                // tags: ["UX Psychology", "Figma"],
+              },
+              {
+                title: "🎨 Hi-Fi Prototype",
+                body: "Full prototype built on the custom design system — 81 screens, 33 components.",
+                // tags: ["Design System", "Figma"],
+              },
+              {
+                title: "🧪 User Testing",
+                body: "Three methods with 4 participants across age groups. Findings drove a round of targeted redesigns before the final presentation.",
+                // tags: ["5-sec test", "SEQ", "PREMO"],
+                tone: "success",
+              },
+            ]}
+          />
+        </div>
+      ),
+    },
   ],
 }
