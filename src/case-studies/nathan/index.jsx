@@ -1,7 +1,7 @@
 import React from "react"
 
-// import logo from "./assets/logo.png"
-// import cover from "./assets/cover.webp"
+import logo from "./assets/nathan_logo.webp"
+import cover from "./assets/nathan_cover.webp"
 
 import { Prose } from "@/components/case/layout/Prose"
 import { CaseSection as Section } from "@/components/case/layout/Section"
@@ -25,21 +25,42 @@ import { CaseSeparator } from "@/components/case/blocks/CaseSeparator"
 
 export const nathanCase = {
   slug: "nathan",
-  title: "",
-  subtitle: "",
-  tags: [],
-  // logo,
-  // cover,
-  overview: {
-    description: ``,
-    meta: [
-      { label: "Role", value: "" },
-      { label: "Duration", value: "" },
-      { label: "Team", value: "" },
-      { label: "Tools", value: "" },
+
+  caseMeta: {
+    logo: { src: logo, alt: "Nathan logo" },
+    title: "Nathan",
+    headline: "An AI grocery companion that turns shopping lists into waste prevention.",
+    tags: ["AI/UX", "Service Design", "Design Systems", "Mobile", "Sustainability"],
+    cover: {
+      src: cover,
+      alt: "Nathan case study cover",
+    },
+    overview: [
+      <Prose>
+        <p>Nathan is a conceptual mobile app — a speculative design project exploring how AI could close the gap between what Italian households intend to buy and what they actually waste. Developed during a <a href="https://www.polimi.it/en/" target="_blank" rel="noopener noreferrer">@PoliMI</a> studio on <em>Envisioning AI Through Design</em>, the concept pairs receipt-scanning classification with an LSTM forecasting model to progressively rewrite your shopping list — quietly reducing overbuying without adding friction to the experience.</p>
+        <p>The project moved from root-cause research (the food waste crisis is really a planning-friction problem) through a fully specified AI and data architecture, a custom design system built around calm, butler-like helpfulness, and iterative usability testing of a hi-fi prototype with real households across age groups.</p>
+      </Prose>
     ],
-    cta: [],
+    links: [
+      { label: "Figma Prototype", href: "https://www.figma.com/proto/lH24vf0assp2xi3x0IwqsB/Envisioning-AI-%7C-Group-6-%7C-Waste-Management--Copy-?node-id=4-2&t=ibXN7YOBiGPDMVzS-1", icon: "" },
+      // { label: "Design Report", href: "", icon: "", variant: "secondary" },
+    ],
+    meta: [
+      { label: "Role", value: "Designing the AI & data architecture — model selection, data strategy, fail-safes — and building the full design system and hi-fi prototype." },
+      {
+        label: "Team", value: [
+          { name: "@Filippo Randon", href: "https://www.linkedin.com/in/filippo-randon-b25466180/" },
+          { name: "@Marjan Mehrabi", href: "https://www.linkedin.com/in/marjan-mehrabi/" },
+          { name: "@Dilara Tanriöven", href: "https://www.linkedin.com/in/dilara-tanrioven-2b6028211/" },
+          { name: "@Erika Caffo", href: "#" },
+          { name: "& Me" },
+        ],
+      },
+      { label: "Timeline", value: "Academic project · 1 Semester · Mar – Jun 2024" },
+      { label: "Focus", value: "AI Architecture, UX, Design Systems, Sustainability" },
+    ],
   },
+
   sections: [
     {
       id: "section-1",
