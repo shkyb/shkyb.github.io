@@ -102,5 +102,62 @@ export const nathanCase = {
         </>
       ),
     },
+    {
+      id: "research",
+      label: "Research",
+      size: "small",
+      render: () => (
+        <>
+          <SectionHeading
+            kicker="Research"
+            title="We set out to design an AI solution for Italy's waste crisis — and spent the first weeks systematically killing every idea we were excited about."
+          />
+          <Prose>
+            <p>
+              Early research mapped the full waste lifecycle — generation, collection, sorting, processing, reintegration — and produced two ideas that looked promising on paper and collapsed under scrutiny.
+            </p>
+          </Prose>
+          <Timeline
+            items={[
+              {
+                title: "Smart bins — killed",
+                tone: "warning",
+                body: (
+                  <Prose>
+                    <p>AI-enabled bins that sort waste and feed data to city infrastructure. <em>It worked on paper.</em> In practice it needed buy-in from municipalities, waste companies, and citizens simultaneously — a <strong>rollout problem, not a design problem.</strong> And the AI was decorative: sensors and pattern matching would do the same job.</p>
+                  </Prose>
+                ),
+              },
+              {
+                title: "DIY reuse projects — killed",
+                tone: "warning",
+                body: (
+                  <Prose>
+                    <p>Composting guides, upcycling recipes, creative reuse prompts. It addressed <em>guilt</em>, not behavior. A user might feel better about last week's wasted spinach while <strong>still overbuying next week's.</strong> The intervention landed after the damage — with no mechanism to change the habit.</p>
+                  </Prose>
+                ),
+              },
+            ]}
+          />
+          <Prose>
+            <p>
+              The finding that redirected everything: <strong>people feel responsible for waste but never see the direct result of their effort.</strong> Italy's waste infrastructure is well-run. The volume is the problem — and volume is created upstream, before any bin is involved.
+            </p>
+          </Prose>
+          <Figure
+            src={cover}
+            frame="soft"
+            alt="Waste sector breakdown pie chart showing food at 44% of household waste"
+            caption="Food was the worst-performing waste category. Households are its biggest source — ahead of restaurants, retail, and manufacturing."
+          />
+
+          <Prose>
+            <p>
+              So we moved upstream — from disposal all the way back to the shopping aisle.
+            </p>
+          </Prose>
+        </>
+      ),
+    },
   ],
 }
