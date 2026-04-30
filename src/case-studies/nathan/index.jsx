@@ -15,6 +15,8 @@ import { InsightList } from "@/components/case/blocks/InsightList"
 import { ComparisonTable } from "@/components/case/blocks/ComparisonTable"
 import { Figure } from "@/components/case/blocks/Figure"
 import { FigureCarousel } from "@/components/case/blocks/FigureCarousel"
+import Autoplay from "embla-carousel-autoplay"
+import { Carousel, CarouselContent, CarouselDots, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
 import { ImageGrid } from "@/components/case/blocks/ImageGrid"
 import { BeforeAfter } from "@/components/case/blocks/BeforeAfter"
 import { Callout } from "@/components/case/blocks/Callout"
@@ -23,7 +25,7 @@ import { Timeline } from "@/components/case/blocks/Timeline"
 import { ProcessStep } from "@/components/case/blocks/ProcessStep"
 import { CaseSeparator } from "@/components/case/blocks/CaseSeparator"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
-import { ShoppingCart, Refrigerator, Leaf, ScanLine, BrainCircuit, ShieldCheck } from "lucide-react"
+import { ShoppingCart, Refrigerator, Leaf, ScanLine, BrainCircuit, ShieldCheck, LayoutGrid, SlidersHorizontal, Hand, Eye } from "lucide-react"
 
 const PillarCard = ({ icon: Icon, title, body, bullets }) => (
   <Card>
@@ -539,6 +541,58 @@ export const nathanCase = {
             }}
           />
         </div>
+      ),
+    },
+    {
+      // id: "wireframe",
+      // label: "Wireframe",
+      size: "fill",
+      render: () => (
+        <>
+          <SectionHeading
+            kicker="Wireframes"
+            title="Wireframes weren't drawn freely — every layout decision was anchored to a principle from cognitive psychology."
+            className="mx-auto max-w-3xl"
+          />
+          <div className="mx-auto grid max-w-3xl grid-cols-1 gap-4 md:grid-cols-2">
+            <Callout tone="neutral" title="Miller's Law" icon={LayoutGrid}>
+              Inventory screens cap at 7±2 visible items before scrolling — preventing overload when scanning a full pantry grid.
+            </Callout>
+            <Callout tone="neutral" title="Hick's Law" icon={SlidersHorizontal}>
+              Minimal filter options on the shopping list. Fewer decisions per interaction means less friction per shop.
+            </Callout>
+            <Callout tone="neutral" title="Fitts's Law" icon={Hand}>
+              Primary actions are generously sized and thumb-reachable. The most common interactions never require a stretch.
+            </Callout>
+            <Callout tone="neutral" title="Selective Attention" icon={Eye}>
+              Card-based layout uses proximity and common-region grouping to surface what's relevant and suppress what isn't.
+            </Callout>
+          </div>
+          <Carousel
+            className="mx-auto max-w-5xl"
+            options={{ align: "start", loop: true }}
+            plugins={[Autoplay({ delay: 4500, stopOnInteraction: false })]}
+          >
+            <CarouselContent>
+              {[
+                { src: cover, alt: "Wireframe placeholder 1" },
+                { src: cover, alt: "Wireframe placeholder 2" },
+              ].map((item, index) => (
+                <CarouselItem key={index}>
+                  <Figure src={item.src} alt={item.alt} aspect="aspect-video" frame="soft" loading="eager" fetchPriority="high" decoding="sync" />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+
+            <div className="mt-6 flex items-center justify-between gap-4">
+              <div className="flex items-center gap-2">
+                <CarouselPrevious className="static left-auto top-auto translate-y-0" />
+                <CarouselNext className="static right-auto top-auto translate-y-0" />
+              </div>
+              <CarouselDots className="mt-0 justify-end" progressDuration={4500} />
+            </div>
+          </Carousel>
+        </>
       ),
     },
   ],
