@@ -618,5 +618,75 @@ export const nathanCase = {
         </>
       ),
     },
+    {
+      // id: "testing",
+      // label: "Testing",
+      size: "fill",
+      render: () => (
+        <>
+          <SectionHeading
+            kicker="Testing & Iteration"
+            title="We tested with real households — then rebuilt the parts that quietly confused them."
+            className="mx-auto max-w-3xl"
+          />
+          <Prose className="mx-auto max-w-3xl">
+            <p>Two individuals, two households, ages 26–49. Each session fed directly into a redesign round before the final prototype was locked.</p>
+          </Prose>
+          <Metrics
+            columns={3}
+            size="sm"
+            className="mx-auto max-w-3xl" 
+            
+            items={[
+              {
+                label: "5-Second Test",
+                value: "Dense",
+                note: "Home was eye-catching but information-heavy. Rebuilt with stronger whitespace and clearer hierarchy.",
+              },
+              {
+                label: "SEQ · 7 Tasks",
+                value: "Mostly easy",
+                note: "Onboarding and waste feedback scored lowest — both were redesigned before the final build.",
+              },
+              {
+                label: "PREMO",
+                value: "Joy & Hope",
+                note: "Dominant emotions across users. Honest negative: boredom — groceries aren't inherently exciting.",
+              },
+            ]}
+          />
+          <div className="mx-auto grid max-w-5xl grid-cols-2 gap-4">
+            <Figure
+              src={cover}
+              alt="Home screen rebuilt with stronger whitespace and clearer visual hierarchy"
+              caption="Home rebuilt — the original was eye-catching but dense. Whitespace and hierarchy fixed it."
+              aspect="aspect-square"
+              frame="soft"
+            />
+            <Figure
+              src={cover}
+              alt="Join button changed to Join a Household"
+              caption='"Join" → "Join a Household" — a single copy change that eliminated a recurring confusion point.'
+              aspect="aspect-square"
+              frame="soft"
+            />
+            <Figure
+              src={cover}
+              alt="End-of-shopping tooltip added to signal session completion"
+              caption="End-of-shopping tooltip added — users had no signal that the process was complete."
+              aspect="aspect-square"
+              frame="soft"
+            />
+            <Figure
+              src={cover}
+              alt="Household page icons updated to feel more actionable"
+              caption="Household page icons made more actionable — the original set read as decorative, not interactive."
+              aspect="aspect-square"
+              frame="soft"
+            />
+          </div>
+        </>
+      ),
+    },
   ],
 }
