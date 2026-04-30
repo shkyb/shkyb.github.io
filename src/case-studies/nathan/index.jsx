@@ -449,7 +449,7 @@ export const nathanCase = {
           <div className="flex flex-col gap-4">
             <SectionHeading
               kicker="App Development"
-              title="From a prioritized backlog to a tested hi-fi prototype in six stages."
+              title="We had three weeks to go from blank canvas to a tested prototype. So before touching Figma, we ran an agile sprint and decided what actually mattered."
             />
             <Prose>
               <p>
