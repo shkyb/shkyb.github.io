@@ -685,6 +685,11 @@ export const nathanCase = {
               frame="soft"
             />
           </div>
+          <PullQuote
+            quote="My 9-year-old daughter enjoys collaborating in shopping by adding her favorite items on post-its on the fridge. I will install Nathan on her phone to substitute post-its."
+            author="Farnaz"
+            role="38, participant"
+          />
         </>
       ),
     },
