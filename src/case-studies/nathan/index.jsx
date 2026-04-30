@@ -108,7 +108,7 @@ export const nathanCase = {
       // { label: "Design Report", href: "", icon: "", variant: "secondary" },
     ],
     meta: [
-      { label: "Role", value: "Designing the AI & data architecture — model selection, data strategy, fail-safes — and building the full design system and hi-fi prototype." },
+      { label: "Role", value: "Designing the AI & data architecture — model selection, data strategy, fail-safes — and building the design system and hi-fi prototype." },
       {
         label: "Team", value: [
           { name: "@Filippo Randon", href: "https://www.linkedin.com/in/filippo-randon-b25466180/" },
@@ -635,8 +635,8 @@ export const nathanCase = {
           <Metrics
             columns={3}
             size="sm"
-            className="mx-auto max-w-3xl" 
-            
+            className="mx-auto max-w-3xl"
+
             items={[
               {
                 label: "5-Second Test",
@@ -710,6 +710,38 @@ export const nathanCase = {
           <Figure src={cover} alt="Final design screen" aspect="aspect-video" frame="soft" />
           <Figure src={cover} alt="Final design screen" aspect="aspect-video" frame="soft" />
           <Figure src={cover} alt="Final design screen" aspect="aspect-video" frame="soft" />
+        </>
+      ),
+    },
+    {
+      id: "reflections",
+      label: "Reflections",
+      size: "small",
+      render: () => (
+        <>
+          <SectionHeading
+            kicker="Reflections"
+            title="AI is a design material — it has constraints, fail-safes, and responsibilities that have to be designed for, not assumed."
+          />
+          <InsightList
+            items={[
+              {
+                title: "Reframing is the actual work.",
+                description: <Prose><p>Our first ideas would have produced <em>beautiful deliverables and useless products.</em> The pivot from waste management to shopping friction is the decision that made Nathan worth building. Getting comfortable <strong>killing good ideas early</strong> is a professional skill, not just a design principle.</p></Prose>,
+              },
+              {
+                title: "AI is a material, not a feature.",
+                description: <Prose><p>Designing with AI means working backwards from <strong>data availability</strong> — what does the model need, what's the fail-safe when that data is missing, and what does the UI communicate when a prediction is uncertain? I now approach AI products as <em>data architecture problems</em> before they become interface problems.</p></Prose>,
+              },
+              // {
+              //   title: "A design system is how uncertainty becomes calm.",
+              //   description: <Prose><p>The AI suggests quantities — that's inherently probabilistic. The design system is the <strong>translation layer</strong> that makes it feel trustworthy rather than presumptuous. Those 33 components aren't cosmetic — <em>they're the product's argument that the AI can be trusted.</em></p></Prose>,
+              // },
+            ]}
+          />
+          <Prose>
+            <p>A big thank you to <a href="https://www.linkedin.com/in/marzia-mortati-19a0898/" target="_blank" rel="noreferrer">Marzia Mortati</a>, <a href="https://www.linkedin.com/in/andreabonarini/" target="_blank" rel="noreferrer">Andrea Bonarini</a>, <a href="https://www.linkedin.com/in/enrico-priora/" target="_blank" rel="noreferrer">Enrico Priora</a>, <a href="https://dipartimentodesign.polimi.it/it/personale/federico.espositi#" target="_blank" rel="noreferrer">Federico Espositi</a>, and <a href="https://www.linkedin.com/in/giulia-daleo/" target="_blank" rel="noreferrer">Giulia D'Aleo</a> for the care and patience they put into every review session. And to Filippo, Marjan, Dilara, and Erika — it was a pleasure to figure this out together.</p>
+          </Prose>
         </>
       ),
     },
