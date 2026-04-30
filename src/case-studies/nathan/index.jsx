@@ -595,5 +595,28 @@ export const nathanCase = {
         </>
       ),
     },
+    {
+      // id: "design-system",
+      // label: "Design System",
+      size: "fill",
+      render: () => (
+        <>
+          <SectionHeading
+            kicker="Design System"
+            title="Every color, typeface, and component was chosen to get out of the user's way — clean, readable, and nothing more than necessary."
+            className="mx-auto max-w-3xl"
+          />
+          <Prose className="mx-auto max-w-3xl">
+            <p>Nathan's design system is a customization of the <strong>Moon Design System</strong> — 33 components adapted to the specific needs of a household grocery app.</p>
+          </Prose>
+          <div className="mx-auto grid max-w-5xl grid-cols-2 gap-4">
+            <Figure src={cover} alt="design system" aspect="aspect-square" frame="soft" />
+            <Figure src={cover} alt="design system" aspect="aspect-square" frame="soft" />
+            <Figure src={cover} alt="design system" aspect="aspect-square" frame="soft" />
+            <Figure src={cover} alt="design system" aspect="aspect-square" frame="soft" />
+          </div>
+        </>
+      ),
+    },
   ],
 }
