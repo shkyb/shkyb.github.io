@@ -687,9 +687,29 @@ export const nathanCase = {
           </div>
           <PullQuote
             quote="My 9-year-old daughter enjoys collaborating in shopping by adding her favorite items on post-its on the fridge. I will install Nathan on her phone to substitute post-its."
-            author="Farnaz"
+            author="0Farnaz"
             role="38, participant"
           />
+        </>
+      ),
+    },
+    {
+      id: "final-design",
+      label: "Final Design",
+      size: "fill",
+      render: () => (
+        <>
+          <SectionHeading
+            kicker="Final Design"
+            title="The MVP includes 80+ screens which covered one complete loop: from building the list, to scanning the receipt, to tracking what was left."
+            className="mx-auto max-w-3xl"
+          />
+          {/* <Prose className="mx-auto max-w-3xl">
+            <p>The final prototype brought together every decision made across the project — from the IA skeleton to the 33-component design system to the iterations driven by testing. This is what Nathan looks like when it's working.</p>
+          </Prose> */}
+          <Figure src={cover} alt="Final design screen" aspect="aspect-video" frame="soft" />
+          <Figure src={cover} alt="Final design screen" aspect="aspect-video" frame="soft" />
+          <Figure src={cover} alt="Final design screen" aspect="aspect-video" frame="soft" />
         </>
       ),
     },
