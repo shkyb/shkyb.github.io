@@ -3,6 +3,34 @@ import React from "react"
 import logo from "./assets/nathan_logo.webp"
 import cover from "./assets/nathan_cover.webp"
 
+import ntnIntroProblem from "./assets/ntn-intro-problem.webp"
+import ntnIntroSolution from "./assets/ntn-intro-solution.webp"
+import ntnOriginChart from "./assets/ntn-origin-chart.webp"
+import ntnOriginReframing from "./assets/ntn-origin-reframing.webp"
+import ntnResearchUjm from "./assets/ntn-research-ujm.webp"
+import ntnResearchBenchmark from "./assets/ntn-research-benchmark.webp"
+import ntnService from "./assets/ntn-service.webp"
+import ntnServiceUjm from "./assets/ntn-service-ujm.webp"
+import ntnAiClassification from "./assets/ntn-ai-classification.webp"
+import ntnAiForecasting from "./assets/ntn-ai-forecasting.webp"
+import ntnAppMatrix from "./assets/ntn-app-matrix.webp"
+import ntnAppIa from "./assets/ntn-app-ia.webp"
+import ntnWireframe1 from "./assets/ntn-wireframe-1.webp"
+import ntnWireframe2 from "./assets/ntn-wireframe-2.webp"
+import ntnDesignSystem01 from "./assets/ntn-design-system-01.webp"
+import ntnDesignSystem02 from "./assets/ntn-design-system-02.webp"
+import ntnDesignSystem03 from "./assets/ntn-design-system-03.webp"
+import ntnDesignSystem04 from "./assets/ntn-design-system-04.webp"
+import ntnTesting01 from "./assets/ntn-testing-01.webp"
+import ntnTesting02 from "./assets/ntn-testing-02.webp"
+import ntnTesting03 from "./assets/ntn-testing-03.webp"
+import ntnFinal1 from "./assets/ntn-final-1.webp"
+import ntnFinal2 from "./assets/ntn-final-2.webp"
+import ntnFinal3 from "./assets/ntn-final-3.webp"
+import ntnFinal4 from "./assets/ntn-final-4.webp"
+import ntnFinal5 from "./assets/ntn-final-5.webp"
+import ntnFinal6 from "./assets/ntn-final-6.webp"
+
 import { Prose } from "@/components/case/layout/Prose"
 import { CaseSection as Section } from "@/components/case/layout/Section"
 import { CaseContainer as Container } from "@/components/case/layout/Container"
@@ -136,7 +164,7 @@ export const nathanCase = {
             subtitle=""
             className="mx-auto max-w-3xl"
           />
-          <Figure src={cover} frame="soft" />
+          <Figure src={ntnIntroProblem} frame="soft" />
         </>
       ),
     },
@@ -152,7 +180,7 @@ export const nathanCase = {
             subtitle=""
             className="mx-auto max-w-3xl"
           />
-          <Figure src={cover} frame="soft" />
+          <Figure src={ntnIntroSolution} frame="soft" />
           <Metrics
             columns={3}
             items={[
@@ -207,7 +235,7 @@ export const nathanCase = {
             </p>
           </Prose>
           <Figure
-            src={cover}
+            src={ntnOriginChart}
             frame="soft"
             alt="Waste sector breakdown pie chart showing food at 44% of household waste"
             caption="Food was the worst-performing waste category. Households are its biggest source — ahead of restaurants, retail, and manufacturing."
@@ -243,7 +271,7 @@ export const nathanCase = {
             </p>
           </Prose>
           <Figure
-            src={cover}
+            src={ntnOriginReframing}
             frame="soft"
             alt="5-Whys reframing diagram showing the chain from food waste to shopping friction"
             caption="The pivot from waste management to shopping friction. Fix the planning step and most downstream waste triggers disappear."
@@ -274,7 +302,7 @@ export const nathanCase = {
             </p>
           </Prose>
           <Figure
-            src={cover}
+            src={ntnResearchUjm}
             frame="soft"
             alt="User journey map across four shopping stages showing pain point clusters in Decision and Consuming"
             caption="Pain points clustered heavily in the Decision and Consuming stages — before and after the store, not inside it."
@@ -289,7 +317,7 @@ export const nathanCase = {
             </p>
           </Prose>
           <Figure
-            src={cover}
+            src={ntnResearchBenchmark}
             frame="soft"
             alt="Benchmarking matrix comparing five grocery apps across collaboration, AI, inventory, and stats tracking"
             caption="No existing product combined all four pillars. Nathan is the only concept with meaningful AI at its core."
@@ -317,7 +345,7 @@ export const nathanCase = {
             <p>Nathan is a mobile app built around one idea: that most families already know roughly what they waste, they just have no tool that does anything about it. So rather than adding another dashboard to look at, we designed something that acts on that knowledge for you — learning from what you buy, what you finish, and what ends up in the bin, and adjusting your next shopping list accordingly.</p>
           </Prose>
           <Figure
-            src={cover}
+            src={ntnService}
             frame="soft"
             alt="Three Nathan app screens side by side showing the Home, Inventory, and Shopping List views"
             caption="Home · Inventory · Shopping List — three screens, one loop."
@@ -333,7 +361,7 @@ export const nathanCase = {
       size: "media",
       render: () => (
         <Figure
-          src={cover}
+          src={ntnServiceUjm}
           frame="soft"
           caption="New user journey map"
         />
@@ -357,7 +385,7 @@ export const nathanCase = {
           </Prose>
 
           <Figure
-            src={cover}
+            src={ntnAiClassification}
             frame="soft"
             alt="Classification AI pipeline diagram showing the flow from receipt photo through OCR, string matching, and ChatGPT fallback to a structured purchased list"
             caption="The classification pipeline turns a receipt photo into a structured inventory update — with a ChatGPT fallback when OCR abbreviations can't be matched."
@@ -385,7 +413,7 @@ export const nathanCase = {
 
 
           <Figure
-            src={cover}
+            src={ntnAiForecasting}
             frame="soft"
             alt="LSTM forecasting model flow diagram showing inputs of shopping history and waste feedback producing a predicted next shopping list"
             caption="The LSTM model learns from purchase history and waste feedback, gradually nudging quantities to close the gap between what users buy and what they actually consume."
@@ -514,7 +542,7 @@ export const nathanCase = {
               </Prose>
             }
             figure={{
-              src: cover,
+              src: ntnAppMatrix,
               alt: "Impact / Effort Matrix diagram with user stories plotted by impact and effort",
               // caption: "User stories sorted into Quick Wins, Major Projects, Fill-ins, and Hard Slogs.",
               frame: "soft",
@@ -533,7 +561,7 @@ export const nathanCase = {
               </Prose>
             }
             figure={{
-              src: cover,
+              src: ntnAppIa,
               alt: "Nathan information architecture diagram showing three-pillar structure",
               // caption: "Home · Inventory · Household — the three-pillar IA that shaped every screen that followed.",
               frame: "soft",
@@ -575,8 +603,8 @@ export const nathanCase = {
           >
             <CarouselContent>
               {[
-                { src: cover, alt: "Wireframe placeholder 1" },
-                { src: cover, alt: "Wireframe placeholder 2" },
+                { src: ntnWireframe1, alt: "Wireframe placeholder 1" },
+                { src: ntnWireframe2, alt: "Wireframe placeholder 2" },
               ].map((item, index) => (
                 <CarouselItem key={index}>
                   <Figure src={item.src} alt={item.alt} aspect="aspect-video" frame="soft" loading="eager" fetchPriority="high" decoding="sync" />
@@ -610,10 +638,10 @@ export const nathanCase = {
             <p>Nathan's design system is a customization of the <strong>Moon Design System</strong> — 33 components adapted to the specific needs of a household grocery app.</p>
           </Prose>
           <div className="mx-auto grid max-w-5xl grid-cols-2 gap-4">
-            <Figure src={cover} alt="design system" aspect="aspect-square" frame="soft" />
-            <Figure src={cover} alt="design system" aspect="aspect-square" frame="soft" />
-            <Figure src={cover} alt="design system" aspect="aspect-square" frame="soft" />
-            <Figure src={cover} alt="design system" aspect="aspect-square" frame="soft" />
+            <Figure src={ntnDesignSystem01} alt="Design system foundations" aspect="aspect-square" frame="soft" />
+            <Figure src={ntnDesignSystem02} alt="Design system components" aspect="aspect-square" frame="soft" />
+            <Figure src={ntnDesignSystem03} alt="Design system typography and color" aspect="aspect-square" frame="soft" />
+            <Figure src={ntnDesignSystem04} alt="Design system patterns" aspect="aspect-square" frame="soft" />
           </div>
         </>
       ),
@@ -657,21 +685,21 @@ export const nathanCase = {
           />
           <div className="mx-auto grid max-w-5xl grid-cols-2 gap-4">
             <Figure
-              src={cover}
+              src={ntnTesting01}
               alt="Home screen rebuilt with stronger whitespace and clearer visual hierarchy"
               caption="Home rebuilt — the original was eye-catching but dense. Whitespace and hierarchy fixed it."
               aspect="aspect-square"
               frame="soft"
             />
             <Figure
-              src={cover}
+              src={ntnTesting02}
               alt="Join button changed to Join a Household"
               caption='"Join" → "Join a Household" — a single copy change that eliminated a recurring confusion point.'
               aspect="aspect-square"
               frame="soft"
             />
             <Figure
-              src={cover}
+              src={ntnTesting03}
               alt="End-of-shopping tooltip added to signal session completion"
               caption="End-of-shopping tooltip added — users had no signal that the process was complete."
               aspect="aspect-square"
@@ -707,9 +735,12 @@ export const nathanCase = {
           {/* <Prose className="mx-auto max-w-3xl">
             <p>The final prototype brought together every decision made across the project — from the IA skeleton to the 33-component design system to the iterations driven by testing. This is what Nathan looks like when it's working.</p>
           </Prose> */}
-          <Figure src={cover} alt="Final design screen" aspect="aspect-video" frame="soft" />
-          <Figure src={cover} alt="Final design screen" aspect="aspect-video" frame="soft" />
-          <Figure src={cover} alt="Final design screen" aspect="aspect-video" frame="soft" />
+          <Figure src={ntnFinal1} alt="Final design screens" aspect="aspect-video" frame="soft" />
+          <Figure src={ntnFinal2} alt="Final design screens" aspect="aspect-video" frame="soft" />
+          <Figure src={ntnFinal3} alt="Final design screens" aspect="aspect-video" frame="soft" />
+          <Figure src={ntnFinal4} alt="Final design screens" aspect="aspect-video" frame="soft" />
+          <Figure src={ntnFinal5} alt="Final design screens" aspect="aspect-video" frame="soft" />
+          <Figure src={ntnFinal6} alt="Final design screens" aspect="aspect-video" frame="soft" />
         </>
       ),
     },
