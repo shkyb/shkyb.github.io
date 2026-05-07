@@ -353,12 +353,12 @@ export const nathanCase = {
           <Prose className="mx-auto max-w-3xl">
             <p>The app is built around three connected pillars. Each one handles a different moment in the cycle — planning before the shop, tracking after it, and learning from what actually gets used.</p>
           </Prose>
-          <ProductPillars />
+          {/* <ProductPillars /> */}
         </>
       ),
     },
     {
-      size: "media",
+      size: "fill",
       render: () => (
         <Figure
           src={ntnServiceUjm}
