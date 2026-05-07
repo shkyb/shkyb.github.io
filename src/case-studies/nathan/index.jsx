@@ -687,32 +687,28 @@ export const nathanCase = {
             <Figure
               src={ntnTesting01}
               alt="Home screen rebuilt with stronger whitespace and clearer visual hierarchy"
-              caption="Home rebuilt — the original was eye-catching but dense. Whitespace and hierarchy fixed it."
-              aspect="aspect-square"
-              frame="soft"
+              // caption="Home rebuilt — the original was eye-catching but dense. Whitespace and hierarchy fixed it."
+              aspect="aspect-[4/5]"
+              frame="none"
             />
             <Figure
               src={ntnTesting02}
               alt="Join button changed to Join a Household"
-              caption='"Join" → "Join a Household" — a single copy change that eliminated a recurring confusion point.'
-              aspect="aspect-square"
-              frame="soft"
+              // caption='"Join" → "Join a Household" — a single copy change that eliminated a recurring confusion point.'
+              aspect="aspect-[4/5]"
+              frame="none"
             />
-            <Figure
-              src={ntnTesting03}
-              alt="End-of-shopping tooltip added to signal session completion"
-              caption="End-of-shopping tooltip added — users had no signal that the process was complete."
-              aspect="aspect-square"
-              frame="soft"
-            />
-            <Figure
-              src={cover}
-              alt="Household page icons updated to feel more actionable"
-              caption="Household page icons made more actionable — the original set read as decorative, not interactive."
-              aspect="aspect-square"
-              frame="soft"
-            />
+
+
           </div>
+          <Figure
+            src={ntnTesting03}
+            alt="End-of-shopping tooltip added to signal session completion"
+            // caption="End-of-shopping tooltip added — users had no signal that the process was complete."
+            aspect="aspect-[video]"
+            frame="none"
+          />
+
           <PullQuote
             quote="My 9-year-old daughter enjoys collaborating in shopping by adding her favorite items on post-its on the fridge. I will install Nathan on her phone to substitute post-its."
             author="0Farnaz"
@@ -735,12 +731,14 @@ export const nathanCase = {
           {/* <Prose className="mx-auto max-w-3xl">
             <p>The final prototype brought together every decision made across the project — from the IA skeleton to the 33-component design system to the iterations driven by testing. This is what Nathan looks like when it's working.</p>
           </Prose> */}
-          <Figure src={ntnFinal1} alt="Final design screens" aspect="aspect-video" frame="soft" />
-          <Figure src={ntnFinal2} alt="Final design screens" aspect="aspect-video" frame="soft" />
-          <Figure src={ntnFinal3} alt="Final design screens" aspect="aspect-video" frame="soft" />
-          <Figure src={ntnFinal4} alt="Final design screens" aspect="aspect-video" frame="soft" />
-          <Figure src={ntnFinal5} alt="Final design screens" aspect="aspect-video" frame="soft" />
-          <Figure src={ntnFinal6} alt="Final design screens" aspect="aspect-video" frame="soft" />
+          <div className="grid grid-cols-1 gap-4">
+            <Figure src={ntnFinal1} alt="Final design screens" aspect="aspect-video" frame="soft" />
+            <Figure src={ntnFinal2} alt="Final design screens" aspect="aspect-video" frame="soft" />
+            <Figure src={ntnFinal3} alt="Final design screens" aspect="aspect-video" frame="soft" />
+            <Figure src={ntnFinal4} alt="Final design screens" aspect="aspect-video" frame="soft" />
+            <Figure src={ntnFinal5} alt="Final design screens" aspect="aspect-video" frame="soft" />
+            <Figure src={ntnFinal6} alt="Final design screens" aspect="aspect-video" frame="soft" />
+          </div>
         </>
       ),
     },
