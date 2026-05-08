@@ -142,7 +142,7 @@ export const nathanCase = {
           { name: "@Filippo Randon", href: "https://www.linkedin.com/in/filippo-randon-b25466180/" },
           { name: "@Marjan Mehrabi", href: "https://www.linkedin.com/in/marjan-mehrabi/" },
           { name: "@Dilara Tanriöven", href: "https://www.linkedin.com/in/dilara-tanrioven-2b6028211/" },
-          { name: "@Erika Caffo", href: "#" },
+          { name: "@Erika Caffo", href: "https://drive.google.com/file/d/1mbodgFZpIu_22mVmBayxDRq9ETFdayCk/view?usp=share_link" },
           { name: "& Me" },
         ],
       },
