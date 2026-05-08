@@ -425,15 +425,15 @@ export const itaAirwaysCase = {
             className="mx-auto max-w-3xl"
           />
 
-          <Prose className="mx-auto max-w-3xl">
+          {/* <Prose className="mx-auto max-w-3xl">
             <p>
               We counted every click required to complete each core task on ITA versus its
               competitors. ITA required more clicks than nearly every competitor on every task.
               This became the most objective argument for the redesign.
             </p>
-          </Prose>
+          </Prose> */}
 
-          <ComparisonTable
+          {/* <ComparisonTable
             className="mx-auto max-w-3xl"
             columns={[
               { key: "task", label: "Task" },
@@ -465,7 +465,7 @@ export const itaAirwaysCase = {
                 trenitalia: "5 clicks · 5 pages",
               },
             ]}
-          />
+          /> */}
           <Figure
             src={itaCover}
             frame="soft"
