@@ -87,8 +87,8 @@ export const itaAirwaysCase = {
         label: "Team",
         value: [
           { name: "Marjan Mehrabi", href: "https://www.linkedin.com/in/marjan-mehrabi/" },
-          { name: "Ilaria Torcolacci", href: "#" },
-          { name: "Mahshadossadat Mousavinia", href: "#" },
+          { name: "Ilaria Torcolacci", href: "https://www.linkedin.com/in/ilaria-torcolacci-designer/" },
+          { name: "Mahshad Mousavinia", href: "https://www.linkedin.com/in/mahshad-mousavinia-3bb829199/" },
           { name: "& Me" },
         ],
       },
@@ -101,10 +101,10 @@ export const itaAirwaysCase = {
         value:
           "Heuristic audit · Competitor benchmark · Personas · Wireframes · Hi-fi prototype · Design system",
       },
-      {
-        label: "Course",
-        value: "Ergonomics Applied to the Design of Usable Web Pages and Apps — Politecnico di Milano",
-      },
+      // {
+      //   label: "Course",
+      //   value: "Ergonomics Applied to the Design of Usable Web Pages and Apps — Politecnico di Milano",
+      // },
     ],
   },
 
@@ -127,6 +127,11 @@ export const itaAirwaysCase = {
               click. The site was coherent on the surface. Underneath, it was fractured.
             </p>
           </Prose>
+          <Figure
+            src={itaCover}
+            frame="soft"
+            caption="Original ITA Airways site — annotated pain points across the three core flows."
+          />
         </>
       ),
     },
@@ -148,6 +153,16 @@ export const itaAirwaysCase = {
               { value: "15M", label: "passengers annually" },
               { value: "€2.4B", label: "revenue in 2024" },
             ]}
+          />
+          <Figure
+            src={itaCover}
+            frame="soft"
+            caption="Redesigned homepage, search results, and benefits flow — side by side."
+          />
+          <Figure
+            src={itaCover}
+            frame="soft"
+            caption="Design system overview — tokens, components, and documentation."
           />
         </>
       ),
@@ -172,6 +187,11 @@ export const itaAirwaysCase = {
               a booking tool. It's a credibility instrument for a brand still proving itself.
             </p>
           </Prose>
+          <Figure
+            src={itaCover}
+            frame="soft"
+            caption="ITA Airways company timeline — from Alitalia's founding in 1946 to ITA's relaunch in 2021."
+          />
 
           <CaseSeparator />
 
@@ -233,6 +253,11 @@ export const itaAirwaysCase = {
               determine whether someone can finish a task.
             </p>
           </Prose>
+          <Figure
+            src={itaCover}
+            frame="soft"
+            caption="Competitor spider charts — ITA vs. Ryanair, Qatar Airways, Trenitalia, and Kayak across five UX dimensions."
+          />
 
           <PullQuote
             size="md"
@@ -281,6 +306,11 @@ export const itaAirwaysCase = {
               pain="Per-passenger seat and baggage selection is confusing and error-prone."
             />
           </div>
+          <Figure
+            src={itaCover}
+            frame="soft"
+            caption="Empathy map — goals, fears, and mental context for one of the four personas."
+          />
 
           <CaseSeparator />
 
@@ -292,6 +322,11 @@ export const itaAirwaysCase = {
               ITA was weakest at: <strong>check flight, use benefits, find offers.</strong>
             </p>
           </Prose>
+          <Figure
+            src={itaCover}
+            frame="soft"
+            caption="Task matrix — frequency and importance weighted across all four personas."
+          />
 
           <CaseSeparator />
 
@@ -333,6 +368,11 @@ export const itaAirwaysCase = {
                 ),
               },
             ]}
+          />
+          <Figure
+            src={itaCover}
+            frame="soft"
+            caption="Heuristic evaluation board — violations documented with screenshots across all ten Nielsen heuristics."
           />
 
           <CaseSeparator />
@@ -377,6 +417,11 @@ export const itaAirwaysCase = {
                 trenitalia: "5 clicks · 5 pages",
               },
             ]}
+          />
+          <Figure
+            src={itaCover}
+            frame="soft"
+            caption="Click-count comparison — ITA vs. competitors across all three core tasks."
           />
         </>
       ),
@@ -440,6 +485,21 @@ export const itaAirwaysCase = {
               },
             ]}
           />
+          <Figure
+            src={itaCover}
+            frame="soft"
+            caption="Spider chart — ITA's weak axes (content clarity, graphical clarity) highlighted against competitors."
+          />
+          <Figure
+            src={itaCover}
+            frame="soft"
+            caption="Original benefits flow — annotated to show where context is dropped across passenger and flight transitions."
+          />
+          <Figure
+            src={itaCover}
+            frame="soft"
+            caption="Original offers page — the price/date matrix circled as the primary failure point."
+          />
         </>
       ),
     },
@@ -470,6 +530,16 @@ export const itaAirwaysCase = {
               </Prose>
             }
           />
+          <Figure
+            src={itaCover}
+            frame="soft"
+            caption="Information architecture — before and after. Nested tree collapsed into a flat, task-oriented structure."
+          />
+          <Figure
+            src={itaCover}
+            frame="soft"
+            caption="Filter panel — persistent left-side layout ordered to match the user's natural decision sequence."
+          />
 
           <ProcessStep
             step="Goal 02"
@@ -487,6 +557,21 @@ export const itaAirwaysCase = {
               </Prose>
             }
           />
+          <Figure
+            src={itaCover}
+            frame="soft"
+            caption="Redesigned seat selection — pricing surfaced inline, passengers clearly labeled throughout."
+          />
+          <Figure
+            src={itaCover}
+            frame="soft"
+            caption="Redesigned baggage page — scoped per passenger, with a dedicated extra-equipment section."
+          />
+          <Figure
+            src={itaCover}
+            frame="soft"
+            caption="Redesigned lounge selection — departure flight pinned at top, return handled in the same guided flow."
+          />
 
           <ProcessStep
             step="Goal 03"
@@ -502,6 +587,16 @@ export const itaAirwaysCase = {
                 </p>
               </Prose>
             }
+          />
+          <Figure
+            src={itaCover}
+            frame="soft"
+            caption="Redesigned offers page — map-first layout with traveler-type category filters and removable filter tags."
+          />
+          <Figure
+            src={itaCover}
+            frame="soft"
+            caption="Redesigned price/date matrix — rebuilt interaction model that behaves the way users expect a table to work."
           />
         </>
       ),
@@ -526,6 +621,11 @@ export const itaAirwaysCase = {
               calendar, the passenger-scoped baggage selector, the offers map.
             </p>
           </Prose>
+          <Figure
+            src={itaCover}
+            frame="soft"
+            caption="Design system overview — full spread of tokens, components, and documentation."
+          />
 
           <ProcessStep
             step={<Type className="h-8 w-8 text-muted-foreground" />}
@@ -540,6 +640,11 @@ export const itaAirwaysCase = {
                 </p>
               </Prose>
             }
+          />
+          <Figure
+            src={itaCover}
+            frame="soft"
+            caption="Type scale — headings, body, captions, and numerical data with alignment specimens."
           />
 
           <ProcessStep
@@ -556,6 +661,16 @@ export const itaAirwaysCase = {
                 </p>
               </Prose>
             }
+          />
+          <Figure
+            src={itaCover}
+            frame="soft"
+            caption="Color palette with WCAG and APCA contrast test grid."
+          />
+          <Figure
+            src={itaCover}
+            frame="soft"
+            caption="Color blindness simulations — tritanopia, deuteranopia, achromatopsia, and tritanomaly."
           />
 
           <Callout>
@@ -577,6 +692,11 @@ export const itaAirwaysCase = {
                 </p>
               </Prose>
             }
+          />
+          <Figure
+            src={itaCover}
+            frame="soft"
+            caption="Component library — all states, variants, and spacing documented."
           />
         </>
       ),
@@ -600,6 +720,16 @@ export const itaAirwaysCase = {
               scale.
             </p>
           </Prose>
+          <Figure
+            src={itaCover}
+            frame="soft"
+            caption="User testing session — observation setup and task prompt materials."
+          />
+          <Figure
+            src={itaCover}
+            frame="soft"
+            caption="SEQ (Single Ease Question) form — administered after each completed task on a 1–7 scale."
+          />
 
           <Timeline
             items={[
