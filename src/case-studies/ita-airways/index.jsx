@@ -24,25 +24,34 @@ import { ProcessStep } from "@/components/case/blocks/ProcessStep"
 import { CaseSeparator } from "@/components/case/blocks/CaseSeparator"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Search, Ticket, Map, ShieldCheck, Type, Palette, LayoutGrid, Users, BarChart2, MousePointerClick } from "lucide-react"
+import { Search, Ticket, Map, ShieldCheck, Type, Palette, LayoutGrid, Users, BarChart2, MousePointerClick, Target, AlertCircle } from "lucide-react"
 
-const PersonaCard = ({ name, age, role, drive, pain }) => (
-  <Card>
-    <CardHeader>
-      <CardTitle>
-        <Prose><h3>{name}, {age}</h3></Prose>
-      </CardTitle>
-      <CardDescription>
-        <Prose><p>{role}</p></Prose>
-      </CardDescription>
+const PersonaCard = ({ avatar, name, age, role, drive, pain }) => (
+  <Card className="shadow-none">
+    <CardHeader className="flex flex-row items-center gap-4">
+      <img
+        src={avatar ?? itaLogo}
+        alt={name}
+        className="h-12 w-12 shrink-0 rounded-full object-cover"
+      />
+      <div>
+        <CardTitle>
+          <Prose><h3>{name}, {age}</h3></Prose>
+        </CardTitle>
+        <CardDescription>
+          <Prose><p>{role}</p></Prose>
+        </CardDescription>
+      </div>
     </CardHeader>
-    <CardContent>
-      <Prose>
-        <ul>
-          <li><strong>Drive:</strong> {drive}</li>
-          <li><strong>Pain:</strong> {pain}</li>
-        </ul>
-      </Prose>
+    <CardContent className="flex flex-col gap-2">
+      <div className="flex items-start gap-2">
+        <Target className="mt-0.5 h-4 w-4 shrink-0 text-emerald-500" />
+        <Prose><p>{drive}</p></Prose>
+      </div>
+      <div className="flex items-start gap-2">
+        <AlertCircle className="mt-0.5 h-4 w-4 shrink-0 text-rose-500" />
+        <Prose><p>{pain}</p></Prose>
+      </div>
     </CardContent>
   </Card>
 )
@@ -283,7 +292,7 @@ export const itaAirwaysCase = {
             </p>
           </Prose>
 
-          <div className="mx-auto max-w-3xl grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div className="mx-auto max-w-3xl grid grid-cols-1 gap-4 md:grid-cols-2">
             <PersonaCard
               name="Roberto"
               age={21}
