@@ -23,6 +23,7 @@ import { Timeline } from "@/components/case/blocks/Timeline"
 import { ProcessStep } from "@/components/case/blocks/ProcessStep"
 import { CaseSeparator } from "@/components/case/blocks/CaseSeparator"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
 import { Search, Ticket, Map, ShieldCheck, Type, Palette, LayoutGrid, Users, BarChart2, MousePointerClick } from "lucide-react"
 
 const PersonaCard = ({ name, age, role, drive, pain }) => (
@@ -207,47 +208,47 @@ export const itaAirwaysCase = {
             </p>
           </Prose>
 
-          <InsightList
-            className="mx-auto max-w-3xl"
-            items={[
+          <div className="mx-auto max-w-3xl grid grid-cols-1 gap-4 sm:grid-cols-2">
+            {[
               {
-                eyebrow: "Low-cost benchmark",
+                tag: "Low-cost benchmark",
                 title: "Ryanair",
-                description: (
-                  <Prose>
-                    <p>The gold standard for stripping booking to its minimum viable path. Clear CTAs, no ambiguity about cost.</p>
-                  </Prose>
-                ),
+                description: <Prose><p>The <strong>gold standard for stripping booking to its minimum viable path</strong>. Clear CTAs, no ambiguity about cost.</p></Prose>,
               },
               {
-                eyebrow: "Luxury benchmark",
+                tag: "Luxury benchmark",
                 title: "Qatar Airways",
-                description: (
-                  <Prose>
-                    <p>Premium polish and visual consistency throughout. Sets the ceiling for information hierarchy and white space.</p>
-                  </Prose>
-                ),
+                description: <Prose><p><strong>Premium polish and visual consistency</strong> throughout. Sets the ceiling for information hierarchy and white space.</p></Prose>,
               },
               {
-                eyebrow: "Domestic rival",
+                tag: "Domestic rival",
                 title: "Trenitalia",
-                description: (
-                  <Prose>
-                    <p>Italy's rail operator and a direct short-haul competitor. Relevant because shared users compare the two experiences side by side.</p>
-                  </Prose>
-                ),
+                description: <Prose><p>Italy's rail operator and a <strong>direct short-haul competitor</strong>. Relevant because shared users compare the two experiences side by side.</p></Prose>,
               },
               {
-                eyebrow: "Filter benchmark",
+                tag: "Filter benchmark",
                 title: "Kayak",
-                description: (
-                  <Prose>
-                    <p>Not a direct competitor — but the gold standard for filter design and search result density. Benchmarked specifically for its UX patterns.</p>
-                  </Prose>
-                ),
+                description: <Prose><p>Not a direct competitor — but the <strong>gold standard for filter design</strong> and search result density. Benchmarked specifically for its UX patterns.</p></Prose>,
               },
-            ]}
-          />
+            ].map((item) => (
+              <Card key={item.title} className="shadow-none">
+                <CardHeader className="flex flex-row items-center gap-4">
+                  <img
+                    src={itaLogo}
+                    alt={item.title}
+                    className="h-12 w-12 shrink-0 rounded-md object-cover"
+                  />
+                  <div>
+                    <Badge variant="secondary" className="mb-1">{item.tag}</Badge>
+                    <CardTitle><Prose><h3>{item.title}</h3></Prose></CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  {item.description}
+                </CardContent>
+              </Card>
+            ))}
+          </div>
 
           <Prose className="mx-auto max-w-3xl">
             <p>
