@@ -193,7 +193,6 @@ export const itaAirwaysCase = {
           />
 
           <Prose className="mx-auto max-w-3xl">
-            <h3>Understanding the company</h3>
             <p>
               ITA Airways is young — founded in 2021 as the successor to Alitalia — state-owned,
               and positioned around sustainability and Italian hospitality. It carries the
@@ -206,16 +205,20 @@ export const itaAirwaysCase = {
             frame="soft"
             caption="ITA Airways company timeline — from Alitalia's founding in 1946 to ITA's relaunch in 2021."
           />
-
-          <CaseSeparator className="mx-auto max-w-3xl" />
-
-          <Prose className="mx-auto max-w-3xl">
-            <h3>Competitor benchmarking</h3>
-            <p>
-              We chose four competitors deliberately — not for inspiration, but to expose
-              exactly where ITA fell short on the dimensions users care about most.
-            </p>
-          </Prose>
+        </>
+      ),
+    },
+    {
+      // id: "benchmarking",
+      // label: "Benchmarking",
+      size: "fill",
+      render: () => (
+        <>
+          <SectionHeading
+            kicker="Competitor benchmarking"
+            title="We chose four competitors deliberately — not for inspiration, but to expose exactly where ITA fell short on the dimensions users care about most."
+            className="mx-auto max-w-3xl"
+          />
 
           <div className="mx-auto max-w-3xl grid grid-cols-1 gap-4 sm:grid-cols-2">
             {[
@@ -280,17 +283,20 @@ export const itaAirwaysCase = {
             quote="ITA Airways' website demonstrates a reasonable level of graphical coherence, ease of access, and responsiveness compared to competitors. However, it lags behind in content and visual clarity."
             role="Benchmarking conclusion"
           />
-
-          <CaseSeparator className="mx-auto max-w-3xl" />
-
-          <Prose className="mx-auto max-w-3xl">
-            <h3>Personas</h3>
-            <p>
-              We built four personas reflecting the real ITA traveler mix. Each got a full
-              empathy map — says, does, thinks, feels, sees, hears, pains, gains. These weren't
-              decoration. They drove every prioritization call we made.
-            </p>
-          </Prose>
+        </>
+      ),
+    },
+    {
+      // id: "personas",
+      // label: "Personas",
+      size: "fill",
+      render: () => (
+        <>
+          <SectionHeading
+            kicker="Personas"
+            title="We built four personas reflecting the real ITA traveler mix — and every prioritization call we made traces back to one of them."
+            className="mx-auto max-w-3xl"
+          />
 
           <div className="mx-auto max-w-3xl grid grid-cols-1 gap-4 md:grid-cols-2">
             <PersonaCard
@@ -327,11 +333,21 @@ export const itaAirwaysCase = {
             frame="soft"
             caption="Empathy map — goals, fears, and mental context for one of the four personas."
           />
-
-          <CaseSeparator className="mx-auto max-w-3xl" />
-
+        </>
+      ),
+    },
+    {
+      // id: "task-matrix",
+      // label: "Task Matrix",
+      size: "fill",
+      render: () => (
+        <>
+          <SectionHeading
+            kicker="Task matrix & prioritization"
+            title="Three tasks rose to the top — the ones every persona hits, and the ones ITA was weakest at: check flight, use benefits, find offers."
+            className="mx-auto max-w-3xl"
+          />
           <Prose className="mx-auto max-w-3xl">
-            <h3>Task matrix & prioritization</h3>
             <p>
               We mapped every major task to every persona, then weighted by frequency and
               importance. Three tasks rose to the top — the ones every persona hits, and the ones
@@ -343,16 +359,20 @@ export const itaAirwaysCase = {
             frame="soft"
             caption="Task matrix — frequency and importance weighted across all four personas."
           />
-
-          <CaseSeparator className="mx-auto max-w-3xl" />
-
-          <Prose className="mx-auto max-w-3xl">
-            <h3>Heuristic evaluation</h3>
-            <p>
-              We evaluated the live site against Nielsen's 10 usability heuristics, documenting
-              each violation with screenshots in a shared Figma board. The worst offenders:
-            </p>
-          </Prose>
+        </>
+      ),
+    },
+    {
+      // id: "heuristics",
+      // label: "Heuristic Evaluation",
+      size: "fill",
+      render: () => (
+        <>
+          <SectionHeading
+            kicker="Heuristic evaluation"
+            title="We evaluated the live site against Nielsen's 10 heuristics — the worst offenders were the ones that hit users hardest mid-task."
+            className="mx-auto max-w-3xl"
+          />
 
           <Timeline
             className="mx-auto max-w-3xl"
@@ -391,11 +411,22 @@ export const itaAirwaysCase = {
             frame="soft"
             caption="Heuristic evaluation board — violations documented with screenshots across all ten Nielsen heuristics."
           />
-
-          <CaseSeparator className="mx-auto max-w-3xl" />
+        </>
+      ),
+    },
+    {
+      // id: "click-count",
+      // label: "Click-count Analysis",
+      size: "fill",
+      render: () => (
+        <>
+          <SectionHeading
+            kicker="Click-count analysis"
+            title="ITA required more clicks than nearly every competitor on every task — this became the most objective argument for the redesign."
+            className="mx-auto max-w-3xl"
+          />
 
           <Prose className="mx-auto max-w-3xl">
-            <h3>Click-count analysis</h3>
             <p>
               We counted every click required to complete each core task on ITA versus its
               competitors. ITA required more clicks than nearly every competitor on every task.
