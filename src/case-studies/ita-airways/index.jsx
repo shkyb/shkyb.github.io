@@ -344,14 +344,12 @@ export const itaAirwaysCase = {
         <>
           <SectionHeading
             kicker="Task matrix & prioritization"
-            title="Three tasks rose to the top — the ones every persona hits, and the ones ITA was weakest at: check flight, use benefits, find offers."
+            title="We mapped every major task to every persona, then weighted by frequency and importance. "
             className="mx-auto max-w-3xl"
           />
           <Prose className="mx-auto max-w-3xl">
             <p>
-              We mapped every major task to every persona, then weighted by frequency and
-              importance. Three tasks rose to the top — the ones every persona hits, and the ones
-              ITA was weakest at: <strong>check flight, use benefits, find offers.</strong>
+              Three tasks rose to the top — the ones every persona hits, and the ones. ITA was weakest at: <strong>check flight, use benefits, find offers.</strong>
             </p>
           </Prose>
           <Figure
