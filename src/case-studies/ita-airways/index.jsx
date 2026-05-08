@@ -119,16 +119,16 @@ export const itaAirwaysCase = {
         <>
           <SectionHeading
             kicker="The Problem"
-            title="ITA Airways' website looked the part of a national airline — but every meaningful task asked users to work harder than they should have."
+            title="Buying a ticket, adding baggage, or browsing offers on ITA Airways meant navigating filters that didn't match how users think and pages that dropped context with every click."
             className="mx-auto max-w-3xl"
           />
-          <Prose className="mx-auto max-w-3xl">
+          {/* <Prose className="mx-auto max-w-3xl">
             <p>
               Buying a ticket, adding baggage, browsing offers — all of it meant navigating
               filters that didn't match how users think and pages that dropped context with every
               click. The site was coherent on the surface. Underneath, it was fractured.
             </p>
-          </Prose>
+          </Prose> */}
           <Figure
             src={itaCover}
             frame="soft"
@@ -149,6 +149,7 @@ export const itaAirwaysCase = {
             className="mx-auto max-w-3xl"
           />
           <Metrics
+            className="mx-auto max-w-3xl"
             columns={3}
             items={[
               { value: "99", label: "aircraft in fleet" },
@@ -172,15 +173,16 @@ export const itaAirwaysCase = {
     {
       id: "research",
       label: "Research",
-      size: "small",
+      size: "fill",
       render: () => (
         <>
           <SectionHeading
             kicker="01 — Research"
             title="The research phase was the longest stretch of the project — and the most consequential. Every decision downstream traces back to something we learned here."
+            className="mx-auto max-w-3xl"
           />
 
-          <Prose>
+          <Prose className="mx-auto max-w-3xl">
             <h3>Understanding the company</h3>
             <p>
               ITA Airways is young — founded in 2021 as the successor to Alitalia — state-owned,
@@ -195,9 +197,9 @@ export const itaAirwaysCase = {
             caption="ITA Airways company timeline — from Alitalia's founding in 1946 to ITA's relaunch in 2021."
           />
 
-          <CaseSeparator />
+          <CaseSeparator className="mx-auto max-w-3xl" />
 
-          <Prose>
+          <Prose className="mx-auto max-w-3xl">
             <h3>Competitor benchmarking</h3>
             <p>
               We chose four competitors deliberately — not for inspiration, but to expose
@@ -206,6 +208,7 @@ export const itaAirwaysCase = {
           </Prose>
 
           <InsightList
+            className="mx-auto max-w-3xl"
             items={[
               {
                 eyebrow: "Low-cost benchmark",
@@ -246,7 +249,7 @@ export const itaAirwaysCase = {
             ]}
           />
 
-          <Prose>
+          <Prose className="mx-auto max-w-3xl">
             <p>
               We scored all five sites — ITA included — against five parameters:{" "}
               <em>clarity of content, graphical coherence, graphical clarity, responsiveness, ease of access.</em>{" "}
@@ -262,14 +265,15 @@ export const itaAirwaysCase = {
           />
 
           <PullQuote
+            className="mx-auto max-w-3xl"
             size="md"
             quote="ITA Airways' website demonstrates a reasonable level of graphical coherence, ease of access, and responsiveness compared to competitors. However, it lags behind in content and visual clarity."
             role="Benchmarking conclusion"
           />
 
-          <CaseSeparator />
+          <CaseSeparator className="mx-auto max-w-3xl" />
 
-          <Prose>
+          <Prose className="mx-auto max-w-3xl">
             <h3>Personas</h3>
             <p>
               We built four personas reflecting the real ITA traveler mix. Each got a full
@@ -278,7 +282,7 @@ export const itaAirwaysCase = {
             </p>
           </Prose>
 
-          <div className="mx-auto max-w-4xl grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div className="mx-auto max-w-3xl grid grid-cols-1 gap-6 md:grid-cols-2">
             <PersonaCard
               name="Roberto"
               age={21}
@@ -314,9 +318,9 @@ export const itaAirwaysCase = {
             caption="Empathy map — goals, fears, and mental context for one of the four personas."
           />
 
-          <CaseSeparator />
+          <CaseSeparator className="mx-auto max-w-3xl" />
 
-          <Prose>
+          <Prose className="mx-auto max-w-3xl">
             <h3>Task matrix & prioritization</h3>
             <p>
               We mapped every major task to every persona, then weighted by frequency and
@@ -330,9 +334,9 @@ export const itaAirwaysCase = {
             caption="Task matrix — frequency and importance weighted across all four personas."
           />
 
-          <CaseSeparator />
+          <CaseSeparator className="mx-auto max-w-3xl" />
 
-          <Prose>
+          <Prose className="mx-auto max-w-3xl">
             <h3>Heuristic evaluation</h3>
             <p>
               We evaluated the live site against Nielsen's 10 usability heuristics, documenting
@@ -341,6 +345,7 @@ export const itaAirwaysCase = {
           </Prose>
 
           <Timeline
+            className="mx-auto max-w-3xl"
             items={[
               {
                 title: "Visibility of system status",
@@ -377,9 +382,9 @@ export const itaAirwaysCase = {
             caption="Heuristic evaluation board — violations documented with screenshots across all ten Nielsen heuristics."
           />
 
-          <CaseSeparator />
+          <CaseSeparator className="mx-auto max-w-3xl" />
 
-          <Prose>
+          <Prose className="mx-auto max-w-3xl">
             <h3>Click-count analysis</h3>
             <p>
               We counted every click required to complete each core task on ITA versus its
@@ -389,6 +394,7 @@ export const itaAirwaysCase = {
           </Prose>
 
           <ComparisonTable
+            className="mx-auto max-w-3xl"
             columns={[
               { key: "task", label: "Task" },
               { key: "ita", label: "ITA Airways" },
@@ -431,15 +437,17 @@ export const itaAirwaysCase = {
     {
       id: "insights",
       label: "Insights",
-      size: "small",
+      size: "fill",
       render: () => (
         <>
           <SectionHeading
             kicker="02 — Insights"
             title="With the research in hand, three problems sharpened into focus — not as complaints about the site, but as design briefs."
+            className="mx-auto max-w-3xl"
           />
 
           <InsightList
+            className="mx-auto max-w-3xl"
             items={[
               {
                 eyebrow: "Insight 01",
@@ -508,15 +516,17 @@ export const itaAirwaysCase = {
     {
       id: "response",
       label: "Response",
-      size: "small",
+      size: "fill",
       render: () => (
         <>
           <SectionHeading
             kicker="03 — Response"
             title="Three insights, three design goals — written as outcomes, not features."
+            className="mx-auto max-w-3xl"
           />
 
           <ProcessStep
+            className="mx-auto max-w-3xl"
             step="Goal 01"
             title="Simplify the flight purchase process"
             description={
@@ -544,6 +554,7 @@ export const itaAirwaysCase = {
           />
 
           <ProcessStep
+            className="mx-auto max-w-3xl"
             step="Goal 02"
             title="Clarify the benefits area"
             description={
@@ -576,6 +587,7 @@ export const itaAirwaysCase = {
           />
 
           <ProcessStep
+            className="mx-auto max-w-3xl"
             step="Goal 03"
             title="Make offers behave the way users expect"
             description={
@@ -606,15 +618,16 @@ export const itaAirwaysCase = {
     {
       id: "design-system",
       label: "Design System",
-      size: "small",
+      size: "fill",
       render: () => (
         <>
           <SectionHeading
             kicker="04 — Design System"
             title="This was the part I owned end-to-end. Every component traces back to a specific need surfaced in research."
+            className="mx-auto max-w-3xl"
           />
 
-          <Prose>
+          <Prose className="mx-auto max-w-3xl">
             <p>
               I built the system on top of{" "}
               <a href="https://moon.io" target="_blank" rel="noopener noreferrer">Moon</a>,
@@ -630,6 +643,7 @@ export const itaAirwaysCase = {
           />
 
           <ProcessStep
+            className="mx-auto max-w-3xl"
             step={<Type className="h-8 w-8 text-muted-foreground" />}
             title="Typography"
             description={
@@ -650,6 +664,7 @@ export const itaAirwaysCase = {
           />
 
           <ProcessStep
+            className="mx-auto max-w-3xl"
             step={<Palette className="h-8 w-8 text-muted-foreground" />}
             title="Color & accessibility"
             description={
@@ -675,13 +690,14 @@ export const itaAirwaysCase = {
             caption="Color blindness simulations — tritanopia, deuteranopia, achromatopsia, and tritanomaly."
           />
 
-          <Callout>
+          <Callout className="mx-auto max-w-3xl">
             The price-comparison calendar relies on color to communicate pricing tiers, so I
             added a dot pattern as a redundant signal — the calendar still works for color-blind
             users without it.
           </Callout>
 
           <ProcessStep
+            className="mx-auto max-w-3xl"
             step={<LayoutGrid className="h-8 w-8 text-muted-foreground" />}
             title="Components"
             description={
@@ -706,15 +722,16 @@ export const itaAirwaysCase = {
     {
       id: "validation",
       label: "Validation",
-      size: "small",
+      size: "fill",
       render: () => (
         <>
           <SectionHeading
             kicker="05 — Validation"
             title="We tested with 5 users from our course cohort. Five pieces of feedback came up consistently enough that we treated them as requirements, not suggestions."
+            className="mx-auto max-w-3xl"
           />
 
-          <Prose>
+          <Prose className="mx-auto max-w-3xl">
             <p>
               Each user completed the three core tasks — search a flight, customize the booking,
               find an offer — while we observed silently and logged hesitations, misclicks, and
@@ -734,6 +751,7 @@ export const itaAirwaysCase = {
           />
 
           <Timeline
+            className="mx-auto max-w-3xl"
             items={[
               {
                 title: "Passenger-seat mapping needed clearer labeling",
@@ -783,15 +801,16 @@ export const itaAirwaysCase = {
     {
       id: "reflections",
       label: "Reflections",
-      size: "small",
+      size: "fill",
       render: () => (
         <>
           <SectionHeading
             kicker="Reflections"
             title="The research was thorough enough that no design decision felt arbitrary — every choice traces back to a persona, a heuristic violation, or a click count."
+            className="mx-auto max-w-3xl"
           />
 
-          <Prose>
+          <Prose className="mx-auto max-w-3xl">
             <p>
               The design system held up under pressure: when we added the offers map late in the
               project, the tokens and components already in place made it a matter of composition,
@@ -805,6 +824,7 @@ export const itaAirwaysCase = {
           </Prose>
 
           <PullQuote
+            className="mx-auto max-w-3xl"
             size="md"
             quote="Design systems only earn their cost if they're built from the problems, not imposed on them. Every token and component was traceable to something specific we found in research — that discipline is what made the system usable for the rest of the team."
             role="Takeaway"
