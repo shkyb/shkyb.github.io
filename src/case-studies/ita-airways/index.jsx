@@ -374,9 +374,10 @@ export const itaAirwaysCase = {
 
           <Timeline
             className="mx-auto max-w-3xl"
+            // variant="cards"
             items={[
               {
-                title: "Visibility of system status",
+                title: "👁️ Visibility of system status",
                 tone: "warning",
                 body: (
                   <Prose>
@@ -385,7 +386,7 @@ export const itaAirwaysCase = {
                 ),
               },
               {
-                title: "Recognition rather than recall",
+                title: "🧠 Recognition rather than recall",
                 tone: "warning",
                 body: (
                   <Prose>
@@ -394,7 +395,7 @@ export const itaAirwaysCase = {
                 ),
               },
               {
-                title: "Consistency and standards",
+                title: "🔀 Consistency and standards",
                 tone: "warning",
                 body: (
                   <Prose>
