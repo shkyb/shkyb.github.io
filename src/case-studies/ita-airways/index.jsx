@@ -1,6 +1,47 @@
 import React from "react"
 
 import { Prose } from "@/components/case/layout/Prose"
+import { CaseSection as Section } from "@/components/case/layout/Section"
+import { CaseContainer as Container } from "@/components/case/layout/Container"
+import { FullBleedSection } from "@/components/case/layout/FullBleedSection"
+
+import { SectionHeading } from "@/components/case/blocks/SectionHeading"
+import { ProblemStatement } from "@/components/case/blocks/ProblemStatement"
+import { Metrics } from "@/components/case/blocks/Metrics"
+import { InsightList } from "@/components/case/blocks/InsightList"
+import { ComparisonTable } from "@/components/case/blocks/ComparisonTable"
+import { Figure } from "@/components/case/blocks/Figure"
+import { FigureCarousel } from "@/components/case/blocks/FigureCarousel"
+import { ImageGrid } from "@/components/case/blocks/ImageGrid"
+import { BeforeAfter } from "@/components/case/blocks/BeforeAfter"
+import { Callout } from "@/components/case/blocks/Callout"
+import { PullQuote } from "@/components/case/blocks/PullQuote"
+import { Timeline } from "@/components/case/blocks/Timeline"
+import { ProcessStep } from "@/components/case/blocks/ProcessStep"
+import { CaseSeparator } from "@/components/case/blocks/CaseSeparator"
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
+import { Search, Ticket, Map, ShieldCheck, Type, Palette, LayoutGrid, Users, BarChart2, MousePointerClick } from "lucide-react"
+
+const PersonaCard = ({ name, age, role, drive, pain }) => (
+  <Card>
+    <CardHeader>
+      <CardTitle>
+        <Prose><h3>{name}, {age}</h3></Prose>
+      </CardTitle>
+      <CardDescription>
+        <Prose><p>{role}</p></Prose>
+      </CardDescription>
+    </CardHeader>
+    <CardContent>
+      <Prose>
+        <ul>
+          <li><strong>Drive:</strong> {drive}</li>
+          <li><strong>Pain:</strong> {pain}</li>
+        </ul>
+      </Prose>
+    </CardContent>
+  </Card>
+)
 
 export const itaAirwaysCase = {
   slug: "ita-airways",
@@ -64,5 +105,577 @@ export const itaAirwaysCase = {
     ],
   },
 
-  sections: [],
+  sections: [
+    {
+      id: "problem",
+      label: "Problem",
+      size: "fill",
+      render: () => (
+        <>
+          <SectionHeading
+            kicker="The Problem"
+            title="ITA Airways' website looked the part of a national airline — but every meaningful task asked users to work harder than they should have."
+            className="mx-auto max-w-3xl"
+          />
+          <Prose className="mx-auto max-w-3xl">
+            <p>
+              Buying a ticket, adding baggage, browsing offers — all of it meant navigating
+              filters that didn't match how users think and pages that dropped context with every
+              click. The site was coherent on the surface. Underneath, it was fractured.
+            </p>
+          </Prose>
+        </>
+      ),
+    },
+    {
+      id: "solution",
+      label: "Solution",
+      size: "fill",
+      render: () => (
+        <>
+          <SectionHeading
+            kicker="The Solution"
+            title="We rebuilt the three most painful flows around a simpler information architecture, a linear booking path with persistent context, and a custom design system tested for accessibility from the first pixel."
+            className="mx-auto max-w-3xl"
+          />
+          <Metrics
+            columns={3}
+            items={[
+              { value: "99", label: "aircraft in fleet" },
+              { value: "15M", label: "passengers annually" },
+              { value: "€2.4B", label: "revenue in 2024" },
+            ]}
+          />
+        </>
+      ),
+    },
+    {
+      id: "research",
+      label: "Research",
+      size: "small",
+      render: () => (
+        <>
+          <SectionHeading
+            kicker="01 — Research"
+            title="The research phase was the longest stretch of the project — and the most consequential. Every decision downstream traces back to something we learned here."
+          />
+
+          <Prose>
+            <h3>Understanding the company</h3>
+            <p>
+              ITA Airways is young — founded in 2021 as the successor to Alitalia — state-owned,
+              and positioned around sustainability and Italian hospitality. It carries the
+              reputational weight of Alitalia's long decline, which means its website isn't just
+              a booking tool. It's a credibility instrument for a brand still proving itself.
+            </p>
+          </Prose>
+
+          <CaseSeparator />
+
+          <Prose>
+            <h3>Competitor benchmarking</h3>
+            <p>
+              We chose four competitors deliberately — not for inspiration, but to expose
+              exactly where ITA fell short on the dimensions users care about most.
+            </p>
+          </Prose>
+
+          <InsightList
+            items={[
+              {
+                eyebrow: "Low-cost benchmark",
+                title: "Ryanair",
+                description: (
+                  <Prose>
+                    <p>The gold standard for stripping booking to its minimum viable path. Clear CTAs, no ambiguity about cost.</p>
+                  </Prose>
+                ),
+              },
+              {
+                eyebrow: "Luxury benchmark",
+                title: "Qatar Airways",
+                description: (
+                  <Prose>
+                    <p>Premium polish and visual consistency throughout. Sets the ceiling for information hierarchy and white space.</p>
+                  </Prose>
+                ),
+              },
+              {
+                eyebrow: "Domestic rival",
+                title: "Trenitalia",
+                description: (
+                  <Prose>
+                    <p>Italy's rail operator and a direct short-haul competitor. Relevant because shared users compare the two experiences side by side.</p>
+                  </Prose>
+                ),
+              },
+              {
+                eyebrow: "Filter benchmark",
+                title: "Kayak",
+                description: (
+                  <Prose>
+                    <p>Not a direct competitor — but the gold standard for filter design and search result density. Benchmarked specifically for its UX patterns.</p>
+                  </Prose>
+                ),
+              },
+            ]}
+          />
+
+          <Prose>
+            <p>
+              We scored all five sites — ITA included — against five parameters:{" "}
+              <em>clarity of content, graphical coherence, graphical clarity, responsiveness, ease of access.</em>{" "}
+              Spider charts annotated page by page. ITA's strongest score was graphical coherence.
+              Its weakest: content clarity and graphical clarity — exactly the dimensions that
+              determine whether someone can finish a task.
+            </p>
+          </Prose>
+
+          <PullQuote
+            size="md"
+            quote="ITA Airways' website demonstrates a reasonable level of graphical coherence, ease of access, and responsiveness compared to competitors. However, it lags behind in content and visual clarity."
+            role="Benchmarking conclusion"
+          />
+
+          <CaseSeparator />
+
+          <Prose>
+            <h3>Personas</h3>
+            <p>
+              We built four personas reflecting the real ITA traveler mix. Each got a full
+              empathy map — says, does, thinks, feels, sees, hears, pains, gains. These weren't
+              decoration. They drove every prioritization call we made.
+            </p>
+          </Prose>
+
+          <div className="mx-auto max-w-4xl grid grid-cols-1 gap-6 md:grid-cols-2">
+            <PersonaCard
+              name="Roberto"
+              age={21}
+              role="Spanish student in Milan"
+              drive="Price-driven. Books in advance, travels home often."
+              pain="Every euro counts — hidden fees and unclear pricing cause distrust."
+            />
+            <PersonaCard
+              name="Lucia"
+              age={35}
+              role="Business owner"
+              drive="Comfort-driven, time-pressured. Needs flights to just work."
+              pain="Can't afford to lose time on a fragmented, multi-step process."
+            />
+            <PersonaCard
+              name="Ejona"
+              age={38}
+              role="Solo traveler"
+              drive="Experience-driven. Hunts offers, values curation."
+              pain="The offers page never surfaces what she actually wants to find."
+            />
+            <PersonaCard
+              name="Giovanni"
+              age={49}
+              role="Family father"
+              drive="Logistics-driven. Books for four, carries the mental load."
+              pain="Per-passenger seat and baggage selection is confusing and error-prone."
+            />
+          </div>
+
+          <CaseSeparator />
+
+          <Prose>
+            <h3>Task matrix & prioritization</h3>
+            <p>
+              We mapped every major task to every persona, then weighted by frequency and
+              importance. Three tasks rose to the top — the ones every persona hits, and the ones
+              ITA was weakest at: <strong>check flight, use benefits, find offers.</strong>
+            </p>
+          </Prose>
+
+          <CaseSeparator />
+
+          <Prose>
+            <h3>Heuristic evaluation</h3>
+            <p>
+              We evaluated the live site against Nielsen's 10 usability heuristics, documenting
+              each violation with screenshots in a shared Figma board. The worst offenders:
+            </p>
+          </Prose>
+
+          <Timeline
+            items={[
+              {
+                title: "Visibility of system status",
+                tone: "warning",
+                body: (
+                  <Prose>
+                    <p>No progress indicator during booking. Users couldn't tell how many steps remained or where they were in the flow.</p>
+                  </Prose>
+                ),
+              },
+              {
+                title: "Recognition rather than recall",
+                tone: "warning",
+                body: (
+                  <Prose>
+                    <p>Passengers and flights were hard to distinguish on shared pages. Users had to remember context the interface had already discarded.</p>
+                  </Prose>
+                ),
+              },
+              {
+                title: "Consistency and standards",
+                tone: "warning",
+                body: (
+                  <Prose>
+                    <p>The offers matrix behaved differently from how users expected such tables to work — breaking a well-established mental model.</p>
+                  </Prose>
+                ),
+              },
+            ]}
+          />
+
+          <CaseSeparator />
+
+          <Prose>
+            <h3>Click-count analysis</h3>
+            <p>
+              We counted every click required to complete each core task on ITA versus its
+              competitors. ITA required more clicks than nearly every competitor on every task.
+              This became the most objective argument for the redesign.
+            </p>
+          </Prose>
+
+          <ComparisonTable
+            columns={[
+              { key: "task", label: "Task" },
+              { key: "ita", label: "ITA Airways" },
+              { key: "ryanair", label: "Ryanair" },
+              { key: "qatar", label: "Qatar Airways" },
+              { key: "trenitalia", label: "Trenitalia" },
+            ]}
+            rows={[
+              {
+                task: "Check flight",
+                ita: "29 clicks · 3 pages",
+                ryanair: "14 clicks · 5 pages",
+                qatar: "20 clicks · 6 pages",
+                trenitalia: "17 clicks · 3 pages",
+              },
+              {
+                task: "Benefits (seat, luggage, lounge)",
+                ita: "19 clicks · 11 pages",
+                ryanair: "14 clicks · 10 pages",
+                qatar: "15 clicks · 13 pages",
+                trenitalia: "6 clicks · 5 pages",
+              },
+              {
+                task: "Find offers",
+                ita: "10 clicks · 4 pages",
+                ryanair: "4 clicks · 2 pages",
+                qatar: "17 clicks · 3 pages",
+                trenitalia: "5 clicks · 5 pages",
+              },
+            ]}
+          />
+        </>
+      ),
+    },
+    {
+      id: "insights",
+      label: "Insights",
+      size: "small",
+      render: () => (
+        <>
+          <SectionHeading
+            kicker="02 — Insights"
+            title="With the research in hand, three problems sharpened into focus — not as complaints about the site, but as design briefs."
+          />
+
+          <InsightList
+            items={[
+              {
+                eyebrow: "Insight 01",
+                title: "Information lived in the wrong places",
+                description: (
+                  <Prose>
+                    <p>
+                      The site looked organized but wasn't. Managing bookings, finding offers,
+                      and navigating the frequent flyer program all demanded effort the user
+                      shouldn't have had to spend. Strong graphical coherence masked weak content
+                      and visual clarity — the exact dimensions that determine whether someone
+                      finishes a task.
+                    </p>
+                  </Prose>
+                ),
+              },
+              {
+                eyebrow: "Insight 02",
+                title: "The booking flow lost context every step",
+                description: (
+                  <Prose>
+                    <p>
+                      Selecting seats, luggage, and lounge access pushed users back and forth
+                      between parent and child pages, dropping context at each transition. The
+                      seat selector didn't say <em>whose</em> seat. The baggage page didn't say{" "}
+                      <em>which flight.</em> The system was treating these as separate decisions.
+                      Users were treating them as one connected booking.
+                    </p>
+                  </Prose>
+                ),
+              },
+              {
+                eyebrow: "Insight 03",
+                title: "The offers page broke its own promise",
+                description: (
+                  <Prose>
+                    <p>
+                      Offers are where airlines convert browsers into buyers. ITA's price/date
+                      matrix surfaced deals — but behaved differently from how users expected
+                      such tables to work. Users read the data, then second-guessed it.{" "}
+                      <strong>That moment of doubt is the moment the booking dies.</strong>
+                    </p>
+                  </Prose>
+                ),
+              },
+            ]}
+          />
+        </>
+      ),
+    },
+    {
+      id: "response",
+      label: "Response",
+      size: "small",
+      render: () => (
+        <>
+          <SectionHeading
+            kicker="03 — Response"
+            title="Three insights, three design goals — written as outcomes, not features."
+          />
+
+          <ProcessStep
+            step="Goal 01"
+            title="Simplify the flight purchase process"
+            description={
+              <Prose>
+                <p>
+                  We restructured the information architecture from a sprawling, nested tree into
+                  a flatter, task-oriented map grouped around what users are trying to{" "}
+                  <em>do</em>, not how the company is organized. The booking flow collapsed from
+                  10+ branching steps into a cleaner linear path. Filters moved from a cramped
+                  modal into a persistent left-side panel, ordered to match the sequence in which
+                  users actually decide — class → stopovers → duration → budget → time.
+                </p>
+              </Prose>
+            }
+          />
+
+          <ProcessStep
+            step="Goal 02"
+            title="Clarify the benefits area"
+            description={
+              <Prose>
+                <p>
+                  I redesigned the benefits flow as a single guided path with persistent context.
+                  A step-by-step progress bar tells users where they are. The chosen departure
+                  flight stays pinned at the top when picking the return. Every passenger gets a
+                  labeled section. The seat selector shows pricing alongside the map, not buried
+                  below it. Baggage is scoped per passenger, with a dedicated extra-equipment
+                  section for golf, bikes, instruments, and strollers.
+                </p>
+              </Prose>
+            }
+          />
+
+          <ProcessStep
+            step="Goal 03"
+            title="Make offers behave the way users expect"
+            description={
+              <Prose>
+                <p>
+                  The offers page became map-first, with category filters surfaced for specific
+                  traveler types — families with babies, students, seniors. Selected filters
+                  convert into removable tags so users can track and reverse choices. The
+                  price/date matrix interaction was rebuilt to behave the way standard tables do,
+                  removing the moment of doubt before purchase.
+                </p>
+              </Prose>
+            }
+          />
+        </>
+      ),
+    },
+    {
+      id: "design-system",
+      label: "Design System",
+      size: "small",
+      render: () => (
+        <>
+          <SectionHeading
+            kicker="04 — Design System"
+            title="This was the part I owned end-to-end. Every component traces back to a specific need surfaced in research."
+          />
+
+          <Prose>
+            <p>
+              I built the system on top of{" "}
+              <a href="https://moon.io" target="_blank" rel="noopener noreferrer">Moon</a>,
+              adapting its tokens to ITA's brand language and extending it where the
+              out-of-the-box components didn't cover our patterns — the price-comparison
+              calendar, the passenger-scoped baggage selector, the offers map.
+            </p>
+          </Prose>
+
+          <ProcessStep
+            step={<Type className="h-8 w-8 text-muted-foreground" />}
+            title="Typography"
+            description={
+              <Prose>
+                <p>
+                  I chose <strong>Lato</strong> — a sans-serif optimized for small sizes and
+                  screen readability, available under the Open Font License. A full type scale
+                  across headings, body, captions, and numerical data — important for pricing
+                  tables, where digit alignment matters.
+                </p>
+              </Prose>
+            }
+          />
+
+          <ProcessStep
+            step={<Palette className="h-8 w-8 text-muted-foreground" />}
+            title="Color & accessibility"
+            description={
+              <Prose>
+                <p>
+                  The palette is anchored by ITA's brand blue, with a functional secondary system
+                  for status, pricing tiers, and interactive states. Every text/background pairing
+                  was tested against WCAG AA (4.5:1) for body, AAA (7:1) where possible, and
+                  APCA — then verified against tritanopia, deuteranopia, achromatopsia, and
+                  tritanomaly simulations.
+                </p>
+              </Prose>
+            }
+          />
+
+          <Callout>
+            The price-comparison calendar relies on color to communicate pricing tiers, so I
+            added a dot pattern as a redundant signal — the calendar still works for color-blind
+            users without it.
+          </Callout>
+
+          <ProcessStep
+            step={<LayoutGrid className="h-8 w-8 text-muted-foreground" />}
+            title="Components"
+            description={
+              <Prose>
+                <p>
+                  Buttons (fill / outline / ghost), inputs (4 sizes with floating labels),
+                  Iconsax icons (filled and line), cards, tabs, modals, the bespoke
+                  price-matrix calendar, and the seat / baggage / lounge selectors. Each
+                  documented with states, spacing, and usage rules.
+                </p>
+              </Prose>
+            }
+          />
+        </>
+      ),
+    },
+    {
+      id: "validation",
+      label: "Validation",
+      size: "small",
+      render: () => (
+        <>
+          <SectionHeading
+            kicker="05 — Validation"
+            title="We tested with 5 users from our course cohort. Five pieces of feedback came up consistently enough that we treated them as requirements, not suggestions."
+          />
+
+          <Prose>
+            <p>
+              Each user completed the three core tasks — search a flight, customize the booking,
+              find an offer — while we observed silently and logged hesitations, misclicks, and
+              verbal comments. After each task we ran an SEQ (Single Ease Question) on a 1–7
+              scale.
+            </p>
+          </Prose>
+
+          <Timeline
+            items={[
+              {
+                title: "Passenger-seat mapping needed clearer labeling",
+                body: (
+                  <Prose>
+                    <p>Users couldn't tell at a glance whose seat was being selected. We added persistent passenger labels throughout the flow.</p>
+                  </Prose>
+                ),
+              },
+              {
+                title: "Tickets needed an in-session download option",
+                body: (
+                  <Prose>
+                    <p>Users feared losing access if the confirmation email didn't arrive. We added a direct download to the confirmation screen.</p>
+                  </Prose>
+                ),
+              },
+              {
+                title: "Seat prices needed to move up in the visual hierarchy",
+                body: (
+                  <Prose>
+                    <p>Pricing was buried below the seat map. We surfaced it inline alongside each selectable seat.</p>
+                  </Prose>
+                ),
+              },
+              {
+                title: "Offers needed more detail and richer filters",
+                body: (
+                  <Prose>
+                    <p>Category browsing alone wasn't enough. We added traveler-type filters and richer offer cards with more upfront information.</p>
+                  </Prose>
+                ),
+              },
+              {
+                title: "A pre-payment summary screen was missing",
+                body: (
+                  <Prose>
+                    <p>Users wanted one last review before committing. We added a dedicated summary step before the payment screen.</p>
+                  </Prose>
+                ),
+              },
+            ]}
+          />
+        </>
+      ),
+    },
+    {
+      id: "reflections",
+      label: "Reflections",
+      size: "small",
+      render: () => (
+        <>
+          <SectionHeading
+            kicker="Reflections"
+            title="The research was thorough enough that no design decision felt arbitrary — every choice traces back to a persona, a heuristic violation, or a click count."
+          />
+
+          <Prose>
+            <p>
+              The design system held up under pressure: when we added the offers map late in the
+              project, the tokens and components already in place made it a matter of composition,
+              not invention.
+            </p>
+            <p>
+              Five testers is the floor, not the ceiling. With more time I'd push for
+              quantitative baselines — rigorous before/after click counts, time-on-task data —
+              to make the redesign's impact measurable rather than just argued.
+            </p>
+          </Prose>
+
+          <PullQuote
+            size="md"
+            quote="Design systems only earn their cost if they're built from the problems, not imposed on them. Every token and component was traceable to something specific we found in research — that discipline is what made the system usable for the rest of the team."
+            role="Takeaway"
+          />
+        </>
+      ),
+    },
+  ],
 }
