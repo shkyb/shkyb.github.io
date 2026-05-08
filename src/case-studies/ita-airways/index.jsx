@@ -1,5 +1,8 @@
 import React from "react"
 
+import itaLogo from "./assets/ita-logo.webp"
+import itaCover from "./assets/ita-cover.webp"
+
 import { Prose } from "@/components/case/layout/Prose"
 import { CaseSection as Section } from "@/components/case/layout/Section"
 import { CaseContainer as Container } from "@/components/case/layout/Container"
@@ -47,11 +50,11 @@ export const itaAirwaysCase = {
   slug: "ita-airways",
 
   caseMeta: {
-    logo: null,
+    logo: { src: itaLogo, alt: "ITA Airways logo" },
     title: "ITA Airways",
     headline: "Rethinking the booking flow of Italy's national airline.",
     tags: ["UX Design", "Usability", "Design Systems", "Booking Flow", "Web"],
-    cover: null,
+    cover: { src: itaCover, alt: "ITA Airways case study cover" },
     overview: [
       <Prose key="p1">
         <p>
