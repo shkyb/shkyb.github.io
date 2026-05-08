@@ -566,7 +566,7 @@ export const itaAirwaysCase = {
         <>
           <SectionHeading
             kicker="03 — Response"
-            title="Three insights, three design goals — written as outcomes, not features."
+            title="After analyzing the findings from the Heuristics, user tasks and competitor analysis, we prioritized 3 improvements to our redesign"
             className="mx-auto max-w-3xl"
           />
 
