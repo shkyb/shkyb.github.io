@@ -486,69 +486,74 @@ export const itaAirwaysCase = {
             className="mx-auto max-w-3xl"
           />
 
-          <InsightList
+          <ProcessStep
             className="mx-auto max-w-3xl"
-            items={[
-              {
-                eyebrow: "Insight 01",
-                title: "Information lived in the wrong places",
-                description: (
-                  <Prose>
-                    <p>
-                      The site looked organized but wasn't. Managing bookings, finding offers,
-                      and navigating the frequent flyer program all demanded effort the user
-                      shouldn't have had to spend. Strong graphical coherence masked weak content
-                      and visual clarity — the exact dimensions that determine whether someone
-                      finishes a task.
-                    </p>
-                  </Prose>
-                ),
-              },
-              {
-                eyebrow: "Insight 02",
-                title: "The booking flow lost context every step",
-                description: (
-                  <Prose>
-                    <p>
-                      Selecting seats, luggage, and lounge access pushed users back and forth
-                      between parent and child pages, dropping context at each transition. The
-                      seat selector didn't say <em>whose</em> seat. The baggage page didn't say{" "}
-                      <em>which flight.</em> The system was treating these as separate decisions.
-                      Users were treating them as one connected booking.
-                    </p>
-                  </Prose>
-                ),
-              },
-              {
-                eyebrow: "Insight 03",
-                title: "The offers page broke its own promise",
-                description: (
-                  <Prose>
-                    <p>
-                      Offers are where airlines convert browsers into buyers. ITA's price/date
-                      matrix surfaced deals — but behaved differently from how users expected
-                      such tables to work. Users read the data, then second-guessed it.{" "}
-                      <strong>That moment of doubt is the moment the booking dies.</strong>
-                    </p>
-                  </Prose>
-                ),
-              },
-            ]}
+            justifyEnd
+            step="Insight 01"
+            title="Information lived in the wrong places"
+            description={
+              <Prose>
+                <p>
+                  The site looked organized but wasn't. Managing bookings, finding offers,
+                  and navigating the frequent flyer program all demanded effort the user
+                  shouldn't have had to spend. Strong graphical coherence masked weak content
+                  and visual clarity — the exact dimensions that determine whether someone
+                  finishes a task.
+                </p>
+              </Prose>
+            }
+            figure={{
+              src: itaCover,
+              caption: "Spider chart — ITA's weak axes (content clarity, graphical clarity) highlighted against competitors.",
+              frame: "soft",
+              aspect: "aspect-square",
+            }}
           />
-          <Figure
-            src={itaCover}
-            frame="soft"
-            caption="Spider chart — ITA's weak axes (content clarity, graphical clarity) highlighted against competitors."
+          <ProcessStep
+            className="mx-auto max-w-3xl"
+            justifyEnd
+            step="Insight 02"
+            reverse
+            title="The booking flow lost context every step"
+            description={
+              <Prose>
+                <p>
+                  Selecting seats, luggage, and lounge access pushed users back and forth
+                  between parent and child pages, dropping context at each transition. The
+                  seat selector didn't say <em>whose</em> seat. The baggage page didn't say{" "}
+                  <em>which flight.</em> The system was treating these as separate decisions.
+                  Users were treating them as one connected booking.
+                </p>
+              </Prose>
+            }
+            figure={{
+              src: itaCover,
+              caption: "Original benefits flow — annotated to show where context is dropped across passenger and flight transitions.",
+              frame: "soft",
+              aspect: "aspect-square",
+            }}
           />
-          <Figure
-            src={itaCover}
-            frame="soft"
-            caption="Original benefits flow — annotated to show where context is dropped across passenger and flight transitions."
-          />
-          <Figure
-            src={itaCover}
-            frame="soft"
-            caption="Original offers page — the price/date matrix circled as the primary failure point."
+          <ProcessStep
+            className="mx-auto max-w-3xl"
+            justifyEnd
+            step="Insight 03"
+            title="The offers page broke its own promise"
+            description={
+              <Prose>
+                <p>
+                  Offers are where airlines convert browsers into buyers. ITA's price/date
+                  matrix surfaced deals — but behaved differently from how users expected
+                  such tables to work. Users read the data, then second-guessed it.{" "}
+                  <strong>That moment of doubt is the moment the booking dies.</strong>
+                </p>
+              </Prose>
+            }
+            figure={{
+              src: itaCover,
+              caption: "Original offers page — the price/date matrix circled as the primary failure point.",
+              frame: "soft",
+              aspect: "aspect-square",
+            }}
           />
         </>
       ),
