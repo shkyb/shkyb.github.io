@@ -94,7 +94,7 @@ export const itaAirwaysCase = {
     meta: [
       {
         label: "Role",
-        value: "Led the Design System & Hi-fi prototype",
+        value: "Heuristic audits and competitor benchmarks through to a design system built on Moon and accessibility tested against WCAG, APCA, and four color blindness simulations",
       },
       {
         label: "Team",
@@ -109,14 +109,14 @@ export const itaAirwaysCase = {
         label: "Timeline",
         value: "Academic project · 1 semester · AY 2024/2025",
       },
-      {
-        label: "Deliverables",
-        value: "Heuristic audit · Competitor benchmark · Personas · Wireframes · Hi-fi prototype · Design system",
-      },
       // {
-      //   label: "Course",
-      //   value: "Ergonomics Applied to the Design of Usable Web Pages and Apps — Politecnico di Milano",
+      //   label: "Deliverables",
+      //   value: "Heuristic audit · Competitor benchmark · Personas · Wireframes · Hi-fi prototype · Design system",
       // },
+      {
+        label: "Course",
+        value: "Ergonomics Applied to the Design of Usable Web Pages and Apps — Politecnico di Milano",
+      },
     ],
   },
 
