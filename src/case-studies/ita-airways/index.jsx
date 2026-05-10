@@ -759,34 +759,44 @@ export const itaAirwaysCase = {
     {
       id: "reflections",
       label: "Reflections",
-      size: "fill",
+      size: "small",
       render: () => (
         <>
           <SectionHeading
             kicker="Reflections"
-            title="The research was thorough enough that no design decision felt arbitrary — every choice traces back to a persona, a heuristic violation, or a click count."
+            title="The most useful thing this project gave me was fluency in structured diagnosis."
             className="mx-auto max-w-3xl"
+          />
+
+          <InsightList
+            className="mx-auto max-w-3xl"
+            items={[
+              {
+                title: <Prose>Build a case before you build screens</Prose>,
+                description: <Prose><p>Before a single wireframe was drawn, we had a click-count table, a heuristic violation log, a competitor benchmark, and a persona-driven task priority stack. <em>Every design decision had a traceable origin.</em> That discipline is what separates a <strong>redesign</strong> from a <strong>restyle</strong>.</p></Prose>,
+              },
+              {
+                title: <Prose>Accessibility testing is a design tool, not a compliance pass</Prose>,
+                description: <Prose><p>The dot pattern on the pricing calendar came from a <em>simulation</em>, not a checklist. I'd reached for color to carry meaning; the simulation showed me the gap, and the pattern closed it. That <strong>feedback loop</strong> is now a habit.</p></Prose>,
+              },
+              // {
+              //   title: <Prose>Five colleagues is a convenience sample, not a validation</Prose>,
+              //   description: <Prose><p>The research and audit phases were rigorous; the validation phase wasn't. With more time I'd have recruited outside the cohort and run moderated sessions against specific task-success criteria. Worth being honest about that gap.</p></Prose>,
+              // },
+            ]}
           />
 
           <Prose className="mx-auto max-w-3xl">
             <p>
-              The design system held up under pressure: when we added the offers map late in the
-              project, the tokens and components already in place made it a matter of composition,
-              not invention.
-            </p>
-            <p>
-              Five testers is the floor, not the ceiling. With more time I'd push for
-              quantitative baselines — rigorous before/after click counts, time-on-task data —
-              to make the redesign's impact measurable rather than just argued.
+              Thanks to{" "}
+              <a href="https://www.linkedin.com/in/robertodadda/" target="_blank" rel="noopener noreferrer">Prof. Roberto Dadda</a>{" "}
+              and{" "}
+              <a href="https://www.linkedin.com/in/paolonegri/" target="_blank" rel="noopener noreferrer">Paolo Negri</a>{" "}
+              for their thorough reviews, their dedication to the course, and for teaching a
+              methodology rigorous enough to actually use. And to Marjan, Ilaria, and Mahshad —
+              for the late-night Figma sessions, the shared frustrations, and for making this genuinely fun to build.
             </p>
           </Prose>
-
-          <PullQuote
-            className="mx-auto max-w-3xl"
-            size="md"
-            quote="Design systems only earn their cost if they're built from the problems, not imposed on them. Every token and component was traceable to something specific we found in research — that discipline is what made the system usable for the rest of the team."
-            role="Takeaway"
-          />
         </>
       ),
     },
