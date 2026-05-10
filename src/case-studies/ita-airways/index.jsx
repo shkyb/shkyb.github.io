@@ -366,16 +366,15 @@ export const itaAirwaysCase = {
       size: "fill",
       render: () => (
         <>
-          <SectionHeading
-            kicker="Heuristic evaluation"
-            title="We evaluated the live site against Nielsen's 10 heuristics — the worst offenders were the ones that hit users hardest mid-task."
-            className="mx-auto max-w-3xl"
-          />
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:items-start">
+            <SectionHeading
+              kicker="Heuristic evaluation"
+              title="We evaluated the live site against Nielsen's 10 heuristics — the worst offenders were the ones that hit users hardest mid-task."
+            />
 
-          <Timeline
-            className="mx-auto max-w-3xl"
-            // variant="cards"
-            items={[
+            <Timeline
+              // variant="cards"
+              items={[
               {
                 title: "👁️ Visibility of system status",
                 tone: "warning",
@@ -403,8 +402,27 @@ export const itaAirwaysCase = {
                   </Prose>
                 ),
               },
-            ]}
-          />
+              {
+                title: "🚪 User control and freedom",
+                tone: "warning",
+                body: (
+                  <Prose>
+                    <p>On the summary page before payment, users could review their booking but couldn't modify or remove any selected services. A dead end at the most consequential moment.</p>
+                  </Prose>
+                ),
+              },
+              {
+                title: "🛡️ Error prevention",
+                tone: "warning",
+                body: (
+                  <Prose>
+                    <p>Date selection required a double-click to confirm the departure date before moving to return, with no feedback that the first click had registered. Quiet failures, repeated.</p>
+                  </Prose>
+                ),
+              },
+              ]}
+            />
+          </div>
           <Figure
             src={itaCover}
             frame="soft"
@@ -590,23 +608,6 @@ export const itaAirwaysCase = {
             />
           </div>
 
-          <ProcessStep
-            className="mx-auto max-w-3xl"
-            step="Goal 01"
-            title="Simplify the flight purchase process"
-            description={
-              <Prose>
-                <p>
-                  We restructured the information architecture from a sprawling, nested tree into
-                  a flatter, task-oriented map grouped around what users are trying to{" "}
-                  <em>do</em>, not how the company is organized. The booking flow collapsed from
-                  10+ branching steps into a cleaner linear path. Filters moved from a cramped
-                  modal into a persistent left-side panel, ordered to match the sequence in which
-                  users actually decide — class → stopovers → duration → budget → time.
-                </p>
-              </Prose>
-            }
-          />
           <Figure
             src={itaCover}
             frame="soft"
@@ -618,23 +619,6 @@ export const itaAirwaysCase = {
             caption="Filter panel — persistent left-side layout ordered to match the user's natural decision sequence."
           />
 
-          <ProcessStep
-            className="mx-auto max-w-3xl"
-            step="Goal 02"
-            title="Clarify the benefits area"
-            description={
-              <Prose>
-                <p>
-                  I redesigned the benefits flow as a single guided path with persistent context.
-                  A step-by-step progress bar tells users where they are. The chosen departure
-                  flight stays pinned at the top when picking the return. Every passenger gets a
-                  labeled section. The seat selector shows pricing alongside the map, not buried
-                  below it. Baggage is scoped per passenger, with a dedicated extra-equipment
-                  section for golf, bikes, instruments, and strollers.
-                </p>
-              </Prose>
-            }
-          />
           <Figure
             src={itaCover}
             frame="soft"
@@ -651,22 +635,6 @@ export const itaAirwaysCase = {
             caption="Redesigned lounge selection — departure flight pinned at top, return handled in the same guided flow."
           />
 
-          <ProcessStep
-            className="mx-auto max-w-3xl"
-            step="Goal 03"
-            title="Make offers behave the way users expect"
-            description={
-              <Prose>
-                <p>
-                  The offers page became map-first, with category filters surfaced for specific
-                  traveler types — families with babies, students, seniors. Selected filters
-                  convert into removable tags so users can track and reverse choices. The
-                  price/date matrix interaction was rebuilt to behave the way standard tables do,
-                  removing the moment of doubt before purchase.
-                </p>
-              </Prose>
-            }
-          />
           <Figure
             src={itaCover}
             frame="soft"
