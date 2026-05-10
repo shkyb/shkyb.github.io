@@ -649,105 +649,71 @@ export const itaAirwaysCase = {
       ),
     },
     {
-      id: "design-system",
-      label: "Design System",
+      id: "accessibility",
+      label: "Accessibility",
       size: "fill",
       render: () => (
         <>
           <SectionHeading
-            kicker="04 — Design System"
-            title="This was the part I owned end-to-end. Every component traces back to a specific need surfaced in research."
+            kicker="04 — Accessibility"
+            title="A booking site serves every kind of traveler. Accessibility wasn't a final-step compliance pass — it was a design constraint we built from."
             className="mx-auto max-w-3xl"
-          />
-
-          <Prose className="mx-auto max-w-3xl">
-            <p>
-              I built the system on top of{" "}
-              <a href="https://moon.io" target="_blank" rel="noopener noreferrer">Moon</a>,
-              adapting its tokens to ITA's brand language and extending it where the
-              out-of-the-box components didn't cover our patterns — the price-comparison
-              calendar, the passenger-scoped baggage selector, the offers map.
-            </p>
-          </Prose>
-          <Figure
-            src={itaCover}
-            frame="soft"
-            caption="Design system overview — full spread of tokens, components, and documentation."
           />
 
           <ProcessStep
-            className="mx-auto max-w-3xl"
-            step={<Type className="h-8 w-8 text-muted-foreground" />}
-            title="Typography"
-            description={
-              <Prose>
-                <p>
-                  I chose <strong>Lato</strong> — a sans-serif optimized for small sizes and
-                  screen readability, available under the Open Font License. A full type scale
-                  across headings, body, captions, and numerical data — important for pricing
-                  tables, where digit alignment matters.
-                </p>
-              </Prose>
-            }
-          />
-          <Figure
-            src={itaCover}
-            frame="soft"
-            caption="Type scale — headings, body, captions, and numerical data with alignment specimens."
-          />
-
-          <ProcessStep
-            className="mx-auto max-w-3xl"
+            justifyEnd
             step={<Palette className="h-8 w-8 text-muted-foreground" />}
-            title="Color & accessibility"
+            title="Contrast testing"
             description={
               <Prose>
                 <p>
-                  The palette is anchored by ITA's brand blue, with a functional secondary system
-                  for status, pricing tiers, and interactive states. Every text/background pairing
-                  was tested against WCAG AA (4.5:1) for body, AAA (7:1) where possible, and
-                  APCA — then verified against tritanopia, deuteranopia, achromatopsia, and
-                  tritanomaly simulations.
+                  Every pairing was tested against <strong>WCAG AA</strong> (4.5:1),{" "}
+                  <strong>AAA</strong> (7:1) where possible, and <strong>APCA</strong> (79 Lc
+                  for small text, 60 Lc for large). Using both frameworks caught edge cases
+                  either alone would have missed.
                 </p>
               </Prose>
             }
+            figureCols={8}
+            figure={{ src: itaCover, frame: "soft", aspect: "aspect-[3/2]", caption: "Color contrast test grid — tokens against backgrounds with WCAG and APCA scores." }}
           />
-          <Figure
-            src={itaCover}
-            frame="soft"
-            caption="Color palette with WCAG and APCA contrast test grid."
-          />
-          <Figure
-            src={itaCover}
-            frame="soft"
-            caption="Color blindness simulations — tritanopia, deuteranopia, achromatopsia, and tritanomaly."
-          />
-
-          <Callout className="mx-auto max-w-3xl">
-            The price-comparison calendar relies on color to communicate pricing tiers, so I
-            added a dot pattern as a redundant signal — the calendar still works for color-blind
-            users without it.
-          </Callout>
 
           <ProcessStep
-            className="mx-auto max-w-3xl"
-            step={<LayoutGrid className="h-8 w-8 text-muted-foreground" />}
-            title="Components"
+            reverse
+            justifyEnd
+            step={<ShieldCheck className="h-8 w-8 text-muted-foreground" />}
+            title="Color blindness"
             description={
               <Prose>
                 <p>
-                  Buttons (fill / outline / ghost), inputs (4 sizes with floating labels),
-                  Iconsax icons (filled and line), cards, tabs, modals, the bespoke
-                  price-matrix calendar, and the seat / baggage / lounge selectors. Each
-                  documented with states, spacing, and usage rules.
+                  The <strong>price-comparison calendar</strong>'s three-tier color system is
+                  invisible to users with color vision deficiencies. After verifying against four
+                  simulations — tritanopia, deuteranopia, achromatopsia, tritanomaly — I added a{" "}
+                  <strong>dot pattern as a redundant signal</strong>. The calendar works
+                  regardless of how the user sees color.
                 </p>
               </Prose>
             }
+            figureCols={8}
+            figure={{ src: itaCover, frame: "soft", aspect: "aspect-[3/2]", caption: "Color blindness simulations — four conditions, calendar shown in each." }}
           />
-          <Figure
-            src={itaCover}
-            frame="soft"
-            caption="Component library — all states, variants, and spacing documented."
+
+          <ProcessStep
+            justifyEnd
+            step={<Type className="h-8 w-8 text-muted-foreground" />}
+            title="Typography and readability"
+            description={
+              <Prose>
+                <p>
+                  <strong>Lato</strong> was chosen for its performance at small sizes — critical
+                  on a site dense with pricing, flight times, and passenger details. The type
+                  scale was built around tabular figures, consistent cap-height, and a 16px
+                  minimum body size.
+                </p>
+              </Prose>
+            }
+            figureCols={8}
+            figure={{ src: itaCover, frame: "soft", aspect: "aspect-[3/2]", caption: "Type scale with size annotations — headings, body, captions, and tabular numerals." }}
           />
         </>
       ),
