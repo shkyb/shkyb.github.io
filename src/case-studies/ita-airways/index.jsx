@@ -619,17 +619,17 @@ export const itaAirwaysCase = {
             <Timeline
               items={[
                 {
-                  title: <Prose>Simplify the flight purchase process</Prose>,
+                  title: <Prose>✈️ Simplify the flight purchase process</Prose>,
                   body: <Prose><p>Flatten the IA and move filters out of modals into a persistent panel.</p></Prose>,
                   tone: "info",
                 },
                 {
-                  title: <Prose>Clarify the benefits area</Prose>,
+                  title: <Prose>🧳 Clarify the benefits area</Prose>,
                   body: <Prose><p>Rebuild seat, baggage, and lounge selection as a single guided flow with persistent context.</p></Prose>,
                   tone: "info",
                 },
                 {
-                  title: <Prose>Make offers behave the way users expect</Prose>,
+                  title: <Prose>🗺️ Make offers behave the way users expect</Prose>,
                   body: <Prose><p>Rebuild the price/date matrix interaction and surface category filters for real traveler types.</p></Prose>,
                   tone: "info",
                 },
