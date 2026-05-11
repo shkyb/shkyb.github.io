@@ -25,6 +25,8 @@ import { CaseSeparator } from "@/components/case/blocks/CaseSeparator"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Search, Ticket, Map, ShieldCheck, Type, Palette, LayoutGrid, Users, BarChart2, MousePointerClick, Target, AlertCircle } from "lucide-react"
+import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer, Legend } from "recharts"
+import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart"
 
 const PersonaCard = ({ avatar, name, age, role, drive, pain }) => (
   <Card className="shadow-none">
@@ -280,6 +282,37 @@ export const itaAirwaysCase = {
             }
             figure={{ src: itaCover, frame: "soft", aspect: "aspect-square", caption: "Competitor spider charts — ITA vs. Ryanair, Qatar Airways, Trenitalia, and Kayak across five UX dimensions." }}
           />
+
+          <ChartContainer
+            className="mx-auto max-w-3xl w-full"
+            config={{
+              ita:      { label: "ITA Airways",  color: "#306fc8" },
+              ryanair:  { label: "Ryanair",       color: "#e6852a" },
+              qatar:    { label: "Qatar Airways", color: "#64748b" },
+              trenitalia: { label: "Trenitalia",  color: "#10b981" },
+              kayak:    { label: "Kayak",         color: "#f43f5e" },
+            }}
+          >
+            <RadarChart
+              data={[
+                { metric: "Content clarity",     ita: 0, ryanair: 0, qatar: 0, trenitalia: 0, kayak: 0 },
+                { metric: "Graphical coherence", ita: 0, ryanair: 0, qatar: 0, trenitalia: 0, kayak: 0 },
+                { metric: "Graphical clarity",   ita: 0, ryanair: 0, qatar: 0, trenitalia: 0, kayak: 0 },
+                { metric: "Responsiveness",      ita: 0, ryanair: 0, qatar: 0, trenitalia: 0, kayak: 0 },
+                { metric: "Ease of access",      ita: 0, ryanair: 0, qatar: 0, trenitalia: 0, kayak: 0 },
+              ]}
+            >
+              <PolarGrid />
+              <PolarAngleAxis dataKey="metric" />
+              <ChartTooltip content={<ChartTooltipContent />} />
+              <Radar name="ita"        dataKey="ita"        stroke="#306fc8" fill="#306fc8" fillOpacity={0.15} />
+              <Radar name="ryanair"    dataKey="ryanair"    stroke="#e6852a" fill="#e6852a" fillOpacity={0.1} />
+              <Radar name="qatar"      dataKey="qatar"      stroke="#64748b" fill="#64748b" fillOpacity={0.1} />
+              <Radar name="trenitalia" dataKey="trenitalia" stroke="#10b981" fill="#10b981" fillOpacity={0.1} />
+              <Radar name="kayak"      dataKey="kayak"      stroke="#f43f5e" fill="#f43f5e" fillOpacity={0.1} />
+              <Legend />
+            </RadarChart>
+          </ChartContainer>
 
           <PullQuote
             className="mx-auto max-w-3xl"
