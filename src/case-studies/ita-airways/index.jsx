@@ -266,51 +266,47 @@ export const itaAirwaysCase = {
             ))}
           </div>
 
-          <ProcessStep
-            className="mx-auto max-w-3xl"
-            justifyEnd
-            description={
-              <Prose>
-                <p>
-                  We scored all five sites — ITA included — against five parameters:{" "}
-                  <em>clarity of content, graphical coherence, graphical clarity, responsiveness, ease of access.</em>{" "}
-                  Spider charts annotated page by page. ITA's strongest score was graphical coherence.
-                  Its weakest: content clarity and graphical clarity — exactly the dimensions that
-                  determine whether someone can finish a task.
-                </p>
-              </Prose>
-            }
-            figure={{ src: itaCover, frame: "soft", aspect: "aspect-square", caption: "Competitor spider charts — ITA vs. Ryanair, Qatar Airways, Trenitalia, and Kayak across five UX dimensions." }}
-          />
+          <Prose className="mx-auto max-w-3xl">
+            <p>
+              We scored all five sites — ITA included — against five parameters:{" "}
+              <em>clarity of content, graphical coherence, graphical clarity, responsiveness, ease of access.</em>{" "}
+              Spider charts annotated page by page. ITA's strongest score was graphical coherence.
+              Its weakest: content clarity and graphical clarity — exactly the dimensions that
+              determine whether someone can finish a task.
+            </p>
+          </Prose>
 
           <ChartContainer
             className="mx-auto max-w-3xl w-full"
             config={{
-              ita:      { label: "ITA Airways",  color: "#306fc8" },
-              ryanair:  { label: "Ryanair",       color: "#e6852a" },
-              qatar:    { label: "Qatar Airways", color: "#64748b" },
-              trenitalia: { label: "Trenitalia",  color: "#10b981" },
-              kayak:    { label: "Kayak",         color: "#f43f5e" },
+              ita:        { label: "ITA Airways",  color: "#306fc8" },
+              ryanair:    { label: "Ryanair",       color: "#F4CA35" },
+              qatar:      { label: "Qatar Airways", color: "#7B2451" },
+              trenitalia: { label: "Trenitalia",    color: "#006A6A" },
+              kayak:      { label: "Kayak",         color: "#FF690F" },
             }}
           >
             <RadarChart
               data={[
-                { metric: "Content clarity",     ita: 0, ryanair: 0, qatar: 0, trenitalia: 0, kayak: 0 },
-                { metric: "Graphical coherence", ita: 0, ryanair: 0, qatar: 0, trenitalia: 0, kayak: 0 },
-                { metric: "Graphical clarity",   ita: 0, ryanair: 0, qatar: 0, trenitalia: 0, kayak: 0 },
-                { metric: "Responsiveness",      ita: 0, ryanair: 0, qatar: 0, trenitalia: 0, kayak: 0 },
-                { metric: "Ease of access",      ita: 0, ryanair: 0, qatar: 0, trenitalia: 0, kayak: 0 },
+                { metric: "Content clarity",     ita: 5, ryanair: 7,  qatar: 7,  trenitalia: 10, kayak: 7  },
+                { metric: "Graphical coherence", ita: 6, ryanair: 8,  qatar: 8,  trenitalia: 6,  kayak: 8  },
+                { metric: "Graphical clarity",   ita: 5, ryanair: 10, qatar: 8,  trenitalia: 8,  kayak: 10 },
+                { metric: "Responsiveness",      ita: 8, ryanair: 5,  qatar: 10, trenitalia: 6,  kayak: 6  },
+                { metric: "Ease of access",      ita: 8, ryanair: 8,  qatar: 6,  trenitalia: 6,  kayak: 8  },
               ]}
             >
               <PolarGrid />
-              <PolarAngleAxis dataKey="metric" />
+              <PolarAngleAxis
+                dataKey="metric"
+                tick={{ fontWeight: 700, fontSize: 12, textTransform: "uppercase" }}
+              />
               <ChartTooltip content={<ChartTooltipContent />} />
               <Radar name="ita"        dataKey="ita"        stroke="#306fc8" fill="#306fc8" fillOpacity={0.15} />
-              <Radar name="ryanair"    dataKey="ryanair"    stroke="#e6852a" fill="#e6852a" fillOpacity={0.1} />
-              <Radar name="qatar"      dataKey="qatar"      stroke="#64748b" fill="#64748b" fillOpacity={0.1} />
-              <Radar name="trenitalia" dataKey="trenitalia" stroke="#10b981" fill="#10b981" fillOpacity={0.1} />
-              <Radar name="kayak"      dataKey="kayak"      stroke="#f43f5e" fill="#f43f5e" fillOpacity={0.1} />
-              <Legend />
+              <Radar name="ryanair"    dataKey="ryanair"    stroke="#F4CA35" fill="#F4CA35" fillOpacity={0.1} />
+              <Radar name="qatar"      dataKey="qatar"      stroke="#7B2451" fill="#7B2451" fillOpacity={0.1} />
+              <Radar name="trenitalia" dataKey="trenitalia" stroke="#006A6A" fill="#006A6A" fillOpacity={0.1} />
+              <Radar name="kayak"      dataKey="kayak"      stroke="#FF690F" fill="#FF690F" fillOpacity={0.1} />
+              <Legend formatter={(value) => value.toUpperCase()} />
             </RadarChart>
           </ChartContainer>
 
