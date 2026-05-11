@@ -409,7 +409,7 @@ export const itaAirwaysCase = {
               // variant="cards"
               items={[
               {
-                title: "👁️ Visibility of system status",
+                title: <Prose>👁️ Visibility of system status</Prose>,
                 tone: "warning",
                 body: (
                   <Prose>
@@ -418,7 +418,7 @@ export const itaAirwaysCase = {
                 ),
               },
               {
-                title: "🧠 Recognition rather than recall",
+                title: <Prose>🧠 Recognition rather than recall</Prose>,
                 tone: "warning",
                 body: (
                   <Prose>
@@ -427,7 +427,7 @@ export const itaAirwaysCase = {
                 ),
               },
               {
-                title: "🔀 Consistency and standards",
+                title: <Prose>🔀 Consistency and standards</Prose>,
                 tone: "warning",
                 body: (
                   <Prose>
@@ -436,7 +436,7 @@ export const itaAirwaysCase = {
                 ),
               },
               {
-                title: "🚪 User control and freedom",
+                title: <Prose>🚪 User control and freedom</Prose>,
                 tone: "warning",
                 body: (
                   <Prose>
@@ -445,7 +445,7 @@ export const itaAirwaysCase = {
                 ),
               },
               {
-                title: "🛡️ Error prevention",
+                title: <Prose>🛡️ Error prevention</Prose>,
                 tone: "warning",
                 body: (
                   <Prose>
