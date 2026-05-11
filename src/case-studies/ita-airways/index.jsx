@@ -90,7 +90,9 @@ export const itaAirwaysCase = {
         </p>
       </Prose>,
     ],
-    links: [],
+    links: [
+      { label: "Figma Prototype", href: "https://www.figma.com/proto/CmvsoUwyNAhiEMKY578a0I/ITA-Airways-Prototype--Copy-?node-id=2-30&t=wAyfm0KQTwHuhT74-1" },
+    ],
     meta: [
       {
         label: "Role",
@@ -188,16 +190,16 @@ export const itaAirwaysCase = {
         <>
           <SectionHeading
             kicker="01 — Research"
-            title="The research phase was the longest stretch of the project — and the most consequential. Every decision downstream traces back to something we learned here."
+            title="We spent most of the project getting to know the company, its competition, its users, and what those users actually expected when they opened the site."
             className="mx-auto max-w-3xl"
           />
 
           <Prose className="mx-auto max-w-3xl">
             <p>
-              ITA Airways is young — founded in 2021 as the successor to Alitalia — state-owned,
-              and positioned around sustainability and Italian hospitality. It carries the
+              ITA Airways is young — <em>founded in 2021</em> as the successor to Alitalia — state-owned,
+              and positioned around <strong>sustainability</strong> and <strong>Italian hospitality</strong>. It carries the
               reputational weight of Alitalia's long decline, which means its website isn't just
-              a booking tool. It's a credibility instrument for a brand still proving itself.
+              a booking tool. It's a <em>credibility instrument</em> for a brand still proving itself.
             </p>
           </Prose>
           <Figure
@@ -262,19 +264,21 @@ export const itaAirwaysCase = {
             ))}
           </div>
 
-          <Prose className="mx-auto max-w-3xl">
-            <p>
-              We scored all five sites — ITA included — against five parameters:{" "}
-              <em>clarity of content, graphical coherence, graphical clarity, responsiveness, ease of access.</em>{" "}
-              Spider charts annotated page by page. ITA's strongest score was graphical coherence.
-              Its weakest: content clarity and graphical clarity — exactly the dimensions that
-              determine whether someone can finish a task.
-            </p>
-          </Prose>
-          <Figure
-            src={itaCover}
-            frame="soft"
-            caption="Competitor spider charts — ITA vs. Ryanair, Qatar Airways, Trenitalia, and Kayak across five UX dimensions."
+          <ProcessStep
+            className="mx-auto max-w-3xl"
+            justifyEnd
+            description={
+              <Prose>
+                <p>
+                  We scored all five sites — ITA included — against five parameters:{" "}
+                  <em>clarity of content, graphical coherence, graphical clarity, responsiveness, ease of access.</em>{" "}
+                  Spider charts annotated page by page. ITA's strongest score was graphical coherence.
+                  Its weakest: content clarity and graphical clarity — exactly the dimensions that
+                  determine whether someone can finish a task.
+                </p>
+              </Prose>
+            }
+            figure={{ src: itaCover, frame: "soft", aspect: "aspect-square", caption: "Competitor spider charts — ITA vs. Ryanair, Qatar Airways, Trenitalia, and Kayak across five UX dimensions." }}
           />
 
           <PullQuote
