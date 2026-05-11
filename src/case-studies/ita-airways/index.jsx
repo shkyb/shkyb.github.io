@@ -24,7 +24,8 @@ import { ProcessStep } from "@/components/case/blocks/ProcessStep"
 import { CaseSeparator } from "@/components/case/blocks/CaseSeparator"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Search, Ticket, Map, ShieldCheck, Type, Palette, LayoutGrid, Users, BarChart2, MousePointerClick, Target, AlertCircle } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Search, Ticket, Map, ShieldCheck, Type, Palette, LayoutGrid, Users, BarChart2, MousePointerClick, Target, AlertCircle, ArrowUpRight } from "lucide-react"
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer, Legend } from "recharts"
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart"
 
@@ -400,10 +401,20 @@ export const itaAirwaysCase = {
       render: () => (
         <>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:items-start">
-            <SectionHeading
-              kicker="Heuristic evaluation"
-              title="We evaluated the live site against Nielsen's 10 heuristics — the worst offenders were the ones that hit users hardest mid-task."
-            />
+            <div className="flex flex-col gap-4">
+              <SectionHeading
+                kicker="Heuristic evaluation"
+                title="We evaluated the live site against Nielsen's 10 heuristics — the worst offenders were the ones that hit users hardest mid-task."
+              />
+              <a
+                href="https://www.figma.com/board/EfADoFaR7wE39ddqm961k0/Heuristic-Evaluation--Shared-?node-id=0-1&t=fPNen4pLZXk7Kn2S-1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex w-fit"
+              >
+                <Button variant="outline" size="sm" className="cursor-pointer">View Figma board <ArrowUpRight className="ml-1 h-3.5 w-3.5" /></Button>
+              </a>
+            </div>
 
             <Timeline
               // variant="cards"
