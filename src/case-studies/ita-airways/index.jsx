@@ -545,11 +545,9 @@ export const itaAirwaysCase = {
             description={
               <Prose>
                 <p>
-                  The site looked organized but wasn't. Managing bookings, finding offers,
-                  and navigating the frequent flyer program all demanded effort the user
-                  shouldn't have had to spend. Strong graphical coherence masked weak content
-                  and visual clarity — the exact dimensions that determine whether someone
-                  finishes a task.
+                  The site looked organized but wasn't. Strong graphical coherence masked weak
+                  content and visual clarity — the exact dimensions that determine whether
+                  someone actually finishes a task.
                 </p>
               </Prose>
             }
@@ -569,11 +567,10 @@ export const itaAirwaysCase = {
             description={
               <Prose>
                 <p>
-                  Selecting seats, luggage, and lounge access pushed users back and forth
-                  between parent and child pages, dropping context at each transition. The
-                  seat selector didn't say <em>whose</em> seat. The baggage page didn't say{" "}
-                  <em>which flight.</em> The system was treating these as separate decisions.
-                  Users were treating them as one connected booking.
+                  Every transition dropped context. The seat selector didn't say{" "}
+                  <em>whose</em> seat. The baggage page didn't say <em>which flight.</em>{" "}
+                  The system was treating these as separate decisions. Users were treating
+                  them as one connected booking.
                 </p>
               </Prose>
             }
@@ -592,10 +589,9 @@ export const itaAirwaysCase = {
             description={
               <Prose>
                 <p>
-                  Offers are where airlines convert browsers into buyers. ITA's price/date
-                  matrix surfaced deals — but behaved differently from how users expected
-                  such tables to work. Users read the data, then second-guessed it.{" "}
-                  <strong>That moment of doubt is the moment the booking dies.</strong>
+                  ITA's price/date matrix surfaced deals — but behaved differently from how
+                  users expected such tables to work. They read the data, then second-guessed
+                  it. <strong>That moment of doubt is the moment the booking dies.</strong>
                 </p>
               </Prose>
             }
