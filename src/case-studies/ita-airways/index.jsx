@@ -602,8 +602,8 @@ export const itaAirwaysCase = {
               </Prose>
             }
             figure={{
-              src: itaCover,
-              caption: "Spider chart — ITA's weak axes (content clarity, graphical clarity) highlighted against competitors.",
+              src: itaInsight1,
+              alt: "Spider chart — ITA's weak axes (content clarity, graphical clarity) highlighted against competitors.",
               frame: "soft",
               aspect: "aspect-square",
             }}
@@ -625,8 +625,8 @@ export const itaAirwaysCase = {
               </Prose>
             }
             figure={{
-              src: itaCover,
-              caption: "Original benefits flow — annotated to show where context is dropped across passenger and flight transitions.",
+              src: itaInsight2,
+              alt: "Original benefits flow — annotated to show where context is dropped across passenger and flight transitions.",
               frame: "soft",
               aspect: "aspect-square",
             }}
@@ -646,8 +646,8 @@ export const itaAirwaysCase = {
               </Prose>
             }
             figure={{
-              src: itaCover,
-              caption: "Original offers page — the price/date matrix circled as the primary failure point.",
+              src: itaInsight3,
+              alt: "Original offers page — the price/date matrix circled as the primary failure point.",
               frame: "soft",
               aspect: "aspect-square",
             }}
