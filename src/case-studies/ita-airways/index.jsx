@@ -820,16 +820,16 @@ export const itaAirwaysCase = {
           </Prose>
           <div className="grid grid-cols-2 gap-4">
             <Figure
-              src={itaCover}
+              src={itaDesignSystem1}
               frame="soft"
               aspect="aspect-square"
-              caption="Token system — color, spacing, and typography documented across light and dark surfaces."
+              alt="Token system — color, spacing, and typography documented across light and dark surfaces."
             />
             <Figure
-              src={itaCover}
+              src={itaDesignSystem2}
               frame="soft"
               aspect="aspect-square"
-              caption="Component library — buttons, inputs, cards, the price-matrix calendar, and the seat, baggage, and lounge selectors."
+              alt="Component library — buttons, inputs, cards, the price-matrix calendar, and the seat, baggage, and lounge selectors."
             />
           </div>
         </>
