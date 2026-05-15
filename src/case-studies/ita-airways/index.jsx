@@ -237,9 +237,9 @@ export const itaAirwaysCase = {
             </p>
           </Prose>
           <Figure
-            src={itaCover}
+            src={itaTimeline}
             frame="soft"
-            caption="ITA Airways company timeline — from Alitalia's founding in 1946 to ITA's relaunch in 2021."
+            alt="ITA Airways company timeline — from Alitalia's founding in 1946 to ITA's relaunch in 2021."
           />
         </>
       ),
@@ -261,28 +261,32 @@ export const itaAirwaysCase = {
               {
                 tag: "Low-cost benchmark",
                 title: "Ryanair",
+                logo: itaRyanairLogo,
                 description: <Prose><p>The <strong>gold standard for stripping booking to its minimum viable path</strong>. Clear CTAs, no ambiguity about cost.</p></Prose>,
               },
               {
                 tag: "Luxury benchmark",
                 title: "Qatar Airways",
+                logo: itaQatarLogo,
                 description: <Prose><p><strong>Premium polish and visual consistency</strong> throughout. Sets the ceiling for information hierarchy and white space.</p></Prose>,
               },
               {
                 tag: "Domestic rival",
                 title: "Trenitalia",
+                logo: itaTrenitaliaLogo,
                 description: <Prose><p>Italy's rail operator and a <strong>direct short-haul competitor</strong>. Relevant because shared users compare the two experiences side by side.</p></Prose>,
               },
               {
                 tag: "Filter benchmark",
                 title: "Kayak",
+                logo: itaKayakLogo,
                 description: <Prose><p>Not a direct competitor — but the <strong>gold standard for filter design</strong> and search result density. Benchmarked specifically for its UX patterns.</p></Prose>,
               },
             ].map((item) => (
               <Card key={item.title} className="shadow-none">
                 <CardHeader className="flex flex-row items-center gap-4">
                   <img
-                    src={itaLogo}
+                    src={item.logo}
                     alt={item.title}
                     className="h-12 w-12 shrink-0 rounded-md object-cover"
                   />
@@ -365,6 +369,7 @@ export const itaAirwaysCase = {
 
           <div className="mx-auto max-w-3xl grid grid-cols-1 gap-4 md:grid-cols-2">
             <PersonaCard
+              avatar={itaPersonaRoberto}
               name="Roberto"
               age={21}
               role="Spanish student in Milan"
@@ -372,6 +377,7 @@ export const itaAirwaysCase = {
               pain="Every euro counts — hidden fees and unclear pricing cause distrust."
             />
             <PersonaCard
+              avatar={itaPersonaLucia}
               name="Lucia"
               age={35}
               role="Business owner"
@@ -379,6 +385,7 @@ export const itaAirwaysCase = {
               pain="Can't afford to lose time on a fragmented, multi-step process."
             />
             <PersonaCard
+              avatar={itaPersonaEjona}
               name="Ejona"
               age={38}
               role="Solo traveler"
@@ -386,6 +393,7 @@ export const itaAirwaysCase = {
               pain="The offers page never surfaces what she actually wants to find."
             />
             <PersonaCard
+              avatar={itaPersonaGiovanni}
               name="Giovanni"
               age={49}
               role="Family father"
@@ -394,9 +402,9 @@ export const itaAirwaysCase = {
             />
           </div>
           <Figure
-            src={itaCover}
+            src={itaPersona}
             frame="soft"
-            caption="Empathy map — goals, fears, and mental context for one of the four personas."
+            alt="Empathy map — goals, fears, and mental context for one of the four personas."
           />
         </>
       ),
@@ -418,9 +426,9 @@ export const itaAirwaysCase = {
             </p>
           </Prose>
           <Figure
-            src={itaCover}
+            src={itaTaskMatrix}
             frame="soft"
-            caption="Task matrix — frequency and importance weighted across all four personas."
+            alt="Task matrix — frequency and importance weighted across all four personas."
           />
         </>
       ),
@@ -499,9 +507,9 @@ export const itaAirwaysCase = {
             />
           </div>
           <Figure
-            src={itaCover}
+            src={itaHeuristics}
             frame="soft"
-            caption="Heuristic evaluation board — violations documented with screenshots across all ten Nielsen heuristics."
+            alt="Heuristic evaluation board — violations documented with screenshots across all ten Nielsen heuristics."
           />
         </>
       ),
@@ -560,9 +568,9 @@ export const itaAirwaysCase = {
             ]}
           /> */}
           <Figure
-            src={itaCover}
+            src={itaClickComparison}
             frame="soft"
-            caption="Click-count comparison — ITA vs. competitors across all three core tasks."
+            alt="Click-count comparison — ITA vs. competitors across all three core tasks."
           />
         </>
       ),
