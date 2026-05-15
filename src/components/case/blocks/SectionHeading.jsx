@@ -44,6 +44,7 @@ export function SectionHeading({
                 "text-sm font-medium tracking-tight text-muted-foreground",
                 isCenter ? "mx-auto" : null
               )}
+              style={{ color: "var(--project-primary)" }}
             >
               {kicker}
             </div>

@@ -43,7 +43,10 @@ export default function CaseStudyPage() {
   ]
 
   return (
-    <main className="w-full">
+    {/* caseMeta.cssVars: optional CSS vars scoped to this page.
+        e.g. { "--project-primary": "#306fc8", "--project-background": "#F1F5FB" }
+        Components like SectionHeading read var(--project-primary) automatically. */}
+    <main className="w-full" style={caseMeta.cssVars}>
       {/* 1) Hero (includes cover image) */}
       <CaseHero
         logo={caseMeta.logo}

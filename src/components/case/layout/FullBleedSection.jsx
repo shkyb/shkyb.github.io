@@ -1,6 +1,11 @@
 import { cn } from "@/lib/utils"
 import { CaseContainer } from "@/components/case/layout/Container"
 
+/**
+ * FullBleedSection
+ * - bgClass: Tailwind class for background (e.g. "bg-muted/30")
+ * - bgStyle: inline style object for dynamic/branded backgrounds (e.g. { background: "var(--project-background)" })
+ */
 export function FullBleedSection({
   as: Comp = "section",
   id,

@@ -56,16 +56,6 @@ import { Search, Ticket, Map, ShieldCheck, Type, Palette, LayoutGrid, Users, Bar
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer, Legend } from "recharts"
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart"
 
-const colors = {
-  primary:    "#306fc8",               // Piccolo — brand blue
-  accent:     "#e6852a",               // Hit — orange
-  tint:       "rgba(48,111,200,0.12)", // Jiren — blue tint
-  background: "#F1F5FB",               // BabyBlue — page background
-  surface:    "#f5f5f5",               // Goku — surface light
-  dark:       "#292d32",               // Bulma — dark surface
-  border:     "#e2e2e2",               // Beerus — borders
-  textMuted:  "#595d62",               // Trunks — secondary text
-}
 
 const PersonaCard = ({ avatar, name, age, role, drive, pain }) => (
   <Card className="shadow-none">
@@ -161,6 +151,16 @@ export const itaAirwaysCase = {
         value: "Ergonomics Applied to the Design of Usable Web Pages and Apps — Politecnico di Milano",
       },
     ],
+    cssVars: {
+      "--project-primary":    "#306fc8",
+      "--project-accent":     "#e6852a",
+      "--project-tint":       "rgba(48,111,200,0.12)",
+      "--project-background": "#F1F5FB",
+      "--project-surface":    "#f5f5f5",
+      "--project-dark":       "#292d32",
+      "--project-border":     "#e2e2e2",
+      "--project-text-muted": "#595d62",
+    },
   },
 
   sections: [
@@ -203,7 +203,7 @@ export const itaAirwaysCase = {
       id: "solution",
       label: "Solution",
       size: "fill",
-      bgStyle: { background: colors.background },
+      bgStyle: { background: "var(--project-background)" },
       render: () => (
         <>
           <SectionHeading
@@ -260,7 +260,7 @@ export const itaAirwaysCase = {
       // id: "benchmarking",
       // label: "Benchmarking",
       size: "fill",
-      bgStyle: { background: colors.background },
+      bgStyle: { background: "var(--project-background)" },
       render: () => (
         <>
           <SectionHeading
@@ -426,7 +426,7 @@ export const itaAirwaysCase = {
       // id: "task-matrix",
       // label: "Task Matrix",
       size: "fill",
-      bgStyle: { background: colors.background },
+      bgStyle: { background: "var(--project-background)" },
       render: () => (
         <>
           <SectionHeading
@@ -532,7 +532,7 @@ export const itaAirwaysCase = {
       // id: "click-count",
       // label: "Click-count Analysis",
       size: "fill",
-      bgStyle: { background: colors.background },
+      bgStyle: { background: "var(--project-background)" },
       render: () => (
         <>
           <SectionHeading
@@ -672,7 +672,7 @@ export const itaAirwaysCase = {
     },
     {
       id: "response",
-      bgStyle: { background: colors.background },
+      bgStyle: { background: "var(--project-background)" },
       label: "Response",
       size: "fill",
       render: () => (
@@ -815,7 +815,7 @@ export const itaAirwaysCase = {
     },
     {
       id: "design-system",
-      bgStyle: { background: colors.background },
+      bgStyle: { background: "var(--project-background)" },
       label: "Design System",
       size: "fill",
       render: () => (
