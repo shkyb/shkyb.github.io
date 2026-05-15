@@ -56,6 +56,17 @@ import { Search, Ticket, Map, ShieldCheck, Type, Palette, LayoutGrid, Users, Bar
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer, Legend } from "recharts"
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart"
 
+const colors = {
+  primary:    "#306fc8",               // Piccolo — brand blue
+  accent:     "#e6852a",               // Hit — orange
+  tint:       "rgba(48,111,200,0.12)", // Jiren — blue tint
+  background: "#F1F5FB",               // BabyBlue — page background
+  surface:    "#f5f5f5",               // Goku — surface light
+  dark:       "#292d32",               // Bulma — dark surface
+  border:     "#e2e2e2",               // Beerus — borders
+  textMuted:  "#595d62",               // Trunks — secondary text
+}
+
 const PersonaCard = ({ avatar, name, age, role, drive, pain }) => (
   <Card className="shadow-none">
     <CardHeader className="flex flex-row items-center gap-4">
