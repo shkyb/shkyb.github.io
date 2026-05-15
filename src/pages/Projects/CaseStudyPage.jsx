@@ -80,6 +80,7 @@ export default function CaseStudyPage() {
               key={s.id}
               id={s.id}
               bgClass={s.bgClass}
+              bgStyle={s.bgStyle}
               size={s.size}
               navSafe={false} // sidenav is xl+ overlay only, so keep content clean
             >

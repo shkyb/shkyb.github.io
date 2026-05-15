@@ -203,6 +203,7 @@ export const itaAirwaysCase = {
       id: "solution",
       label: "Solution",
       size: "fill",
+      bgStyle: { background: colors.background },
       render: () => (
         <>
           <SectionHeading
@@ -259,6 +260,7 @@ export const itaAirwaysCase = {
       // id: "benchmarking",
       // label: "Benchmarking",
       size: "fill",
+      bgStyle: { background: colors.background },
       render: () => (
         <>
           <SectionHeading
@@ -424,6 +426,7 @@ export const itaAirwaysCase = {
       // id: "task-matrix",
       // label: "Task Matrix",
       size: "fill",
+      bgStyle: { background: colors.background },
       render: () => (
         <>
           <SectionHeading
@@ -529,6 +532,7 @@ export const itaAirwaysCase = {
       // id: "click-count",
       // label: "Click-count Analysis",
       size: "fill",
+      bgStyle: { background: colors.background },
       render: () => (
         <>
           <SectionHeading
@@ -668,6 +672,7 @@ export const itaAirwaysCase = {
     },
     {
       id: "response",
+      bgStyle: { background: colors.background },
       label: "Response",
       size: "fill",
       render: () => (
@@ -810,6 +815,7 @@ export const itaAirwaysCase = {
     },
     {
       id: "design-system",
+      bgStyle: { background: colors.background },
       label: "Design System",
       size: "fill",
       render: () => (

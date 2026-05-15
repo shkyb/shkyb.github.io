@@ -8,6 +8,7 @@ export function CaseSection({
   innerClassName,
   tight = false,
   bgClass,
+  bgStyle,
   size = "text",
   navSafe,
 }) {
@@ -17,6 +18,7 @@ export function CaseSection({
     <FullBleedSection
       id={id}
       bgClass={bgClass}
+      bgStyle={bgStyle}
       size={size}
       navSafe={computedNavSafe}
       className={cn(
