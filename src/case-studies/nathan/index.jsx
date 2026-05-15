@@ -181,6 +181,7 @@ export const nathanCase = {
       id: "solution",
       label: "Solution",
       size: "fill",
+      bgStyle: { background: "var(--project-background)" },
       render: () => (
         <>
           <SectionHeading
@@ -262,6 +263,7 @@ export const nathanCase = {
       // id: "reframing",
       // label: "Reframing",
       size: "small",
+      bgStyle: { background: "var(--project-background-alt)" },
       render: () => (
         <>
           <SectionHeading
@@ -343,6 +345,7 @@ export const nathanCase = {
       id: "service",
       label: "Service Idea",
       size: "fill",
+      bgStyle: { background: "var(--project-background)" },
       render: () => (
         <>
           <SectionHeading
@@ -380,6 +383,7 @@ export const nathanCase = {
       id: "ai",
       label: "AI Architecture",
       size: "fill",
+      bgStyle: { background: "var(--project-background-alt)" },
       render: () => (
         <>
           <SectionHeading
@@ -538,6 +542,7 @@ export const nathanCase = {
       // id: "IA",
       // label: "IA",
       size: "fill",
+      bgStyle: { background: "var(--project-background-alt)" },
       render: () => (
         <div className="flex flex-col gap-16">
           <ProcessStep
@@ -636,6 +641,7 @@ export const nathanCase = {
       // id: "design-system",
       // label: "Design System",
       size: "fill",
+      bgStyle: { background: "var(--project-background-alt)" },
       render: () => (
         <>
           <SectionHeading
@@ -730,6 +736,7 @@ export const nathanCase = {
       id: "final-design",
       label: "Final Design",
       size: "fill",
+      bgStyle: { background: "var(--project-background)" },
       render: () => (
         <>
           <SectionHeading
