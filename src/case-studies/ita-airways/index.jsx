@@ -171,10 +171,19 @@ export const itaAirwaysCase = {
               click. The site was coherent on the surface. Underneath, it was fractured.
             </p>
           </Prose> */}
-          <Figure
-            src={itaCover}
-            frame="soft"
-            caption="Original ITA Airways site — annotated pain points across the three core flows."
+          <FigureCarousel
+            className="pb-16"
+            options={{ loop: true }}
+            autoplay={{ delay: 4500, stopOnInteraction: false }}
+            previousClassName="bottom-4 top-auto translate-y-0 left-4"
+            nextClassName="bottom-4 top-auto translate-y-0 left-14 right-auto"
+            dotsClassName="absolute bottom-4 right-4 mt-0 justify-end"
+            dotsProgressDuration={4500}
+            items={[
+              { src: itaProblem1, frame: "soft", alt: "ITA Airways — original homepage with navigation and search flow.", loading: "eager" },
+              { src: itaProblem2, frame: "soft", alt: "Booking flow — context lost across the multi-step checkout.", loading: "lazy" },
+              { src: itaProblem3, frame: "soft", alt: "Offers page — price matrix that broke user expectations.", loading: "lazy" },
+            ]}
           />
         </>
       ),
