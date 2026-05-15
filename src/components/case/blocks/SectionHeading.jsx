@@ -41,12 +41,13 @@ export function SectionHeading({
           {kicker ? (
             <div
               className={cn(
-                "text-sm font-medium tracking-tight text-muted-foreground",
+                "mb-5 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.14em]",
                 isCenter ? "mx-auto" : null
               )}
-              style={{ color: "var(--project-primary)" }}
+              style={{ color: "var(--project-primary, hsl(var(--muted-foreground)))" }}
             >
               {kicker}
+              <span className="block h-px w-10 shrink-0 bg-current opacity-40" aria-hidden="true" />
             </div>
           ) : null}
 
