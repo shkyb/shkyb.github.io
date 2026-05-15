@@ -149,6 +149,13 @@ export const nathanCase = {
       { label: "Timeline", value: "Academic project · 1 Semester · Mar – Jun 2024" },
       { label: "Focus", value: "AI Architecture, UX, Design Systems, Sustainability" },
     ],
+    cssVars: {
+      "--project-primary":    "#599A08",
+      "--project-dark":       "#1A4A1A",
+      "--project-surface":    "#F5F5F5",
+      "--project-background": "#F5F5F5",
+      "--project-dark-text":  "#1F1F1F",
+    },
   },
 
   sections: [
