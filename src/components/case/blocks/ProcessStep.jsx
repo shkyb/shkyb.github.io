@@ -96,12 +96,8 @@ export function ProcessStep({
           )}
         >
           <Figure
-            src={figure.src}
-            alt={figure.alt}
-            caption={figure.caption}
-            aspect={figure.aspect}
-            frame={figure.frame ?? "soft"}
-            loading={figure.loading}
+            frame="soft"
+            {...figure}
           />
         </div>
       ) : null}

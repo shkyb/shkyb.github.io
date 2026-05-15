@@ -754,7 +754,7 @@ export const itaAirwaysCase = {
               </Prose>
             }
             figureCols={8}
-            figure={{ src: itaCover, frame: "soft", aspect: "aspect-[3/2]", caption: "Color contrast test grid — tokens against backgrounds with WCAG and APCA scores." }}
+            figure={{ src: itaAccessContrast, frame: "soft", aspect: "aspect-[3/2]", alt: "Color contrast test grid — tokens against backgrounds with WCAG and APCA scores." }}
           />
 
           <ProcessStep
@@ -774,7 +774,7 @@ export const itaAirwaysCase = {
               </Prose>
             }
             figureCols={8}
-            figure={{ src: itaCover, frame: "soft", aspect: "aspect-[3/2]", caption: "Color blindness simulations — four conditions, calendar shown in each." }}
+            figure={{ src: itaAccessibilityVideo, frame: "soft", aspect: "aspect-[3/2]", alt: "Color blindness simulations — four conditions, calendar shown in each.", controls: false, autoPlay: true, loop: true }}
           />
 
           <ProcessStep
@@ -792,7 +792,7 @@ export const itaAirwaysCase = {
               </Prose>
             }
             figureCols={8}
-            figure={{ src: itaCover, frame: "soft", aspect: "aspect-[3/2]", caption: "Type scale with size annotations — headings, body, captions, and tabular numerals." }}
+            figure={{ src: itaAccessTypo, frame: "soft", aspect: "aspect-[3/2]", alt: "Type scale with size annotations — headings, body, captions, and tabular numerals." }}
           />
         </>
       ),
