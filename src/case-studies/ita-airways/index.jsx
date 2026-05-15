@@ -199,7 +199,7 @@ export const itaAirwaysCase = {
             title="We rebuilt the three most painful flows around a simpler information architecture, a linear booking path with persistent context, and a custom design system tested for accessibility from the first pixel."
             className="mx-auto max-w-3xl"
           />
-          <Metrics
+          {/* <Metrics
             className="mx-auto max-w-3xl"
             columns={3}
             items={[
@@ -207,16 +207,11 @@ export const itaAirwaysCase = {
               { value: "15M", label: "passengers annually" },
               { value: "€2.4B", label: "revenue in 2024" },
             ]}
-          />
+          /> */}
           <Figure
-            src={itaCover}
+            src={itaSolution1}
             frame="soft"
-            caption="Redesigned homepage, search results, and benefits flow — side by side."
-          />
-          <Figure
-            src={itaCover}
-            frame="soft"
-            caption="Design system overview — tokens, components, and documentation."
+            alt="Redesigned homepage, search results, and benefits flow — side by side."
           />
         </>
       ),
