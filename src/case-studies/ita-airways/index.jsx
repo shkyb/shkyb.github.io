@@ -158,13 +158,13 @@ export const itaAirwaysCase = {
       },
     ],
     cssVars: {
-      "--project-primary":    "#306fc8",
-      "--project-accent":     "#e6852a",
-      "--project-tint":       "rgba(48,111,200,0.12)",
+      "--project-primary": "#306fc8",
+      "--project-accent": "#e6852a",
+      "--project-tint": "rgba(48,111,200,0.12)",
       "--project-background": "#F1F5FB",
-      "--project-surface":    "#f5f5f5",
-      "--project-dark":       "#292d32",
-      "--project-border":     "#e2e2e2",
+      "--project-surface": "#f5f5f5",
+      "--project-dark": "#292d32",
+      "--project-border": "#e2e2e2",
       "--project-text-muted": "#595d62",
     },
   },
@@ -217,15 +217,6 @@ export const itaAirwaysCase = {
             title="We rebuilt the three most painful flows around a simpler information architecture, a linear booking path with persistent context, and a custom design system tested for accessibility from the first pixel."
             className="mx-auto max-w-3xl"
           />
-          {/* <Metrics
-            className="mx-auto max-w-3xl"
-            columns={3}
-            items={[
-              { value: "99", label: "aircraft in fleet" },
-              { value: "15M", label: "passengers annually" },
-              { value: "€2.4B", label: "revenue in 2024" },
-            ]}
-          /> */}
           <Figure
             src={itaSolution1}
             frame="soft"
@@ -254,6 +245,17 @@ export const itaAirwaysCase = {
               a booking tool. It's a <em>credibility instrument</em> for a brand still proving itself.
             </p>
           </Prose>
+          <Metrics
+            className="mx-auto max-w-3xl"
+            columns={4}
+            // variant="plain"
+            items={[
+              { value: "124K", label: "annual flights" },
+              { value: "99", label: "aircraft in fleet" },
+              { value: "15M", label: "passengers annually" },
+              { value: "€2.4B", label: "revenue in 2024" },
+            ]}
+          />
           <Figure
             src={itaTimeline}
             frame="soft"
@@ -334,20 +336,20 @@ export const itaAirwaysCase = {
           <ChartContainer
             className="mx-auto max-w-3xl w-full"
             config={{
-              ita:        { label: "ITA Airways",  color: "#306fc8" },
-              ryanair:    { label: "Ryanair",       color: "#F4CA35" },
-              qatar:      { label: "Qatar Airways", color: "#7B2451" },
-              trenitalia: { label: "Trenitalia",    color: "#006A6A" },
-              kayak:      { label: "Kayak",         color: "#FF690F" },
+              ita: { label: "ITA Airways", color: "#306fc8" },
+              ryanair: { label: "Ryanair", color: "#F4CA35" },
+              qatar: { label: "Qatar Airways", color: "#7B2451" },
+              trenitalia: { label: "Trenitalia", color: "#006A6A" },
+              kayak: { label: "Kayak", color: "#FF690F" },
             }}
           >
             <RadarChart
               data={[
-                { metric: "Content clarity",     ita: 5, ryanair: 7,  qatar: 7,  trenitalia: 10, kayak: 7  },
-                { metric: "Graphical coherence", ita: 6, ryanair: 8,  qatar: 8,  trenitalia: 6,  kayak: 8  },
-                { metric: "Graphical clarity",   ita: 5, ryanair: 10, qatar: 8,  trenitalia: 8,  kayak: 10 },
-                { metric: "Responsiveness",      ita: 8, ryanair: 5,  qatar: 10, trenitalia: 6,  kayak: 6  },
-                { metric: "Ease of access",      ita: 8, ryanair: 8,  qatar: 6,  trenitalia: 6,  kayak: 8  },
+                { metric: "Content clarity", ita: 5, ryanair: 7, qatar: 7, trenitalia: 10, kayak: 7 },
+                { metric: "Graphical coherence", ita: 6, ryanair: 8, qatar: 8, trenitalia: 6, kayak: 8 },
+                { metric: "Graphical clarity", ita: 5, ryanair: 10, qatar: 8, trenitalia: 8, kayak: 10 },
+                { metric: "Responsiveness", ita: 8, ryanair: 5, qatar: 10, trenitalia: 6, kayak: 6 },
+                { metric: "Ease of access", ita: 8, ryanair: 8, qatar: 6, trenitalia: 6, kayak: 8 },
               ]}
             >
               <PolarGrid />
@@ -356,11 +358,11 @@ export const itaAirwaysCase = {
                 tick={{ fontWeight: 700, fontSize: 12, textTransform: "uppercase" }}
               />
               <ChartTooltip content={<ChartTooltipContent />} />
-              <Radar name="ita"        dataKey="ita"        stroke="#306fc8" fill="#306fc8" fillOpacity={0.15} />
-              <Radar name="ryanair"    dataKey="ryanair"    stroke="#F4CA35" fill="#F4CA35" fillOpacity={0.1} />
-              <Radar name="qatar"      dataKey="qatar"      stroke="#7B2451" fill="#7B2451" fillOpacity={0.1} />
+              <Radar name="ita" dataKey="ita" stroke="#306fc8" fill="#306fc8" fillOpacity={0.15} />
+              <Radar name="ryanair" dataKey="ryanair" stroke="#F4CA35" fill="#F4CA35" fillOpacity={0.1} />
+              <Radar name="qatar" dataKey="qatar" stroke="#7B2451" fill="#7B2451" fillOpacity={0.1} />
               <Radar name="trenitalia" dataKey="trenitalia" stroke="#006A6A" fill="#006A6A" fillOpacity={0.1} />
-              <Radar name="kayak"      dataKey="kayak"      stroke="#FF690F" fill="#FF690F" fillOpacity={0.1} />
+              <Radar name="kayak" dataKey="kayak" stroke="#FF690F" fill="#FF690F" fillOpacity={0.1} />
               <Legend formatter={(value) => value.toUpperCase()} />
             </RadarChart>
           </ChartContainer>
@@ -478,51 +480,51 @@ export const itaAirwaysCase = {
             <Timeline
               // variant="cards"
               items={[
-              {
-                title: <Prose>👁️ Visibility of system status</Prose>,
-                tone: "warning",
-                body: (
-                  <Prose>
-                    <p>No progress indicator during booking. Users couldn't tell how many steps remained or where they were in the flow.</p>
-                  </Prose>
-                ),
-              },
-              {
-                title: <Prose>🧠 Recognition rather than recall</Prose>,
-                tone: "warning",
-                body: (
-                  <Prose>
-                    <p>Passengers and flights were hard to distinguish on shared pages. Users had to remember context the interface had already discarded.</p>
-                  </Prose>
-                ),
-              },
-              {
-                title: <Prose>🔀 Consistency and standards</Prose>,
-                tone: "warning",
-                body: (
-                  <Prose>
-                    <p>The offers matrix behaved differently from how users expected such tables to work — breaking a well-established mental model.</p>
-                  </Prose>
-                ),
-              },
-              {
-                title: <Prose>🚪 User control and freedom</Prose>,
-                tone: "warning",
-                body: (
-                  <Prose>
-                    <p>On the summary page before payment, users could review their booking but couldn't modify or remove any selected services. A dead end at the most consequential moment.</p>
-                  </Prose>
-                ),
-              },
-              {
-                title: <Prose>🛡️ Error prevention</Prose>,
-                tone: "warning",
-                body: (
-                  <Prose>
-                    <p>Date selection required a double-click to confirm the departure date before moving to return, with no feedback that the first click had registered. Quiet failures, repeated.</p>
-                  </Prose>
-                ),
-              },
+                {
+                  title: <Prose>👁️ Visibility of system status</Prose>,
+                  tone: "warning",
+                  body: (
+                    <Prose>
+                      <p>No progress indicator during booking. Users couldn't tell how many steps remained or where they were in the flow.</p>
+                    </Prose>
+                  ),
+                },
+                {
+                  title: <Prose>🧠 Recognition rather than recall</Prose>,
+                  tone: "warning",
+                  body: (
+                    <Prose>
+                      <p>Passengers and flights were hard to distinguish on shared pages. Users had to remember context the interface had already discarded.</p>
+                    </Prose>
+                  ),
+                },
+                {
+                  title: <Prose>🔀 Consistency and standards</Prose>,
+                  tone: "warning",
+                  body: (
+                    <Prose>
+                      <p>The offers matrix behaved differently from how users expected such tables to work — breaking a well-established mental model.</p>
+                    </Prose>
+                  ),
+                },
+                {
+                  title: <Prose>🚪 User control and freedom</Prose>,
+                  tone: "warning",
+                  body: (
+                    <Prose>
+                      <p>On the summary page before payment, users could review their booking but couldn't modify or remove any selected services. A dead end at the most consequential moment.</p>
+                    </Prose>
+                  ),
+                },
+                {
+                  title: <Prose>🛡️ Error prevention</Prose>,
+                  tone: "warning",
+                  body: (
+                    <Prose>
+                      <p>Date selection required a double-click to confirm the departure date before moving to return, with no feedback that the first click had registered. Quiet failures, repeated.</p>
+                    </Prose>
+                  ),
+                },
               ]}
             />
           </div>
