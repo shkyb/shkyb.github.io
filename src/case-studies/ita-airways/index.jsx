@@ -30,6 +30,7 @@ import itaTimeline from "./assets/ita-timeline.webp"
 import itaTrenitaliaLogo from "./assets/ita-trenitalia-logo.webp"
 import itaAccessibilityVideo from "./assets/ITA_Accessibility.webm"
 import itaResponseSearchFlight from "./assets/ita-response-search-flight.webm"
+import itaResponseFilters from "./assets/ita-response-filters.webm"
 import itaResponsePassengerInfo from "./assets/ita-response-passenger-info.webm"
 import itaResponseBenefitsSelection from "./assets/ita-response-benfits-selection.webm"
 import itaResponseSeatSelection from "./assets/ita-response-seat-selection.webm"
@@ -718,6 +719,15 @@ export const itaAirwaysCase = {
             frame="soft"
             alt="Redesigned flight search — persistent filter panel on the left, results updating in real time as the user narrows their criteria."
             caption="We brought the calendar and destination picker into a single, prominent search block — users land and immediately see a clear path forward."
+            autoPlay
+            loop
+            controls={false}
+          />
+          <Figure
+            src={itaResponseFilters}
+            frame="soft"
+            alt="Redesigned filter panel — persistent sidebar with real-time result updates as users refine stops, time, and airline preferences."
+            caption="We gave filters a permanent home beside the results — every adjustment lands immediately, no full-page reload, no lost context."
             autoPlay
             loop
             controls={false}
