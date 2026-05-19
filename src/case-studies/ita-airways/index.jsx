@@ -713,6 +713,15 @@ export const itaAirwaysCase = {
             alt="Redesigned user flow — end-to-end booking journey from flight search through seat selection, benefits, and passenger info."
             caption="We flattened a fragmented multi-modal experience into a single, guided journey from search to confirmation."
           />
+          <Figure
+            src={itaResponseSearchFlight}
+            frame="soft"
+            alt="Redesigned flight search — persistent filter panel on the left, results updating in real time as the user narrows their criteria."
+            caption="We brought the calendar and destination picker into a single, prominent search block — users land and immediately see a clear path forward."
+            autoPlay
+            loop
+            controls={false}
+          />
         </>
       ),
     },
