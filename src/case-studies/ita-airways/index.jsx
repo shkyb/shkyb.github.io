@@ -750,6 +750,15 @@ export const itaAirwaysCase = {
             loop
             controls={false}
           />
+          <Figure
+            src={itaResponseBenefitsSelection}
+            frame="soft"
+            alt="Redesigned benefits selection — baggage, lounge, and extras consolidated into a single guided flow with persistent passenger context."
+            caption="We replaced disconnected benefit screens with a guided sequence — baggage, lounge, and extras consolidated into a single flow."
+            autoPlay
+            loop
+            controls={false}
+          />
         </>
       ),
     },
