@@ -732,6 +732,15 @@ export const itaAirwaysCase = {
             loop
             controls={false}
           />
+          <Figure
+            src={itaResponsePassengerInfo}
+            frame="soft"
+            alt="Flight selection leading into passenger info — users pick their flight and immediately flow into a structured form for traveler details."
+            caption="We made the handoff from flight selection to passenger details seamless — users confirm their choice and move straight into a structured, clearly scoped form."
+            autoPlay
+            loop
+            controls={false}
+          />
         </>
       ),
     },
