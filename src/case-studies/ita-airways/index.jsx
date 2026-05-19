@@ -29,6 +29,7 @@ import itaTaskMatrix from "./assets/ita-task-matrix.webp"
 import itaTimeline from "./assets/ita-timeline.webp"
 import itaTrenitaliaLogo from "./assets/ita-trenitalia-logo.webp"
 import itaAccessibilityVideo from "./assets/ITA_Accessibility.webm"
+import itaSolutionVideo from "./assets/ita-solution.webm"
 import itaResponseSearchFlight from "./assets/ita-response-search-flight.webm"
 import itaResponseFilters from "./assets/ita-response-filters.webm"
 import itaResponsePassengerInfo from "./assets/ita-response-passenger-info.webm"
@@ -210,18 +211,24 @@ export const itaAirwaysCase = {
       id: "solution",
       label: "Solution",
       size: "fill",
-      bgStyle: { background: "var(--project-background)" },
+      bgStyle: { background: "var(--project-primary)" },
       render: () => (
         <>
-          <SectionHeading
-            kicker="The Solution"
-            title="We rebuilt the three most painful flows around a simpler information architecture, a linear booking path with persistent context, and a custom design system tested for accessibility from the first pixel."
-            className="mx-auto max-w-3xl"
-          />
+          <div style={{ "--project-kicker": "white" }}>
+            <SectionHeading
+              kicker="The Solution"
+              title="We rebuilt the three most painful flows around a simpler information architecture, a linear booking path with persistent context, and a custom design system tested for accessibility from the first pixel."
+              className="mx-auto max-w-3xl **:text-white"
+            />
+          </div>
           <Figure
-            src={itaSolution1}
-            frame="soft"
+            src={itaSolutionVideo}
+            frame="none"
+            mediaClassName="rounded-2xl"
             alt="Redesigned homepage, search results, and benefits flow — side by side."
+            autoPlay
+            loop
+            controls={false}
           />
         </>
       ),
