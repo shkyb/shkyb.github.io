@@ -611,28 +611,27 @@ export const itaAirwaysCase = {
           />
 
           <ProcessStep
-            className="mx-auto max-w-3xl"
+            // className="mx-auto max-w-3xl"
             justifyEnd
             step="Insight 01"
             title="Information lived in the wrong places"
             description={
               <Prose>
                 <p>
-                  The site looked organized but wasn't. Strong graphical coherence masked weak
-                  content and visual clarity — the exact dimensions that determine whether
-                  someone actually finishes a task.
+                  Strong visual design hid a weak information architecture — the site looked trustworthy right up until you needed to do something.
                 </p>
               </Prose>
             }
+            figureCols={8}
             figure={{
               src: itaInsight1,
               alt: "Spider chart — ITA's weak axes (content clarity, graphical clarity) highlighted against competitors.",
               frame: "soft",
-              aspect: "aspect-square",
+              aspect: "aspect-[3/2]",
             }}
           />
           <ProcessStep
-            className="mx-auto max-w-3xl"
+            // className="mx-auto max-w-3xl"
             justifyEnd
             step="Insight 02"
             reverse
@@ -640,39 +639,36 @@ export const itaAirwaysCase = {
             description={
               <Prose>
                 <p>
-                  Every transition dropped context. The seat selector didn't say{" "}
-                  <em>whose</em> seat. The baggage page didn't say <em>which flight.</em>{" "}
-                  The system was treating these as separate decisions. Users were treating
-                  them as one connected booking.
+                  Choosing benefits meant bouncing between screens — seat, then back, then baggage, then back again. Every change required a round trip.
                 </p>
               </Prose>
             }
+            figureCols={8}
             figure={{
               src: itaInsight2,
               alt: "Original benefits flow — annotated to show where context is dropped across passenger and flight transitions.",
               frame: "soft",
-              aspect: "aspect-square",
+              aspect: "aspect-[3/2]",
             }}
           />
           <ProcessStep
-            className="mx-auto max-w-3xl"
+            // className="mx-auto max-w-3xl"
             justifyEnd
             step="Insight 03"
             title="The offers page broke its own promise"
             description={
               <Prose>
                 <p>
-                  ITA's price/date matrix surfaced deals — but behaved differently from how
-                  users expected such tables to work. They read the data, then second-guessed
-                  it. <strong>That moment of doubt is the moment the booking dies.</strong>
+                  The offers table packed every price and date into a single grid, leaving users to make sense of it all on their own.
                 </p>
               </Prose>
             }
+            figureCols={8}
             figure={{
               src: itaInsight3,
               alt: "Original offers page — the price/date matrix circled as the primary failure point.",
               frame: "soft",
-              aspect: "aspect-square",
+              aspect: "aspect-[3/2]",
             }}
           />
         </>
