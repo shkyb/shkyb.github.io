@@ -708,41 +708,10 @@ export const itaAirwaysCase = {
           </div>
 
           <Figure
-            src={itaCover}
+            src={itaResponseUserflow}
             frame="soft"
-            caption="Information architecture — before and after. Nested tree collapsed into a flat, task-oriented structure."
-          />
-          <Figure
-            src={itaCover}
-            frame="soft"
-            caption="Filter panel — persistent left-side layout ordered to match the user's natural decision sequence."
-          />
-
-          <Figure
-            src={itaCover}
-            frame="soft"
-            caption="Redesigned seat selection — pricing surfaced inline, passengers clearly labeled throughout."
-          />
-          <Figure
-            src={itaCover}
-            frame="soft"
-            caption="Redesigned baggage page — scoped per passenger, with a dedicated extra-equipment section."
-          />
-          <Figure
-            src={itaCover}
-            frame="soft"
-            caption="Redesigned lounge selection — departure flight pinned at top, return handled in the same guided flow."
-          />
-
-          <Figure
-            src={itaCover}
-            frame="soft"
-            caption="Redesigned offers page — map-first layout with traveler-type category filters and removable filter tags."
-          />
-          <Figure
-            src={itaCover}
-            frame="soft"
-            caption="Redesigned price/date matrix — rebuilt interaction model that behaves the way users expect a table to work."
+            alt="Redesigned user flow — end-to-end booking journey from flight search through seat selection, benefits, and passenger info."
+            caption="We flattened a fragmented multi-modal experience into a single, guided journey from search to confirmation."
           />
         </>
       ),
