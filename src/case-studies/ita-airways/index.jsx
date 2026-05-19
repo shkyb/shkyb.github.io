@@ -174,6 +174,7 @@ export const itaAirwaysCase = {
       id: "problem",
       label: "Problem",
       size: "fill",
+      bgStyle: { background: "var(--project-background)" },
       render: () => (
         <>
           <SectionHeading
