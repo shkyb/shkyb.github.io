@@ -741,6 +741,15 @@ export const itaAirwaysCase = {
             loop
             controls={false}
           />
+          <Figure
+            src={itaResponseSeatSelection}
+            frame="soft"
+            alt="Redesigned seat selection — seat map with inline pricing, passengers clearly labeled and scoped individually throughout the flow."
+            caption="We rebuilt seat selection so each passenger is handled in turn — pricing visible at a glance, choices locked in before moving on."
+            autoPlay
+            loop
+            controls={false}
+          />
         </>
       ),
     },
