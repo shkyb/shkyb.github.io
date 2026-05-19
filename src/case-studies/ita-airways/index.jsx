@@ -33,6 +33,7 @@ import itaResponseSearchFlight from "./assets/ita-response-search-flight.webm"
 import itaResponseFilters from "./assets/ita-response-filters.webm"
 import itaResponsePassengerInfo from "./assets/ita-response-passenger-info.webm"
 import itaResponseBenefitsSelection from "./assets/ita-response-benfits-selection.webm"
+import itaResponseOffers from "./assets/ita-response-offers.webm"
 import itaResponseSeatSelection from "./assets/ita-response-seat-selection.webm"
 
 import { Prose } from "@/components/case/layout/Prose"
@@ -755,6 +756,15 @@ export const itaAirwaysCase = {
             frame="soft"
             alt="Redesigned benefits selection — baggage, lounge, and extras consolidated into a single guided flow with persistent passenger context."
             caption="We replaced disconnected benefit screens with a guided sequence — baggage, lounge, and extras consolidated into a single flow."
+            autoPlay
+            loop
+            controls={false}
+          />
+          <Figure
+            src={itaResponseOffers}
+            frame="soft"
+            alt="Redesigned offers page — map-first layout with traveler-type category filters and removable filter tags surfaced inline."
+            caption="We made offers explorable — a map view, removable filter tags, and traveler-type categories so users find what fits them without wading through irrelevant results."
             autoPlay
             loop
             controls={false}
