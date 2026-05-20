@@ -392,7 +392,7 @@ export const itaAirwaysCase = {
         <>
           <SectionHeading
             kicker="Personas"
-            title="We built four personas reflecting the real ITA traveler mix — and every prioritization call we made traces back to one of them."
+            title={<>We built <em>four personas</em> reflecting the real ITA traveler mix — and every prioritization call we made traces back to one of them.</>}
             className="mx-auto max-w-3xl"
           />
 
