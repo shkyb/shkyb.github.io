@@ -56,7 +56,7 @@ export function ProblemStatement({
           {items.map((item, idx) => (
             <div
               key={idx}
-              className="rounded-2xl border border-slate-200/70 bg-white/80 p-5 backdrop-blur-sm"
+              className="rounded-2xl border border-border bg-white/80 p-5 backdrop-blur-sm"
             >
               <Prose>
                 <p className="m-0 text-xs font-medium text-muted-foreground">

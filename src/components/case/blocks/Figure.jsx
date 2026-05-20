@@ -79,8 +79,8 @@ export function Figure({
     frame === "none"
       ? ""
       : frame === "card"
-      ? "rounded-2xl border border-slate-200/70 bg-white/80 p-2 backdrop-blur-sm"
-      : "rounded-2xl border border-slate-200/70 bg-white/60 backdrop-blur-sm"
+      ? "rounded-2xl border border-border bg-white/80 p-2 backdrop-blur-sm"
+      : "rounded-2xl border border-border bg-white/60 backdrop-blur-sm"
 
   const imgFit = fit === "contain" ? "object-contain" : "object-cover"
 

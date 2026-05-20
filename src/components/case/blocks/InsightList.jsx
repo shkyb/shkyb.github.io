@@ -41,7 +41,7 @@ export function InsightList({
               <div className="flex items-start gap-3">
                 {Icon ? (
                   <div
-                    className="mt-0.5 shrink-0 rounded-xl border border-slate-200/70 bg-white/80 p-2"
+                    className="mt-0.5 shrink-0 rounded-xl border border-border bg-white/80 p-2"
                     aria-hidden="true"
                   >
                     <Icon className="h-4 w-4 text-slate-700" />
@@ -60,7 +60,7 @@ export function InsightList({
                   <Prose>
                     <p
                       className={cn(
-                        "m-0 font-semibold tracking-tight text-slate-950",
+                        "m-0 font-semibold tracking-tight text-foreground",
                         size === "sm" ? "text-sm" : "text-base"
                       )}
                     >
@@ -74,7 +74,7 @@ export function InsightList({
                         <p
                           className={cn(
                             "m-0 text-muted-foreground",
-                            size === "sm" ? "text-sm" : "text-sm"
+                            size === "sm" ? "text-sm" : "text-base"
                           )}
                         >
                           {item.description}

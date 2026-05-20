@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils"
 import { Figure } from "@/components/case/blocks/Figure"
+import { Prose } from "../layout/Prose"
 
 /**
  * BeforeAfter
@@ -90,7 +91,7 @@ export function BeforeAfter({
         />
       </div>
 
-      {note ? <p className="text-sm text-muted-foreground">{note}</p> : null}
+      {note ? <Prose><p className="m-0 text-sm text-muted-foreground">{note}</p></Prose> : null}
     </div>
   )
 }

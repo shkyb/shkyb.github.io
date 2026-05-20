@@ -64,14 +64,14 @@ export function Timeline({
           <div
             key={idx}
             className={cn(
-              "rounded-2xl border border-slate-200/70 bg-white/80 p-5 backdrop-blur-sm"
+              "rounded-2xl border border-border bg-white/80 p-5 backdrop-blur-sm"
             )}
           >
             <div className="flex items-start gap-3">
               <span className={cn("mt-1 h-2.5 w-2.5 rounded-full", dotTone(it.tone))} aria-hidden="true" />
               <div className="min-w-0">
                 <Prose>
-                  <p className="m-0 text-sm font-semibold tracking-tight text-slate-950">{it.title}</p>
+                  <p className="m-0 text-sm font-semibold tracking-tight text-foreground">{it.title}</p>
                 </Prose>
                 {it.range ? (
                   <Prose>
@@ -140,7 +140,7 @@ export function Timeline({
             <div className="flex flex-col gap-1">
               <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
                 <Prose>
-                  <p className="m-0 text-sm font-semibold tracking-tight text-slate-950">{it.title}</p>
+                  <p className="m-0 text-sm font-semibold tracking-tight text-foreground">{it.title}</p>
                 </Prose>
                 {it.range ? (
                   <Prose>
