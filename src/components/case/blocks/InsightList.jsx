@@ -41,7 +41,7 @@ export function InsightList({
               <div className="flex items-start gap-3">
                 {Icon ? (
                   <div
-                    className="mt-0.5 shrink-0 rounded-xl border border-slate-200/70 bg-background/70 p-2"
+                    className="mt-0.5 shrink-0 rounded-xl border border-slate-200/70 bg-white/80 p-2"
                     aria-hidden="true"
                   >
                     <Icon className="h-4 w-4 text-slate-700" />

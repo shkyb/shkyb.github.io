@@ -19,7 +19,7 @@ export function NextProject({
     <section className={cn("pt-10 md:pt-14", className)} aria-label="Next project">
       <a
         href={href}
-        className="group block rounded-3xl border border-slate-200/70 bg-background/60 p-4 transition-colors hover:bg-slate-50/80 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400/60 md:p-6"
+        className="group block rounded-3xl border border-slate-200/70 bg-white/80 p-4 backdrop-blur-sm transition-colors hover:bg-white/95 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400/60 md:p-6"
       >
         <div className="grid gap-6 md:grid-cols-12 md:items-center">
           <div className="md:col-span-7">
@@ -67,7 +67,7 @@ export function NextProject({
           </div>
 
           <div className="md:col-span-5">
-            <div className="overflow-hidden rounded-2xl border border-slate-200/70 bg-slate-50">
+            <div className="overflow-hidden rounded-2xl border border-slate-200/70 bg-white/80">
               {image ? (
                 <img
                   src={image}

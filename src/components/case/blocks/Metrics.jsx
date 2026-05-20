@@ -58,7 +58,7 @@ export function Metrics({
               className={cn(
                 "rounded-2xl",
                 variant === "card"
-                  ? "border border-slate-200/70 bg-background/60 p-4 backdrop-blur-sm"
+                  ? "border border-slate-200/70 bg-white/80 p-4 backdrop-blur-sm"
                   : "p-0"
               )}
             >
@@ -66,7 +66,7 @@ export function Metrics({
                 {Icon ? (
                   <div
                     className={cn(
-                      "mt-0.5 shrink-0 rounded-xl border border-slate-200/70 bg-background/70 p-2"
+                      "mt-0.5 shrink-0 rounded-xl border border-slate-200/70 bg-white/80 p-2"
                     )}
                     aria-hidden="true"
                   >

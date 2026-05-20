@@ -64,7 +64,7 @@ export function Timeline({
           <div
             key={idx}
             className={cn(
-              "rounded-2xl border border-slate-200/70 bg-background/60 p-5 backdrop-blur-sm"
+              "rounded-2xl border border-slate-200/70 bg-white/80 p-5 backdrop-blur-sm"
             )}
           >
             <div className="flex items-start gap-3">

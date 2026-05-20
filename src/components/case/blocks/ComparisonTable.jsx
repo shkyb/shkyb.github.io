@@ -42,7 +42,7 @@ export function ComparisonTable({
           {rows.map((row, rowIdx) => (
             <div
               key={rowIdx}
-              className="rounded-2xl border border-slate-200/70 bg-background/60 p-4 backdrop-blur-sm"
+              className="rounded-2xl border border-slate-200/70 bg-white/80 p-4 backdrop-blur-sm"
             >
               <div className="space-y-4">
                 {columns.map((col, colIdx) => (
@@ -79,7 +79,7 @@ export function ComparisonTable({
 
       {/* Desktop table */}
       <div className={cn(stackedOnMobile ? "hidden md:block" : "block")}>
-        <div className="overflow-hidden rounded-2xl border border-slate-200/70 bg-background/60 backdrop-blur-sm">
+        <div className="overflow-hidden rounded-2xl border border-slate-200/70 bg-white/80 backdrop-blur-sm">
           <table className="w-full border-collapse text-left">
             <thead>
               <tr className="border-b border-border">
@@ -111,7 +111,7 @@ export function ComparisonTable({
                       className={cn(
                         cellPad,
                         "align-top",
-                        col.emphasis ? "bg-slate-50/60" : null
+                        col.emphasis ? "bg-slate-100/60" : null
                       )}
                     >
                       <Prose>
