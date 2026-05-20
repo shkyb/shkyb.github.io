@@ -50,7 +50,7 @@
     --radius: 0.625rem;
     --background: theme(colors.slate.50);
     --foreground: oklch(0.129 0.042 264.695);
-    --card: theme(colors.slate.100);
+    --card: white;
     --card-foreground: oklch(0.129 0.042 264.695);
     --popover: oklch(1 0 0);
     --popover-foreground: oklch(0.129 0.042 264.695);
