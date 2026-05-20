@@ -62,7 +62,6 @@ import { Callout } from "@/components/case/blocks/Callout"
 import { PullQuote } from "@/components/case/blocks/PullQuote"
 import { Timeline } from "@/components/case/blocks/Timeline"
 import { ProcessStep } from "@/components/case/blocks/ProcessStep"
-import { CaseSeparator } from "@/components/case/blocks/CaseSeparator"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardDescription, CardTitle } from "@/components/ui/card"
 import Autoplay from "embla-carousel-autoplay"
@@ -417,15 +416,9 @@ export const dHeartCase = {
             <p>D-Heart was originally designed as a portable ECG solution for both <strong>standard users</strong> and <strong>healthcare professionals</strong>. However, in a <strong>professional clinical setting</strong> —where every second counts—the device and its accompanying application suffered from <strong>significant usability friction</strong> that hindered medical workflows</p>
           </prose> */}
 
-          <CaseSeparator
-            className="mb-4"
-            label="The Problem"
-            align="center"
-          />
-
           <SectionHeading
             className="mx-auto max-w-3xl"
-            // kicker="Main Problem"
+            kicker="The Problem"
             align="left"
             title="Performing an ECG is a time-sensitive task. During testing, we found that the D-Heart ecosystem introduced unnecessary friction in both the app and the device, slowing nurses down at critical moments."
           // subtitle=""
@@ -545,14 +538,8 @@ show
       size: "fill",
       render: () => (
         <>
-          <CaseSeparator
-            className="mb-4"
-            label="The Solution"
-            align="center"
-          />
-
           <SectionHeading
-            // kicker="A clearer ecosystem built around how nurses actually work."
+            kicker="The Solution"
             className="max-w-3xl mx-auto"
             title=" We redesigned the experience around three principles: direct access to key actions, a clearer step-by-step ECG flow, and stronger feedback between the app and the device."
           // subtitle="Instead of polishing isolated screens, we simplified the structure, clarified the ECG flow, and reduced ambiguity across both the app and the device."
@@ -610,8 +597,8 @@ show
       size: "small",
       render: () => (
         <>
-          <CaseSeparator label="UX Research" />
           <SectionHeading
+            kicker="UX Research"
             title="Research reframed the project around nurses as the primary users"
             subtitle="We combined expert evaluation, in-context testing, questionnaires, card sorting, and tree testing to understand how D-Heart behaved in real care scenarios."
             className="mb-10"
@@ -697,8 +684,8 @@ show
       size: "fill",
       render: () => (
         <>
-          <CaseSeparator label="Key Findings" />
           <SectionHeading
+            kicker="Key Findings"
             title="The product worked — just not the way nurses did, creating a mismatch with clinical workflows and overally low usability score for performing ECG (5.6/7 SEQ)."
             className="mx-auto max-w-3xl"
           />
@@ -791,13 +778,12 @@ show
       size: "fill",
       render: () => (
         <>
-          <CaseSeparator label="Requirements" />
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-16">
             <div>
-              <Prose>
-                <h2>Translating the challenges into clear design directions</h2>
-                <p></p>
-              </Prose>
+              <SectionHeading
+                kicker="Requirements"
+                title="Translating the challenges into clear design directions"
+              />
             </div>
 
             <div>
@@ -816,8 +802,8 @@ show
       size: "fill",
       render: () => (
         <>
-          <CaseSeparator label="Redesign" />
           <SectionHeading
+            kicker="Redesign"
             title="Redesigning the D-Heart Ecosystem — a different backend"
 
             className="mb-10 mx-auto max-w-3xl"
@@ -973,10 +959,9 @@ show
 
 
 
-          <CaseSeparator label="Design Decisions" />
+          <SectionHeading kicker="Design Decisions" />
 
           <div className="mx-auto max-w-3xl">
-            {/* design decisions */}
             <ProcessStep
               className="mb-10"
               justifyEnd
@@ -1128,8 +1113,8 @@ show
       size: "fill",
       render: () => (
         <>
-          <CaseSeparator label="The Physical Touchpoint" />
           <SectionHeading
+            kicker="The Physical Touchpoint"
             title="We extended the redesign into the physical device, "
             subtitle="using 3D printing, Arduino prototyping, and hands-on testing to explore and validate improvements. We iterated on how the device is handled, attached, and communicates—reducing friction, improving patient comfort, and making feedback clearer during use."
             align="center"
@@ -1190,9 +1175,8 @@ show
       size: "fill",
       render: () => (
         <>
-          <CaseSeparator label="Design System" />
-
           <SectionHeading
+            kicker="Design System"
             title="A unified system for faster, clearer, and more reliable care."
             subtitle="We developed a design system to ensure consistency, clarity, and scalability across the D-Heart ecosystem—supporting both clinical usability and efficient future development."
             className="mb-10 mx-auto max-w-3xl"
@@ -1246,9 +1230,8 @@ show
       size: "fill",
       render: () => (
         <>
-          <CaseSeparator label="Final Design" />
-
           <SectionHeading
+            kicker="Final Design"
             title="D-Heart Pro — a Connected ECG Ecosystem"
             subtitle="We redesigned D-Heart across device, interface, and workflow to help nurses perform clearer, faster, and more reliable ECGs in real clinical settings."
             className="mb-10 mx-auto max-w-3xl"
@@ -1356,11 +1339,10 @@ show
       size: "fill",
       render: () => (
         <>
-          <CaseSeparator label="Takeaways" />
-
           <div className="grid md:grid-cols-2 gap-8">
             <div>
               <SectionHeading
+                kicker="Takeaways"
                 title="Usability in Healthcare Means Fitting Into a Routine, Not Replacing One"
                 className="mb-10"
               // subtitle="In healthcare, usability is not just about cleaner screens. It is about trust, pace, and how well digital decisions support real-world routines."
