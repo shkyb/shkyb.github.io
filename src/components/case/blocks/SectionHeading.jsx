@@ -55,7 +55,7 @@ export function SectionHeading({
             {size === "lg" ? (
               <h2 className={cn(isCenter ? "mx-auto" : null)}>{title}</h2>
             ) : (
-              <h2 className={cn("text-2xl font-semibold tracking-tight", isCenter ? "mx-auto" : null)}>
+              <h2 className={cn("font-serif text-3xl font-semibold tracking-tight", isCenter ? "mx-auto" : null)}>
                 {title}
               </h2>
             )}

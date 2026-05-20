@@ -45,7 +45,7 @@ export function PullQuote({
         {showMark ? (
           <div
             className={cn(
-              "mb-3 text-4xl leading-none text-muted-foreground/50",
+              "mb-3 font-serif text-6xl leading-none text-muted-foreground/40",
               isCenter ? "text-center" : "text-left"
             )}
             aria-hidden="true"
@@ -57,7 +57,7 @@ export function PullQuote({
         <Prose>
           <blockquote
             className={cn(
-              "m-0 border-l-0 pl-0 font-medium tracking-tight",
+              "m-0 border-l-0 pl-0 font-serif italic font-medium tracking-normal",
               size === "md"
                 ? "text-xl leading-snug md:text-2xl"
                 : "text-2xl leading-snug md:text-4xl",
