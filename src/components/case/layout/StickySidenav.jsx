@@ -122,7 +122,7 @@ export function StickySidenav({ sections, className }) {
   return (
     // NOTE: You said you handle the vertical positioning (1/3) in CaseStudyPage.jsx,
     // so this component stays neutral and just renders the nav content.
-    <aside className={cn("h-fit top-0", className)}>
+    <aside className={cn(className)}>
       <div className="h-full pr-2 overflow-auto overscroll-contain [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         <nav className="flex flex-col gap-1">
           {navSections.map((s) => {
@@ -134,11 +134,15 @@ export function StickySidenav({ sections, className }) {
                 href={`#${s.id}`}
                 onClick={handleClick(s.id)}
                 className={cn(
-                  "group relative rounded-md px-3 py-1.5 text-sm transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400/60",
+                  "border-l-2 px-3 py-1.5 text-sm transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ring",
                   isActive
-                    ? "bg-slate-100 text-slate-950"
-                    : "text-slate-600 hover:bg-slate-50 hover:text-slate-950"
+                    ? "font-medium"
+                    : "border-transparent text-muted-foreground hover:text-foreground"
                 )}
+                style={isActive ? {
+                  color: "var(--project-kicker, var(--project-primary, hsl(var(--foreground))))",
+                  borderLeftColor: "var(--project-kicker, var(--project-primary, hsl(var(--foreground))))",
+                } : undefined}
                 aria-current={isActive ? "location" : undefined}
               >
                 {s.label}
