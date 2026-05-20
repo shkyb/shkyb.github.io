@@ -2,11 +2,11 @@ import { cn } from "@/lib/utils"
 import { Prose } from "../layout/Prose"
 
 const TONES = {
-  info: "border-slate-200 bg-slate-50",
+  info: "border-slate-200 bg-white/80 backdrop-blur-sm",
   success: "border-emerald-200 bg-emerald-50",
   warning: "border-amber-200 bg-amber-50",
   danger: "border-rose-200 bg-rose-50",
-  neutral: "border-border bg-muted/40",
+  neutral: "border-border bg-white/60 backdrop-blur-sm",
 }
 
 export function Callout({

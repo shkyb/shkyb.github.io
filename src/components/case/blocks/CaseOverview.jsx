@@ -106,7 +106,7 @@ export function CaseOverview({
 
         {/* Right (~3/8) */}
         <div className="md:col-span-3">
-          <div className="border-t pt-5 sm:border-t-0 sm:border-l sm:pt-0 sm:pl-5 border-slate-200/70 bg-white/80 backdrop-blur-sm">
+          <div className="border-t pt-5 sm:border-t-0 sm:border-l sm:pt-0 sm:pl-5 border-slate-200/70">
             <dl className="space-y-4 sm:space-y-8">
               {meta.map((m) => (
                 <div key={m.label}>
