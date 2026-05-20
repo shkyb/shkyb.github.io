@@ -122,7 +122,7 @@ export function StickySidenav({ sections, className }) {
   return (
     // NOTE: You said you handle the vertical positioning (1/3) in CaseStudyPage.jsx,
     // so this component stays neutral and just renders the nav content.
-    <aside className={cn(className)}>
+    <aside className={cn("rounded-xl bg-background/60 backdrop-blur-sm px-2 py-3", className)}>
       <div className="h-full pr-2 overflow-auto overscroll-contain [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         <nav className="flex flex-col gap-1">
           {navSections.map((s) => {
@@ -134,15 +134,17 @@ export function StickySidenav({ sections, className }) {
                 href={`#${s.id}`}
                 onClick={handleClick(s.id)}
                 className={cn(
-                  "border-l-2 px-3 py-1.5 text-sm transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+                  "border-l-2 px-3 py-1.5 text-sm transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-ring",
                   isActive
-                    ? "font-medium"
-                    : "border-transparent text-muted-foreground hover:text-foreground"
+                    ? "font-semibold opacity-100"
+                    : "border-transparent opacity-80 hover:opacity-100 hover:font-medium"
                 )}
-                style={isActive ? {
-                  color: "var(--project-kicker, var(--project-primary, hsl(var(--foreground))))",
-                  borderLeftColor: "var(--project-kicker, var(--project-primary, hsl(var(--foreground))))",
-                } : undefined}
+                style={{
+                  color: "var(--project-kicker, var(--project-primary, var(--foreground)))",
+                  borderLeftColor: isActive
+                    ? "var(--project-kicker, var(--project-primary, var(--foreground)))"
+                    : "transparent",
+                }}
                 aria-current={isActive ? "location" : undefined}
               >
                 {s.label}
