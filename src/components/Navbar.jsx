@@ -11,7 +11,7 @@ export default function Navbar() {
   const closeMenu = () => setIsOpen(false)
 
   return (
-    <header className="sticky top-0 z-50 bg-slate-50 backdrop-blur border-b border-slate-200">
+    <header className="sticky top-0 z-50 bg-background backdrop-blur border-b border-border">
       <nav className="mx-auto w-full max-w-screen-2xl px-6 md:px-12 h-12 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center">
@@ -30,7 +30,7 @@ export default function Navbar() {
           />
         </div>
         {/* Socials */}
-        <div className="hidden md:flex items-center gap-3 pl-2 border-l border-slate-200">
+        <div className="hidden md:flex items-center gap-3 pl-2 border-l border-border">
           <NavItem href="https://github.com/shkyb" icon={<RiGithubFill size={20} />} />
           <NavItem href="https://behance.net/shakib-alipour" icon={<RiBehanceFill size={20} />} />
           <NavItem href="https://linkedin.com/in/shakib-alipour" icon={<RiLinkedinFill size={20} />} />
