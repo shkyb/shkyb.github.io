@@ -29,7 +29,7 @@ export function SectionHeading({
   const isCenter = align === "center"
 
   return (
-    <div id={id} className={cn("space-y-3 [&_h2_em]:italic [&_h2_em]:[color:var(--project-kicker,var(--project-primary,currentColor))]", className)}>
+    <div id={id} className={cn("space-y-3 [&_h2_em]:italic [&_h2_em]:text-(--project-kicker,var(--project-primary,currentColor))", className)}>
       <div
         className={cn(
           "flex flex-col gap-4",
