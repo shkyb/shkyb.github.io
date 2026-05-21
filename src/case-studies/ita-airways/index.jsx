@@ -167,6 +167,7 @@ export const itaAirwaysCase = {
       "--project-dark": "#292d32",
       "--project-border": "#e2e2e2",
       "--project-text-muted": "#595d62",
+      "--project-foreground": "#292d32",
     },
   },
 

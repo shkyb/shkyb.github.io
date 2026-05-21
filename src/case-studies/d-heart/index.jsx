@@ -396,6 +396,11 @@ export const dHeartCase = {
       { label: "Timeline", value: "Academic project · 4 Months · 2024" },
       { label: "Focus", value: "Research, UX, Usability, User Testing" },
     ],
+    cssVars: {
+      "--project-primary":    "#f9981d",
+      "--project-kicker":     "#ef8908",
+      "--project-foreground": "#000000",
+    },
   },
 
   sections: [
