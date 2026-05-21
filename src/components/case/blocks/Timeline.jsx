@@ -50,7 +50,7 @@ export function Timeline({
     if (typeof body === "string") {
       return (
         <Prose>
-          <p className={cn("m-0 text-sm text-(--project-muted-foreground,var(--muted-foreground))", className)}>{body}</p>
+          <p className={cn("m-0 text-base text-(--project-muted-foreground,var(--muted-foreground))", className)}>{body}</p>
         </Prose>
       )
     }
@@ -60,7 +60,7 @@ export function Timeline({
 
   if (variant === "cards") {
     return (
-      <div className={cn("grid gap-4 sm:grid-cols-2 lg:grid-cols-3", className)}>
+      <div className={cn(sp.itemToItem, "grid gap-4 sm:grid-cols-2 lg:grid-cols-3", className)}>
         {items.map((it, idx) => (
           <div
             key={idx}
@@ -69,10 +69,10 @@ export function Timeline({
             )}
           >
             <div className="flex items-start gap-3">
-              <span className="mt-1 h-2.5 w-2.5 rounded-full" style={dotStyle(it.tone)} aria-hidden="true" />
+              <span className="mt-1 h-3 w-3 rounded-full" style={dotStyle(it.tone)} aria-hidden="true" />
               <div className="min-w-0">
                 <Prose>
-                  <p className="m-0 text-sm font-semibold tracking-tight text-(--project-foreground,var(--foreground))">{it.title}</p>
+                  <p className="m-0 text-lg font-semibold tracking-tight text-(--project-foreground,var(--foreground))">{it.title}</p>
                 </Prose>
                 {it.range ? (
                   <Prose>
@@ -125,7 +125,7 @@ export function Timeline({
   return (
     <div className={cn(sp.itemToItem, "relative", className)}>
       {/* vertical rail */}
-      <div className="absolute left-2.75 top-0 h-full w-px bg-border" aria-hidden="true" />
+      <div className="absolute left-2.75 top-0 h-full w-px opacity-20" style={{ background: "var(--project-kicker, var(--project-primary, var(--muted-foreground)))" }} aria-hidden="true" />
 
       <div className="space-y-2">
         {items.map((it, idx) => (
@@ -140,7 +140,7 @@ export function Timeline({
             <div className="flex flex-col gap-1">
               <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
                 <Prose>
-                  <p className="m-0 text-sm font-semibold tracking-tight text-(--project-foreground,var(--foreground))">{it.title}</p>
+                  <p className="m-0 text-lg font-semibold tracking-tight text-(--project-foreground,var(--foreground))">{it.title}</p>
                 </Prose>
                 {it.range ? (
                   <Prose>
