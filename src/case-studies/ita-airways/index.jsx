@@ -38,6 +38,7 @@ import itaResponseOffers from "./assets/ita-response-offers.webm"
 import itaResponseSeatSelection from "./assets/ita-response-seat-selection.webm"
 
 import { Prose } from "@/components/case/layout/Prose"
+import { sp } from "@/components/case/layout/spacing"
 import { CaseSection as Section } from "@/components/case/layout/Section"
 import { CaseContainer as Container } from "@/components/case/layout/Container"
 import { FullBleedSection } from "@/components/case/layout/FullBleedSection"
@@ -192,7 +193,7 @@ export const itaAirwaysCase = {
             </p>
           </Prose> */}
           <FigureCarousel
-            className="pb-16"
+            className={`${sp.sectionToContent} pb-16`}
             options={{ loop: true }}
             autoplay={{ delay: 4500, stopOnInteraction: false }}
             previousClassName="bottom-4 top-auto translate-y-0 left-4"
@@ -223,6 +224,7 @@ export const itaAirwaysCase = {
             />
           </div>
           <Figure
+            className={sp.sectionToContent}
             src={itaSolutionVideo}
             frame="none"
             mediaClassName="rounded-2xl"
@@ -246,7 +248,7 @@ export const itaAirwaysCase = {
             className="mx-auto max-w-3xl"
           />
 
-          <Prose className="mx-auto max-w-3xl">
+          <Prose className={`mx-auto max-w-3xl ${sp.sectionToContent}`}>
             <p>
               ITA Airways is young — <em>founded in 2021</em> as the successor to Alitalia — state-owned,
               and positioned around <strong>sustainability</strong> and <strong>Italian hospitality</strong>. It carries the
@@ -255,7 +257,7 @@ export const itaAirwaysCase = {
             </p>
           </Prose>
           <Metrics
-            className="mx-auto max-w-3xl"
+            className={`mx-auto max-w-3xl ${sp.itemToItem}`}
             columns={4}
             // variant="plain"
             items={[
@@ -266,6 +268,7 @@ export const itaAirwaysCase = {
             ]}
           />
           <Figure
+            className={sp.itemToItem}
             src={itaTimeline}
             frame="soft"
             alt="ITA Airways company timeline — from Alitalia's founding in 1946 to ITA's relaunch in 2021."
@@ -286,7 +289,7 @@ export const itaAirwaysCase = {
             className="mx-auto max-w-3xl"
           />
 
-          <div className="mx-auto max-w-3xl grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <div className={`mx-auto max-w-3xl grid grid-cols-1 gap-4 sm:grid-cols-2 ${sp.sectionToContent}`}>
             {[
               {
                 tag: "Low-cost benchmark",
@@ -332,7 +335,7 @@ export const itaAirwaysCase = {
             ))}
           </div>
 
-          <Prose className="mx-auto max-w-3xl">
+          <Prose className={`mx-auto max-w-3xl ${sp.itemToItem}`}>
             <p>
               We scored all five sites — ITA included — against five parameters:{" "}
               <em>clarity of content, graphical coherence, graphical clarity, responsiveness, ease of access.</em>{" "}
@@ -343,7 +346,7 @@ export const itaAirwaysCase = {
           </Prose>
 
           <ChartContainer
-            className="mx-auto max-w-3xl w-full"
+            className={`mx-auto max-w-3xl w-full ${sp.itemToItem}`}
             config={{
               ita: { label: "ITA Airways", color: "#306fc8" },
               ryanair: { label: "Ryanair", color: "#F4CA35" },
@@ -377,7 +380,7 @@ export const itaAirwaysCase = {
           </ChartContainer>
 
           <PullQuote
-            className="mx-auto max-w-3xl"
+            className={`mx-auto max-w-3xl ${sp.itemToItem}`}
             size="md"
             quote="ITA Airways' website demonstrates a reasonable level of graphical coherence, ease of access, and responsiveness compared to competitors. However, it lags behind in content and visual clarity."
             role="Benchmarking conclusion"
@@ -397,7 +400,7 @@ export const itaAirwaysCase = {
             className="mx-auto max-w-3xl"
           />
 
-          <div className="mx-auto max-w-3xl grid grid-cols-1 gap-4 md:grid-cols-2">
+          <div className={`mx-auto max-w-3xl grid grid-cols-1 gap-4 md:grid-cols-2 ${sp.sectionToContent}`}>
             <PersonaCard
               avatar={itaPersonaRoberto}
               name="Roberto"
@@ -432,6 +435,7 @@ export const itaAirwaysCase = {
             />
           </div>
           <Figure
+            className={sp.itemToItem}
             src={itaPersona}
             frame="soft"
             alt="Empathy map — goals, fears, and mental context for one of the four personas."
@@ -451,12 +455,13 @@ export const itaAirwaysCase = {
             title="We mapped every major task to every persona, then weighted by frequency and importance. "
             className="mx-auto max-w-3xl"
           />
-          <Prose className="mx-auto max-w-3xl">
+          <Prose className={`mx-auto max-w-3xl ${sp.sectionToContent}`}>
             <p>
               Three tasks rose to the top — the ones every persona hits, and the ones. ITA was weakest at: <strong>check flight, use benefits, find offers.</strong>
             </p>
           </Prose>
           <Figure
+            className={sp.itemToItem}
             src={itaTaskMatrix}
             frame="soft"
             alt="Task matrix — frequency and importance weighted across all four personas."
@@ -538,6 +543,7 @@ export const itaAirwaysCase = {
             />
           </div>
           <Figure
+            className={sp.itemToItem}
             src={itaHeuristics}
             frame="soft"
             alt="Heuristic evaluation board — violations documented with screenshots across all ten Nielsen heuristics."
@@ -600,6 +606,7 @@ export const itaAirwaysCase = {
             ]}
           /> */}
           <Figure
+            className={sp.sectionToContent}
             src={itaClickComparison}
             frame="soft"
             alt="Click-count comparison — ITA vs. competitors across all three core tasks."
@@ -620,7 +627,7 @@ export const itaAirwaysCase = {
           />
 
           <ProcessStep
-            // className="mx-auto max-w-3xl"
+            className={sp.sectionToContent}
             justifyEnd
             step="Insight 01"
             title="Information lived in the wrong places"
@@ -640,7 +647,7 @@ export const itaAirwaysCase = {
             }}
           />
           <ProcessStep
-            // className="mx-auto max-w-3xl"
+            className={sp.itemToItem}
             justifyEnd
             step="Insight 02"
             reverse
@@ -661,7 +668,7 @@ export const itaAirwaysCase = {
             }}
           />
           <ProcessStep
-            // className="mx-auto max-w-3xl"
+            className={sp.itemToItem}
             justifyEnd
             step="Insight 03"
             title="The offers page broke its own promise"
@@ -690,7 +697,7 @@ export const itaAirwaysCase = {
       size: "fill",
       render: () => (
         <>
-          <div className="mx-auto max-w-3xl grid grid-cols-1 gap-8 md:grid-cols-2 md:items-start">
+          <div className={`mx-auto max-w-3xl grid grid-cols-1 gap-8 md:grid-cols-2 md:items-start ${sp.sectionToContent}`}>
             <SectionHeading
               kicker="03 — Response"
               title="After analyzing the findings from the Heuristics, user tasks and competitor analysis, we prioritized 3 improvements to our redesign"
@@ -717,12 +724,14 @@ export const itaAirwaysCase = {
           </div>
 
           <Figure
+            className={sp.itemToItem}
             src={itaResponseUserflow}
             frame="soft"
             alt="Redesigned user flow — end-to-end booking journey from flight search through seat selection, benefits, and passenger info."
             caption="We flattened a fragmented multi-modal experience into a single, guided journey from search to confirmation."
           />
           <Figure
+            className={sp.itemToItem}
             src={itaResponseSearchFlight}
             frame="soft"
             alt="Redesigned flight search — persistent filter panel on the left, results updating in real time as the user narrows their criteria."
@@ -732,6 +741,7 @@ export const itaAirwaysCase = {
             controls={false}
           />
           <Figure
+            className={sp.itemToItem}
             src={itaResponseFilters}
             frame="soft"
             alt="Redesigned filter panel — persistent sidebar with real-time result updates as users refine stops, time, and airline preferences."
@@ -741,6 +751,7 @@ export const itaAirwaysCase = {
             controls={false}
           />
           <Figure
+            className={sp.itemToItem}
             src={itaResponsePassengerInfo}
             frame="soft"
             alt="Flight selection leading into passenger info — users pick their flight and immediately flow into a structured form for traveler details."
@@ -750,6 +761,7 @@ export const itaAirwaysCase = {
             controls={false}
           />
           <Figure
+            className={sp.itemToItem}
             src={itaResponseSeatSelection}
             frame="soft"
             alt="Redesigned seat selection — seat map with inline pricing, passengers clearly labeled and scoped individually throughout the flow."
@@ -759,6 +771,7 @@ export const itaAirwaysCase = {
             controls={false}
           />
           <Figure
+            className={sp.itemToItem}
             src={itaResponseBenefitsSelection}
             frame="soft"
             alt="Redesigned benefits selection — baggage, lounge, and extras consolidated into a single guided flow with persistent passenger context."
@@ -768,6 +781,7 @@ export const itaAirwaysCase = {
             controls={false}
           />
           <Figure
+            className={sp.itemToItem}
             src={itaResponseOffers}
             frame="soft"
             alt="Redesigned offers page — map-first layout with traveler-type category filters and removable filter tags surfaced inline."
@@ -792,6 +806,7 @@ export const itaAirwaysCase = {
           />
 
           <ProcessStep
+            className={sp.sectionToContent}
             justifyEnd
             step={<Palette className="h-8 w-8 text-muted-foreground" />}
             title="Contrast testing"
@@ -810,6 +825,7 @@ export const itaAirwaysCase = {
           />
 
           <ProcessStep
+            className={sp.itemToItem}
             reverse
             justifyEnd
             step={<ShieldCheck className="h-8 w-8 text-muted-foreground" />}
@@ -830,6 +846,7 @@ export const itaAirwaysCase = {
           />
 
           <ProcessStep
+            className={sp.itemToItem}
             justifyEnd
             step={<Type className="h-8 w-8 text-muted-foreground" />}
             title="Typography and readability"
@@ -862,7 +879,7 @@ export const itaAirwaysCase = {
             className="mx-auto max-w-3xl"
           />
 
-          <Prose className="mx-auto max-w-3xl">
+          <Prose className={`mx-auto max-w-3xl ${sp.sectionToContent}`}>
             <p>
               I adapted Moon's tokens to ITA's brand language and extended it with bespoke
               components the out-of-the-box library didn't cover — the price-comparison
@@ -871,7 +888,7 @@ export const itaAirwaysCase = {
               compliant contrast by default — no per-component exceptions needed.
             </p>
           </Prose>
-          <div className="grid grid-cols-2 gap-4">
+          <div className={`grid grid-cols-2 gap-4 ${sp.itemToItem}`}>
             <Figure
               src={itaDesignSystem1}
               frame="soft"
@@ -901,7 +918,7 @@ export const itaAirwaysCase = {
           />
 
           <InsightList
-            className="mx-auto max-w-3xl"
+            className={`mx-auto max-w-3xl ${sp.sectionToContent}`}
             items={[
               {
                 title: <Prose>Build a case before you build screens</Prose>,
