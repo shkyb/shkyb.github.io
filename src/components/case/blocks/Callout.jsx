@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils"
 import { Prose } from "../layout/Prose"
+import { sp } from "../layout/spacing"
 
 const TONES = {
   info: "border-slate-200 bg-white/80 backdrop-blur-sm",
@@ -19,7 +20,7 @@ export function Callout({
   return (
     <div
       className={cn(
-        "rounded-2xl border p-5",
+        sp.itemToItem, "rounded-2xl border p-5",
         TONES[tone] ?? TONES.info,
         className
       )}

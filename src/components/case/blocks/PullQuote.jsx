@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils"
 import { Prose } from "../layout/Prose"
+import { sp } from "../layout/spacing"
 
 /**
  * PullQuote
@@ -31,7 +32,7 @@ export function PullQuote({
   return (
     <figure
       className={cn(
-        "py-6 md:py-10",
+        sp.itemToItem, "py-6 md:py-10",
         isCenter ? "text-center" : "text-left",
         className
       )}

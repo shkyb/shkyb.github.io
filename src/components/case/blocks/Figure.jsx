@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils"
 import { Prose } from "../layout/Prose"
+import { sp } from "../layout/spacing"
 
 function getExt(src = "") {
   // strip query/hash
@@ -87,7 +88,7 @@ export function Figure({
   const shouldMute = autoPlay ? true : muted
 
   return (
-    <figure className={cn("space-y-3", className)}>
+    <figure className={cn(sp.itemToItem, "space-y-3", className)}>
       <div className={cn("overflow-hidden", frameClass, aspect ? aspect : null)}>
         {resolvedType === "video" ? (
           <video

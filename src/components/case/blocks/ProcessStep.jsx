@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils"
 import { Prose } from "../layout/Prose"
 import { Figure } from "./Figure"
+import { sp } from "../layout/spacing"
 
 /**
  * ProcessStep
@@ -46,7 +47,7 @@ export function ProcessStep({
   return (
     <div
       className={cn(
-        "grid gap-8 md:grid-cols-12 md:items-start",
+        sp.itemToItem, "grid gap-8 md:grid-cols-12 md:items-start",
         className
       )}
     >

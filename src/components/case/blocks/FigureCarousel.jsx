@@ -12,6 +12,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel"
 import { cn } from "@/lib/utils"
+import { sp } from "../layout/spacing"
 
 /**
  * FigureCarousel
@@ -71,7 +72,7 @@ export function FigureCarousel({
 
   return (
     <Carousel
-      className={className}
+      className={cn(sp.itemToItem, className)}
       options={options}
       plugins={emblaPlugins}
       setApi={setApi}

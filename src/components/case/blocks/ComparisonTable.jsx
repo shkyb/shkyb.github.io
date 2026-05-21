@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils"
 import { Prose } from "../layout/Prose"
+import { sp } from "../layout/spacing"
 
 /**
  * ComparisonTable
@@ -35,7 +36,7 @@ export function ComparisonTable({
   const cellPad = compact ? "px-4 py-3" : "px-5 py-4"
 
   return (
-    <div className={cn("mt-6", className)}>
+    <div className={cn(sp.itemToItem, className)}>
       {/* Mobile stacked */}
       {stackedOnMobile ? (
         <div className="space-y-4 md:hidden">

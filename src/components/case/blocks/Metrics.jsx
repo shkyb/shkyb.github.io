@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils"
 import { Prose } from "../layout/Prose"
+import { sp } from "../layout/spacing"
 
 /**
  * Metrics
@@ -40,7 +41,7 @@ export function Metrics({
       : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
 
   return (
-    <div className={cn("mt-6", className)}>
+    <div className={cn(sp.itemToItem, className)}>
       <div className={cn("grid gap-3 sm:gap-4", gridCols)}>
         {items.map((it, idx) => {
           const Icon = it.icon

@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils"
 import { Prose } from "../layout/Prose"
+import { sp } from "../layout/spacing"
 
 /**
  * SectionHeading
@@ -29,7 +30,7 @@ export function SectionHeading({
   const isCenter = align === "center"
 
   return (
-    <div id={id} className={cn("space-y-3 [&_h2_em]:italic [&_h2_em]:text-(--project-kicker,var(--project-primary,currentColor))", className)}>
+    <div id={id} className={cn("space-y-3", sp.sectionToContent, "[&_h2_em]:italic [&_h2_em]:text-(--project-kicker,var(--project-primary,currentColor))", className)}>
       <div
         className={cn(
           "flex flex-col gap-4",

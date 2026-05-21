@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils"
 import { Figure } from "@/components/case/blocks/Figure"
 import { Prose } from "../layout/Prose"
+import { sp } from "../layout/spacing"
 
 /**
  * BeforeAfter
@@ -42,7 +43,7 @@ export function BeforeAfter({
   const isStack = layout === "stack"
 
   return (
-    <div className={cn("space-y-3", className)}>
+    <div className={cn(sp.itemToItem, "space-y-3", className)}>
       <div
         className={cn(
           "grid",

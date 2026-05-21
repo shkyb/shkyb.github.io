@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils"
 import { Badge } from "@/components/ui/badge"
 import { Prose } from "../layout/Prose"
+import { sp } from "../layout/spacing"
 
 /**
  * Timeline
@@ -121,7 +122,7 @@ export function Timeline({
 
   // Default: "rail" timeline
   return (
-    <div className={cn("relative", className)}>
+    <div className={cn(sp.itemToItem, "relative", className)}>
       {/* vertical rail */}
       <div className="absolute left-2.75 top-0 h-full w-px bg-border" aria-hidden="true" />
 

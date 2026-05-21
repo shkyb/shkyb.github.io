@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils"
 import { Figure } from "@/components/case/blocks/Figure"
+import { sp } from "../layout/spacing"
 
 /**
  * ImageGrid
@@ -47,7 +48,7 @@ export function ImageGrid({ items = [], cols, gap = "md", className }) {
   const gridGap = gap === "sm" ? "gap-3" : gap === "lg" ? "gap-6" : "gap-4"
 
   return (
-    <div className={cn("grid", gridCols, gridGap, className)}>
+    <div className={cn(sp.itemToItem, "grid", gridCols, gridGap, className)}>
       {items.map((it, idx) => (
         <Figure
           key={it.src ?? idx}

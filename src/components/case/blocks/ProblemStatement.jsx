@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils"
 import { Prose } from "../layout/Prose"
+import { sp } from "../layout/spacing"
 
 /**
  * ProblemStatement
@@ -28,7 +29,7 @@ export function ProblemStatement({
   const isGrid = variant === "grid"
 
   return (
-    <div className={cn("space-y-6", className)}>
+    <div className={cn(sp.itemToItem, "space-y-6", className)}>
       {(title || intro) ? (
         <div className="max-w-3xl space-y-2">
           {title ? (

@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils"
 import { Prose } from "../layout/Prose"
+import { sp } from "../layout/spacing"
 
 /**
  * InsightList
@@ -25,7 +26,7 @@ export function InsightList({
   if (!items?.length) return null
 
   return (
-    <div className={cn("mt-6", className)}>
+    <div className={cn(sp.itemToItem, className)}>
       <div className="space-y-0">
         {items.map((item, idx) => {
           const Icon = item.icon
