@@ -63,9 +63,9 @@ export function SectionHeading({
           </Prose>
 
           {subtitle ? (
-            <div className={cn("mt-2 max-w-2xl", isCenter ? "mx-auto" : null)}>
+            <div className={cn("mt-4 max-w-2xl", isCenter ? "mx-auto" : null)}>
               <Prose>
-                <p className="text-muted-foreground">{subtitle}</p>
+                <p className="text-(--project-muted-foreground,var(--muted-foreground))">{subtitle}</p>
               </Prose>
             </div>
           ) : null}
@@ -74,7 +74,7 @@ export function SectionHeading({
         {actions ? <div className={cn(isCenter ? "mx-auto" : null)}>{actions}</div> : null}
       </div>
 
-      {divider ? <div className="h-px w-full bg-border" /> : null}
+      {divider ? <div className="h-px mt-6 w-full opacity-40" style={{ background: "var(--project-kicker, var(--project-primary, var(--border)))" }} /> : null}
     </div>
   )
 }
