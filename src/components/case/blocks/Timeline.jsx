@@ -31,16 +31,16 @@ export function Timeline({
 
   const pad = compact ? "py-3" : "py-4"
 
-  const dotTone = (tone) => {
+  const dotStyle = (tone) => {
     switch (tone) {
       case "info":
-        return "bg-slate-500"
+        return { background: "var(--project-kicker, var(--project-primary, #64748b))" }
       case "success":
-        return "bg-emerald-500"
+        return { background: "#10b981" }
       case "warning":
-        return "bg-amber-500"
+        return { background: "#f59e0b" }
       default:
-        return "bg-slate-300"
+        return { background: "var(--project-kicker, var(--project-primary, #cbd5e1))" }
     }
   }
 
@@ -50,7 +50,7 @@ export function Timeline({
     if (typeof body === "string") {
       return (
         <Prose>
-          <p className={cn("m-0 text-sm text-muted-foreground", className)}>{body}</p>
+          <p className={cn("m-0 text-sm text-(--project-muted-foreground,var(--muted-foreground))", className)}>{body}</p>
         </Prose>
       )
     }
@@ -69,21 +69,21 @@ export function Timeline({
             )}
           >
             <div className="flex items-start gap-3">
-              <span className={cn("mt-1 h-2.5 w-2.5 rounded-full", dotTone(it.tone))} aria-hidden="true" />
+              <span className="mt-1 h-2.5 w-2.5 rounded-full" style={dotStyle(it.tone)} aria-hidden="true" />
               <div className="min-w-0">
                 <Prose>
-                  <p className="m-0 text-sm font-semibold tracking-tight text-foreground">{it.title}</p>
+                  <p className="m-0 text-sm font-semibold tracking-tight text-(--project-foreground,var(--foreground))">{it.title}</p>
                 </Prose>
                 {it.range ? (
                   <Prose>
-                    <p className="m-0 text-xs text-muted-foreground">{it.range}</p>
+                    <p className="m-0 text-xs text-(--project-muted-foreground,var(--muted-foreground))">{it.range}</p>
                   </Prose>
                 ) : null}
 
                 {it.body ? <div className="mt-3">{renderBody(it.body)}</div> : null}
 
                 {it.bullets?.length ? (
-                  <ul className="mt-3 list-disc space-y-1 pl-5 text-sm text-muted-foreground">
+                  <ul className="mt-3 list-disc space-y-1 pl-5 text-sm text-(--project-muted-foreground,var(--muted-foreground))">
                     {it.bullets.map((b, i) => (
                       <li key={i}>{b}</li>
                     ))}
@@ -103,7 +103,8 @@ export function Timeline({
                 {it.link ? (
                   <div className="mt-3">
                     <a
-                      className="text-sm font-medium underline underline-offset-4 decoration-slate-300 hover:decoration-slate-500"
+                      className="text-sm font-medium underline underline-offset-4"
+                      style={{ color: "var(--project-kicker, var(--project-primary, #64748b))" }}
                       href={it.link.href}
                       target={(it.link.external ?? /^https?:\/\//.test(it.link.href)) ? "_blank" : undefined}
                       rel={(it.link.external ?? /^https?:\/\//.test(it.link.href)) ? "noreferrer" : undefined}
@@ -131,21 +132,19 @@ export function Timeline({
           <div key={idx} className={cn("relative pl-9", pad)}>
             {/* dot */}
             <span
-              className={cn(
-                "absolute left-1.5 top-6 h-3 w-3 rounded-full border border-background",
-                dotTone(it.tone)
-              )}
+              className="absolute left-1.5 top-6 h-3 w-3 rounded-full border border-background"
+              style={dotStyle(it.tone)}
               aria-hidden="true"
             />
 
             <div className="flex flex-col gap-1">
               <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
                 <Prose>
-                  <p className="m-0 text-sm font-semibold tracking-tight text-foreground">{it.title}</p>
+                  <p className="m-0 text-sm font-semibold tracking-tight text-(--project-foreground,var(--foreground))">{it.title}</p>
                 </Prose>
                 {it.range ? (
                   <Prose>
-                    <p className="m-0 text-xs text-muted-foreground">{it.range}</p>
+                    <p className="m-0 text-xs text-(--project-muted-foreground,var(--muted-foreground))">{it.range}</p>
                   </Prose>
                 ) : null}
               </div>
@@ -153,10 +152,10 @@ export function Timeline({
               {it.body ? renderBody(it.body) : null}
 
               {it.bullets?.length ? (
-                <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-muted-foreground">
+                <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-(--project-muted-foreground,var(--muted-foreground))">
                   {it.bullets.map((b, i) => (
-                    <li key={i}>{b}</li>
-                  ))}
+                      <li key={i}>{b}</li>
+                    ))}
                 </ul>
               ) : null}
 
@@ -173,7 +172,8 @@ export function Timeline({
               {it.link ? (
                 <div className="mt-2">
                   <a
-                    className="text-sm font-medium underline underline-offset-4 decoration-slate-300 hover:decoration-slate-500"
+                    className="text-sm font-medium underline underline-offset-4"
+                      style={{ color: "var(--project-kicker, var(--project-primary, #64748b))" }}
                     href={it.link.href}
                     target={(it.link.external ?? /^https?:\/\//.test(it.link.href)) ? "_blank" : undefined}
                     rel={(it.link.external ?? /^https?:\/\//.test(it.link.href)) ? "noreferrer" : undefined}
