@@ -126,12 +126,13 @@
   body {
     @apply bg-background text-foreground font-sans;
     }
-  .prose {
-    --tw-prose-body: var(--project-foreground, var(--foreground));
-    --tw-prose-headings: var(--project-foreground, var(--foreground));
-    --tw-prose-bold: var(--project-foreground, var(--foreground));
-    --tw-prose-links: var(--project-kicker, var(--project-primary, var(--foreground)));
-  }
+}
+
+.prose {
+  --tw-prose-body: var(--project-foreground, var(--foreground));
+  --tw-prose-headings: var(--project-foreground, var(--foreground));
+  --tw-prose-bold: var(--project-foreground, var(--foreground));
+  --tw-prose-links: var(--project-kicker, var(--project-primary, var(--foreground)));
 }
 
 html {
