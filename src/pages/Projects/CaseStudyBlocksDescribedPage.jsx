@@ -373,15 +373,22 @@ const docs = {
     summary: "Editorial pause for a strong statement, quote, or principle.",
     props: [
       ["quote", "Main quotation content."],
-      ["author", "Optional attribution name."],
-      ["role", "Optional role or source."],
-      ["align", '"left" | "center".'],
-      ["size", '"md" | "lg".'],
-      ["tone", '"default" | "muted".'],
-      ["showMark", "Shows decorative quote mark if true."],
+      ["author", 'Optional attribution name. Rendered with an "— " em dash prefix automatically.'],
+      ["role", "Optional role or source. Left-aligned under the author name."],
+      ["align", '"left" (default) | "center". Left adds a branded left border accent; center removes it.'],
+      ["size", '"md" | "lg". Controls quote text scale.'],
+      ["tone", '"default" | "muted". Muted uses project-muted-foreground for the quote text.'],
+      ["showMark", "Shows decorative serif quote mark above the text. Default true."],
       ["className", "Extra spacing or layout overrides."],
     ],
-    code: `<PullQuote
+    codeLeft: `<PullQuote
+  quote="The measurement flow felt like it was designed for the device, not for the nurse."
+  author="Participant 07"
+  role="ICU nurse, 12 years experience"
+  align="left"
+  size="md"
+/>`,
+    codeCenter: `<PullQuote
   quote="We redesigned around reassurance and clarity, not around feature exposure."
   role="Core design principle"
   align="center"
@@ -949,13 +956,28 @@ export default function CaseStudyBlocksDescribedPage() {
             <CaseSeparator />
 
             <div className="space-y-6">
+              <SectionHeading kicker="align=&quot;left&quot;" title="PullQuote — left" subtitle={docs.pullQuote.summary} divider />
+              <PullQuote
+                quote="The measurement flow felt like it was designed for the device, not for the nurse."
+                author="Participant 07"
+                role="ICU nurse, 12 years experience"
+                align="left"
+                size="md"
+              />
+              <CodeBlock code={docs.pullQuote.codeLeft} />
+            </div>
+
+            <CaseSeparator />
+
+            <div className="space-y-6">
+              <SectionHeading kicker="align=&quot;center&quot;" title="PullQuote — center" subtitle="Use for principles and design statements where attribution is less important." divider />
               <PullQuote
                 quote="We redesigned around reassurance and clarity, not around feature exposure."
                 role="Core design principle"
                 align="center"
                 showMark={false}
               />
-              <CodeBlock code={docs.pullQuote.code} />
+              <CodeBlock code={docs.pullQuote.codeCenter} />
               <div className="rounded-2xl border border-slate-200/70 bg-background p-5">
                 <h3 className="text-sm font-semibold">Available props</h3>
                 <ul className="mt-4 space-y-3 text-sm">
