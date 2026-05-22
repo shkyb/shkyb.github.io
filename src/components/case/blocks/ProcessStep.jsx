@@ -64,7 +64,7 @@ export function ProcessStep({
         {number != null ? (
           <span
             className="block font-serif text-5xl font-bold leading-none tabular-nums lining-nums"
-            style={{ color: "var(--project-primary, var(--project-kicker, #334155))" }}
+            style={{ color: "color-mix(in srgb, var(--project-primary, var(--project-kicker, #334155)) 20%, transparent)" }}
             aria-hidden="true"
           >
             {number}
