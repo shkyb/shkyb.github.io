@@ -17,22 +17,26 @@ export function CaseSeparator({
   align = "center",
   className,
 }) {
+  const lineStyle = { background: "var(--project-border, var(--border))" }
+  const textStyle = { color: "var(--project-muted-foreground, var(--muted-foreground))" }
+
   return (
-    <div className={cn("flex items-center gap-4 py-10", className)}>
-      <Separator className="flex-1" />
+    <div className={cn("flex items-center gap-4 py-20", className)}>
+      <Separator className="flex-1" style={lineStyle} />
 
       {label ? (
         <span
           className={cn(
-            "text-xs font-medium text-muted-foreground",
+            "text-base font-normal",
             align === "center" && "text-center"
           )}
+          style={textStyle}
         >
           {label}
         </span>
       ) : null}
 
-      <Separator className="flex-1" />
+      <Separator className="flex-1" style={lineStyle} />
     </div>
   )
 }
