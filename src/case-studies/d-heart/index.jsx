@@ -704,7 +704,7 @@ export const dHeartCase = {
           <SectionHeading
             kicker="Redesign"
             title="Redesigning the D-Heart Ecosystem — a different backend"
-
+            subtitle="Replacing a fragmented, manual ECG process with a streamlined digital ecosystem — starting from IA, through wireframing, to mid-fidelity prototype testing."
             className="mb-10 mx-auto max-w-3xl"
           />
 
@@ -717,15 +717,6 @@ export const dHeartCase = {
             </div>
 
             <div>
-
-              <Prose className="mb-10 mx-auto max-w-3xl">
-                <p>
-                  D-Heart was redesigned to align with real clinical workflows—replacing a <b>fragmented, manual ECG process</b> with a <b>streamlined digital ecosystem</b>.
-                </p>
-                <p>
-                  The process began with rethinking the information architecture, followed by iterative wireframing and mid-fidelity prototype testing.
-                </p>
-              </Prose>
 
 
               <Timeline
