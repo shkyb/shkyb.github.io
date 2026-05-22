@@ -105,75 +105,28 @@ const topMetrics = [
 const requirments = [
   {
     tone: "info",
-    title: (
-      <Prose>
-        <h3>Clarify ECG flow</h3>
-      </Prose>
-    ),
-    body: (
-      <Prose>
-        <p>
-          Improve visibility of key components and guide users through a clear step-by-step ECG process.
-        </p>
-      </Prose>
-    ),
+    title: "Clarify ECG flow",
+    body: "Improve visibility of key components and guide users through a clear step-by-step ECG process.",
   },
   {
     tone: "info",
-    title: (
-      <Prose>
-        <h3>Simplify guidance</h3>
-      </Prose>
-    ),
-    body: (
-      <Prose>
-        <p>
-          Provide clear, minimal, and visual instructions for quick
-          understanding.
-        </p>
-      </Prose>
-    ),
+    title: "Simplify guidance",
+    body: "Provide clear, minimal, and visual instructions for quick understanding.",
   },
   {
     tone: "info",
-    title: (
-      <Prose>
-        <h3>Reduce discomfort</h3>
-      </Prose>
-    ),
-    body: (
-      <Prose>
-        <p>Design a gentler, more ergonomic attachment mechanism.</p>
-      </Prose>
-    ),
+    title: "Reduce discomfort",
+    body: "Design a gentler, more ergonomic attachment mechanism.",
   },
   {
     tone: "info",
-    title: (
-      <Prose>
-        <h3>Improve device feedback</h3>
-      </Prose>
-    ),
-    body: (
-      <Prose>
-        <p>Use multiple LEDs with distinct meanings for clarity.</p>
-      </Prose>
-    ),
+    title: "Improve device feedback",
+    body: "Use multiple LEDs with distinct meanings for clarity.",
   },
   {
     tone: "info",
-    title: (
-      <Prose>
-        <h3>Use a better device</h3>
-      </Prose>
-    ),
-    body: (
-      <Prose>
-        <p>
-          Provide a portable, larger interface better suited for clinical use.
-        </p>
-      </Prose>
-    ),
+    title: "Use a better device",
+    body: "Provide a portable, larger interface better suited for clinical use.",
   },
 ]
 
@@ -621,13 +574,7 @@ show
               {
                 title: "Expert evaluation",
                 meta: "Heuristic evaluation · cognitive walkthrough · task analysis",
-                body: (
-                  <Prose>
-                    <p>
-                      We reviewed the app against <b>Nielsen's heuristics</b> to reveal violations across interface consistency, visibility, error prevention, and recognition. Then we <b>simulated the professional workflow</b> from registration to sharing results to expose breakdowns in learnability and feedback.
-                    </p>
-                  </Prose>
-                ),
+                body: <>We reviewed the app against <b>Nielsen's heuristics</b> to reveal violations across interface consistency, visibility, error prevention, and recognition. Then we <b>simulated the professional workflow</b> from registration to sharing results to expose breakdowns in learnability and feedback.</>,
                 tags: ["Heuristic evaluation", "Cognitive Walkthrough", "Task Analysis"],
                 tone: "info",
                 // range: "Checkpoint 1"
@@ -635,13 +582,7 @@ show
               {
                 title: "User testing",
                 meta: "5 nurses in a nursing home + 3 standard users",
-                body: (
-                  <Prose>
-                    <p>
-                      Two groups of health professionals and standard users were studied in the user testing. <b>Five nurses</b> at Villa le Magnolie nursing home in Reggio Emilia used the real device on a real patient, acted by a team member. Every interaction was <b>video</b> and <b>screen-recorded</b>. Nurses were asked to think aloud, and what they said matched what we feared.
-                    </p>
-                  </Prose>
-                ),
+                body: <>Two groups of health professionals and standard users were studied in the user testing. <b>Five nurses</b> at Villa le Magnolie nursing home in Reggio Emilia used the real device on a real patient, acted by a team member. Every interaction was <b>video</b> and <b>screen-recorded</b>. Nurses were asked to think aloud, and what they said matched what we feared.</>,
                 tone: "success",
                 tags: ["Usability Testing", "SEQ", "UEQ", "PREMO"],
                 // range: "Checkpoint 1"
@@ -978,13 +919,7 @@ show
               justifyEnd
               step="01"
               title="Device Change → Tablet"
-              description={
-                <Prose>
-                  <p>
-                    We chose the tablet to better support clinical workflows — <b> owned by the nursing home </b>, it provides a larger, shared interface that improves readability, reduces friction, and fits how nurses operate during patient care.
-                  </p>
-                </Prose>
-              }
+              description={<>We chose the tablet to better support clinical workflows — <b>owned by the nursing home</b>, it provides a larger, shared interface that improves readability, reduces friction, and fits how nurses operate during patient care.</>}
 
               figure={{
                 src: imgDecTablet,
@@ -999,13 +934,7 @@ show
               step="02. IA Pattern"
               reverse
               title="Dashboard for Homepage"
-              description={
-                <Prose>
-                  <p>
-                    We structured the homepage as a dashboard with a <b>prominent “Big Start Button”</b> to prioritize speed and clarity—bringing all critical actions into one place so nurses can act immediately without navigating away.
-                  </p>
-                </Prose>
-              }
+              description={<>We structured the homepage as a dashboard with a <b>prominent “Big Start Button”</b> to prioritize speed and clarity — bringing all critical actions into one place so nurses can act immediately without navigating away.</>}
 
               figure={{
                 src: imgDecDash,
@@ -1018,13 +947,7 @@ show
               className="mb-10"
               step="03"
               title="Nested dolls for ECG flow"
-              description={
-                <Prose>
-                  <p>
-                    We used a nested dolls pattern to enforce a clear, step-by-step ECG process—guiding users through each stage in a controlled, predictable flow.
-                  </p>
-                </Prose>
-              }
+              description="We used a nested dolls pattern to enforce a clear, step-by-step ECG process — guiding users through each stage in a controlled, predictable flow."
 
               figure={{
                 src: imgDecNest,
@@ -1039,14 +962,7 @@ show
               step="04"
               reverse
               title="3D Animated Instruction"
-              description={
-                <Prose>
-                  <p>
-                    The original instructions failed to guide the nurse to move the black lead properly to complete a 12-lead ECG. <br />
-                    New visuals ensure that nurses won't miss the two electrodes on the back and match with their clinical procedure of attaching all electrodes before perfoming the ECG.
-                  </p>
-                </Prose>
-              }
+              description={<>The original instructions failed to guide the nurse to move the black lead properly to complete a 12-lead ECG.<br />New visuals ensure that nurses won't miss the two electrodes on the back and match with their clinical procedure of attaching all electrodes before performing the ECG.</>}
 
               figure={{
                 src: imgDec3DViz,
