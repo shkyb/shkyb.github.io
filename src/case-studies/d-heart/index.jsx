@@ -864,9 +864,9 @@ export const dHeartCase = {
             <ProcessStep
               className="mb-10"
               justifyEnd
-              step="01"
+              number="01"
               title="Device Change → Tablet"
-              description={<>We chose the tablet to better support clinical workflows — <b>owned by the nursing home</b>, it provides a larger, shared interface that improves readability, reduces friction, and fits how nurses operate during patient care.</>}
+              description={<><b>Owned by the nursing home</b>, the tablet provides a shared, larger interface — built for clinical readability, not personal use.</>}
 
               figure={{
                 src: imgDecTablet,
@@ -878,10 +878,10 @@ export const dHeartCase = {
             <ProcessStep
               className="mb-10"
               justifyEnd
-              step="02. IA Pattern"
+              number="02"
               reverse
               title="Dashboard for Homepage"
-              description={<>We structured the homepage as a dashboard with a <b>prominent “Big Start Button”</b> to prioritize speed and clarity — bringing all critical actions into one place so nurses can act immediately without navigating away.</>}
+              description={<>A dashboard homepage with a <b>prominent start action</b> — everything nurses need, one tap away.</>}
 
               figure={{
                 src: imgDecDash,
@@ -892,9 +892,9 @@ export const dHeartCase = {
             <ProcessStep
               justifyEnd
               className="mb-10"
-              step="03"
+              number="03"
               title="Nested dolls for ECG flow"
-              description="We used a nested dolls pattern to enforce a clear, step-by-step ECG process — guiding users through each stage in a controlled, predictable flow."
+              description="Nested dolls enforce a step-by-step ECG flow — no skipping, no confusion."
 
               figure={{
                 src: imgDecNest,
@@ -906,10 +906,10 @@ export const dHeartCase = {
             <ProcessStep
               className="mb-10"
               justifyEnd
-              step="04"
+              number="04"
               reverse
               title="3D Animated Instruction"
-              description={<>The original instructions failed to guide the nurse to move the black lead properly to complete a 12-lead ECG.<br />New visuals ensure that nurses won't miss the two electrodes on the back and match with their clinical procedure of attaching all electrodes before performing the ECG.</>}
+              description="3D visuals replaced flat diagrams — making hidden electrodes and lead placement impossible to miss."
 
               figure={{
                 src: imgDec3DViz,
