@@ -7,7 +7,8 @@ import { sp } from "../layout/spacing"
  * ProcessStep
  *
  * Props:
- * - step?: ReactNode        // "01", "Step 1", etc.
+ * - number?: string | number  // large serif number above step, e.g. "01"
+ * - step?: ReactNode          // "Step 1", "Phase 01", etc.
  * - title: ReactNode
  * - description?: ReactNode
  * - bullets?: ReactNode[]
@@ -25,6 +26,7 @@ import { sp } from "../layout/spacing"
  */
 
 export function ProcessStep({
+  number,
   step,
   title,
   description,
@@ -59,8 +61,21 @@ export function ProcessStep({
           reverse ? "md:order-2" : "md:order-1"
         )}
       >
+        {number != null ? (
+          <span
+            className="block font-serif text-5xl font-bold leading-none tabular-nums lining-nums"
+            style={{ color: "var(--project-primary, var(--project-kicker, #334155))" }}
+            aria-hidden="true"
+          >
+            {number}
+          </span>
+        ) : null}
+
         {step ? (
-          <p className="text-sm font-medium text-(--project-muted-foreground,var(--muted-foreground))">
+          <p
+            className={cn("text-xs font-medium uppercase tracking-normal", number != null ? "mt-2" : "")}
+            style={{ color: "var(--project-kicker, var(--project-primary, var(--project-foreground, var(--foreground))))" }}
+          >
             {step}
           </p>
         ) : null}

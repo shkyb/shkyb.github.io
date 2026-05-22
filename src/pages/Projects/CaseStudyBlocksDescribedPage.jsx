@@ -405,17 +405,20 @@ const docs = {
     title: "ProcessStep",
     summary: "Structured step block for method, outputs, and artifact storytelling.",
     props: [
-      ["step", 'Small step label. Example: "Step 01".'],
+      ["number", 'Optional large serif number above the step label. Example: "01". Uses project primary color.'],
+      ["step", 'Optional small uppercase label. Example: "Discovery".'],
       ["title", "Main step title."],
       ["description", "Short supporting description."],
       ["bullets", "Array of outputs or activities."],
       ["figure", "Optional figure object with src, alt, caption, aspect, frame."],
+      ["figureCols", "Figure column span out of 12. Default 6 (equal split). Use 7–8 for image-heavy steps."],
       ["reverse", "Swaps media/text order on desktop."],
       ["justifyEnd", "Vertically aligns the text column content to the end."],
       ["className", "Extra spacing or layout overrides."],
     ],
     code: `<ProcessStep
-  step="Step 01"
+  number="01"
+  step="Discovery"
   title="Understanding the measurement journey"
   description="We interviewed users to identify the moments where uncertainty interrupted confidence."
   bullets={[
@@ -987,7 +990,8 @@ export default function CaseStudyBlocksDescribedPage() {
             <div className="space-y-6">
               <div className="space-y-12">
                 <ProcessStep
-                  step="Step 01"
+                  number="01"
+                  step="Discovery"
                   title="Understanding the measurement journey"
                   description="We interviewed users to identify the moments where uncertainty interrupted confidence."
                   bullets={["12 discovery interviews", "Journey mapping", "Terminology analysis"]}
@@ -1000,7 +1004,8 @@ export default function CaseStudyBlocksDescribedPage() {
                 />
 
                 <ProcessStep
-                  step="Step 02"
+                  number="02"
+                  step="Design"
                   title="Simplifying the task structure"
                   description="We reorganized the experience around user intent rather than system features."
                   bullets={["Goal-based IA", "Measurement flow redesign", "Clear feedback states"]}
