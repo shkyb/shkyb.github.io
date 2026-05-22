@@ -43,18 +43,18 @@ export function ComparisonTable({
           {rows.map((row, rowIdx) => (
             <div
               key={rowIdx}
-              className="rounded-2xl border border-border bg-white/80 p-4 backdrop-blur-sm"
+              className="rounded-2xl border border-(--project-border,var(--border)) bg-white/80 p-4 backdrop-blur-sm"
             >
               <div className="space-y-4">
                 {columns.map((col, colIdx) => (
                   <div
                     key={col.key}
                     className={cn(
-                      colIdx !== 0 ? "border-t border-border pt-4" : null
+                      colIdx !== 0 ? "border-t border-(--project-border,var(--border)) pt-4" : null
                     )}
                   >
                     <Prose>
-                      <p className="m-0 text-xs font-medium text-muted-foreground">
+                      <p className="m-0 text-xs font-medium text-(--project-muted-foreground,var(--muted-foreground))">
                         {col.label}
                       </p>
                     </Prose>
@@ -62,8 +62,8 @@ export function ComparisonTable({
                       <Prose>
                         <p
                           className={cn(
-                            "m-0 text-sm",
-                            col.emphasis ? "font-medium text-foreground" : "text-muted-foreground"
+                            "m-0 text-base",
+                            col.emphasis ? "font-medium text-(--project-foreground,var(--foreground))" : "text-(--project-muted-foreground,var(--muted-foreground))"
                           )}
                         >
                           {row[col.key]}
@@ -80,16 +80,16 @@ export function ComparisonTable({
 
       {/* Desktop table */}
       <div className={cn(stackedOnMobile ? "hidden md:block" : "block")}>
-        <div className="overflow-hidden rounded-2xl border border-border bg-white/80 backdrop-blur-sm">
+        <div className="overflow-hidden rounded-2xl border border-(--project-border,var(--border)) bg-white/80 backdrop-blur-sm">
           <table className="w-full border-collapse text-left">
             <thead>
-              <tr className="border-b border-border">
+              <tr className="border-b border-(--project-border,var(--border))">
                 {columns.map((col) => (
                   <th
                     key={col.key}
                     className={cn(
                       cellPad,
-                      "align-bottom text-sm font-semibold tracking-tight text-foreground"
+                      "align-bottom text-sm font-semibold tracking-tight text-(--project-foreground,var(--foreground))"
                     )}
                   >
                     {col.label}
@@ -103,23 +103,20 @@ export function ComparisonTable({
                 <tr
                   key={rowIdx}
                   className={cn(
-                    rowIdx !== rows.length - 1 ? "border-b border-border" : null
+                    rowIdx !== rows.length - 1 ? "border-b border-(--project-border,var(--border))" : null
                   )}
                 >
                   {columns.map((col) => (
                     <td
                       key={col.key}
-                      className={cn(
-                        cellPad,
-                        "align-top",
-                        col.emphasis ? "bg-slate-100/60" : null
-                      )}
+                      className={cn(cellPad, "align-top")}
+                      style={col.emphasis ? { background: "color-mix(in srgb, var(--project-primary, var(--project-kicker, #334155)) 6%, transparent)" } : undefined}
                     >
                       <Prose>
                         <p
                           className={cn(
                             "m-0 text-sm",
-                            col.emphasis ? "font-medium text-foreground" : "text-muted-foreground"
+                            col.emphasis ? "font-medium text-(--project-foreground,var(--foreground))" : "text-(--project-muted-foreground,var(--muted-foreground))"
                           )}
                         >
                           {row[col.key]}
