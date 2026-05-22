@@ -485,10 +485,11 @@ export const dHeartCase = {
             <div>
               <Figure
                 src={imgSolElec}
+                className="!mt-0"
               />
             </div>
             <div>
-              <Metrics items={topMetrics} columns={1} compact className="my-auto" />
+              <Metrics items={topMetrics} columns={1} compact className="!mt-0 my-auto" />
             </div>
 
           </div>
