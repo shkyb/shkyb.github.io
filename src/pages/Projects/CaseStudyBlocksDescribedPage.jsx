@@ -24,6 +24,7 @@ import { ProcessStep } from "@/components/case/blocks/ProcessStep"
 import { NextProject } from "@/components/case/blocks/NextProject"
 import { CaseSeparator } from "@/components/case/blocks/CaseSeparator"
 import { FullBleedSection } from "@/components/case/layout/FullBleedSection"
+import { BookOpen, Eye, Target } from "lucide-react"
 
 const groups = [
   { id: "framing", label: "Framing" },
@@ -103,11 +104,13 @@ const docs = {
     summary: "Structured qualitative findings, stronger than plain bullet lists.",
     props: [
       ["items", "Array of { eyebrow, title, description, icon }."],
-      ["variant", '"default" | "divided". Use divided for clearer separation.'],
-      ["size", '"sm" | "md". Controls text density.'],
+      ["variant", '"default" | "divided" | "cards". divided is the default list; cards renders a responsive grid.'],
+      ["cols", "cards only. 1–4 columns. Defaults to auto: min(3, items.length)."],
+      ["size", '"sm" | "md". Controls title scale. Description is always text-base.'],
       ["className", "Extra spacing or layout overrides."],
     ],
-    code: `<InsightList
+    codeDivided: `<InsightList
+  variant="divided"
   items={[
     {
       eyebrow: "Insight 01",
@@ -118,6 +121,30 @@ const docs = {
       eyebrow: "Insight 02",
       title: "Medical terminology reduced comprehension and increased hesitation.",
       description: "Users understood the goal, but struggled to interpret labels and result states.",
+    },
+  ]}
+/>`,
+    codeCards: `<InsightList
+  variant="cards"
+  cols={3}
+  items={[
+    {
+      icon: BookOpen,
+      eyebrow: "Principle 01",
+      title: "Build a case before you build screens.",
+      description: "Every design decision should have a traceable origin in evidence.",
+    },
+    {
+      icon: Eye,
+      eyebrow: "Principle 02",
+      title: "Accessibility testing is a design tool, not a compliance pass.",
+      description: "Simulations surface gaps that checklists miss.",
+    },
+    {
+      icon: Target,
+      eyebrow: "Principle 03",
+      title: "Prioritize by persona, not by instinct.",
+      description: "Task matrices cut through debates about what matters most.",
     },
   ]}
 />`,
@@ -589,7 +616,9 @@ export default function CaseStudyBlocksDescribedPage() {
             <CaseSeparator />
 
             <div className="space-y-6">
+              <SectionHeading kicker="variant=&quot;divided&quot;" title="InsightList — divided" subtitle={docs.insightList.summary} divider />
               <InsightList
+                variant="divided"
                 items={[
                   {
                     eyebrow: "Insight 01",
@@ -608,7 +637,37 @@ export default function CaseStudyBlocksDescribedPage() {
                   },
                 ]}
               />
-              <CodeBlock code={docs.insightList.code} />
+              <CodeBlock code={docs.insightList.codeDivided} />
+            </div>
+
+            <CaseSeparator />
+
+            <div className="space-y-6">
+              <SectionHeading kicker="variant=&quot;cards&quot;" title="InsightList — cards" subtitle="Use for principles, reflections, or parallel findings that benefit from equal visual weight." divider />
+              <InsightList
+                variant="cards"
+                items={[
+                  {
+                    icon: BookOpen,
+                    eyebrow: "Principle 01",
+                    title: "Build a case before you build screens.",
+                    description: "Every design decision should have a traceable origin in evidence.",
+                  },
+                  {
+                    icon: Eye,
+                    eyebrow: "Principle 02",
+                    title: "Accessibility testing is a design tool, not a compliance pass.",
+                    description: "Simulations surface gaps that checklists miss.",
+                  },
+                  {
+                    icon: Target,
+                    eyebrow: "Principle 03",
+                    title: "Prioritize by persona, not by instinct.",
+                    description: "Task matrices cut through debates about what matters most.",
+                  },
+                ]}
+              />
+              <CodeBlock code={docs.insightList.codeCards} />
               <div className="rounded-2xl border border-slate-200/70 bg-background p-5">
                 <h3 className="text-sm font-semibold">Available props</h3>
                 <ul className="mt-4 space-y-3 text-sm">
