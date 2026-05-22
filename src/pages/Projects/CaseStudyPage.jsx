@@ -44,7 +44,7 @@ export default function CaseStudyPage() {
 
   return (
     <main
-      className="w-full"
+      className="w-full bg-background"
       style={caseMeta.cssVars}
     >
       {/* caseMeta.cssVars: optional CSS vars scoped to this page.

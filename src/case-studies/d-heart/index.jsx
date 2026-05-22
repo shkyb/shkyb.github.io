@@ -366,7 +366,7 @@ export const dHeartCase = {
     {
       id: "problem",
       label: "Problem",
-      bgClass: "bg-background",
+
       size: "fill",
       render: () => (
         <>
@@ -498,7 +498,7 @@ show
     {
       id: "solution",
       label: "Solution",
-      bgClass: "bg-muted/30",
+
       size: "fill",
       render: () => (
         <>
@@ -557,7 +557,7 @@ show
     {
       id: "research",
       label: "Research",
-      bgClass: "bg-background",
+
       size: "small",
       render: () => (
         <>
@@ -632,7 +632,7 @@ show
     {
       id: "findings",
       label: "Findings",
-      bgClass: "bg-muted/30",
+
       size: "fill",
       render: () => (
         <>
@@ -726,7 +726,7 @@ show
     {
       // id: "requirments",
       // label: "Requirments",
-      bgClass: "bg-muted/30",
+
       size: "fill",
       render: () => (
         <>
@@ -750,7 +750,7 @@ show
     {
       id: "redesign",
       label: "Re-Design",
-      bgClass: "bg-background",
+
       size: "fill",
       render: () => (
         <>
@@ -1036,7 +1036,7 @@ show
     {
       // id: "device",
       // label: "Device",
-      bgClass: "bg-muted/30",
+
       size: "fill",
       render: () => (
         <>
@@ -1098,7 +1098,7 @@ show
     {
       // id: "designsystem",
       // label: "Design System",
-      bgClass: "bg-background",
+
       size: "fill",
       render: () => (
         <>
@@ -1153,7 +1153,7 @@ show
     {
       id: "final",
       label: "Final Design",
-      bgClass: "bg-background",
+
       size: "fill",
       render: () => (
         <>
@@ -1219,7 +1219,7 @@ show
     {
       // id: "testing",
       // label: "Testing",
-      bgClass: "bg-background",
+
       size: "small",
       render: () => (
         <>
@@ -1262,7 +1262,7 @@ show
     {
       id: "reflection",
       label: "Reflection",
-      bgClass: "bg-muted/30",
+
       size: "fill",
       render: () => (
         <>
