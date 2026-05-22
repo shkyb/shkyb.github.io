@@ -368,6 +368,7 @@ export const dHeartCase = {
       label: "Problem",
 
       size: "fill",
+      bgStyle: { background: "var(--project-tint)" },
       render: () => (
         <>
           {/* <CaseSeparator
@@ -390,7 +391,7 @@ export const dHeartCase = {
           />
 
 
-          <div className="grid md:grid-cols-2 gap-8 mt-20">
+          <div className="grid md:grid-cols-2 gap-8">
             <div>
               <Figure
                 src={vidProblem}
@@ -430,10 +431,9 @@ export const dHeartCase = {
           </div>
 
           <PullQuote
-            className="mt-10"
             align="center"
             quote="It doesn't look like a normal ECG."
-            author="— Nurse,"
+            author="Nurse,"
             role="Initial user test at Villa le Magnolie nursing home"
           />
 
