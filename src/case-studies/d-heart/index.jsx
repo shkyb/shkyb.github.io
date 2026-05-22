@@ -47,6 +47,8 @@ import imgFinal03 from "./assets/dh-fin-03.webp"
 import imgFinal04 from "./assets/dh-fin-04.webp"
 
 
+import { ClipboardCheck, Users, GitBranch } from "lucide-react"
+
 import { Prose } from "@/components/case/layout/Prose"
 
 import { SectionHeading } from "@/components/case/blocks/SectionHeading"
@@ -77,15 +79,16 @@ import {
 
 const topMetrics = [
   {
+    icon: ClipboardCheck,
     label: "Final average SEQ",
     value: "6.25 / 7",
     delta: "⬆️",
     note: "Across connect, perform ECG, and share-result tasks.",
   },
   {
+    icon: Users,
     label: "Participants",
     value: "5 x🧑‍⚕️",
-    // delta:"🧑‍⚕️",
     note: "Nurses tested in real nursing home setting.",
   },
   // {
@@ -94,6 +97,7 @@ const topMetrics = [
   //   note: "Saving and progressing after the exam became clearer.",
   // },
   {
+    icon: GitBranch,
     label: "Tree testing",
     value: "71%",
     note: "Overall success, with 80% overall directness.",
