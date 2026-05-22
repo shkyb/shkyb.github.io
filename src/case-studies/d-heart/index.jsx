@@ -583,7 +583,7 @@ export const dHeartCase = {
     {
       id: "findings",
       label: "Findings",
-
+      bgStyle: { background: "var(--project-tint)" },
       size: "fill",
       render: () => (
         <>
