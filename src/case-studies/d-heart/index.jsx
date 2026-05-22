@@ -548,7 +548,7 @@ export const dHeartCase = {
               ]}
             />
           </div>
-           {/* this is the images of nursing home */}
+          {/* this is the images of nursing home */}
           <FigureCarousel
             className="w-full pb-8 [background:var(--project-background)] grayscale"
             options={{ align: "start", loop: true, dragFree: true, watchDrag: false }}
@@ -697,7 +697,7 @@ export const dHeartCase = {
     {
       id: "redesign",
       label: "Re-Design",
-
+      bgStyle: { background: "var(--project-tint)" },
       size: "fill",
       render: () => (
         <>
@@ -857,7 +857,16 @@ export const dHeartCase = {
           />
 
 
+        </>
+      ),
+    },
 
+    {
+      // id: "design decisions",
+      // label: "Design Decisions",
+      size: "small",
+      render: () => (
+        <>
           <SectionHeading kicker="Design Decisions" />
 
           <div className="mx-auto max-w-3xl">
@@ -919,65 +928,69 @@ export const dHeartCase = {
             />
 
           </div>
-
-
-          {/* <div>
-            <CaseSeparator label="Wireframe testing" />
-            <SectionHeading
-              title=" We conducted low-fidelity wireframe testing with five users to identify usability issues early and validate core flows before moving into high-fidelity design."
-              subtitle="The main challenges identified were:"
-              // align="center"
-              className="mb-10 mx-auto max-w-3xl "
-            />
-            <div className=" grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
-              {[
-                {
-                  src: placeholder,
-                  tag: "Task 01 ",
-                  title: "Bluetooth Connection",
-                  description:
-                    "Users lacked clear visual feedback during Bluetooth pairing, making it unclear whether the device was successfully connected.",
-                },
-                {
-                  src: placeholder,
-                  tag: "Task 02 ",
-                  title: "ECG Procedure",
-                  description:
-                    "Navigation, instructions, and layout created friction—breaking the workflow and making the ECG process confusing to follow.",
-                },
-                {
-                  src: placeholder,
-                  tag: "Task 03 ",
-                  title: "Report Access",
-                  description:
-                    "Users struggled to find past results and interpret data due to poor search, low visibility, and unclear presentation.",
-                },
-              ].map((item) => (
-                <Card key={item.title} className="gap-4 overflow-hidden pt-0 shadow-none">
-                  <CardContent className="px-0 pt-0">
-                    <img
-                      src={item.src}
-                      alt={item.title}
-                      className="aspect-2/3 w-full object-cover"
-                      loading="eager"
-                    />
-                  </CardContent>
-                  <CardContent className="pt-0">
-                    <Badge variant="secondary" className="mb-4">{item.tag}</Badge>
-                    <CardTitle>{item.title}</CardTitle>
-                    <CardDescription className="mt-2">{item.description}</CardDescription>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div> */}
-
-
         </>
-      ),
+      )
     },
 
+    // {
+    //   // id: "wireframe",
+    //   // label: "Wireframe Testing",
+    //   render: () => (
+    //     <>
+    //       <div>
+    //         <CaseSeparator label="Wireframe testing" />
+    //         <SectionHeading
+    //           title=" We conducted low-fidelity wireframe testing with five users to identify usability issues early and validate core flows before moving into high-fidelity design."
+    //           subtitle="The main challenges identified were:"
+    //           // align="center"
+    //           className="mb-10 mx-auto max-w-3xl "
+    //         />
+    //         <div className=" grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+    //           {[
+    //             {
+    //               src: placeholder,
+    //               tag: "Task 01 ",
+    //               title: "Bluetooth Connection",
+    //               description:
+    //                 "Users lacked clear visual feedback during Bluetooth pairing, making it unclear whether the device was successfully connected.",
+    //             },
+    //             {
+    //               src: placeholder,
+    //               tag: "Task 02 ",
+    //               title: "ECG Procedure",
+    //               description:
+    //                 "Navigation, instructions, and layout created friction—breaking the workflow and making the ECG process confusing to follow.",
+    //             },
+    //             {
+    //               src: placeholder,
+    //               tag: "Task 03 ",
+    //               title: "Report Access",
+    //               description:
+    //                 "Users struggled to find past results and interpret data due to poor search, low visibility, and unclear presentation.",
+    //             },
+    //           ].map((item) => (
+    //             <Card key={item.title} className="gap-4 overflow-hidden pt-0 shadow-none">
+    //               <CardContent className="px-0 pt-0">
+    //                 <img
+    //                   src={item.src}
+    //                   alt={item.title}
+    //                   className="aspect-2/3 w-full object-cover"
+    //                   loading="eager"
+    //                 />
+    //               </CardContent>
+    //               <CardContent className="pt-0">
+    //                 <Badge variant="secondary" className="mb-4">{item.tag}</Badge>
+    //                 <CardTitle>{item.title}</CardTitle>
+    //                 <CardDescription className="mt-2">{item.description}</CardDescription>
+    //               </CardContent>
+    //             </Card>
+    //           ))}
+    //         </div>
+    //       </div>
 
+    //     </>
+    //   )
+    // },
 
 
     {
