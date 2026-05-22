@@ -63,17 +63,19 @@ const docs = {
     props: [
       ["title", "Optional heading if used standalone."],
       ["intro", "Optional intro paragraph."],
-      ["items", "Array of { label, value } pairs."],
+      ["items", "Array of { label, value, icon?, number? } pairs."],
+      ["number", "Optional string/number shown large and bold to the left of label. Uses project primary color."],
+      ["icon", "Optional icon component shown inline left of the label."],
       ["variant", '"stack" | "grid". Grid is better for concise framing.'],
       ["className", "Extra spacing or layout overrides."],
     ],
     code: `<ProblemStatement
   variant="grid"
   items={[
-    { label: "Problem", value: "Users were unsure whether the measurement was valid." },
-    { label: "Goal", value: "Improve clarity and confidence." },
-    { label: "Constraints", value: "Regulated wording in a high-stakes context." },
-    { label: "Success criteria", value: "Better completion and comprehension." },
+    { number: "01", icon: Target, label: "Problem", value: "Users were unsure whether the measurement was valid." },
+    { number: "02", icon: Crosshair, label: "Goal", value: "Improve clarity and confidence." },
+    { number: "03", label: "Constraints", value: "Regulated wording in a high-stakes context." },
+    { number: "04", label: "Success criteria", value: "Better completion and comprehension." },
   ]}
 />`,
   },
@@ -543,18 +545,22 @@ export default function CaseStudyBlocksDescribedPage() {
                 variant="grid"
                 items={[
                   {
+                    number: "01",
                     label: "Problem",
                     value: "Users often felt uncertain during the measurement flow and were unsure whether the result was valid.",
                   },
                   {
+                    number: "02",
                     label: "Goal",
                     value: "Reduce anxiety, improve clarity, and help users complete the flow with more confidence.",
                   },
                   {
+                    number: "03",
                     label: "Constraints",
                     value: "Clinical accuracy, regulated wording, and limited tolerance for ambiguity in a high-stakes context.",
                   },
                   {
+                    number: "04",
                     label: "Success criteria",
                     value: "Higher completion confidence, clearer result interpretation, and smoother repeat usage over time.",
                   },
