@@ -703,7 +703,7 @@ export const dHeartCase = {
         <>
           <SectionHeading
             kicker="Redesign"
-            title="Redesigning the D-Heart Ecosystem — a different backend"
+            title={<>We rebuilt the D-Heart ecosystem <em>around</em> nurses.</>}
             subtitle="Replacing a fragmented, manual ECG process with a streamlined digital ecosystem — starting from IA, through wireframing, to mid-fidelity prototype testing."
             className="mb-10 mx-auto max-w-3xl"
           />
