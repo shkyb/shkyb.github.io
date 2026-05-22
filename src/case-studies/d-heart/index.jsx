@@ -466,15 +466,18 @@ show
                 variant="stack"
                 items={[
                   {
-                    label: "01. Wrong ECG workflow",
-                    value: "A smartphone app with a consumer mental model — the flow conflicted with real clinical routines.mx-auto max-w-3xl"
+                    number: "01",
+                    label: "Wrong ECG workflow",
+                    value: "A smartphone app with a consumer mental model — the flow conflicted with real clinical routines."
                   },
                   {
-                    label: "02. Friction in the physical experience",
+                    number: "02",
+                    label: "Friction in the physical experience",
                     value: "Cables tangled. Clips hurt patients. Key electrodes went unnoticed by every single test participant."
                   },
                   {
-                    label: "03. Unclear feedback",
+                    number: "03",
+                    label: "Unclear feedback",
                     value: "One LED for everything — nurses couldn't tell if the device was working, connecting, or failing."
                   },
                 ]}
