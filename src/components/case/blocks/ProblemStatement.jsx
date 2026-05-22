@@ -65,7 +65,7 @@ export function ProblemStatement({
               >
                 {item.number != null ? (
                   <span
-                    className="shrink-0 font-serif text-5xl font-bold leading-none tabular-nums"
+                    className="shrink-0 font-serif text-4xl font-bold leading-none lining-nums tabular-nums mt-[-0.15em]"
                     style={{ color: "var(--project-primary, var(--project-kicker, #334155))" }}
                     aria-hidden="true"
                   >
@@ -83,7 +83,7 @@ export function ProblemStatement({
                       />
                     ) : null}
                     <Prose>
-                      <p className="m-0 text-sm font-medium text-(--project-muted-foreground,var(--muted-foreground))">
+                      <p className="m-0 text-base font-medium text-(--project-foreground,var(--foreground))">
                         {item.label}
                       </p>
                     </Prose>
@@ -91,7 +91,7 @@ export function ProblemStatement({
 
                   <div className="mt-2">
                     <Prose>
-                      <p className="m-0 text-base text-(--project-foreground,var(--foreground))">
+                      <p className="m-0 text-sm text-(--project-muted-foreground,var(--muted-foreground))">
                         {item.value}
                       </p>
                     </Prose>
