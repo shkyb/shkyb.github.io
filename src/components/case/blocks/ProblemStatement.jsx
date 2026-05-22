@@ -8,6 +8,8 @@ import { sp } from "../layout/spacing"
  * items: Array<{
  *   label: ReactNode
  *   value: ReactNode
+ *   icon?: React.ComponentType<{ className?: string }>
+ *   number?: string | number
  * }>
  *
  * Props:
@@ -40,7 +42,7 @@ export function ProblemStatement({
 
           {intro ? (
             <Prose>
-              <p className="text-muted-foreground">{intro}</p>
+              <p className="text-(--project-muted-foreground,var(--muted-foreground))">{intro}</p>
             </Prose>
           ) : null}
         </div>
@@ -54,26 +56,50 @@ export function ProblemStatement({
               : "space-y-4"
           )}
         >
-          {items.map((item, idx) => (
-            <div
-              key={idx}
-              className="rounded-2xl border border-border bg-white/80 p-5 backdrop-blur-sm"
-            >
-              <Prose>
-                <p className="m-0 text-xs font-medium text-muted-foreground">
-                  {item.label}
-                </p>
-              </Prose>
+          {items.map((item, idx) => {
+            const Icon = item.icon
+            return (
+              <div
+                key={idx}
+                className="flex items-start gap-4 rounded-2xl border border-border bg-white/80 p-5 backdrop-blur-sm"
+              >
+                {item.number != null ? (
+                  <span
+                    className="shrink-0 font-serif text-5xl font-bold leading-none tabular-nums"
+                    style={{ color: "var(--project-primary, var(--project-kicker, #334155))" }}
+                    aria-hidden="true"
+                  >
+                    {item.number}
+                  </span>
+                ) : null}
 
-              <div className="mt-2">
-                <Prose>
-                  <p className="m-0 text-sm text-foreground">
-                    {item.value}
-                  </p>
-                </Prose>
+                <div className="min-w-0 flex-1">
+                  <div className="flex items-center gap-2">
+                    {Icon ? (
+                      <Icon
+                        className="h-4 w-4 shrink-0"
+                        style={{ color: "var(--project-primary, var(--project-kicker, #334155))" }}
+                        aria-hidden="true"
+                      />
+                    ) : null}
+                    <Prose>
+                      <p className="m-0 text-sm font-medium text-(--project-muted-foreground,var(--muted-foreground))">
+                        {item.label}
+                      </p>
+                    </Prose>
+                  </div>
+
+                  <div className="mt-2">
+                    <Prose>
+                      <p className="m-0 text-base text-(--project-foreground,var(--foreground))">
+                        {item.value}
+                      </p>
+                    </Prose>
+                  </div>
+                </div>
               </div>
-            </div>
-          ))}
+            )
+          })}
         </div>
       ) : null}
     </div>
