@@ -858,7 +858,7 @@ export const dHeartCase = {
       size: "small",
       render: () => (
         <>
-          <SectionHeading kicker="Design Decisions" />
+          <SectionHeading kicker="Design Decisions" title={<>Where <em>research</em> became <em>design</em>.</>} className="mb-10 mx-auto max-w-3xl" />
 
           <div className="mx-auto max-w-3xl">
             <ProcessStep
