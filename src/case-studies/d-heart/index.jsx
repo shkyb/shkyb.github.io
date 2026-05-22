@@ -446,23 +446,21 @@ export const dHeartCase = {
       label: "Solution",
 
       size: "fill",
+      bgStyle: { background: "color-mix(in srgb, var(--project-primary) 20%, white)", "--project-muted-foreground": "#4A4540" },
       render: () => (
         <>
           <SectionHeading
             kicker="The Solution"
             className="max-w-3xl mx-auto"
-            title=" We redesigned the experience around three principles: direct access to key actions, a clearer step-by-step ECG flow, and stronger feedback between the app and the device."
-          // subtitle="Instead of polishing isolated screens, we simplified the structure, clarified the ECG flow, and reduced ambiguity across both the app and the device."
+            title={<>The redesign <em>matched</em> how nurses actually work.</>}
+            subtitle="We redesigned the full D-Heart ecosystem — app and device — around the needs of healthcare professionals working under real clinical pressure."
+          // title=" We redesigned the experience around three principles: direct access to key actions, a clearer step-by-step ECG flow, and stronger feedback between the app and the device."
           />
 
-          {/* <Prose className="mb-10 mt-4 mx-auto max-w-3xl">
-            <p>
-              The redesign addressed every layer of the experience — from the app's information architecture to the physical clips nurses touch every day. A complete, coherent healthcare ecosystem.            </p>
-          </Prose> */}
-
+ 
           {/* <SolutionsShowcase /> */}
 
-          <div className="grid md:grid-cols-2 gap-4 mt-16">
+          <div className="grid md:grid-cols-2 gap-4 ">
             <div>
               <Figure
                 src={vidSolInstruction}
