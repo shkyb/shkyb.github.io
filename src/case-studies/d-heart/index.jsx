@@ -589,7 +589,9 @@ export const dHeartCase = {
         <>
           <SectionHeading
             kicker="Key Findings"
-            title="The product worked — just not the way nurses did, creating a mismatch with clinical workflows and overally low usability score for performing ECG (5.6/7 SEQ)."
+            // title="The product worked — just not the way nurses did, creating a mismatch with clinical workflows and overally low usability score for performing ECG (5.6/7 SEQ)."
+            title={<>The mismatch wasn't in the hardware, but in the <em>context</em>.</>}
+            subtitle="Six friction points surfaced only when we tested in a real nursing home — and a 5.6/7 SEQ score confirmed the gap between the product and its clinical context."
             className="mx-auto max-w-3xl"
           />
           {/* <Figure
