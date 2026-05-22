@@ -24,7 +24,7 @@ import { ProcessStep } from "@/components/case/blocks/ProcessStep"
 import { NextProject } from "@/components/case/blocks/NextProject"
 import { CaseSeparator } from "@/components/case/blocks/CaseSeparator"
 import { FullBleedSection } from "@/components/case/layout/FullBleedSection"
-import { BookOpen, Eye, Target, Users, Clock, TrendingUp } from "lucide-react"
+import { BookOpen, Eye, Target, Users, Clock, TrendingUp, Info, CheckCircle, AlertTriangle, XCircle, MessageSquare } from "lucide-react"
 
 const groups = [
   { id: "framing", label: "Framing" },
@@ -343,12 +343,28 @@ const docs = {
     props: [
       ["title", "Optional short heading."],
       ["children", "Main content."],
-      ["icon", "Optional icon component."],
-      ["tone", '"info" | "success" | "warning" | "danger" | "neutral".'],
+      ["icon", "Optional Lucide icon component shown left of content."],
+      ["tone", '"info" (default) | "success" | "warning" | "danger" | "neutral". info/neutral use project tokens; semantic tones use their own colors.'],
       ["className", "Extra spacing or layout overrides."],
     ],
-    code: `<Callout title="Key insight" tone="info">
+    code: `<Callout icon={Info} title="Key insight" tone="info">
   Participants repeatedly asked for a clear confirmation that the measurement had succeeded.
+</Callout>
+
+<Callout icon={CheckCircle} title="Validated" tone="success">
+  Both rounds of usability testing confirmed the redesigned flow reduced hesitation significantly.
+</Callout>
+
+<Callout icon={AlertTriangle} title="Constraint" tone="warning">
+  Clinical wording is regulated — we could simplify layout but not change the approved terminology.
+</Callout>
+
+<Callout icon={XCircle} title="Risk" tone="danger">
+  Removing the intermediate confirmation step increased error rate by 14% in round two.
+</Callout>
+
+<Callout icon={MessageSquare} title="Note" tone="neutral">
+  This block is intentionally lightweight — use it for a single idea, not a list of findings.
 </Callout>`,
   },
 
@@ -900,8 +916,21 @@ export default function CaseStudyBlocksDescribedPage() {
             />
 
             <div className="space-y-6">
-              <Callout title="Key insight">
+              <SectionHeading kicker="Live examples" title={docs.callout.title} subtitle={docs.callout.summary} divider />
+              <Callout icon={Info} title="Key insight" tone="info">
                 Participants repeatedly asked for a clear confirmation that the measurement had succeeded.
+              </Callout>
+              <Callout icon={CheckCircle} title="Validated" tone="success">
+                Both rounds of usability testing confirmed the redesigned flow reduced hesitation significantly.
+              </Callout>
+              <Callout icon={AlertTriangle} title="Constraint" tone="warning">
+                Clinical wording is regulated — we could simplify layout but not change the approved terminology.
+              </Callout>
+              <Callout icon={XCircle} title="Risk" tone="danger">
+                Removing the intermediate confirmation step increased error rate by 14% in round two.
+              </Callout>
+              <Callout icon={MessageSquare} title="Note" tone="neutral">
+                This block is intentionally lightweight — use it for a single idea, not a list of findings.
               </Callout>
               <CodeBlock code={docs.callout.code} />
               <div className="rounded-2xl border border-slate-200/70 bg-background p-5">

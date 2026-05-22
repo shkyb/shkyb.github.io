@@ -3,11 +3,19 @@ import { Prose } from "../layout/Prose"
 import { sp } from "../layout/spacing"
 
 const TONES = {
-  info: "border-slate-200 bg-white/80 backdrop-blur-sm",
+  info: "border-border bg-white/80 backdrop-blur-sm",
   success: "border-emerald-200 bg-emerald-50",
   warning: "border-amber-200 bg-amber-50",
   danger: "border-rose-200 bg-rose-50",
   neutral: "border-border bg-white/60 backdrop-blur-sm",
+}
+
+const isSemanticTone = (tone) => ["success", "warning", "danger"].includes(tone)
+
+const TONE_ICON_CLASS = {
+  success: "text-emerald-600",
+  warning: "text-amber-600",
+  danger: "text-rose-600",
 }
 
 export function Callout({
@@ -17,6 +25,8 @@ export function Callout({
   tone = "info",
   className,
 }) {
+  const semantic = isSemanticTone(tone)
+
   return (
     <div
       className={cn(
@@ -25,27 +35,32 @@ export function Callout({
         className
       )}
     >
-      <div className="flex gap-3">
-        {Icon ? (
-          <Icon
-            className="mt-1 h-5 w-5 shrink-0 text-muted-foreground"
-            aria-hidden="true"
-          />
+      <div className="min-w-0">
+        {(Icon || title) ? (
+          <div className="mb-1 flex items-center gap-2">
+            {Icon ? (
+              <Icon
+                className={cn("h-4 w-4 shrink-0", semantic && TONE_ICON_CLASS[tone])}
+                style={semantic ? undefined : { color: "var(--project-kicker, var(--project-primary, var(--muted-foreground)))" }}
+                aria-hidden="true"
+              />
+            ) : null}
+            {title ? (
+              <p
+                className="text-sm font-semibold tracking-tight"
+                style={semantic ? undefined : { color: "var(--project-foreground, var(--foreground))" }}
+              >
+                {title}
+              </p>
+            ) : null}
+          </div>
         ) : null}
 
-        <div className="min-w-0">
-          {title ? (
-            <p className="text-sm font-semibold tracking-tight mb-1">
-              {title}
-            </p>
-          ) : null}
-
-          <Prose>
-            <p className="m-0 text-sm text-muted-foreground">
-              {children}
-            </p>
-          </Prose>
-        </div>
+        <Prose>
+          <p className={cn("m-0", Icon && "pl-6", semantic ? "text-muted-foreground" : "text-(--project-muted-foreground,var(--muted-foreground))")}>
+            {children}
+          </p>
+        </Prose>
       </div>
     </div>
   )
