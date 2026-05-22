@@ -47,7 +47,7 @@ import imgFinal03 from "./assets/dh-fin-03.webp"
 import imgFinal04 from "./assets/dh-fin-04.webp"
 
 
-import { ClipboardCheck, Users, GitBranch } from "lucide-react"
+import { ClipboardCheck, Users, GitBranch, Route, BookOpen, Hand, Lightbulb, Tablet } from "lucide-react"
 
 import { Prose } from "@/components/case/layout/Prose"
 
@@ -109,29 +109,29 @@ const topMetrics = [
 
 const requirments = [
   {
-    tone: "info",
+    icon: Route,
     title: "Clarify ECG flow",
-    body: "Improve visibility of key components and guide users through a clear step-by-step ECG process.",
+    description: "Improve visibility of key components and guide users through a clear step-by-step ECG process.",
   },
   {
-    tone: "info",
+    icon: BookOpen,
     title: "Simplify guidance",
-    body: "Provide clear, minimal, and visual instructions for quick understanding.",
+    description: "Provide clear, minimal, and visual instructions for quick understanding.",
   },
   {
-    tone: "info",
+    icon: Hand,
     title: "Reduce discomfort",
-    body: "Design a gentler, more ergonomic attachment mechanism.",
+    description: "Design a gentler, more ergonomic attachment mechanism.",
   },
   {
-    tone: "info",
+    icon: Lightbulb,
     title: "Improve device feedback",
-    body: "Use multiple LEDs with distinct meanings for clarity.",
+    description: "Use multiple LEDs with distinct meanings for clarity.",
   },
   {
-    tone: "info",
+    icon: Tablet,
     title: "Use a better device",
-    body: "Provide a portable, larger interface better suited for clinical use.",
+    description: "Provide a portable, larger interface better suited for clinical use.",
   },
 ]
 
@@ -686,7 +686,7 @@ export const dHeartCase = {
             </div>
 
             <div>
-              <Timeline items={requirments} compact />
+              <InsightList items={requirments} />
             </div>
           </div>
 
