@@ -24,7 +24,7 @@ import { ProcessStep } from "@/components/case/blocks/ProcessStep"
 import { NextProject } from "@/components/case/blocks/NextProject"
 import { CaseSeparator } from "@/components/case/blocks/CaseSeparator"
 import { FullBleedSection } from "@/components/case/layout/FullBleedSection"
-import { BookOpen, Eye, Target } from "lucide-react"
+import { BookOpen, Eye, Target, Users, Clock, TrendingUp } from "lucide-react"
 
 const groups = [
   { id: "framing", label: "Framing" },
@@ -84,19 +84,42 @@ const docs = {
     title: "Metrics",
     summary: "Quantitative proof for impact, sample sizes, and measurable outcomes.",
     props: [
-      ["items", "Array of metric objects with label, value, note, delta, deltaTone, icon."],
-      ["columns", "1–4 columns depending on context and density."],
-      ["variant", '"plain" | "card". Usually use "card".'],
-      ["size", '"sm" | "md". Controls density and type scale.'],
+      ["items", "Array of { label, value, note?, delta?, deltaTone?, icon? }."],
+      ["deltaTone", '"good" → emerald, "bad" → rose, "neutral" → muted. Semantic tones, not project tokens.'],
+      ["columns", "1–4 columns. Defaults to auto: min(4, items.length)."],
+      ["variant", '"card" (default) — bordered white tile. "plain" — no frame, use on white sections.'],
+      ["align", '"start" (default) — icon left of content. "center" — icon stacks above label, all content centered.'],
+      ["size", '"sm" | "md". Controls value scale and label density.'],
       ["className", "Extra spacing or layout overrides."],
     ],
-    code: `<Metrics
+    codeCard: `<Metrics
+  variant="card"
   columns={4}
   items={[
-    { label: "Drop-off", value: "-32%", note: "after onboarding simplification", deltaTone: "good" },
+    { label: "Drop-off", value: "–32%", note: "after onboarding simplification", deltaTone: "good" },
     { label: "Task completion", value: "+18%", note: "first-time users", deltaTone: "good" },
+    { label: "Satisfaction drop", value: "–8%", note: "Q3 vs Q4", deltaTone: "bad" },
     { label: "Interviews", value: "12", note: "patients + clinicians" },
+  ]}
+/>`,
+    codePlain: `<Metrics
+  variant="plain"
+  columns={3}
+  items={[
     { label: "Usability rounds", value: "2", note: "prototype validation" },
+    { label: "Avg. SEQ score", value: "6.25", note: "out of 7", deltaTone: "good" },
+    { label: "Tree testing", value: "71%", note: "task success rate" },
+  ]}
+/>`,
+    codeCenter: `<Metrics
+  variant="card"
+  align="center"
+  columns={4}
+  items={[
+    { icon: TrendingUp, label: "Task completion", value: "+18%", delta: "+18pp", deltaTone: "good" },
+    { icon: Users, label: "Drop-off rate", value: "–32%", delta: "–12pp", deltaTone: "good" },
+    { icon: Clock, label: "Time on task", value: "3:12", note: "median" },
+    { icon: Target, label: "SEQ score", value: "6.25", delta: "+0.8", deltaTone: "good" },
   ]}
 />`,
   },
@@ -596,16 +619,57 @@ export default function CaseStudyBlocksDescribedPage() {
             />
 
             <div className="space-y-6">
+              <SectionHeading kicker="variant=&quot;card&quot;" title="Metrics — card" subtitle={docs.metrics.summary} divider />
               <Metrics
-                items={[
-                  { label: "Onboarding drop-off", value: "–32%", note: "after simplifying the first-time flow", deltaTone: "good" },
-                  { label: "Task completion", value: "+18%", note: "first-time users", deltaTone: "good" },
-                  { label: "Interviews", value: "12", note: "patients + clinicians" },
-                  { label: "Usability rounds", value: "2", note: "prototype validation" },
-                ]}
+                variant="card"
                 columns={4}
+                items={[
+                  { icon: TrendingUp, label: "Task completion", value: "+18%", delta: "vs baseline", deltaTone: "good", note: "first-time users after redesign" },
+                  { icon: Users, label: "Drop-off rate", value: "–32%", delta: "–12pp", deltaTone: "good", note: "after onboarding simplification" },
+                  { label: "Bounce rate", value: "+8%", delta: "vs last quarter", deltaTone: "bad", note: "mobile entry point" },
+                  { label: "Avg. session", value: "–0:42", delta: "neutral change", deltaTone: "neutral", note: "within expected range" },
+                  { icon: Clock, label: "Time on task", value: "3:12", note: "median across 12 participants" },
+                  { icon: Target, label: "SEQ score", value: "6.25", delta: "+0.8", deltaTone: "good", note: "out of 7 — post redesign" },
+                  { label: "Usability rounds", value: "3", note: "lo-fi → mid-fi → hi-fi" },
+                  { label: "Participants", value: "24", note: "8 per round, mixed expertise" },
+                ]}
               />
-              <CodeBlock code={docs.metrics.code} />
+              <CodeBlock code={docs.metrics.codeCard} />
+            </div>
+
+            <CaseSeparator />
+
+            <div className="space-y-6">
+              <SectionHeading kicker="variant=&quot;plain&quot;" title="Metrics — plain" subtitle="Use on white/light sections where a card frame adds unnecessary noise." divider />
+              <Metrics
+                variant="plain"
+                columns={4}
+                items={[
+                  { label: "Tree testing", value: "71%", delta: "+11pp", deltaTone: "good", note: "overall task success" },
+                  { label: "Error rate", value: "14%", delta: "+3pp", deltaTone: "bad", note: "step 3 of booking flow" },
+                  { label: "Avg. clicks", value: "9.4", delta: "–4.6", deltaTone: "neutral", note: "vs competitor baseline" },
+                  { label: "Interviews", value: "12", note: "patients + clinicians" },
+                ]}
+              />
+              <CodeBlock code={docs.metrics.codePlain} />
+            </div>
+
+            <CaseSeparator />
+
+            <div className="space-y-6">
+              <SectionHeading kicker="align=&quot;center&quot;" title="Metrics — centered" subtitle="Use when icons are meaningful and you want equal visual weight across each tile." divider />
+              <Metrics
+                variant="card"
+                align="center"
+                columns={4}
+                items={[
+                  { icon: TrendingUp, label: "Task completion", value: "+18%", delta: "+18pp", deltaTone: "good", note: "first-time users" },
+                  { icon: Users, label: "Drop-off rate", value: "–32%", delta: "–12pp", deltaTone: "good", note: "after redesign" },
+                  { icon: Clock, label: "Time on task", value: "3:12", note: "median across 12 participants" },
+                  { icon: Target, label: "SEQ score", value: "6.25", delta: "+0.8", deltaTone: "good", note: "out of 7" },
+                ]}
+              />
+              <CodeBlock code={docs.metrics.codeCenter} />
               <div className="rounded-2xl border border-slate-200/70 bg-background p-5">
                 <h3 className="text-sm font-semibold">Available props</h3>
                 <ul className="mt-4 space-y-3 text-sm">

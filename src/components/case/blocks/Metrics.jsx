@@ -18,6 +18,7 @@ import { sp } from "../layout/spacing"
  * - columns?: 1 | 2 | 3 | 4        // optional, otherwise auto
  * - variant?: "plain" | "card"     // default "card"
  * - size?: "sm" | "md"             // typography density
+ * - align?: "start" | "center"     // default "start"; center stacks icon above label
  * - className?: string
  */
 export function Metrics({
@@ -25,6 +26,7 @@ export function Metrics({
   columns,
   variant = "card",
   size = "md",
+  align = "start",
   className,
 }) {
   if (!items?.length) return null
@@ -51,7 +53,7 @@ export function Metrics({
               ? "text-emerald-600"
               : it.deltaTone === "bad"
               ? "text-rose-600"
-              : "text-muted-foreground"
+              : "text-(--project-muted-foreground,var(--muted-foreground))"
 
           return (
             <div
@@ -63,24 +65,28 @@ export function Metrics({
                   : "p-0"
               )}
             >
-              <div className="flex items-start gap-3">
+              <div className={cn(
+                "flex gap-3",
+                align === "center" ? "flex-col items-center text-center" : "items-start"
+              )}>
                 {Icon ? (
                   <div
                     className={cn(
-                      "mt-0.5 shrink-0 rounded-xl border border-border bg-white/80 p-2"
+                      "shrink-0 rounded-xl border border-border bg-white/80 p-2",
+                      align === "start" && "mt-0.5"
                     )}
                     aria-hidden="true"
                   >
-                    <Icon className="h-4 w-4 text-slate-700" />
+                    <Icon className="h-4 w-4" style={{ color: "var(--project-primary, var(--project-kicker, #334155))" }} />
                   </div>
                 ) : null}
 
-                <div className="min-w-0 flex-1">
+                <div className={cn("min-w-0 flex-1", align === "center" && "flex flex-col items-center")}>
                   {/* label */}
                   <Prose>
                     <p
                       className={cn(
-                        "m-0 text-xs font-semibold tracking-normal text-muted-foreground",
+                        "m-0 text-xs font-semibold uppercase tracking-normal text-(--project-muted-foreground,var(--muted-foreground))",
                         size === "sm" ? "leading-5" : "leading-6"
                       )}
                     >
@@ -89,13 +95,17 @@ export function Metrics({
                   </Prose>
 
                   {/* value + delta */}
-                  <div className="mt-1 flex flex-wrap items-baseline gap-x-2 gap-y-1">
+                  <div className={cn(
+                    "mt-1 flex flex-wrap items-baseline gap-x-2 gap-y-1",
+                    align === "center" && "justify-center"
+                  )}>
                     <Prose>
                       <p
                         className={cn(
-                          "m-0 font-semibold tracking-tight text-foreground",
-                          size === "sm" ? "text-2xl" : "text-3xl"
+                          "m-0 font-serif font-bold tracking-tight lining-nums tabular-nums",
+                          size === "sm" ? "text-3xl" : "text-4xl"
                         )}
+                        style={{ color: "var(--project-kicker, var(--project-primary, var(--project-foreground, var(--foreground))))" }}
                       >
                         {it.value}
                       </p>
@@ -114,7 +124,7 @@ export function Metrics({
                   {it.note ? (
                     <div className="mt-2">
                       <Prose>
-                        <p className="m-0 text-sm text-muted-foreground">{it.note}</p>
+                        <p className="m-0 text-sm text-(--project-muted-foreground,var(--muted-foreground))">{it.note}</p>
                       </Prose>
                     </div>
                   ) : null}
