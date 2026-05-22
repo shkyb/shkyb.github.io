@@ -550,8 +550,8 @@ export const dHeartCase = {
           </div>
            {/* this is the images of nursing home */}
           <FigureCarousel
-            className="w-full pb-8 [background:var(--project-background)]"
-            options={{ align: "start", loop: true, dragFree: true }}
+            className="w-full pb-8 [background:var(--project-background)] grayscale"
+            options={{ align: "start", loop: true, dragFree: true, watchDrag: false }}
             autoScroll={{
               speed: 1,
               startDelay: 0,
