@@ -128,6 +128,10 @@
     }
 }
 
+main {
+  --background: var(--project-background, theme(colors.slate.50));
+}
+
 .prose {
   --tw-prose-body: var(--project-foreground, var(--foreground));
   --tw-prose-headings: var(--project-foreground, var(--foreground));
