@@ -55,7 +55,14 @@ export function Timeline({
       )
     }
 
-    return <div className={className}>{body}</div>
+    return (
+      <div
+        className={cn("text-base text-(--project-muted-foreground,var(--muted-foreground))", className)}
+        style={{ color: "var(--project-muted-foreground, var(--muted-foreground))" }}
+      >
+        {body}
+      </div>
+    )
   }
 
   if (variant === "cards") {
@@ -127,7 +134,7 @@ export function Timeline({
       {/* vertical rail */}
       <div className="absolute left-2.75 top-0 h-full w-px opacity-20" style={{ background: "var(--project-kicker, var(--project-primary, var(--muted-foreground)))" }} aria-hidden="true" />
 
-      <div className="space-y-2">
+      <div className="space-y-4">
         {items.map((it, idx) => (
           <div key={idx} className={cn("relative pl-9", pad)}>
             {/* dot */}
@@ -137,7 +144,7 @@ export function Timeline({
               aria-hidden="true"
             />
 
-            <div className="flex flex-col gap-1">
+            <div className="flex flex-col gap-2">
               <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
                 <Prose>
                   <p className="m-0 text-lg font-semibold tracking-tight text-(--project-foreground,var(--foreground))">{it.title}</p>

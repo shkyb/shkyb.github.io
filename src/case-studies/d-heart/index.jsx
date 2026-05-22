@@ -519,8 +519,8 @@ export const dHeartCase = {
         <>
           <SectionHeading
             kicker="UX Research"
-            title="Research reframed the project around nurses as the primary users"
-            subtitle="We combined expert evaluation, in-context testing, questionnaires, card sorting, and tree testing to understand how D-Heart behaved in real care scenarios."
+            title={<>Research reframed the project around <em>nurses</em> as the primary users</>}
+            subtitle="We combined expert evaluation with in-context usability testing — observing real healthcare professionals using the device on a real patient, in a real nursing home."
             className="mb-10"
           />
 
@@ -530,7 +530,7 @@ export const dHeartCase = {
               {
                 title: "Expert evaluation",
                 meta: "Heuristic evaluation · cognitive walkthrough · task analysis",
-                body: <>We reviewed the app against <b>Nielsen's heuristics</b> to reveal violations across interface consistency, visibility, error prevention, and recognition. Then we <b>simulated the professional workflow</b> from registration to sharing results to expose breakdowns in learnability and feedback.</>,
+                body: <>Reviewed against <b>Nielsen's 10 heuristics</b> and simulated the full clinical workflow — exposing violations in visibility, error prevention, and learnability.</>,
                 tags: ["Heuristic evaluation", "Cognitive Walkthrough", "Task Analysis"],
                 tone: "info",
                 // range: "Checkpoint 1"
@@ -538,7 +538,7 @@ export const dHeartCase = {
               {
                 title: "User testing",
                 meta: "5 nurses in a nursing home + 3 standard users",
-                body: <>Two groups of health professionals and standard users were studied in the user testing. <b>Five nurses</b> at Villa le Magnolie nursing home in Reggio Emilia used the real device on a real patient, acted by a team member. Every interaction was <b>video</b> and <b>screen-recorded</b>. Nurses were asked to think aloud, and what they said matched what we feared.</>,
+                body: <>Five nurses at <b>Villa le Magnolie</b> used the real device on a real patient, thinking aloud. What they said matched what we feared.</>,
                 tone: "success",
                 tags: ["Usability Testing", "SEQ", "UEQ", "PREMO"],
                 // range: "Checkpoint 1"
