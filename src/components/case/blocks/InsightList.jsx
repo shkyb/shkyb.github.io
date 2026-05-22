@@ -47,9 +47,9 @@ export function InsightList({
         {items.map((item, idx) => {
           const Icon = item.icon
           return (
-            <div key={idx} className="flex flex-col gap-3 rounded-2xl border border-border bg-white/80 p-5 backdrop-blur-sm">
+            <div key={idx} className="flex flex-col gap-3 rounded-2xl border border-(--project-border,var(--border)) bg-white/80 p-5 backdrop-blur-sm">
               {Icon ? (
-                <div className="inline-flex w-fit rounded-xl border border-border bg-white p-2" aria-hidden="true">
+                <div className="inline-flex w-fit rounded-xl border border-(--project-border,var(--border)) bg-white p-2" aria-hidden="true">
                   <Icon className="h-5 w-5" style={iconStyle} />
                 </div>
               ) : null}
@@ -95,13 +95,13 @@ export function InsightList({
               key={idx}
               className={cn(
                 "py-4",
-                variant === "divided" && idx !== 0 ? "border-t border-border" : null
+                variant === "divided" && idx !== 0 ? "border-t border-(--project-border,var(--border))" : null
               )}
             >
               <div className="flex items-start gap-3">
                 {Icon ? (
                   <div
-                    className="mt-0.5 shrink-0 rounded-xl border border-border bg-white/80 p-2"
+                    className="mt-0.5 shrink-0 rounded-xl border border-(--project-border,var(--border)) bg-white/80 p-2"
                     aria-hidden="true"
                   >
                     <Icon className="h-4 w-4" style={iconStyle} />

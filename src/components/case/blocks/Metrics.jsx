@@ -61,7 +61,7 @@ export function Metrics({
               className={cn(
                 "rounded-2xl",
                 variant === "card"
-                  ? "border border-border bg-white/80 p-4 backdrop-blur-sm"
+                  ? "border border-(--project-border,var(--border)) bg-white/80 p-4 backdrop-blur-sm"
                   : "p-0"
               )}
             >
@@ -72,7 +72,7 @@ export function Metrics({
                 {Icon ? (
                   <div
                     className={cn(
-                      "shrink-0 rounded-xl border border-border bg-white/80 p-2",
+                      "shrink-0 rounded-xl border border-(--project-border,var(--border)) bg-white/80 p-2",
                       align === "start" && "mt-0.5"
                     )}
                     aria-hidden="true"

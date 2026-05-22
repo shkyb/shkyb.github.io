@@ -3,11 +3,11 @@ import { Prose } from "../layout/Prose"
 import { sp } from "../layout/spacing"
 
 const TONES = {
-  info: "border-border bg-white/80 backdrop-blur-sm",
+  info: "border-(--project-border,var(--border)) bg-white/80 backdrop-blur-sm",
   success: "border-emerald-200 bg-emerald-50",
   warning: "border-amber-200 bg-amber-50",
   danger: "border-rose-200 bg-rose-50",
-  neutral: "border-border bg-white/60 backdrop-blur-sm",
+  neutral: "border-(--project-border,var(--border)) bg-white/60 backdrop-blur-sm",
 }
 
 const isSemanticTone = (tone) => ["success", "warning", "danger"].includes(tone)

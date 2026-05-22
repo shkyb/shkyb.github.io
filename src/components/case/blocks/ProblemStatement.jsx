@@ -61,7 +61,7 @@ export function ProblemStatement({
             return (
               <div
                 key={idx}
-                className="flex items-start gap-4 rounded-2xl border border-border bg-white/80 p-5 backdrop-blur-sm"
+                className="flex items-start gap-4 rounded-2xl border border-(--project-border,var(--border)) bg-white/80 p-5 backdrop-blur-sm"
               >
                 {item.number != null ? (
                   <span
