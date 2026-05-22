@@ -608,51 +608,45 @@ export const dHeartCase = {
                 src: vidFindElec,
                 number: "01",
                 title: "Hidden electrodes",
-                description:
-                  "Users missed the two electrodes on the back, making the ECG process confusing and error-prone.",
+                description: "Two back electrodes went unnoticed, causing repeated errors.",
               },
               {
                 src: imgFindInstr,
                 number: "02",
                 title: "Unclear instructions",
-                description:
-                  "Nurses struggled to understand and follow instructions to perform a standard 12-lead ECG with the 6-lead device.",
+                description: "Mapping a 6-lead device to a 12-lead ECG confused every nurse.",
               },
               {
                 src: imgFindPain,
                 number: "03",
                 title: "Painful electrode use",
-                description:
-                  "Attaching and moving electrodes caused discomfort, especially for elderly patients.",
+                description: "Clip mechanics caused discomfort, especially on elderly patients.",
               },
               {
                 src: imgFindLed,
                 number: "04",
                 title: "Confusing LED feedback",
-                description:
-                  "A single LED communicated multiple states, leaving users unsure about device status.",
+                description: "One LED, too many states.",
               },
               {
                 src: imgFindCntx,
                 number: "05",
                 title: "Wrong device context",
-                description:
-                  "Nurses couldn't rely on personal phones, and small screens made medical data hard to read.",
+                description: "Personal phones aren't clinical tools — small screens, no shared access.",
               },
               {
                 src: imgFindResult,
                 number: "06",
                 title: "Result access issues",
-                description:
-                  "Users struggled to locate reports, interpret some data, and understand where result actions lived.",
+                description: "Reports were hard to find, harder to act on.",
               },
             ].map((item) => (
-              <Card key={item.title} className="gap-4 overflow-hidden pt-0 shadow-none">
+              <Card key={item.title} className="gap-4 overflow-hidden pt-0 shadow-none bg-white/80">
                 <CardContent className="px-0 pt-0">
                   <Figure
                     src={item.src}
                     alt={item.title}
-                    className="w-full object-cover"
+                    className="w-full object-cover mt-0!"
                     loading="eager"
                     aspect="aspect-square"
                     frame="none"
