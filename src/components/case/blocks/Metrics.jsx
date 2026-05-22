@@ -65,71 +65,69 @@ export function Metrics({
                   : "p-0"
               )}
             >
-              <div className={cn(
-                "flex gap-3",
-                align === "center" ? "flex-col items-center text-center" : "items-start"
-              )}>
-                {Icon ? (
-                  <div
-                    className={cn(
-                      "shrink-0 rounded-xl border border-(--project-border,var(--border)) bg-white/80 p-2",
-                      align === "start" && "mt-0.5"
-                    )}
-                    aria-hidden="true"
-                  >
-                    <Icon className="h-4 w-4" style={{ color: "var(--project-primary, var(--project-kicker, #334155))" }} />
-                  </div>
-                ) : null}
-
-                <div className={cn("min-w-0 flex-1", align === "center" && "flex flex-col items-center")}>
-                  {/* label */}
-                  <Prose>
-                    <p
-                      className={cn(
-                        "m-0 text-xs font-semibold uppercase tracking-normal text-(--project-muted-foreground,var(--muted-foreground))",
-                        size === "sm" ? "leading-5" : "leading-6"
-                      )}
-                    >
-                      {it.label}
-                    </p>
-                  </Prose>
-
-                  {/* value + delta */}
-                  <div className={cn(
-                    "mt-1 flex flex-wrap items-baseline gap-x-2 gap-y-1",
-                    align === "center" && "justify-center"
-                  )}>
+              {align === "center" ? (
+                <div className="flex flex-col items-center text-center gap-3">
+                  {Icon ? (
+                    <div className="shrink-0 rounded-xl border border-(--project-border,var(--border)) bg-white/80 p-2" aria-hidden="true">
+                      <Icon className="h-4 w-4" style={{ color: "var(--project-primary, var(--project-kicker, #334155))" }} />
+                    </div>
+                  ) : null}
+                  <div className="flex flex-col items-center min-w-0">
                     <Prose>
-                      <p
-                        className={cn(
-                          "m-0 font-serif font-bold tracking-tight lining-nums tabular-nums",
-                          size === "sm" ? "text-3xl" : "text-4xl"
-                        )}
-                        style={{ color: "var(--project-kicker, var(--project-primary, var(--project-foreground, var(--foreground))))" }}
-                      >
+                      <p className={cn("m-0 text-xs font-semibold uppercase tracking-normal text-(--project-muted-foreground,var(--muted-foreground))", size === "sm" ? "leading-5" : "leading-6")}>
+                        {it.label}
+                      </p>
+                    </Prose>
+                    <div className="mt-1 flex flex-wrap items-baseline justify-center gap-x-2 gap-y-1">
+                      <Prose>
+                        <p className={cn("m-0 font-serif font-bold tracking-tight lining-nums tabular-nums", size === "sm" ? "text-3xl" : "text-4xl")}
+                          style={{ color: "var(--project-kicker, var(--project-primary, var(--project-foreground, var(--foreground))))" }}>
+                          {it.value}
+                        </p>
+                      </Prose>
+                      {it.delta ? (
+                        <Prose><p className={cn("m-0 text-sm font-medium", deltaToneClass)}>{it.delta}</p></Prose>
+                      ) : null}
+                    </div>
+                    {it.note ? (
+                      <div className="mt-2">
+                        <Prose><p className="m-0 text-sm text-(--project-muted-foreground,var(--muted-foreground))">{it.note}</p></Prose>
+                      </div>
+                    ) : null}
+                  </div>
+                </div>
+              ) : (
+                <div className="flex flex-col min-w-0">
+                  <div className="flex items-center gap-2">
+                    {Icon ? (
+                      <div className="shrink-0 rounded-xl border border-(--project-border,var(--border)) bg-white/80 p-2" aria-hidden="true">
+                        <Icon className="h-4 w-4" style={{ color: "var(--project-primary, var(--project-kicker, #334155))" }} />
+                      </div>
+                    ) : null}
+                    <Prose>
+                      <p className={cn("m-0 text-xs font-semibold uppercase tracking-normal text-(--project-muted-foreground,var(--muted-foreground))", size === "sm" ? "leading-5" : "leading-6")}>
+                        {it.label}
+                      </p>
+                    </Prose>
+                  </div>
+                  <div className={cn("mt-1 flex flex-wrap items-baseline gap-x-2 gap-y-1", Icon && "pl-10")}>
+                    <Prose>
+                      <p className={cn("m-0 font-serif font-bold tracking-tight lining-nums tabular-nums", size === "sm" ? "text-3xl" : "text-4xl")}
+                        style={{ color: "var(--project-kicker, var(--project-primary, var(--project-foreground, var(--foreground))))" }}>
                         {it.value}
                       </p>
                     </Prose>
-
                     {it.delta ? (
-                      <Prose>
-                        <p className={cn("m-0 text-sm font-medium", deltaToneClass)}>
-                          {it.delta}
-                        </p>
-                      </Prose>
+                      <Prose><p className={cn("m-0 text-sm font-medium", deltaToneClass)}>{it.delta}</p></Prose>
                     ) : null}
                   </div>
-
-                  {/* note */}
                   {it.note ? (
-                    <div className="mt-2">
-                      <Prose>
-                        <p className="m-0 text-sm text-(--project-muted-foreground,var(--muted-foreground))">{it.note}</p>
-                      </Prose>
+                    <div className={cn("mt-2", Icon && "pl-10")}>
+                      <Prose><p className="m-0 text-sm text-(--project-muted-foreground,var(--muted-foreground))">{it.note}</p></Prose>
                     </div>
                   ) : null}
                 </div>
-              </div>
+              )}
             </div>
           )
         })}
