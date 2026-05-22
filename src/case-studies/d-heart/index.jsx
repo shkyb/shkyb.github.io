@@ -397,9 +397,15 @@ export const dHeartCase = {
       { label: "Focus", value: "Research, UX, Usability, User Testing" },
     ],
     cssVars: {
-      "--project-primary":    "#f9981d",
-      "--project-kicker":     "#ef8908",
-      "--project-foreground": "#000000",
+      "--project-primary":            "#E8601A",
+      "--project-primary-light":      "#F5845A",
+      "--project-kicker":             "#E8601A",
+      "--project-foreground":         "#1A1714",
+      "--project-muted-foreground":   "#7A736C",
+      "--project-background":         "#FAF7F4",
+      "--project-border":             "#EAE4DC",
+      "--project-accent":             "#3A6EBF",
+      "--project-tint":               "#FDF0E8",
     },
   },
 
