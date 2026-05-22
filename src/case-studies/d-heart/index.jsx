@@ -681,7 +681,7 @@ export const dHeartCase = {
             <div>
               <SectionHeading
                 kicker="Requirements"
-                title="Translating the challenges into clear design directions"
+                title={<>Translating the <em>challenges</em> into clear <em>design directions</em></>}
               />
             </div>
 
