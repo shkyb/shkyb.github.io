@@ -60,13 +60,13 @@ export function ProcessStep({
         )}
       >
         {step ? (
-          <p className="text-sm font-medium text-muted-foreground">
+          <p className="text-sm font-medium text-(--project-muted-foreground,var(--muted-foreground))">
             {step}
           </p>
         ) : null}
 
         <Prose>
-          <h3 className="mt-1 text-xl font-semibold tracking-tight">
+          <h3 className="mt-1 text-2xl font-semibold tracking-tight text-(--project-foreground,var(--foreground))">
             {title}
           </h3>
         </Prose>
@@ -74,13 +74,13 @@ export function ProcessStep({
         {description ? (
           <div className="mt-2">
             <Prose>
-              <p className="m-0 text-muted-foreground">{description}</p>
+              <p className="m-0 text-base text-(--project-muted-foreground,var(--muted-foreground))">{description}</p>
             </Prose>
           </div>
         ) : null}
 
         {bullets?.length ? (
-          <ul className="mt-4 list-disc space-y-1 pl-5 text-sm text-muted-foreground">
+          <ul className="mt-4 list-disc space-y-1 pl-5 text-sm text-(--project-muted-foreground,var(--muted-foreground))">
             {bullets.map((b, i) => (
               <li key={i}>{b}</li>
             ))}
