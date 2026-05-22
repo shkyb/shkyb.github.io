@@ -355,15 +355,15 @@ export const dHeartCase = {
       { label: "Focus", value: "Research, UX, Usability, User Testing" },
     ],
     cssVars: {
-      "--project-primary":            "#E8601A",
-      "--project-primary-light":      "#F5845A",
-      "--project-kicker":             "#E8601A",
-      "--project-foreground":         "#1A1714",
-      "--project-muted-foreground":   "#7A736C",
-      "--project-background":         "#FAF7F4",
-      "--project-border":             "#EAE4DC",
-      "--project-accent":             "#3A6EBF",
-      "--project-tint":               "#FDF0E8",
+      "--project-primary": "#E8601A",
+      "--project-primary-light": "#F5845A",
+      "--project-kicker": "#E8601A",
+      "--project-foreground": "#1A1714",
+      "--project-muted-foreground": "#7A736C",
+      "--project-background": "#FAF7F4",
+      "--project-border": "#EAE4DC",
+      "--project-accent": "#3A6EBF",
+      "--project-tint": "#FDF0E8",
     },
   },
 
@@ -391,7 +391,7 @@ export const dHeartCase = {
             kicker="The Problem"
             align="left"
             title={<>D-Heart introduced <em>friction at every step</em> — slowing nurses down when <em>speed mattered most.</em></>}
-            // title={<>Performing an ECG is a <em>time-sensitive</em> task. During testing, we found that the D-Heart ecosystem introduced <em>unnecessary friction</em> in both the app and the device, slowing nurses down at <em>critical moments</em>.</>}
+          // title={<>Performing an ECG is a <em>time-sensitive</em> task. During testing, we found that the D-Heart ecosystem introduced <em>unnecessary friction</em> in both the app and the device, slowing nurses down at <em>critical moments</em>.</>}
           // subtitle=""
           />
 
@@ -461,7 +461,7 @@ export const dHeartCase = {
           // title=" We redesigned the experience around three principles: direct access to key actions, a clearer step-by-step ECG flow, and stronger feedback between the app and the device."
           />
 
- 
+
           {/* <SolutionsShowcase /> */}
 
           <div className="grid md:grid-cols-2 gap-4 ">
@@ -514,55 +514,49 @@ export const dHeartCase = {
       id: "research",
       label: "Research",
 
-      size: "small",
-      render: () => (
-        <>
-          <SectionHeading
-            kicker="UX Research"
-            title={<>Research reframed the project around <em>nurses</em> as the primary users</>}
-            subtitle="We combined expert evaluation with in-context usability testing — observing real healthcare professionals using the device on a real patient, in a real nursing home."
-            className="mb-10"
-          />
-
-          <Timeline
-            // variant="cards"
-            items={[
-              {
-                title: "Expert evaluation",
-                meta: "Heuristic evaluation · cognitive walkthrough · task analysis",
-                body: <>Reviewed against <b>Nielsen's 10 heuristics</b> and simulated the full clinical workflow — exposing violations in visibility, error prevention, and learnability.</>,
-                tags: ["Heuristic evaluation", "Cognitive Walkthrough", "Task Analysis"],
-                tone: "info",
-                // range: "Checkpoint 1"
-              },
-              {
-                title: "User testing",
-                meta: "5 nurses in a nursing home + 3 standard users",
-                body: <>Five nurses at <b>Villa le Magnolie</b> used the real device on a real patient, thinking aloud. What they said matched what we feared.</>,
-                tone: "success",
-                tags: ["Usability Testing", "SEQ", "UEQ", "PREMO"],
-                // range: "Checkpoint 1"
-              },
-
-            ]}
-          />
-        </>
-      ),
-    },
-
-    {
-      // this is for the nursing home user tests images
       size: "screen",
       render: () => (
         <>
+          <div className="mx-auto max-w-3xl">
+            <SectionHeading
+              kicker="UX Research"
+              title={<>Research reframed the project around <em>nurses</em> as the primary users</>}
+              subtitle="We combined expert evaluation with in-context usability testing — observing real healthcare professionals using the device on a real patient, in a real nursing home."
+              className="mb-10"
+            />
+
+            <Timeline
+              // variant="cards"
+              items={[
+                {
+                  title: "Expert evaluation",
+                  meta: "Heuristic evaluation · cognitive walkthrough · task analysis",
+                  body: <>Reviewed against <b>Nielsen's 10 heuristics</b> and simulated the full clinical workflow — exposing violations in visibility, error prevention, and learnability.</>,
+                  tags: ["Heuristic evaluation", "Cognitive Walkthrough", "Task Analysis"],
+                  tone: "info",
+                  // range: "Checkpoint 1"
+                },
+                {
+                  title: "User testing",
+                  meta: "5 nurses in a nursing home + 3 standard users",
+                  body: <>Five nurses at <b>Villa le Magnolie</b> used the real device on a real patient, thinking aloud. What they said matched what we feared.</>,
+                  tone: "success",
+                  tags: ["Usability Testing", "SEQ", "UEQ", "PREMO"],
+                  // range: "Checkpoint 1"
+                },
+
+              ]}
+            />
+          </div>
+           {/* this is the images of nursing home */}
           <FigureCarousel
-            className="w-full my-12"
+            className="w-full pb-8 [background:var(--project-background)]"
             options={{ align: "start", loop: true, dragFree: true }}
             autoScroll={{
               speed: 1,
               startDelay: 0,
               stopOnInteraction: false,
-              stopOnMouseEnter: true,
+              stopOnMouseEnter: false,
             }}
             contentClassName="-ml-3 md:-ml-4"
             itemClassName="basis-auto pl-1 md:pl-2"
@@ -582,8 +576,9 @@ export const dHeartCase = {
             }
           />
         </>
-      )
+      ),
     },
+
 
     {
       id: "findings",
@@ -1246,9 +1241,9 @@ export const dHeartCase = {
                   </p>
 
                   <p>
-                     A heartfelt thank you to <a href="https://www.linkedin.com/in/davidespallazzo/" target="_blank">Prof. Davide Spallazzo</a> and <a href="https://www.linkedin.com/in/martina-sciannam%C3%A8-920570157/" target="_blank">Prof. Martina Sciannamè</a> for their guidance throughout this project, to my teammates Filippo, Marjan, and Beyza for the collaboration, and to <b>Villa Le Magnolie</b> for welcoming us and making the research possible.
+                    A heartfelt thank you to <a href="https://www.linkedin.com/in/davidespallazzo/" target="_blank">Prof. Davide Spallazzo</a> and <a href="https://www.linkedin.com/in/martina-sciannam%C3%A8-920570157/" target="_blank">Prof. Martina Sciannamè</a> for their guidance throughout this project, to my teammates Filippo, Marjan, and Beyza for the collaboration, and to <b>Villa Le Magnolie</b> for welcoming us and making the research possible.
                   </p>
-                  
+
                 </Prose>
               </div>
             </div>
