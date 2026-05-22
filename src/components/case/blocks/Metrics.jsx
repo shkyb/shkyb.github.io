@@ -123,7 +123,7 @@ export function Metrics({
                     ) : null}
                   </div>
                   {it.note ? (
-                    <div className={cn(compact ? "-mt-[6px]" : "mt-2", Icon && "pl-10")}>
+                    <div className={cn(compact ? "-mt-1.5" : "mt-2", Icon && "pl-10")}>
                       <Prose><p className="m-0 text-sm text-(--project-muted-foreground,var(--muted-foreground))">{it.note}</p></Prose>
                     </div>
                   ) : null}
