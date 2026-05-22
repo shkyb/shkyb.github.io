@@ -82,13 +82,13 @@ const topMetrics = [
     icon: ClipboardCheck,
     label: "Final average SEQ",
     value: "6.25 / 7",
-    delta: "⬆️",
+    // delta: "⬆️",
     note: "Across connect, perform ECG, and share-result tasks.",
   },
   {
     icon: Users,
     label: "Participants",
-    value: "5 x🧑‍⚕️",
+    value: "5×",
     note: "Nurses tested in real nursing home setting.",
   },
   // {
@@ -488,7 +488,7 @@ export const dHeartCase = {
               />
             </div>
             <div>
-              <Metrics items={topMetrics} columns={1} className=" my-auto" />
+              <Metrics items={topMetrics} columns={1} compact className="my-auto" />
             </div>
 
           </div>

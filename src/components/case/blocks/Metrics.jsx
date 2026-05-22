@@ -27,6 +27,7 @@ export function Metrics({
   variant = "card",
   size = "md",
   align = "start",
+  compact = false,
   className,
 }) {
   if (!items?.length) return null
@@ -90,7 +91,7 @@ export function Metrics({
                       ) : null}
                     </div>
                     {it.note ? (
-                      <div className="mt-2">
+                      <div className={compact ? "-mt-1.5" : "mt-2"}>
                         <Prose><p className="m-0 text-sm text-(--project-muted-foreground,var(--muted-foreground))">{it.note}</p></Prose>
                       </div>
                     ) : null}
@@ -122,7 +123,7 @@ export function Metrics({
                     ) : null}
                   </div>
                   {it.note ? (
-                    <div className={cn("mt-2", Icon && "pl-10")}>
+                    <div className={cn(compact ? "-mt-[6px]" : "mt-2", Icon && "pl-10")}>
                       <Prose><p className="m-0 text-sm text-(--project-muted-foreground,var(--muted-foreground))">{it.note}</p></Prose>
                     </div>
                   ) : null}
