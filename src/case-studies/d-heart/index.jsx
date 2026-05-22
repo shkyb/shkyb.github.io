@@ -384,68 +384,11 @@ export const dHeartCase = {
             className="mx-auto max-w-3xl"
             kicker="The Problem"
             align="left"
-            title="Performing an ECG is a time-sensitive task. During testing, we found that the D-Heart ecosystem introduced unnecessary friction in both the app and the device, slowing nurses down at critical moments."
+            title={<>D-Heart introduced <em>friction at every step</em> — slowing nurses down when <em>speed mattered most.</em></>}
+            // title={<>Performing an ECG is a <em>time-sensitive</em> task. During testing, we found that the D-Heart ecosystem introduced <em>unnecessary friction</em> in both the app and the device, slowing nurses down at <em>critical moments</em>.</>}
           // subtitle=""
           />
 
-
-          {/* first image gird */}
-          {/* <ImageGridinsert a figure carousel, add two items, 
-
-show 
-            className="mt-16"
-            cols={3}
-            items={[
-              { src: cover, 
-                aspect: "aspect-square",
-                alt: "Screen 1", 
-                label: "01. Unclear ECG workflow", 
-                caption: "Nurses struggled to follow the exam flow, understand instructions, and confirm when the device was correctly connected." },
-             
-              { src: cover, 
-                aspect: "aspect-square",
-                alt: "Screen 1", 
-                label: "02. Navigation mismatch", 
-                caption: "The app structure did not reflect nurses' mental models, making patients, results, and operational tasks harder to find." },
-             
-              { src: cover, 
-                aspect: "aspect-square",
-                alt: "Screen 1", 
-                label: "03. Weak hardware feedback", 
-                caption: "LED signals, hidden electrodes, and cable handling were unclear, reducing confidence during use." },
-            ]}
-          /> */}
-
-
-          {/* <ImageGrid
-            className="mt-16"
-            cols={3}
-            items={[
-              {
-                src: cover,
-                aspect: "aspect-[2/3]",
-                alt: "Screen 1",
-                label: "01. Wrong ECG workflow",
-                caption: "A smartphone app with a consumer mental model — the flow conflicted with real clinical routines."
-              },
-
-              {
-                src: cover,
-                aspect: "aspect-[2/3]",
-                alt: "Screen 1",
-                label: "02. Friction in the physical experience",
-                caption: "Cables tangled. Clips hurt patients. Key electrodes went unnoticed by every single test participant."
-              },
-
-              {
-                src: cover,
-                aspect: "aspect-[2/3]",
-                alt: "Screen 1",
-                label: "03. Unclear feedback",
-                caption: "One LED for everything — nurses couldn't tell if the device was working, connecting, or failing."
-              },
-            ]}
-          /> */}
 
           <div className="grid md:grid-cols-2 gap-8 mt-20">
             <div>
@@ -453,7 +396,7 @@ show
                 src={vidProblem}
                 // caption="© d-heartcare.com"
                 alt="d-heart device and app"
-                frame="none"
+                frame="soft"
                 loop
                 controls={false}
                 autoPlay
