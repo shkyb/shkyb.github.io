@@ -223,20 +223,12 @@ export const nathanCase = {
               {
                 title: "Smart bins — killed",
                 tone: "warning",
-                body: (
-                  <Prose>
-                    <p>AI-enabled bins that sort waste and feed data to city infrastructure. <em>It worked on paper.</em> In practice it needed buy-in from municipalities, waste companies, and citizens simultaneously — a <strong>rollout problem, not a design problem.</strong> And the AI was decorative: sensors and pattern matching would do the same job.</p>
-                  </Prose>
-                ),
+                body: <>AI-enabled bins that sort waste and feed data to city infrastructure. <em>It worked on paper.</em> In practice it needed buy-in from municipalities, waste companies, and citizens simultaneously — a <strong>rollout problem, not a design problem.</strong> And the AI was decorative: sensors and pattern matching would do the same job.</>,
               },
               {
                 title: "DIY reuse projects — killed",
                 tone: "warning",
-                body: (
-                  <Prose>
-                    <p>Composting guides, upcycling recipes, creative reuse prompts. It addressed <em>guilt</em>, not behavior. A user might feel better about last week's wasted spinach while <strong>still overbuying next week's.</strong> The intervention landed after the damage — with no mechanism to change the habit.</p>
-                  </Prose>
-                ),
+                body: <>Composting guides, upcycling recipes, creative reuse prompts. It addressed <em>guilt</em>, not behavior. A user might feel better about last week's wasted spinach while <strong>still overbuying next week's.</strong> The intervention landed after the damage — with no mechanism to change the habit.</>,
               },
             ]}
           />
@@ -551,11 +543,7 @@ export const nathanCase = {
             justifyEnd
             step="⚖️"
             title="Impact / Effort Matrix"
-            description={
-              <Prose>
-                <p>We had more ideas than time, so before touching Figma we forced every user story onto a 2×2 — <strong>impact against effort</strong>. What landed in the top-left shipped first. What landed in the bottom-right got killed. It was uncomfortable, and it was <em>the right call</em>.</p>
-              </Prose>
-            }
+            description={<>We had more ideas than time, so before touching Figma we forced every user story onto a 2×2 — <strong>impact against effort</strong>. What landed in the top-left shipped first. What landed in the bottom-right got killed. It was uncomfortable, and it was <em>the right call</em>.</>}
             figure={{
               src: ntnAppMatrix,
               alt: "Impact / Effort Matrix diagram with user stories plotted by impact and effort",
@@ -570,11 +558,7 @@ export const nathanCase = {
             reverse
             step="🗺️"
             title="Information Architecture"
-            description={
-              <Prose>
-                <p>With scope defined, we needed a skeleton before screens. <strong>Three pillars — Home, Inventory, Household</strong> — everything reachable in two taps. <em>Locking the IA first</em> meant no screen was ever drawn without a clear place to live.</p>
-              </Prose>
-            }
+            description={<>With scope defined, we needed a skeleton before screens. <strong>Three pillars — Home, Inventory, Household</strong> — everything reachable in two taps. <em>Locking the IA first</em> meant no screen was ever drawn without a clear place to live.</>}
             figure={{
               src: ntnAppIa,
               alt: "Nathan information architecture diagram showing three-pillar structure",
@@ -773,11 +757,11 @@ export const nathanCase = {
             items={[
               {
                 title: "Reframing is the actual work.",
-                description: <Prose><p>Our first ideas would have produced <em>beautiful deliverables and useless products.</em> The pivot from waste management to shopping friction is the decision that made Nathan worth building. Getting comfortable <strong>killing good ideas early</strong> is a professional skill, not just a design principle.</p></Prose>,
+                description: <>Our first ideas would have produced <em>beautiful deliverables and useless products.</em> The pivot from waste management to shopping friction is the decision that made Nathan worth building. Getting comfortable <strong>killing good ideas early</strong> is a professional skill, not just a design principle.</>,
               },
               {
                 title: "AI is a material, not a feature.",
-                description: <Prose><p>Designing with AI means working backwards from <strong>data availability</strong> — what does the model need, what's the fail-safe when that data is missing, and what does the UI communicate when a prediction is uncertain? I now approach AI products as <em>data architecture problems</em> before they become interface problems.</p></Prose>,
+                description: <>Designing with AI means working backwards from <strong>data availability</strong> — what does the model need, what's the fail-safe when that data is missing, and what does the UI communicate when a prediction is uncertain? I now approach AI products as <em>data architecture problems</em> before they become interface problems.</>,
               },
               // {
               //   title: "A design system is how uncertainty becomes calm.",
