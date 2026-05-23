@@ -807,7 +807,8 @@ export const itaAirwaysCase = {
         <>
           <SectionHeading
             kicker="Reflections"
-            title="The most useful thing this project gave me was fluency in structured diagnosis."
+            // title="The most useful thing this project gave me was fluency in structured diagnosis."
+            title={<>This project didn't teach me to design better screens. It taught me to <em>diagnose better problems.</em></>}
             className="mx-auto max-w-3xl"
           />
 
@@ -815,12 +816,12 @@ export const itaAirwaysCase = {
             className="mx-auto max-w-3xl"
             items={[
               {
-                title: <Prose>Build a case before you build screens</Prose>,
-                description: <Prose><p>Before a single wireframe was drawn, we had a click-count table, a heuristic violation log, a competitor benchmark, and a persona-driven task priority stack. <em>Every design decision had a traceable origin.</em> That discipline is what separates a <strong>redesign</strong> from a <strong>restyle</strong>.</p></Prose>,
+                title: "Build a case before you build screens",
+                description: <>Before a single wireframe was drawn, we had a click-count table, a heuristic violation log, a competitor benchmark, and a persona-driven task priority stack. <em>Every design decision had a traceable origin.</em> That discipline is what separates a <strong>redesign</strong> from a <strong>restyle</strong>.</>,
               },
               {
-                title: <Prose>Accessibility testing is a design tool, not a compliance pass</Prose>,
-                description: <Prose><p>The dot pattern on the pricing calendar came from a <em>simulation</em>, not a checklist. I'd reached for color to carry meaning; the simulation showed me the gap, and the pattern closed it. That <strong>feedback loop</strong> is now a habit.</p></Prose>,
+                title: "Accessibility testing is a design tool, not a compliance pass",
+                description: <>The dot pattern on the pricing calendar came from a <em>simulation</em>, not a checklist. I'd reached for color to carry meaning; the simulation showed me the gap, and the pattern closed it. That <strong>feedback loop</strong> is now a habit.</>,
               },
               // {
               //   title: <Prose>Five colleagues is a convenience sample, not a validation</Prose>,
