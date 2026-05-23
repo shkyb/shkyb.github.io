@@ -161,11 +161,11 @@ export const itaAirwaysCase = {
     cssVars: {
       "--project-primary": "#306fc8",
       "--project-accent": "#e6852a",
-      "--project-tint": "rgba(48,111,200,0.12)",
+      "--project-tint": "#E6EEF8",
       "--project-background": "#F1F5FB",
       "--project-surface": "#f5f5f5",
       "--project-dark": "#292d32",
-      "--project-border": "#e2e2e2",
+      "--project-border": "#D6E2F4",
       "--project-text-muted": "#595d62",
       "--project-foreground": "#292d32",
     },
@@ -176,21 +176,15 @@ export const itaAirwaysCase = {
       id: "problem",
       label: "Problem",
       size: "fill",
-      bgStyle: { background: "var(--project-background)" },
+      bgStyle: { background: "var(--project-tint)" },
       render: () => (
         <>
           <SectionHeading
             kicker="The Problem"
-            title="Buying a ticket, adding baggage, or browsing offers on ITA Airways meant navigating filters that didn't match how users think and pages that dropped context with every click."
+            title={<>The site <em>looked</em> organized. On the metrics that determined whether users could complete a task, it wasn't.</>}
+            subtitle="Buying a ticket, adding baggage, browsing offers — all of it meant navigating filters that didn't match how users think and pages that dropped context with every click."
             className="mx-auto max-w-3xl"
           />
-          {/* <Prose className="mx-auto max-w-3xl">
-            <p>
-              Buying a ticket, adding baggage, browsing offers — all of it meant navigating
-              filters that didn't match how users think and pages that dropped context with every
-              click. The site was coherent on the surface. Underneath, it was fractured.
-            </p>
-          </Prose> */}
           <FigureCarousel
             className="pb-16"
             options={{ loop: true }}
