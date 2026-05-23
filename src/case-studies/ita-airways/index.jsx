@@ -630,32 +630,33 @@ export const itaAirwaysCase = {
     },
     {
       id: "response",
-      bgStyle: { background: "var(--project-background)" },
+      bgStyle: { background: "var(--project-tint)" },
       label: "Response",
       size: "fill",
       render: () => (
         <>
-          <div className="mx-auto max-w-3xl grid grid-cols-1 gap-8 md:grid-cols-2 md:items-start">
+          <div className="mx-auto  grid grid-cols-1 gap-8 md:grid-cols-2 md:items-start">
             <SectionHeading
               kicker="03 — Response"
-              title="After analyzing the findings from the Heuristics, user tasks and competitor analysis, we prioritized 3 improvements to our redesign"
+              // title="After analyzing the findings from the Heuristics, user tasks and competitor analysis, we prioritized 3 improvements to our redesign"
+              title={<>Each insight became a brief. Each brief became a <em>goal.</em></>}
             />
-            <Timeline
+            <InsightList
               items={[
                 {
-                  title: <Prose>✈️ Simplify the flight purchase process</Prose>,
-                  body: <Prose><p>Flatten the IA and move filters out of modals into a persistent panel.</p></Prose>,
-                  tone: "info",
+                  icon: Search,
+                  title: "Simplify the flight purchase process",
+                  description: "Flatten the IA and move filters out of modals into a persistent panel.",
                 },
                 {
-                  title: <Prose>🧳 Clarify the benefits area</Prose>,
-                  body: <Prose><p>Rebuild seat, baggage, and lounge selection as a single guided flow with persistent context.</p></Prose>,
-                  tone: "info",
+                  icon: Ticket,
+                  title: "Clarify the benefits area",
+                  description: "Rebuild seat, baggage, and lounge selection as a single guided flow with persistent context.",
                 },
                 {
-                  title: <Prose>🗺️ Make offers behave the way users expect</Prose>,
-                  body: <Prose><p>Rebuild the price/date matrix interaction and surface category filters for real traveler types.</p></Prose>,
-                  tone: "info",
+                  icon: Map,
+                  title: "Make offers behave the way users expect",
+                  description: "Rebuild the price/date matrix interaction and surface category filters for real traveler types.",
                 },
               ]}
             />
