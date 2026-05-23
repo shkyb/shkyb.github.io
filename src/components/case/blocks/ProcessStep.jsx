@@ -81,7 +81,7 @@ export function ProcessStep({
         ) : null}
 
         <Prose>
-          <h3 className="mt-1 text-2xl font-semibold tracking-tight text-(--project-foreground,var(--foreground))">
+          <h3 className="mt-1 text-2xl font-semibold tracking-tight text-(--project-foreground,var(--foreground)) [&_em]:italic [&_em]:text-(--project-kicker,var(--project-primary,currentColor))">
             {title}
           </h3>
         </Prose>
