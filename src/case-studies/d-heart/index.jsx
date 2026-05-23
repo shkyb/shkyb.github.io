@@ -1105,7 +1105,7 @@ export const dHeartCase = {
     {
       id: "final",
       label: "Final Design",
-
+      bgStyle: { background: "var(--project-tint)" },
       size: "fill",
       render: () => (
         <>
@@ -1222,72 +1222,44 @@ export const dHeartCase = {
     {
       id: "reflection",
       label: "Reflection",
-
-      size: "fill",
+      bgStyle: { background: "var(--project-tint)" },
+      size: "small",
       render: () => (
         <>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div>
-              <SectionHeading
-                kicker="Takeaways"
-                title="Usability in Healthcare Means Fitting Into a Routine, Not Replacing One"
-                className="mb-10"
-              // subtitle="In healthcare, usability is not just about cleaner screens. It is about trust, pace, and how well digital decisions support real-world routines."
-              />
+          <SectionHeading
+            kicker="Takeaways"
+            title={<>Usability in Healthcare Means Fitting Into a <em>Routine</em>, Not <em>Replacing</em> One</>}
+            className="mb-10 mx-auto max-w-3xl"
+          />
 
-              <div>
-                <Prose>
-                  <p>
-                    Designing for professionals means designing around <b>expertise, not against it</b>. Watching nurses follow their clinical instincts over the original product was the clearest signal — a good tool has to <b>fit into existing mastery</b>, not demand they abandon it.
-                  </p>
-
-                  <p>
-                    <b>Context of use will always outweigh convention.</b> Moving to tablet was the only honest answer once we understood how nurses actually work. That kind of decision requires <b>confidence in your research</b> over pressure to follow the crowd.
-                  </p>
-
-                  <p>
-                    On complex products, <b>physical and digital can't be designed in isolation.</b> The moment a user has to mentally translate between a blinking LED and an app state, you've introduced doubt. Coherence across touchpoints is the <b>foundation of trust in a medical tool</b>.
-                  </p>
-
-                  <p>
-                    A heartfelt thank you to <a href="https://www.linkedin.com/in/davidespallazzo/" target="_blank">Prof. Davide Spallazzo</a> and <a href="https://www.linkedin.com/in/martina-sciannam%C3%A8-920570157/" target="_blank">Prof. Martina Sciannamè</a> for their guidance throughout this project, to my teammates Filippo, Marjan, and Beyza for the collaboration, and to <b>Villa Le Magnolie</b> for welcoming us and making the research possible.
-                  </p>
-
-                </Prose>
-              </div>
-            </div>
-            <div>
-              <Figure
-                src={cover}
-                aspect="aspect-[2/3]"
-              />
-
-            </div>
-          </div>
-
-
-          {/* <InsightList
+          <InsightList
             items={[
               {
-                eyebrow: "Systems thinking",
-                title: "The solution had to go beyond screens",
-                description:
-                  "The strongest improvements came from treating the app and device as one system rather than designing them independently.",
+                title: "Design around expertise, not against it",
+                description: "Watching nurses follow clinical instincts over the original product was the clearest signal — a good tool fits into existing mastery, not demands they abandon it.",
               },
               {
-                eyebrow: "Mental models",
-                title: "Professional workflows should shape the product",
-                description:
-                  "Nurses did not need more explanation. They needed a tool that respected how they already work.",
+                title: "Context of use will always outweigh convention",
+                description: "Moving to tablet was the only honest answer once we understood how nurses actually work. That decision requires confidence in research over pressure to follow the crowd.",
               },
               {
-                eyebrow: "Iteration",
-                title: "Small clarity changes created outsized impact",
-                description:
-                  "Labels, instruction access, and clearer feedback states had a big effect on how trustworthy the product felt.",
+                title: "Physical and digital can't be designed in isolation",
+                description: "The moment a user has to mentally translate between a blinking LED and an app state, you've introduced doubt. Coherence across touchpoints is the foundation of trust.",
               },
             ]}
-          /> */}
+          />
+
+          <Prose className={`${sp.itemToItem}`}>
+            <p>
+              A heartfelt thank you to <a href="https://www.linkedin.com/in/davidespallazzo/" target="_blank">Prof. Davide Spallazzo</a> and <a href="https://www.linkedin.com/in/martina-sciannam%C3%A8-920570157/" target="_blank">Prof. Martina Sciannamè</a> for their guidance throughout this project, to my teammates <b>Filippo</b>, <b>Marjan</b>, and <b>Beyza</b> for the collaboration, and to <b>Villa Le Magnolie</b> for welcoming us and making the research possible.
+            </p>
+          </Prose>
+
+          <Figure
+            src={cover}
+            aspect="aspect-video"
+            className={`${sp.itemToItem}`}
+          />
         </>
       ),
     },
