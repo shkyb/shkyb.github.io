@@ -59,7 +59,7 @@ import { CaseSeparator } from "@/components/case/blocks/CaseSeparator"
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Search, Ticket, Map, ShieldCheck, Type, Palette, LayoutGrid, Users, BarChart2, MousePointerClick, Target, AlertCircle, ArrowUpRight, Plane, PlaneTakeoff } from "lucide-react"
+import { Search, Ticket, Map, ShieldCheck, Type, Palette, LayoutGrid, Users, BarChart2, MousePointerClick, Target, AlertCircle, ArrowUpRight, Plane, PlaneTakeoff, Eye, Undo2 } from "lucide-react"
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer, Legend } from "recharts"
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart"
 import { sp } from "@/components/case/layout/spacing"
@@ -458,7 +458,8 @@ export const itaAirwaysCase = {
             <div className="flex flex-col gap-4">
               <SectionHeading
                 kicker="— Heuristic evaluation"
-                title="We evaluated the live site against Nielsen's 10 heuristics — the worst offenders were the ones that hit users hardest mid-task."
+                title={<>We audited the live site against Nielsen's <span className="lining-nums tabular-nums">10</span> heuristics — and <em>documented every violation.</em></>}
+                subtitle="Five stood out: the ones that broke context, dropped state, or left users with no way back."
               />
               <a
                 href="https://www.figma.com/board/EfADoFaR7wE39ddqm961k0/Heuristic-Evaluation--Shared-?node-id=0-1&t=fPNen4pLZXk7Kn2S-1"
@@ -466,57 +467,36 @@ export const itaAirwaysCase = {
                 rel="noopener noreferrer"
                 className="inline-flex w-fit"
               >
-                <Button variant="outline" size="sm" className="cursor-pointer">View Figma board <ArrowUpRight className="ml-1 h-3.5 w-3.5" /></Button>
+                <Button variant="outline" size="lg" className="cursor-pointer">View Figma board <ArrowUpRight className="ml-1 h-3.5 w-3.5" /></Button>
               </a>
             </div>
 
-            <Timeline
-              // variant="cards"
+            <InsightList
               items={[
                 {
-                  title: <Prose>👁️ Visibility of system status</Prose>,
-                  tone: "warning",
-                  body: (
-                    <Prose>
-                      <p>No progress indicator during booking. Users couldn't tell how many steps remained or where they were in the flow.</p>
-                    </Prose>
-                  ),
+                  icon: Eye,
+                  title: "Visibility of system status",
+                  description: "No progress indicator — users never knew how many steps remained.",
                 },
                 {
-                  title: <Prose>🧠 Recognition rather than recall</Prose>,
-                  tone: "warning",
-                  body: (
-                    <Prose>
-                      <p>Passengers and flights were hard to distinguish on shared pages. Users had to remember context the interface had already discarded.</p>
-                    </Prose>
-                  ),
+                  icon: Users,
+                  title: "Recognition rather than recall",
+                  description: "Shared pages mixed passengers and flights without distinction. Users had to carry context the interface had already dropped.",
                 },
                 {
-                  title: <Prose>🔀 Consistency and standards</Prose>,
-                  tone: "warning",
-                  body: (
-                    <Prose>
-                      <p>The offers matrix behaved differently from how users expected such tables to work — breaking a well-established mental model.</p>
-                    </Prose>
-                  ),
+                  icon: LayoutGrid,
+                  title: "Consistency and standards",
+                  description: "The offers matrix broke the mental model users brought with them.",
                 },
                 {
-                  title: <Prose>🚪 User control and freedom</Prose>,
-                  tone: "warning",
-                  body: (
-                    <Prose>
-                      <p>On the summary page before payment, users could review their booking but couldn't modify or remove any selected services. A dead end at the most consequential moment.</p>
-                    </Prose>
-                  ),
+                  icon: Undo2,
+                  title: "User control and freedom",
+                  description: "The pre-payment summary let users review but not edit. A dead end at the most consequential moment.",
                 },
                 {
-                  title: <Prose>🛡️ Error prevention</Prose>,
-                  tone: "warning",
-                  body: (
-                    <Prose>
-                      <p>Date selection required a double-click to confirm the departure date before moving to return, with no feedback that the first click had registered. Quiet failures, repeated.</p>
-                    </Prose>
-                  ),
+                  icon: ShieldCheck,
+                  title: "Error prevention",
+                  description: "Date selection needed a double-click with no feedback that the first click registered. Quiet failures, repeated.",
                 },
               ]}
             />
