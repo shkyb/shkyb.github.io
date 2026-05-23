@@ -59,7 +59,7 @@ import { CaseSeparator } from "@/components/case/blocks/CaseSeparator"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Search, Ticket, Map, ShieldCheck, Type, Palette, LayoutGrid, Users, BarChart2, MousePointerClick, Target, AlertCircle, ArrowUpRight } from "lucide-react"
+import { Search, Ticket, Map, ShieldCheck, Type, Palette, LayoutGrid, Users, BarChart2, MousePointerClick, Target, AlertCircle, ArrowUpRight, Plane, PlaneTakeoff } from "lucide-react"
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer, Legend } from "recharts"
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart"
 
@@ -233,31 +233,25 @@ export const itaAirwaysCase = {
       id: "research",
       label: "Research",
       size: "fill",
+
       render: () => (
         <>
           <SectionHeading
             kicker="01 — Research"
-            title="We spent most of the project getting to know the company, its competition, its users, and what those users actually expected when they opened the site."
+            title={<>The research phase was the longest stretch of the project — and the <em>most consequential.</em> Every decision downstream traces back to something we found here.</>}
+            subtitle="ITA is young — founded in 2021 as Alitalia's successor — and still proving itself. Its website isn't just a booking tool. It's a credibility instrument for a brand that needs to earn trust."
             className="mx-auto max-w-3xl"
           />
-
-          <Prose className="mx-auto max-w-3xl">
-            <p>
-              ITA Airways is young — <em>founded in 2021</em> as the successor to Alitalia — state-owned,
-              and positioned around <strong>sustainability</strong> and <strong>Italian hospitality</strong>. It carries the
-              reputational weight of Alitalia's long decline, which means its website isn't just
-              a booking tool. It's a <em>credibility instrument</em> for a brand still proving itself.
-            </p>
-          </Prose>
           <Metrics
             className="mx-auto max-w-3xl"
             columns={4}
-            // variant="plain"
+            variant="plain"
+            align="center"
             items={[
-              { value: "124K", label: "annual flights" },
-              { value: "99", label: "aircraft in fleet" },
-              { value: "15M", label: "passengers annually" },
-              { value: "€2.4B", label: "revenue in 2024" },
+              { icon: PlaneTakeoff, value: "124K", label: "annual flights" },
+              { icon: Plane, value: "99", label: "aircraft in fleet" },
+              { icon: Users, value: "15M", label: "annual passengers" },
+              { icon: BarChart2, value: "€2.4B", label: "revenue in 2024" },
             ]}
           />
           <Figure
