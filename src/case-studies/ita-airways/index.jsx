@@ -769,26 +769,17 @@ export const itaAirwaysCase = {
     },
     {
       id: "design-system",
-      bgStyle: { background: "var(--project-background)" },
+      bgStyle: { background: "var(--project-tint)" },
       label: "Design System",
       size: "fill",
       render: () => (
         <>
           <SectionHeading
             kicker="05 — Design System"
-            title="Built on Moon, extended where the base library didn't cover our patterns."
+            title={<>Built on <em>Moon</em>, extended where the base library didn't cover our patterns.</>}
+            subtitle="I adapted Moon's tokens to ITA's brand language and added bespoke components the library didn't cover — the price-comparison calendar, the passenger-scoped baggage selector, and the offers map pins. Accessibility testing ran at the token level, so every component inherits compliant contrast by default."
             className="mx-auto max-w-3xl"
           />
-
-          <Prose className="mx-auto max-w-3xl">
-            <p>
-              I adapted Moon's tokens to ITA's brand language and extended it with bespoke
-              components the out-of-the-box library didn't cover — the price-comparison
-              calendar, the passenger-scoped baggage selector, and the offers map pins. The
-              accessibility testing ran at the token level, so every component inherits
-              compliant contrast by default — no per-component exceptions needed.
-            </p>
-          </Prose>
           <div className="grid grid-cols-2 gap-4">
             <Figure
               className="mt-0"
