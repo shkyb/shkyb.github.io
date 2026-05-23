@@ -271,7 +271,7 @@ export const itaAirwaysCase = {
       render: () => (
         <>
           <SectionHeading
-            kicker="Competitor benchmarking"
+            kicker="— Competitor benchmarking"
             title={<>We chose four competitors deliberately. Not for inspiration — to <em>find the gaps.</em></>}
             className="mx-auto max-w-3xl"
           />
@@ -380,7 +380,7 @@ export const itaAirwaysCase = {
       render: () => (
         <>
           <SectionHeading
-            kicker="Personas"
+            kicker="— Personas"
             title={<>We built <em>four personas</em> reflecting the real ITA traveler mix — and every prioritization call we made traces back to one of them.</>}
             className="mx-auto max-w-3xl"
           />
@@ -435,7 +435,7 @@ export const itaAirwaysCase = {
       render: () => (
         <>
           <SectionHeading
-            kicker="Task matrix & prioritization"
+            kicker="— Task matrix & prioritization"
             title="We mapped every major task to every persona, then weighted by frequency and importance. "
             className="mx-auto max-w-3xl"
           />
@@ -461,7 +461,7 @@ export const itaAirwaysCase = {
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:items-start">
             <div className="flex flex-col gap-4">
               <SectionHeading
-                kicker="Heuristic evaluation"
+                kicker="— Heuristic evaluation"
                 title="We evaluated the live site against Nielsen's 10 heuristics — the worst offenders were the ones that hit users hardest mid-task."
               />
               <a
@@ -541,7 +541,7 @@ export const itaAirwaysCase = {
       render: () => (
         <>
           <SectionHeading
-            kicker="Click-count analysis"
+            kicker="— Click-count analysis"
             title="ITA required more clicks than nearly every competitor on every task — this became the most objective argument for the redesign."
             className="mx-auto max-w-3xl"
           />
