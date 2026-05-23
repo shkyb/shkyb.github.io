@@ -56,7 +56,7 @@ import { PullQuote } from "@/components/case/blocks/PullQuote"
 import { Timeline } from "@/components/case/blocks/Timeline"
 import { ProcessStep } from "@/components/case/blocks/ProcessStep"
 import { CaseSeparator } from "@/components/case/blocks/CaseSeparator"
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Search, Ticket, Map, ShieldCheck, Type, Palette, LayoutGrid, Users, BarChart2, MousePointerClick, Target, AlertCircle, ArrowUpRight, Plane, PlaneTakeoff } from "lucide-react"
@@ -73,23 +73,21 @@ const PersonaCard = ({ avatar, name, age, role, drive, pain }) => (
         alt={name}
         className="h-12 w-12 shrink-0 rounded-full object-cover"
       />
-      <div>
+      <div className="flex flex-col gap-1">
         <CardTitle>
-          <Prose><h3>{name}, {age}</h3></Prose>
+          <Prose><h3>{name}, <span className="lining-nums tabular-nums">{age}</span></h3></Prose>
         </CardTitle>
-        <CardDescription>
-          <Prose><p>{role}</p></Prose>
-        </CardDescription>
+        <Badge variant="outline" className="w-fit">{role}</Badge>
       </div>
     </CardHeader>
     <CardContent className="flex flex-col gap-2">
       <div className="flex items-start gap-2">
         <Target className="mt-0.5 h-4 w-4 shrink-0 text-emerald-500" />
-        <Prose><p>{drive}</p></Prose>
+        <span className="text-sm text-(--project-muted-foreground)">{drive}</span>
       </div>
       <div className="flex items-start gap-2">
         <AlertCircle className="mt-0.5 h-4 w-4 shrink-0 text-rose-500" />
-        <Prose><p>{pain}</p></Prose>
+        <span className="text-sm text-(--project-muted-foreground)">{pain}</span>
       </div>
     </CardContent>
   </Card>
@@ -386,7 +384,7 @@ export const itaAirwaysCase = {
             className="mx-auto max-w-3xl"
           />
 
-          <div className="mx-auto max-w-3xl grid grid-cols-1 gap-4 md:grid-cols-2">
+          <div className={`mx-auto max-w-3xl grid grid-cols-1 gap-4 md:grid-cols-2 ${sp.sectionToContent}`}>
             <PersonaCard
               avatar={itaPersonaRoberto}
               name="Roberto"
