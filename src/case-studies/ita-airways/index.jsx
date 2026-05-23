@@ -513,12 +513,13 @@ export const itaAirwaysCase = {
       // id: "click-count",
       // label: "Click-count Analysis",
       size: "fill",
-      bgStyle: { background: "var(--project-background)" },
+      bgStyle: { background: "var(--project-tint)" },
       render: () => (
         <>
           <SectionHeading
             kicker="— Click-count analysis"
-            title="ITA required more clicks than nearly every competitor on every task — this became the most objective argument for the redesign."
+            // title="ITA required more clicks than nearly every competitor on every task — this became the most objective argument for the redesign."
+            title={<><em><span className="lining-nums tabular-nums">29</span> clicks</em> to check a flight. The data made the case for redesign better than any heuristic could.</>}
             className="mx-auto max-w-3xl"
           />
 
