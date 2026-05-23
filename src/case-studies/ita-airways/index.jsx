@@ -837,7 +837,7 @@ export const itaAirwaysCase = {
               and{" "}
               <a href="https://www.linkedin.com/in/paolonegri/" target="_blank" rel="noopener noreferrer">Paolo Negri</a>{" "}
               for their thorough reviews, their dedication to the course, and for teaching a
-              methodology rigorous enough to actually use. And to Marjan, Ilaria, and Mahshad —
+              methodology rigorous enough to actually use. And to <strong>Marjan</strong>, <strong>Ilaria</strong>, and <strong>Mahshad</strong> —
               for the late-night Figma sessions, the shared frustrations, and for making this genuinely fun to build.
             </p>
           </Prose>
