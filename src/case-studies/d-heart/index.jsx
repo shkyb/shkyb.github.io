@@ -47,7 +47,7 @@ import imgFinal03 from "./assets/dh-fin-03.webp"
 import imgFinal04 from "./assets/dh-fin-04.webp"
 
 
-import { ClipboardCheck, Users, GitBranch, Route, BookOpen, Hand, Lightbulb, Tablet } from "lucide-react"
+import { ClipboardCheck, Users, GitBranch, Route, BookOpen, Hand, Lightbulb, Tablet, Bluetooth, Activity, Share2 } from "lucide-react"
 
 import { Prose } from "@/components/case/layout/Prose"
 import { sp } from "@/components/case/layout/spacing"
@@ -1056,7 +1056,7 @@ export const dHeartCase = {
         <>
           <SectionHeading
             kicker="Design System"
-            title="A unified system for faster, clearer, and more reliable care."
+            title={<>A unified system for faster, clearer, and more <em>reliable</em> care.</>}
             subtitle="We developed a design system to ensure consistency, clarity, and scalability across the D-Heart ecosystem—supporting both clinical usability and efficient future development."
             className="mb-10 mx-auto max-w-3xl"
           />
@@ -1111,7 +1111,7 @@ export const dHeartCase = {
         <>
           <SectionHeading
             kicker="Final Design"
-            title="D-Heart Pro — a Connected ECG Ecosystem"
+            title={<>D-Heart <em>Pro</em> — a Connected ECG <em>Ecosystem</em></>}
             subtitle="We redesigned D-Heart across device, interface, and workflow to help nurses perform clearer, faster, and more reliable ECGs in real clinical settings."
             className="mb-10 mx-auto max-w-3xl"
           />
@@ -1176,36 +1176,44 @@ export const dHeartCase = {
       render: () => (
         <>
           <SectionHeading
-            title="Final testing showed a much stronger experience across the key tasks"
+            kicker="Validation"
+            title={<>Final testing showed a <em>much stronger</em> experience across the key tasks</>}
             subtitle="After high-fidelity digital and physical prototypes were completed, participants were asked to connect the device, perform an ECG, and share the results."
           />
 
           <Metrics
             columns={3}
+            align="center"
             items={[
               {
+                icon: Bluetooth,
                 label: "Connect the device",
-                value: "6.67 / 7",
+                value: "6.67",
+                delta: "/ 7",
                 note: "Clearer pairing and better feedback.",
               },
               {
+                icon: Activity,
                 label: "Perform an ECG",
-                value: "5.83 / 7",
-                note: "Still the hardest task, but improved from earlier testing.",
+                value: "5.83",
+                delta: "/ 7",
+                note: "Hardest task — still improved.",
               },
               {
+                icon: Share2,
                 label: "Share results",
-                value: "6.3 / 7",
-                note: "Progression after the exam became easier to understand.",
+                value: "6.3",
+                delta: "/ 7",
+                note: "Next steps felt clear.",
               },
             ]}
           />
 
           <PullQuote
             className="mt-10"
-            quote="You did a very great job. I especially liked the minimal graphic style that you used, I can clearly see it matches your final user."
+            quote={<>You did a very great job. I especially liked the <em>minimal</em> graphic style that you used, I can clearly see it matches your <em>final user</em>.</>}
             author="Andrea Desiato"
-            role="Digital Product Director"
+            role="Digital Product Design Director @ Design Group Italia"
           />
         </>
       ),
