@@ -50,6 +50,7 @@ import imgFinal04 from "./assets/dh-fin-04.webp"
 import { ClipboardCheck, Users, GitBranch, Route, BookOpen, Hand, Lightbulb, Tablet } from "lucide-react"
 
 import { Prose } from "@/components/case/layout/Prose"
+import { sp } from "@/components/case/layout/spacing"
 
 import { SectionHeading } from "@/components/case/blocks/SectionHeading"
 import { ProblemStatement } from "@/components/case/blocks/ProblemStatement"
@@ -602,7 +603,7 @@ export const dHeartCase = {
 
           /> */}
 
-          <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+          <div className={`${sp.sectionToContent} grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3`}>
             {[
               {
                 src: vidFindElec,
@@ -987,18 +988,18 @@ export const dHeartCase = {
     {
       // id: "device",
       // label: "Device",
-
+      bgStyle: { background: "var(--project-tint)" },
       size: "fill",
       render: () => (
         <>
           <SectionHeading
             kicker="The Physical Touchpoint"
-            title="We extended the redesign into the physical device, "
-            subtitle="using 3D printing, Arduino prototyping, and hands-on testing to explore and validate improvements. We iterated on how the device is handled, attached, and communicates—reducing friction, improving patient comfort, and making feedback clearer during use."
-            align="center"
-            className="mb-10"
+            title={<>We extended the redesign <em>beyond the screen</em>.</>}
+            subtitle="Using 3D printing and Arduino prototyping, we iterated on how the device is handled, attached, and communicates — reducing friction for nurses and discomfort for patients."
+            // align="center"
+            className="mx-auto max-w-3xl"
           />
-          <div className=" grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+          <div className={`${sp.sectionToContent} grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3`}>
             {[
               {
                 src: imgPhysClip,
@@ -1019,10 +1020,10 @@ export const dHeartCase = {
                 tag: "Mod 03 ",
                 title: "Clearer LED feedback system",
                 description:
-                  "Reworked device feedback using color-coded signals to communicate connection, battery, and ECG status more clearly.",
+                  "A second RGB LED separated ECG feedback from battery and connection — no more guessing.",
               },
             ].map((item) => (
-              <Card key={item.title} className="gap-4 overflow-hidden pt-0 shadow-none">
+              <Card key={item.title} className="gap-4 overflow-hidden pt-0 shadow-none bg-white/80">
                 <CardContent className="px-0 pt-0">
                   <img
                     src={item.src}
