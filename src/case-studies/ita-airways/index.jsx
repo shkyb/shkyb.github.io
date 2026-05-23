@@ -212,7 +212,8 @@ export const itaAirwaysCase = {
           <div style={{ "--project-kicker": "white" }}>
             <SectionHeading
               kicker="The Solution"
-              title="We rebuilt the three most painful flows around a simpler information architecture, a linear booking path with persistent context, and a custom design system tested for accessibility from the first pixel."
+              title="We rebuilt the three flows that mattered most — from a fractured booking experience to a single, guided path."
+              subtitle="Simpler architecture. Persistent context. Accessibility from the first pixel."
               className="mx-auto max-w-3xl **:text-white"
             />
           </div>
