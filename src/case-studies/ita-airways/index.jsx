@@ -580,21 +580,16 @@ export const itaAirwaysCase = {
         <>
           <SectionHeading
             kicker="02 — Insights"
-            title="With the research in hand, three problems sharpened into focus — not as complaints about the site, but as design briefs."
+            // title="With the research in hand, three problems sharpened into focus — not as complaints about the site, but as design briefs."
+            title={<>The research didn't give us problems. It gave us <em>briefs.</em></>}
             className="mx-auto max-w-3xl"
           />
 
           <ProcessStep
             justifyEnd
-            step="Insight 01"
-            title="Information lived in the wrong places"
-            description={
-              <Prose>
-                <p>
-                  Strong visual design hid a weak information architecture — the site looked trustworthy right up until you needed to do something.
-                </p>
-              </Prose>
-            }
+            number="01"
+            title={<>Information lived in the <em>wrong places.</em></>}
+            description="Strong visual design masked a weak IA — it looked trustworthy until you needed to do something."
             figureCols={8}
             figure={{
               src: itaInsight1,
@@ -605,16 +600,10 @@ export const itaAirwaysCase = {
           />
           <ProcessStep
             justifyEnd
-            step="Insight 02"
+            number="02"
             reverse
-            title="The booking flow lost context every step"
-            description={
-              <Prose>
-                <p>
-                  Choosing benefits meant bouncing between screens — seat, then back, then baggage, then back again. Every change required a round trip.
-                </p>
-              </Prose>
-            }
+            title={<>The booking flow <em>lost context</em> every step.</>}
+            description="Every benefit required a round trip. Seat, back, baggage, back. Context dropped every time."
             figureCols={8}
             figure={{
               src: itaInsight2,
@@ -625,15 +614,9 @@ export const itaAirwaysCase = {
           />
           <ProcessStep
             justifyEnd
-            step="Insight 03"
-            title="The offers page broke its own promise"
-            description={
-              <Prose>
-                <p>
-                  The offers table packed every price and date into a single grid, leaving users to make sense of it all on their own.
-                </p>
-              </Prose>
-            }
+            number="03"
+            title={<>The offers page <em>broke its own promise.</em></>}
+            description="The offers table packed every price and date into a single grid, leaving users to make sense of it all on their own."
             figureCols={8}
             figure={{
               src: itaInsight3,
