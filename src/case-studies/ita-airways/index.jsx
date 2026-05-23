@@ -422,6 +422,7 @@ export const itaAirwaysCase = {
             src={itaPersona}
             frame="soft"
             alt="Empathy map — goals, fears, and mental context for one of the four personas."
+            caption="Empathy map — goals, fears, and mental context for one of the four personas."
           />
         </>
       ),
@@ -430,19 +431,15 @@ export const itaAirwaysCase = {
       // id: "task-matrix",
       // label: "Task Matrix",
       size: "fill",
-      bgStyle: { background: "var(--project-background)" },
+      bgStyle: { background: "var(--project-tint)" },
       render: () => (
         <>
           <SectionHeading
             kicker="— Task matrix & prioritization"
-            title="We mapped every major task to every persona, then weighted by frequency and importance. "
+            title={<>We weighted every task by frequency and importance. <em>Three rose above everything else.</em></>}
+            subtitle="Check flight, use benefits, find offers — the three tasks every persona needed, and the three we chose to redesign."
             className="mx-auto max-w-3xl"
           />
-          <Prose className="mx-auto max-w-3xl">
-            <p>
-              Three tasks rose to the top — the ones every persona hits, and the ones. ITA was weakest at: <strong>check flight, use benefits, find offers.</strong>
-            </p>
-          </Prose>
           <Figure
             src={itaTaskMatrix}
             frame="soft"
