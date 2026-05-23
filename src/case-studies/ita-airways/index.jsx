@@ -53,7 +53,6 @@ import { ImageGrid } from "@/components/case/blocks/ImageGrid"
 import { BeforeAfter } from "@/components/case/blocks/BeforeAfter"
 import { Callout } from "@/components/case/blocks/Callout"
 import { PullQuote } from "@/components/case/blocks/PullQuote"
-import { Timeline } from "@/components/case/blocks/Timeline"
 import { ProcessStep } from "@/components/case/blocks/ProcessStep"
 import { CaseSeparator } from "@/components/case/blocks/CaseSeparator"
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
@@ -733,24 +732,16 @@ export const itaAirwaysCase = {
         <>
           <SectionHeading
             kicker="04 — Accessibility"
-            title="A booking site serves every kind of traveler. Accessibility wasn't a final-step compliance pass — it was a design constraint we built from."
+            // title="A booking site serves every kind of traveler. Accessibility wasn't a final-step compliance pass — it was a design constraint we built from."
+            title={<>Accessibility wasn't a checklist. It was a <em>design tool</em> — and it changed the work.</>}
             className="mx-auto max-w-3xl"
           />
 
           <ProcessStep
             justifyEnd
-            step={<Palette className="h-8 w-8 text-muted-foreground" />}
+            number={<Palette className="h-8 w-8" />}
             title="Contrast testing"
-            description={
-              <Prose>
-                <p>
-                  Every pairing was tested against <strong>WCAG AA</strong> (4.5:1),{" "}
-                  <strong>AAA</strong> (7:1) where possible, and <strong>APCA</strong> (79 Lc
-                  for small text, 60 Lc for large). Using both frameworks caught edge cases
-                  either alone would have missed.
-                </p>
-              </Prose>
-            }
+            description={<>Every pairing tested against <strong>WCAG AA</strong>, <strong>AAA</strong>, and <strong>APCA</strong>. Using both frameworks caught edge cases either alone missed.</>}
             figureCols={8}
             figure={{ src: itaAccessContrast, frame: "soft", aspect: "aspect-[3/2]", alt: "Color contrast test grid — tokens against backgrounds with WCAG and APCA scores." }}
           />
@@ -758,37 +749,18 @@ export const itaAirwaysCase = {
           <ProcessStep
             reverse
             justifyEnd
-            step={<ShieldCheck className="h-8 w-8 text-muted-foreground" />}
+            number={<ShieldCheck className="h-8 w-8" />}
             title="Color blindness"
-            description={
-              <Prose>
-                <p>
-                  The <strong>price-comparison calendar</strong>'s three-tier color system is
-                  invisible to users with color vision deficiencies. After verifying against four
-                  simulations — tritanopia, deuteranopia, achromatopsia, tritanomaly — I added a{" "}
-                  <strong>dot pattern as a redundant signal</strong>. The calendar works
-                  regardless of how the user sees color.
-                </p>
-              </Prose>
-            }
+            description={<>The calendar's three-tier color system is invisible to color-blind users. Four simulations, one fix: a <strong>dot pattern as a redundant signal.</strong></>}
             figureCols={8}
             figure={{ src: itaAccessibilityVideo, frame: "soft", aspect: "aspect-[3/2]", alt: "Color blindness simulations — four conditions, calendar shown in each.", controls: false, autoPlay: true, loop: true }}
           />
 
           <ProcessStep
             justifyEnd
-            step={<Type className="h-8 w-8 text-muted-foreground" />}
+            number={<Type className="h-8 w-8" />}
             title="Typography and readability"
-            description={
-              <Prose>
-                <p>
-                  <strong>Lato</strong> was chosen for its performance at small sizes — critical
-                  on a site dense with pricing, flight times, and passenger details. The type
-                  scale was built around tabular figures, consistent cap-height, and a 16px
-                  minimum body size.
-                </p>
-              </Prose>
-            }
+            description={<><strong>Lato</strong>, chosen for its performance at small sizes. Scale built around tabular figures and a <strong>16px minimum.</strong></>}
             figureCols={8}
             figure={{ src: itaAccessTypo, frame: "soft", aspect: "aspect-[3/2]", alt: "Type scale with size annotations — headings, body, captions, and tabular numerals." }}
           />
