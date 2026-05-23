@@ -62,6 +62,7 @@ import { Button } from "@/components/ui/button"
 import { Search, Ticket, Map, ShieldCheck, Type, Palette, LayoutGrid, Users, BarChart2, MousePointerClick, Target, AlertCircle, ArrowUpRight, Plane, PlaneTakeoff } from "lucide-react"
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer, Legend } from "recharts"
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart"
+import { sp } from "@/components/case/layout/spacing"
 
 
 const PersonaCard = ({ avatar, name, age, role, drive, pain }) => (
@@ -166,7 +167,7 @@ export const itaAirwaysCase = {
       "--project-surface": "#f5f5f5",
       "--project-dark": "#292d32",
       "--project-border": "#D6E2F4",
-      "--project-text-muted": "#595d62",
+      "--project-muted-foreground": "#57677A",
       "--project-foreground": "#292d32",
     },
   },
@@ -266,40 +267,40 @@ export const itaAirwaysCase = {
       // id: "benchmarking",
       // label: "Benchmarking",
       size: "fill",
-      bgStyle: { background: "var(--project-background)" },
+      bgStyle: { background: "var(--project-tint)" },
       render: () => (
         <>
           <SectionHeading
             kicker="Competitor benchmarking"
-            title="We chose four competitors deliberately — not for inspiration, but to expose exactly where ITA fell short on the dimensions users care about most."
+            title={<>We chose four competitors deliberately. Not for inspiration — to <em>find the gaps.</em></>}
             className="mx-auto max-w-3xl"
           />
 
-          <div className="mx-auto max-w-3xl grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <div className={`mx-auto max-w-3xl grid grid-cols-1 gap-4 sm:grid-cols-2 ${sp.sectionToContent}`}>
             {[
               {
                 tag: "Low-cost benchmark",
                 title: "Ryanair",
                 logo: itaRyanairLogo,
-                description: <Prose><p>The <strong>gold standard for stripping booking to its minimum viable path</strong>. Clear CTAs, no ambiguity about cost.</p></Prose>,
+                description: <><strong>Gold standard for stripping booking to its minimum viable path.</strong> Clear CTAs, no ambiguity about cost.</>,
               },
               {
                 tag: "Luxury benchmark",
                 title: "Qatar Airways",
                 logo: itaQatarLogo,
-                description: <Prose><p><strong>Premium polish and visual consistency</strong> throughout. Sets the ceiling for information hierarchy and white space.</p></Prose>,
+                description: <><strong>Premium polish and visual consistency</strong> throughout. Sets the ceiling for information hierarchy and white space.</>,
               },
               {
                 tag: "Domestic rival",
                 title: "Trenitalia",
                 logo: itaTrenitaliaLogo,
-                description: <Prose><p>Italy's rail operator and a <strong>direct short-haul competitor</strong>. Relevant because shared users compare the two experiences side by side.</p></Prose>,
+                description: <>Italy's rail operator and a <strong>direct short-haul competitor.</strong> Shared users compare the two experiences side by side.</>,
               },
               {
                 tag: "Filter benchmark",
                 title: "Kayak",
                 logo: itaKayakLogo,
-                description: <Prose><p>Not a direct competitor — but the <strong>gold standard for filter design</strong> and search result density. Benchmarked specifically for its UX patterns.</p></Prose>,
+                description: <>Not a direct competitor — but the <strong>gold standard for filter design</strong> and search result density. Benchmarked specifically for its UX patterns.</>,
               },
             ].map((item) => (
               <Card key={item.title} className="shadow-none">
@@ -310,29 +311,27 @@ export const itaAirwaysCase = {
                     className="h-12 w-12 shrink-0 rounded-md object-cover"
                   />
                   <div>
-                    <Badge variant="secondary" className="mb-1">{item.tag}</Badge>
                     <CardTitle><Prose><h3>{item.title}</h3></Prose></CardTitle>
                   </div>
                 </CardHeader>
-                <CardContent>
-                  {item.description}
+                <CardContent className="flex flex-col gap-3">
+                  <span className="text-sm text-(--project-muted-foreground)">{item.description}</span>
+                  <Badge variant="secondary" className="w-fit">{item.tag}</Badge>
                 </CardContent>
               </Card>
             ))}
           </div>
 
-          <Prose className="mx-auto max-w-3xl">
+          <Prose className={`mx-auto max-w-3xl text-(--project-muted-foreground) ${sp.itemToItem}`}>
             <p>
-              We scored all five sites — ITA included — against five parameters:{" "}
-              <em>clarity of content, graphical coherence, graphical clarity, responsiveness, ease of access.</em>{" "}
-              Spider charts annotated page by page. ITA's strongest score was graphical coherence.
+              We scored all five sites — ITA included — against five parameters:<b>clarity of content, graphical coherence, graphical clarity, responsiveness, ease of access.</b> Spider charts annotated page by page. ITA's strongest score was graphical coherence.
               Its weakest: content clarity and graphical clarity — exactly the dimensions that
               determine whether someone can finish a task.
             </p>
           </Prose>
 
           <ChartContainer
-            className="mx-auto max-w-3xl w-full"
+            className={`mx-auto max-w-3xl w-full ${sp.itemToItem}`}
             config={{
               ita: { label: "ITA Airways", color: "#306fc8" },
               ryanair: { label: "Ryanair", color: "#F4CA35" },
@@ -353,7 +352,7 @@ export const itaAirwaysCase = {
               <PolarGrid />
               <PolarAngleAxis
                 dataKey="metric"
-                tick={{ fontWeight: 700, fontSize: 12, textTransform: "uppercase" }}
+                tick={{ fontWeight: 700, fontSize: 12, textTransform: "uppercase", fill: "var(--project-muted-foreground)" }}
               />
               <ChartTooltip content={<ChartTooltipContent />} />
               <Radar name="ita" dataKey="ita" stroke="#306fc8" fill="#306fc8" fillOpacity={0.15} />
@@ -368,7 +367,7 @@ export const itaAirwaysCase = {
           <PullQuote
             className="mx-auto max-w-3xl"
             size="md"
-            quote="ITA Airways' website demonstrates a reasonable level of graphical coherence, ease of access, and responsiveness compared to competitors. However, it lags behind in content and visual clarity."
+            quote={<>ITA Airways' website demonstrates a reasonable level of <em>graphical coherence</em>, ease of access, and responsiveness compared to competitors. However, it lags behind in <em>content and visual clarity.</em></>}
             role="Benchmarking conclusion"
           />
         </>
