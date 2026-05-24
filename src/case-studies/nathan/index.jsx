@@ -168,11 +168,13 @@ export const nathanCase = {
       id: "problem",
       label: "Problem",
       size: "fill",
+      bgStyle: { background: "var(--project-tint)" },
       render: () => (
         <>
           <SectionHeading
             kicker="The Problem"
-            title="Italian households waste 65 kg of food per person every year — not from carelessness, but because planning groceries is cognitively expensive enough that most families skip it."
+            // title="Italian households waste 65 kg of food per person every year — not from carelessness, but because planning groceries is cognitively expensive enough that most families skip it."
+            title={<>Italian households throw away 65 kg of food per person every year. Not from carelessness — from <em>planning friction</em>.</>}
             subtitle=""
             className="mx-auto max-w-3xl"
           />
