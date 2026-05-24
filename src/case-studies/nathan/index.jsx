@@ -53,7 +53,7 @@ import { Timeline } from "@/components/case/blocks/Timeline"
 import { ProcessStep } from "@/components/case/blocks/ProcessStep"
 import { CaseSeparator } from "@/components/case/blocks/CaseSeparator"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
-import { ShoppingCart, Refrigerator, Leaf, ScanLine, BrainCircuit, ShieldCheck, LayoutGrid, SlidersHorizontal, Hand, Eye } from "lucide-react"
+import { ShoppingCart, Refrigerator, Leaf, ScanLine, BrainCircuit, ShieldCheck, LayoutGrid, SlidersHorizontal, Hand, Eye, Smartphone, Layers } from "lucide-react"
 
 const PillarCard = ({ icon: Icon, title, body, bullets }) => (
   <Card>
@@ -186,7 +186,12 @@ export const nathanCase = {
       id: "solution",
       label: "Solution",
       size: "fill",
-      bgStyle: { background: "var(--project-background)" },
+      // bgStyle: {
+      //   background: "var(--project-primary)",
+      //   "--project-kicker": "#ffffff",
+      //   "--project-foreground": "#ffffff",
+      //   "--project-muted-foreground": "rgba(255,255,255,0.75)",
+      // },
       render: () => (
         <>
           <SectionHeading
@@ -199,10 +204,13 @@ export const nathanCase = {
           <Figure src={ntnIntroSolution} frame="soft" />
           <Metrics
             columns={3}
+            variant="plain"
+            align="center"
+            className="mx-auto max-w-3xl"
             items={[
-              { value: "81", label: "screens designed" },
-              { value: "33", label: "design system components" },
-              { value: "2", label: "AI models architected" },
+              { value: "81", label: "screens designed", icon: Smartphone },
+              { value: "33", label: "design system components", icon: Layers },
+              { value: "2", label: "AI models architected", icon: BrainCircuit },
             ]}
           />
         </>
