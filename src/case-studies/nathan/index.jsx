@@ -191,8 +191,9 @@ export const nathanCase = {
         <>
           <SectionHeading
             kicker="The Solution"
-            title="A mobile app that scans your receipts, learns your household's waste patterns via an LSTM model, and quietly rewrites your next shopping list to match what you actually need."
-            subtitle=""
+            // title="A mobile app that scans your receipts, learns your household's waste patterns via an LSTM model, and quietly rewrites your next shopping list to match what you actually need."
+            title={<>An app that learns what your household actually wastes — then <em>quietly rewrites your next list to match</em>.</>}
+            subtitle="Two AI models in sequence: receipt-scanning OCR captures what you buy, an LSTM adjusts quantities based on what you actually consumed."
             className="mx-auto max-w-3xl"
           />
           <Figure src={ntnIntroSolution} frame="soft" />
