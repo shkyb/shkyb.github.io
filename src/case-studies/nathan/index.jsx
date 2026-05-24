@@ -151,15 +151,15 @@ export const nathanCase = {
       { label: "Focus", value: "AI Architecture, UX, Design Systems, Sustainability" },
     ],
     cssVars: {
-      "--project-kicker":     "#599A08",
-      "--project-primary":    "#599A08",
-      "--project-dark":       "#1A4A1A",
-      "--project-surface":       "#F5F5F5",
-      "--project-background":    "#FFFFFF",
-      "--project-tint":     "#F5F5F5",
-      "--project-dark-text":  "#1F1F1F",
+      "--project-kicker": "#599A08",
+      "--project-primary": "#599A08",
+      "--project-dark": "#1A4A1A",
+      "--project-surface": "#F5F5F5",
+      "--project-background": "#FFFFFF",
+      "--project-tint": "#F5F5F5",
+      "--project-dark-text": "#1F1F1F",
       "--project-foreground": "#1F1F1F",
-      "--project-muted-foreground":     "#4B4B4B",
+      "--project-muted-foreground": "#4B4B4B",
       "--project-border": "#E2E2E2",
     },
   },
@@ -217,6 +217,15 @@ export const nathanCase = {
         </>
       ),
     },
+
+    {
+      size: "fill",
+      bgStyle: { background: "var(--project-primary)", "--project-muted-foreground": "white", "--project-border": "var(--project-border)" },
+      render: () => (
+        <CaseSeparator label="↓ Dive deeper into the project ↓" />
+      ),
+    },
+
     {
       id: "origin",
       label: "Origin & Reframing",
