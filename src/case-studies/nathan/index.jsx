@@ -32,6 +32,7 @@ import ntnFinal5 from "./assets/ntn-final-5.webp"
 import ntnFinal6 from "./assets/ntn-final-6.webp"
 
 import { Prose } from "@/components/case/layout/Prose"
+import { sp } from "@/components/case/layout/spacing"
 import { CaseSection as Section } from "@/components/case/layout/Section"
 import { CaseContainer as Container } from "@/components/case/layout/Container"
 import { FullBleedSection } from "@/components/case/layout/FullBleedSection"
@@ -155,7 +156,7 @@ export const nathanCase = {
       "--project-dark":       "#1A4A1A",
       "--project-surface":       "#F5F5F5",
       "--project-background":    "#FFFFFF",
-      "--project-tint":"#F5F5F5",
+      "--project-tint":     "#F5F5F5",
       "--project-dark-text":  "#1F1F1F",
       "--project-foreground": "#1F1F1F",
       "--project-muted-foreground":     "#4B4B4B",
@@ -206,7 +207,7 @@ export const nathanCase = {
             columns={3}
             variant="plain"
             align="center"
-            className="mx-auto max-w-3xl"
+            className={`mx-auto max-w-3xl ${sp.itemToItem}`}
             items={[
               { value: "81", label: "screens designed", icon: Smartphone },
               { value: "33", label: "design system components", icon: Layers },
