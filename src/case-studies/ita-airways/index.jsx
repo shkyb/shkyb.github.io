@@ -227,6 +227,15 @@ export const itaAirwaysCase = {
         </>
       ),
     },
+
+    {
+      size: "fill",
+      bgStyle: { background: "white", "--project-muted-foreground": "var(--project-primary)", "--project-border": "var(--project-border)" },
+      render: () => (
+        <CaseSeparator label="↓ Dive deeper into the project ↓" />
+      ),
+    },
+
     {
       id: "research",
       label: "Research",
