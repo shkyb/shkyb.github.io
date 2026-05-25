@@ -57,34 +57,36 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { ShoppingCart, Refrigerator, Leaf, ScanLine, BrainCircuit, ShieldCheck, LayoutGrid, SlidersHorizontal, Hand, Eye, Smartphone, Layers } from "lucide-react"
 
 const PillarCard = ({ icon: Icon, title, body, bullets }) => (
-  <Card>
-    <CardHeader>
-      {Icon && <Icon className="h-8 w-8 text-muted-foreground" />}
-      <CardTitle>
-        <Prose><h3>{title}</h3></Prose>
-      </CardTitle>
+  <Card className="border border-(--project-border,var(--border)) shadow-none" style={{ background: "var(--project-background)" }}>
+    <CardHeader className="gap-4">
+      {Icon && (
+        <div className="flex h-10 w-10 items-center justify-center rounded-xl" style={{ background: "var(--project-primary)" }}>
+          <Icon className="h-5 w-5 text-white" />
+        </div>
+      )}
+      <CardTitle style={{ color: "var(--project-foreground)" }}>{title}</CardTitle>
       {body && (
-        <CardDescription>
-          <Prose>{body}</Prose>
-        </CardDescription>
+        <CardDescription style={{ color: "var(--project-muted-foreground)" }}>{body}</CardDescription>
       )}
     </CardHeader>
     {bullets && (
       <CardContent>
-        <Prose>
-          <ul>{bullets.map((b, i) => <li key={i} className="font-medium">{b}</li>)}</ul>
-        </Prose>
+        <ul className="space-y-1">
+          {bullets.map((b, i) => (
+            <li key={i} className="text-sm font-medium" style={{ color: "var(--project-muted-foreground)" }}>{b}</li>
+          ))}
+        </ul>
       </CardContent>
     )}
   </Card>
 )
 
 const ProductPillars = () => (
-  <div className="mx-auto max-w-4xl grid grid-cols-1 gap-6 md:grid-cols-3">
+  <div className="mx-auto max-w-4xl grid grid-cols-1 gap-4 md:grid-cols-3">
     <PillarCard
       icon={ShoppingCart}
       title="Smart Shopping Lists"
-      body="Automate manual tasks to reduce the margin of error in the whole process."
+      body="Your next list, built from what you actually bought last time. Editable by every household member, in real time."
       bullets={[
         "Multiple member management",
         "Info on product quality standards",
@@ -94,7 +96,7 @@ const ProductPillars = () => (
     <PillarCard
       icon={Refrigerator}
       title="Inventory & Expiry Tracking"
-      body="Have the management and status of your resources under control and at your fingertips."
+      body="Scan a receipt after shopping. Items sort into Fridge, Freezer, and Pantry — with estimated expiry dates already filled in."
       bullets={[
         "Receipt scanner",
         "Automatic inventory",
@@ -104,7 +106,7 @@ const ProductPillars = () => (
     <PillarCard
       icon={Leaf}
       title="Zero-Waste Journey"
-      body="Clearly track and correct purchasing and consumption habits with a reward system."
+      body="Log what you wasted, see your impact, earn rewards. Every report makes the next list more accurate."
       bullets={[
         "Data visualization on consumption",
         "User's trend",
