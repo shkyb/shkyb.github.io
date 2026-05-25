@@ -497,12 +497,12 @@ export const nathanCase = {
     },
     {
       // id: "wireframe",
-      // label: "Wireframe",
+      // label: "— Wireframes",
       size: "fill",
       render: () => (
         <>
           <SectionHeading
-            kicker="Wireframes"
+            kicker="— Wireframes"
             // title="Wireframes weren't drawn freely — every layout decision was anchored to a principle from cognitive psychology."
             title={<>Every layout decision had a reason. <em>Four principles from cognitive psychology.</em></>}
             className="mx-auto max-w-3xl"
@@ -550,13 +550,13 @@ export const nathanCase = {
     },
     {
       // id: "design-system",
-      // label: "Design System",
+      // label: "— Design System",
       size: "fill",
       bgStyle: { background: "var(--project-background-alt)" },
       render: () => (
         <>
           <SectionHeading
-            kicker="Design System"
+            kicker="— Design System"
             title="Every color, typeface, and component was chosen to get out of the user's way — clean, readable, and nothing more than necessary."
             className="mx-auto max-w-3xl"
           />
@@ -574,12 +574,12 @@ export const nathanCase = {
     },
     {
       // id: "testing",
-      // label: "Testing",
+      // label: "— Testing",
       size: "fill",
       render: () => (
         <>
           <SectionHeading
-            kicker="Testing & Iteration"
+            kicker="— Testing & Iteration"
             title="We tested with real households — then rebuilt the parts that quietly confused them."
             className="mx-auto max-w-3xl"
           />
