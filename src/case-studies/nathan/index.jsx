@@ -644,12 +644,13 @@ export const nathanCase = {
       id: "final-design",
       label: "Final Design",
       size: "fill",
-      bgStyle: { background: "var(--project-background)" },
+      bgStyle: { background: "var(--project-tint)" },
       render: () => (
         <>
           <SectionHeading
             kicker="Final Design"
-            title="The MVP includes 80+ screens which covered one complete loop: from building the list, to scanning the receipt, to tracking what was left."
+            // title="The MVP includes 80+ screens which covered one complete loop: from building the list, to scanning the receipt, to tracking what was left."
+            title={<><span className="lining-nums tabular-nums">81</span> screens. A hi-fi prototype covering <em>the full loop — list, scan, track.</em></>}
             className="mx-auto max-w-3xl"
           />
           {/* <Prose className="mx-auto max-w-3xl">
