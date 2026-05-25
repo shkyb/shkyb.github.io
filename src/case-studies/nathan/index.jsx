@@ -552,17 +552,16 @@ export const nathanCase = {
       // id: "design-system",
       // label: "— Design System",
       size: "fill",
-      bgStyle: { background: "var(--project-background-alt)" },
+      bgStyle: { background: "var(--project-tint)" },
       render: () => (
         <>
           <SectionHeading
             kicker="— Design System"
-            title="Every color, typeface, and component was chosen to get out of the user's way — clean, readable, and nothing more than necessary."
+            // title="Every color, typeface, and component was chosen to get out of the user's way — clean, readable, and nothing more than necessary."
+            title={<>The design system's job was to make AI feel <em>calm and trustworthy.</em></>}
+            subtitle="A customization of the Moon Design System — 33 components adapted to the specific needs of a household grocery app."
             className="mx-auto max-w-3xl"
           />
-          <Prose className="mx-auto max-w-3xl">
-            <p>Nathan's design system is a customization of the <strong>Moon Design System</strong> — 33 components adapted to the specific needs of a household grocery app.</p>
-          </Prose>
           <div className="mx-auto grid max-w-5xl grid-cols-2 gap-4">
             <Figure src={ntnDesignSystem01} alt="Design system foundations" aspect="aspect-square" frame="soft" />
             <Figure src={ntnDesignSystem02} alt="Design system components" aspect="aspect-square" frame="soft" />
