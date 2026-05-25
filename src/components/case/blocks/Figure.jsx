@@ -129,19 +129,19 @@ export function Figure({
         <figcaption className="space-y-1">
           {label ? (
             <Prose>
-              <p className="m-0 text-xs font-medium text-muted-foreground">{label}</p>
+              <p className="m-0 text-xs font-medium text-(--project-muted-foreground,var(--muted-foreground))">{label}</p>
             </Prose>
           ) : null}
 
           {caption ? (
             <Prose>
-              <p className="m-0 text-sm text-muted-foreground">{caption}</p>
+              <p className="m-0 text-sm text-(--project-muted-foreground,var(--muted-foreground))">{caption}</p>
             </Prose>
           ) : null}
 
           {credit ? (
             <Prose>
-              <p className="m-0 text-xs text-muted-foreground">{credit}</p>
+              <p className="m-0 text-xs text-(--project-muted-foreground,var(--muted-foreground))">{credit}</p>
             </Prose>
           ) : null}
         </figcaption>
