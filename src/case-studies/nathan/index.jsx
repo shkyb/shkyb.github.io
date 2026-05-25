@@ -229,84 +229,47 @@ export const nathanCase = {
     {
       id: "origin",
       label: "Origin & Reframing",
-      size: "small",
+      size: "fill",
       render: () => (
         <>
-          <SectionHeading
-            kicker="How It Started"
-            title="We set out to design an AI solution for Italy's waste crisis — and spent the first weeks systematically killing every idea we were excited about."
-          />
-          <Prose>
-            <p>
-              Early research mapped the full waste lifecycle — generation, collection, sorting, processing, reintegration — and produced two ideas that looked promising on paper and collapsed under scrutiny.
-            </p>
-          </Prose>
-          <Timeline
-            items={[
-              {
-                title: "Smart bins — killed",
-                tone: "warning",
-                body: <>AI-enabled bins that sort waste and feed data to city infrastructure. <em>It worked on paper.</em> In practice it needed buy-in from municipalities, waste companies, and citizens simultaneously — a <strong>rollout problem, not a design problem.</strong> And the AI was decorative: sensors and pattern matching would do the same job.</>,
-              },
-              {
-                title: "DIY reuse projects — killed",
-                tone: "warning",
-                body: <>Composting guides, upcycling recipes, creative reuse prompts. It addressed <em>guilt</em>, not behavior. A user might feel better about last week's wasted spinach while <strong>still overbuying next week's.</strong> The intervention landed after the damage — with no mechanism to change the habit.</>,
-              },
-            ]}
-          />
-          <Prose>
-            <p>
-              The finding that redirected everything: <strong>people feel responsible for waste but never see the direct result of their effort.</strong> Italy's waste infrastructure is well-run. The volume is the problem — and volume is created upstream, before any bin is involved.
-            </p>
-          </Prose>
+          <div className="mx-auto max-w-3xl">
+            <SectionHeading
+              kicker="Origin & Reframing"
+              // title="We set out to design an AI solution for Italy's waste crisis — and spent the first weeks systematically killing every idea we were excited about."
+              title={<>We set out to fix Italy's waste crisis. The research told us <em>we were solving the wrong problem</em>.</>}
+              subtitle="The course required AI to be central, not decorative. That constraint ruled out our first two ideas — and pushed us toward the right problem."
+            />
+            <Timeline
+              items={[
+                {
+                  title: "Smart bins — killed",
+                  tone: "warning",
+                  body: <><em>Worked on paper.</em> Needed city-scale buy-in from municipalities and waste companies — a <strong>rollout problem, not a design problem.</strong> And the AI was decorative: sensors would do the same job.</>,
+                },
+                {
+                  title: "DIY reuse projects — killed",
+                  tone: "warning",
+                  body: <>Composting guides, upcycling prompts. Addressed <em>guilt</em>, not behavior — the intervention <strong>landed after the damage, not before it.</strong></>,
+                },
+              ]}
+            />
+          </div>
           <Figure
             src={ntnOriginChart}
             frame="soft"
             alt="Waste sector breakdown pie chart showing food at 44% of household waste"
-            caption="Food was the worst-performing waste category. Households are its biggest source — ahead of restaurants, retail, and manufacturing."
+            // caption="Food was the worst-performing waste category. Households are its biggest source — ahead of restaurants, retail, and manufacturing."
           />
-
-          <Prose>
-            <p>
-              So we moved upstream — from disposal all the way back to the shopping aisle.
-            </p>
-          </Prose>
-        </>
-      ),
-    },
-    {
-      // id: "reframing",
-      // label: "Reframing",
-      size: "small",
-      bgStyle: { background: "var(--project-background-alt)" },
-      render: () => (
-        <>
-          <SectionHeading
-            kicker="Reframing"
-            title="A single chain of five whys moved the entire project upstream — from the bin to the shopping list."
-          />
-          <Prose>
-            <p>
-              We kept asking why. Five times, in sequence — and each answer dissolved one assumption and revealed a sharper one underneath.
-            </p>
-            <p>
-              <em>Why do people waste food?</em> They overbuy. <em>Why do they overbuy?</em> No plan, no list, no sense of what's already home. <em>Why don't they make a list?</em> Because <strong>it's effortful, time-consuming, and nobody wants to do it alone.</strong>
-            </p>
-            <p>
-              That last answer changed everything. The waste wasn't a disposal problem or even a food problem — it was a <strong>planning problem.</strong> And planning problems have friction at their root. Remove the friction, and most of the waste downstream takes care of itself.
-            </p>
-          </Prose>
           <Figure
             src={ntnOriginReframing}
             frame="soft"
             alt="5-Whys reframing diagram showing the chain from food waste to shopping friction"
-            caption="The pivot from waste management to shopping friction. Fix the planning step and most downstream waste triggers disappear."
+            // caption="The pivot from waste management to shopping friction. Fix the planning step and most downstream waste triggers disappear."
           />
           <PullQuote
-            size="md"
-            quote="How might we help families shop without excess cognitive load — making the experience more enjoyable and nudging them toward environmentally conscious choices?"
-            role="How Might We"
+            // size="md"
+            quote={<>How might we help families shop without <em>excess cognitive load</em> — making the experience more enjoyable and nudging them toward <em>environmentally conscious choices</em>?</>}
+            // role="How Might We"
           />
         </>
       ),
