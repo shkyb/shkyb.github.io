@@ -136,6 +136,7 @@ main {
   --tw-prose-body: var(--project-foreground, var(--foreground));
   --tw-prose-headings: var(--project-foreground, var(--foreground));
   --tw-prose-bold: inherit;
+  --tw-prose-bold-font-weight: 600;
   --tw-prose-links: var(--project-kicker, var(--project-primary, var(--foreground)));
 }
 
