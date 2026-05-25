@@ -11,7 +11,10 @@ export default function Navbar() {
   const closeMenu = () => setIsOpen(false)
 
   return (
-    <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+    <header
+      className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b"
+      style={{ borderColor: "var(--project-border, var(--border))", background: "color-mix(var(--project-background, var(--background)) 80%, transparent)" }}
+    >
       <nav className="mx-auto w-full max-w-screen-2xl px-6 md:px-12 h-12 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center">

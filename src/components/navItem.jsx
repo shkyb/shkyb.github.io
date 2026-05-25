@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom"
 
 export default function NavItem({ text, count = null, icon = null, to = null, href = null, onClick }) {
   const baseClass =
-    "inline-flex items-center gap-2 text-slate-700 hover:text-slate-950 transition-colors uppercase"
+    "inline-flex items-center gap-2 text-(--project-muted-foreground,var(--color-slate-700)) hover:text-(--project-foreground,var(--color-slate-950)) transition-colors uppercase"
 
   const content = (
     <>
@@ -21,10 +21,12 @@ export default function NavItem({ text, count = null, icon = null, to = null, hr
         to={to}
         onClick={onClick}
         className={({ isActive }) =>
-          [
-            baseClass,
-            isActive ? "text-slate-950" : "",
-          ].join(" ")
+          [baseClass, isActive ? "font-medium" : ""].join(" ")
+        }
+        style={({ isActive }) =>
+          isActive
+            ? { color: "var(--project-kicker, var(--project-primary, var(--color-slate-950)))" }
+            : undefined
         }
       >
         {content}
