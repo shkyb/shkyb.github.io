@@ -328,19 +328,11 @@ export const itaAirwaysCase = {
             ))}
           </div>
 
-          <Prose className={`mx-auto max-w-3xl text-(--project-muted-foreground) ${sp.itemToItem}`}>
-            <p>
-              We scored all five sites — ITA included — against five parameters:<b>clarity of content, graphical coherence, graphical clarity, responsiveness, ease of access.</b> Spider charts annotated page by page. ITA's strongest score was graphical coherence.
-              Its weakest: content clarity and graphical clarity — exactly the dimensions that
-              determine whether someone can finish a task.
-            </p>
-          </Prose>
-
           <ChartContainer
             className={`mx-auto max-w-3xl w-full ${sp.itemToItem}`}
             config={{
               ita: { label: "ITA Airways", color: "#306fc8" },
-              ryanair: { label: "Ryanair", color: "#F4CA35" },
+              ryanair: { label: "Ryanair", color: "#D97706" },
               qatar: { label: "Qatar Airways", color: "#7B2451" },
               trenitalia: { label: "Trenitalia", color: "#006A6A" },
               kayak: { label: "Kayak", color: "#FF690F" },
@@ -355,14 +347,20 @@ export const itaAirwaysCase = {
                 { metric: "Ease of access", ita: 8, ryanair: 8, qatar: 6, trenitalia: 6, kayak: 8 },
               ]}
             >
+              <defs>
+                <pattern id="dots-ita" patternUnits="userSpaceOnUse" width="8" height="8">
+                  <rect width="8" height="8" fill="#306fc8" fillOpacity="0.15" />
+                  <circle cx="4" cy="4" r="1.5" fill="#306fc8" fillOpacity="0.5" />
+                </pattern>
+              </defs>
               <PolarGrid />
               <PolarAngleAxis
                 dataKey="metric"
                 tick={{ fontWeight: 700, fontSize: 12, textTransform: "uppercase", fill: "var(--project-muted-foreground)" }}
               />
               <ChartTooltip content={<ChartTooltipContent />} />
-              <Radar name="ita" dataKey="ita" stroke="#306fc8" fill="#306fc8" fillOpacity={0.15} />
-              <Radar name="ryanair" dataKey="ryanair" stroke="#F4CA35" fill="#F4CA35" fillOpacity={0.1} />
+              <Radar name="ita" dataKey="ita" stroke="#306fc8" fill="url(#dots-ita)" fillOpacity={1} />
+              <Radar name="ryanair" dataKey="ryanair" stroke="#D97706" fill="#D97706" fillOpacity={0.1} />
               <Radar name="qatar" dataKey="qatar" stroke="#7B2451" fill="#7B2451" fillOpacity={0.1} />
               <Radar name="trenitalia" dataKey="trenitalia" stroke="#006A6A" fill="#006A6A" fillOpacity={0.1} />
               <Radar name="kayak" dataKey="kayak" stroke="#FF690F" fill="#FF690F" fillOpacity={0.1} />
