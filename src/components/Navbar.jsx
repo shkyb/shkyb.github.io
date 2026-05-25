@@ -3,6 +3,7 @@ import NavItem from "./navItem"
 import NavLogo from "./navLogo"
 
 import { HiBars3, HiXMark, HiMiniArrowUpRight } from "react-icons/hi2"
+import { Home } from "lucide-react"
 import { RiBehanceFill, RiLinkedinFill, RiGithubFill } from "react-icons/ri"
 
 export default function Navbar() {
@@ -23,7 +24,8 @@ export default function Navbar() {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-6">
-          <NavItem text="Home" to="/" />
+          <NavItem icon={<Home size={18} />} to="/" />
+          {/* <NavItem text="Home" to="/" /> */}
           <NavItem text="About" to="/about" />
           <NavItem text="Projects" to="/projects" count={7} />
           <NavItem
@@ -54,7 +56,8 @@ export default function Navbar() {
       {isOpen && (
         <div className="md:hidden border-t border-slate-100 bg-white">
           <div className="mx-auto w-full max-w-screen-2xl px-6 py-4 flex flex-col gap-4">
-            <NavItem text="Home" to="/" onClick={closeMenu} />
+            <NavItem icon={<Home size={18} />} to="/" onClick={closeMenu} />
+            {/* <NavItem text="Home" to="/" onClick={closeMenu} /> */}
             <NavItem text="About" to="/about" onClick={closeMenu} />
             <NavItem text="Projects" to="/projects" onClick={closeMenu} />
 
