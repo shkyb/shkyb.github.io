@@ -458,18 +458,20 @@ export const nathanCase = {
       // id: "IA",
       // label: "IA",
       size: "fill",
-      bgStyle: { background: "var(--project-background-alt)" },
+      bgStyle: { background: "var(--project-tint)" },
       render: () => (
-        <div className="flex flex-col gap-16">
+        <div className="flex mt-0 md:mt-0 flex-col gap-16">
           <ProcessStep
+            className="mt-0 md:mt-0"
             figureCols={8}
             justifyEnd
-            step="⚖️"
+            number={<Scale className="h-10 w-10" />}
             title="Impact / Effort Matrix"
-            description={<>We had more ideas than time, so before touching Figma we forced every user story onto a 2×2 — <strong>impact against effort</strong>. What landed in the top-left shipped first. What landed in the bottom-right got killed. It was uncomfortable, and it was <em>the right call</em>.</>}
+            description={<>Every user story forced onto a 2×2 — <strong>impact against effort</strong>. Top-left shipped first. Bottom-right got killed. <em>Uncomfortable, and the right call.</em></>}
             figure={{
               src: ntnAppMatrix,
               alt: "Impact / Effort Matrix diagram with user stories plotted by impact and effort",
+              className: "mt-0",
               // caption: "User stories sorted into Quick Wins, Major Projects, Fill-ins, and Hard Slogs.",
               frame: "soft",
               aspect: "aspect-[3/2]",
@@ -479,9 +481,9 @@ export const nathanCase = {
             figureCols={8}
             justifyEnd
             reverse
-            step="🗺️"
+            number={<Map className="h-10 w-10" />}
             title="Information Architecture"
-            description={<>With scope defined, we needed a skeleton before screens. <strong>Three pillars — Home, Inventory, Household</strong> — everything reachable in two taps. <em>Locking the IA first</em> meant no screen was ever drawn without a clear place to live.</>}
+            description={<><strong>Three pillars — Home, Inventory, Household</strong> — everything reachable in two taps. <em>Locking the IA first</em> meant no screen was drawn without a clear place to live.</>}
             figure={{
               src: ntnAppIa,
               alt: "Nathan information architecture diagram showing three-pillar structure",
