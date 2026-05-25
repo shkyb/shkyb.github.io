@@ -318,33 +318,18 @@ export const nathanCase = {
         <>
           <SectionHeading
             kicker="Service Idea"
-            title="Nathan works in the background — learning what your household actually buys, and quietly making your next list more honest than your last one."
+            // title="Nathan works in the background — learning what your household actually buys, and quietly making your next list more honest than your last one."
+            title={<>Nathan acts like a household butler — <em>learning what you waste before you even notice it.</em></>}
+            subtitle="Three connected pillars: planning before the shop, tracking after it, learning from what actually gets used."
             className="mx-auto max-w-3xl"
           />
-          <Prose className="mx-auto max-w-3xl">
-            <p>Nathan is a mobile app built around one idea: that most families already know roughly what they waste, they just have no tool that does anything about it. So rather than adding another dashboard to look at, we designed something that acts on that knowledge for you — learning from what you buy, what you finish, and what ends up in the bin, and adjusting your next shopping list accordingly.</p>
-          </Prose>
+          <ProductPillars />
           <Figure
-            src={ntnService}
+            src={ntnServiceUjm}
             frame="soft"
-            alt="Three Nathan app screens side by side showing the Home, Inventory, and Shopping List views"
-            caption="Home · Inventory · Shopping List — three screens, one loop."
+            caption="New user journey map"
           />
-          <Prose className="mx-auto max-w-3xl">
-            <p>The app is built around three connected pillars. Each one handles a different moment in the cycle — planning before the shop, tracking after it, and learning from what actually gets used.</p>
-          </Prose>
-          {/* <ProductPillars /> */}
         </>
-      ),
-    },
-    {
-      size: "fill",
-      render: () => (
-        <Figure
-          src={ntnServiceUjm}
-          frame="soft"
-          caption="New user journey map"
-        />
       ),
     },
     {
