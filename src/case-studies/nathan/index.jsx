@@ -278,18 +278,18 @@ export const nathanCase = {
       id: "research",
       label: "Research",
       size: "small",
+      bgStyle: { background: "var(--project-tint)" },
       render: () => (
         <>
           <SectionHeading
             kicker="Research"
-            title="Before designing anything, we mapped where the friction actually lived — then benchmarked every product that claimed to solve it."
+            // title="Before designing anything, we mapped where the friction actually lived — then benchmarked every product that claimed to solve it."
+            title={<>We mapped the friction. Then we <em>benchmarked who else had tried to solve it.</em></>}
+            subtitle="Decision → Shopping → Consuming → Disposal. Pain clustered at the start and end — not in the store."
           />
 
-          <Prose>
+          <Prose className={sp.itemToItem}>
             <h3>User Journey Mapping</h3>
-            <p>
-              We shadowed a shopper through every stage — <strong>Decision → Shopping → Consuming → Disposal</strong> — not to confirm what we already suspected, but to find the moments where effort quietly overwhelms intent and people just stop trying.
-            </p>
           </Prose>
           <Figure
             src={ntnResearchUjm}
@@ -297,14 +297,8 @@ export const nathanCase = {
             alt="User journey map across four shopping stages showing pain point clusters in Decision and Consuming"
             caption="Pain points clustered heavily in the Decision and Consuming stages — before and after the store, not inside it."
           />
-          <Prose>
-            <p>
-              The friction wasn't in the aisle. It was in the kitchen the night before — <em>what do we already have, how much do we need, what are we actually going to cook this week?</em> And again after shopping, staring at an expiry date and trying to remember when you bought it. <strong>Those two moments are where the waste begins.</strong>
-            </p>
+          <Prose className={sp.itemToItem}>
             <h3>Benchmarking</h3>
-            <p>
-              We mapped five existing apps against the four things that actually matter: <strong>collaboration, AI involvement, inventory tracking, waste stats.</strong> Not to find inspiration — to find what nobody had done yet.
-            </p>
           </Prose>
           <Figure
             src={ntnResearchBenchmark}
@@ -312,11 +306,6 @@ export const nathanCase = {
             alt="Benchmarking matrix comparing five grocery apps across collaboration, AI, inventory, and stats tracking"
             caption="No existing product combined all four pillars. Nathan is the only concept with meaningful AI at its core."
           />
-          <Prose>
-            <p>
-              Every app handled one, maybe two. Nobody had connected all four into a single experience — and nobody had made AI the thing that actually drives the list, not just a search bar with a smarter autocomplete. <strong>That gap was the brief.</strong>
-            </p>
-          </Prose>
         </>
       ),
     },
