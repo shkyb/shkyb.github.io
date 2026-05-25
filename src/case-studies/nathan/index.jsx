@@ -675,7 +675,8 @@ export const nathanCase = {
         <>
           <SectionHeading
             kicker="Reflections"
-            title="AI is a design material — it has constraints, fail-safes, and responsibilities that have to be designed for, not assumed."
+            // title="AI is a design material — it has constraints, fail-safes, and responsibilities that have to be designed for, not assumed."
+            title={<>AI is a design material — it has constraints, fail-safes, and responsibilities that have to be <em>designed for, not assumed.</em></>}
           />
           <InsightList
             items={[
@@ -693,8 +694,8 @@ export const nathanCase = {
               // },
             ]}
           />
-          <Prose>
-            <p>A big thank you to <a href="https://www.linkedin.com/in/marzia-mortati-19a0898/" target="_blank" rel="noreferrer">Marzia Mortati</a>, <a href="https://www.linkedin.com/in/andreabonarini/" target="_blank" rel="noreferrer">Andrea Bonarini</a>, <a href="https://www.linkedin.com/in/enrico-priora/" target="_blank" rel="noreferrer">Enrico Priora</a>, <a href="https://dipartimentodesign.polimi.it/it/personale/federico.espositi#" target="_blank" rel="noreferrer">Federico Espositi</a>, and <a href="https://www.linkedin.com/in/giulia-daleo/" target="_blank" rel="noreferrer">Giulia D'Aleo</a> for the care and patience they put into every review session. And to Filippo, Marjan, Dilara, and Erika — it was a pleasure to figure this out together.</p>
+          <Prose className={sp.itemToItem}>
+            <p className="text-(--project-muted-foreground,var(--muted-foreground))">A big thank you to <a href="https://www.linkedin.com/in/marzia-mortati-19a0898/" target="_blank" rel="noreferrer">Prof. Marzia Mortati</a>, <a href="https://www.linkedin.com/in/andreabonarini/" target="_blank" rel="noreferrer">Prof. Andrea Bonarini</a>, <a href="https://www.linkedin.com/in/enrico-priora/" target="_blank" rel="noreferrer">Enrico Priora</a>, <a href="https://dipartimentodesign.polimi.it/it/personale/federico.espositi#" target="_blank" rel="noreferrer">Federico Espositi</a>, and <a href="https://www.linkedin.com/in/giulia-daleo/" target="_blank" rel="noreferrer">Giulia D'Aleo</a> for the care and patience they put into every review session. And to <strong>Filippo</strong>, <strong>Marjan</strong>, <strong>Dilara</strong>, and <strong>Erika</strong> — it was a pleasure to figure this out together.</p>
           </Prose>
         </>
       ),
