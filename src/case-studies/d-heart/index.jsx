@@ -360,7 +360,7 @@ export const dHeartCase = {
       "--project-primary-light": "#F5845A",
       "--project-kicker": "#E8601A",
       "--project-foreground": "#1A1714",
-      "--project-muted-foreground": "#7A736C",
+      "--project-muted-foreground": "#675F5B",
       "--project-background": "#FAF7F4",
       "--project-border": "#EAE4DC",
       "--project-accent": "#3A6EBF",
