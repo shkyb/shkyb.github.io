@@ -503,20 +503,21 @@ export const nathanCase = {
         <>
           <SectionHeading
             kicker="Wireframes"
-            title="Wireframes weren't drawn freely — every layout decision was anchored to a principle from cognitive psychology."
+            // title="Wireframes weren't drawn freely — every layout decision was anchored to a principle from cognitive psychology."
+            title={<>Every layout decision had a reason. <em>Four principles from cognitive psychology.</em></>}
             className="mx-auto max-w-3xl"
           />
           <div className="mx-auto grid max-w-3xl grid-cols-1 gap-4 md:grid-cols-2">
-            <Callout tone="neutral" title="Miller's Law" icon={LayoutGrid}>
+            <Callout className="mt-0 md:mt-0" tone="neutral" title="Miller's Law" icon={LayoutGrid}>
               Inventory screens cap at 7±2 visible items before scrolling — preventing overload when scanning a full pantry grid.
             </Callout>
-            <Callout tone="neutral" title="Hick's Law" icon={SlidersHorizontal}>
+            <Callout className="mt-0 md:mt-0" tone="neutral" title="Hick's Law" icon={SlidersHorizontal}>
               Minimal filter options on the shopping list. Fewer decisions per interaction means less friction per shop.
             </Callout>
-            <Callout tone="neutral" title="Fitts's Law" icon={Hand}>
+            <Callout className="mt-0 md:mt-0" tone="neutral" title="Fitts's Law" icon={Hand}>
               Primary actions are generously sized and thumb-reachable. The most common interactions never require a stretch.
             </Callout>
-            <Callout tone="neutral" title="Selective Attention" icon={Eye}>
+            <Callout className="mt-0 md:mt-0" tone="neutral" title="Selective Attention" icon={Eye}>
               Card-based layout uses proximity and common-region grouping to surface what's relevant and suppress what isn't.
             </Callout>
           </div>
