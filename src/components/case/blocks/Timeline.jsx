@@ -56,12 +56,9 @@ export function Timeline({
     }
 
     return (
-      <div
-        className={cn("text-base text-(--project-muted-foreground,var(--muted-foreground))", className)}
-        style={{ color: "var(--project-muted-foreground, var(--muted-foreground))" }}
-      >
-        {body}
-      </div>
+      <Prose>
+        <p className={cn("m-0 text-base text-(--project-muted-foreground,var(--muted-foreground))", className)}>{body}</p>
+      </Prose>
     )
   }
 
