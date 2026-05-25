@@ -54,7 +54,7 @@ import { Timeline } from "@/components/case/blocks/Timeline"
 import { ProcessStep } from "@/components/case/blocks/ProcessStep"
 import { CaseSeparator } from "@/components/case/blocks/CaseSeparator"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
-import { ShoppingCart, Refrigerator, Leaf, ScanLine, BrainCircuit, ShieldCheck, LayoutGrid, SlidersHorizontal, Hand, Eye, Smartphone, Layers, Camera, FileSearch, Link2, Bot, CheckCheck, Inbox, ClipboardList, RefreshCw } from "lucide-react"
+import { ShoppingCart, Refrigerator, Leaf, ScanLine, BrainCircuit, ShieldCheck, LayoutGrid, SlidersHorizontal, Hand, Eye, Smartphone, Layers, Camera, FileSearch, Link2, Bot, CheckCheck, Inbox, ClipboardList, RefreshCw, Scale, Map, PenLine, LayoutTemplate, Figma, FlaskConical } from "lucide-react"
 
 const PillarCard = ({ icon: Icon, title, body, bullets }) => (
   <Card className="border border-(--project-border,var(--border)) shadow-none" style={{ background: "var(--project-background)" }}>
@@ -436,47 +436,19 @@ export const nathanCase = {
           <div className="flex flex-col gap-4">
             <SectionHeading
               kicker="App Development"
-              title="We had three weeks to go from blank canvas to a tested prototype. So before touching Figma, we ran an agile sprint and decided what actually mattered."
+              // title="We had three weeks to go from blank canvas to a tested prototype. So before touching Figma, we ran an agile sprint and decided what actually mattered."
+              title={<>We had three weeks. So before opening Figma, <em>we decided what to cut.</em></>}
+              subtitle="Structured like a design sprint — prioritize, prototype, test, iterate."
             />
-            <Prose>
-              <p>
-                Once the problem and solution were clear, the design process moved through six structured stages — from deciding what to build first, to validating it with real households. Each stage fed directly into the next.
-              </p>
-            </Prose>
           </div>
           <Timeline
             items={[
-              {
-                title: "⚖️ Impact / Effort Matrix",
-                body: "User stories sorted by impact and effort to define v1 scope. Quick wins shipped first; major projects phased.",
-                // tags: ["Prioritization"],
-              },
-              {
-                title: "🗺️ Information Architecture",
-                body: "Three-pillar IA finalized: Home, Inventory, Household — everything reachable in two taps.",
-                // tags: ["UX"],
-              },
-              {
-                title: "✏️ Sketches",
-                body: "Paper sketches to explore the IA quickly, iterate without cost, and align the team before moving to digital.",
-                // tags: ["Ideation"],
-              },
-              {
-                title: "🔲 Wireframes",
-                body: "Mid-fidelity screens applying Miller's Law, Hick's Law, Fitts's Law, and Selective Attention to every layout decision.",
-                // tags: ["UX Psychology", "Figma"],
-              },
-              {
-                title: "🎨 Hi-Fi Prototype",
-                body: "Full prototype built on the custom design system — 81 screens, 33 components.",
-                // tags: ["Design System", "Figma"],
-              },
-              {
-                title: "🧪 User Testing",
-                body: "Three methods with 4 participants across age groups. Findings drove a round of targeted redesigns before the final presentation.",
-                // tags: ["5-sec test", "SEQ", "PREMO"],
-                tone: "success",
-              },
+              { title: <span className="inline-flex items-center gap-2"><Scale className="h-4 w-4 shrink-0" style={{ color: "var(--project-primary)" }} />Impact / Effort Matrix</span> },
+              { title: <span className="inline-flex items-center gap-2"><Map className="h-4 w-4 shrink-0" style={{ color: "var(--project-primary)" }} />Information Architecture</span> },
+              { title: <span className="inline-flex items-center gap-2"><PenLine className="h-4 w-4 shrink-0" style={{ color: "var(--project-primary)" }} />Sketches</span> },
+              { title: <span className="inline-flex items-center gap-2"><LayoutTemplate className="h-4 w-4 shrink-0" style={{ color: "var(--project-primary)" }} />Wireframes</span> },
+              { title: <span className="inline-flex items-center gap-2"><Figma className="h-4 w-4 shrink-0" style={{ color: "var(--project-primary)" }} />Hi-Fi Prototype</span> },
+              { title: <span className="inline-flex items-center gap-2"><FlaskConical className="h-4 w-4 shrink-0" style={{ color: "var(--project-primary)" }} />User Testing</span> },
             ]}
           />
         </div>
