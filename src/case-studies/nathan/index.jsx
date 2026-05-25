@@ -579,12 +579,10 @@ export const nathanCase = {
         <>
           <SectionHeading
             kicker="— Testing & Iteration"
-            title="We tested with real households — then rebuilt the parts that quietly confused them."
+            title={<>We tested with real households — then rebuilt the parts that <em>quietly confused them.</em></>}
+            subtitle="Two individuals, two households, ages 26–49. Each session fed directly into a redesign round before the final prototype was locked."
             className="mx-auto max-w-3xl"
           />
-          <Prose className="mx-auto max-w-3xl">
-            <p>Two individuals, two households, ages 26–49. Each session fed directly into a redesign round before the final prototype was locked.</p>
-          </Prose>
           <Metrics
             columns={3}
             size="sm"
@@ -635,9 +633,9 @@ export const nathanCase = {
           />
 
           <PullQuote
-            quote="My 9-year-old daughter enjoys collaborating in shopping by adding her favorite items on post-its on the fridge. I will install Nathan on her phone to substitute post-its."
-            author="0Farnaz"
-            role="38, participant"
+            quote={<>My 9-year-old daughter <em>enjoys collaborating</em> in shopping by adding <em>her favorite items</em> on post-its on the fridge. I will install Nathan on her phone to substitute post-its.</>}
+            author="Farnaz"
+            role="38, mother of one — usability participant"
           />
         </>
       ),
