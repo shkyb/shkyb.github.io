@@ -158,7 +158,7 @@ export const nathanCase = {
       "--project-dark": "#1A4A1A",
       "--project-surface": "#F5F5F5",
       "--project-background": "#FFFFFF",
-      "--project-tint": "#F5F5F5",
+      "--project-tint": "#F7F6F5",
       "--project-dark-text": "#1F1F1F",
       "--project-foreground": "#1F1F1F",
       "--project-muted-foreground": "#4B4B4B",
