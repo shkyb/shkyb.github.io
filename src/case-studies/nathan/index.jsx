@@ -54,7 +54,7 @@ import { Timeline } from "@/components/case/blocks/Timeline"
 import { ProcessStep } from "@/components/case/blocks/ProcessStep"
 import { CaseSeparator } from "@/components/case/blocks/CaseSeparator"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
-import { ShoppingCart, Refrigerator, Leaf, ScanLine, BrainCircuit, ShieldCheck, LayoutGrid, SlidersHorizontal, Hand, Eye, Smartphone, Layers } from "lucide-react"
+import { ShoppingCart, Refrigerator, Leaf, ScanLine, BrainCircuit, ShieldCheck, LayoutGrid, SlidersHorizontal, Hand, Eye, Smartphone, Layers, Camera, FileSearch, Link2, Bot, CheckCheck, Inbox, ClipboardList, RefreshCw } from "lucide-react"
 
 const PillarCard = ({ icon: Icon, title, body, bullets }) => (
   <Card className="border border-(--project-border,var(--border)) shadow-none" style={{ background: "var(--project-background)" }}>
@@ -338,43 +338,37 @@ export const nathanCase = {
       id: "ai",
       label: "AI Architecture",
       size: "fill",
-      bgStyle: { background: "var(--project-background-alt)" },
+      bgStyle: { background: "var(--project-tint)" },
       render: () => (
         <>
           <SectionHeading
             kicker="AI Architecture"
-            title="Designing the AI meant designing the data first — what the models need, where it comes from, and what happens when it's missing."
+            // title="Designing the AI meant designing the data first — what the models need, where it comes from, and what happens when it's missing."
+            title={<>Most apps add AI as a feature. <em>We designed the data architecture first.</em></>}
+            subtitle="Two models, each with documented fail-safes — so the app is useful on day one, before the model has learned anything about your household."
             className="mx-auto max-w-3xl"
           />
-          <Prose className="mx-auto max-w-3xl">
-            <p>
-              Two models work in sequence. The first turns a receipt photograph into structured data. The second uses that data — accumulated over weeks of shopping — to predict what the household should buy next, and gradually adjusts quantities based on what actually got consumed.
-            </p>
-          </Prose>
-
           <Figure
             src={ntnAiClassification}
             frame="soft"
             alt="Classification AI pipeline diagram showing the flow from receipt photo through OCR, string matching, and ChatGPT fallback to a structured purchased list"
             caption="The classification pipeline turns a receipt photo into a structured inventory update — with a ChatGPT fallback when OCR abbreviations can't be matched."
           />
-          <div className="mx-auto grid max-w-3xl grid-cols-1 gap-8 md:grid-cols-2">
-            <div className="flex flex-col gap-3">
-              <ScanLine className="h-10 w-10 text-muted-foreground" />
+          <div className="mx-auto max-w-3xl grid grid-cols-1 gap-8 md:grid-cols-2">
+            <div className={`flex flex-col gap-3 ${sp.itemToItem}`}>
+              <ScanLine className="h-5 w-5" style={{ color: "var(--project-primary)" }} />
               <Prose>
                 <h3>Classification — from receipt photo to structured data</h3>
-                <p>
-                  Before Nathan can predict anything, it needs to know what you actually bought. That starts with a photograph of the receipt. We chose Mindee over training our own OCR model because the cost-benefit was clear — a pre-trained, receipt-specialized service let us focus the AI work where it actually mattered: the forecasting layer.
-                </p>
+                <p className="text-(--project-muted-foreground,var(--muted-foreground))">We chose Mindee over training our own OCR model — a pre-trained, receipt-specialized service let us focus the AI work where it actually mattered: the forecasting layer.</p>
               </Prose>
             </div>
-            <Timeline
+            <InsightList
               items={[
-                { title: "📷 Capture", body: "The user photographs the receipt after shopping." },
-                { title: "🔍 OCR extraction", body: "Mindee returns the market name, date, SKU abbreviations, quantities, and prices." },
-                { title: "🔗 String matching", body: "Abbreviated SKUs are matched against Nathan's standardized product table using string alignment." },
-                { title: "🤖 ChatGPT fallback", body: "When no confident match exists, ChatGPT resolves the abbreviation and presents a best-effort match for the user to confirm.", tone: "info" },
-                { title: "✅ Output", body: "A clean, categorized list added directly to inventory. No manual entry.", tone: "success" },
+                { icon: Camera, title: "Capture", description: "User photographs the receipt." },
+                { icon: FileSearch, title: "OCR extraction", description: "Mindee returns market name, date, SKUs, quantities, prices." },
+                { icon: Link2, title: "String matching", description: "Abbreviated SKUs matched against Nathan's standardized product table." },
+                { icon: Bot, title: "ChatGPT fallback", description: "Unmatched abbreviations resolved by GPT — user confirms the result." },
+                { icon: CheckCheck, title: "Output", description: "Clean, categorized list added to inventory automatically." },
               ]}
             />
           </div>
@@ -387,31 +381,26 @@ export const nathanCase = {
             caption="The LSTM model learns from purchase history and waste feedback, gradually nudging quantities to close the gap between what users buy and what they actually consume."
           />
           <div className="mx-auto grid max-w-3xl grid-cols-1 gap-8 md:grid-cols-2">
-            <div className="flex flex-col gap-3">
-              <BrainCircuit className="h-10 w-10 text-muted-foreground" />
+            <div className={`flex flex-col gap-3 ${sp.itemToItem}`}>
+              <Eye className="h-5 w-5" style={{ color: "var(--project-primary)" }} />
               <Prose>
                 <h3>Forecasting — closing the waste gap over time</h3>
-                <p>
-                  The forecasting layer is where Nathan actually changes behavior. I specified an LSTM model because the task is inherently sequential — next week's shopping list depends on patterns across prior lists and the time between them, not a single snapshot. The model doesn't just predict what you'll buy; it gradually corrects for what you waste.
-                </p>
+                <p className="text-(--project-muted-foreground,var(--muted-foreground))">I specified an LSTM model because the task is inherently sequential — next week's list depends on patterns across prior lists and the time between them, not a single snapshot.</p>
               </Prose>
             </div>
-            <Timeline
+            <InsightList
               items={[
-                { title: "📥 Input", body: "Shopping history from the classification pipeline, plus waste feedback — the percentage of each item actually consumed." },
-                { title: "📋 Output", body: "A predicted next shopping list with items, quantities, and estimated purchase timing — refreshed every time you open the app." },
-                { title: "🔄 The learning loop", body: "Every waste report logs the gap between suggested and consumed. Over time, quantities nudge down to close it. The list just gets more accurate.", tone: "success" },
+                { icon: Inbox, title: "Input", description: "Shopping history + waste feedback — what percentage of each item was actually consumed." },
+                { icon: ClipboardList, title: "Output", description: "A predicted shopping list with items, quantities, and estimated timing." },
+                { icon: RefreshCw, title: "The learning loop", description: "Every waste report closes the gap between suggested and consumed quantities." },
               ]}
             />
           </div>
 
           <div className="mx-auto flex max-w-3xl flex-col gap-3">
-            <ShieldCheck className="h-10 w-10 text-muted-foreground" />
+            <ShieldCheck className="h-5 w-5" style={{ color: "var(--project-primary)" }} />
             <Prose>
               <h3>Data fail-safes</h3>
-              <p>
-                Every AI dependency in the system was paired with a documented fallback. An AI feature that silently breaks on missing data is worse than no AI at all — especially on day one, before the model has learned anything about your household.
-              </p>
             </Prose>
           </div>
           {/* <Figure
