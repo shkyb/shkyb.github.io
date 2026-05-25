@@ -16,15 +16,17 @@ export default function Navbar() {
       className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b"
       style={{ borderColor: "var(--project-border, var(--border))", background: "color-mix(var(--project-background, var(--background)) 80%, transparent)" }}
     >
-      <nav className="mx-auto w-full max-w-screen-2xl px-6 md:px-12 h-12 flex items-center justify-between">
-        {/* Logo */}
+      <nav className="mx-auto w-full max-w-screen-2xl px-6 md:px-12 h-12 grid grid-cols-[4fr_1fr] md:grid-cols-3 items-center">
+        {/* Left: Logo */}
         <div className="flex items-center">
           <NavLogo text="Shakib Alipour" />
         </div>
 
-        {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-6">
-          <NavItem icon={<Home size={18} />} to="/" />
+        {/* Center: Nav items */}
+        <div className="hidden md:flex items-center justify-center gap-6">
+          <span className="hidden lg:inline-flex">
+            <NavItem icon={<Home size={18} />} to="/" />
+          </span>
           {/* <NavItem text="Home" to="/" /> */}
           <NavItem text="About" to="/about" />
           <NavItem text="Projects" to="/projects" count={7} />
@@ -34,22 +36,23 @@ export default function Navbar() {
             icon={<HiMiniArrowUpRight />}
           />
         </div>
-        {/* Socials */}
-        <div className="hidden md:flex items-center gap-3 pl-2 border-l border-border">
-          <NavItem href="https://github.com/shkyb" icon={<RiGithubFill size={20} />} />
-          <NavItem href="https://behance.net/shakib-alipour" icon={<RiBehanceFill size={20} />} />
-          <NavItem href="https://linkedin.com/in/shakib-alipour" icon={<RiLinkedinFill size={20} />} />
-        </div>
 
-        {/* Mobile Hamburger */}
-        <button
-          className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg hover:bg-slate-100 transition"
-          onClick={() => setIsOpen((v) => !v)}
-          aria-label="Toggle Menu"
-          aria-expanded={isOpen}
-        >
-          {isOpen ? <HiXMark className="text-xl" /> : <HiBars3 className="text-xl" />}
-        </button>
+        {/* Right: Socials (desktop) + Hamburger (mobile) */}
+        <div className="flex items-center justify-end">
+          <div className="hidden md:flex items-center gap-3 pl-2 border-l border-border">
+            <NavItem href="https://github.com/shkyb" icon={<RiGithubFill size={20} />} />
+            <NavItem href="https://behance.net/shakib-alipour" icon={<RiBehanceFill size={20} />} />
+            <NavItem href="https://linkedin.com/in/shakib-alipour" icon={<RiLinkedinFill size={20} />} />
+          </div>
+          <button
+            className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg hover:bg-slate-100 transition"
+            onClick={() => setIsOpen((v) => !v)}
+            aria-label="Toggle Menu"
+            aria-expanded={isOpen}
+          >
+            {isOpen ? <HiXMark className="text-xl" /> : <HiBars3 className="text-xl" />}
+          </button>
+        </div>
       </nav>
 
       {/* Mobile Dropdown */}
