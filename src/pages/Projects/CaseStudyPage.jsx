@@ -1,3 +1,4 @@
+import { useEffect } from "react"
 import { useParams, Navigate } from "react-router-dom"
 import { cases } from "@/case-studies/registry"
 import { projectIndex } from "@/case-studies/projectIndex"
@@ -12,6 +13,15 @@ import { FullBleedSection } from "@/components/case/layout/FullBleedSection"
 export default function CaseStudyPage() {
   const { slug } = useParams()
   const data = cases[slug]
+
+  useEffect(() => {
+    const vars = data?.caseMeta?.cssVars
+    if (!vars) return
+    const root = document.documentElement
+    Object.entries(vars).forEach(([k, v]) => root.style.setProperty(k, v))
+    return () => Object.keys(vars).forEach((k) => root.style.removeProperty(k))
+  }, [data])
+
   if (!data) return <Navigate to="/projects" replace />
 
   const { caseMeta, sections } = data
