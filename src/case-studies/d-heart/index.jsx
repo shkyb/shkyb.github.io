@@ -1250,7 +1250,7 @@ export const dHeartCase = {
           />
 
           <Prose className={`${sp.itemToItem}`}>
-            <p>
+            <p className="text-(--project-muted-foreground,var(--muted-foreground))">
               A heartfelt thank you to <a href="https://www.linkedin.com/in/davidespallazzo/" target="_blank">Prof. Davide Spallazzo</a> and <a href="https://www.linkedin.com/in/martina-sciannam%C3%A8-920570157/" target="_blank">Prof. Martina Sciannamè</a> for their guidance throughout this project, to my teammates <b>Filippo</b>, <b>Marjan</b>, and <b>Beyza</b> for the collaboration, and to <b>Villa Le Magnolie</b> for welcoming us and making the research possible.
             </p>
           </Prose>

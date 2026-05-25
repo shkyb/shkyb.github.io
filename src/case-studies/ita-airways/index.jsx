@@ -839,8 +839,8 @@ export const itaAirwaysCase = {
             ]}
           />
 
-          <Prose className="mx-auto max-w-3xl">
-            <p>
+          <Prose className={`mx-auto max-w-3xl ${sp.itemToItem}`}>
+            <p className="text-(--project-muted-foreground,var(--muted-foreground))">
               Thanks to{" "}
               <a href="https://www.linkedin.com/in/robertodadda/" target="_blank" rel="noopener noreferrer">Prof. Roberto Dadda</a>{" "}
               and{" "}
