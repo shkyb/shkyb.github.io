@@ -53,9 +53,6 @@ export function CaseOverview({
     ? [overview]
     : null
 
-  const accentBorder = {
-    borderColor: "var(--project-kicker, var(--project-primary, var(--border)))",
-  }
 
   return (
     <FullBleedSection
@@ -121,9 +118,13 @@ export function CaseOverview({
           <div className="md:col-span-3">
             <dl className="space-y-6">
               {meta.map((m) => (
-                <div key={m.label} className="border-l-2 pl-4" style={accentBorder}>
-                  <dt className="text-xs font-medium uppercase tracking-widest text-(--project-muted-foreground,var(--muted-foreground))">
+                <div key={m.label}>
+                  <dt
+                    className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.14em]"
+                    style={{ color: "var(--project-kicker, var(--project-primary, var(--muted-foreground)))" }}
+                  >
                     {m.label}
+                    <span className="block h-px w-10 shrink-0 bg-current opacity-40" aria-hidden="true" />
                   </dt>
                   <dd className="mt-1 text-sm font-medium text-(--project-foreground,var(--foreground))">
                     <MetaValue value={m.value} />
