@@ -1,3 +1,4 @@
+import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
 import { Prose } from "../layout/Prose"
 import { sp } from "../layout/spacing"
@@ -89,7 +90,11 @@ export function Figure({
 
   return (
     <figure className={cn(sp.itemToItem, "space-y-3", className)}>
-      <div className={cn("overflow-hidden", frameClass, aspect ? aspect : null)}>
+      <motion.div
+        initial="rest"
+        whileHover="hover"
+        className={cn("overflow-hidden", frameClass, aspect ? aspect : null)}
+      >
         {resolvedType === "video" ? (
           <video
             className={cn(
@@ -108,7 +113,7 @@ export function Figure({
             aria-label={alt || "Case study video"}
           />
         ) : (
-          <img
+          <motion.img
             src={src}
             alt={alt}
             loading={loading}
@@ -121,9 +126,11 @@ export function Figure({
               mediaClassName,
               imgClassName
             )}
+            variants={{ rest: { scale: 1 }, hover: { scale: 1.015 } }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
           />
         )}
-      </div>
+      </motion.div>
 
       {(caption || label || credit) ? (
         <figcaption className="space-y-1">

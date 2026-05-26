@@ -1,3 +1,4 @@
+import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
 import { Prose } from "../layout/Prose"
 import { sp } from "../layout/spacing"
@@ -47,7 +48,12 @@ export function InsightList({
         {items.map((item, idx) => {
           const Icon = item.icon
           return (
-            <div key={idx} className="flex flex-col gap-3 rounded-2xl border border-(--project-border,var(--border)) bg-white/80 p-5 backdrop-blur-sm">
+            <motion.div
+              key={idx}
+              className="flex flex-col gap-3 rounded-2xl border border-(--project-border,var(--border)) bg-white/80 p-5 backdrop-blur-sm"
+              whileHover={{ y: -2, boxShadow: "0 4px 12px rgba(0,0,0,0.08)" }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
+            >
               {Icon ? (
                 <div className="inline-flex w-fit rounded-xl border border-(--project-border,var(--border)) bg-white p-2" aria-hidden="true">
                   <Icon className="h-5 w-5" style={iconStyle} />
@@ -77,7 +83,7 @@ export function InsightList({
                   </div>
                 ) : null}
               </div>
-            </div>
+            </motion.div>
           )
         })}
       </div>
@@ -94,7 +100,7 @@ export function InsightList({
             <div
               key={idx}
               className={cn(
-                "py-4",
+                "py-4 px-3 -mx-3 transition-colors duration-200 ease-out hover:bg-black/2",
                 variant === "divided" && idx !== 0 ? "border-t border-(--project-border,var(--border))" : null
               )}
             >
