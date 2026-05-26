@@ -5,6 +5,7 @@ import { projectIndex } from "@/case-studies/projectIndex"
 import { NextProject } from "@/components/case/blocks/NextProject"
 
 import { StickySidenav } from "@/components/case/layout/StickySidenav"
+import { Reveal } from "@/components/case/layout/Reveal"
 import { CaseSection } from "@/components/case/layout/Section"
 import { CaseHero } from "@/components/case/blocks/CaseHero"
 import { CaseOverview } from "@/components/case/blocks/CaseOverview"
@@ -98,9 +99,11 @@ export default function CaseStudyPage() {
               bgClass={s.bgClass}
               bgStyle={s.bgStyle}
               size={s.size}
-              navSafe={false} // sidenav is xl+ overlay only, so keep content clean
+              navSafe={false}
             >
-              {typeof s.render === "function" ? s.render() : s.content}
+              <Reveal>
+                {typeof s.render === "function" ? s.render() : s.content}
+              </Reveal>
             </CaseSection>
           ))}
         </div>
