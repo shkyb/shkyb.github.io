@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom"
 
 export default function NavItem({ text, count = null, icon = null, to = null, href = null, onClick }) {
   const baseClass =
-    "inline-flex items-center gap-2 text-(--project-muted-foreground,var(--color-slate-700)) hover:text-(--project-foreground,var(--color-slate-950)) transition-colors uppercase"
+    "inline-flex items-center gap-2 text-(--project-muted-foreground,var(--color-slate-700)) hover:text-(--project-foreground,var(--color-slate-950)) transition-colors duration-200 ease-out uppercase"
 
   const content = (
     <>

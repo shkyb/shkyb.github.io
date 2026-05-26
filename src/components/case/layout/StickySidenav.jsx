@@ -134,10 +134,10 @@ export function StickySidenav({ sections, className }) {
                 href={`#${s.id}`}
                 onClick={handleClick(s.id)}
                 className={cn(
-                  "border-l-2 px-3 py-1.5 text-sm transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+                  "border-l-2 px-3 py-1.5 text-sm transition-opacity duration-200 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-ring",
                   isActive
                     ? "font-semibold opacity-100"
-                    : "border-transparent opacity-80 hover:opacity-100 hover:font-medium"
+                    : "border-transparent opacity-60 hover:opacity-90"
                 )}
                 style={{
                   color: "var(--project-kicker, var(--project-primary, var(--foreground)))",

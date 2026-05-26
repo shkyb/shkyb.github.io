@@ -45,7 +45,7 @@ export default function Navbar() {
             <NavItem href="https://linkedin.com/in/shakib-alipour" icon={<RiLinkedinFill size={20} />} />
           </div>
           <button
-            className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg hover:bg-slate-100 transition"
+            className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg hover:bg-slate-100 transition-colors duration-150 ease-out"
             onClick={() => setIsOpen((v) => !v)}
             aria-label="Toggle Menu"
             aria-expanded={isOpen}
@@ -57,7 +57,7 @@ export default function Navbar() {
 
       {/* Mobile Dropdown */}
       {isOpen && (
-        <div className="md:hidden border-t border-slate-100 bg-white">
+        <div className="md:hidden border-t border-slate-100 bg-white animate-in fade-in slide-in-from-top-2 duration-150">
           <div className="mx-auto w-full max-w-screen-2xl px-6 py-4 flex flex-col gap-4">
             <NavItem icon={<Home size={18} />} to="/" onClick={closeMenu} />
             {/* <NavItem text="Home" to="/" onClick={closeMenu} /> */}
