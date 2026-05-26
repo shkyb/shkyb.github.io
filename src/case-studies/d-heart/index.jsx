@@ -1,4 +1,5 @@
 import React from "react"
+import { TeamAvatars } from "@/components/TeamAvatars"
 
 import logo from "./assets/logo.png"
 import cover from "./assets/cover.webp"
@@ -343,15 +344,7 @@ export const dHeartCase = {
 
     meta: [
       { label: "Role", value: "Conducting user research & testing, developing the design system & high-fidelity prototypes." },
-      {
-        label: "Team", value:
-          [
-            { name: "@Beyza Artunc", href: "https://www.linkedin.com/in/beyzaartunc/" },
-            { name: "@Filippo Randon", href: "https://www.linkedin.com/in/filippo-randon-b25466180/" },
-            { name: "@Marjan Mehrabi", href: "https://www.linkedin.com/in/marjan-mehrabi/" },
-            { name: "& Me" }
-          ]
-      },
+      { label: "Team", value: <TeamAvatars ids={["beyza", "filippo", "marjan", "shakib"]} /> },
       { label: "Timeline", value: "Academic project · 4 Months · 2024" },
       { label: "Focus", value: "Research, UX, Usability, User Testing" },
     ],
