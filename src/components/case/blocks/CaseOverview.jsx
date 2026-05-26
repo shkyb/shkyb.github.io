@@ -126,7 +126,7 @@ export function CaseOverview({
                     {m.label}
                     <span className="block h-px w-10 shrink-0 bg-current opacity-40" aria-hidden="true" />
                   </dt>
-                  <dd className="mt-1 text-sm font-medium text-(--project-foreground,var(--foreground))">
+                  <dd className="mt-2 text-sm font-medium text-(--project-foreground,var(--foreground))">
                     <MetaValue value={m.value} />
                   </dd>
                 </div>
