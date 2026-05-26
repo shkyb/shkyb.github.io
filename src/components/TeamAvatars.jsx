@@ -11,9 +11,9 @@ import { collaborators, getInitials } from "@/data/collaborators"
  *   <TeamAvatars ids={["beyza", "filippo", "marjan", "shakib"]} />
  */
 export function TeamAvatars({ ids = [], size = "md" }) {
-  const members = ids
-    .map((id) => collaborators[id])
-    .filter(Boolean)
+  const members = ids.map((id) =>
+    collaborators[id] ?? { id, name: id, href: null, avatar: null }
+  )
 
   if (!members.length) return null
 
@@ -24,9 +24,9 @@ export function TeamAvatars({ ids = [], size = "md" }) {
       {members.map((m, i) => (
         <a
           key={m.id}
-          href={m.href}
-          target="_blank"
-          rel="noreferrer"
+          href={m.href ?? undefined}
+          target={m.href ? "_blank" : undefined}
+          rel={m.href ? "noreferrer" : undefined}
           aria-label={m.name}
           className="group relative"
           style={{ marginLeft: i === 0 ? 0 : "-0.5rem", zIndex: members.length - i }}
