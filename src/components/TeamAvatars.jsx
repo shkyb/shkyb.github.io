@@ -11,9 +11,10 @@ import { collaborators, getInitials } from "@/data/collaborators"
  *   <TeamAvatars ids={["beyza", "filippo", "marjan", "shakib"]} />
  */
 export function TeamAvatars({ ids = [], size = "md" }) {
-  const members = ids.map((id) =>
-    collaborators[id] ?? { id, name: id, href: null, avatar: null }
-  )
+  const members = ids.map((id) => {
+    const c = collaborators[id] ?? { id, name: id, href: null }
+    return { ...c, avatar: `/collaborators/${c.id}.webp` }
+  })
 
   if (!members.length) return null
 
