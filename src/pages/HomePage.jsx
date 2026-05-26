@@ -1,16 +1,10 @@
 import Hero from "@/components/homepage/Hero";
 import ProjectShowcaseMid from "@/components/ProjectShowcaseMid";
-import VerticalLines from "@/components/VerticalLines";
 
 function App() {
   return (
-    <div className="relative bg-background scroll-smooth">
-      {/* Background vertical lines */}
-      <VerticalLines />
-
-      {/* Main content */}
-      <div className="relative z-10">
-        <main>
+    <div className="bg-background">
+      <main>
           <Hero />
           <div id="showcase">
             <ProjectShowcaseMid id="D-Heart" order="01." />
@@ -21,8 +15,7 @@ function App() {
             <ProjectShowcaseMid id="Raven" order="06." />
             <ProjectShowcaseMid id="Surena" order="07." />
           </div>
-        </main>
-      </div>
+      </main>
     </div>
   );
 }
