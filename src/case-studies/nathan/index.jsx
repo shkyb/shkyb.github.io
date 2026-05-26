@@ -1,4 +1,5 @@
 import React from "react"
+import { TeamAvatars } from "@/components/TeamAvatars"
 
 import logo from "./assets/nathan_logo.webp"
 import cover from "./assets/nathan_cover.webp"
@@ -140,14 +141,7 @@ export const nathanCase = {
     ],
     meta: [
       { label: "Role", value: "Designing the AI & data architecture — model selection, data strategy, fail-safes — and building the design system and hi-fi prototype." },
-      {
-        label: "Team", value: [
-          { name: "@Filippo Randon", href: "https://www.linkedin.com/in/filippo-randon-b25466180/" },
-          { name: "@Marjan Mehrabi", href: "https://www.linkedin.com/in/marjan-mehrabi/" },
-          { name: "@Dilara Tanriöven", href: "https://www.linkedin.com/in/dilara-tanrioven-2b6028211/" },
-          { name: "@Erika Caffo", href: "https://drive.google.com/file/d/1mbodgFZpIu_22mVmBayxDRq9ETFdayCk/view?usp=share_link" },
-          { name: "& Me" },
-        ],
+      { label: "Team", value: <TeamAvatars ids={["shakib", "filippo", "marjan", "dilara", "erika"]} size="lg" />,
       },
       { label: "Timeline", value: "Academic project · 1 Semester · Mar – Jun 2024" },
       { label: "Focus", value: "AI Architecture, UX, Design Systems, Sustainability" },

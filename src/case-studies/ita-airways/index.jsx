@@ -1,4 +1,5 @@
 import React from "react"
+import { TeamAvatars } from "@/components/TeamAvatars"
 
 import itaLogo from "./assets/ita-logo.webp"
 import itaCover from "./assets/ita-cover.webp"
@@ -134,14 +135,7 @@ export const itaAirwaysCase = {
         label: "Role",
         value: "Heuristic audits and competitor benchmarks through to a design system built on Moon and accessibility tested against WCAG, APCA, and four color blindness simulations",
       },
-      {
-        label: "Team",
-        value: [
-          { name: "@Marjan Mehrabi", href: "https://www.linkedin.com/in/marjan-mehrabi/" },
-          { name: "@Ilaria Torcolacci", href: "https://www.linkedin.com/in/ilaria-torcolacci-designer/" },
-          { name: "@Mahshad Mousavinia", href: "https://www.linkedin.com/in/mahshad-mousavinia-3bb829199/" },
-          { name: "& Me" },
-        ],
+      { label: "Team", value: <TeamAvatars ids={["shakib", "marjan", "ilaria", "mahshad"]} size="lg" />,
       },
       {
         label: "Timeline",

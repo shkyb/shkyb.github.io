@@ -344,7 +344,7 @@ export const dHeartCase = {
 
     meta: [
       { label: "Role", value: "Conducting user research & testing, developing the design system & high-fidelity prototypes." },
-      { label: "Team", value: <TeamAvatars ids={["beyza", "filippo", "marjan", "shakib"]} /> },
+      { label: "Team", value: <TeamAvatars ids={["shakib", "beyza", "filippo", "marjan"]} size="lg" /> },
       { label: "Timeline", value: "Academic project · 4 Months · 2024" },
       { label: "Focus", value: "Research, UX, Usability, User Testing" },
     ],
