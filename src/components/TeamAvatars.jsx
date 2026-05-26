@@ -17,7 +17,7 @@ export function TeamAvatars({ ids = [], size = "md" }) {
 
   if (!members.length) return null
 
-  const sizeClass = size === "sm" ? "h-7 w-7 text-[10px]" : "h-9 w-9 text-xs"
+  const sizeClass = size === "sm" ? "h-7 w-7 text-[10px]" : size === "lg" ? "h-12 w-12 text-sm" : "h-9 w-9 text-xs"
 
   return (
     <div className="flex items-center">
