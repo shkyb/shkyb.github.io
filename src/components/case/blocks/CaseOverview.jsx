@@ -42,6 +42,7 @@ function MetaValue({ value }) {
 export function CaseOverview({
   id = "overview",
   bgClass,
+  overviewTitle = "Overview",
   overview,
   links = [],
   meta = [],
@@ -68,6 +69,13 @@ export function CaseOverview({
 
         {/* Left: overview text (5/8) */}
         <div className="md:col-span-5 space-y-4">
+          <div
+            className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.14em]"
+            style={{ color: "var(--project-kicker, var(--project-primary, var(--muted-foreground)))" }}
+          >
+            {overviewTitle}
+            <span className="block h-px w-10 shrink-0 bg-current opacity-40" aria-hidden="true" />
+          </div>
           {paragraphs ? (
             paragraphs.map((p, i) =>
               typeof p === "string" ? (
