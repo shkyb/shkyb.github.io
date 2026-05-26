@@ -30,7 +30,30 @@ export const collaborators = {
     href: "https://www.linkedin.com/in/marjan-mehrabi/",
     avatar: null,
   },
-
+  dilara: {
+    id: "dilara",
+    name: "Dilara Tanriöven",
+    href: "https://www.linkedin.com/in/dilara-tanrioven-2b6028211/",
+    avatar: null,
+  },
+  ilaria: {
+    id: "ilaria",
+    name: "Ilaria Torcolacci",
+    href: "https://www.linkedin.com/in/ilaria-torcolacci-designer/",
+    avatar: null,
+  },
+  mahshad: {
+    id: "mahshad",
+    name: "Mahshad Mousavinia",
+    href: "https://www.linkedin.com/in/mahshad-mousavinia-3bb829199/",
+    avatar: null,
+  },
+  erika: {
+    id: "erika",
+    name: "Erika Caffo",
+    href: "https://drive.google.com/file/d/1mbodgFZpIu_22mVmBayxDRq9ETFdayCk/view?usp=share_link",
+    avatar: null,
+  },
 }
 
 /** Returns initials from a full name — "Beyza Artunc" → "BA" */
