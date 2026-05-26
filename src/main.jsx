@@ -5,13 +5,16 @@ import "./global.css"
 import App from "./App.jsx"
 
 import ReactGA from "react-ga4"
+import SmoothScroll from "./components/SmoothScroll.jsx"
 
 ReactGA.initialize("G-W3SLBYFW75")
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
-      <App />
+      <SmoothScroll>
+        <App />
+      </SmoothScroll>
     </BrowserRouter>
   </StrictMode>
 )
