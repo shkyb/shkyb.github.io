@@ -1,10 +1,10 @@
-import Hero from "@/components/hero";
+import Hero from "@/components/homepage/Hero";
 import ProjectShowcaseMid from "@/components/ProjectShowcaseMid";
 import VerticalLines from "@/components/VerticalLines";
 
 function App() {
   return (
-    <div className="relative bg-stone-50 scroll-smooth">
+    <div className="relative bg-background scroll-smooth">
       {/* Background vertical lines */}
       <VerticalLines />
 
