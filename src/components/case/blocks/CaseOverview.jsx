@@ -1,4 +1,4 @@
-// src/components/case/blocks/CaseOverview.jsx
+import React from "react"
 import { Button } from "@/components/ui/button"
 import { FullBleedSection } from "@/components/case/layout/FullBleedSection"
 import { Prose } from "../layout/Prose"
@@ -9,25 +9,25 @@ function isExternalHref(href) {
 }
 
 function MetaValue({ value }) {
-  // value can be:
-  // - string
-  // - ReactNode
-  // - array of team members: [{ name, href }]
   if (!value) return null
 
-  if (Array.isArray(value) && value.length && typeof value[0] === "object" && value[0]?.name && value[0]?.href) {
+  if (Array.isArray(value) && value.length && typeof value[0] === "object" && value[0]?.name) {
     return (
       <>
         {value.map((m, i) => (
           <span key={`${m.name}-${i}`}>
-            <a
-              href={m.href}
-              target="_blank"
-              rel="noreferrer"
-              className="underline underline-offset-4 decoration-slate-300 hover:decoration-slate-500"
-            >
-              {m.name}
-            </a>
+            {m.href ? (
+              <a
+                href={m.href}
+                target="_blank"
+                rel="noreferrer"
+                className="underline underline-offset-4 decoration-(--project-border,var(--border)) hover:decoration-(--project-muted-foreground,var(--muted-foreground)) transition-colors duration-200"
+              >
+                {m.name}
+              </a>
+            ) : (
+              m.name
+            )}
             {i < value.length - 1 ? ", " : ""}
           </span>
         ))}
@@ -40,14 +40,21 @@ function MetaValue({ value }) {
 }
 
 export function CaseOverview({
-  id = "overview", // important for sidenav
+  id = "overview",
   bgClass,
-  overviewTitle = "Overview",
   overview,
-  links = [], // [{ label, href, variant?, size?, icon? }]
-  meta = [], // [{ label, value }]
+  links = [],
+  meta = [],
 }) {
-  const paragraphs = Array.isArray(overview) ? overview : typeof overview === "string" ? [overview] : null
+  const paragraphs = Array.isArray(overview)
+    ? overview
+    : typeof overview === "string"
+    ? [overview]
+    : null
+
+  const accentBorder = {
+    borderColor: "var(--project-kicker, var(--project-primary, var(--border)))",
+  }
 
   return (
     <FullBleedSection
@@ -55,36 +62,29 @@ export function CaseOverview({
       id={id}
       bgClass={bgClass}
       size="fill"
-      className="scroll-mt-(--case-top-offset) sm:mt-16 sm:pb-16"
+      className="scroll-mt-(--case-top-offset) py-16 md:py-20"
     >
-      <div className="grid grid-cols-1 gap-8 md:grid-cols-8">
-        {/* Left (~5/8) */}
-        <div className="md:col-span-5">
-          <Prose>
-            <h2>{overviewTitle}</h2>
-          </Prose>
+      <div className="grid grid-cols-1 gap-12 md:grid-cols-8 md:gap-16">
 
-          <div className="mt-3 space-y-4">
-            {paragraphs ? (
-              paragraphs.map((p, i) => (
-                <Prose key={i}>
-                  <p>{p}</p>
-                </Prose>
-              ))
-            ) : (
-              // if it's already JSX, still ensure it's inside Prose
-              <Prose>{overview}</Prose>
-            )}
-          </div>
+        {/* Left: overview text (5/8) */}
+        <div className="md:col-span-5 space-y-4">
+          {paragraphs ? (
+            paragraphs.map((p, i) =>
+              typeof p === "string" ? (
+                <Prose key={i}><p className="m-0">{p}</p></Prose>
+              ) : (
+                <React.Fragment key={i}>{p}</React.Fragment>
+              )
+            )
+          ) : overview ? (
+            <Prose>{overview}</Prose>
+          ) : null}
 
           {links?.length ? (
-            <div className="mt-6 flex flex-wrap gap-2">
+            <div className="pt-4 flex flex-wrap gap-2">
               {links.map((l) => {
                 const Icon = l.icon || HiMiniArrowUpRight
                 const external = l.external ?? isExternalHref(l.href)
-
-                // Requirement says: "for any external link use shadcn button with icon"
-                // We'll show icon for ALL links (consistent), but you can set l.icon={null} if you ever want no icon.
                 return (
                   <Button
                     key={l.href}
@@ -93,7 +93,11 @@ export function CaseOverview({
                     asChild
                     className="gap-2"
                   >
-                    <a href={l.href} target={external ? "_blank" : undefined} rel={external ? "noreferrer" : undefined}>
+                    <a
+                      href={l.href}
+                      target={external ? "_blank" : undefined}
+                      rel={external ? "noreferrer" : undefined}
+                    >
                       <span>{l.label}</span>
                       {Icon ? <Icon className="h-4 w-4" aria-hidden="true" /> : null}
                     </a>
@@ -104,25 +108,24 @@ export function CaseOverview({
           ) : null}
         </div>
 
-        {/* Right (~3/8) */}
-        <div className="md:col-span-3">
-          <div className="border-t pt-5 sm:border-t-0 sm:border-l sm:pt-0 sm:pl-5 border-(--project-border,var(--border))">
-            <dl className="space-y-4 sm:space-y-8">
+        {/* Right: meta factsheet (3/8) */}
+        {meta?.length ? (
+          <div className="md:col-span-3">
+            <dl className="space-y-6">
               {meta.map((m) => (
-                <div key={m.label}>
-                  <Prose>
-                    <dt className="text-xs text-muted-foreground">{m.label}</dt>
-                  </Prose>
-                  <Prose>
-                    <dl className="mt-1 text-sm font-medium">
-                      <MetaValue value={m.value} />
-                    </dl>
-                  </Prose>
+                <div key={m.label} className="border-l-2 pl-4" style={accentBorder}>
+                  <dt className="text-xs font-medium uppercase tracking-widest text-(--project-muted-foreground,var(--muted-foreground))">
+                    {m.label}
+                  </dt>
+                  <dd className="mt-1 text-sm font-medium text-(--project-foreground,var(--foreground))">
+                    <MetaValue value={m.value} />
+                  </dd>
                 </div>
               ))}
             </dl>
           </div>
-        </div>
+        ) : null}
+
       </div>
     </FullBleedSection>
   )
