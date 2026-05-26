@@ -97,7 +97,7 @@ export function CaseOverview({
                   <Button
                     key={l.href}
                     variant={l.variant ?? "outline"}
-                    size={l.size ?? "sm"}
+                    size={l.size ?? "lg"}
                     asChild
                     className="gap-2"
                   >
