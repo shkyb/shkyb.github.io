@@ -72,24 +72,24 @@ export const projects = [
     status: "published",
   },
 
-  // {
-  //   id: "mazhan",
-  //   title: "Mazhan",
-  //   client: "Farassoo Tech",
-  //   role: "Lead Industrial Designer",
-  //   context: "industry",
-  //   sector: "Consumer Electronics",
-  //   period: { from: "Jan 2021", to: "Aug 2023" },
-  //   type: ["industrial"],
-  //   accent: null,                  // define when Mazhan color system is ready
-  //   headline: "",
-  //   description: "",
-  //   overview: "",
-  //   tags: [],
-  //   team: ["shakib"],
-  //   href: "/projects/mazhan",
-  //   status: "coming-soon",
-  // },
+  {
+    id: "mazhan",
+    title: "Mazhan",
+    client: "Farassoo Tech",
+    role: "Lead Industrial Designer",
+    context: "industry",
+    sector: "Consumer Electronics",
+    period: { from: "Jan 2021", to: "Aug 2023" },
+    type: ["industrial"],
+    accent: null,                  // define when Mazhan color system is ready
+    headline: "",
+    description: "",
+    overview: "",
+    tags: [],
+    team: ["shakib"],
+    href: "/projects/mazhan",
+    status: "coming-soon",
+  },
 
   // {
   //   id: "cohub",
