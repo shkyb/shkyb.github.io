@@ -102,7 +102,7 @@ export const projects = [
     sector: "Speculative / Installation",
     period: { from: "Oct 2024", to: "Jan 2025" },
     type: ["research", "speculative"],
-    accent: null,                  // define when CoHub color system is ready
+    accent: "#3E774A",
     headline: "An installation that asks what cities could look like if humans weren't the *only* designers",
     description:
       "Interactive installation exhibited at Milan Design Week 2025 — a more-than-human response to urban heat island effect. Participants insert pegs representing non-human entities, gradually transforming a desolate building into a biodiverse ecosystem. Arduino + TouchDesigner.",
