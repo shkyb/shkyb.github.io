@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/case/layout/Reveal";
 
-export default function ProjectRow({ project }) {
+export default function ProjectRow({ project, order }) {
   return (
     <Reveal>
       <div className="grid grid-cols-12 gap-8 md:gap-12 py-14 md:py-16 border-t border-border last:border-b">
@@ -24,7 +24,7 @@ export default function ProjectRow({ project }) {
         <div className="col-span-12 md:col-span-5 flex flex-col justify-center gap-5">
           <div className="flex flex-col gap-1">
             <span className="text-xs font-semibold tabular-nums text-muted-foreground">
-              {project.order}
+              {order}
             </span>
             <span className="text-xs font-medium text-muted-foreground">
               {project.title} · {project.sector} · {project.year}

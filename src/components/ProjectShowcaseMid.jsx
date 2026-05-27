@@ -1,4 +1,4 @@
-import { projects } from "../data/projectsData";
+import { projects } from "../data/projectsData.legacy";
 import MarkdownText from "./markdownText";
 import MarkdownBlock from "./markdownBlock";
 
