@@ -1,8 +1,6 @@
 import { useEffect } from "react"
 import { useParams, Navigate } from "react-router-dom"
 import { cases } from "@/case-studies/registry"
-import { projectIndex } from "@/case-studies/projectIndex"
-import { NextProject } from "@/components/case/blocks/NextProject"
 
 import { StickySidenav } from "@/components/case/layout/StickySidenav"
 import { Reveal } from "@/components/case/layout/Reveal"
@@ -26,24 +24,6 @@ export default function CaseStudyPage() {
   if (!data) return <Navigate to="/projects" replace />
 
   const { caseMeta, sections } = data
-
-  // Keep only published projects for page-to-page navigation.
-  // If isPublished is missing, treat the project as published by default.
-  const publishedProjects = projectIndex.filter(
-    (project) => project.isPublished !== false
-  )
-
-  // Find the current project inside the ordered published list.
-  const currentProjectIndex = publishedProjects.findIndex(
-    (project) => project.slug === slug
-  )
-
-  // Compute the next project based on the order in projectIndex.
-  // This wraps around so the last published project points back to the first one.
-  const nextProject =
-    currentProjectIndex !== -1 && publishedProjects.length > 1
-      ? publishedProjects[(currentProjectIndex + 1) % publishedProjects.length]
-      : null
 
   // Add Overview as first sidenav item.
   // NextProject is intentionally NOT included here because it should behave
@@ -108,25 +88,7 @@ export default function CaseStudyPage() {
           ))}
         </div>
 
-        {/* 5) Page handoff to the next published project.
-              This sits outside the narrative sections, so it does not appear in the sidenav. */}
-        {nextProject ? (
-          <FullBleedSection
-            bgClass="bg-muted/30"
-            size="fill"
-            className="py-16 md:py-20"
-          >
-            <NextProject
-              href={nextProject.href}
-              title={nextProject.title}
-              description={nextProject.description}
-              image={nextProject.image}
-              imageAlt={nextProject.imageAlt}
-              tags={nextProject.tags}
-              kicker={nextProject.kicker ?? "Next project"}
-            />
-          </FullBleedSection>
-        ) : null}
+        {/* TODO: place new NextProject component here — rebuilt from projects.js */}
 
         {/* 6) Bottom sentinel so the last real section can still activate correctly
               in the sticky sidenav even when there is no footer. Keep this last. */}
