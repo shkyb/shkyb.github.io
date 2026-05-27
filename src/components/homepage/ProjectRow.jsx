@@ -1,6 +1,13 @@
 import { Link } from "react-router-dom";
 import { Reveal } from "@/components/case/layout/Reveal";
 
+function parseEm(text) {
+  const parts = text.split(/\*([^*]+)\*/);
+  return parts.map((part, i) =>
+    i % 2 === 1 ? <em key={i}>{part}</em> : part
+  );
+}
+
 export default function ProjectRow({ project }) {
   const coverSrc = `/images/cover/${project.id}.webp`;
   const isPublished = project.status === "published";
@@ -12,6 +19,7 @@ export default function ProjectRow({ project }) {
       <Wrapper
         {...wrapperProps}
         className="grid grid-cols-12 gap-8 md:gap-14 py-14 md:py-16 border-t border-border last:border-b group items-center"
+        style={{ "--card-accent": project.accent ?? "var(--foreground)" }}
       >
         {/* Image */}
         <div className="col-span-12 md:col-span-5 overflow-hidden rounded-2xl">
@@ -37,11 +45,14 @@ export default function ProjectRow({ project }) {
 
           {/* Narrative */}
           <div className="flex flex-col gap-3 mb-6">
-            <p className="text-sm font-semibold text-foreground tracking-tight">
+            <p
+              className="text-sm font-semibold tracking-tight"
+              style={{ color: project.accent ?? "var(--foreground)" }}
+            >
               {project.title}
             </p>
-            <h2 className="font-serif text-2xl md:text-4xl font-normal tracking-tight text-foreground leading-[1.15]">
-              {project.headline}
+            <h2 className="font-serif text-2xl md:text-4xl font-semibold tracking-tight text-foreground leading-[1.15] [&_em]:text-(--card-accent)">
+              {parseEm(project.headline)}
             </h2>
             <p className="text-sm md:text-base text-muted-foreground font-light leading-relaxed max-w-xl">
               {project.description}

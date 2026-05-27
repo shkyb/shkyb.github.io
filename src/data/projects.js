@@ -4,6 +4,9 @@
 // Image convention — no paths stored here, derived from id at render time:
 //   Logo:     /images/logos/{id}.webp
 //   Cover:    /images/cover/{id}.webp
+//
+// accent: primary brand color for card highlights (project title, kicker accents).
+//         If null, components fall back to the global foreground token.
 
 export const projects = [
   {
@@ -15,7 +18,8 @@ export const projects = [
     sector: "HealthTech",
     period: { from: "Sep 2023", to: "Jan 2024" },
     type: ["ux", "research"],      // "ux" | "industrial" | "research" | "speculative"
-    headline: "Redesigning trust into a portable ECG ecosystem",
+    accent: "#E8601A",
+    headline: "Redesigning *trust* into a portable ECG ecosystem",
     description:
       "Led UX research and design system for a portable ECG device and companion app — tested with 63 participants across three languages.",
     overview:
@@ -35,6 +39,7 @@ export const projects = [
   //   sector: "AI / Consumer",
   //   period: { from: "Mar 2024", to: "Jun 2024" },
   //   type: ["ux", "research"],
+  //   accent: "#599A08",
   //   headline: "",
   //   description: "",
   //   overview: "",
@@ -53,6 +58,7 @@ export const projects = [
   //   sector: "Travel / Aviation",
   //   period: { from: "Oct 2024", to: "Jan 2025" },
   //   type: ["ux", "research"],
+  //   accent: "#306fc8",
   //   headline: "",
   //   description: "",
   //   overview: "",
@@ -71,6 +77,7 @@ export const projects = [
   //   sector: "Consumer Electronics",
   //   period: { from: "Jan 2021", to: "Aug 2023" },
   //   type: ["industrial"],
+  //   accent: null,                  // define when Mazhan color system is ready
   //   headline: "",
   //   description: "",
   //   overview: "",
@@ -89,6 +96,7 @@ export const projects = [
   //   sector: "Speculative / Installation",
   //   period: { from: "Oct 2024", to: "Apr 2025" },
   //   type: ["research", "speculative"],
+  //   accent: null,                  // define when CoHub color system is ready
   //   headline: "",
   //   description: "",
   //   overview: "",
@@ -107,6 +115,7 @@ export const projects = [
   //   sector: "HealthTech / HRI",
   //   period: { from: "Sep 2025", to: "Oct 2025" },
   //   type: ["ux", "research"],
+  //   accent: null,                  // define when Phil color system is ready
   //   headline: "",
   //   description: "",
   //   overview: "",
