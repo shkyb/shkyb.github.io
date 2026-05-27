@@ -46,9 +46,19 @@ export const collaborators = {
     name: "Erika Caffo",
     href: "https://drive.google.com/file/d/1mbodgFZpIu_22mVmBayxDRq9ETFdayCk/view?usp=share_link",
   },
+  alice: {
+    id: "alice",
+    name: "Alice Gaudino",
+    href: "https://www.linkedin.com/in/alice-gaudino/",
+  },
+  marika: {
+    id: "marika",
+    name: "Marika Latini",
+    href: "https://www.linkedin.com/in/marika-latini-68ab17265/",
+  },
 }
 
-/** Returns initials from a full name — "Beyza Artunc" → "BA" */
+/** Returns initials from a full name — "Shakib Alipour" → "SA" */
 export function getInitials(name) {
   return name
     .split(" ")
