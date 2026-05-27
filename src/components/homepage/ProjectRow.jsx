@@ -4,6 +4,9 @@ import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/case/layout/Reveal";
 
 export default function ProjectRow({ project, order }) {
+  const coverSrc = `/images/cover/${project.id}.webp`;
+  const year = project.period.to.split(" ")[1];
+
   return (
     <Reveal>
       <div className="grid grid-cols-12 gap-8 md:gap-12 py-14 md:py-16 border-t border-border last:border-b">
@@ -11,7 +14,7 @@ export default function ProjectRow({ project, order }) {
         <div className="col-span-12 md:col-span-7">
           <motion.div className="overflow-hidden rounded-2xl" whileHover="hover">
             <motion.img
-              src={project.image}
+              src={coverSrc}
               alt={project.title}
               className="w-full aspect-video object-cover"
               variants={{ hover: { scale: 1.03 } }}
@@ -27,7 +30,7 @@ export default function ProjectRow({ project, order }) {
               {order}
             </span>
             <span className="text-xs font-medium text-muted-foreground">
-              {project.title} · {project.sector} · {project.year}
+              {project.title} · {project.sector} · {year}
             </span>
           </div>
 
