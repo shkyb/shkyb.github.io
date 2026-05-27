@@ -93,24 +93,24 @@ export const projects = [
     status: "coming-soon",
   },
 
-  // {
-  //   id: "cohub",
-  //   title: "CoHub",
-  //   client: "Politecnico di Milano",
-  //   role: "Interaction Designer",
-  //   context: "academic",
-  //   sector: "Speculative / Installation",
-  //   period: { from: "Oct 2024", to: "Apr 2025" },
-  //   type: ["research", "speculative"],
-  //   accent: null,                  // define when CoHub color system is ready
-  //   headline: "",
-  //   description: "",
-  //   overview: "",
-  //   tags: [],
-  //   team: ["shakib", "ilaria", "mahshad"],
-  //   href: "/projects/cohub",
-  //   status: "coming-soon",
-  // },
+  {
+    id: "cohub",
+    title: "CoHub",
+    client: "Politecnico di Milano",
+    role: "Interaction Designer",
+    context: "academic",
+    sector: "Speculative / Installation",
+    period: { from: "Oct 2024", to: "Apr 2025" },
+    type: ["research", "speculative"],
+    accent: null,                  // define when CoHub color system is ready
+    headline: "",
+    description: "",
+    overview: "",
+    tags: [],
+    team: ["shakib", "ilaria", "mahshad"],
+    href: "/projects/cohub",
+    status: "coming-soon",
+  },
 
   // {
   //   id: "phil",
