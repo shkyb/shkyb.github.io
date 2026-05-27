@@ -11,20 +11,20 @@
 export const projects = [
   {
     id: "d-heart",
-    title: "D-Heart",
+    title: "D-Heart Pro",
     client: "Politecnico di Milano",
     role: "UX Researcher & Design System Lead",
     context: "academic",           // "academic" | "industry" | "freelance" | "personal"
     sector: "HealthTech",
-    period: { from: "Sep 2023", to: "Jan 2024" },
-    type: ["ux", "research"],      // "ux" | "industrial" | "research" | "speculative"
+    period: { from: "Mar 2024", to: "Jun 2024" },
+    type: ["ux", "research", "product"],  // "ux" | "industrial" | "product" | "research" | "speculative"
     accent: "#E8601A",
-    headline: "Redesigning *trust* into a portable ECG ecosystem",
+    headline: "A portable ECG redesigned around the *context* nurses actually work in",
     description:
-      "Led UX research and design system for a portable ECG device and companion app — tested with 63 participants across three languages.",
+      "Four months redesigning D-Heart's portable ECG ecosystem for nurses. From expert evaluation to in-context usability testing at a real nursing home — final SEQ 6.25/7.",
     overview:
       "A full redesign of the D-Heart portable ECG device and its companion app for nurses in nursing-home settings. Owned the design system end-to-end and led multilingual usability research — card sorting, tree testing, and KPI-based testing — achieving a final SEQ of 6.25/7.",
-    tags: ["UX Research", "Usability Testing", "Design System", "HealthTech"],
+    tags: ["UX Research", "Usability Testing", "Design System", "Healthcare"],
     team: ["shakib", "beyza", "filippo", "marjan"],
     href: "/projects/d-heart",
     status: "published",           // "published" | "coming-soon"
