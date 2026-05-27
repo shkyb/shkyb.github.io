@@ -23,7 +23,7 @@ export const projects = [
     description:
       "Four months redesigning D-Heart's portable ECG ecosystem for nurses. From expert evaluation to in-context usability testing at a real nursing home — final SEQ 6.25/7.",
     overview:
-      "A full redesign of the D-Heart portable ECG device and its companion app for nurses in nursing-home settings. Owned the design system end-to-end and led multilingual usability research — card sorting, tree testing, and KPI-based testing — achieving a final SEQ of 6.25/7.",
+      "A full redesign of the D-Heart portable ECG device and its companion app for nurses in nursing-home settings. Owned the design system end-to-end and conducted usability research — card sorting, tree testing, and KPI-based testing — achieving a final SEQ of 6.25/7.",
     tags: ["UX Research", "Usability Testing", "Design System", "Healthcare"],
     team: ["shakib", "beyza", "filippo", "marjan"],
     href: "/projects/d-heart",
@@ -45,7 +45,7 @@ export const projects = [
       "Italian households waste 65 kg of food per person yearly. We designed an AI grocery app — receipt-scanning + LSTM forecasting — that quietly rewrites your next list. Owned the AI architecture and design system.",
     overview:
       "Nathan is a conceptual mobile app exploring how AI could close the gap between what Italian households intend to buy and what they actually waste — pairing receipt-scanning classification with an LSTM forecasting model to progressively rewrite your shopping list.",
-    tags: ["AI/UX", "AI Architecture", "Design Systems", "Sustainability"],
+    tags: ["AI/UX", "AI Architecture", "Design System", "Sustainability"],
     team: ["shakib", "filippo", "marjan", "dilara", "erika"],
     href: "/projects/nathan",
     status: "published",
@@ -82,7 +82,7 @@ export const projects = [
     period: { from: "Oct 2020", to: "Dec 2022" },
     type: ["industrial", "product"],
     accent: "#06ae4e",
-    headline: "Most routers disappear behind furniture. Mazhan was *sculpted* to command the room.",
+    headline: "Most routers disappear behind furniture. Mazhan was *sculpted to command* the room.",
     description:
       "End-to-end product design for Faratech — desert-wave form in dual-texture all-black, a Monolith-inspired unboxing, a companion app, and a landing page with a KeyShot video teaser. IDA Bronze in Packaging + Honorable Mention in Product Design, 2023.",
     overview:
@@ -103,9 +103,9 @@ export const projects = [
     period: { from: "Oct 2024", to: "Jan 2025" },
     type: ["research", "speculative"],
     accent: "#3E774A",
-    headline: "An installation that asks what cities could look like if humans weren't the *only* designers",
+    headline: "An installation that asks what cities could look like if humans weren't the *only designers*",
     description:
-      "Interactive installation exhibited at Milan Design Week 2025 — a more-than-human response to urban heat island effect. Participants insert pegs representing non-human entities, gradually transforming a desolate building into a biodiverse ecosystem. Arduino + TouchDesigner.",
+      "Interactive installation exhibited at Milan Design Week 2025 and a second show in June — a more-than-human response to urban heat island effect. Participants insert pegs representing non-human entities, gradually transforming a desolate building into a biodiverse ecosystem. Arduino + TouchDesigner.",
     overview:
       "Co-Hub is an interactive installation exploring more-than-human city-making — exhibited at Milan Design Week 2025, Fabbrica del Vapore. Participants insert colored pegs representing non-human entities into a building structure, triggering a video transformation from a desolate overheated city to a thriving multi-species ecosystem.",
     tags: ["Speculative Design", "Interactive Installation", "More-than-Human Design", "Physical Computing"],
@@ -124,7 +124,7 @@ export const projects = [
     period: { from: "Sep 2025", to: "Oct 2025" },
     type: ["ux", "research"],
     accent: "#df64a5",
-    headline: "A social robot *prototyped* to support the therapist — not to replace them",
+    headline: "Turning a rehabilitation robot into a *social companion* for autistic children",
     description:
       "PhiCube started as a pediatric rehabilitation robot. Phil prototyped its social evolution — extending habilitation into behavioral and social interaction skills for autistic children. Two Wizard-of-Oz sessions with 8 children aged 4-9 at Fabula Clinic.",
     overview:
