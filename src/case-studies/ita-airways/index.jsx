@@ -1,8 +1,8 @@
 import React from "react"
 import { TeamAvatars } from "@/components/TeamAvatars"
 
-import itaLogo from "./assets/ita-logo.webp"
-import itaCover from "./assets/ita-cover.webp"
+const itaLogo = "/images/logos/ita-airways.webp"
+const itaCover = "/images/cover/ita-airways.webp"
 
 import itaAccessContrast from "./assets/ita-access-contrast.webp"
 import itaAccessTypo from "./assets/ita-access-typo.webp"

@@ -1,8 +1,8 @@
 import React from "react"
 import { TeamAvatars } from "@/components/TeamAvatars"
 
-import logo from "./assets/logo.png"
-import cover from "./assets/cover.webp"
+const logo = "/images/logos/d-heart.webp"
+const cover = "/images/cover/d-heart.webp"
 import placeholder from "./assets/placeholder.webp"
 import imgProblem from "./assets/dheart_problem_01.webp"
 import imgNurse_1 from "./assets/dh_nurse_1.webp"

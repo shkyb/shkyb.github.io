@@ -1,8 +1,8 @@
 import React from "react"
 import { TeamAvatars } from "@/components/TeamAvatars"
 
-import logo from "./assets/nathan_logo.webp"
-import cover from "./assets/nathan_cover.webp"
+const logo = "/images/logos/nathan.webp"
+const cover = "/images/cover/nathan.webp"
 
 import ntnIntroProblem from "./assets/ntn-intro-problem.webp"
 import ntnIntroSolution from "./assets/ntn-intro-solution.webp"
