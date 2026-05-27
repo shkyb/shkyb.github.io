@@ -1,9 +1,6 @@
 import React from "react"
 import { TeamAvatars } from "@/components/TeamAvatars"
 
-const itaLogo = "/images/logos/ita-airways.webp"
-const itaCover = "/images/cover/ita-airways.webp"
-
 import itaAccessContrast from "./assets/ita-access-contrast.webp"
 import itaAccessTypo from "./assets/ita-access-typo.webp"
 import itaClickComparison from "./assets/ita-click-comparison.webp"
@@ -64,12 +61,14 @@ import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer, Lege
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart"
 import { sp } from "@/components/case/layout/spacing"
 
+const logo = "/images/logos/ita-airways.webp"
+const cover = "/images/cover/ita-airways.webp"
 
 const PersonaCard = ({ avatar, name, age, role, drive, pain }) => (
   <Card className="shadow-none">
     <CardHeader className="flex flex-row items-center gap-4">
       <img
-        src={avatar ?? itaLogo}
+        src={avatar ?? logo}
         alt={name}
         className="h-12 w-12 shrink-0 rounded-full object-cover"
       />
@@ -97,11 +96,11 @@ export const itaAirwaysCase = {
   slug: "ita-airways",
 
   caseMeta: {
-    logo: { src: itaLogo, alt: "ITA Airways logo" },
+    logo: { src: logo, alt: "ITA Airways logo" },
     title: "ITA Airways",
     headline: "Rethinking the booking flow of Italy's national airline.",
     tags: ["UX Design", "Usability", "Design Systems", "Booking Flow", "Web"],
-    cover: { src: itaCover, alt: "ITA Airways case study cover" },
+    cover: { src: cover, alt: "ITA Airways case study cover" },
     overview: [
       <Prose key="p1">
         <p>

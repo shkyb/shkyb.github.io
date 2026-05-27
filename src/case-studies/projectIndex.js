@@ -1,6 +1,6 @@
 // src/case-studies/projectIndex.js
 
-import dHeartCover from "@/case-studies/d-heart/assets/cover.webp"
+const dHeartCover = "/images/d-heart.webp"
 import futureCover from "@/case-studies/demo/assets/cover.webp"
 
 export const projectIndex = [

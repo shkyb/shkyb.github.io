@@ -1,9 +1,6 @@
 import React from "react"
 import { TeamAvatars } from "@/components/TeamAvatars"
 
-const logo = "/images/logos/nathan.webp"
-const cover = "/images/cover/nathan.webp"
-
 import ntnIntroProblem from "./assets/ntn-intro-problem.webp"
 import ntnIntroSolution from "./assets/ntn-intro-solution.webp"
 import ntnOriginChart from "./assets/ntn-origin-chart.webp"
@@ -56,6 +53,9 @@ import { ProcessStep } from "@/components/case/blocks/ProcessStep"
 import { CaseSeparator } from "@/components/case/blocks/CaseSeparator"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
 import { ShoppingCart, Refrigerator, Leaf, ScanLine, BrainCircuit, ShieldCheck, LayoutGrid, SlidersHorizontal, Hand, Eye, Smartphone, Layers, Camera, FileSearch, Link2, Bot, CheckCheck, Inbox, ClipboardList, RefreshCw, Scale, Map, PenLine, LayoutTemplate, Figma, FlaskConical } from "lucide-react"
+
+const logo = "/images/logos/nathan.webp"
+const cover = "/images/cover/nathan.webp"
 
 const PillarCard = ({ icon: Icon, title, body, bullets }) => (
   <Card className="border border-(--project-border,var(--border)) shadow-none" style={{ background: "var(--project-background)" }}>
