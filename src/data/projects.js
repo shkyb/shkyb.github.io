@@ -123,11 +123,13 @@ export const projects = [
     sector: "HealthTech / HRI",
     period: { from: "Sep 2025", to: "Oct 2025" },
     type: ["ux", "research"],
-    accent: null,                  // define when Phil color system is ready
-    headline: "",
-    description: "",
-    overview: "",
-    tags: [],
+    accent: "#df64a5",
+    headline: "A social robot *prototyped* to support the therapist — not to replace them",
+    description:
+      "PhiCube started as a pediatric rehabilitation robot. Phil prototyped its social evolution — extending habilitation into behavioral and social interaction skills for autistic children. Two Wizard-of-Oz sessions with 8 children aged 4-9 at Fabula Clinic.",
+    overview:
+      "Phil is the social companion evolution of PhiCube, Rehabilia's pediatric rehabilitation device. Prototyped expressive screen-based facial interactions and ran two rounds of Wizard-of-Oz testing with 8 autistic children — key insight: Phil as a mediating third presence between therapist and child, not an autonomous social agent.",
+    tags: ["Human-Robot Interaction", "Interaction Design", "User Research", "HealthTech"],
     team: ["shakib", "marjan"],
     href: "/projects/phil",
     status: "coming-soon",
