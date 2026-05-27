@@ -1,38 +1,33 @@
-import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/case/layout/Reveal";
 
-export default function ProjectRow({ project, order }) {
+export default function ProjectRow({ project }) {
   const coverSrc = `/images/cover/${project.id}.webp`;
   const year = project.period.to.split(" ")[1];
+  const isPublished = project.status === "published";
+  const Wrapper = isPublished ? Link : "div";
+  const wrapperProps = isPublished ? { to: project.href } : {};
 
   return (
     <Reveal>
-      <div className="grid grid-cols-12 gap-8 md:gap-12 py-14 md:py-16 border-t border-border last:border-b">
+      <Wrapper
+        {...wrapperProps}
+        className="grid grid-cols-12 gap-10 py-14 md:py-16 border-t border-border last:border-b group block"
+      >
         {/* Image */}
-        <div className="col-span-12 md:col-span-7">
-          <motion.div className="overflow-hidden rounded-2xl" whileHover="hover">
-            <motion.img
-              src={coverSrc}
-              alt={project.title}
-              className="w-full aspect-video object-cover"
-              variants={{ hover: { scale: 1.03 } }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-            />
-          </motion.div>
+        <div className="col-span-12 md:col-span-7 overflow-hidden rounded-2xl">
+          <img
+            src={coverSrc}
+            alt={project.title}
+            className="w-full aspect-video object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+          />
         </div>
 
         {/* Content */}
         <div className="col-span-12 md:col-span-5 flex flex-col justify-center gap-5">
-          <div className="flex flex-col gap-1">
-            <span className="text-xs font-semibold tabular-nums text-muted-foreground">
-              {order}
-            </span>
-            <span className="text-xs font-medium text-muted-foreground">
-              {project.title} · {project.sector} · {year}
-            </span>
-          </div>
+          <span className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+            {project.title} · {project.sector} · {year}
+          </span>
 
           <h2 className="font-serif text-2xl md:text-3xl font-semibold tracking-tight text-foreground leading-snug">
             {project.headline}
@@ -53,20 +48,13 @@ export default function ProjectRow({ project, order }) {
             ))}
           </div>
 
-          {project.status === "published" ? (
-            <Link
-              to={project.href}
-              className="inline-flex items-center gap-1.5 text-sm font-semibold text-foreground hover:text-muted-foreground transition-colors duration-200 w-fit"
-            >
-              View Case Study <ArrowUpRight className="h-4 w-4" />
-            </Link>
-          ) : (
-            <span className="text-sm font-medium text-muted-foreground/40">
-              Case Study in Progress
+          {!isPublished && (
+            <span className="text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground/40">
+              Coming Soon
             </span>
           )}
         </div>
-      </div>
+      </Wrapper>
     </Reveal>
   );
 }
