@@ -54,7 +54,7 @@ export default function ProjectRow({ project }) {
             <h2 className="font-serif text-2xl md:text-4xl font-semibold tracking-tight text-foreground leading-[1.15] [&_em]:text-(--card-accent)">
               {parseEm(project.headline)}
             </h2>
-            <p className="text-sm md:text-base text-muted-foreground font-light leading-relaxed max-w-xl">
+            <p className="text-sm md:text-base text-muted-foreground font-light leading-relaxed text-balance">
               {project.description}
             </p>
           </div>
