@@ -74,18 +74,20 @@ export const projects = [
 
   {
     id: "mazhan",
-    title: "Mazhan",
-    client: "Farassoo Tech",
+    title: "Mazhan LTE Modem-Router",
+    client: "Faratech",
     role: "Lead Industrial Designer",
     context: "industry",
     sector: "Consumer Electronics",
-    period: { from: "Jan 2021", to: "Aug 2023" },
-    type: ["industrial"],
-    accent: null,                  // define when Mazhan color system is ready
-    headline: "",
-    description: "",
-    overview: "",
-    tags: [],
+    period: { from: "Oct 2020", to: "Dec 2022" },
+    type: ["industrial", "product"],
+    accent: "#06ae4e",                  // define when Mazhan color system is ready
+    headline: "Most routers disappear behind furniture. Mazhan was *sculpted* to command the room.",
+    description:
+      "End-to-end product design for Faratech — desert-wave form in dual-texture all-black, a Monolith-inspired unboxing, a companion app, and a landing page with a KeyShot video teaser. IDA Bronze in Packaging + Honorable Mention in Product Design, 2023.",
+    overview:
+      "Mazhan is a premium LTE modem-router designed to be seen, not hidden. Owned the full product experience — industrial form, packaging, companion app, and landing page — while collaborating closely with engineers on mass production.",
+    tags: ["Industrial Design", "Packaging Design", "Mass Production", "Consumer Electronics"],
     team: ["shakib"],
     href: "/projects/mazhan",
     status: "coming-soon",
