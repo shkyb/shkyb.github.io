@@ -81,7 +81,7 @@ export const projects = [
     sector: "Consumer Electronics",
     period: { from: "Oct 2020", to: "Dec 2022" },
     type: ["industrial", "product"],
-    accent: "#06ae4e",                  // define when Mazhan color system is ready
+    accent: "#06ae4e",
     headline: "Most routers disappear behind furniture. Mazhan was *sculpted* to command the room.",
     description:
       "End-to-end product design for Faratech — desert-wave form in dual-texture all-black, a Monolith-inspired unboxing, a companion app, and a landing page with a KeyShot video teaser. IDA Bronze in Packaging + Honorable Mention in Product Design, 2023.",
@@ -100,14 +100,16 @@ export const projects = [
     role: "Interaction Designer",
     context: "academic",
     sector: "Speculative / Installation",
-    period: { from: "Oct 2024", to: "Apr 2025" },
+    period: { from: "Oct 2024", to: "Jan 2025" },
     type: ["research", "speculative"],
     accent: null,                  // define when CoHub color system is ready
-    headline: "",
-    description: "",
-    overview: "",
-    tags: [],
-    team: ["shakib", "ilaria", "mahshad"],
+    headline: "An installation that asks what cities could look like if humans weren't the *only* designers",
+    description:
+      "Interactive installation exhibited at Milan Design Week 2025 — a more-than-human response to urban heat island effect. Participants insert pegs representing non-human entities, gradually transforming a desolate building into a biodiverse ecosystem. Arduino + TouchDesigner.",
+    overview:
+      "Co-Hub is an interactive installation exploring more-than-human city-making — exhibited at Milan Design Week 2025, Fabbrica del Vapore. Participants insert colored pegs representing non-human entities into a building structure, triggering a video transformation from a desolate overheated city to a thriving multi-species ecosystem.",
+    tags: ["Speculative Design", "Interactive Installation", "More-than-Human Design", "Physical Computing"],
+    team: ["shakib", "alice", "mahshad", "ilaria", "marika"],
     href: "/projects/cohub",
     status: "coming-soon",
   },
