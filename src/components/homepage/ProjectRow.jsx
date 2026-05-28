@@ -89,7 +89,7 @@ export default function ProjectRow({ project }) {
                 ))}
               </div>
 
-              <div className="text-xs font-semibold uppercase tracking-[0.12em] text-foreground shrink-0">
+              <div className="text-xs font-semibold uppercase tracking-[0.12em] shrink-0" style={{ color: "var(--card-accent)" }}>
                 {isPublished ? (
                   <span className="inline-flex items-center gap-1.5">
                     Read Case Study
