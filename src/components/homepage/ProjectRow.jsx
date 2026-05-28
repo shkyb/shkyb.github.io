@@ -36,7 +36,7 @@ export default function ProjectRow({ project }) {
           <motion.img
             src={coverSrc}
             alt={project.title}
-            className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-[filter] duration-700 ease-out"
+            className="w-full h-full object-cover lg:grayscale lg:group-hover:grayscale-0 transition-[filter] duration-700 ease-out"
             animate={{ scale: hovered ? 1.03 : 1 }}
             transition={{ duration: 1.2, ease: "easeOut" }}
             onError={(e) => { e.currentTarget.style.display = "none" }}
@@ -44,7 +44,7 @@ export default function ProjectRow({ project }) {
         </div>
 
         {/* Content */}
-        <div className="col-span-12 lg:col-span-7 flex flex-col h-full justify-between py-2 grayscale group-hover:grayscale-0 transition-[filter] duration-700 ease-out">
+        <div className="col-span-12 lg:col-span-7 flex flex-col h-full justify-between py-2 lg:grayscale lg:group-hover:grayscale-0 transition-[filter] duration-700 ease-out">
 
           {/* Header: context + period */}
           <div className="flex justify-between items-baseline border-b border-border/40 pb-3 mb-5">
@@ -91,19 +91,29 @@ export default function ProjectRow({ project }) {
 
               <div className="text-xs font-semibold uppercase tracking-[0.12em] shrink-0">
                 {isPublished ? (
-                  <span
-                    className="inline-flex items-center gap-1.5 px-2 py-1"
-                    style={{
-                      color: hovered ? "white" : "var(--card-accent)",
-                      backgroundImage: "linear-gradient(var(--card-accent), var(--card-accent))",
-                      backgroundSize: hovered ? "100% 100%" : "0% 100%",
-                      backgroundRepeat: "no-repeat",
-                      backgroundPosition: "left center",
-                      transition: "background-size 0.4s ease-out, color 0.2s ease-out",
-                    }}
-                  >
-                    Read Case Study →
-                  </span>
+                  <>
+                    {/* Mobile/tablet: always accent bg, white text */}
+                    <span
+                      className="lg:hidden inline-flex items-center gap-1.5 px-2 py-1"
+                      style={{ color: "white", background: "var(--card-accent)" }}
+                    >
+                      Read Case Study →
+                    </span>
+                    {/* Desktop: wipe animation on card hover */}
+                    <span
+                      className="hidden lg:inline-flex items-center gap-1.5 px-2 py-1"
+                      style={{
+                        color: hovered ? "white" : "var(--card-accent)",
+                        backgroundImage: "linear-gradient(var(--card-accent), var(--card-accent))",
+                        backgroundSize: hovered ? "100% 100%" : "0% 100%",
+                        backgroundRepeat: "no-repeat",
+                        backgroundPosition: "left center",
+                        transition: "background-size 0.4s ease-out, color 0.2s ease-out",
+                      }}
+                    >
+                      Read Case Study →
+                    </span>
+                  </>
                 ) : (
                   <span className="text-muted-foreground/40 font-medium normal-case italic">
                     Coming Soon
