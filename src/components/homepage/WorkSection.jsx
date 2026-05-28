@@ -12,7 +12,7 @@ export default function WorkSection() {
   const [ctaHovered, setCtaHovered] = useState(false);
 
   return (
-    <section id="work" className="px-6 md:px-12 lg:px-16 pb-24">
+    <section id="work" className="px-6 md:px-12 lg:px-16 pt-16 md:pt-24 pb-24">
       <div className="max-w-7xl mx-auto">
 
         {/* Section label */}
