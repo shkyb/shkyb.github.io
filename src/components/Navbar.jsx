@@ -14,7 +14,7 @@ export default function Navbar() {
   return (
     <header
       className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b"
-      style={{ borderColor: "var(--project-border, var(--border))", background: "color-mix(var(--project-background, var(--background)) 80%, transparent)" }}
+      style={{ borderColor: "var(--project-border, var(--border))", background: "color-mix(in srgb, var(--project-background, var(--background)) 80%, transparent)" }}
     >
       <nav className="mx-auto w-full max-w-screen-2xl px-6 md:px-12 h-12 grid grid-cols-[4fr_1fr] md:grid-cols-3 items-center">
         {/* Left: Logo */}
