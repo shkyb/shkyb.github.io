@@ -1,6 +1,7 @@
 import { useState } from "react"
 import NavItem from "./navItem"
 import NavLogo from "./navLogo"
+import { projects } from "@/data/projects"
 
 import { HiBars3, HiXMark, HiMiniArrowUpRight } from "react-icons/hi2"
 import { Home } from "lucide-react"
@@ -29,7 +30,7 @@ export default function Navbar() {
           </span>
           {/* <NavItem text="Home" to="/" /> */}
           <NavItem text="About" to="/about" />
-          <NavItem text="Projects" to="/projects" count={7} />
+          <NavItem text="Projects" to="/projects" count={projects.length} />
           <NavItem
             text="Résumé"
             href="https://docs.google.com/document/d/1o0fNXL66ROGPvPpEJDpwa3XDLUZQflqOfrZEOSSTsmI/edit?usp=sharing"
