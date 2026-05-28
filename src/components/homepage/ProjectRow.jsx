@@ -89,11 +89,20 @@ export default function ProjectRow({ project }) {
                 ))}
               </div>
 
-              <div className="text-xs font-semibold uppercase tracking-[0.12em] shrink-0" style={{ color: "var(--card-accent)" }}>
+              <div className="text-xs font-semibold uppercase tracking-[0.12em] shrink-0">
                 {isPublished ? (
-                  <span className="inline-flex items-center gap-1.5">
-                    Read Case Study
-                    <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+                  <span
+                    className="inline-flex items-center gap-1.5 px-2 py-1"
+                    style={{
+                      color: hovered ? "white" : "var(--card-accent)",
+                      backgroundImage: "linear-gradient(var(--card-accent), var(--card-accent))",
+                      backgroundSize: hovered ? "100% 100%" : "0% 100%",
+                      backgroundRepeat: "no-repeat",
+                      backgroundPosition: "left center",
+                      transition: "background-size 0.4s ease-out, color 0.2s ease-out",
+                    }}
+                  >
+                    Read Case Study →
                   </span>
                 ) : (
                   <span className="text-muted-foreground/40 font-medium normal-case italic">
