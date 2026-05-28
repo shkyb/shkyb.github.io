@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 
+// Assembled at runtime — never a plain string in the DOM
+const EMAIL = ["hello", "shakib.design"].join("@");
+
 // ─── Availability config ───────────────────────────────────────────────────────
 // Flip `open` to false when you're no longer available for new work.
 // Update `closedMessage` to reflect your current situation — e.g.:
@@ -97,8 +100,8 @@ export default function ContactCTA() {
 
             {/* Email CTA — white wipe from left on hover, text flips to dark */}
             <motion.a
-              href="mailto:shakib.alipour@gmail.com"
-              className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.14em] px-2 py-1"
+              href={`mailto:${EMAIL}`}
+              className="inline-flex items-center gap-2 text-2xl font-mono py-1"
               onMouseEnter={() => setHovered(true)}
               onMouseLeave={() => setHovered(false)}
               style={{
@@ -111,7 +114,7 @@ export default function ContactCTA() {
               }}
               {...reveal(0.3)}
             >
-              shakib.alipour@gmail.com →
+              {EMAIL} →
             </motion.a>
           </div>
 

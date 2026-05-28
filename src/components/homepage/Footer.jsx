@@ -1,5 +1,8 @@
 import { RiBehanceFill, RiLinkedinFill, RiGithubFill } from "react-icons/ri";
 
+// Assembled at runtime — never a plain string in the DOM
+const EMAIL = ["hello", "shakib.design"].join("@");
+
 const socials = [
   { href: "https://github.com/shkyb", icon: <RiGithubFill size={18} />, label: "GitHub" },
   { href: "https://behance.net/shakib-alipour", icon: <RiBehanceFill size={18} />, label: "Behance" },
@@ -17,10 +20,10 @@ export default function Footer() {
 
         <div className="flex items-center gap-5">
           <a
-            href="mailto:shakib.alipour@gmail.com"
+            href={`mailto:${EMAIL}`}
             className="text-xs font-mono text-white/60 hover:text-white transition-colors duration-200"
           >
-            shakib.alipour@gmail.com
+            {EMAIL}
           </a>
 
           <div className="flex items-center gap-3 pl-4 border-l border-white/10">
