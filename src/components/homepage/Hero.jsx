@@ -14,7 +14,7 @@ export default function Hero() {
         };
 
   return (
-    <section className="min-h-screen flex flex-col px-6 md:px-12 lg:px-16 pt-14 pb-10">
+    <section className="min-h-[calc(100dvh-3rem)] flex flex-col px-6 md:px-12 lg:px-16 pt-14 pb-10">
       <div className="max-w-7xl mx-auto w-full flex flex-col flex-1">
         <div className="flex-1 flex flex-col justify-center">
           <div>
@@ -49,12 +49,13 @@ export default function Hero() {
         </div>
 
         <motion.button
-          className="text-muted-foreground cursor-pointer hover:text-foreground transition-colors duration-200 w-fit"
+          className="flex flex-col items-start gap-1.5 text-muted-foreground cursor-pointer hover:text-foreground transition-colors duration-200 w-fit"
           aria-label="Scroll to work"
           onClick={() => document.querySelector("#work")?.scrollIntoView({ behavior: "smooth" })}
           {...anim(0.5)}
         >
-          <ArrowDown className="h-5 w-5" />
+          <span className="text-[10px] font-mono tracking-[0.22em] uppercase">Scroll</span>
+          <ArrowDown className="h-4 w-4" />
         </motion.button>
       </div>
     </section>
