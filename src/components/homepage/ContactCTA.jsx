@@ -8,7 +8,7 @@ import { motion, useReducedMotion } from "framer-motion";
 //   "Finishing my MSc thesis — available from Dec 2026."
 const AVAILABILITY = {
   open: true,
-  closedMessage: "Currently on a full-time engagement — not taking on new work.",
+  closedMessage: "Currently focused on thesis work — not taking on new collaborations.",
 };
 
 // Renders a green dot (available) or amber dot + message (unavailable).
@@ -91,8 +91,8 @@ export default function ContactCTA() {
               className="text-base text-white/55 leading-relaxed mb-12 max-w-lg text-balance"
               {...reveal(0.2)}
             >
-              Five years shipping market-ready products — now based in Milan.
-              Open to internships, full-time roles, and design collaborations.
+              Rigorous on research. Decisive on craft.<br />
+              Open to internships, thesis projects, and design collaborations.
             </motion.p>
 
             {/* Email CTA — white wipe from left on hover, text flips to dark */}
