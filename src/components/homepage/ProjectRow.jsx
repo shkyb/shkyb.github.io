@@ -47,7 +47,7 @@ export default function ProjectRow({ project }) {
         <div className="col-span-12 lg:col-span-7 flex flex-col h-full justify-between py-2 lg:grayscale lg:group-hover:grayscale-0 transition-[filter] duration-700 ease-out">
 
           {/* Header: context + period */}
-          <div className="flex justify-between items-baseline border-b border-border/40 pb-3 mb-5">
+          <div className="flex flex-col gap-1 md:flex-row md:justify-between md:items-baseline border-b border-border/40 pb-3 mb-5">
             <span className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
               {project.context} &bull; {project.sector}
             </span>
@@ -79,7 +79,7 @@ export default function ProjectRow({ project }) {
               {project.role}
             </p>
 
-            <div className="flex flex-wrap items-center justify-between gap-4 pt-2">
+            <div className="flex flex-col gap-3 md:flex-row md:flex-wrap md:items-center md:justify-between pt-2">
               <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-muted-foreground/80 font-medium">
                 {project.tags.map((tag, index) => (
                   <span key={tag} className="flex items-center gap-x-3">
