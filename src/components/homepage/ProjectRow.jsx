@@ -30,13 +30,13 @@ export default function ProjectRow({ project }) {
       >
         {/* Image */}
         <div
-          className="col-span-12 lg:col-span-5 overflow-hidden rounded-2xl aspect-4/3 lg:aspect-5/4"
+          className="col-span-12 lg:col-span-5 overflow-hidden rounded-2xl aspect-4/3 lg:aspect-5/4 lg:grayscale lg:group-hover:grayscale-0 transition-[filter] duration-700 ease-out"
           style={{ background: `${project.accent ?? "#94a3b8"}22` }}
         >
           <motion.img
             src={coverSrc}
             alt={project.title}
-            className="w-full h-full object-cover lg:grayscale lg:group-hover:grayscale-0 transition-[filter] duration-700 ease-out"
+            className="w-full h-full object-cover"
             animate={{ scale: hovered ? 1.03 : 1 }}
             transition={{ duration: 1.2, ease: "easeOut" }}
             onError={(e) => { e.currentTarget.style.display = "none" }}
