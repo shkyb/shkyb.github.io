@@ -18,12 +18,12 @@ export default function ProjectRow({ project }) {
     <Reveal>
       <Wrapper
         {...wrapperProps}
-        className="grid grid-cols-12 gap-8 md:gap-14 py-14 md:py-16 border-t border-border last:border-b group items-center"
+        className="grid grid-cols-12 gap-8 lg:gap-14 py-14 lg:py-16 border-t border-border last:border-b group items-center"
         style={{ "--card-accent": project.accent ?? "var(--foreground)" }}
       >
         {/* Image */}
         <div
-          className="col-span-12 md:col-span-5 overflow-hidden rounded-2xl aspect-4/3 md:aspect-3/2"
+          className="col-span-12 lg:col-span-5 overflow-hidden rounded-2xl aspect-4/3 lg:aspect-5/4"
           style={{ background: `${project.accent ?? "#94a3b8"}22` }}
         >
           <img
@@ -35,7 +35,7 @@ export default function ProjectRow({ project }) {
         </div>
 
         {/* Content */}
-        <div className="col-span-12 md:col-span-7 flex flex-col h-full justify-between py-2">
+        <div className="col-span-12 lg:col-span-7 flex flex-col h-full justify-between py-2">
 
           {/* Header: context + period */}
           <div className="flex justify-between items-baseline border-b border-border/40 pb-3 mb-5">
@@ -55,10 +55,10 @@ export default function ProjectRow({ project }) {
             >
               {project.title}
             </p>
-            <h2 className="font-serif text-2xl md:text-4xl font-semibold tracking-tight text-foreground leading-[1.15] [&_em]:text-(--card-accent)">
+            <h2 className="font-serif text-2xl lg:text-4xl font-semibold tracking-tight text-foreground leading-[1.15] [&_em]:text-(--card-accent)">
               {parseEm(project.headline)}
             </h2>
-            <p className="text-sm md:text-base text-muted-foreground font-light leading-relaxed text-balance">
+            <p className="text-sm lg:text-base text-muted-foreground font-light leading-relaxed text-balance">
               {project.description}
             </p>
           </div>
