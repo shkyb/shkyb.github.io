@@ -22,11 +22,15 @@ export default function ProjectRow({ project }) {
         style={{ "--card-accent": project.accent ?? "var(--foreground)" }}
       >
         {/* Image */}
-        <div className="col-span-12 md:col-span-5 overflow-hidden rounded-2xl">
+        <div
+          className="col-span-12 md:col-span-5 overflow-hidden rounded-2xl aspect-4/3 md:aspect-3/2"
+          style={{ background: `${project.accent ?? "#94a3b8"}22` }}
+        >
           <img
             src={coverSrc}
             alt={project.title}
-            className="w-full aspect-4/3 md:aspect-3/2 object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+            className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+            onError={(e) => { e.currentTarget.style.display = "none" }}
           />
         </div>
 
