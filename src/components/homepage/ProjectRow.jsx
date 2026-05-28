@@ -1,5 +1,9 @@
+import { useState } from "react";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Reveal } from "@/components/case/layout/Reveal";
+
+const MotionLink = motion(Link);
 
 function parseEm(text) {
   const parts = text.split(/\*([^*]+)\*/);
@@ -9,16 +13,19 @@ function parseEm(text) {
 }
 
 export default function ProjectRow({ project }) {
+  const [hovered, setHovered] = useState(false);
   const coverSrc = `/images/cover/${project.id}.webp`;
   const isPublished = project.status === "published";
-  const Wrapper = isPublished ? Link : "div";
+  const Wrapper = isPublished ? MotionLink : motion.div;
   const wrapperProps = isPublished ? { to: project.href } : {};
 
   return (
     <Reveal>
       <Wrapper
         {...wrapperProps}
-        className="grid grid-cols-12 gap-8 lg:gap-14 py-14 lg:py-16 border-t border-border last:border-b group items-center relative"
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+        className="grid grid-cols-12 gap-8 lg:gap-14 py-14 lg:py-16 border-t border-border last:border-b group items-center"
         style={{ "--card-accent": project.accent ?? "var(--foreground)" }}
       >
         {/* Image */}
@@ -26,16 +33,18 @@ export default function ProjectRow({ project }) {
           className="col-span-12 lg:col-span-5 overflow-hidden rounded-2xl aspect-4/3 lg:aspect-5/4"
           style={{ background: `${project.accent ?? "#94a3b8"}22` }}
         >
-          <img
+          <motion.img
             src={coverSrc}
             alt={project.title}
-            className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+            className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-[filter] duration-700 ease-out"
+            animate={{ scale: hovered ? 1.03 : 1 }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
             onError={(e) => { e.currentTarget.style.display = "none" }}
           />
         </div>
 
         {/* Content */}
-        <div className="col-span-12 lg:col-span-7 flex flex-col h-full justify-between py-2">
+        <div className="col-span-12 lg:col-span-7 flex flex-col h-full justify-between py-2 grayscale group-hover:grayscale-0 transition-[filter] duration-700 ease-out">
 
           {/* Header: context + period */}
           <div className="flex justify-between items-baseline border-b border-border/40 pb-3 mb-5">
@@ -97,12 +106,6 @@ export default function ProjectRow({ project }) {
 
         </div>
 
-        {/* Hover wash — each project tints with its own accent */}
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-          style={{ background: "color-mix(in srgb, var(--card-accent) 2%, transparent)" }}
-        />
       </Wrapper>
     </Reveal>
   );
