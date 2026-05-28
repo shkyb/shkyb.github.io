@@ -51,8 +51,8 @@ export default function ContactCTA() {
   return (
     // Dark section — bg-foreground (the site's near-black text color used as bg).
     // Flows seamlessly into <Footer /> which shares the same background.
-    <section className="bg-foreground px-6 md:px-12 lg:px-16 py-32 md:py-48">
-      <div className="max-w-7xl mx-auto">
+    <section className="bg-foreground px-6 md:px-12 lg:px-16 min-h-[90vh] flex flex-col pt-16 pb-20 md:pb-24">
+      <div className="max-w-7xl mx-auto w-full mt-auto">
 
         {/* Section label */}
         <motion.p
