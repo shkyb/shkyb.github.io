@@ -18,7 +18,7 @@ export default function ProjectRow({ project }) {
     <Reveal>
       <Wrapper
         {...wrapperProps}
-        className="grid grid-cols-12 gap-8 lg:gap-14 py-14 lg:py-16 border-t border-border last:border-b group items-center"
+        className="grid grid-cols-12 gap-8 lg:gap-14 py-14 lg:py-16 border-t border-border last:border-b group items-center relative"
         style={{ "--card-accent": project.accent ?? "var(--foreground)" }}
       >
         {/* Image */}
@@ -29,7 +29,7 @@ export default function ProjectRow({ project }) {
           <img
             src={coverSrc}
             alt={project.title}
-            className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+            className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
             onError={(e) => { e.currentTarget.style.display = "none" }}
           />
         </div>
@@ -82,7 +82,10 @@ export default function ProjectRow({ project }) {
 
               <div className="text-xs font-semibold uppercase tracking-[0.12em] text-foreground shrink-0">
                 {isPublished ? (
-                  <span>Read Case Study →</span>
+                  <span className="inline-flex items-center gap-1.5">
+                    Read Case Study
+                    <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+                  </span>
                 ) : (
                   <span className="text-muted-foreground/40 font-medium normal-case italic">
                     Coming Soon
@@ -93,6 +96,13 @@ export default function ProjectRow({ project }) {
           </div>
 
         </div>
+
+        {/* Hover wash — each project tints with its own accent */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+          style={{ background: "color-mix(in srgb, var(--card-accent) 2%, transparent)" }}
+        />
       </Wrapper>
     </Reveal>
   );
