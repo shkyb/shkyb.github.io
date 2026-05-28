@@ -8,7 +8,7 @@ export default function NavItem({ text, count = null, icon = null, to = null, hr
     <>
       <span>{text}</span>
       {count !== null && (
-        <sup className="text-xs text-slate-500">{count}</sup>
+        <sup className="text-xs font-mono text-(--project-muted-foreground,var(--color-slate-500))">{count}</sup>
       )}
       {icon && <span className="text-base">{icon}</span>}
     </>
