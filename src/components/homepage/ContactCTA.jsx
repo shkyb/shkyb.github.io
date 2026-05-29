@@ -101,7 +101,7 @@ export default function ContactCTA() {
             {/* Email CTA — white wipe from left on hover, text flips to dark */}
             <motion.a
               href={`mailto:${EMAIL}`}
-              className="inline-flex items-center gap-2 text-2xl font-mono py-1"
+              className="inline-flex items-center gap-2 text-2xl font-mono px-2 py-1 -ml-2"
               onMouseEnter={() => setHovered(true)}
               onMouseLeave={() => setHovered(false)}
               style={{

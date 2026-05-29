@@ -1,5 +1,6 @@
 import Hero from "@/components/homepage/Hero";
 import WorkSection from "@/components/homepage/WorkSection";
+import AboutSection from "@/components/homepage/AboutSection";
 import ContactCTA from "@/components/homepage/ContactCTA";
 import Footer from "@/components/homepage/Footer";
 
@@ -9,6 +10,7 @@ function HomePage() {
       <main>
         <Hero />
         <WorkSection />
+        <AboutSection />
         <ContactCTA />
       </main>
       <Footer />
