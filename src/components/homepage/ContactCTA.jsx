@@ -24,7 +24,7 @@ function AvailabilityBadge() {
           className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0"
           style={{ boxShadow: "0 0 8px 4px rgba(52, 211, 153, 0.35)" }}
         />
-        <p className="text-white/55">Available now</p>
+        <p className="text-white/70">Available now</p>
       </div>
     );
   }
@@ -121,7 +121,7 @@ export default function ContactCTA() {
           {/* Right col — desktop only, bottom-aligned with email CTA */}
           {/* Update "Currently" block whenever thesis topic or enrollment status changes */}
           <motion.div
-            className="hidden lg:flex lg:col-span-4 flex-col gap-4 text-xs font-mono text-white/35 leading-relaxed pb-1"
+            className="hidden lg:flex lg:col-span-4 flex-col gap-4 text-xs font-mono text-white/50 leading-relaxed pb-1"
             {...reveal(0.35)}
           >
             <div>
@@ -130,8 +130,12 @@ export default function ContactCTA() {
             </div>
             <div className="border-t border-white/10 pt-4">
               <p className="uppercase tracking-[0.14em] mb-1">Currently</p>
-              <p>MSc · Politecnico di Milano</p>
-              <p>Thesis — Agentic AI in trucking</p>
+              <p>MSc · Digital & Interaction Design</p>
+              <p>Politecnico di Milano</p>
+            </div>
+            <div className="border-t border-white/10 pt-4">
+              <p className="uppercase tracking-[0.14em] mb-1">Thesis</p>
+              <p>Agentic AI in Long-Haul Trucks</p>
             </div>
           </motion.div>
 
