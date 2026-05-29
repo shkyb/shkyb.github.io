@@ -37,14 +37,14 @@ export default function Hero() {
             className="text-sm font-medium text-muted-foreground mt-4"
             {...anim(0.26)}
           >
-            Interaction &amp; Industrial Designer
+            Interaction Designer — HMI &amp; Human-Robot Interaction
           </motion.p>
 
           <motion.p
-            className="text-base md:text-lg text-muted-foreground max-w-xl mt-6 leading-relaxed"
+            className="text-base md:text-lg text-muted-foreground text-balance max-w-xl mt-6 leading-relaxed"
             {...anim(0.38)}
           >
-            From mass-produced consumer electronics to humanoid robots — five years at the boundary between physical form and digital interface. Now at Politecnico di Milano.
+            Five years at the seam between hardware and software — consumer electronics, companion apps, humanoid robots.<br/>Now at Politecnico di Milano — MSc Digital & Interaction Design.
           </motion.p>
         </div>
 

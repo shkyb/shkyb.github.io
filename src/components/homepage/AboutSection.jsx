@@ -66,9 +66,9 @@ export default function AboutSection() {
               className="text-base md:text-lg text-muted-foreground text-balance leading-relaxed"
               {...reveal(0.12)}
             >
-              That thread runs from mass-produced hardware at Farassoo, through
-              humanoid robots at CAST, to a PoliMI thesis forming on agentic AI
-              in long-haul trucks. Research-first. System-minded. Decisive on craft.
+              CAST. Farassoo. PoliMI. Each context added a layer — mechanical
+              tolerances, manufacturing constraints, AI uncertainty.
+              Research-first. System-minded. Precise under constraint.
             </motion.p>
 
             <motion.div className="mt-10" {...reveal(0.2)}>

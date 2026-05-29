@@ -95,7 +95,7 @@ export default function ContactCTA() {
               {...reveal(0.2)}
             >
               Rigorous on research. Decisive on craft.<br />
-              Open to internships, thesis projects, and design collaborations.
+              Available for internships and design collaborations across Europe.
             </motion.p>
 
             {/* Email CTA — white wipe from left on hover, text flips to dark */}
