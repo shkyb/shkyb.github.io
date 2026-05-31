@@ -1,5 +1,13 @@
 import React from "react"
 import { TeamAvatars } from "@/components/TeamAvatars"
+import { projects } from "@/data/projects"
+import { collaborators } from "@/data/collaborators"
+
+const project = projects.find((p) => p.id === "d-heart")
+const teammates = project.team
+  .filter((id) => id !== "shakib")
+  .map((id) => collaborators[id])
+  .filter(Boolean)
 
 import placeholder from "./assets/placeholder.webp"
 import imgProblem from "./assets/dheart_problem_01.webp"
@@ -323,7 +331,7 @@ export const dHeartCase = {
     logo: { src: logo, alt: "D-Heart logo" },
     title: "D-Heart Pro",
     projectName: "D-Heart",
-    headline: "Redesigning a portable ECG ecosystem to make cardiac exams clearer, faster, and easier to trust for nurses working under pressure.",
+    headline: <>Redesigning a portable ECG ecosystem to make cardiac exams clearer, faster, and easier to trust for <em>nurses working under pressure</em>.</>,
     tags: ["UX Research", "UX/UI Design", "Healthcare", "Tablet", "Physical + Digital"],
     cover: {
       src: cover,
@@ -344,7 +352,7 @@ export const dHeartCase = {
 
     meta: [
       { label: "Role", value: "Conducting user research & testing, developing the design system & high-fidelity prototypes." },
-      { label: "Team", value: <TeamAvatars ids={["shakib", "beyza", "filippo", "marjan"]} size="lg" /> },
+      { label: "Team", value: <TeamAvatars ids={project.team} size="lg" /> },
       { label: "Timeline", value: "Academic project · 4 Months · 2024" },
       { label: "Focus", value: "Research, UX, Usability, User Testing" },
     ],
@@ -1242,11 +1250,11 @@ export const dHeartCase = {
             ]}
           />
 
-          <Prose className={`${sp.itemToItem}`}>
-            <p className="text-(--project-muted-foreground,var(--muted-foreground))">
-              A heartfelt thank you to <a href="https://www.linkedin.com/in/davidespallazzo/" target="_blank">Prof. Davide Spallazzo</a> and <a href="https://www.linkedin.com/in/martina-sciannam%C3%A8-920570157/" target="_blank">Prof. Martina Sciannamè</a> for their guidance throughout this project, to my teammates <b>Filippo</b>, <b>Marjan</b>, and <b>Beyza</b> for the collaboration, and to <b>Villa Le Magnolie</b> for welcoming us and making the research possible.
-            </p>
-          </Prose>
+          <SectionHeading
+            className={sp.itemToItem}
+            kicker="With thanks"
+            subtitle={<>To <a href="https://www.linkedin.com/in/davidespallazzo/" target="_blank">Prof. Davide Spallazzo</a> and <a href="https://www.linkedin.com/in/martina-sciannam%C3%A8-920570157/" target="_blank">Prof. Martina Sciannamè</a> for their guidance throughout this project, to my teammates {teammates.map((c, i) => <React.Fragment key={c.id}>{i > 0 && (i === teammates.length - 1 ? " and " : ", ")}<b>{c.name.split(" ")[0]}</b></React.Fragment>)} for the collaboration, and to <b>Villa Le Magnolie</b> for welcoming us and making the research possible.</>}
+          />
 
           <Figure
             src={cover}

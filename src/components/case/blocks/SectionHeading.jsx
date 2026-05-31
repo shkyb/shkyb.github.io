@@ -52,15 +52,17 @@ export function SectionHeading({
             </div>
           ) : null}
 
-          <Prose>
-            {size === "lg" ? (
-              <h2 className={cn(isCenter ? "mx-auto" : null)}>{title}</h2>
-            ) : (
-              <h2 className={cn("font-serif text-3xl font-semibold tracking-tight", isCenter ? "mx-auto" : null)}>
-                {title}
-              </h2>
-            )}
-          </Prose>
+          {title ? (
+            <Prose>
+              {size === "lg" ? (
+                <h2 className={cn(isCenter ? "mx-auto" : null)}>{title}</h2>
+              ) : (
+                <h2 className={cn("font-serif text-3xl font-semibold tracking-tight", isCenter ? "mx-auto" : null)}>
+                  {title}
+                </h2>
+              )}
+            </Prose>
+          ) : null}
 
           {subtitle ? (
             <div className={cn("mt-4 max-w-2xl", isCenter ? "mx-auto" : null)}>

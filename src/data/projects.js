@@ -25,7 +25,7 @@ export const projects = [
     overview:
       "A full redesign of the D-Heart portable ECG device and its companion app for nurses in nursing-home settings. Owned the design system end-to-end and conducted usability research — card sorting, tree testing, and KPI-based testing — achieving a final SEQ of 6.25/7.",
     tags: ["UX Research", "Usability Testing", "Design System", "Healthcare"],
-    team: ["shakib", "beyza", "filippo", "marjan"],
+    team: ["shakib", "filippo", "marjan", "beyza"],
     href: "/projects/d-heart",
     status: "published",           // "published" | "coming-soon"
   },
@@ -67,7 +67,7 @@ export const projects = [
     overview:
       "A semester-long usability project auditing, benchmarking, and redesigning the ITA Airways website — rebuilding the three core flows (flight search, benefits, offers) around a flatter IA and a more predictable interaction model. Design system built on Moon and extended with ITA-specific patterns, tested against WCAG AA/AAA, APCA, and four color-blindness conditions.",
     tags: ["Ergonomics", "Usability Testing", "Information Architecture", "Accessibility"],
-    team: ["shakib", "marjan", "ilaria", "mahshad"],
+    team: ["shakib", "ilaria", "mahshad", "marjan"],
     href: "/projects/ita-airways",
     status: "published",
   },
@@ -109,7 +109,7 @@ export const projects = [
     overview:
       "Co-Hub is an interactive installation exploring more-than-human city-making — exhibited at Milan Design Week 2025, Fabbrica del Vapore. Participants insert colored pegs representing non-human entities into a building structure, triggering a video transformation from a desolate overheated city to a thriving multi-species ecosystem.",
     tags: ["Speculative Design", "Interactive Installation", "More-than-Human Design", "Physical Computing"],
-    team: ["shakib", "alice", "mahshad", "ilaria", "marika"],
+    team: ["shakib", "alice", "marika", "mahshad", "ilaria"],
     href: "/projects/cohub",
     status: "coming-soon",
   },

@@ -1,5 +1,13 @@
 import React from "react"
 import { TeamAvatars } from "@/components/TeamAvatars"
+import { projects } from "@/data/projects"
+import { collaborators } from "@/data/collaborators"
+
+const project = projects.find((p) => p.id === "ita-airways")
+const teammates = project.team
+  .filter((id) => id !== "shakib")
+  .map((id) => collaborators[id])
+  .filter(Boolean)
 
 import itaAccessContrast from "./assets/ita-access-contrast.webp"
 import itaAccessTypo from "./assets/ita-access-typo.webp"
@@ -98,7 +106,7 @@ export const itaAirwaysCase = {
   caseMeta: {
     logo: { src: logo, alt: "ITA Airways logo" },
     title: "ITA Airways",
-    headline: "Rethinking the booking flow of Italy's national airline.",
+    headline: <>Rethinking the <em>booking flow</em> of Italy's national airline.</>,
     tags: ["UX Design", "Usability", "Design Systems", "Booking Flow", "Web"],
     cover: { src: cover, alt: "ITA Airways case study cover" },
     overview: [
@@ -134,7 +142,7 @@ export const itaAirwaysCase = {
         label: "Role",
         value: "Heuristic audits and competitor benchmarks through to a design system built on Moon and accessibility tested against WCAG, APCA, and four color blindness simulations",
       },
-      { label: "Team", value: <TeamAvatars ids={["shakib", "marjan", "ilaria", "mahshad"]} size="lg" />,
+      { label: "Team", value: <TeamAvatars ids={project.team} size="lg" />,
       },
       {
         label: "Timeline",
@@ -830,17 +838,11 @@ export const itaAirwaysCase = {
             ]}
           />
 
-          <Prose className={`mx-auto max-w-3xl ${sp.itemToItem}`}>
-            <p className="text-(--project-muted-foreground,var(--muted-foreground))">
-              Thanks to{" "}
-              <a href="https://www.linkedin.com/in/robertodadda/" target="_blank" rel="noopener noreferrer">Prof. Roberto Dadda</a>{" "}
-              and{" "}
-              <a href="https://www.linkedin.com/in/paolonegri/" target="_blank" rel="noopener noreferrer">Paolo Negri</a>{" "}
-              for their thorough reviews, their dedication to the course, and for teaching a
-              methodology rigorous enough to actually use. And to <strong>Marjan</strong>, <strong>Ilaria</strong>, and <strong>Mahshad</strong> —
-              for the late-night Figma sessions, the shared frustrations, and for making this genuinely fun to build.
-            </p>
-          </Prose>
+          <SectionHeading
+            className={sp.itemToItem}
+            kicker="With thanks"
+            subtitle={<>To <a href="https://www.linkedin.com/in/robertodadda/" target="_blank" rel="noopener noreferrer">Prof. Roberto Dadda</a> and <a href="https://www.linkedin.com/in/paolonegri/" target="_blank" rel="noopener noreferrer">Paolo Negri</a> for their thorough reviews, their dedication to the course, and for teaching a methodology rigorous enough to actually use. And to {teammates.map((c, i) => <React.Fragment key={c.id}>{i > 0 && (i === teammates.length - 1 ? " and " : ", ")}<strong>{c.name.split(" ")[0]}</strong></React.Fragment>)} — for the late-night Figma sessions, the shared frustrations, and for making this genuinely fun to build.</>}
+          />
         </>
       ),
     },

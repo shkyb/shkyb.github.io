@@ -1,5 +1,13 @@
 import React from "react"
 import { TeamAvatars } from "@/components/TeamAvatars"
+import { projects } from "@/data/projects"
+import { collaborators } from "@/data/collaborators"
+
+const project = projects.find((p) => p.id === "nathan")
+const teammates = project.team
+  .filter((id) => id !== "shakib")
+  .map((id) => collaborators[id])
+  .filter(Boolean)
 
 import ntnIntroProblem from "./assets/ntn-intro-problem.webp"
 import ntnIntroSolution from "./assets/ntn-intro-solution.webp"
@@ -123,7 +131,7 @@ export const nathanCase = {
   caseMeta: {
     logo: { src: logo, alt: "Nathan logo" },
     title: "Nathan",
-    headline: "An AI grocery companion that turns shopping lists into waste prevention.",
+    headline: <>An AI grocery companion that turns shopping lists into <em>waste prevention</em>.</>,
     tags: ["AI/UX", "Service Design", "Design Systems", "Mobile", "Sustainability"],
     cover: {
       src: cover,
@@ -141,7 +149,7 @@ export const nathanCase = {
     ],
     meta: [
       { label: "Role", value: "Designing the AI & data architecture — model selection, data strategy, fail-safes — and building the design system and hi-fi prototype." },
-      { label: "Team", value: <TeamAvatars ids={["shakib", "filippo", "marjan", "dilara", "erika"]} size="lg" />,
+      { label: "Team", value: <TeamAvatars ids={project.team} size="lg" />,
       },
       { label: "Timeline", value: "Academic project · 1 Semester · Mar – Jun 2024" },
       { label: "Focus", value: "AI Architecture, UX, Design Systems, Sustainability" },
@@ -688,9 +696,11 @@ export const nathanCase = {
               // },
             ]}
           />
-          <Prose className={sp.itemToItem}>
-            <p className="text-(--project-muted-foreground,var(--muted-foreground))">A big thank you to <a href="https://www.linkedin.com/in/marzia-mortati-19a0898/" target="_blank" rel="noreferrer">Prof. Marzia Mortati</a>, <a href="https://www.linkedin.com/in/andreabonarini/" target="_blank" rel="noreferrer">Prof. Andrea Bonarini</a>, <a href="https://www.linkedin.com/in/enrico-priora/" target="_blank" rel="noreferrer">Enrico Priora</a>, <a href="https://dipartimentodesign.polimi.it/it/personale/federico.espositi#" target="_blank" rel="noreferrer">Federico Espositi</a>, and <a href="https://www.linkedin.com/in/giulia-daleo/" target="_blank" rel="noreferrer">Giulia D'Aleo</a> for the care and patience they put into every review session. And to <strong>Filippo</strong>, <strong>Marjan</strong>, <strong>Dilara</strong>, and <strong>Erika</strong> — it was a pleasure to figure this out together.</p>
-          </Prose>
+          <SectionHeading
+            className={sp.itemToItem}
+            kicker="With thanks"
+            subtitle={<>To <a href="https://www.linkedin.com/in/marzia-mortati-19a0898/" target="_blank" rel="noreferrer">Prof. Marzia Mortati</a>, <a href="https://www.linkedin.com/in/andreabonarini/" target="_blank" rel="noreferrer">Prof. Andrea Bonarini</a>, <a href="https://www.linkedin.com/in/enrico-priora/" target="_blank" rel="noreferrer">Enrico Priora</a>, <a href="https://dipartimentodesign.polimi.it/it/personale/federico.espositi#" target="_blank" rel="noreferrer">Federico Espositi</a>, and <a href="https://www.linkedin.com/in/giulia-daleo/" target="_blank" rel="noreferrer">Giulia D'Aleo</a> for the care and patience they put into every review session. And to {teammates.map((c, i) => <React.Fragment key={c.id}>{i > 0 && (i === teammates.length - 1 ? " and " : ", ")}<strong>{c.name.split(" ")[0]}</strong></React.Fragment>)} — it was a pleasure to figure this out together.</>}
+          />
         </>
       ),
     },
