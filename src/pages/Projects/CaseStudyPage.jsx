@@ -1,13 +1,15 @@
 import { useEffect } from "react"
 import { useParams, Navigate } from "react-router-dom"
 import { cases } from "@/case-studies/registry"
+import { projects } from "@/data/projects"
 
 import { StickySidenav } from "@/components/case/layout/StickySidenav"
 import { Reveal } from "@/components/case/layout/Reveal"
 import { CaseSection } from "@/components/case/layout/Section"
+import { CaseContainer } from "@/components/case/layout/Container"
 import { CaseHero } from "@/components/case/blocks/CaseHero"
 import { CaseOverview } from "@/components/case/blocks/CaseOverview"
-import { FullBleedSection } from "@/components/case/layout/FullBleedSection"
+import { NextProject } from "@/components/case/blocks/NextProject"
 
 export default function CaseStudyPage() {
   const { slug } = useParams()
@@ -24,6 +26,13 @@ export default function CaseStudyPage() {
   if (!data) return <Navigate to="/projects" replace />
 
   const { caseMeta, sections } = data
+
+  const currentIndex = projects.findIndex((p) => p.id === slug)
+  const orderedFromNext = [
+    ...projects.slice(currentIndex + 1),
+    ...projects.slice(0, currentIndex),
+  ]
+  const nextProject = orderedFromNext.find((p) => p.status === "published")
 
   // Add Overview as first sidenav item.
   // NextProject is intentionally NOT included here because it should behave
@@ -88,11 +97,24 @@ export default function CaseStudyPage() {
           ))}
         </div>
 
-        {/* TODO: place new NextProject component here — rebuilt from projects.js */}
+        {nextProject && (
+          <CaseContainer size="fill">
+            <NextProject
+              href={nextProject.href}
+              kicker={nextProject.title}
+              title={nextProject.title}
+              headline={nextProject.headline}
+              accent={nextProject.accent}
+              image={`/images/cover/${nextProject.id}.webp`}
+              imageAlt={nextProject.title}
+              tags={nextProject.tags}
+            />
+          </CaseContainer>
+        )}
 
         {/* 6) Bottom sentinel so the last real section can still activate correctly
               in the sticky sidenav even when there is no footer. Keep this last. */}
-        <div id="case-end-sentinel" className="h-[35vh]" />
+        {/* <div id="case-end-sentinel" className="h-[35vh]" /> */}
       </div>
     </main>
   )
