@@ -10,6 +10,7 @@ import { CaseContainer } from "@/components/case/layout/Container"
 import { CaseHero } from "@/components/case/blocks/CaseHero"
 import { CaseOverview } from "@/components/case/blocks/CaseOverview"
 import { NextProject } from "@/components/case/blocks/NextProject"
+import Footer from "@/components/homepage/Footer"
 
 export default function CaseStudyPage() {
   const { slug } = useParams()
@@ -98,6 +99,7 @@ export default function CaseStudyPage() {
         </div>
 
         {nextProject && (
+          <div className="bg-white">
           <CaseContainer size="fill">
             <NextProject
               href={nextProject.href}
@@ -110,12 +112,14 @@ export default function CaseStudyPage() {
               tags={nextProject.tags}
             />
           </CaseContainer>
+          </div>
         )}
 
         {/* 6) Bottom sentinel so the last real section can still activate correctly
               in the sticky sidenav even when there is no footer. Keep this last. */}
         {/* <div id="case-end-sentinel" className="h-[35vh]" /> */}
       </div>
+      <Footer variant="light" />
     </main>
   )
 }

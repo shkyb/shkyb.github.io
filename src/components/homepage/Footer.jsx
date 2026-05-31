@@ -9,24 +9,26 @@ const socials = [
   { href: "https://linkedin.com/in/shakib-alipour", icon: <RiLinkedinFill size={18} />, label: "LinkedIn" },
 ];
 
-export default function Footer() {
-  return (
-    <footer className="bg-foreground border-t border-white/10 px-6 md:px-12 lg:px-16 py-8">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+export default function Footer({ variant = "dark" }) {
+  const isDark = variant === "dark"
 
-        <p className="text-xs font-mono text-white/40">
+  return (
+    <footer className={`border-t px-6 py-8 md:px-12 lg:px-16 ${isDark ? "bg-foreground border-white/10" : "bg-white border-border"}`}>
+      <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-4 md:flex-row md:items-center">
+
+        <p className={`text-xs font-mono ${isDark ? "text-white/40" : "text-muted-foreground"}`}>
           © {2025 === new Date().getFullYear() ? "2025" : `2025–${new Date().getFullYear()}`} Shakib Alipour
         </p>
 
         <div className="flex items-center gap-5">
           <a
             href={`mailto:${EMAIL}`}
-            className="text-xs font-mono text-white/60 hover:text-white transition-colors duration-200"
+            className={`text-xs font-mono transition-colors duration-200 ${isDark ? "text-white/60 hover:text-white" : "text-muted-foreground hover:text-foreground"}`}
           >
             {EMAIL}
           </a>
 
-          <div className="flex items-center gap-3 pl-4 border-l border-white/10">
+          <div className={`flex items-center gap-3 border-l pl-4 ${isDark ? "border-white/10" : "border-border"}`}>
             {socials.map((s) => (
               <a
                 key={s.label}
@@ -34,7 +36,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={s.label}
-                className="text-white/60 hover:text-white transition-colors duration-200"
+                className={`transition-colors duration-200 ${isDark ? "text-white/60 hover:text-white" : "text-muted-foreground hover:text-foreground"}`}
               >
                 {s.icon}
               </a>

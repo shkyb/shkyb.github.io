@@ -27,12 +27,12 @@ export function NextProject({
   if (!href || !title) return null
 
   return (
-    <section className={cn("py-16 md:py-24", className)} aria-label="Next project">
+    <section className={cn("py-16 md:py-30", className)} aria-label="Next project">
       <Link
         to={href}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        className="group flex flex-col overflow-hidden rounded-3xl border border-(--project-border,var(--border)) bg-white/80 backdrop-blur-sm transition-colors hover:bg-white/95 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400/60 md:flex-row"
+        className="group flex flex-col overflow-hidden rounded-3xl border border-border bg-white transition-colors hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400/60 md:flex-row"
       >
         {/* Flush image — left, 1/3 */}
         <div className="aspect-5/4 shrink-0 overflow-hidden md:w-1/3 md:self-start">
