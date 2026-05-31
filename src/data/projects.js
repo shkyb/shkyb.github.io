@@ -105,7 +105,7 @@ export const projects = [
     accent: "#3E774A",
     headline: "An installation that asks what cities could look like if humans weren't the *only designers*",
     description:
-      "Interactive installation exhibited at Milan Design Week 2025 and a second show in June — a more-than-human response to urban heat island effect. Participants insert pegs representing non-human entities, gradually transforming a desolate building into a biodiverse ecosystem. Arduino + TouchDesigner.",
+      "Interactive installation exhibited at Milan Design Week 2025 — a more-than-human response to urban heat island effect. Participants insert pegs representing non-human entities, gradually transforming a desolate building into a biodiverse ecosystem. Arduino + TouchDesigner.",
     overview:
       "Co-Hub is an interactive installation exploring more-than-human city-making — exhibited at Milan Design Week 2025, Fabbrica del Vapore. Participants insert colored pegs representing non-human entities into a building structure, triggering a video transformation from a desolate overheated city to a thriving multi-species ecosystem.",
     tags: ["Speculative Design", "Interactive Installation", "More-than-Human Design", "Physical Computing"],
