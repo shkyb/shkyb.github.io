@@ -73,7 +73,7 @@ export default function AboutSection() {
               Research-first. System-minded. <em style={{ color: SHAKIB_ORANGE, fontStyle: "italic" }}>Precise under constraint.</em>
             </motion.p>
 
-            <motion.div className="mt-10" {...reveal(0.2)}>
+            {/* <motion.div className="mt-10" {...reveal(0.2)}>
               <Link
                 to="/about"
                 className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.14em] px-2 py-1 -ml-2"
@@ -90,7 +90,7 @@ export default function AboutSection() {
               >
                 About me →
               </Link>
-            </motion.div>
+            </motion.div> */}
           </div>
 
         </div>

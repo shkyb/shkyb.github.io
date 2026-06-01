@@ -25,12 +25,12 @@ export default function Navbar() {
 
         {/* Center: Nav items */}
         <div className="hidden md:flex items-center justify-center gap-6">
-          <span className="hidden lg:inline-flex">
+          {/* <span className="hidden lg:inline-flex">
             <NavItem icon={<Home size={18} />} to="/" />
-          </span>
+          </span> */}
           {/* <NavItem text="Home" to="/" /> */}
-          <NavItem text="About" to="/about" />
-          <NavItem text="Projects" to="/projects" count={projects.length} />
+          {/* <NavItem text="About" to="/about" /> */}
+          {/* <NavItem text="Projects" to="/projects" count={projects.length} /> */}
           <NavItem
             text="Résumé"
             href="https://cv.shakib.design"
@@ -62,8 +62,8 @@ export default function Navbar() {
           <div className="mx-auto w-full max-w-screen-2xl px-6 py-4 flex flex-col gap-4">
             <NavItem icon={<Home size={18} />} to="/" onClick={closeMenu} />
             {/* <NavItem text="Home" to="/" onClick={closeMenu} /> */}
-            <NavItem text="About" to="/about" onClick={closeMenu} />
-            <NavItem text="Projects" to="/projects" onClick={closeMenu} />
+            {/* <NavItem text="About" to="/about" onClick={closeMenu} /> */}
+            {/* <NavItem text="Projects" to="/projects" onClick={closeMenu} /> */}
 
             <NavItem
               text="CV"

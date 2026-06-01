@@ -25,7 +25,7 @@ export default function WorkSection() {
         ))}
 
         {/* Bottom CTA */}
-        <div className="pt-20 pb-2 flex justify-end">
+        {/* <div className="pt-20 pb-2 flex justify-end">
           <Link
             to="/projects"
             className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.14em] px-2 py-1"
@@ -42,7 +42,7 @@ export default function WorkSection() {
           >
             View All Projects →
           </Link>
-        </div>
+        </div> */}
 
       </div>
     </section>
