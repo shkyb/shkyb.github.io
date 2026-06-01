@@ -108,15 +108,26 @@ export function StickySidenav({ sections, className }) {
     if (clickTimerRef.current) window.clearTimeout(clickTimerRef.current)
 
     const el = document.getElementById(id)
+    if (!el) return
 
     const prefersReduced =
       typeof window !== "undefined" &&
       window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches
-    if (el) el.scrollIntoView({ behavior: prefersReduced ? "auto" : "smooth", block: "start" })
+
+    const cssTopOffset = getComputedStyle(document.documentElement)
+      .getPropertyValue("--case-top-offset")
+      .trim()
+    const topOffset = Number.parseInt(cssTopOffset || "48", 10)
+
+    if (window.lenis && !prefersReduced) {
+      window.lenis.scrollTo(el, { offset: 0, duration: 1.2 })
+    } else {
+      el.scrollIntoView({ behavior: prefersReduced ? "auto" : "smooth", block: "start" })
+    }
 
     clickTimerRef.current = window.setTimeout(() => {
       clickLockRef.current = false
-    }, 600)
+    }, 1400)
   }
 
   return (
