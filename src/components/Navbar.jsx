@@ -33,7 +33,7 @@ export default function Navbar() {
           <NavItem text="Projects" to="/projects" count={projects.length} />
           <NavItem
             text="Résumé"
-            href="https://docs.google.com/document/d/1o0fNXL66ROGPvPpEJDpwa3XDLUZQflqOfrZEOSSTsmI/edit?usp=sharing"
+            href="https://cv.shakib.design"
             icon={<HiMiniArrowUpRight />}
           />
         </div>
@@ -67,7 +67,7 @@ export default function Navbar() {
 
             <NavItem
               text="CV"
-              href="https://docs.google.com/document/d/1o0fNXL66ROGPvPpEJDpwa3XDLUZQflqOfrZEOSSTsmI/edit?usp=sharing"
+              href="https://cv.shakib.design"
               icon={<HiMiniArrowUpRight />}
               onClick={closeMenu}
             />
