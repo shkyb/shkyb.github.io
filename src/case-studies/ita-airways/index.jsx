@@ -252,7 +252,7 @@ export const itaAirwaysCase = {
             className="mx-auto max-w-3xl"
           />
           <Metrics
-            className="mx-auto max-w-3xl"
+            className="mx-auto max-w-3xl [&>div]:grid-cols-2 [&>div]:lg:grid-cols-4"
             columns={4}
             variant="plain"
             align="center"
@@ -789,22 +789,13 @@ export const itaAirwaysCase = {
             subtitle="I adapted Moon's tokens to ITA's brand language and added bespoke components the library didn't cover — the price-comparison calendar, the passenger-scoped baggage selector, and the offers map pins. Accessibility testing ran at the token level, so every component inherits compliant contrast by default."
             className="mx-auto max-w-3xl"
           />
-          <div className="grid grid-cols-2 gap-4">
-            <Figure
-              className="mt-0"
-              src={itaDesignSystem1}
-              frame="soft"
-              aspect="aspect-square"
-              alt="Token system — color, spacing, and typography documented across light and dark surfaces."
-            />
-            <Figure
-              className="mt-0"
-              src={itaDesignSystem2}
-              frame="soft"
-              aspect="aspect-square"
-              alt="Component library — buttons, inputs, cards, the price-matrix calendar, and the seat, baggage, and lounge selectors."
-            />
-          </div>
+          <ImageGrid
+            cols={2}
+            items={[
+              { src: itaDesignSystem1, frame: "soft", aspect: "aspect-square", alt: "Token system — color, spacing, and typography documented across light and dark surfaces." },
+              { src: itaDesignSystem2, frame: "soft", aspect: "aspect-square", alt: "Component library — buttons, inputs, cards, the price-matrix calendar, and the seat, baggage, and lounge selectors." },
+            ]}
+          />
         </>
       ),
     },

@@ -1257,11 +1257,11 @@ export const dHeartCase = {
             subtitle={<>To <a href="https://www.linkedin.com/in/davidespallazzo/" target="_blank">Prof. Davide Spallazzo</a> and <a href="https://www.linkedin.com/in/martina-sciannam%C3%A8-920570157/" target="_blank">Prof. Martina Sciannamè</a> for their guidance throughout this project, to my teammates {teammates.map((c, i) => <React.Fragment key={c.id}>{i > 0 && (i === teammates.length - 1 ? " and " : ", ")}<b>{c.name.split(" ")[0]}</b></React.Fragment>)} for the collaboration, and to <b>Villa Le Magnolie</b> for welcoming us and making the research possible.</>}
           />
 
-          <Figure
+          {/* <Figure
             src={cover}
             aspect="aspect-video"
             className={`${sp.itemToItem}`}
-          />
+          /> */}
         </>
       ),
     },

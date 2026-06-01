@@ -566,12 +566,15 @@ export const nathanCase = {
             subtitle="A customization of the Moon Design System — 33 components adapted to the specific needs of a household grocery app."
             className="mx-auto max-w-3xl"
           />
-          <div className="mx-auto grid max-w-5xl grid-cols-2 gap-4">
-            <Figure src={ntnDesignSystem01} alt="Design system foundations" aspect="aspect-square" frame="soft" />
-            <Figure src={ntnDesignSystem02} alt="Design system components" aspect="aspect-square" frame="soft" />
-            <Figure src={ntnDesignSystem03} alt="Design system typography and color" aspect="aspect-square" frame="soft" />
-            <Figure src={ntnDesignSystem04} alt="Design system patterns" aspect="aspect-square" frame="soft" />
-          </div>
+          <ImageGrid
+            cols={2}
+            items={[
+              { src: ntnDesignSystem01, alt: "Design system foundations", aspect: "aspect-square", frame: "soft" },
+              { src: ntnDesignSystem02, alt: "Design system components", aspect: "aspect-square", frame: "soft" },
+              { src: ntnDesignSystem03, alt: "Design system typography and color", aspect: "aspect-square", frame: "soft" },
+              { src: ntnDesignSystem04, alt: "Design system patterns", aspect: "aspect-square", frame: "soft" },
+            ]}
+          />
         </>
       ),
     },
@@ -610,24 +613,13 @@ export const nathanCase = {
               },
             ]}
           />
-          <div className="mx-auto grid max-w-5xl grid-cols-2 gap-4">
-            <Figure
-              src={ntnTesting01}
-              alt="Home screen rebuilt with stronger whitespace and clearer visual hierarchy"
-              // caption="Home rebuilt — the original was eye-catching but dense. Whitespace and hierarchy fixed it."
-              aspect="aspect-[4/5]"
-              frame="none"
-            />
-            <Figure
-              src={ntnTesting02}
-              alt="Join button changed to Join a Household"
-              // caption='"Join" → "Join a Household" — a single copy change that eliminated a recurring confusion point.'
-              aspect="aspect-[4/5]"
-              frame="none"
-            />
-
-
-          </div>
+          <ImageGrid
+            cols={2}
+            items={[
+              { src: ntnTesting01, alt: "Home screen rebuilt with stronger whitespace and clearer visual hierarchy", aspect: "aspect-[4/5]", frame: "none" },
+              { src: ntnTesting02, alt: "Join button changed to Join a Household", aspect: "aspect-[4/5]", frame: "none" },
+            ]}
+          />
           <Figure
             src={ntnTesting03}
             alt="End-of-shopping tooltip added to signal session completion"
