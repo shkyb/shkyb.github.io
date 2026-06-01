@@ -38,6 +38,16 @@ function setNameMeta(name, content) {
   el.setAttribute("content", content)
 }
 
+function setCanonical(href) {
+  let el = document.querySelector(`link[rel="canonical"]`)
+  if (!el) {
+    el = document.createElement("link")
+    el.setAttribute("rel", "canonical")
+    document.head.appendChild(el)
+  }
+  el.setAttribute("href", href)
+}
+
 export default function CaseStudyPage() {
   const { slug } = useParams()
   const data = cases[slug]
@@ -60,6 +70,7 @@ export default function CaseStudyPage() {
     setNameMeta("twitter:title", title)
     setNameMeta("twitter:description", desc)
     setNameMeta("twitter:image", image)
+    setCanonical(`${BASE_URL}/projects/${slug}`)
 
     const root = document.documentElement
     if (vars) Object.entries(vars).forEach(([k, v]) => root.style.setProperty(k, v))
@@ -74,6 +85,7 @@ export default function CaseStudyPage() {
       setNameMeta("twitter:title", HOMEPAGE_TITLE)
       setNameMeta("twitter:description", HOMEPAGE_DESC)
       setNameMeta("twitter:image", HOMEPAGE_IMAGE)
+      setCanonical(BASE_URL)
       if (vars) Object.keys(vars).forEach((k) => root.style.removeProperty(k))
     }
   }, [data, slug, currentProject])
