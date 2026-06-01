@@ -2,6 +2,8 @@ import { useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { Link } from "react-router-dom";
 
+const SHAKIB_ORANGE = "#F1731F"
+
 const disciplines = [
   "UX Research",
   "Interaction Design",
@@ -59,7 +61,7 @@ export default function AboutSection() {
               style={{ fontSize: "clamp(1.4rem, 2.5vw, 2rem)" }}
               {...reveal(0.04)}
             >
-              I design interfaces for systems that share control with their users.
+              I design interfaces for systems that <em style={{ color: SHAKIB_ORANGE, fontStyle: "italic" }}>share control</em> with their users.
             </motion.p>
 
             <motion.p
@@ -68,7 +70,7 @@ export default function AboutSection() {
             >
               CAST. Farassoo. PoliMI. Each context added a layer — mechanical
               tolerances, manufacturing constraints, AI uncertainty.
-              Research-first. System-minded. Precise under constraint.
+              Research-first. System-minded. <em style={{ color: SHAKIB_ORANGE, fontStyle: "italic" }}>Precise under constraint.</em>
             </motion.p>
 
             <motion.div className="mt-10" {...reveal(0.2)}>
@@ -78,8 +80,8 @@ export default function AboutSection() {
                 onMouseEnter={() => setCtaHovered(true)}
                 onMouseLeave={() => setCtaHovered(false)}
                 style={{
-                  color: ctaHovered ? "var(--background)" : "var(--muted-foreground)",
-                  backgroundImage: "linear-gradient(var(--foreground), var(--foreground))",
+                  color: ctaHovered ? "white" : SHAKIB_ORANGE,
+                  backgroundImage: `linear-gradient(${SHAKIB_ORANGE}, ${SHAKIB_ORANGE})`,
                   backgroundSize: ctaHovered ? "100% 100%" : "0% 100%",
                   backgroundRepeat: "no-repeat",
                   backgroundPosition: "left center",
