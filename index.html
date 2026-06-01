@@ -1,21 +1,94 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
 
-    <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
-    <link rel="shortcut icon" href="/favicon/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="Shakib" />
-    <link rel="manifest" href="/favicon/site.webmanifest" />
+<head>
+  <meta charset="UTF-8" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shakib Alipour | Design Portfolio</title>
-    <script type="module" crossorigin src="/assets/index-CyqP-lNe.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-8HTHW7so.css">
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+  <!-- for re-routing 404 -->
+  <script>
+    (function () {
+      const redirect = sessionStorage.redirect
+      if (redirect) {
+        delete sessionStorage.redirect
+        history.replaceState(null, null, redirect)
+      }
+    })()
+  </script>
+
+  <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png?v=20260601" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg?v=20260601" />
+  <link rel="shortcut icon" href="/favicon/favicon.ico?v=20260601" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=20260601" />
+  <meta name="apple-mobile-web-app-title" content="Shakib.Design" />
+  <link rel="manifest" href="/favicon/site.webmanifest?v=20260601" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shakib Alipour — Interaction Designer</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Interaction designer specialising in HMI and human-robot interaction. MSc candidate at Politecnico di Milano. Five years shipping hardware-digital products." />
+  <link rel="canonical" href="https://shakib.design" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:site_name"   content="Shakib Alipour" />
+  <meta property="og:url"         content="https://shakib.design" />
+  <meta property="og:title"       content="Shakib Alipour — Interaction Designer" />
+  <meta property="og:description" content="Interaction designer specialising in HMI and human-robot interaction. MSc candidate at Politecnico di Milano. Five years shipping hardware-digital products." />
+  <meta property="og:image"       content="https://shakib.design/og/default.webp" />
+  <meta property="og:image:width"  content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt"   content="Shakib Alipour — Interaction Designer" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Shakib Alipour — Interaction Designer" />
+  <meta name="twitter:description" content="Interaction designer specialising in HMI and human-robot interaction. MSc candidate at Politecnico di Milano. Five years shipping hardware-digital products." />
+  <meta name="twitter:image"       content="https://shakib.design/og/default.webp" />
+
+  <!-- JSON-LD structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Shakib Alipour",
+    "url": "https://shakib.design",
+    "jobTitle": "Interaction Designer",
+    "description": "Interaction designer specialising in HMI and human-robot interaction. MSc candidate at Politecnico di Milano. Five years shipping hardware-digital products.",
+    "image": "https://shakib.design/og/default.webp",
+    "sameAs": [
+      "https://linkedin.com/in/shakib-alipour",
+      "https://github.com/shkyb",
+      "https://behance.net/shakib-alipour"
+    ],
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Politecnico di Milano"
+    },
+    "knowsAbout": [
+      "Interaction Design",
+      "Human-Machine Interface",
+      "Human-Robot Interaction",
+      "UX Research",
+      "Design Systems",
+      "Industrial Design",
+      "AI-Assisted Design"
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+    rel="stylesheet"
+  />
+  <script type="module" crossorigin src="/assets/index-DjlTuz9H.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-2RSPkx21.css">
+</head>
+
+<body>
+  <div id="root"></div>
+</body>
+
 </html>
