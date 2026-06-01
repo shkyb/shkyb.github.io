@@ -1,0 +1,23 @@
+# Shakib Alipour
+
+> Interaction designer specialising in HMI and human-robot interaction. MSc candidate at Politecnico di Milano. Five years shipping hardware-digital products at the seam between physical and digital interfaces.
+
+## About
+
+- Portfolio: https://shakib.design
+- LinkedIn: https://linkedin.com/in/shakib-alipour
+- GitHub: https://github.com/shkyb
+
+Full background, experience, and skills: https://shakib.design/llms/about.md
+
+## Published Case Studies
+
+- [D-Heart Pro](https://shakib.design/llms/d-heart.md): UX research and redesign of a portable ECG device and companion app for nurses. SEQ 6.25/7. Design system built from scratch.
+- [Nathan](https://shakib.design/llms/nathan.md): AI-powered grocery app reducing household food waste. LSTM forecasting + receipt OCR. AI architecture and design system lead.
+- [ITA Airways](https://shakib.design/llms/ita-airways.md): Ergonomics-driven usability audit and redesign of Italy's flagship carrier booking flow. WCAG/APCA accessibility tested.
+
+## In Progress
+
+- Mazhan LTE Modem-Router — IDA Bronze 2023 winner. Industrial design + companion app. Case study coming soon.
+- CoHub — interactive installation exhibited at Milan Design Week 2025. More-than-human city-making. Case study coming soon.
+- Phil — social robot for autistic children, Rehabilia Technologies internship 2025. Case study coming soon.
