@@ -87,6 +87,7 @@ import {
 
 const logo = "/images/logos/d-heart.webp"
 const cover = "/images/cover/d-heart.webp"
+const hero = "/images/hero/d-heart.webp"
 
 const topMetrics = [
   {
@@ -334,7 +335,7 @@ export const dHeartCase = {
     headline: <>Redesigning a portable ECG ecosystem to make cardiac exams clearer, faster, and easier to trust for <em>nurses working under pressure</em>.</>,
     tags: ["UX Research", "UX/UI Design", "Healthcare", "Tablet", "Physical + Digital"],
     cover: {
-      src: cover,
+      src: hero,
       alt: "D-Heart case study cover",
       aspect: "aspect-[16/9]",
     },

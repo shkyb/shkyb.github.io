@@ -71,6 +71,7 @@ import { sp } from "@/components/case/layout/spacing"
 
 const logo = "/images/logos/ita-airways.webp"
 const cover = "/images/cover/ita-airways.webp"
+const hero = "/images/hero/ita-airways.webp"
 
 const PersonaCard = ({ avatar, name, age, role, drive, pain }) => (
   <Card className="shadow-none">
@@ -108,7 +109,7 @@ export const itaAirwaysCase = {
     title: "ITA Airways",
     headline: <>Rethinking the <em>booking flow</em> of Italy's national airline.</>,
     tags: ["UX Design", "Usability", "Design Systems", "Booking Flow", "Web"],
-    cover: { src: cover, alt: "ITA Airways case study cover" },
+    cover: { src: hero, alt: "ITA Airways case study cover", aspect: "aspect-[16/9]" },
     overview: [
       <Prose key="p1">
         <p>

@@ -3,7 +3,8 @@
 //
 // Image convention — no paths stored here, derived from id at render time:
 //   Logo:     /images/logos/{id}.webp
-//   Cover:    /images/cover/{id}.webp
+//   Cover:    /images/cover/{id}.webp   ← 5:4 — ProjectRow + NextProject
+//   Hero:     /images/hero/{id}.webp    ← 16:9 — CaseHero only
 //
 // accent: primary brand color for card highlights (project title, kicker accents).
 //         If null, components fall back to the global foreground token.

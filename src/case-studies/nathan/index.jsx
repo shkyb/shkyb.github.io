@@ -64,6 +64,7 @@ import { ShoppingCart, Refrigerator, Leaf, ScanLine, BrainCircuit, ShieldCheck, 
 
 const logo = "/images/logos/nathan.webp"
 const cover = "/images/cover/nathan.webp"
+const hero = "/images/hero/nathan.webp"
 
 const PillarCard = ({ icon: Icon, title, body, bullets }) => (
   <Card className="border border-(--project-border,var(--border)) shadow-none" style={{ background: "var(--project-background)" }}>
@@ -134,8 +135,9 @@ export const nathanCase = {
     headline: <>An AI grocery companion that turns shopping lists into <em>waste prevention</em>.</>,
     tags: ["AI/UX", "Service Design", "Design Systems", "Mobile", "Sustainability"],
     cover: {
-      src: cover,
+      src: hero,
       alt: "Nathan case study cover",
+      aspect: "aspect-[16/9]",
     },
     overview: [
       <Prose>
