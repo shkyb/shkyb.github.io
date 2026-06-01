@@ -18,10 +18,16 @@ export default function CaseStudyPage() {
 
   useEffect(() => {
     const vars = data?.caseMeta?.cssVars
+    if (data?.caseMeta?.title) {
+      document.title = `${data.caseMeta.title} — Shakib Alipour`
+    }
     if (!vars) return
     const root = document.documentElement
     Object.entries(vars).forEach(([k, v]) => root.style.setProperty(k, v))
-    return () => Object.keys(vars).forEach((k) => root.style.removeProperty(k))
+    return () => {
+      Object.keys(vars).forEach((k) => root.style.removeProperty(k))
+      document.title = "Shakib Alipour — Interaction Designer"
+    }
   }, [data])
 
   if (!data) return <Navigate to="/projects" replace />

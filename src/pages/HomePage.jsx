@@ -1,3 +1,4 @@
+import { useEffect } from "react"
 import Hero from "@/components/homepage/Hero";
 import CredentialStrip from "@/components/homepage/CredentialStrip";
 import WorkSection from "@/components/homepage/WorkSection";
@@ -6,6 +7,8 @@ import ContactCTA from "@/components/homepage/ContactCTA";
 import Footer from "@/components/homepage/Footer";
 
 function HomePage() {
+  useEffect(() => { document.title = "Shakib Alipour — Interaction Designer" }, [])
+
   return (
     <div className="bg-background">
       <main>
