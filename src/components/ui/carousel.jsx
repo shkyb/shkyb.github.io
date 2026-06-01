@@ -144,6 +144,9 @@ function CarouselPrevious({ className, variant = "outline", size = "icon", ...pr
       size={size}
       className={cn(
         "absolute z-10 rounded-full",
+        "cursor-pointer border-(--project-border,var(--border)) text-(--project-muted-foreground,var(--muted-foreground))",
+        "hover:border-(--project-primary,var(--border)) hover:bg-transparent hover:text-(--project-primary,var(--foreground))",
+        "focus-visible:ring-(--project-primary,var(--ring))",
         orientation === "horizontal"
           ? "left-4 top-1/2 -translate-y-1/2"
           : "left-1/2 top-4 -translate-x-1/2 rotate-90",
@@ -168,6 +171,9 @@ function CarouselNext({ className, variant = "outline", size = "icon", ...props 
       size={size}
       className={cn(
         "absolute z-10 rounded-full",
+        "cursor-pointer border-(--project-border,var(--border)) text-(--project-muted-foreground,var(--muted-foreground))",
+        "hover:border-(--project-primary,var(--border)) hover:bg-transparent hover:text-(--project-primary,var(--foreground))",
+        "focus-visible:ring-(--project-primary,var(--ring))",
         orientation === "horizontal"
           ? "right-4 top-1/2 -translate-y-1/2"
           : "bottom-4 left-1/2 -translate-x-1/2 rotate-90",
@@ -206,22 +212,29 @@ function CarouselDots({
             aria-current={isActive ? "true" : undefined}
             onClick={() => scrollTo(index)}
             className={cn(
-              "relative h-2.5 w-2.5 overflow-hidden rounded-full bg-foreground/20 transition-all hover:bg-foreground/40",
+              "relative h-2.5 w-2.5 cursor-pointer overflow-hidden rounded-full transition-all",
               isActive ? "w-8" : null,
               dotClassName
             )}
+            style={{
+              background: "color-mix(in srgb, var(--project-primary, var(--project-kicker, var(--foreground))) 20%, transparent)",
+            }}
           >
             {isActive ? (
               progressDuration ? (
                 <span
                   key={`${selectedIndex}-${index}`}
-                  className="absolute inset-0 origin-left animate-[carousel-progress_var(--carousel-progress-duration)_linear_forwards] rounded-full bg-foreground/70"
+                  className="absolute inset-0 origin-left animate-[carousel-progress_var(--carousel-progress-duration)_linear_forwards] rounded-full"
                   style={{
                     "--carousel-progress-duration": `${progressDuration}ms`,
+                    background: "color-mix(in srgb, var(--project-primary, var(--project-kicker, var(--foreground))) 70%, transparent)",
                   }}
                 />
               ) : (
-                <span className="absolute inset-0 rounded-full bg-foreground/70" />
+                <span
+                  className="absolute inset-0 rounded-full"
+                  style={{ background: "color-mix(in srgb, var(--project-primary, var(--project-kicker, var(--foreground))) 70%, transparent)" }}
+                />
               )
             ) : null}
           </button>
