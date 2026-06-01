@@ -12,23 +12,71 @@ import { CaseOverview } from "@/components/case/blocks/CaseOverview"
 import { NextProject } from "@/components/case/blocks/NextProject"
 import Footer from "@/components/homepage/Footer"
 
+const BASE_URL = "https://shakib.design"
+const HOMEPAGE_TITLE = "Shakib Alipour — Interaction Designer"
+const HOMEPAGE_DESC =
+  "Interaction designer specialising in HMI and human-robot interaction. MSc candidate at Politecnico di Milano. Five years shipping hardware-digital products."
+const HOMEPAGE_IMAGE = `${BASE_URL}/og/default.webp`
+
+function setOgMeta(property, content) {
+  let el = document.querySelector(`meta[property="${property}"]`)
+  if (!el) {
+    el = document.createElement("meta")
+    el.setAttribute("property", property)
+    document.head.appendChild(el)
+  }
+  el.setAttribute("content", content)
+}
+
+function setNameMeta(name, content) {
+  let el = document.querySelector(`meta[name="${name}"]`)
+  if (!el) {
+    el = document.createElement("meta")
+    el.setAttribute("name", name)
+    document.head.appendChild(el)
+  }
+  el.setAttribute("content", content)
+}
+
 export default function CaseStudyPage() {
   const { slug } = useParams()
   const data = cases[slug]
+  const currentProject = projects.find((p) => p.id === slug)
 
   useEffect(() => {
-    const vars = data?.caseMeta?.cssVars
-    if (data?.caseMeta?.title) {
-      document.title = `${data.caseMeta.title} — Shakib Alipour`
-    }
-    if (!vars) return
+    if (!data?.caseMeta?.title) return
+
+    const vars = data.caseMeta.cssVars
+    const title = `${data.caseMeta.title} — Shakib Alipour`
+    const desc = currentProject?.description ?? data.caseMeta.overview ?? HOMEPAGE_DESC
+    const image = `${BASE_URL}/og/${slug}.webp`
+
+    document.title = title
+    setOgMeta("og:title", title)
+    setOgMeta("og:description", desc)
+    setOgMeta("og:image", image)
+    setOgMeta("og:url", `${BASE_URL}/projects/${slug}`)
+    setNameMeta("description", desc)
+    setNameMeta("twitter:title", title)
+    setNameMeta("twitter:description", desc)
+    setNameMeta("twitter:image", image)
+
     const root = document.documentElement
-    Object.entries(vars).forEach(([k, v]) => root.style.setProperty(k, v))
+    if (vars) Object.entries(vars).forEach(([k, v]) => root.style.setProperty(k, v))
+
     return () => {
-      Object.keys(vars).forEach((k) => root.style.removeProperty(k))
-      document.title = "Shakib Alipour — Interaction Designer"
+      document.title = HOMEPAGE_TITLE
+      setOgMeta("og:title", HOMEPAGE_TITLE)
+      setOgMeta("og:description", HOMEPAGE_DESC)
+      setOgMeta("og:image", HOMEPAGE_IMAGE)
+      setOgMeta("og:url", BASE_URL)
+      setNameMeta("description", HOMEPAGE_DESC)
+      setNameMeta("twitter:title", HOMEPAGE_TITLE)
+      setNameMeta("twitter:description", HOMEPAGE_DESC)
+      setNameMeta("twitter:image", HOMEPAGE_IMAGE)
+      if (vars) Object.keys(vars).forEach((k) => root.style.removeProperty(k))
     }
-  }, [data])
+  }, [data, slug, currentProject])
 
   if (!data) return <Navigate to="/projects" replace />
 

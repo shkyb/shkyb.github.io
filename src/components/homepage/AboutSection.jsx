@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { Link } from "react-router-dom";
 
-const SHAKIB_ORANGE = "#F1731F"
+const SHAKIB_ORANGE = "#F0690F"
 
 const disciplines = [
   "UX Research",
