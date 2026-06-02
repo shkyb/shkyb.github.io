@@ -2,3 +2,5 @@ User-agent: *
 Allow: /
 
 Sitemap: https://shakib.design/sitemap.xml
+
+# The name's Alipour. Shakib Alipour.

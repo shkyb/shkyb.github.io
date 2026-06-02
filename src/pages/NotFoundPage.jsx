@@ -10,6 +10,8 @@ export default function NotFoundPage() {
 
   useEffect(() => {
     document.title = "404 — Shakib Alipour"
+    console.log("%cAre you lost? So is this page.", "color:#F0690F;font-family:monospace;font-size:14px;")
+    console.log("%c{ state: undefined } → shakib.design", "color:#666;font-family:monospace;")
     return () => { document.title = "Shakib Alipour — Interaction Designer" }
   }, [])
 

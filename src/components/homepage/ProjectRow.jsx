@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Reveal } from "@/components/case/layout/Reveal";
 
-const MotionLink = motion(Link);
+const MotionLink = motion.create(Link);
 
 function parseEm(text) {
   const parts = text.split(/\*([^*]+)\*/);
