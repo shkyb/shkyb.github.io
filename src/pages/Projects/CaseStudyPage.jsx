@@ -1,7 +1,8 @@
 import { useEffect } from "react"
-import { useParams, Navigate } from "react-router-dom"
+import { useParams } from "react-router-dom"
 import { cases } from "@/case-studies/registry"
 import { projects } from "@/data/projects"
+import NotFoundPage from "@/pages/NotFoundPage"
 
 import { StickySidenav } from "@/components/case/layout/StickySidenav"
 import { Reveal } from "@/components/case/layout/Reveal"
@@ -90,7 +91,7 @@ export default function CaseStudyPage() {
     }
   }, [data, slug, currentProject])
 
-  if (!data) return <Navigate to="/projects" replace />
+  if (!data) return <NotFoundPage />
 
   const { caseMeta, sections } = data
 
