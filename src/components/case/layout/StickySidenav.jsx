@@ -133,7 +133,7 @@ export function StickySidenav({ sections, className }) {
   return (
     // NOTE: You said you handle the vertical positioning (1/3) in CaseStudyPage.jsx,
     // so this component stays neutral and just renders the nav content.
-    <aside className={cn("rounded-xl bg-background/80 backdrop-blur-md px-2 py-3", className)}>
+    <aside className={cn("px-2 py-3", className)}>
       <div className="h-full pr-2 overflow-hidden">
         <nav className="flex flex-col gap-1">
           {navSections.map((s) => {
@@ -151,9 +151,9 @@ export function StickySidenav({ sections, className }) {
                     : "border-transparent opacity-60 hover:opacity-90"
                 )}
                 style={{
-                  color: "var(--project-kicker, var(--project-primary, var(--foreground)))",
+                  color: "color-mix(in srgb, var(--project-kicker, var(--project-primary, var(--foreground))) 80%, white)",
                   borderLeftColor: isActive
-                    ? "var(--project-kicker, var(--project-primary, var(--foreground)))"
+                    ? "color-mix(in srgb, var(--project-kicker, var(--project-primary, var(--foreground))) 80%, white)"
                     : "transparent",
                 }}
                 aria-current={isActive ? "location" : undefined}
