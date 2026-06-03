@@ -2,8 +2,6 @@ import { useEffect, useMemo, useRef, useState } from "react"
 import { cn } from "@/lib/utils"
 
 export function StickySidenav({ sections, className }) {
-  // Only keep sections that are actually navigable.
-  // This prevents empty/invalid rows when a section has no id or no label.
   const navSections = useMemo(
     () => sections.filter((s) => s?.id && s?.label),
     [sections]
@@ -11,6 +9,7 @@ export function StickySidenav({ sections, className }) {
 
   const ids = useMemo(() => navSections.map((s) => s.id), [navSections])
   const [activeId, setActiveId] = useState(ids[0] || null)
+  const [activeProgress, setActiveProgress] = useState(0)
 
   const clickLockRef = useRef(false)
   const clickTimerRef = useRef(null)
@@ -25,7 +24,6 @@ export function StickySidenav({ sections, className }) {
     const elements = getEls()
     if (!elements.length) return
 
-    // Align with sticky header + spacing
     const cssTopOffset = getComputedStyle(document.documentElement)
       .getPropertyValue("--case-top-offset")
       .trim()
@@ -33,11 +31,25 @@ export function StickySidenav({ sections, className }) {
 
     const lastId = ids[ids.length - 1]
 
+    const calcProgress = (bestId) => {
+      const el = document.getElementById(bestId)
+      if (!el) return 0
+      const activeIdx = ids.indexOf(bestId)
+      const nextId = ids[activeIdx + 1]
+      const nextEl = nextId ? document.getElementById(nextId) : null
+      const sectionTop = el.getBoundingClientRect().top + window.scrollY
+      const nextTop = nextEl
+        ? nextEl.getBoundingClientRect().top + window.scrollY
+        : document.documentElement.scrollHeight
+      return Math.round(Math.max(0, Math.min(100, ((window.scrollY - sectionTop) / (nextTop - sectionTop)) * 100)))
+    }
+
     const pickActiveSection = () => {
       if (clickLockRef.current) return
 
       if (endReachedRef.current && lastId) {
         setActiveId((prev) => (prev === lastId ? prev : lastId))
+        setActiveProgress(100)
         return
       }
 
@@ -48,7 +60,10 @@ export function StickySidenav({ sections, className }) {
         else break
       }
 
-      if (bestId) setActiveId((prev) => (prev === bestId ? prev : bestId))
+      if (bestId) {
+        setActiveId((prev) => (prev === bestId ? prev : bestId))
+        setActiveProgress(calcProgress(bestId))
+      }
     }
 
     let rafId = null
@@ -60,7 +75,6 @@ export function StickySidenav({ sections, className }) {
       })
     }
 
-    // Bottom sentinel: ensures last section can become active even without footer space
     const sentinel = document.getElementById("case-end-sentinel")
     let endObserver = null
 
@@ -75,10 +89,8 @@ export function StickySidenav({ sections, className }) {
       endObserver.observe(sentinel)
     }
 
-    // Set once on mount / direct loads / hash
     pickActiveSection()
 
-    // Re-evaluate after assets load (images can shift layout)
     const onLoad = () => schedulePickActiveSection()
     const onScroll = () => schedulePickActiveSection()
     const onResize = () => schedulePickActiveSection()
@@ -102,8 +114,8 @@ export function StickySidenav({ sections, className }) {
     e.preventDefault()
 
     setActiveId(id)
+    setActiveProgress(0)
 
-    // Lock observer updates briefly to prevent flicker mid-smooth-scroll
     clickLockRef.current = true
     if (clickTimerRef.current) window.clearTimeout(clickTimerRef.current)
 
@@ -113,11 +125,6 @@ export function StickySidenav({ sections, className }) {
     const prefersReduced =
       typeof window !== "undefined" &&
       window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches
-
-    const cssTopOffset = getComputedStyle(document.documentElement)
-      .getPropertyValue("--case-top-offset")
-      .trim()
-    const topOffset = Number.parseInt(cssTopOffset || "48", 10)
 
     if (window.lenis && !prefersReduced) {
       window.lenis.scrollTo(el, { offset: 0, duration: 1.2 })
@@ -131,8 +138,6 @@ export function StickySidenav({ sections, className }) {
   }
 
   return (
-    // NOTE: You said you handle the vertical positioning (1/3) in CaseStudyPage.jsx,
-    // so this component stays neutral and just renders the nav content.
     <aside className={cn("px-2 py-3", className)}>
       <div className="h-full pr-2 overflow-hidden">
         <nav className="flex flex-col gap-1">
@@ -145,7 +150,7 @@ export function StickySidenav({ sections, className }) {
                 href={`#${s.id}`}
                 onClick={handleClick(s.id)}
                 className={cn(
-                  "border-l-2 px-3 py-1.5 text-sm transition-opacity duration-200 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+                  "flex items-center gap-2 border-l-2 px-3 py-1.5 text-sm transition-opacity duration-200 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-ring",
                   isActive
                     ? "font-semibold opacity-100"
                     : "border-transparent opacity-60 hover:opacity-90"
@@ -159,6 +164,11 @@ export function StickySidenav({ sections, className }) {
                 aria-current={isActive ? "location" : undefined}
               >
                 {s.label}
+                {isActive && (
+                  <span className="font-mono text-xs opacity-60 w-7 shrink-0 tabular-nums">
+                    {activeProgress}%
+                  </span>
+                )}
               </a>
             )
           })}
