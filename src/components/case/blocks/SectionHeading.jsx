@@ -42,7 +42,7 @@ export function SectionHeading({
           {kicker ? (
             <div
               className={cn(
-                "mb-5 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.14em]",
+                "mb-5 flex items-center gap-3 text-xs font-bold font-mono uppercase tracking-[0.14em]",
                 isCenter ? "mx-auto" : null
               )}
               style={{ color: "var(--project-kicker, var(--project-primary, var(--muted-foreground)))" }}

@@ -61,7 +61,7 @@ export function PullQuote({
         <Prose>
           <blockquote
             className={cn(
-              "m-0 border-l-0 pl-0 font-serif italic font-medium tracking-normal [&_em]:not-italic [&_em]:font-semibold [&_em]:text-(--project-primary,var(--project-kicker,currentColor))",
+              "m-0 border-l-0 pl-0 font-brand italic font-medium tracking-normal [&_em]:not-italic [&_em]:font-semibold [&_em]:text-(--project-primary,var(--project-kicker,currentColor))",
               size === "md"
                 ? "text-xl leading-snug md:text-2xl"
                 : "text-2xl leading-snug md:text-4xl",

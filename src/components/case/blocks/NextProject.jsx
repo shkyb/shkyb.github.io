@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
 import { cn } from "@/lib/utils"
+import { Prose } from "@/components/case/layout/Prose"
 
 function parseEm(text, accent) {
   const parts = text.split(/\*([^*]+)\*/)
@@ -57,9 +58,9 @@ export function NextProject({
             Next — {kicker}
           </p>
 
-          <h2 className="mt-2 line-clamp-2 font-serif text-2xl font-semibold tracking-tight text-(--project-foreground,var(--foreground)) md:text-3xl">
-            {headline ? parseEm(headline, accent) : title}
-          </h2>
+          <Prose className="mt-4 prose-h2:text-2xl md:prose-h2:text-3xl prose-h2:leading-[1.15] [&_h2]:line-clamp-2 [&_h2_em]:not-italic">
+            <h2>{headline ? parseEm(headline, accent) : title}</h2>
+          </Prose>
 
           {/* Tags + CTA */}
           <div className="mt-auto flex flex-wrap items-center justify-between gap-3 pt-6">

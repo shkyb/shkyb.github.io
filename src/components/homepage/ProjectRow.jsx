@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Reveal } from "@/components/case/layout/Reveal";
+import { Prose } from "@/components/case/layout/Prose";
 
 const MotionLink = motion.create(Link);
 
@@ -64,12 +65,12 @@ export default function ProjectRow({ project }) {
             >
               {project.title}
             </p>
-            <h2 className="font-serif text-2xl lg:text-4xl font-semibold tracking-tight text-foreground leading-[1.15] [&_em]:text-(--card-accent)">
-              {parseEm(project.headline)}
-            </h2>
-            <p className="text-sm lg:text-base text-muted-foreground font-light leading-relaxed text-balance">
-              {project.description}
-            </p>
+            <Prose className="prose-h2:text-2xl lg:prose-h2:text-4xl prose-h2:leading-[1.15] [&_h2_em]:text-(--card-accent)">
+              <h2>{parseEm(project.headline)}</h2>
+            </Prose>
+            <Prose className="prose-p:text-sm lg:prose-p:text-base prose-p:text-muted-foreground prose-p:font-light prose-p:text-balance">
+              <p>{project.description}</p>
+            </Prose>
           </div>
 
           {/* Footer: role + tags + CTA */}

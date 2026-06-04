@@ -66,8 +66,9 @@ export function CaseOverview({
 
         {/* Left: overview text (5/8) */}
         <div className="md:col-span-5 space-y-4">
+          {/* kicker: font-mono font-bold — revert to font-semibold (remove font-mono + font-bold) if dropping mono kickers globally */}
           <div
-            className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.14em]"
+            className="flex items-center gap-3 text-xs font-mono font-bold uppercase tracking-[0.14em]"
             style={{ color: "var(--project-kicker, var(--project-primary, var(--muted-foreground)))" }}
           >
             {overviewTitle}
@@ -119,8 +120,9 @@ export function CaseOverview({
             <dl className="space-y-6">
               {meta.map((m) => (
                 <div key={m.label}>
+                  {/* kicker: font-mono font-bold — revert to font-semibold (remove font-mono + font-bold) if dropping mono kickers globally */}
                   <dt
-                    className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.14em]"
+                    className="flex items-center gap-3 text-xs font-mono font-bold uppercase tracking-[0.14em]"
                     style={{ color: "var(--project-kicker, var(--project-primary, var(--muted-foreground)))" }}
                   >
                     {m.label}

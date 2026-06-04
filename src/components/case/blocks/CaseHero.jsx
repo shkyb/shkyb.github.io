@@ -58,11 +58,12 @@ export function CaseHero({
           )}
 
           {/* Headline */}
+          {/* font-serif is currently Inter — if swapped back to Cormorant (font-brand), restore sizes to text-3xl md:text-5xl lg:text-[3.75rem] */}
           {headline ? (
             <motion.h1
               {...fadeUp(centered ? 0.16 : 0.12)}
               className={cn(
-                "mt-6 font-serif text-3xl font-semibold leading-[1.15] tracking-tight text-balance text-(--project-foreground,var(--foreground)) [&_em]:italic [&_em]:text-(--project-kicker,var(--project-primary,currentColor)) md:text-5xl lg:text-[3.75rem]",
+                "mt-6 font-serif text-2xl font-semibold leading-snug tracking-tight text-balance text-(--project-foreground,var(--foreground)) [&_em]:italic [&_em]:text-(--project-kicker,var(--project-primary,currentColor)) md:text-4xl lg:text-5xl",
                 centered && "max-w-4xl"
               )}
             >

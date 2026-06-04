@@ -61,13 +61,13 @@ export default function Hero() {
           <div>
             <div>
               <motion.span
-                className="block font-serif text-2xl md:text-4xl font-light text-foreground leading-snug"
+                className="block font-brand text-2xl md:text-4xl font-light text-foreground leading-snug"
                 {...anim(0)}
               >
                 The Name's
               </motion.span>
               <motion.h1
-                className="font-serif font-semibold leading-none tracking-tight text-foreground"
+                className="font-brand font-semibold leading-none tracking-tight text-foreground"
                 style={{ fontSize: "clamp(4.5rem, 17vw, 13rem)", marginLeft: "-0.06em" }}
                 {...anim(0.14)}
               >

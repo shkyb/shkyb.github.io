@@ -74,14 +74,14 @@ export default function ContactCTA() {
             {/* Two-line heading — "Consider it" (light, smaller) / "designed." (bold, large stamp) */}
             <div className="mb-10">
               <motion.span
-                className="block font-serif font-light text-white/60 leading-tight"
+                className="block font-brand font-light text-white/60 leading-tight"
                 style={{ fontSize: "clamp(1.25rem, 3.5vw, 3rem)" }}
                 {...reveal(0.1)}
               >
                 Consider it
               </motion.span>
               <motion.span
-                className="block font-serif font-semibold text-white leading-none"
+                className="block font-brand font-semibold text-white leading-none"
                 style={{ fontSize: "clamp(3rem, 10vw, 11rem)" }}
                 {...reveal(0.15)}
               >
