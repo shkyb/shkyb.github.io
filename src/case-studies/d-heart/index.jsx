@@ -56,7 +56,6 @@ import imgFinal04 from "./assets/dh-fin-04.webp"
 
 import { ClipboardCheck, Users, GitBranch, Route, BookOpen, Hand, Lightbulb, Tablet, Bluetooth, Activity, Share2 } from "lucide-react"
 
-import { Prose } from "@/components/case/layout/Prose"
 import { sp } from "@/components/case/layout/spacing"
 
 import { SectionHeading } from "@/components/case/blocks/SectionHeading"
@@ -340,11 +339,10 @@ export const dHeartCase = {
       aspect: "aspect-[16/9]",
     },
     overview: [
-      <Prose>
-        <p><a href="https://www.d-heartcare.com/en" target="_blank" rel="noopener noreferrer">D-Heart</a> is an award-winning portable ECG device paired with a companion app, which is built to improve diagnostic accessibility. In the Digital Design Studio course <a href="https://www.polimi.it/en/" target="_blank" rel="noopener noreferrer">@PoliMI</a>, our team redesigned both the digital workflow and key physical touch-points to make the product more usable for nurses working in nursing homes.</p>
-        <p>The project moved from expert evaluation and field testing into information architecture redesign, tablet-first UI work, physical product improvements, and iterative validation with healthcare professionals.</p>
-        {/* <p>My contribution focused on turning research into clearer flows, more understandable instructions, and a more coherent relationship between the app and the device.</p> */}
-      </Prose>
+      <>
+        <p><a href="https://www.d-heartcare.com/en" target="_blank" rel="noopener noreferrer">D-Heart</a> is a portable ECG device for patients to run their own cardiac tests and share results with a doctor. In <a href="https://www.polimi.it/en/" target="_blank" rel="noopener noreferrer">PoliMI</a>'s <em>Digital Design Studio</em> — run with Design Group Italia — we examined it from a different angle: how it performs in the hands of nurses, not patients.</p>
+        <p>That question drove everything, including a shift to tablet that came out of research. We redesigned the <strong>full clinical ecosystem</strong> — app, physical clips, cables, and LED system — backed by field testing, card sorting with 63 participants, and tree testing with 44 healthcare professionals.</p>
+      </>
     ],
     links: [
       // {label: "Prototype", href:"", icon:""},
@@ -352,10 +350,10 @@ export const dHeartCase = {
     ],
 
     meta: [
-      { label: "Role", value: "Conducting user research & testing, developing the design system & high-fidelity prototypes." },
+      { label: "Role", value: "Conducting expert evaluation and usability testing, analysing recorded sessions for qualitative insights, and building the design system from scratch." },
       { label: "Team", value: <TeamAvatars ids={project.team} size="lg" /> },
-      { label: "Timeline", value: "Academic project · 4 Months · 2024" },
-      { label: "Focus", value: "Research, UX, Usability, User Testing" },
+      { label: "Timeline", value: "1 semester · 2024" },
+      { label: "Focus", value: "Field Research, Physical + Digital, Healthcare, Design Systems" },
     ],
     cssVars: {
       "--project-primary": "#E8601A",

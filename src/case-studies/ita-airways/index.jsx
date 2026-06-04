@@ -111,29 +111,24 @@ export const itaAirwaysCase = {
     tags: ["UX Design", "Usability", "Design Systems", "Booking Flow", "Web"],
     cover: { src: hero, alt: "ITA Airways case study cover", aspect: "aspect-[16/9]" },
     overview: [
-      <Prose key="p1">
+      <>
         <p>
           A semester-long usability project at{" "}
-          <a href="https://www.polimi.it/en/" target="_blank" rel="noopener noreferrer">@PoliMI</a>,
-          where our team of four audited, benchmarked, and redesigned the{" "}
-          <a href="https://www.itaairways.com/" target="_blank" rel="noopener noreferrer">@ITA Airways</a>{" "}
-          website — Italy's flagship carrier. We evaluated the site against{" "}
-          Nielsen's ten heuristics and four direct competitors, then rebuilt the
-          three most-used flows — <strong>flight search, benefits selection, and offers discovery</strong>{" "}
-          — from the ground up around a flatter information architecture and a more predictable
-          interaction model.
+          <a href="https://www.polimi.it/en/" target="_blank" rel="noopener noreferrer">PoliMI</a>{" "}
+          — <em>Ergonomics Applied to the Design of Usable Web Pages and Apps</em> — where our team
+          of four audited the{" "}
+          <a href="https://www.itaairways.com/" target="_blank" rel="noopener noreferrer">ITA Airways</a>{" "}
+          website against Nielsen's ten heuristics and four competitors, then rebuilt the three
+          most-used flows: <strong>flight search, benefits selection, and offers discovery</strong>.
         </p>
-      </Prose>,
-      <Prose key="p2">
         <p>
-          My focus was the <strong>design system</strong>: built on top of{" "}
-          <a href="https://moon.io" target="_blank" rel="noopener noreferrer">Moon</a>, extended
-          with ITA-specific patterns — the price-comparison calendar, the per-passenger baggage
-          selector, the offers map — and tested against <strong>WCAG AA/AAA, APCA</strong>, and four
-          color-blindness simulations to make the most color-critical screens accessible to
-          every user.
+          The redesign centred on a flatter information architecture, a linear booking path with
+          persistent context, and a design system built on{" "}
+          <a href="https://moon.io" target="_blank" rel="noopener noreferrer">Moon</a> — extended
+          with ITA-specific patterns and tested against <strong>WCAG AA/AAA, APCA</strong>, and four
+          colour-blindness simulations.
         </p>
-      </Prose>,
+      </>
     ],
     links: [
       { label: "Figma Prototype", href: "https://www.figma.com/proto/CmvsoUwyNAhiEMKY578a0I/ITA-Airways-Prototype--Copy-?node-id=2-30&t=wAyfm0KQTwHuhT74-1" },
@@ -141,22 +136,12 @@ export const itaAirwaysCase = {
     meta: [
       {
         label: "Role",
-        value: "Heuristic audits and competitor benchmarks through to a design system built on Moon and accessibility tested against WCAG, APCA, and four color blindness simulations",
+        value: "Auditing and benchmarking the existing site, redesigning three core booking flows, and building an accessibility-tested design system on Moon.",
       },
       { label: "Team", value: <TeamAvatars ids={project.team} size="lg" />,
       },
-      {
-        label: "Timeline",
-        value: "Academic project · 1 semester · AY 2024/2025",
-      },
-      // {
-      //   label: "Deliverables",
-      //   value: "Heuristic audit · Competitor benchmark · Personas · Wireframes · Hi-fi prototype · Design system",
-      // },
-      {
-        label: "Course",
-        value: "Ergonomics Applied to the Design of Usable Web Pages and Apps — Politecnico di Milano",
-      },
+      { label: "Timeline", value: "1 semester · 2024–25" },
+      { label: "Focus", value: "Ergonomics, Information Architecture, Accessibility, Benchmarking" },
     ],
     cssVars: {
       "--project-primary": "#306fc8",

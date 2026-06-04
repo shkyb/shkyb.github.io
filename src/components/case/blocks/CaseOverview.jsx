@@ -77,13 +77,13 @@ export function CaseOverview({
           {paragraphs ? (
             paragraphs.map((p, i) =>
               typeof p === "string" ? (
-                <Prose key={i}><p className="m-0">{p}</p></Prose>
+                <Prose key={i} className="prose-lg"><p className="m-0">{p}</p></Prose>
               ) : (
-                <React.Fragment key={i}>{p}</React.Fragment>
+                <Prose key={i} className="prose-lg">{p}</Prose>
               )
             )
           ) : overview ? (
-            <Prose>{overview}</Prose>
+            <Prose className="prose-lg">{overview}</Prose>
           ) : null}
 
           {links?.length ? (

@@ -140,21 +140,21 @@ export const nathanCase = {
       aspect: "aspect-[16/9]",
     },
     overview: [
-      <Prose>
-        <p>Nathan is a conceptual mobile app — a speculative design project exploring how AI could close the gap between what Italian households intend to buy and what they actually waste. Developed during a <a href="https://www.polimi.it/en/" target="_blank" rel="noopener noreferrer">@PoliMI</a> studio on <em>Envisioning AI Through Design</em>, the concept pairs receipt-scanning classification with an LSTM forecasting model to progressively rewrite your shopping list — quietly reducing overbuying without adding friction to the experience.</p>
-        <p>The project moved from root-cause research (the food waste crisis is really a planning-friction problem) through a fully specified AI and data architecture, a custom design system built around calm, butler-like helpfulness, and iterative usability testing of a hi-fi prototype with real households across age groups.</p>
-      </Prose>
+      <>
+        <p>Nathan is a speculative mobile app that helps Italian households waste less food. Built in <a href="https://www.polimi.it/en/" target="_blank" rel="noopener noreferrer">PoliMI</a>'s <em>Envisioning AI Through Design</em> studio, it started not with a solution but a reframe — food waste is a <strong>planning-friction problem</strong>, not a willpower one. Fix the shopping list, and most of the waste downstream disappears.</p>
+        <p>Two AI models sit at the core: a receipt-scanning classification pipeline that turns a photo into structured inventory, and an LSTM forecasting model that learns what a household actually consumes and rewrites the next list accordingly.</p>
+      </>
     ],
     links: [
       { label: "Figma Prototype", href: "https://www.figma.com/proto/lH24vf0assp2xi3x0IwqsB/Envisioning-AI-%7C-Group-6-%7C-Waste-Management--Copy-?node-id=4-2&t=ibXN7YOBiGPDMVzS-1", icon: "" },
       // { label: "Design Report", href: "", icon: "", variant: "secondary" },
     ],
     meta: [
-      { label: "Role", value: "Designing the AI & data architecture — model selection, data strategy, fail-safes — and building the design system and hi-fi prototype." },
+      { label: "Role", value: "Specifying the AI and data architecture — model selection, data strategy, and fail-safes — and building the design system and hi-fi prototype." },
       { label: "Team", value: <TeamAvatars ids={project.team} size="lg" />,
       },
-      { label: "Timeline", value: "Academic project · 1 Semester · Mar – Jun 2024" },
-      { label: "Focus", value: "AI Architecture, UX, Design Systems, Sustainability" },
+      { label: "Timeline", value: "1 semester · 2024" },
+      { label: "Focus", value: "AI Architecture, Service Design, Speculative Design, Sustainability" },
     ],
     cssVars: {
       "--project-kicker": "#599A08",
