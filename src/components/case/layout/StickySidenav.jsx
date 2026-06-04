@@ -40,7 +40,7 @@ export function StickySidenav({ sections, className }) {
       const sectionTop = el.getBoundingClientRect().top + window.scrollY
       const nextTop = nextEl
         ? nextEl.getBoundingClientRect().top + window.scrollY
-        : document.documentElement.scrollHeight
+        : document.documentElement.scrollHeight - window.innerHeight
       return Math.round(Math.max(0, Math.min(100, ((window.scrollY - sectionTop) / (nextTop - sectionTop)) * 100)))
     }
 
