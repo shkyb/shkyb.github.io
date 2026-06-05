@@ -192,21 +192,19 @@ export const itaAirwaysCase = {
       id: "solution",
       label: "Solution",
       size: "fill",
-      bgStyle: { background: "var(--project-primary)" },
       render: () => (
         <>
-          <div style={{ "--project-kicker": "white" }}>
-            <SectionHeading
-              kicker="The Solution"
-              title="We rebuilt the three flows that mattered most — from a fractured booking experience to a single, guided path."
-              subtitle="Simpler architecture. Persistent context. Accessibility from the first pixel."
-              className="mx-auto max-w-3xl **:text-white"
-            />
-          </div>
+          <SectionHeading
+            kicker="The Solution"
+            title={<>We rebuilt the three flows that mattered most — from a <em>fractured</em> booking experience to a <em>single, guided path.</em></>}
+            subtitle="Simpler architecture. Persistent context. Accessibility from the first pixel."
+            className="mx-auto max-w-3xl"
+          />
           <Figure
             src={itaSolutionVideo}
             frame="none"
-            mediaClassName="rounded-2xl"
+            
+            mediaClassName="rounded-2xl overflow-hidden border border-(--project-primary)"
             alt="Redesigned homepage, search results, and benefits flow — side by side."
             autoPlay
             loop
@@ -218,7 +216,7 @@ export const itaAirwaysCase = {
 
     {
       size: "fill",
-      bgStyle: { background: "white", "--project-muted-foreground": "var(--project-primary)", "--project-border": "var(--project-border)" },
+      bgStyle: { background: "var(--project-primary)", "--project-muted-foreground": "rgba(255,255,255,0.85)", "--project-border": "rgba(255,255,255,0.35)" },
       render: () => (
         <CaseSeparator label="↓ Dive deeper into the project ↓" />
       ),
