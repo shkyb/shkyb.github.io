@@ -81,7 +81,7 @@ export default function ProjectRow({ project }) {
             </p>
 
             <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between pt-2">
-              <div className="flex flex-wrap lg:flex-nowrap lg:overflow-hidden lg:whitespace-nowrap lg:[mask-image:linear-gradient(to_right,black_80%,transparent_100%)] lg:[-webkit-mask-image:linear-gradient(to_right,black_80%,transparent_100%)] items-center gap-x-3 gap-y-1 text-xs text-muted-foreground/80 font-mono font-medium flex-1 min-w-0">
+              <div className="flex flex-wrap lg:flex-nowrap lg:overflow-hidden lg:whitespace-nowrap lg:mask-[linear-gradient(to_right,black_80%,transparent_100%)] lg:[-webkit-mask-image:linear-gradient(to_right,black_80%,transparent_100%)] items-center gap-x-3 gap-y-1 text-xs text-muted-foreground/80 font-mono font-medium flex-1 min-w-0">
                 {project.tags.map((tag, index) => (
                   <span key={tag} className="flex items-center gap-x-3">
                     {index > 0 && <span className="text-muted-foreground/30 font-light">/</span>}
