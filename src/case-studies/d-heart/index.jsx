@@ -1030,6 +1030,7 @@ export const dHeartCase = {
                     alt={item.title}
                     className="aspect-[1] w-full object-cover"
                     loading="eager"
+                    draggable={false}
                   />
                 </CardContent>
                 <CardContent className="pt-0">

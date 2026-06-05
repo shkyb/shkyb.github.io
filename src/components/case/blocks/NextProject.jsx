@@ -43,6 +43,7 @@ export function NextProject({
               alt={imageAlt}
               className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
               loading="lazy"
+              draggable={false}
             />
           ) : (
             <div className="h-full w-full" />

@@ -95,6 +95,7 @@ export function CaseHero({
               alt={cover.alt ?? ""}
               className={cn("w-full object-cover", cover.aspect ?? "aspect-video")}
               loading="eager"
+              draggable={false}
             />
           </motion.div>
         </FullBleedSection>

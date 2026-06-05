@@ -80,6 +80,7 @@ const PersonaCard = ({ avatar, name, age, role, drive, pain }) => (
         src={avatar ?? logo}
         alt={name}
         className="h-12 w-12 shrink-0 rounded-full object-cover"
+        draggable={false}
       />
       <div className="flex flex-col gap-1">
         <CardTitle>
@@ -302,6 +303,7 @@ export const itaAirwaysCase = {
                     src={item.logo}
                     alt={item.title}
                     className="h-12 w-12 shrink-0 rounded-md object-cover"
+                    draggable={false}
                   />
                   <div>
                     <CardTitle><Prose><h3>{item.title}</h3></Prose></CardTitle>

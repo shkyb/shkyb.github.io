@@ -128,6 +128,7 @@ export function Figure({
             )}
             variants={{ rest: { scale: 1 }, hover: { scale: 1.015 } }}
             transition={{ duration: 0.5, ease: "easeOut" }}
+            draggable={false}
           />
         )}
       </motion.div>

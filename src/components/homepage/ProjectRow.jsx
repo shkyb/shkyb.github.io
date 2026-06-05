@@ -40,6 +40,7 @@ export default function ProjectRow({ project }) {
             className="w-full h-full object-cover"
             animate={{ scale: hovered ? 1.03 : 1 }}
             transition={{ duration: 1.2, ease: "easeOut" }}
+            draggable={false}
             onError={(e) => { e.currentTarget.style.display = "none" }}
           />
         </div>
