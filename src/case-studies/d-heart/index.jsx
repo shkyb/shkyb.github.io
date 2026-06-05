@@ -71,7 +71,7 @@ import { Callout } from "@/components/case/blocks/Callout"
 import { PullQuote } from "@/components/case/blocks/PullQuote"
 import { Timeline } from "@/components/case/blocks/Timeline"
 import { ProcessStep } from "@/components/case/blocks/ProcessStep"
-import { CaseSeparator } from "@/components/case/blocks/CaseSeparator"
+import { separatorSection } from "@/components/case/blocks/CaseSeparator"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardDescription, CardTitle } from "@/components/ui/card"
 import Autoplay from "embla-carousel-autoplay"
@@ -503,13 +503,7 @@ export const dHeartCase = {
       ),
     },
 
-    {
-      size: "fill",
-      bgStyle: { background: "var(--project-primary)", "--project-muted-foreground": "rgba(255,255,255,0.85)", "--project-border": "rgba(255,255,255,0.35)" },
-      render: () => (
-        <CaseSeparator label="↓ Dive deeper into the project ↓" />
-      ),
-    },
+    separatorSection(),
 
     {
       id: "research",

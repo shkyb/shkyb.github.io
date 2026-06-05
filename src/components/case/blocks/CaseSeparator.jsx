@@ -1,19 +1,16 @@
 import { cn } from "@/lib/utils"
 import { Separator } from "@/components/ui/separator"
 
-/**
- * CaseSeparator
- *
- * Props
- * - label?: ReactNode
- * - align?: "left" | "center" | "right"
- * - className?: string
- *
- * Use this to visually divide narrative sections.
- */
+const DEFAULT_LABEL = "Here's how we got there ↓"
+
+const SEPARATOR_BG_STYLE = {
+  background: "var(--project-primary)",
+  "--project-muted-foreground": "rgba(255,255,255,0.85)",
+  "--project-border": "rgba(255,255,255,0.35)",
+}
 
 export function CaseSeparator({
-  label,
+  label = DEFAULT_LABEL,
   align = "center",
   className,
 }) {
@@ -39,4 +36,14 @@ export function CaseSeparator({
       <Separator className="flex-1" style={lineStyle} />
     </div>
   )
+}
+
+// Factory — returns a complete section config for use in case study sections arrays.
+// Usage: separatorSection() or separatorSection("Custom text")
+export function separatorSection(label) {
+  return {
+    size: "fill",
+    bgStyle: SEPARATOR_BG_STYLE,
+    render: () => <CaseSeparator label={label} />,
+  }
 }

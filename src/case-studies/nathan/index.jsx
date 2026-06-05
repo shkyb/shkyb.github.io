@@ -58,7 +58,7 @@ import { Callout } from "@/components/case/blocks/Callout"
 import { PullQuote } from "@/components/case/blocks/PullQuote"
 import { Timeline } from "@/components/case/blocks/Timeline"
 import { ProcessStep } from "@/components/case/blocks/ProcessStep"
-import { CaseSeparator } from "@/components/case/blocks/CaseSeparator"
+import { separatorSection } from "@/components/case/blocks/CaseSeparator"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
 import { ShoppingCart, Refrigerator, Leaf, ScanLine, BrainCircuit, ShieldCheck, LayoutGrid, SlidersHorizontal, Hand, Eye, Smartphone, Layers, Camera, FileSearch, Link2, Bot, CheckCheck, Inbox, ClipboardList, RefreshCw, Scale, Map, PenLine, LayoutTemplate, Figma, FlaskConical } from "lucide-react"
 
@@ -224,13 +224,7 @@ export const nathanCase = {
       ),
     },
 
-    {
-      size: "fill",
-      bgStyle: { background: "var(--project-primary)", "--project-muted-foreground": "white", "--project-border": "var(--project-border)" },
-      render: () => (
-        <CaseSeparator label="↓ Dive deeper into the project ↓" />
-      ),
-    },
+    separatorSection(),
 
     {
       id: "origin",

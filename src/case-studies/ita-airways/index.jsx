@@ -60,7 +60,7 @@ import { BeforeAfter } from "@/components/case/blocks/BeforeAfter"
 import { Callout } from "@/components/case/blocks/Callout"
 import { PullQuote } from "@/components/case/blocks/PullQuote"
 import { ProcessStep } from "@/components/case/blocks/ProcessStep"
-import { CaseSeparator } from "@/components/case/blocks/CaseSeparator"
+import { separatorSection } from "@/components/case/blocks/CaseSeparator"
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -214,13 +214,7 @@ export const itaAirwaysCase = {
       ),
     },
 
-    {
-      size: "fill",
-      bgStyle: { background: "var(--project-primary)", "--project-muted-foreground": "rgba(255,255,255,0.85)", "--project-border": "rgba(255,255,255,0.35)" },
-      render: () => (
-        <CaseSeparator label="↓ Dive deeper into the project ↓" />
-      ),
-    },
+    separatorSection(),
 
     {
       id: "research",
