@@ -50,7 +50,7 @@ export default function ProjectRow({ project }) {
           {/* Header: context + period */}
           <div className="flex flex-col gap-1 md:flex-row md:justify-between md:items-baseline border-b border-border/40 pb-3 mb-5">
             <span className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
-              {project.context} &bull; {project.sector}
+              {project.context} <span className="font-mono">&bull;</span> {project.sector}
             </span>
             <span className="text-xs font-mono uppercase font-medium text-muted-foreground/80 tabular-nums">
               {project.period.from} – {project.period.to}
@@ -80,8 +80,8 @@ export default function ProjectRow({ project }) {
               {project.role}
             </p>
 
-            <div className="flex flex-col gap-3 md:flex-row md:flex-wrap md:items-center md:justify-between pt-2">
-              <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-muted-foreground/80 font-medium">
+            <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between pt-2">
+              <div className="flex flex-wrap lg:flex-nowrap lg:overflow-hidden lg:whitespace-nowrap lg:[mask-image:linear-gradient(to_right,black_80%,transparent_100%)] lg:[-webkit-mask-image:linear-gradient(to_right,black_80%,transparent_100%)] items-center gap-x-3 gap-y-1 text-xs text-muted-foreground/80 font-mono font-medium flex-1 min-w-0">
                 {project.tags.map((tag, index) => (
                   <span key={tag} className="flex items-center gap-x-3">
                     {index > 0 && <span className="text-muted-foreground/30 font-light">/</span>}
@@ -90,12 +90,12 @@ export default function ProjectRow({ project }) {
                 ))}
               </div>
 
-              <div className="text-xs font-semibold uppercase tracking-[0.12em] shrink-0">
+              <div className="text-xs font-semibold uppercase tracking-[0.12em] shrink-0 self-start mt-4 md:mt-0 md:self-auto">
                 {isPublished ? (
                   <>
                     {/* Mobile/tablet: always accent bg, white text */}
                     <span
-                      className="lg:hidden inline-flex items-center gap-1.5 px-2 py-1"
+                      className="lg:hidden inline-flex items-center gap-1.5 px-2 py-3"
                       style={{ color: "white", background: "var(--card-accent)" }}
                     >
                       Read Case Study →
