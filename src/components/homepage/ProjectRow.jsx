@@ -13,6 +13,15 @@ function parseEm(text) {
   );
 }
 
+function parseBold(text) {
+  const parts = text.split(/\*\*([^*]+)\*\*/);
+  return parts.map((part, i) =>
+    i % 2 === 1
+      ? <span key={i} className="font-medium">{part}</span>
+      : part
+  );
+}
+
 export default function ProjectRow({ project }) {
   const [hovered, setHovered] = useState(false);
   const coverSrc = `/images/cover/${project.id}.webp`;
@@ -66,11 +75,11 @@ export default function ProjectRow({ project }) {
             >
               {project.title}
             </p>
-            <Prose className="prose-h2:text-2xl lg:prose-h2:text-4xl prose-h2:leading-[1.15] [&_h2_em]:text-(--card-accent)">
+            <Prose className="prose-h2:text-2xl lg:prose-h2:text-4xl prose-h2:leading-[1.15] [&_h2_em]:text-(--card-accent) text-balance">
               <h2>{parseEm(project.headline)}</h2>
             </Prose>
             <Prose className="prose-p:text-sm lg:prose-p:text-base prose-p:text-muted-foreground prose-p:font-light prose-p:text-balance">
-              <p>{project.description}</p>
+              <p>{parseBold(project.description)}</p>
             </Prose>
           </div>
 
