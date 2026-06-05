@@ -29,10 +29,10 @@ export default function AboutSection() {
   return (
     <section className="px-6 md:px-12 lg:px-16 py-24 md:py-32 bg-white">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
+        <div className="grid grid-cols-1 lg:grid-cols-[4fr_7fr] gap-16 lg:gap-16 xl:gap-24">
 
           {/* Left: kicker + disciplines */}
-          <div className="lg:col-span-4">
+          <div>
             <motion.span
               className="block text-xs font-mono uppercase tracking-[0.18em] text-muted-foreground mb-8"
               {...reveal(0)}
@@ -55,7 +55,7 @@ export default function AboutSection() {
           </div>
 
           {/* Right: serif lead + body + CTA */}
-          <div className="lg:col-span-7 lg:col-start-6 flex flex-col justify-center">
+          <div className="flex flex-col justify-center">
             <motion.p
               className="font-serif font-medium text-foreground text-balance leading-snug mb-6"
               style={{ fontSize: "clamp(1.4rem, 2.5vw, 2rem)" }}

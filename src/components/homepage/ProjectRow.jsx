@@ -26,7 +26,7 @@ export default function ProjectRow({ project }) {
         {...wrapperProps}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        className="grid grid-cols-12 gap-8 lg:gap-14 py-14 lg:py-16 border-t border-border last:border-b group items-center"
+        className="grid grid-cols-12 gap-x-0 gap-y-8 lg:gap-8 xl:gap-14 py-14 lg:py-16 border-t border-border last:border-b group items-center"
         style={{ "--card-accent": project.accent ?? "var(--foreground)" }}
       >
         {/* Image */}
@@ -45,7 +45,7 @@ export default function ProjectRow({ project }) {
         </div>
 
         {/* Content */}
-        <div className="col-span-12 lg:col-span-7 flex flex-col h-full justify-between py-2 lg:grayscale lg:group-hover:grayscale-0 transition-[filter] duration-700 ease-out">
+        <div className="col-span-12 lg:col-span-7 flex flex-col h-full justify-between py-2 lg:grayscale lg:group-hover:grayscale-0 transition-[filter] duration-700 ease-out min-w-0">
 
           {/* Header: context + period */}
           <div className="flex flex-col gap-1 md:flex-row md:justify-between md:items-baseline border-b border-border/40 pb-3 mb-5">
