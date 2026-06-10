@@ -121,12 +121,12 @@ const requirments = [
   {
     icon: Route,
     title: "Clarify ECG flow",
-    description: "Improve visibility of key components and guide users through a clear step-by-step ECG process.",
+    description: "Make critical components visible and walk nurses through the ECG process in clear steps.",
   },
   {
     icon: BookOpen,
     title: "Simplify guidance",
-    description: "Provide clear, minimal, and visual instructions for quick understanding.",
+    description: "Use visual instructions nurses can read at a glance.",
   },
   {
     icon: Hand,
@@ -150,7 +150,7 @@ const solutions = [
     step: "01",
     title: "Tablet-First Application",
     description:
-      "Shifted from smartphone to tablet. Redesigned IA with a dashboard home and nested ECG flow — aligned with how nurses think.",
+      "Shifted from smartphone to tablet. Redesigned the IA around a dashboard home and nested ECG flow, matching how nurses think.",
     figure: {
       src: cover,
       alt: "Screen 1",
@@ -162,7 +162,7 @@ const solutions = [
     step: "02",
     title: "Redesigned Physical Clips",
     description:
-      "Spring-loaded ECG clips with ergonomic grip, reducing patient discomfort. Added red markers to prevent cable over-extension.",
+      "Spring-loaded ECG clips with ergonomic grip cut patient discomfort. Red markers on cables prevent over-extension.",
     figure: {
       src: cover,
       alt: "Screen 1",
@@ -331,7 +331,7 @@ export const dHeartCase = {
     logo: { src: logo, alt: "D-Heart logo" },
     title: "D-Heart Pro",
     projectName: "D-Heart",
-    headline: <>Redesigning a portable ECG ecosystem to make cardiac exams clearer, faster, and easier to trust for <em>nurses working under pressure</em>.</>,
+    headline: <>Redesigning a portable ECG device into a clinical tool <em>nurses working under pressure</em> can actually trust.</>,
     tags: ["UX Research", "UX/UI Design", "Healthcare", "Tablet", "Physical + Digital"],
     cover: {
       src: hero,
@@ -340,8 +340,8 @@ export const dHeartCase = {
     },
     overview: [
       <>
-        <p><a href="https://www.d-heartcare.com/en" target="_blank" rel="noopener noreferrer">D-Heart</a> is a portable ECG device for patients to run their own cardiac tests and share results with a doctor. In <a href="https://www.polimi.it/en/" target="_blank" rel="noopener noreferrer">PoliMI</a>'s <em>Digital Design Studio</em> — run with Design Group Italia — we examined it from a different angle: how it performs in the hands of nurses, not patients.</p>
-        <p>That question drove everything, including a shift to tablet that came out of research. We redesigned the <strong>full clinical ecosystem</strong> — app, physical clips, cables, and LED system — backed by field testing, card sorting with 63 participants, and tree testing with 44 healthcare professionals.</p>
+        <p><a href="https://www.d-heartcare.com/en" target="_blank" rel="noopener noreferrer">D-Heart</a> is a portable ECG device for patients to run their own cardiac tests and share results with a doctor. In <a href="https://www.polimi.it/en/" target="_blank" rel="noopener noreferrer">PoliMI</a>'s <em>Digital Design Studio</em> (run with Design Group Italia), we examined it from a different angle: how it performs in the hands of nurses, not patients.</p>
+        <p>That question drove everything, including a shift to tablet that came out of research. We redesigned the <strong>full clinical ecosystem</strong>: app, physical clips, cables, and LED system. Backed by field testing, card sorting with 63 participants, and tree testing with 44 healthcare professionals.</p>
       </>
     ],
     links: [
@@ -350,7 +350,7 @@ export const dHeartCase = {
     ],
 
     meta: [
-      { label: "Role", value: "Conducting expert evaluation and usability testing, analysing recorded sessions for qualitative insights, and building the design system from scratch." },
+      { label: "Role", value: "Conducted expert evaluation and usability testing, reviewed session recordings for qualitative insights, and built the design system from scratch." },
       { label: "Team", value: <TeamAvatars ids={project.team} size="lg" /> },
       { label: "Timeline", value: "1 semester · 2024" },
       { label: "Focus", value: "Field Research, Physical + Digital, Healthcare, Design Systems" },
@@ -391,7 +391,7 @@ export const dHeartCase = {
             className="mx-auto max-w-3xl"
             kicker="The Problem"
             align="left"
-            title={<>D-Heart introduced <em>friction at every step</em> — slowing nurses down when <em>speed mattered most.</em></>}
+            title={<>D-Heart introduced <em>friction at every step</em>, slowing nurses down when <em>speed mattered most.</em></>}
           // title={<>Performing an ECG is a <em>time-sensitive</em> task. During testing, we found that the D-Heart ecosystem introduced <em>unnecessary friction</em> in both the app and the device, slowing nurses down at <em>critical moments</em>.</>}
           // subtitle=""
           />
@@ -418,17 +418,17 @@ export const dHeartCase = {
                   {
                     number: "01",
                     label: "Wrong ECG workflow",
-                    value: "A smartphone app with a consumer mental model — the flow conflicted with real clinical routines."
+                    value: "A smartphone app built for patients: the flow conflicted with real clinical routines."
                   },
                   {
                     number: "02",
                     label: "Friction in the physical experience",
-                    value: "Cables tangled. Clips hurt patients. Key electrodes went unnoticed by every single test participant."
+                    value: "Cables tangled and clips hurt patients. Every single test participant missed the key electrodes entirely."
                   },
                   {
                     number: "03",
                     label: "Unclear feedback",
-                    value: "One LED for everything — nurses couldn't tell if the device was working, connecting, or failing."
+                    value: "One LED for everything. Nurses couldn't tell if the device was working, connecting, or failing."
                   },
                 ]}
               />
@@ -458,7 +458,7 @@ export const dHeartCase = {
             kicker="The Solution"
             className="max-w-3xl mx-auto"
             title={<>The redesign <em>matched</em> how nurses actually work.</>}
-            subtitle="We redesigned the full D-Heart ecosystem — app and device — around the needs of healthcare professionals working under real clinical pressure."
+            subtitle="We redesigned the app and physical device around the needs of healthcare professionals working under real clinical pressure."
           // title=" We redesigned the experience around three principles: direct access to key actions, a clearer step-by-step ECG flow, and stronger feedback between the app and the device."
           />
 
@@ -516,7 +516,7 @@ export const dHeartCase = {
             <SectionHeading
               kicker="UX Research"
               title={<>Research reframed the project around <em>nurses</em> as the primary users</>}
-              subtitle="We combined expert evaluation with in-context usability testing — observing real healthcare professionals using the device on a real patient, in a real nursing home."
+              subtitle="We combined expert evaluation with in-context usability testing: real healthcare professionals using the device on a real patient, in a real nursing home."
               className="mb-10"
             />
 
@@ -526,7 +526,7 @@ export const dHeartCase = {
                 {
                   title: "Expert evaluation",
                   meta: "Heuristic evaluation · cognitive walkthrough · task analysis",
-                  body: <>Reviewed against <b>Nielsen's 10 heuristics</b> and simulated the full clinical workflow — exposing violations in visibility, error prevention, and learnability.</>,
+                  body: <>Reviewed against <b>Nielsen's 10 heuristics</b> and simulated the full clinical workflow. Found violations in visibility, error prevention, and learnability.</>,
                   tags: ["Heuristic evaluation", "Cognitive Walkthrough", "Task Analysis"],
                   tone: "info",
                   // range: "Checkpoint 1"
@@ -586,7 +586,7 @@ export const dHeartCase = {
             kicker="Key Findings"
             // title="The product worked — just not the way nurses did, creating a mismatch with clinical workflows and overally low usability score for performing ECG (5.6/7 SEQ)."
             title={<>The mismatch wasn't in the hardware, but in the <em>context</em>.</>}
-            subtitle="Six friction points surfaced only when we tested in a real nursing home — and a 5.6/7 SEQ score confirmed the gap between the product and its clinical context."
+            subtitle="Six friction points surfaced only when we tested in a real nursing home, and a 5.6/7 SEQ score confirmed the gap between the product and its clinical context."
             className="mx-auto max-w-3xl"
           />
           {/* <Figure
@@ -627,7 +627,7 @@ export const dHeartCase = {
                 src: imgFindCntx,
                 number: "05",
                 title: "Wrong device context",
-                description: "Personal phones aren't clinical tools — small screens, no shared access.",
+                description: "Personal phones aren't clinical tools: small screens, no shared access.",
               },
               {
                 src: imgFindResult,
@@ -698,8 +698,8 @@ export const dHeartCase = {
         <>
           <SectionHeading
             kicker="Redesign"
-            title={<>We rebuilt the D-Heart ecosystem <em>around</em> nurses.</>}
-            subtitle="Replacing a fragmented, manual ECG process with a streamlined digital ecosystem — starting from IA, through wireframing, to mid-fidelity prototype testing."
+            title={<>We rebuilt D-Heart <em>around</em> nurses.</>}
+            subtitle="We replaced a fragmented, manual process with a streamlined system, working from IA through wireframing to mid-fidelity prototype testing."
             className="mb-10 mx-auto max-w-3xl"
           />
 
@@ -720,21 +720,21 @@ export const dHeartCase = {
                 items={[
                   {
                     title: "IA re-design",
-                    body: "In-person and online card sorting (Optimal Workshop) was perfomed to organize the new IA, followed by Tree Testing with mostly health professional users to validate it.",
+                    body: "We ran in-person and online card sorting (Optimal Workshop) to shape the new IA, then validated it with tree testing across 44 health professionals.",
                     tags: ["Card Sorting (63 Users)", "Tree Testing (44 Participants)"],
                     tone: "",
                     // range: "Checkpoint 1"
                   },
                   {
                     title: "Wireframe Testing",
-                    body: "Evaluated the usability, information placement, and readability using low-fidelity wireframes.",
+                    body: "We tested usability, information placement, and readability with low-fidelity wireframes.",
                     tone: "info",
                     tags: ["5 Expert Users"],
                     // range: "Checkpoint 1"
                   },
                   {
                     title: "High-Fidelity Prototype Testing",
-                    body: "Validated the high-fidelity digital interface and physical Arduino prototype.",
+                    body: "We validated the high-fidelity digital interface and physical Arduino prototype.",
                     tone: "success",
                     tags: ["6 Expert Users"],
                   },
@@ -861,7 +861,7 @@ export const dHeartCase = {
               justifyEnd
               number="01"
               title="Device Change → Tablet"
-              description={<><b>Owned by the nursing home</b>, the tablet provides a shared, larger interface — built for clinical readability, not personal use.</>}
+              description={<><b>Owned by the nursing home</b>, the tablet provides a shared, larger interface built for clinical readability rather than personal use.</>}
 
               figure={{
                 src: imgDecTablet,
@@ -876,7 +876,7 @@ export const dHeartCase = {
               number="02"
               reverse
               title="Dashboard for Homepage"
-              description={<>A dashboard homepage with a <b>prominent start action</b> — everything nurses need, one tap away.</>}
+              description={<>A dashboard homepage with a <b>prominent start action</b>. Everything nurses need is visible from the first screen.</>}
 
               figure={{
                 src: imgDecDash,
@@ -889,7 +889,7 @@ export const dHeartCase = {
               className="mb-10"
               number="03"
               title="Nested dolls for ECG flow"
-              description="Nested dolls enforce a step-by-step ECG flow — no skipping, no confusion."
+              description="The nested-dolls pattern enforces a step-by-step ECG flow. Nurses can't skip ahead or lose their place."
 
               figure={{
                 src: imgDecNest,
@@ -904,7 +904,7 @@ export const dHeartCase = {
               number="04"
               reverse
               title="3D Animated Instruction"
-              description="3D visuals replaced flat diagrams — making hidden electrodes and lead placement impossible to miss."
+              description="3D visuals replaced flat diagrams. Hidden electrodes and lead placement are now impossible to miss."
 
               figure={{
                 src: imgDec3DViz,
@@ -989,7 +989,7 @@ export const dHeartCase = {
           <SectionHeading
             kicker="The Physical Touchpoint"
             title={<>We extended the redesign <em>beyond the screen</em>.</>}
-            subtitle="Using 3D printing and Arduino prototyping, we iterated on how the device is handled, attached, and communicates — reducing friction for nurses and discomfort for patients."
+            subtitle="We used 3D printing and Arduino prototyping to iterate on the physical side: how the device attaches, how it's held, and how it communicates with nurses."
             // align="center"
             className="mx-auto max-w-3xl"
           />
@@ -1000,21 +1000,21 @@ export const dHeartCase = {
                 tag: "Mod 01 ",
                 title: "Ergonomic ECG clips",
                 description:
-                  "Redesigned the attachment mechanism to reduce discomfort, especially for elderly patients.",
+                  "Redesigned for less discomfort, especially on elderly patients.",
               },
               {
                 src: imgPhysCable,
                 tag: "Mod 02 ",
                 title: "Improved cable usability",
                 description:
-                  "Added visual markers to prevent over-extension and reduce tangling during use.",
+                  "Visual markers on the cable prevent over-extension and tangling.",
               },
               {
                 src: imgPhysLed,
                 tag: "Mod 03 ",
                 title: "Clearer LED feedback system",
                 description:
-                  "A second RGB LED separated ECG feedback from battery and connection — no more guessing.",
+                  "A second RGB LED separates ECG feedback from battery and connection status, so nurses know exactly what each light means.",
               },
             ].map((item) => (
               <Card key={item.title} className="gap-4 overflow-hidden pt-0 shadow-none bg-white/80">
@@ -1051,8 +1051,8 @@ export const dHeartCase = {
         <>
           <SectionHeading
             kicker="Design System"
-            title={<>A unified system for faster, clearer, and more <em>reliable</em> care.</>}
-            subtitle="We developed a design system to ensure consistency, clarity, and scalability across the D-Heart ecosystem—supporting both clinical usability and efficient future development."
+            title={<>A design system built <em>from scratch</em>.</>}
+            subtitle="Built to keep every screen consistent and easy to extend. Typography, color, component behavior, layout: used across 50+ screens in the prototype."
             className="mb-10 mx-auto max-w-3xl"
           />
 
@@ -1106,8 +1106,8 @@ export const dHeartCase = {
         <>
           <SectionHeading
             kicker="Final Design"
-            title={<>D-Heart <em>Pro</em> — a Connected ECG <em>Ecosystem</em></>}
-            subtitle="We redesigned D-Heart across device, interface, and workflow to help nurses perform clearer, faster, and more reliable ECGs in real clinical settings."
+            title={<>D-Heart <em>Pro</em>: a connected ECG <em>Ecosystem</em></>}
+            subtitle="The full redesign: physical device, app, and the workflow nurses follow during an ECG."
             className="mb-10 mx-auto max-w-3xl"
           />
 
@@ -1172,8 +1172,8 @@ export const dHeartCase = {
         <>
           <SectionHeading
             kicker="Validation"
-            title={<>Final testing showed a <em>much stronger</em> experience across the key tasks</>}
-            subtitle="After high-fidelity digital and physical prototypes were completed, participants were asked to connect the device, perform an ECG, and share the results."
+            title={<>Participants scored the redesign <em>6.25 / 7</em> overall</>}
+            subtitle="We tested with six participants on both the digital and physical prototypes. Each completed three tasks: connect the device, perform an ECG, and share the results."
           />
 
           <Metrics
@@ -1192,7 +1192,7 @@ export const dHeartCase = {
                 label: "Perform an ECG",
                 value: "5.83",
                 delta: "/ 7",
-                note: "Hardest task — still improved.",
+                note: "Hardest task. Still improved.",
               },
               {
                 icon: Share2,
@@ -1223,7 +1223,7 @@ export const dHeartCase = {
         <>
           <SectionHeading
             kicker="Takeaways"
-            title={<>Usability in Healthcare Means Fitting Into a <em>Routine</em>, Not <em>Replacing</em> One</>}
+            title={<>Good usability in healthcare means working <em>with the routine.</em></>}
             className="mb-10 mx-auto max-w-3xl"
           />
 
@@ -1231,15 +1231,15 @@ export const dHeartCase = {
             items={[
               {
                 title: "Design around expertise, not against it",
-                description: "Watching nurses follow clinical instincts over the original product was the clearest signal — a good tool fits into existing mastery, not demands they abandon it.",
+                description: "When nurses followed clinical instincts over the product's prompts, that was the clearest signal. A tool that fights existing expertise will lose every time.",
               },
               {
                 title: "Context of use will always outweigh convention",
-                description: "Moving to tablet was the only honest answer once we understood how nurses actually work. That decision requires confidence in research over pressure to follow the crowd.",
+                description: "Moving to tablet was the only honest answer once we understood how nurses actually work. That kind of decision takes confidence in what research shows, even when it goes against the obvious choice.",
               },
               {
                 title: "Physical and digital can't be designed in isolation",
-                description: "The moment a user has to mentally translate between a blinking LED and an app state, you've introduced doubt. Coherence across touchpoints is the foundation of trust.",
+                description: "The moment a user has to mentally translate between a blinking LED and an app state, trust breaks. Physical and digital need to tell the same story.",
               },
             ]}
           />
