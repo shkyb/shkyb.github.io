@@ -79,14 +79,14 @@ export default function Hero() {
               className="text-sm font-medium text-muted-foreground mt-4"
               {...anim(0.26)}
             >
-              Interaction Designer — HMI &amp; Human-Robot Interaction
+              Interaction Designer · HMI &amp; Human-Robot Interaction
             </motion.p>
 
             <motion.p
               className="text-base md:text-lg text-muted-foreground text-balance max-w-xl mt-6 leading-relaxed"
               {...anim(0.38)}
             >
-              Five years at the seam between hardware and software — consumer electronics, companion apps, humanoid robots.<br />Now at Politecnico di Milano — MSc Digital & Interaction Design.
+              Five years at the seam between hardware and software: consumer electronics, companion apps, humanoid robots.<br />Now at Politecnico di Milano, MSc Digital &amp; Interaction Design.
             </motion.p>
           </div>
 
