@@ -116,7 +116,7 @@ export const itaAirwaysCase = {
         <p>
           A semester-long usability project at{" "}
           <a href="https://www.polimi.it/en/" target="_blank" rel="noopener noreferrer">PoliMI</a>{" "}
-          — <em>Ergonomics Applied to the Design of Usable Web Pages and Apps</em> — where our team
+          (<em>Ergonomics Applied to the Design of Usable Web Pages and Apps</em>) where our team
           of four audited the{" "}
           <a href="https://www.itaairways.com/" target="_blank" rel="noopener noreferrer">ITA Airways</a>{" "}
           website against Nielsen's ten heuristics and four competitors, then rebuilt the three
@@ -125,7 +125,7 @@ export const itaAirwaysCase = {
         <p>
           The redesign centred on a flatter information architecture, a linear booking path with
           persistent context, and a design system built on{" "}
-          <a href="https://moon.io" target="_blank" rel="noopener noreferrer">Moon</a> — extended
+          <a href="https://moon.io" target="_blank" rel="noopener noreferrer">Moon</a>, extended
           with ITA-specific patterns and tested against <strong>WCAG AA/AAA, APCA</strong>, and four
           colour-blindness simulations.
         </p>
@@ -137,7 +137,7 @@ export const itaAirwaysCase = {
     meta: [
       {
         label: "Role",
-        value: "Auditing and benchmarking the existing site, redesigning three core booking flows, and building an accessibility-tested design system on Moon.",
+        value: "Audited and benchmarked the existing site, redesigned three core booking flows, and built an accessibility-tested design system on Moon.",
       },
       { label: "Team", value: <TeamAvatars ids={project.team} size="lg" />,
       },
@@ -168,7 +168,7 @@ export const itaAirwaysCase = {
           <SectionHeading
             kicker="The Problem"
             title={<>The site <em>looked</em> organized. On the metrics that determined whether users could complete a task, it wasn't.</>}
-            subtitle="Buying a ticket, adding baggage, browsing offers — all of it meant navigating filters that didn't match how users think and pages that dropped context with every click."
+            subtitle="Buying a ticket, adding baggage, browsing offers: all of it meant navigating filters that didn't match how users think and pages that dropped context with every click."
             className="mx-auto max-w-3xl"
           />
           <FigureCarousel
@@ -196,8 +196,8 @@ export const itaAirwaysCase = {
         <>
           <SectionHeading
             kicker="The Solution"
-            title={<>We rebuilt the three flows that mattered most — from a <em>fractured</em> booking experience to a <em>single, guided path.</em></>}
-            subtitle="Simpler architecture. Persistent context. Accessibility from the first pixel."
+            title={<>We rebuilt the three flows that mattered most: from a <em>fractured</em> booking experience to a <em>single, guided path.</em></>}
+            subtitle="Simpler architecture, persistent context, and accessibility built in from the start."
             className="mx-auto max-w-3xl"
           />
           <Figure
@@ -225,8 +225,8 @@ export const itaAirwaysCase = {
         <>
           <SectionHeading
             kicker="01 — Research"
-            title={<>The research phase was the longest stretch of the project — and the <em>most consequential.</em> Every decision downstream traces back to something we found here.</>}
-            subtitle="ITA is young — founded in 2021 as Alitalia's successor — and still proving itself. Its website isn't just a booking tool. It's a credibility instrument for a brand that needs to earn trust."
+            title={<>The research phase was the longest stretch of the project, and the <em>most consequential.</em> Every decision downstream traces back to something we found here.</>}
+            subtitle="ITA is young, founded in 2021 as Alitalia's successor, and still proving itself. Its website isn't just a booking tool. For a brand that needs to earn trust, every page matters."
             className="mx-auto max-w-3xl"
           />
           <Metrics
@@ -258,7 +258,7 @@ export const itaAirwaysCase = {
         <>
           <SectionHeading
             kicker="— Competitor benchmarking"
-            title={<>We chose four competitors deliberately. Not for inspiration — to <em>find the gaps.</em></>}
+            title={<>We chose four competitors deliberately, each one chosen to <em>expose a different gap.</em></>}
             className="mx-auto max-w-3xl"
           />
 
@@ -268,13 +268,13 @@ export const itaAirwaysCase = {
                 tag: "Low-cost benchmark",
                 title: "Ryanair",
                 logo: itaRyanairLogo,
-                description: <><strong>Gold standard for stripping booking to its minimum viable path.</strong> Clear CTAs, no ambiguity about cost.</>,
+                description: <><strong>Sets the bar for low-cost simplicity.</strong> Clear CTAs, transparent pricing.</>,
               },
               {
                 tag: "Luxury benchmark",
                 title: "Qatar Airways",
                 logo: itaQatarLogo,
-                description: <><strong>Premium polish and visual consistency</strong> throughout. Sets the ceiling for information hierarchy and white space.</>,
+                description: <>The benchmark for <strong>premium polish and information hierarchy</strong> throughout.</>,
               },
               {
                 tag: "Domestic rival",
@@ -286,7 +286,7 @@ export const itaAirwaysCase = {
                 tag: "Filter benchmark",
                 title: "Kayak",
                 logo: itaKayakLogo,
-                description: <>Not a direct competitor — but the <strong>gold standard for filter design</strong> and search result density. Benchmarked specifically for its UX patterns.</>,
+                description: <>Not a direct competitor, but the <strong>best filter UX we found.</strong> Benchmarked specifically for its filter and search result patterns.</>,
               },
             ].map((item) => (
               <Card key={item.title} className="shadow-none">
@@ -378,7 +378,7 @@ export const itaAirwaysCase = {
               age={21}
               role="Spanish student in Milan"
               drive="Price-driven. Books in advance, travels home often."
-              pain="Every euro counts — hidden fees and unclear pricing cause distrust."
+              pain="Every euro counts. Hidden fees and unclear pricing cause distrust."
             />
             <PersonaCard
               avatar={itaPersonaLucia}
@@ -424,7 +424,7 @@ export const itaAirwaysCase = {
           <SectionHeading
             kicker="— Task matrix & prioritization"
             title={<>We weighted every task by frequency and importance. <em>Three rose above everything else.</em></>}
-            subtitle="Check flight, use benefits, find offers — the three tasks every persona needed, and the three we chose to redesign."
+            subtitle="Check flight, use benefits, find offers: the three tasks every persona needed, and the three we chose to redesign."
             className="mx-auto max-w-3xl"
           />
           <Figure
@@ -445,7 +445,7 @@ export const itaAirwaysCase = {
             <div className="flex flex-col gap-4">
               <SectionHeading
                 kicker="— Heuristic evaluation"
-                title={<>We audited the live site against Nielsen's <span className="lining-nums tabular-nums">10</span> heuristics — and <em>documented every violation.</em></>}
+                title={<>We audited the live site against Nielsen's <span className="lining-nums tabular-nums">10</span> heuristics and <em>documented every violation.</em></>}
                 subtitle="Five stood out: the ones that broke context, dropped state, or left users with no way back."
               />
               <a
@@ -463,7 +463,7 @@ export const itaAirwaysCase = {
                 {
                   icon: Eye,
                   title: "Visibility of system status",
-                  description: "No progress indicator — users never knew how many steps remained.",
+                  description: "No progress indicator. Users never knew how many steps remained.",
                 },
                 {
                   icon: Users,
@@ -576,7 +576,7 @@ export const itaAirwaysCase = {
             justifyEnd
             number="01"
             title={<>Information lived in the <em>wrong places.</em></>}
-            description="Strong visual design masked a weak IA — it looked trustworthy until you needed to do something."
+            description="Strong visual design masked a weak IA. It looked trustworthy until you needed to do something."
             figureCols={8}
             figure={{
               src: itaInsight1,
@@ -653,13 +653,13 @@ export const itaAirwaysCase = {
             src={itaResponseUserflow}
             frame="soft"
             alt="Redesigned user flow — end-to-end booking journey from flight search through seat selection, benefits, and passenger info."
-            caption="We flattened a fragmented multi-modal experience into a single, guided journey from search to confirmation."
+            caption="We turned a fragmented, multi-step process into one guided journey from search to confirmation."
           />
           <Figure
             src={itaResponseSearchFlight}
             frame="soft"
             alt="Redesigned flight search — persistent filter panel on the left, results updating in real time as the user narrows their criteria."
-            caption="We brought the calendar and destination picker into a single, prominent search block — users land and immediately see a clear path forward."
+            caption="We brought the calendar and destination picker into a single, prominent search block. Users land and immediately see where to start."
             autoPlay
             loop
             controls={false}
@@ -668,7 +668,7 @@ export const itaAirwaysCase = {
             src={itaResponseFilters}
             frame="soft"
             alt="Redesigned filter panel — persistent sidebar with real-time result updates as users refine stops, time, and airline preferences."
-            caption="We gave filters a permanent home beside the results — every adjustment lands immediately, no full-page reload, no lost context."
+            caption="We gave filters a permanent home beside the results. Every adjustment lands immediately, with no page reload and no lost context."
             autoPlay
             loop
             controls={false}
@@ -677,7 +677,7 @@ export const itaAirwaysCase = {
             src={itaResponsePassengerInfo}
             frame="soft"
             alt="Flight selection leading into passenger info — users pick their flight and immediately flow into a structured form for traveler details."
-            caption="We made the handoff from flight selection to passenger details seamless — users confirm their choice and move straight into a structured, clearly scoped form."
+            caption="We made the handoff from flight selection to passenger details seamless: users confirm their choice and move straight into a structured, clearly scoped form."
             autoPlay
             loop
             controls={false}
@@ -686,7 +686,7 @@ export const itaAirwaysCase = {
             src={itaResponseSeatSelection}
             frame="soft"
             alt="Redesigned seat selection — seat map with inline pricing, passengers clearly labeled and scoped individually throughout the flow."
-            caption="We rebuilt seat selection so each passenger is handled in turn — pricing visible at a glance, choices locked in before moving on."
+            caption="We rebuilt seat selection so each passenger is handled in turn: pricing visible at a glance, choices locked in before moving on."
             autoPlay
             loop
             controls={false}
@@ -695,7 +695,7 @@ export const itaAirwaysCase = {
             src={itaResponseBenefitsSelection}
             frame="soft"
             alt="Redesigned benefits selection — baggage, lounge, and extras consolidated into a single guided flow with persistent passenger context."
-            caption="We replaced disconnected benefit screens with a guided sequence — baggage, lounge, and extras consolidated into a single flow."
+            caption="We replaced disconnected benefit screens with a guided sequence: baggage, lounge, and extras in one flow."
             autoPlay
             loop
             controls={false}
@@ -704,7 +704,7 @@ export const itaAirwaysCase = {
             src={itaResponseOffers}
             frame="soft"
             alt="Redesigned offers page — map-first layout with traveler-type category filters and removable filter tags surfaced inline."
-            caption="We made offers explorable — a map view, removable filter tags, and traveler-type categories so users find what fits them without wading through irrelevant results."
+            caption="We made offers explorable: a map view, removable filter tags, and traveler-type categories so users find what fits them without wading through irrelevant results."
             autoPlay
             loop
             controls={false}
@@ -721,7 +721,7 @@ export const itaAirwaysCase = {
           <SectionHeading
             kicker="04 — Accessibility"
             // title="A booking site serves every kind of traveler. Accessibility wasn't a final-step compliance pass — it was a design constraint we built from."
-            title={<>Accessibility wasn't a checklist. It was a <em>design tool</em> — and it changed the work.</>}
+            title={<>Accessibility wasn't a checklist. It was a <em>design tool</em>, and it changed the work.</>}
             className="mx-auto max-w-3xl"
           />
 
@@ -729,7 +729,7 @@ export const itaAirwaysCase = {
             justifyEnd
             number={<Palette className="h-8 w-8" />}
             title="Contrast testing"
-            description={<>Every pairing tested against <strong>WCAG AA</strong>, <strong>AAA</strong>, and <strong>APCA</strong>. Using both frameworks caught edge cases either alone missed.</>}
+            description={<>Every pairing tested against <strong>WCAG AA</strong>, <strong>AAA</strong>, and <strong>APCA</strong>. Using both frameworks caught edge cases that a single standard would have missed.</>}
             figureCols={8}
             figure={{ src: itaAccessContrast, frame: "soft", aspect: "aspect-[3/2]", alt: "Color contrast test grid — tokens against backgrounds with WCAG and APCA scores." }}
           />
@@ -739,7 +739,7 @@ export const itaAirwaysCase = {
             justifyEnd
             number={<ShieldCheck className="h-8 w-8" />}
             title="Color blindness"
-            description={<>The calendar's three-tier color system is invisible to color-blind users. Four simulations, one fix: a <strong>dot pattern as a redundant signal.</strong></>}
+            description={<>The calendar's three-tier color system is invisible to color-blind users. Four simulations, one fix: a <strong>dot pattern as a backup signal.</strong></>}
             figureCols={8}
             figure={{ src: itaAccessibilityVideo, frame: "soft", aspect: "aspect-[3/2]", alt: "Color blindness simulations — four conditions, calendar shown in each.", controls: false, autoPlay: true, loop: true }}
           />
@@ -765,7 +765,7 @@ export const itaAirwaysCase = {
           <SectionHeading
             kicker="05 — Design System"
             title={<>Built on <em>Moon</em>, extended where the base library didn't cover our patterns.</>}
-            subtitle="I adapted Moon's tokens to ITA's brand language and added bespoke components the library didn't cover — the price-comparison calendar, the passenger-scoped baggage selector, and the offers map pins. Accessibility testing ran at the token level, so every component inherits compliant contrast by default."
+            subtitle="I adapted Moon's tokens to ITA's brand language and added bespoke components the library didn't cover: the price-comparison calendar, the passenger-scoped baggage selector, and the offers map pins. Accessibility testing ran at the token level, so every component inherits compliant contrast by default."
             className="mx-auto max-w-3xl"
           />
           <ImageGrid
@@ -799,8 +799,8 @@ export const itaAirwaysCase = {
                 description: <>Before a single wireframe was drawn, we had a click-count table, a heuristic violation log, a competitor benchmark, and a persona-driven task priority stack. <em>Every design decision had a traceable origin.</em> That discipline is what separates a <strong>redesign</strong> from a <strong>restyle</strong>.</>,
               },
               {
-                title: "Accessibility testing is a design tool, not a compliance pass",
-                description: <>The dot pattern on the pricing calendar came from a <em>simulation</em>, not a checklist. I'd reached for color to carry meaning; the simulation showed me the gap, and the pattern closed it. That <strong>feedback loop</strong> is now a habit.</>,
+                title: "Accessibility testing is a design tool",
+                description: <>The dot pattern on the pricing calendar came from running a simulation. I'd reached for color to carry meaning; the simulation showed me the gap, and the pattern closed it. That <strong>feedback loop</strong> is now a habit.</>,
               },
               // {
               //   title: <Prose>Five colleagues is a convenience sample, not a validation</Prose>,
@@ -812,7 +812,7 @@ export const itaAirwaysCase = {
           <SectionHeading
             className={sp.itemToItem}
             kicker="With thanks"
-            subtitle={<>To <a href="https://www.linkedin.com/in/robertodadda/" target="_blank" rel="noopener noreferrer">Prof. Roberto Dadda</a> and <a href="https://www.linkedin.com/in/paolonegri/" target="_blank" rel="noopener noreferrer">Paolo Negri</a> for their thorough reviews, their dedication to the course, and for teaching a methodology rigorous enough to actually use. And to {teammates.map((c, i) => <React.Fragment key={c.id}>{i > 0 && (i === teammates.length - 1 ? " and " : ", ")}<strong>{c.name.split(" ")[0]}</strong></React.Fragment>)} — for the late-night Figma sessions, the shared frustrations, and for making this genuinely fun to build.</>}
+            subtitle={<>To <a href="https://www.linkedin.com/in/robertodadda/" target="_blank" rel="noopener noreferrer">Prof. Roberto Dadda</a> and <a href="https://www.linkedin.com/in/paolonegri/" target="_blank" rel="noopener noreferrer">Paolo Negri</a> for their thorough reviews, their dedication to the course, and for teaching a methodology rigorous enough to actually use. And to {teammates.map((c, i) => <React.Fragment key={c.id}>{i > 0 && (i === teammates.length - 1 ? " and " : ", ")}<strong>{c.name.split(" ")[0]}</strong></React.Fragment>)} : late-night Figma sessions, shared frustrations, and making this genuinely fun to build.</>}
           />
         </>
       ),
