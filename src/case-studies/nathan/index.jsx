@@ -106,7 +106,7 @@ const ProductPillars = () => (
     <PillarCard
       icon={Refrigerator}
       title="Inventory & Expiry Tracking"
-      body="Scan a receipt after shopping. Items sort into Fridge, Freezer, and Pantry — with estimated expiry dates already filled in."
+      body="Scan a receipt after shopping. Items sort into Fridge, Freezer, and Pantry, with estimated expiry dates already filled in."
       bullets={[
         "Receipt scanner",
         "Automatic inventory",
@@ -132,7 +132,7 @@ export const nathanCase = {
   caseMeta: {
     logo: { src: logo, alt: "Nathan logo" },
     title: "Nathan",
-    headline: <>An AI grocery companion that turns shopping lists into <em>waste prevention</em>.</>,
+    headline: <>An AI grocery app that learns your household's waste patterns and <em>rewrites your list to match reality</em>.</>,
     tags: ["AI/UX", "Service Design", "Design Systems", "Mobile", "Sustainability"],
     cover: {
       src: hero,
@@ -141,7 +141,7 @@ export const nathanCase = {
     },
     overview: [
       <>
-        <p>Nathan is a speculative mobile app that helps Italian households waste less food. Built in <a href="https://www.polimi.it/en/" target="_blank" rel="noopener noreferrer">PoliMI</a>'s <em>Envisioning AI Through Design</em> studio, it started not with a solution but a reframe — food waste is a <strong>planning-friction problem</strong>, not a willpower one. Fix the shopping list, and most of the waste downstream disappears.</p>
+        <p>Nathan is a speculative mobile app that helps Italian households waste less food. Built in <a href="https://www.polimi.it/en/" target="_blank" rel="noopener noreferrer">PoliMI</a>'s <em>Envisioning AI Through Design</em> studio, it started with a reframe: food waste is a <strong>planning-friction problem</strong>, not a willpower one. Fix the shopping list, and most of the waste downstream disappears.</p>
         <p>Two AI models sit at the core: a receipt-scanning classification pipeline that turns a photo into structured inventory, and an LSTM forecasting model that learns what a household actually consumes and rewrites the next list accordingly.</p>
       </>
     ],
@@ -150,7 +150,7 @@ export const nathanCase = {
       // { label: "Design Report", href: "", icon: "", variant: "secondary" },
     ],
     meta: [
-      { label: "Role", value: "Specifying the AI and data architecture — model selection, data strategy, and fail-safes — and building the design system and hi-fi prototype." },
+      { label: "Role", value: "Specified the AI and data architecture (model selection, data strategy, fail-safes) and built the design system and hi-fi prototype." },
       { label: "Team", value: <TeamAvatars ids={project.team} size="lg" />,
       },
       { label: "Timeline", value: "1 semester · 2024" },
@@ -181,7 +181,7 @@ export const nathanCase = {
           <SectionHeading
             kicker="The Problem"
             // title="Italian households waste 65 kg of food per person every year — not from carelessness, but because planning groceries is cognitively expensive enough that most families skip it."
-            title={<>Italian households throw away 65 kg of food per person every year. Not from carelessness — from <em>planning friction</em>.</>}
+            title={<>Italian households throw away 65 kg of food per person every year. The problem isn't carelessness. It's <em>planning friction</em>.</>}
             subtitle=""
             className="mx-auto max-w-3xl"
           />
@@ -204,7 +204,7 @@ export const nathanCase = {
           <SectionHeading
             kicker="The Solution"
             // title="A mobile app that scans your receipts, learns your household's waste patterns via an LSTM model, and quietly rewrites your next shopping list to match what you actually need."
-            title={<>An app that learns what your household actually wastes — then <em>quietly rewrites your next list to match</em>.</>}
+            title={<>An app that learns what your household actually wastes, then <em>quietly rewrites your next list to match</em>.</>}
             subtitle="Two AI models in sequence: receipt-scanning OCR captures what you buy, an LSTM adjusts quantities based on what you actually consumed."
             className="mx-auto max-w-3xl"
           />
@@ -237,19 +237,19 @@ export const nathanCase = {
               kicker="Origin & Reframing"
               // title="We set out to design an AI solution for Italy's waste crisis — and spent the first weeks systematically killing every idea we were excited about."
               title={<>We set out to fix Italy's waste crisis. The research told us <em>we were solving the wrong problem</em>.</>}
-              subtitle="The course required AI to be central, not decorative. That constraint ruled out our first two ideas — and pushed us toward the right problem."
+              subtitle="The course required AI to be central, not decorative. That constraint ruled out our first two ideas and pushed us toward the right problem."
             />
             <Timeline
               items={[
                 {
                   title: "Smart bins — killed",
                   tone: "warning",
-                  body: <><em>Worked on paper.</em> Needed city-scale buy-in from municipalities and waste companies — a <strong>rollout problem, not a design problem.</strong> And the AI was decorative: sensors would do the same job.</>,
+                  body: <><em>Worked on paper.</em> Needed city-scale buy-in from municipalities and waste companies: a <strong>rollout problem, not a design problem.</strong> And the AI was decorative: sensors would do the same job.</>,
                 },
                 {
                   title: "DIY reuse projects — killed",
                   tone: "warning",
-                  body: <>Composting guides, upcycling prompts. Addressed <em>guilt</em>, not behavior — the intervention <strong>landed after the damage, not before it.</strong></>,
+                  body: <>Composting guides, upcycling prompts. Addressed <em>guilt</em>, not behavior: the intervention <strong>landed after the damage, not before it.</strong></>,
                 },
               ]}
             />
@@ -285,7 +285,7 @@ export const nathanCase = {
             kicker="Research"
             // title="Before designing anything, we mapped where the friction actually lived — then benchmarked every product that claimed to solve it."
             title={<>We mapped the friction. Then we <em>benchmarked who else had tried to solve it.</em></>}
-            subtitle="Decision → Shopping → Consuming → Disposal. Pain clustered at the start and end — not in the store."
+            subtitle="Decision → Shopping → Consuming → Disposal. Pain clustered at the start and end, not in the store."
           />
 
           <Prose className={sp.itemToItem}>
@@ -295,7 +295,7 @@ export const nathanCase = {
             src={ntnResearchUjm}
             frame="soft"
             alt="User journey map across four shopping stages showing pain point clusters in Decision and Consuming"
-            caption="Pain points clustered heavily in the Decision and Consuming stages — before and after the store, not inside it."
+            caption="Most friction landed at Decision and Consuming, not in the store."
           />
           <Prose className={sp.itemToItem}>
             <h3>Benchmarking</h3>
@@ -319,8 +319,8 @@ export const nathanCase = {
           <SectionHeading
             kicker="Service Idea"
             // title="Nathan works in the background — learning what your household actually buys, and quietly making your next list more honest than your last one."
-            title={<>Nathan acts like a household butler — <em>learning what you waste before you even notice it.</em></>}
-            subtitle="Three connected pillars: planning before the shop, tracking after it, learning from what actually gets used."
+            title={<>Nathan works like a household butler: <em>it learns what you waste before you even notice it.</em></>}
+            subtitle="Three pillars: plan before the shop, track what's left, learn from what actually gets used."
             className="mx-auto max-w-3xl"
           />
           <ProductPillars />
@@ -343,21 +343,21 @@ export const nathanCase = {
             kicker="AI Architecture"
             // title="Designing the AI meant designing the data first — what the models need, where it comes from, and what happens when it's missing."
             title={<>Most apps add AI as a feature. <em>We designed the data architecture first.</em></>}
-            subtitle="Two models, each with documented fail-safes — so the app is useful on day one, before the model has learned anything about your household."
+            subtitle="Two models, each with documented fail-safes, so the app is useful on day one, before the model has learned anything about your household."
             className="mx-auto max-w-3xl"
           />
           <Figure
             src={ntnAiClassification}
             frame="soft"
             alt="Classification AI pipeline diagram showing the flow from receipt photo through OCR, string matching, and ChatGPT fallback to a structured purchased list"
-            caption="The classification pipeline turns a receipt photo into a structured inventory update — with a ChatGPT fallback when OCR abbreviations can't be matched."
+            caption="The classification pipeline turns a receipt photo into a structured inventory update, with a ChatGPT fallback when OCR abbreviations can't be matched."
           />
           <div className="mx-auto max-w-3xl grid grid-cols-1 gap-8 md:grid-cols-2">
             <div className={`flex flex-col gap-3 ${sp.itemToItem}`}>
               <ScanLine className="h-5 w-5" style={{ color: "var(--project-primary)" }} />
               <Prose>
                 <h3>Classification — from receipt photo to structured data</h3>
-                <p className="text-(--project-muted-foreground,var(--muted-foreground))">We chose Mindee over training our own OCR model — a pre-trained, receipt-specialized service let us focus the AI work where it actually mattered: the forecasting layer.</p>
+                <p className="text-(--project-muted-foreground,var(--muted-foreground))">We chose Mindee over training our own OCR model: a pre-trained, receipt-specialized service let us focus the AI work where it actually mattered: the forecasting layer.</p>
               </Prose>
             </div>
             <InsightList
@@ -365,7 +365,7 @@ export const nathanCase = {
                 { icon: Camera, title: "Capture", description: "User photographs the receipt." },
                 { icon: FileSearch, title: "OCR extraction", description: "Mindee returns market name, date, SKUs, quantities, prices." },
                 { icon: Link2, title: "String matching", description: "Abbreviated SKUs matched against Nathan's standardized product table." },
-                { icon: Bot, title: "ChatGPT fallback", description: "Unmatched abbreviations resolved by GPT — user confirms the result." },
+                { icon: Bot, title: "ChatGPT fallback", description: "Unmatched abbreviations resolved by GPT; the user confirms the result." },
                 { icon: CheckCheck, title: "Output", description: "Clean, categorized list added to inventory automatically." },
               ]}
             />
@@ -383,12 +383,12 @@ export const nathanCase = {
               <Eye className="h-5 w-5" style={{ color: "var(--project-primary)" }} />
               <Prose>
                 <h3>Forecasting — closing the waste gap over time</h3>
-                <p className="text-(--project-muted-foreground,var(--muted-foreground))">I specified an LSTM model because the task is inherently sequential — next week's list depends on patterns across prior lists and the time between them, not a single snapshot.</p>
+                <p className="text-(--project-muted-foreground,var(--muted-foreground))">I specified an LSTM model because the task is inherently sequential: next week's list depends on patterns across prior lists and the time between them, not a single snapshot.</p>
               </Prose>
             </div>
             <InsightList
               items={[
-                { icon: Inbox, title: "Input", description: "Shopping history + waste feedback — what percentage of each item was actually consumed." },
+                { icon: Inbox, title: "Input", description: "Shopping history + waste feedback: what percentage of each item was actually consumed." },
                 { icon: ClipboardList, title: "Output", description: "A predicted shopping list with items, quantities, and estimated timing." },
                 { icon: RefreshCw, title: "The learning loop", description: "Every waste report closes the gap between suggested and consumed quantities." },
               ]}
@@ -436,7 +436,7 @@ export const nathanCase = {
               kicker="App Development"
               // title="We had three weeks to go from blank canvas to a tested prototype. So before touching Figma, we ran an agile sprint and decided what actually mattered."
               title={<>We had three weeks. So before opening Figma, <em>we decided what to cut.</em></>}
-              subtitle="Structured like a design sprint — prioritize, prototype, test, iterate."
+              subtitle="Structured like a design sprint: prioritize, prototype, test, iterate."
             />
           </div>
           <Timeline
@@ -465,7 +465,7 @@ export const nathanCase = {
             justifyEnd
             number={<Scale className="h-10 w-10" />}
             title="Impact / Effort Matrix"
-            description={<>Every user story forced onto a 2×2 — <strong>impact against effort</strong>. Top-left shipped first. Bottom-right got killed. <em>Uncomfortable, and the right call.</em></>}
+            description={<>Every user story forced onto a 2×2: <strong>impact against effort</strong>. Top-left shipped first. Bottom-right got killed. <em>Uncomfortable, and the right call.</em></>}
             figure={{
               src: ntnAppMatrix,
               alt: "Impact / Effort Matrix diagram with user stories plotted by impact and effort",
@@ -481,7 +481,7 @@ export const nathanCase = {
             reverse
             number={<Map className="h-10 w-10" />}
             title="Information Architecture"
-            description={<><strong>Three pillars — Home, Inventory, Household</strong> — everything reachable in two taps. <em>Locking the IA first</em> meant no screen was drawn without a clear place to live.</>}
+            description={<><strong>Three pillars: Home, Inventory, Household.</strong> Everything reachable in two taps. <em>Locking the IA first</em> meant no screen was drawn without a clear place to live.</>}
             figure={{
               src: ntnAppIa,
               alt: "Nathan information architecture diagram showing three-pillar structure",
@@ -507,7 +507,7 @@ export const nathanCase = {
           />
           <div className="mx-auto grid max-w-3xl grid-cols-1 gap-4 md:grid-cols-2">
             <Callout className="mt-0 md:mt-0" tone="neutral" title="Miller's Law" icon={LayoutGrid}>
-              Inventory screens cap at 7±2 visible items before scrolling — preventing overload when scanning a full pantry grid.
+              Inventory screens cap at 7±2 visible items before scrolling, which prevents overload when scanning a full pantry grid.
             </Callout>
             <Callout className="mt-0 md:mt-0" tone="neutral" title="Hick's Law" icon={SlidersHorizontal}>
               Minimal filter options on the shopping list. Fewer decisions per interaction means less friction per shop.
@@ -557,7 +557,7 @@ export const nathanCase = {
             kicker="— Design System"
             // title="Every color, typeface, and component was chosen to get out of the user's way — clean, readable, and nothing more than necessary."
             title={<>The design system's job was to make AI feel <em>calm and trustworthy.</em></>}
-            subtitle="A customization of the Moon Design System — 33 components adapted to the specific needs of a household grocery app."
+            subtitle="A customization of the Moon Design System: 33 components adapted to the specific needs of a household grocery app."
             className="mx-auto max-w-3xl"
           />
           <ImageGrid
@@ -580,7 +580,7 @@ export const nathanCase = {
         <>
           <SectionHeading
             kicker="— Testing & Iteration"
-            title={<>We tested with real households — then rebuilt the parts that <em>quietly confused them.</em></>}
+            title={<>We tested with real households, then rebuilt the parts that <em>quietly confused them.</em></>}
             subtitle="Two individuals, two households, ages 26–49. Each session fed directly into a redesign round before the final prototype was locked."
             className="mx-auto max-w-3xl"
           />
@@ -598,12 +598,12 @@ export const nathanCase = {
               {
                 label: "SEQ · 7 Tasks",
                 value: "Mostly easy",
-                note: "Onboarding and waste feedback scored lowest — both were redesigned before the final build.",
+                note: "Onboarding and waste feedback scored lowest, both were redesigned before the final build.",
               },
               {
                 label: "PREMO",
                 value: "Joy & Hope",
-                note: "Dominant emotions across users. Honest negative: boredom — groceries aren't inherently exciting.",
+                note: "Dominant emotions across users. Honest negative: boredom. Groceries aren't inherently exciting.",
               },
             ]}
           />
@@ -640,7 +640,7 @@ export const nathanCase = {
           <SectionHeading
             kicker="Final Design"
             // title="The MVP includes 80+ screens which covered one complete loop: from building the list, to scanning the receipt, to tracking what was left."
-            title={<><span className="lining-nums tabular-nums">81</span> screens. A hi-fi prototype covering <em>the full loop — list, scan, track.</em></>}
+            title={<><span className="lining-nums tabular-nums">81</span> screens. A hi-fi prototype covering <em>the full loop: list, scan, track.</em></>}
             className="mx-auto max-w-3xl"
           />
           {/* <Prose className="mx-auto max-w-3xl">
@@ -665,18 +665,18 @@ export const nathanCase = {
         <>
           <SectionHeading
             kicker="Reflections"
-            // title="AI is a design material — it has constraints, fail-safes, and responsibilities that have to be designed for, not assumed."
-            title={<>AI is a design material — it has constraints, fail-safes, and responsibilities that have to be <em>designed for, not assumed.</em></>}
+            // title="AI is a design material. It has constraints, fail-safes, and responsibilities that have to be designed for, not assumed."
+            title={<>AI is a design material. It has constraints, fail-safes, and responsibilities that have to be <em>designed for, not assumed.</em></>}
           />
           <InsightList
             items={[
               {
                 title: "Reframing is the actual work.",
-                description: <>Our first ideas would have produced <em>beautiful deliverables and useless products.</em> The pivot from waste management to shopping friction is the decision that made Nathan worth building. Getting comfortable <strong>killing good ideas early</strong> is a professional skill, not just a design principle.</>,
+                description: <>Our first ideas would have produced <em>beautiful deliverables and useless products.</em> The pivot from waste management to shopping friction is the decision that made Nathan worth building. Getting comfortable <strong>killing good ideas early</strong> is a professional skill.</>,
               },
               {
                 title: "AI is a material, not a feature.",
-                description: <>Designing with AI means working backwards from <strong>data availability</strong> — what does the model need, what's the fail-safe when that data is missing, and what does the UI communicate when a prediction is uncertain? I now approach AI products as <em>data architecture problems</em> before they become interface problems.</>,
+                description: <>Designing with AI means working backwards from <strong>data availability</strong>: what does the model need, what's the fail-safe when that data is missing, and what does the UI communicate when a prediction is uncertain? I now approach AI products as <em>data architecture problems</em> before they become interface problems.</>,
               },
               // {
               //   title: "A design system is how uncertainty becomes calm.",
@@ -687,7 +687,7 @@ export const nathanCase = {
           <SectionHeading
             className={sp.itemToItem}
             kicker="With thanks"
-            subtitle={<>To <a href="https://www.linkedin.com/in/marzia-mortati-19a0898/" target="_blank" rel="noreferrer">Prof. Marzia Mortati</a>, <a href="https://www.linkedin.com/in/andreabonarini/" target="_blank" rel="noreferrer">Prof. Andrea Bonarini</a>, <a href="https://www.linkedin.com/in/enrico-priora/" target="_blank" rel="noreferrer">Enrico Priora</a>, <a href="https://dipartimentodesign.polimi.it/it/personale/federico.espositi#" target="_blank" rel="noreferrer">Federico Espositi</a>, and <a href="https://www.linkedin.com/in/giulia-daleo/" target="_blank" rel="noreferrer">Giulia D'Aleo</a> for the care and patience they put into every review session. And to {teammates.map((c, i) => <React.Fragment key={c.id}>{i > 0 && (i === teammates.length - 1 ? " and " : ", ")}<strong>{c.name.split(" ")[0]}</strong></React.Fragment>)} — it was a pleasure to figure this out together.</>}
+            subtitle={<>To <a href="https://www.linkedin.com/in/marzia-mortati-19a0898/" target="_blank" rel="noreferrer">Prof. Marzia Mortati</a>, <a href="https://www.linkedin.com/in/andreabonarini/" target="_blank" rel="noreferrer">Prof. Andrea Bonarini</a>, <a href="https://www.linkedin.com/in/enrico-priora/" target="_blank" rel="noreferrer">Enrico Priora</a>, <a href="https://dipartimentodesign.polimi.it/it/personale/federico.espositi#" target="_blank" rel="noreferrer">Federico Espositi</a>, and <a href="https://www.linkedin.com/in/giulia-daleo/" target="_blank" rel="noreferrer">Giulia D'Aleo</a> for the care and patience they put into every review session. And to {teammates.map((c, i) => <React.Fragment key={c.id}>{i > 0 && (i === teammates.length - 1 ? " and " : ", ")}<strong>{c.name.split(" ")[0]}</strong></React.Fragment>)}, a pleasure to figure this out together.</>}
           />
         </>
       ),
