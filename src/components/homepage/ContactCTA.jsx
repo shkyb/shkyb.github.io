@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
+import { RiFileCopyLine, RiCheckLine } from "react-icons/ri";
 
 // Assembled at runtime — never a plain string in the DOM
 const EMAIL = ["hello", "shakib.design"].join("@");
@@ -39,6 +40,13 @@ function AvailabilityBadge() {
 export default function ContactCTA() {
   const reduced = useReducedMotion();
   const [hovered, setHovered] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  function copyEmail() {
+    navigator.clipboard.writeText(EMAIL);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  }
 
   // Scroll-reveal helper — pass delay in seconds, respects prefers-reduced-motion.
   const reveal = (delay = 0) =>
@@ -99,9 +107,15 @@ export default function ContactCTA() {
             </motion.p>
 
             {/* Email CTA — white wipe from left on hover, text flips to dark */}
-            <motion.a
-              href={`mailto:${EMAIL}`}
-              className="inline-flex items-center gap-2 text-2xl font-mono px-2 py-1 -ml-2"
+            <div className="relative inline-block">
+            {hovered && !copied && (
+              <span className="pointer-events-none absolute -top-7 left-0 whitespace-nowrap rounded px-2 py-0.5 text-[10px] font-mono bg-white/10 text-white/60">
+                Click to copy
+              </span>
+            )}
+            <motion.button
+              onClick={copyEmail}
+              className="inline-flex items-center gap-2 text-2xl font-mono px-2 py-1 -ml-2 cursor-pointer"
               onMouseEnter={() => setHovered(true)}
               onMouseLeave={() => setHovered(false)}
               style={{
@@ -114,8 +128,10 @@ export default function ContactCTA() {
               }}
               {...reveal(0.3)}
             >
-              {EMAIL} →
-            </motion.a>
+              {copied ? "Copied!" : EMAIL}
+              {copied ? <RiCheckLine size={22} /> : <RiFileCopyLine size={22} />}
+            </motion.button>
+            </div>
           </div>
 
           {/* Right col — desktop only, bottom-aligned with email CTA */}
